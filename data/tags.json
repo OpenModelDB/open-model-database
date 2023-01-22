@@ -1,0 +1,93 @@
+{
+    "image": {
+        "name": "Image",
+        "description": ""
+    },
+    "video": {
+        "name": "Video",
+        "description": ""
+    },
+    "audio": {
+        "name": "Audio",
+        "description": ""
+    },
+    "general-upscaler": {
+        "name": "General Upscaler",
+        "description": ""
+    },
+    "face-upscaling": {
+        "name": "Face Upscaling",
+        "description": ""
+    },
+    "game-textures": {
+        "name": "Game Textures",
+        "description": ""
+    },
+    "game-texture-maps": {
+        "name": "Game Texture Maps",
+        "description": ""
+    },
+    "text": {
+        "name": "Text",
+        "description": ""
+    },
+    "faces": {
+        "name": "Faces",
+        "description": ""
+    },
+    "photo": {
+        "name": "Photo",
+        "description": ""
+    },
+    "anime": {
+        "name": "Anime",
+        "description": ""
+    },
+    "manga": {
+        "name": "Manga",
+        "description": ""
+    },
+    "cartoon": {
+        "name": "Cartoon",
+        "description": ""
+    },
+    "restoration": {
+        "name": "Restoration",
+        "description": ""
+    },
+    "colorization": {
+        "name": "Colorization",
+        "description": ""
+    },
+    "anti-aliasing": {
+        "name": "Anti-aliasing",
+        "description": ""
+    },
+    "pixel-art": {
+        "name": "Pixel Art",
+        "description": ""
+    },
+    "inpainting": {
+        "name": "Inpainting",
+        "description": ""
+    },
+    "deblur": {
+        "name": "Deblur",
+        "description": ""
+    },
+    "debanding": {
+        "name": "Debanding",
+        "description": ""
+    },
+    "denoise": {
+        "name": "Denoise",
+        "description": ""
+    },
+    "dehalo": {
+        "name": "Dehalo",
+        "description": ""
+    },
+    "dedither": {
+        "name": "Dedither"
+    }
+}
