@@ -1,2 +1,5 @@
+*.pt
 *.pth
 *.onnx
+*.bin
+*.param
