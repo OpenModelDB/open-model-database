@@ -1,0 +1,39 @@
+{
+    "name": "4x_BS_Deviance",
+    "author": [
+        "blackscout",
+        "systemd-resolved"
+    ],
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Art\nPretrained: 4xESRGAN\n\nThis model upscales Digital Drawings. It was trained on random drawings found on DeviantArt. Mostly Landscape and Scenery and Illustrations of Characters. It does fairly well and works on many different styles.",
+    "date": "2020-02-25",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "e237af48c942a37237c177f967442c678edb932e9507706b4f6580c2abfe9bdb",
+            "urls": [
+                "https://drive.google.com/file/d/1hLhsp3aKurLys4cALQiEkYxyxGWNf1ET/view?usp=drivesdk"
+            ]
+        }
+    ],
+    "trainingIterations": 60000,
+    "trainingEpochs": 134,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "dataset": "A few drawings from DA",
+    "datasetSize": 5435,
+    "pretrainedModelG": "4x-ESRGAN"
+}

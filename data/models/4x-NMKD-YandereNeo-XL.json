@@ -1,0 +1,30 @@
+{
+    "name": "NMKD YandereNeo XL",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime",
+    "date": "2021-01-26",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "ddcb5856b948654b6298fd50ed90a461eff8442d298779c23724a8c0e7bbbab1",
+            "urls": [
+                "https://icedrive.net/1/f0UAiRqz3N"
+            ]
+        }
+    ]
+}

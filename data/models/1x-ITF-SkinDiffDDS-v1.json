@@ -1,0 +1,36 @@
+{
+    "name": "x1_ITF_SkinDiffDDS_v1",
+    "author": "intheflesh-3116",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\nPretrained: 1x_BC1-smooth2.pth\n\nRemoves banding, blocking, dithering, aliasing, noise and color tint on DDS Compressed Skin Diffuse Textures.\n\nThis should work extremely well on most modern DDS compression types. The training set was compressed with BC3/DXT5, BC3/DXT5 Fast, BC2/DXT3, BC2/DXT3 Fast, and a small number of JPEG compressed images to cover outliers.\n\nThis model is trained to remove the slight green color tint that DDS compression tends to add to skin textures, so the model output will not match the original color tone of the input image. This is the desired result though, as DDS compression shifts the colors to a sickly green tint and this model corrects that to more natural color tones.\n\nThe training set included faces, body parts, eyes, mouths and hair in a variety of skin types and tones so it should work well on most related diffuse textures.\n\nHowever it's not just limited to skin, many other images and textures can be cleaned with this model. Designed to be used as a first step cleaning pass before applying additional models after. Check out the other ITF Models.",
+    "date": "2022-08-24",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "d1b565ab1e3ac0bfb971588ad588ee8276a827237c01825fba33392105573bac",
+            "urls": [
+                "https://drive.google.com/drive/folders/1y-QoWGAnF8YiX764rWrDOGzndWtpCfF3?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingBatchSize": 48,
+    "trainingHRSize": 32,
+    "trainingOTF": false,
+    "dataset": "Custom",
+    "datasetSize": 870,
+    "pretrainedModelG": "1x-BC1-smooth2"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "FArtFace",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "faces",
+        "face-upscaling"
+    ],
+    "description": "Category: Faces\nPurpose: Faces\nPretrained: \n\n",
+    "date": "2019-11-28",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906130,
+            "sha256": "39b0d046f3224cdfd8e3e19a67784ee31aa41267fc1aa46062a2e535c66400b8",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY211Vcr3fF39ZOaPk-?e=BQajTd"
+            ]
+        }
+    ]
+}

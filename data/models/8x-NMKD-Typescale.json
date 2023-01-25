@@ -1,0 +1,33 @@
+{
+    "name": "NMKD Typescale",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "text"
+    ],
+    "description": "Category: Text\nPurpose: Text\nPretrained: 8xESRGAN\n\nLow-resolution text/typography and symbols",
+    "date": "2020-11-04",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 8,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67110058,
+            "sha256": "1bceca9277a870617d611222adce394f71123fc345334c2bb75e80034c7ab323",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ],
+    "trainingIterations": 175000,
+    "trainingBatchSize": 3,
+    "dataset": "Custom - Typography images from Flickr",
+    "pretrainedModelG": "8x-ESRGAN"
+}

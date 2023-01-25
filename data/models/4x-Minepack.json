@@ -1,0 +1,35 @@
+{
+    "name": "Minepack",
+    "author": "blackscout",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\nPretrained: 4xESRGAN.pth\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
+    "date": "2020-01-26",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "d81e38f25ad84d0e0cf5656c5f7d3e304a5834aa779502b0e3393e5537da7a74",
+            "urls": [
+                "https://drive.google.com/file/d/1DbbM4saRpJu0dmgvccQFwfF4zI2rjiQ_"
+            ]
+        }
+    ],
+    "trainingIterations": 68000,
+    "trainingEpochs": 10,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "Custom -> `https://drive.google.com/file/d/1N5BQgLJ59zNRwiPbf4nRsLLBT2WoVwaN/view` + `https://mega.nz/#!lpMHRAqS!bHN9Ioj7l2Gfvm1HOxTR8rqcGNrrx3Ai-1-bj7YejuU` (crowdsourced, posted in #post-your-screenshot-zips-here in SalC1's Discord Server)",
+    "datasetSize": 53390,
+    "pretrainedModelG": "4x-ESRGAN"
+}

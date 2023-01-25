@@ -1,0 +1,36 @@
+{
+    "name": "2x_VHS-upscale-and-denoise_Film_477000_G",
+    "author": "itewreed",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: VHS Tapes\nPurpose: VHS\nPretrained: none\n\nVHS captures of Film material, but may work on VHS recorded native SD-TV material as well. Also useable for cleaned up source material",
+    "date": "2021-03-28",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66809646,
+            "sha256": "22b9b1178f5b20a925fdf62c05b56f167c05ca082234841666171f6262f0ac55",
+            "urls": [
+                "https://drive.google.com/drive/folders/1NVT-5hmcrXc1d_DFjzNf-z-VfOa_xhwI?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 477000,
+    "trainingEpochs": 2733,
+    "trainingBatchSize": 7,
+    "trainingHRSize": 128,
+    "dataset": "For LR, two decade old VHS recording of a movie from TV, captured with enabled TBC on the VCR. For HR, Blu-ray rip of that movie.",
+    "pretrainedModelG": {
+        "description": "Training was done from scratch"
+    }
+}

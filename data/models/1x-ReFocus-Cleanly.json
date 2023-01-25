@@ -1,0 +1,29 @@
+{
+    "name": "ReFocus Cleanly (1x_ReFocus_Cleanly_100000_G.pth)",
+    "author": "twittman",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "deblur"
+    ],
+    "description": "Category: Blurring\nPurpose: Deblur / ReFocus\nPretrained: 1x_ReFocus_V3_110000_G.pth\n\nDataset: Anime, manga, and photos -\n\nPurpose: DeBlur, ReFocus, Sharpen Manga, Anime and cartoon style images, but will work on real life images too.",
+    "date": "2022-01-21",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "f38e8be5524126e9923849cc37e1c9ca308d2d72f26e89147c95d6fde8b18a13",
+            "urls": [
+                "https://de-next.owncube.com/index.php/s/GjbBw7pcgm5gmYm"
+            ]
+        }
+    ]
+}

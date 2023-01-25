@@ -1,0 +1,29 @@
+{
+    "name": "Rebout Blend",
+    "author": "lyonhrt",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Detoon\n\nDataset: Custom prepared sprites from kof 94 rebout, which with gradients blending",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "4b09890676aad237f0432bebd46636efaa7b500261a14c6c85dfc9dc523e003b",
+            "urls": [
+                "https://drive.google.com/u/1/uc?id=1h-bY4gq_61sRF_xK3F4OiVK1cWRX0Q9w&export=download"
+            ]
+        }
+    ]
+}

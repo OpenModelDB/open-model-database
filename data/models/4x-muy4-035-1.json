@@ -1,0 +1,27 @@
+{
+    "name": "4x_muy4_035_1.pth",
+    "author": "katoumegumi",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: \n\nUpscaling of anime art (Specifically visual novel CG art)",
+    "date": "2021-07-18",
+    "architecture": "ESRGAN",
+    "size": null,
+    "scale": 4,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": null,
+            "sha256": null,
+            "urls": [
+                "https://s.katou.pw/4x_muy4_035_1.pth"
+            ]
+        }
+    ]
+}

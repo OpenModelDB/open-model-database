@@ -1,0 +1,36 @@
+{
+    "name": "1x_DEDXT",
+    "author": "cf2lter",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: DXT compression\nPretrained: \n\nTo retain details while removing artifacts caused by dxt compression on textures",
+    "date": "2022-02-26",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "4400aa3970a1bf8279f290a7c4c73ff655ece058e94aaa162955459d63093406",
+            "urls": [
+                "https://mega.nz/file/TltS1TQY#CW3zaI24pxFXggeRjgnXb4bSfjnQsY_ch1bogCjMCmU"
+            ]
+        }
+    ],
+    "trainingIterations": 24000,
+    "trainingEpochs": 4000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 64,
+    "dataset": "Textures from paladins",
+    "datasetSize": 150,
+    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60"
+}

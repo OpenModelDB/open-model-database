@@ -1,0 +1,37 @@
+{
+    "name": "1x_NoiseToner_Uniform_Soft",
+    "author": "mutin-choler",
+    "license": null,
+    "tags": [
+        "image",
+        "denoise"
+    ],
+    "description": "Pretrained: 1xESRGAN",
+    "date": "2020-10-14",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66667161,
+            "sha256": "53847e70b757eaf21dce1cba3e88fbc46e42d611dad4bfc87a5590feb416b9e9",
+            "urls": [
+                "https://drive.google.com/drive/u/1/folders/12j6BvuR7SU48ui9DHjBPB1vzPpQri9bD"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 609,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Realistic images",
+    "datasetSize": 657,
+    "pretrainedModelG": "1x-ESRGAN"
+}

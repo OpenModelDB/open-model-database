@@ -1,0 +1,39 @@
+{
+    "name": "deviantPixelHD",
+    "author": "raulsangonzalo",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: RRDB_PSNR_x4\n\nSimilar to Manga109, can be used as a general digital upscaler as well as with pixel art",
+    "date": "2019-09-09",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66954395,
+            "sha256": "dae3fd79386a596c1e6b534d6fc4f7fb613cfea70480750a69c4179b203c77a8",
+            "urls": [
+                "https://drive.google.com/file/d/114yFJKeYCcr6st7aNNo9FJ8wDbEzLpdz/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 250000,
+    "trainingEpochs": 1427,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "High Resolution Digital Art from Deviant Art",
+    "datasetSize": 2797,
+    "pretrainedModelG": {
+        "description": "RRDB_PSNR_x4"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "name": "4x_OLDIES_290000_G_FINAL",
+    "author": "solidd93110",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: RRDB_PSNR_x4.pth\n\ni made this model to upscale old anime and denoise.",
+    "date": "2020-08-16",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906130,
+            "sha256": "2239f776c6be3af296b42a4bbc66d9fda064b342316d9ca82b3e09c11529f302",
+            "urls": [
+                "https://1fichier.com/?tsmmdifzgwkwtdfcc5uo"
+            ]
+        }
+    ],
+    "trainingIterations": 290000,
+    "trainingEpochs": 183,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "dataset": "made with full images of anime blu ray.",
+    "pretrainedModelG": {
+        "description": "RRDB_PSNR_x4.pth"
+    }
+}

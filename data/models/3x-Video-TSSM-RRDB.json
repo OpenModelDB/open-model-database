@@ -1,0 +1,29 @@
+{
+    "name": "3x_Video_TSSM_RRDB",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained Discriminators\nPurpose: Animation\nPretrained: \n\nnone",
+    "date": "2020-11-25",
+    "architecture": "SOFVSR",
+    "size": null,
+    "scale": 3,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 69122119,
+            "sha256": "4cfc1dbd850799520e0b3020f3477f37b409701219cff0701ba1ae12d4cc2313",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=XZ2AERXZ9YpzzV4rRvySFiq3MsrTEYdEjtkV"
+            ]
+        }
+    ],
+    "trainingIterations": 80000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 192,
+    "dataset": "LR: The Spongebob Squarepants Movie (DVD) | HR: The Spongebob Squarepants Movie (Blu-ray). Randomly exported scenes."
+}

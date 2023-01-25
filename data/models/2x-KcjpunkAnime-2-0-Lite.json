@@ -1,0 +1,35 @@
+{
+    "name": "2X_KcjpunkAnime_2.0_Lite_196496_G",
+    "author": "kcjpunk",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: This is my first attempt to make Light model so I started with 2x version. This model is much faster and give better results than my previous one.\n\nUp-scaling Digital Animation",
+    "date": "2021-03-23",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "11nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 18468480,
+            "sha256": "821dc99a36bf16a1521be35e3ebd07c3a0c2572bc9248ea9ba93e1580020705f",
+            "urls": [
+                "https://mega.nz/folder/4oVRHQaA#vE3Lplfetc9z9SJOxZD6nA"
+            ]
+        }
+    ],
+    "trainingIterations": 196496,
+    "trainingEpochs": 459,
+    "trainingBatchSize": 2,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "1080P BD anime frames",
+    "datasetSize": 6840
+}

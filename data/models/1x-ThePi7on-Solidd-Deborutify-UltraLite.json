@@ -1,0 +1,35 @@
+{
+    "name": "1x_ThePi7on-Solidd_Deborutify_UltraLite_260k_G",
+    "author": "thepi7on",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "deblur"
+    ],
+    "description": "Category: Blurring\nPurpose: Deblur\nPretrained: \n\nSharpening, line darkening and slight line thinning, specifically made for the Boruto anime.",
+    "date": "2021-05-09",
+    "architecture": "ESRGAN",
+    "size": [
+        "10nf",
+        "5nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 4808930,
+            "sha256": "f2c86ac406566d4299a061c8578c542d86b3539ce2634e12df65a06c4cee314f",
+            "urls": [
+                "https://mega.nz/file/CYoXCAKR#eRKwpP9rCL9vFCsO41oVImvmVwAEOtYUlp2CquX0Fw8"
+            ]
+        }
+    ],
+    "trainingIterations": 260000,
+    "trainingEpochs": 2363,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Some frames from the sharper shippuden episodes"
+}

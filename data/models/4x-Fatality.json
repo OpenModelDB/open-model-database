@@ -1,0 +1,29 @@
+{
+    "name": "Fatality (4x_Fatality_01.pth)",
+    "author": "twittman",
+    "license": null,
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: 4x_Faces_04_N_180000_G.pth\n\nUpscales medium resolution Sprites, dithered or undithered, can also upscale manga/anime and gameboy camera images.",
+    "date": "2019-07-29",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "fde2299d8c98794e5fa36669978e6b69cce6fd7390ec6fe3a30d39da71ce5f30",
+            "urls": [
+                "https://de-next.owncube.com/index.php/s/LQSgW98ZeaoA3Po"
+            ]
+        }
+    ]
+}

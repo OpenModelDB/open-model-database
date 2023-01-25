@@ -1,0 +1,29 @@
+{
+    "name": "DeGif",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: GIF\nPurpose: GIF Restoration\nPretrained: 2xESRGAN\n\nGIF Restoration",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66810509,
+            "sha256": "a1c4aad3eb19894afda5dcc12982541ce15f79bd47916137cbeb26e702040626",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ]
+}

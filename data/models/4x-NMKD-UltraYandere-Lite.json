@@ -1,0 +1,37 @@
+{
+    "name": "NMKD UltraYandere Lite",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 4x_DIV2K-Lite\n\nFast Anime/Art upscaling",
+    "date": "2020-10-15",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20173354,
+            "sha256": "20bcc2e823c26271a6d89d14578fd80ffb3aa727535284298161cb6a81cb501c",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ],
+    "trainingIterations": 280000,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 256,
+    "dataset": "Yandere4800",
+    "pretrainedModelG": {
+        "description": "4x_DIV2K-Lite"
+    }
+}

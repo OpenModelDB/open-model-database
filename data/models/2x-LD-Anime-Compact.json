@@ -1,0 +1,38 @@
+{
+    "name": "LD-Anime_Compact",
+    "author": [
+        "skr",
+        "zarxrax"
+    ],
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2x_Compact_Pretrain.pth\n\nI trained Skr's great LD-Anime model on compact architecture. It upscales while fixing numerous video problems, including: noise/grain, compression artifacts, rainbows, dot crawl, halos and color bleed. This compact version may look slightly worse than Skr's original model, but runs significantly faster and also retains the correct colors better than the original model did.",
+    "date": "2022-12-22",
+    "architecture": "Compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 4838409,
+            "sha256": "92af3344f41272231508dd273c8861052c1261efed362d5f9da19bac4cbae361",
+            "urls": [
+                "https://mega.nz/file/xI8D2SCJ#oQ0h3k9lemeNJcuysJql7z55WV_NhOsKRpzpErIhcGc"
+            ]
+        }
+    ],
+    "trainingIterations": 330000,
+    "trainingHRSize": 192,
+    "dataset": "DVD frames upscaled using Skr's LD-Anime model and color corrected.",
+    "datasetSize": 1720,
+    "pretrainedModelG": "2x-Compact-Pretrain"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "2x_Waifaux-NL3-SuperLite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: \nPretrained: none\n\nTrained this model to see how it would work trying to essentially get the same results as Waifu2x but with ESRGAN",
+    "date": "2021-02-23",
+    "architecture": "ESRGAN",
+    "size": [
+        "16nf",
+        "6nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 6886862,
+            "sha256": "b0b62d44d1f18f34d2eba4dfbbf0913fb528e49514166b8e9d147de09ffed49e",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=XZRAmuXZRy3vkvvBdTftheNOFeJ0tLLv74eX"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingEpochs": 564,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 64,
+    "dataset": "Div2K + Spongebob frames, upscaled with Waifu2x (plus jpeg'd lrs)"
+}

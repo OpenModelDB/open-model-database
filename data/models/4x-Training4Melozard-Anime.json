@@ -1,0 +1,39 @@
+{
+    "name": "4x_Training4Melozard_Anime",
+    "author": "joey",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: RRDB_ESRGAN_x4_old_arch\n\n",
+    "date": "2021-03-17",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "efa57d77c0f33fb22dc0d393d2034852b5276d4a21a41c22fc984e76a0ce881f",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZcUlBXZ9egcFjtf3cjX02lDqNAr5j4l3jFX"
+            ]
+        }
+    ],
+    "trainingIterations": 144000,
+    "trainingEpochs": 5770,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "<@!716378030121156669>'s Anime dataset",
+    "datasetSize": 202,
+    "pretrainedModelG": {
+        "description": "RRDB_ESRGAN_x4_old_arch.pth"
+    }
+}

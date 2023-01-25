@@ -1,0 +1,35 @@
+{
+    "name": "4xPackCraft_v4",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\nPretrained: 4xESRGAN/previous versions\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.",
+    "date": "2020-09-05",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "a300ea6af3554e2f077df6f01850f2fe243d4f4912516a7085c3641a6c60828c",
+            "urls": [
+                "https://drive.google.com/file/d/1Xe1JorGFJzPClR9tUuGmpuMyLhTA-d2T/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingBatchSize": 1,
+    "trainingHRSize": 512,
+    "dataset": "Random screenshots from Alpha Minecraft taken at the correct angle, screen region, block placement, and cloud position (with slight random variance). LR images were OTF downscaled with box/area.",
+    "datasetSize": 60000,
+    "pretrainedModelG": {
+        "description": "4xESRGAN originally, but I used each previous version as a pretrained until I got to v4."
+    }
+}

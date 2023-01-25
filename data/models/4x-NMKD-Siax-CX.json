@@ -1,0 +1,33 @@
+{
+    "name": "NMKD Siax (\"CX\")",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "general-upscaler"
+    ],
+    "description": "Category: Universal Models\nPurpose: General upscaler\nPretrained: 4xPSNR\n\nUniversal upscaler for clean and slightly compressed images (JPEG quality 75 or better)",
+    "date": "2020-11-06",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66957746,
+            "sha256": "560424d9f68625713fc47e9e7289a98aabe1d744e1cd6a9ae5a35e9957fd127e",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingBatchSize": 2,
+    "dataset": "DIV2K Train+Valid",
+    "pretrainedModelG": "4x-PSNR"
+}

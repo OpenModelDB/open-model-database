@@ -1,0 +1,33 @@
+{
+    "name": "MangaJPEGLQ",
+    "author": "bunzero",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: none\n\nRemove JPEG artifacts from manga without destroying screentone and other details. For 25-5 JPEG Quality",
+    "date": "2021-06-17",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 1,
+    "outputChannels": 1,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20092251,
+            "sha256": "af11ec91b6a38e0109cbb926b19e8a01975f947aacb3490f008dcab06e9b922d",
+            "urls": [
+                "https://mega.nz/folder/fAg21TRI#kBk0synXgNqTGaXiW6nSZA"
+            ]
+        }
+    ],
+    "trainingEpochs": 23,
+    "trainingBatchSize": 5,
+    "trainingHRSize": 64,
+    "dataset": "Expanded self curated custom manga dataset"
+}

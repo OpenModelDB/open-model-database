@@ -1,0 +1,36 @@
+{
+    "name": "x1_ITF_SkinDiffDetail_Lite_v1",
+    "author": "intheflesh-3116",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Skin\nPurpose: Skin Upscaling\nPretrained: 50/50 Interpolation of DIV2K-Lite and SpongeBC1-Lite\n\nAdds plausible high frequency detail and removes subtle blur. This is an early unfinished attempt at a x1 Lite model designed specifically for enhancing detail on skin diffuse textures of 3d characters. Even in its current state it works quite well.\n\nBest suited for uncompressed or cleaned textures - otherwise it may just enhance any existing compression artefacts too. The training set included faces, body parts, eyes and hair in a variety of skin types and tones so it should work well on most related diffuse textures.\n\nHowever it's not just limited to skin, many other images and textures can be enhanced with this model. The results are subtle, so run multiple times if desired.",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20099337,
+            "sha256": "94d368b633614958f84f335b129fd85abd30200e8fbc575b859ba6762116222b",
+            "urls": [
+                "https://drive.google.com/drive/folders/1VkT6tpbCPn2gKZYPtawDJGMpLg6EyRpO?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 41000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 64,
+    "dataset": "Custom",
+    "datasetSize": 400,
+    "pretrainedModelG": {
+        "description": "50/50 Interpolation of DIV2K-Lite and SpongeBC1-Lite"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Debandurh_FS Ultra-lite (1x_Debandurh_FS_lite_140000_G.pth)",
+    "author": "twittman",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "debanding"
+    ],
+    "description": "Category: Banding\nPurpose: Debanding images\nPretrained: None\n\nDataset: Anime, real life, manga",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "8nf",
+        "3nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 2708872,
+            "sha256": "027dfbf10e0ff3f8347960106f89443241b85e91edbd7329d3ded50829ee98f7",
+            "urls": [
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Debandurh_FS_lite_140000_G.pth"
+            ]
+        }
+    ]
+}

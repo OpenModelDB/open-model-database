@@ -1,0 +1,37 @@
+{
+    "name": "4x_Loyaldk-LitePony_500000_V2.0",
+    "author": "chasemmd",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: none\n\nGood for Vector 2D art however converts detail to blobs. Quality seems weak with this one. However posting anyways to see if a use is found.",
+    "date": "2021-04-12",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20173354,
+            "sha256": "d4e8a970a1364da4cd1dbba9ec54fcd028f98a9d9f5784219a30f20e58cc5cb7",
+            "urls": [
+                "https://mega.nz/file/hcoViIQQ#O1cmQ8FsLk5RAIP5lxB3Q2L0suh9IWX_dGHhuSuL9U4"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingEpochs": 46,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 240,
+    "trainingOTF": false,
+    "dataset": "All MLP: FiM Episodes using scene detection frame grabbing as well as selected Prores4444 content https://shimmermare.com/4k-pony-project. Converted Episodes and Movies to 4:4:4 Chroma Subsampling using custom 1x model. LR's Include H264 Compression, H265 Compression, 1x_DotCrawl_125000_G, 1x_DeteriorationFrames V1_102000_G, Gaussian Blur, LitePony Chroma Bleed, Uniform Noise, JPEG Compression, 4:2:0 Chroma Subsampling.",
+    "datasetSize": 132120
+}

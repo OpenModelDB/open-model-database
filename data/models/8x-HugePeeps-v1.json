@@ -1,0 +1,29 @@
+{
+    "name": "8x_HugePeeps_v1",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Art/People\nPretrained: TGHQFace8x\n\nPainted humans",
+    "date": "2020-06-16",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 8,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67054134,
+            "sha256": "7f13f82c6e9b5375ae255edff93c3f845d8e81ef103b8209bbcb03f62d710ccb",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY26nuB0Lo0rdirfGoi?e=XI9Fa2"
+            ]
+        }
+    ]
+}

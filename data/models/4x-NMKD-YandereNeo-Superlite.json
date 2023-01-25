@@ -1,0 +1,30 @@
+{
+    "name": "NMKD YandereNeo Superlite",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime",
+    "date": "2021-01-26",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "2nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 6376496,
+            "sha256": "9d584ad24087472ffb24f8e2c0ec797838b1d2ed4b8a71a503e72235155120e1",
+            "urls": [
+                "https://icedrive.net/1/f0UAiRqz3N"
+            ]
+        }
+    ]
+}

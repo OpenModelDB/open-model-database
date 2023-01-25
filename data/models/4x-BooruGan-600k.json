@@ -1,0 +1,36 @@
+{
+    "name": "BooruGan 600k",
+    "author": "tal",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 4x_Manga109Attempt\n\nThis model is designed to mainly upscale anime artworks.",
+    "date": "2021-11-26",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "adcaf9207047191b5508b1d47d564580ca434baf4a95ad2e2869e3ad8604ce8d",
+            "urls": [
+                "https://drive.google.com/file/d/1DRyqqy24OU6G_mwsGjy6Zaxan_Fy1LNU/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 600000,
+    "trainingEpochs": 560,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "I used highres artworks from gelbooru",
+    "pretrainedModelG": "4x-Manga109Attempt"
+}

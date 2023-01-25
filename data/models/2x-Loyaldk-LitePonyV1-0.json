@@ -1,0 +1,36 @@
+{
+    "name": "2x_Loyaldk-LitePony_380500 V1.0",
+    "author": "chasemmd",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2x_ESRGAN\n\nUpscale MLP episodes. Liter version.",
+    "date": "2021-03-01",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "25f4067bb54764011ceb7657971958c767b5c73e920df8beac1d1231bf662433",
+            "urls": [
+                "https://mega.nz/file/RYxGEKRL#nTe0Zy2gB9e9QF5T8UhJSla1oEPQjSCXAB0BpNrTrRk"
+            ]
+        }
+    ],
+    "trainingIterations": 380500,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "All MLP: FiM Episodes using scene detection frame grabbing as well as selected Prores4444 content https://shimmermare.com/4k-pony-project. Ran 2 separate datasets. LR's Include H264 Compression, Halo, Sharpening Halo/Fringe, Gaussian Blur, Dot crawl, Uniform Noise, Rainbow.",
+    "pretrainedModelG": "2x-ESRGAN"
+}

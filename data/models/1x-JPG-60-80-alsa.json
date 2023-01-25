@@ -1,0 +1,29 @@
+{
+    "name": "JPG (60-80%)",
+    "author": "alsa",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: Trained on Custom (Photos / Manga)\n\n",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "71953c3de5d4cb4b16fbd4caa4bac1114f3b86fc4e8c5a5a56c80e309658e201",
+            "urls": [
+                "https://e.pcloud.link/publink/show?code=XZcmsZASeN84hQXCLfhYzUogomG5EdkwPV"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "name": "DigitalFilmV5 Lite",
+    "author": "optimusprimal",
+    "license": "WTFPL",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Cel Animation\nPurpose: Traditional Animation\nPretrained: none\n\nUpscaling Dragon Ball Z DBox DVD's. - grainy sources. It keeps some grain, but also doing some cleaning, sharpening, and fixing.",
+    "date": "2021-02-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "12nf",
+        "8nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 8199999,
+            "sha256": "ed75272d5c55318c7307bcb4faaba63a69f0cfa1576dd1068b9737ecdfd3e734",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/579685650824036387/812414843939455036/2X_DigitalFilmV5_Lite.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 43000,
+    "trainingEpochs": 920,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "dataset": "DB/DBZ/DBGT Dragon Box DVD frames, upscaled with various models such as DigitalFrames2.0, FilmFrames677k, SharpAnimeV2, and manually edited to only show the best parts of each model. I call it image stacking.",
+    "datasetSize": 561
+}

@@ -1,0 +1,38 @@
+{
+    "name": "FuzzyBox",
+    "author": "blueamulet",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "general-upscaler"
+    ],
+    "description": "Category: Universal Models\nPurpose: General upscaler\nPretrained: RRDB_ESRGAN_x4\n\nPhotographs, Artwork, Textures, Anything really - Tried out a new pixel loss idea based on ensuring the HR downscaled matches the LR. Colors are pretty good as well as edges, but generated details seem slightly fuzzy hence the name.",
+    "date": "2020-07-21",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66954395,
+            "sha256": "2af1d176b9a981b2352334cef852cf278a197afebf2ba6d8a618bb6a848ee761",
+            "urls": [
+                "https://drive.google.com/file/d/1IHp3Ibs3B8wSKZg2iGAVy4DP5bTSTOBb/view"
+            ]
+        }
+    ],
+    "trainingIterations": 197000,
+    "trainingEpochs": 316,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "CC0 Textures",
+    "pretrainedModelG": {
+        "description": "RRDB_ESRGAN_x4"
+    }
+}

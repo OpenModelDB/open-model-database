@@ -1,0 +1,34 @@
+{
+    "name": "4x_HellinaCel",
+    "author": "vgdckeroro",
+    "license": "WTFPL",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Cel Animation\nPurpose: Traditional Animation\nPretrained: 4xESRGAN\n\nA rougher alternative to 4xCelFrames with a focus on realistic looking cels over nice looking cels. It's trained on DetoriationFrames LRs, so if you give it an image straight from the source it will go twice as hard on it. This can be used to your advantage, though. I recommend cleaning it up before running DetoriationFrames, or else it will come out rough.",
+    "date": "2021-03-21",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66963362,
+            "sha256": "0545b0e123df64777a30234b93e1ee39d5a0b9d94565630d4a628f11db810b20",
+            "urls": [
+                "https://mega.nz/file/GFFkSL5R#C-dDxaxTZpSPUh_heAUw_idGIF8Xizdr0ktyGi05yFk"
+            ]
+        }
+    ],
+    "trainingIterations": 230000,
+    "trainingBatchSize": 69,
+    "trainingHRSize": 128,
+    "dataset": "Trained on upscaling downscaled cel photographs run through DetoriationFrames",
+    "datasetSize": 69,
+    "pretrainedModelG": "4x-ESRGAN"
+}

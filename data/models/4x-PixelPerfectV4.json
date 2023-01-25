@@ -1,0 +1,37 @@
+{
+    "name": "4x_PixelPerfectV4_137000_G",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: 4xESRGAN\n\nSprite Upscaler",
+    "date": "2020-11-16",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "52bcda86effc93e07d868036f53dd2f4a38016cdd636b66ebbf6c4525223eb5f",
+            "urls": [
+                "https://drive.google.com/drive/u/1/folders/1C82o6p9jXzOZIZtMHeVXFW8BYV0s10FA"
+            ]
+        }
+    ],
+    "trainingIterations": 137000,
+    "trainingEpochs": 1825,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Random anime images",
+    "datasetSize": 300,
+    "pretrainedModelG": "4x-ESRGAN"
+}

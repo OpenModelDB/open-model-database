@@ -1,0 +1,37 @@
+{
+    "name": "4xFSDedither",
+    "author": "jacob",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "dedither"
+    ],
+    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: RRDB_ESRGAN_x4\n\nFor photos/realistic images, but worth trying on other images that have reduced colors and dithering along with fine details. Trained using the ESRGAN-FS code (https://github.com/ManuelFritsche/real-world-sr/tree/master/esrgan-fs/codes) for better details compared to plain ESRGAN.",
+    "date": "2020-01-29",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "be2e991e5f19a4b6bda3619fd806cb978ff91bed2afbf9453ba0d8e15bdff133",
+            "urls": [
+                "https://drive.google.com/file/d/1H4KQyhcknOoExjvDdsoxAgTBMO7JuJ3w/view"
+            ]
+        }
+    ],
+    "trainingIterations": 55000,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "dataset": "Div2K+Flickr2K, linearly downscaled and dithered (half Floyd-Steinberg, half ordered) using GIMP",
+    "datasetSize": 3450,
+    "pretrainedModelG": {
+        "description": "RRDB_ESRGAN_x4"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Ghibli_Grain.pth",
+    "author": "nonogamester",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Images\nPurpose: Realistic Ghibli Grain\nPretrained: Attempt to get the nostalgic grain feel of classically animated Ghibli movies. Got the idea from researching the making of Ronin's :PKT_blue: 1x_AnimeFilmGrain28k. This was made running Nate video denoising with the preset \"more denoising\" on kiki's delivery service then overlaying it 66.65 percent over the original with DaVinci. On digital drawn anime it gives a slightly [10%] more organic/sharp feel to black lines. Matches well with content that already has a light digital grain. Run Twice for heavy grain. Eternal Thanks to all that indulge all my :psyduck: Wonderings :element_fire_neon:\n\nText or Anime",
+    "date": "2022-11-16",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "ec6ebdf4d7e5b02d0ccc8235d7278e7a5f1b6a4530728dad17f5e6e4d8a182d0",
+            "urls": [
+                "https://drive.google.com/file/d/1URPhkwgraCzWAIkB8Pk4ZPr1LTdfdwxJ/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 15000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 1280,
+    "dataset": "Images from Kiki's Delivery Service Hayao Miyazaki collectors edition",
+    "datasetSize": 10000,
+    "pretrainedModelG": {
+        "description": "Attempt to get the nostalgic grain feel of classically animated Ghibli movies. Got the idea from researching the making of Ronin's :PKT_blue: 1x_AnimeFilmGrain28k. This was made running Nate video denoising with the preset \"more denoising\" on kiki's delivery service then overlaying it 66.65 percent over the original with DaVinci. On digital drawn anime it gives a slightly [10%] more organic/sharp feel to black lines. Matches well with content that already has a light digital grain. Run Twice for heavy grain. Eternal Thanks to all that indulge all my :psyduck: Wonderings :element_fire_neon:"
+    }
+}

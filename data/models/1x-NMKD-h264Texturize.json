@@ -1,0 +1,33 @@
+{
+    "name": "NMKD h264Texturize",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Video Compression\nPurpose: Texturizing\nPretrained: 4x ESRGAN\n\nTries to reverse heavy h264 compression. Fails. Can be used to texturize images though.",
+    "date": "2020-10-20",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66661577,
+            "sha256": "34d42258a18ecae1af73f6b4809584723631556670fd93212bbd20afebcb9db8",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 128,
+    "dataset": "DIV2K Train + Valid",
+    "pretrainedModelG": "4x-ESRGAN"
+}

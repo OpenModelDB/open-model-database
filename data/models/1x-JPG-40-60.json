@@ -1,0 +1,29 @@
+{
+    "name": "JPG (40-60%)",
+    "author": "blueamulet",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: Trained on Custom (CC0 Textures)\n\n",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66658222,
+            "sha256": "486f6fa647dac3c17bf454c0397fdf7c2c3bf9d7c5909da3f1ba4537515c7505",
+            "urls": [
+                "https://drive.google.com/drive/folders/1HWokMsUwsR_Mw-NOJgc8OdS8mkdIje_C"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Rebout",
+    "author": "lyonhrt",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Detoon\n\nFor upscaling character sprites",
+    "date": "2019-08-04",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "c36a14ddb51ae094324a53b67c345da2d6b6bbf6a2249726056d5b94bdedab05",
+            "urls": [
+                "https://drive.google.com/u/1/uc?id=1WXJQzqVGTKaX_8_Ma1hJ45W5nUkZBGFu&export=download"
+            ]
+        }
+    ]
+}

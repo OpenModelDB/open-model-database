@@ -1,0 +1,39 @@
+{
+    "name": "MeguUp",
+    "author": "katoumegumi",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: Interpolated custom, hence the license.\n\nUpscaling of lossless (uncompressed) anime art.",
+    "date": "2020-09-16",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "4dad22166896c14cf04f222cf1a69c46f7a6c6e6358ade157f7107a243225fde",
+            "urls": [
+                "https://s.katou.pw/4x_MeguUp_150000_G.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 105000,
+    "trainingEpochs": 199,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "SFW and NSFW anime artworks",
+    "datasetSize": 4193,
+    "pretrainedModelG": {
+        "description": "Interpolated custom, hence the license."
+    }
+}

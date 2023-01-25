@@ -1,0 +1,35 @@
+{
+    "name": "2x_Gen5-Alpha",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\nPretrained: 4xFireAlpha\n\n",
+    "date": "2021-02-03",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 4,
+    "outputChannels": 4,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66815121,
+            "sha256": "cf5a17eb114b6d72b4d40f0c6acd6a732a15af8b799f919c58edf97ba4442542",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZkR7hXZhfCA4WvVQvbxXkNN50tazuxj73uX"
+            ]
+        }
+    ],
+    "trainingIterations": 175000,
+    "trainingEpochs": 409,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 96,
+    "dataset": "Gen 5 Pokemon sprites",
+    "datasetSize": 3376,
+    "pretrainedModelG": "4x-FireAlpha"
+}

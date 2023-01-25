@@ -1,0 +1,30 @@
+{
+    "name": "MS Unpainter",
+    "author": "foolhardy",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: A mix of: 8x_glasshopper_ArzenalV1.1, 8x_glasshopper_MS-Unpainter, 8x_NMKD-Sphax + Sphax de-dither, and 8x_NMKD-YanderePixelArt4 + Yandere De-Dither, all interpolated with adjustments using the interpolate function in Cupscale\n\nLow-resolution MS Paint drawings, general pixel art, and general dithered pixel art, all kinds of pixel art",
+    "date": "2021-03-24",
+    "architecture": "ESRGAN",
+    "size": null,
+    "scale": 8,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": null,
+            "sha256": null,
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZPTiBXZPnCIVsFUmrpu4NY1sKfKw8Pyw6rk"
+            ]
+        }
+    ],
+    "trainingIterations": 195000,
+    "pretrainedModelG": {
+        "description": "A mix of: 8x_glasshopper_ArzenalV1.1, 8x_glasshopper_MS-Unpainter, 8x_NMKD-Sphax + Sphax de-dither, and 8x_NMKD-YanderePixelArt4 + Yandere De-Dither, all interpolated with adjustments using the interpolate function in Cupscale"
+    }
+}

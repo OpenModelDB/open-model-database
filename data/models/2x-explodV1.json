@@ -1,0 +1,28 @@
+{
+    "name": "explodV1",
+    "author": "hubert",
+    "license": "BSD-3-Clause",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained SOFVSR Models\nPurpose: Animethemes\nPretrained: \n\nI think one of sharpest models for anime\n\nPlz don't steal without credits, k thx.",
+    "date": "2022-07-29",
+    "architecture": "CAIN YUV",
+    "size": null,
+    "scale": 2,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 52981113,
+            "sha256": "db25c959fc962bda03089d8f317f2f3ca4dd8167241701f7de469ceb982f33cc",
+            "urls": [
+                "https://mega.nz/file/M49hFKrZ#oiJ27D52UL4vV2SCkKbiDS7PErBidGpseDX3D3FMpuQ"
+            ]
+        }
+    ],
+    "trainingIterations": 506951,
+    "trainingEpochs": 83,
+    "dataset": "Animethemes"
+}

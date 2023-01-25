@@ -1,0 +1,36 @@
+{
+    "name": "4x-AnimeSharp-lite",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: \n\nThis model is a lite version of AnimeSharp. It was trained using student-teacher learning (if i'm using the term properly), where the HRs are LRs upscaled by the full size AnimeSharp ESRGAN model, and the lite model is trained on those outputs as the HR. It works best on clean or slightly blurry anime. Downscale by 50% first in almost all cases",
+    "date": "2022-02-11",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20173354,
+            "sha256": "a0a224521dcc547768e8442e83b68f98f485b3cbcc8bd207a6284fff6636329c",
+            "urls": [
+                "https://mega.nz/folder/bEoRQIRR#kEsaVHtwRL9vwfa5k2osyQ"
+            ]
+        }
+    ],
+    "trainingIterations": 98000,
+    "trainingEpochs": 293,
+    "trainingHRSize": 128,
+    "dataset": "Used only thisanimedoesnotexist, upscaled with 4x-AnimeSharp",
+    "datasetSize": 2700,
+    "pretrainedModelG": "2x-UniScale-CartoonRestore-lite"
+}

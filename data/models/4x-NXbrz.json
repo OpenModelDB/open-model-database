@@ -1,0 +1,31 @@
+{
+    "name": "NXbrz",
+    "author": "archerpolation",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nBasic pixel art upscaling, for people who want a more simpler style and lightweight pixel art upscaling model.",
+    "date": "2021-06-09",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67025055,
+            "sha256": "a822ae2dcf86934e53ad3201d5a39c86d3da1f75ff186e5b7be340b3a605dccd",
+            "urls": [
+                "https://drive.google.com/drive/folders/1mYTMpwDlKQulBmjgKpcxL3-T6xAGXVxl?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 150000,
+    "dataset": "Images upscaled with the Xbrz scaling filter and images upscaled with the ScaleNX filter, combined together to create a mix of both models."
+}

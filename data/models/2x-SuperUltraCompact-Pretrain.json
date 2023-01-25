@@ -1,0 +1,28 @@
+{
+    "name": "SuperUltraCompact Pretrain",
+    "author": "zarxrax",
+    "license": "WTFPL",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Pretrained Models\nPurpose: Pretrained\n\nThis is a collection of pretrained models for Real-ESRGAN's Compact architecture. There are 1x, 2x, and 4x models, as well as 1x and 2x \"UltraCompact\" and \"SuperUltraCompact\" models (think of these as the equivalent to ESRGAN \"lite\" models). By using these are pretrains for your models, you can ensure that your models are able to be interpolated with other Compact models that were trained from these. These pretrains are compatible with most existing compact models.",
+    "date": "2022-07-31",
+    "architecture": "Compact",
+    "size": [
+        "24nf",
+        "8nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": "c34cae569319688f1fa10aa75c5734040896790e41bb23f128cd633923d850e5",
+            "sha256": null,
+            "urls": [
+                "https://mega.nz/file/Bc0SmIyK#ThTyculaFvrLGMIY8FicUUWBem8O_ZF8LgpPXCn7aVQ"
+            ]
+        }
+    ]
+}

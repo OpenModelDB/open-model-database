@@ -1,0 +1,29 @@
+{
+    "name": "Skyrim Misc",
+    "author": "deorder",
+    "license": "CC0-1.0",
+    "tags": [
+        "image",
+        "game-textures"
+    ],
+    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: ?\n\nSkyrim Diffuse Textures",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66952133,
+            "sha256": "e3387b3d31f789a9e6b56e68a573b6894d8a8ecca0421d8824385fe957f226b6",
+            "urls": [
+                "https://drive.google.com/file/d/1RjVWNUFtVyz4ykqu6Pm9wmO03pPEBGqg/view"
+            ]
+        }
+    ]
+}

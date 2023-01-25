@@ -1,0 +1,37 @@
+{
+    "name": "1x_Filmify4K_v2_325000_G.pth",
+    "author": "muf",
+    "license": "CC0-1.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Video Compression\nPurpose: artifact\nPretrained: 1x_UnResize_V3_110000_G.pth\n\nThis model attempts to make films upscaled to 4K with Topaz Gaia-HQ look more natural and filmic. It sharpens, adds film grain, and smooths out small artefacts from the upscaling process. I recommend adding a tiny amount of grain to the input to seed the model (you can do this in VEAI), otherwise the film grain will remain static across frames that don't move much. Pretrain model used with permission to relicense from Twittman.",
+    "date": "2021-07-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "23ff46b9abb075f52b3cea3b30d534a15a5f9e3165a47a9fef8a1da72965478c",
+            "urls": [
+                "https://drive.google.com/drive/folders/1ZcMD3hy1YCm-hsrT6xYGvhboxSzhrJKg"
+            ]
+        }
+    ],
+    "trainingIterations": 325000,
+    "trainingEpochs": 488,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "Still frames from the 4K Blu-Ray of Lawrence of Arabia, downscaled to 1080p and upscaled with Gaia-HQ for the LRs",
+    "datasetSize": 8200,
+    "pretrainedModelG": {
+        "description": "1x_UnResize_V3_110000_G.pth"
+    }
+}

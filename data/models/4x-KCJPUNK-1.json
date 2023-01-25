@@ -1,0 +1,36 @@
+{
+    "name": "4X_KCJPUNK_1.0233089 G.pth",
+    "author": "kcjpunk",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: 4x_fatal_Anime_500000_G\n\nUp-scaling Digital Animation",
+    "date": "2021-03-23",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "38785d83c1bb1cb8b355f445dceeb99166c86d7128c053995ae964e11cede7e6",
+            "urls": [
+                "https://mega.nz/folder/QsUWWJjb#SIuqcPEzrkpLW0WNSth66g"
+            ]
+        }
+    ],
+    "trainingIterations": 233089,
+    "trainingEpochs": 274,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "1080P BD anime frames",
+    "datasetSize": 20000,
+    "pretrainedModelG": "4x-Fatal-Anime"
+}

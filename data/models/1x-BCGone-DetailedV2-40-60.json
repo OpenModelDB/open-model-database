@@ -1,0 +1,36 @@
+{
+    "name": "1x_BCGone-DetailedV2_40-60_115000_G",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\nPretrained: 1xESRGAN\n\n",
+    "date": "2021-03-18",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "65d33aa536fd605f3f05cab27029f290bba57d41cbf6f5acc2d461fc5a83fac4",
+            "urls": [
+                "https://drive.google.com/drive/folders/1pnyPklpLPtMAHeNC5NVU1mV_Qh61wWnx?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 115000,
+    "trainingEpochs": 341,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Realistic images",
+    "pretrainedModelG": "1x-ESRGAN"
+}

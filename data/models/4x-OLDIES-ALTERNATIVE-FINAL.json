@@ -1,0 +1,38 @@
+{
+    "name": "4x_OLDIES_ALTERNATIVE_FINAL.pth",
+    "author": "solidd93110",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: RRDB_PSNR_x4.pth\n\nThis model was made for my project captain tsubasa anime so i don't know if it works good for anything else. just try it ;)",
+    "date": "2020-09-01",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906130,
+            "sha256": "92828eb90a56eab72f2bf1227ec6e7204378c499400286e46e3016b6a514bc8d",
+            "urls": [
+                "https://1fichier.com/?u7kwdxdn6uljha3icte8"
+            ]
+        }
+    ],
+    "trainingEpochs": 483,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "dataset": "different frames from different anime blu-ray",
+    "datasetSize": 1250,
+    "pretrainedModelG": {
+        "description": "RRDB_PSNR_x4.pth"
+    }
+}

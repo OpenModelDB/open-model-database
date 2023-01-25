@@ -1,0 +1,30 @@
+{
+    "name": "BigFace_v3",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "faces",
+        "face-upscaling"
+    ],
+    "description": "Category: Faces\nPurpose: Art/People\nPretrained: 4x_BigFace\n\n",
+    "date": "2020-07-22",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906130,
+            "sha256": "e8e7a3ecccc405c823db1504a66a9027e0c5f2745ed4d9412ff5043f54577863",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY27CHg3-1Uue5KgbtK?e=6k0COU"
+            ]
+        }
+    ]
+}

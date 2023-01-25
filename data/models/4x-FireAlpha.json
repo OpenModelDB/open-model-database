@@ -1,0 +1,31 @@
+{
+    "name": "FireAlpha",
+    "author": "blueamulet",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Alphas\nPurpose: Alpha (4 channel)\nPretrained: none\n\n",
+    "date": "2019-11-12",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 4,
+    "outputChannels": 4,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66959003,
+            "sha256": "53f77c587b782c4bfbdbcccc7d6cf9b26b11ba92b8cb58e9d017bed00faeb047",
+            "urls": [
+                "https://drive.google.com/open?id=192Mw2_yUwCgqt3tAJ2sRxZ8hYHe4CKrZ"
+            ]
+        }
+    ],
+    "trainingIterations": 1285000,
+    "trainingHRSize": 128,
+    "dataset": "Fire Emblem artwork with transparency"
+}

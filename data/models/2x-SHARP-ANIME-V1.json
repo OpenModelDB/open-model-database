@@ -1,0 +1,36 @@
+{
+    "name": "2x_SHARP_ANIME_V1",
+    "author": "solidd93110",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 2xPSNR.pth\n\nthis model has been trained to work on lines and details - works well on animes which have fairly fine lines at the base but also the video must be progressive or deinterlaced",
+    "date": "2020-09-12",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66810509,
+            "sha256": "d8b93d65369ddd366df4dfa58f22cd652104a5cfc34ccc02ef3c45d51b089099",
+            "urls": [
+                "https://1fichier.com/?cnw3fwws08tdoaxycimj"
+            ]
+        }
+    ],
+    "trainingEpochs": 155,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "lr is from anime version dvd and HR from anime blu-ray",
+    "datasetSize": 7738,
+    "pretrainedModelG": "2x-PSNR"
+}

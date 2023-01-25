@@ -1,0 +1,37 @@
+{
+    "name": "1x_PixelSharpen_100000",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "deblur"
+    ],
+    "description": "Category: Blurring\nPurpose: Pixel Art\nPretrained: 1xESRGAN\n\nRestores blurry/upscaled pixel art.",
+    "date": "2021-03-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66661571,
+            "sha256": "357c3fc55a402b55e76647f21e8f790bfd583e97edac2ae1170beb9b3e88d728",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY27TDhiFPB39jM0pwq?e=5zAFtO"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 300,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "PixelJoint pixel art",
+    "datasetSize": 186,
+    "pretrainedModelG": "1x-ESRGAN"
+}

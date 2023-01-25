@@ -1,0 +1,39 @@
+{
+    "name": "Sol Levante NTSC2HD",
+    "author": "pheonix",
+    "license": "Unlicense",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\nPretrained: RRDB_PSNR_x4\n\nNTSC DVD-spec encode x4 scale super-resolution for Anime Drawing style content. The dataset has a LOT of data throughout almost every frame, so it had a lot of stuff to learn. The resulting DVD-spec encode also had some blocking at times so it also learned to fight off blocking.",
+    "date": "2020-04-08",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66960011,
+            "sha256": "d52833b5067a352b5894598d46d45b39c0c832ae42b34fdb2ddc8cba61a16a89",
+            "urls": [
+                "https://drive.google.com/open?id=1H3F8OVBnK2cd5NjbCyc3tGwTZJBF1gk7"
+            ]
+        }
+    ],
+    "trainingIterations": 300000,
+    "trainingEpochs": 1522,
+    "trainingBatchSize": 32,
+    "trainingHRSize": 128,
+    "dataset": "```HR: http://download.opencontent.netflix.com.s3.amazonaws.com/SolLevante/hdr10/SolLevante_HDR10_r2020_ST2084_UHD_24fps_1000nit.mov downscaled to 2880x1920 (720*4x480*4)",
+    "datasetSize": 6309,
+    "pretrainedModelG": {
+        "description": "RRDB_PSNR_x4"
+    }
+}

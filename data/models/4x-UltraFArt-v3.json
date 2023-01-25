@@ -1,0 +1,36 @@
+{
+    "name": "UltraFArt_v3",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Art\nPretrained: 4x_UltraFArt\n\nIllustrations with with larger shaped features (?).",
+    "date": "2021-05-14",
+    "architecture": "ESRGAN",
+    "size": [
+        "128nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 139929695,
+            "sha256": "9e953fd6f06ab3caabaf40ee9cdd054743fe79198520ce831e3646f9b7b4e15c",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY27UIFr1mk87zFytap?e=SSxKaV"
+            ]
+        }
+    ],
+    "trainingBatchSize": 1,
+    "trainingHRSize": 320,
+    "trainingOTF": true,
+    "dataset": "ArtStation + Fatality Faces tiles.",
+    "pretrainedModelG": {
+        "description": "4x_UltraFArt"
+    }
+}

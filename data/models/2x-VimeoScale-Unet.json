@@ -1,0 +1,34 @@
+{
+    "name": "2x_VimeoScale_Unet",
+    "author": "sazoji",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained Discriminators\nPurpose: Upscaling video content\nPretrained: Self-Trained Base for the Unet finalisation with vgg_fea discrim\n\nThis model is meant to surpass VEAI 2x while being efficient to run quickly with fp16. The real-esrgan/BSRGAN augmentation and Unet should help with videos where the resolution is not ideal and can reconstruct details without effecting blurs in most cases. This model SHOULD run faster than real-esrgan while matching the resolving and enabling some multiframe feature extraction. No major denoising/compression/blurring effects (or artifacts) should be found.",
+    "date": "2021-09-09",
+    "architecture": "SOFVSR",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 21938817,
+            "sha256": "d83d246f10c93057047abab15dab113075b3595eae41c6cc539e9e8f5ca5181c",
+            "urls": [
+                "https://mega.nz/folder/qslgTZYQ#wE9l53sTH78B6wjPX5GRwQ"
+            ]
+        }
+    ],
+    "trainingBatchSize": 13,
+    "trainingHRSize": 128,
+    "dataset": "Combination of Collected Vimeo scenes (CG, realistic/video, movie trailers, and motion graphics) at original quality and REDS_sharp",
+    "pretrainedModelG": {
+        "description": "Self-Trained Base for the Unet finalisation with vgg_fea discrim"
+    }
+}

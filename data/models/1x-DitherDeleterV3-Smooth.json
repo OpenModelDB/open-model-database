@@ -1,0 +1,37 @@
+{
+    "name": "1x_DitherDeleterV3-Smooth",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "dedither"
+    ],
+    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: 1xESRGAN\n\nAttempts to remove the damages done by dithering. For this model, I downscaled all of the HR images to make their pixel size closer to 1000x1000 using the Box filter and then downscaled them again by 50% using the Point filter. Afterwards, I applied 32-bit Riemersma to every image in the dataset.",
+    "date": "2021-04-18",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "1e98cb5427d16baeb83033c574d1ca4d8dadf05dd043b32c3ba98f75e30f6205",
+            "urls": [
+                "https://drive.google.com/drive/folders/1XKREcpHnaYz_dcmkMPDbyETcXzDcQsR2?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 115000,
+    "trainingEpochs": 839,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Random anime images",
+    "datasetSize": 550,
+    "pretrainedModelG": "1x-ESRGAN"
+}

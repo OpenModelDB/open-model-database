@@ -1,0 +1,37 @@
+{
+    "name": "1x_Bandage-Smooth",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "debanding"
+    ],
+    "description": "Category: Banding\nPurpose: Banding\nPretrained: 1xESRGAN\n\nAttempts to remove the damages done by color banding. For this model, I downscaled all of the HR images to make their pixel size closer to 1000x1000 using the Box filter and then downscaled them again by 50% using the Point filter. Afterwards, I applied 64-bit color banding to every image in the dataset.",
+    "date": "2021-04-16",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "79fe02644b8927c0a3bc0c73a62af496e56a1d438237d6de31438923242a4749",
+            "urls": [
+                "https://drive.google.com/drive/folders/1WD2RqtER_jk0QkPFUySeXhDV2aAO8_nr?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 105000,
+    "trainingEpochs": 765,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Random anime images",
+    "datasetSize": 550,
+    "pretrainedModelG": "1x-ESRGAN"
+}

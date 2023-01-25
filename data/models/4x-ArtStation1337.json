@@ -1,0 +1,29 @@
+{
+    "name": "ArtStation1337",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Digital Art/People\nPretrained: Mainly for digital art, but can be used to upscale pixel art.\n\n",
+    "date": "2019-08-21",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "cedeb9414481475b02063cbdd4cdddeb95511f8bd03cafc27ce3a8f4a86314dd",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY21WF47rcqn7fhr7fq?e=I8mnX6"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "name": "VHS-Sharpen-1x",
+    "author": "rtx-2080-ti-hoarder",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: VHS Tapes\nPurpose: VHS\nPretrained: 1xESRGAN\n\nMake old VHS footage crispy. This model will not work on video and images with noticeable JPEG/Video compression artifacts, noticeable interlacing or haloing, heavy tape distortion/artifacts and scenes with tons of detail. For best results, use a downscaled HD capture of the VHS tape you intend to use it on.",
+    "date": "2021-03-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "201b470286fffe5d9f3cb75cd259ab50dce11a339920ee5f8a06180c3e2ec30e",
+            "urls": [
+                "https://mega.nz/file/Z5IXBSrA#bE9VasE60zLqZ_NggOhs40Z9l2z8DapROZb5VX0F3h0"
+            ]
+        }
+    ],
+    "trainingIterations": 46000,
+    "trainingEpochs": 34,
+    "trainingBatchSize": 5,
+    "trainingHRSize": 64,
+    "dataset": "4K Blu-Ray movie stills, de-grained and downscaled, and ran through a VCR onto a VHS.",
+    "datasetSize": 9384,
+    "pretrainedModelG": "1x-ESRGAN"
+}

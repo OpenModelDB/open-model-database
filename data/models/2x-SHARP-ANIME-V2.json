@@ -1,0 +1,37 @@
+{
+    "name": "2x_SHARP_ANIME_V2",
+    "author": "solidd93110",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: \n\n2x_PSNR.pth",
+    "date": "2020-12-09",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66758126,
+            "sha256": "5f858442165478ddac475e75c24b9091b1f3c198aba1fe5d7e22008f43c2a87f",
+            "urls": [
+                "https://1fichier.com/?020t1y83kjrusd95dh0a"
+            ]
+        }
+    ],
+    "trainingIterations": 275000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "LR from severals dvd anime and HR from bluray anime",
+    "datasetSize": 3600,
+    "pretrainedModelG": "2x-PSNR"
+}

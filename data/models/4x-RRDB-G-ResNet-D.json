@@ -1,0 +1,37 @@
+{
+    "name": "4x_RRDB-G_ResNet-D (Both G and D)",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Pretrained Discriminators\nPurpose: Pretrained\nPretrained: RRDB_ESRGAN_x4_old_arch.pth\n\nClean bicubic downscales / Pretrained models (G/D)",
+    "date": "2021-01-17",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "8d55ed06dc0d3ab3f355035f8de49b86e2c2bb8cf3e046330af6fcf673fa87ce",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZPxrYXZOBnSmRzYywHg9heV55yt0JvKC3gk"
+            ]
+        }
+    ],
+    "trainingIterations": 175000,
+    "trainingEpochs": 1161,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "DIV2K train + val",
+    "datasetSize": 900,
+    "pretrainedModelG": {
+        "description": "RRDB_ESRGAN_x4_old_arch.pth"
+    }
+}

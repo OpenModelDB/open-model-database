@@ -1,0 +1,36 @@
+{
+    "name": "2x_FakeFaith-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "game-textures"
+    ],
+    "description": "Category: Video Game Textures\nPurpose: Pixel Art\nPretrained: 2x_Faithful-Lite\n\nAn attempt at recreating the \"faithful\" style without using the faithful dataset -- aka keeping the \"pixel art\" style of pixel art.",
+    "date": "2020-10-12",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "51ee3b4b05422f1e48aee115c05dc6dca8fd5ff7b8341e7f6b84be820696c9db",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZUMKFXZUG6BpzHR6wFGack19pvWgbQQ9OA7"
+            ]
+        }
+    ],
+    "trainingIterations": 105000,
+    "trainingEpochs": 102,
+    "trainingBatchSize": 24,
+    "trainingHRSize": 64,
+    "dataset": "Spongebob Season 11 frames, downscaled 50% with NN for the HR, and 50% NN again for the LR",
+    "datasetSize": 24110,
+    "pretrainedModelG": "2x-Faithful-Lite"
+}

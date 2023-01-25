@@ -1,0 +1,33 @@
+{
+    "name": "MangaScaleV3",
+    "author": "bunzero",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "manga"
+    ],
+    "description": "Category: Manga\nPurpose: Manga\nPretrained: unreleased model\n\nTo upscale manga including halftones, instead of trying to smooth them out.",
+    "date": "2021-05-24",
+    "architecture": "ESRGAN+",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67335278,
+            "sha256": "da2b113388bf199d69202b06d5c803d1dd85ce61955c7870f1106530a2ce142a",
+            "urls": [
+                "https://mega.nz/file/nR51EYYC#RcAKkxb8hAzvZAj4TLxnAukd9gbrYuUeyjUp2l1ffb8"
+            ]
+        }
+    ],
+    "dataset": "Self curated custom manga dataset",
+    "pretrainedModelG": {
+        "description": "MangaScaleV2(not released)"
+    }
+}

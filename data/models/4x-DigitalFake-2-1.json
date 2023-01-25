@@ -1,0 +1,37 @@
+{
+    "name": "4x_DigitalFake-2.1",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: RRDB_ESRGAN_x4_old_arch.pth\n\nReplica of DigitalFrames 2.1 but interpolatable",
+    "date": "2021-02-18",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "edb26c6f6d09526d4ee6d3c6c3ecb3bff5e48a2b1ebad91a320cd0a978f1ff37",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=XZQlqjXZPNgmLRJl5HLLG0M3VRmzmzmHr5hk"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 841,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "DIV2K and spongebob frames, downscaled with box and upscaled with Digitalframes 2.1",
+    "datasetSize": 946,
+    "pretrainedModelG": {
+        "description": "RRDB_ESRGAN_x4_old_arch.pth"
+    }
+}

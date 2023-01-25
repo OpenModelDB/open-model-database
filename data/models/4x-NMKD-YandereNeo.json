@@ -1,0 +1,36 @@
+{
+    "name": "NMKD YandereNeo",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 4x_DIV2K-Lite_1M\n\n",
+    "date": "2021-01-26",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20173354,
+            "sha256": "988f57dd12e63cf7aad10192fd06518e3300b449362df2a03eb1f9774a10f8b3",
+            "urls": [
+                "https://icedrive.net/1/f0UAiRqz3N"
+            ]
+        }
+    ],
+    "trainingIterations": 320000,
+    "trainingBatchSize": 4,
+    "dataset": "Yandere1200 (yande.re artworks)",
+    "pretrainedModelG": {
+        "description": "4x_DIV2K-Lite_1M (`4x_NMKD-YandereNeo-Lite_320k` for the 2x conversion)"
+    }
+}

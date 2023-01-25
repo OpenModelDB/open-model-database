@@ -1,0 +1,33 @@
+{
+    "name": "1x_BC1-smooth2.pth",
+    "author": "blueamulet",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\nPretrained: none\n\nA model to help remove compression artifacts in BC1-BC3/DXT1-DXT5 compressed images (these all have color encoded the same way)",
+    "date": "2019-09-05",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66658222,
+            "sha256": "c41c6fd52bd9d1e98ec9e9fe036b183d5df74b554df68a9ec99a8c7430556d4b",
+            "urls": [
+                "https://drive.google.com/open?id=1LHplsPRqhmjR28jGgRlEekeP_bvx3nUC"
+            ]
+        }
+    ],
+    "trainingIterations": 1000000,
+    "trainingBatchSize": 20,
+    "trainingHRSize": 32,
+    "datasetSize": 4767
+}

@@ -1,0 +1,34 @@
+{
+    "name": "4x_Nickelfront",
+    "author": "blackscout",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Coins\nPurpose: Coins\nPretrained: 4xESRGAN\n\nUpscale coins. That's it. If you were mad at me because Nickelback doesn't make any sense. Now you have the perfect solution to your problems. If you want to upscale nickels or anything with similar texture made out of metal, now you can. It works pretty well for a joke.",
+    "date": "2020-02-13",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "a1aa83638978dce8da94c963dbc6bf2e6a7538058359b79c07b3e8a477822d28",
+            "urls": [
+                "https://drive.google.com/file/d/1zC97RLUg5ejqb5-4Dj5q-SzdLPLiMozH/view"
+            ]
+        }
+    ],
+    "trainingIterations": 14000,
+    "trainingEpochs": 105,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "Coin images",
+    "pretrainedModelG": "4x-ESRGAN"
+}

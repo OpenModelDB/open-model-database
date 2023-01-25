@@ -1,0 +1,31 @@
+{
+    "name": "2x_SBS11-RRDB",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained Discriminators\nPurpose: Animation\nPretrained: \n\nnone",
+    "date": "2020-12-03",
+    "architecture": "SOFVSR",
+    "size": null,
+    "scale": 2,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 68643398,
+            "sha256": "2606fdf62fc6423207382e63e56bcabf705360a029160d9758e8f103fcfc9550",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZ5QKLXZ5mPYmsGpGU75DLNII9AOlYQNqMjk"
+            ]
+        }
+    ],
+    "trainingIterations": 111000,
+    "trainingEpochs": 11,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "dataset": "Every 6 frames from every episode of Spongebob Season 11 (DVD and HD). DVD was resized with Spline36 to 540p. LR also got extra OTF JPEG (1/4 chance) and sharpening (15% chance)",
+    "datasetSize": 126956
+}

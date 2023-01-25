@@ -1,0 +1,35 @@
+{
+    "name": "UniScale-Strong",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "general-upscaler"
+    ],
+    "description": "Category: Universal Models\nPurpose: Universal Upscaler\nPretrained: 4xESRGAN\n\nUniScale strikes a nice balance between sharpness and realism. This model can upscale almost anything well. It was originally intended to upscale game textures, but was expanded into a universal upscaler. Interp is these two models interpolated.",
+    "date": "2021-08-23",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "5d80a6b236e8ee9632bb4df6a319635d0f0cb2889b368a884b6fcc914f12bbee",
+            "urls": [
+                "https://mega.nz/folder/WEwUCDSJ#b1eXDT9b7yMKVlOURbR4FQ/folder/ed5xGaoa"
+            ]
+        }
+    ],
+    "trainingIterations": 140000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "Custom Dataset consisting of lossless 4k frames from Metal Arms: Glitch in the System, Just Cause 3, Dirt 3, Forza Horizon 3, Sleeping Dogs, and self-edited photos from SignatureEdits",
+    "datasetSize": 18909,
+    "pretrainedModelG": "4x-ESRGAN"
+}

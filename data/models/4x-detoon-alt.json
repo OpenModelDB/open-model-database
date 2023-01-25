@@ -1,0 +1,28 @@
+{
+    "name": "detoon alt",
+    "author": "lyonhrt",
+    "license": null,
+    "tags": [
+        "image"
+    ],
+    "description": "Category: DeToon\nPurpose: Detooning\nPretrained: \n\nA toon to realistic shading style model to wiki under drawings",
+    "date": "2019-06-24",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "6a6a7b8d1a1b8ef6dc4b8bdf023a528a0ca4e777d223e908cedf6cdb595dc79b",
+            "urls": [
+                "https://drive.google.com/open?id=1uJvdx3g3GEY0VxMnHb0ItBvoc6pmGvuH"
+            ]
+        }
+    ]
+}

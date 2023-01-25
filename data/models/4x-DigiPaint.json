@@ -1,0 +1,37 @@
+{
+    "name": "DigiPaint",
+    "author": "rastrum",
+    "license": "CC0-1.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Drawings\nPurpose: Art\nPretrained: 4xfalcoon300(manga).pth\n\nDigital Art Upscaler",
+    "date": "2019-09-07",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "2cfa121bd09863e1c359069df0d9ebfd56ce9a77f473b9f1c45280c8c825e7e9",
+            "urls": [
+                "https://drive.google.com/open?id=103MX2bvd3GW0MYpC53ABU5VYY6v1t99Y"
+            ]
+        }
+    ],
+    "trainingIterations": 35000,
+    "trainingEpochs": 6,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "dataset": "Random digital art scraped from the internet. Mostly material studies but other stuff as well.",
+    "datasetSize": 48493,
+    "pretrainedModelG": {
+        "description": "4xfalcoon300(manga).pth"
+    }
+}

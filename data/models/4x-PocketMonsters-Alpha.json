@@ -1,0 +1,35 @@
+{
+    "name": "4x_PocketMonsters-Alpha",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\nPretrained: 4xFireAlpha\n\nupscaling pixel art with alpha channels that should perform better than any other. It should work well on both cartoon and 3D styled content.",
+    "date": "2021-02-04",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 4,
+    "outputChannels": 4,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66963219,
+            "sha256": "5298d6ab606ec36a54acb220eb47c846f15609bc478ffbe2652897fe93a38ebf",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZrIFhXZxnpi72FuwgLz7FIDw8kdrp2suIEk"
+            ]
+        }
+    ],
+    "trainingIterations": 115000,
+    "trainingEpochs": 209,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "Pokemon drawings, vector art, and Pokemon Home 3D render sprites, downscaled to 256x256 for HR and downscaled with nearest neighbor for LR.",
+    "datasetSize": 4415,
+    "pretrainedModelG": "4x-FireAlpha"
+}

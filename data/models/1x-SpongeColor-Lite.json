@@ -1,0 +1,34 @@
+{
+    "name": "1x_SpongeColor-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "colorization"
+    ],
+    "description": "Category: Image De/Colorization\nPurpose: Colorization\nPretrained: none\n\nThe first attempt at ESRGAN colorization that produces more than 2 colors. Doesn't work that great but it was a neat experiment.",
+    "date": "2020-10-15",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 1,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20096297,
+            "sha256": "60bb61bffe5b2260670f7530173770f35a856a6919eec5962985ac97150bdeec",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZpAGFXZARxWIu9Pp4YDLUSIN8I8aFuJ5TKV"
+            ]
+        }
+    ],
+    "trainingIterations": 55000,
+    "trainingEpochs": 22,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 64,
+    "dataset": "Spongebob season 11 and DIV2K, randomly downscaled and then converted to grayscale"
+}

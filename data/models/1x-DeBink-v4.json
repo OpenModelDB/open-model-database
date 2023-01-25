@@ -1,0 +1,34 @@
+{
+    "name": "DeBink v4",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Video Compression\nPurpose: Compression\nPretrained: none\n\nThis model removes early 2000s Bink and other compression artifacts. Works well on almost any image or video compression type.",
+    "date": "2021-06-08",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "bd60dea74ddef2dc6b496eaf74a3ae1e8c95c3272211e34d4df80aaee9be155e",
+            "urls": [
+                "https://mega.nz/folder/bYxyWaZI#YQXKPVCSPF4jzHDZUcI27A"
+            ]
+        }
+    ],
+    "trainingEpochs": 36,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 64,
+    "dataset": "Lossless footage of Metal Arms: Glitch in the System from Dolphin emulator (provided by zstorm4), LR compressed with Bink and frames extracted losslessly",
+    "datasetSize": 3620,
+    "pretrainedModelG": "1x-ESRGAN"
+}

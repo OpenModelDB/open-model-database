@@ -1,0 +1,36 @@
+{
+    "name": "1x_Dotzilla_Compact",
+    "author": "zarxrax",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\nPretrained: 1x_Compact_Pretrain.pth\n\nWipes out dot crawl and rainbows in animation.",
+    "date": "2022-12-09",
+    "architecture": "Compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 4796829,
+            "sha256": "197d59563f635e4ab7c78f558376b7c903737fe14889d3294ec198df27955507",
+            "urls": [
+                "https://mega.nz/file/VQkDmSgb#dlVuJZQ__yAKdJaWA_4Nx52YU_c2qy_a2oG9_a98dO4"
+            ]
+        }
+    ],
+    "trainingIterations": 80000,
+    "trainingHRSize": 192,
+    "dataset": "Blue Submarine No. 6 Toonami version aligned to the 2016 Discotek DVD release made up about half of the dataset. The remainder was hand selected frames from a variety of animated series cleaned up with Avisynth.",
+    "datasetSize": 177,
+    "pretrainedModelG": "1x-Compact-Pretrain"
+}

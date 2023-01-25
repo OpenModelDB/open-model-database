@@ -1,0 +1,28 @@
+{
+    "name": "Ground",
+    "author": "tldr-coder",
+    "license": "WTFPL",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Foliage/Ground\nPurpose: Upscales ground textures\nPretrained: \n\nDataset: Custom (Ground textures Google)",
+    "date": "2021-06-23",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "98622655ed35c7d355e4119e35d1d3362a03ffd4fc00377055fcd725db0045dc",
+            "urls": [
+                "https://drive.google.com/file/d/1dGmhHUPmb3lO9buX_Bt2nq97Nk5MCTb4/view"
+            ]
+        }
+    ]
+}

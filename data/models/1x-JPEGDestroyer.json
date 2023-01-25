@@ -1,0 +1,38 @@
+{
+    "name": "1x_JPEGDestroyer",
+    "author": "blackscout",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: 1xESRGAN + previous attempts\n\nThis model is meant to reduce or eliminate JPEG Compression without making the original images too smooth or killing detail. It manages to do a fairly good job but don't expect overly compressed images to work with this.",
+    "date": "2020-02-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "87de04f371961fad38446871a305ef38817dfce8ccacd33db8c836737b0bdde7",
+            "urls": [
+                "https://drive.google.com/file/d/1C0Lnn3PfXrm4UX9trjQIWsmxtspjQjmm/view?usp=drivesdk"
+            ]
+        }
+    ],
+    "trainingIterations": 96000,
+    "trainingEpochs": 9,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 128,
+    "dataset": "LR: 40-60% quality 4:2:0/4:4:4 randomly compressed images",
+    "datasetSize": 10100,
+    "pretrainedModelG": {
+        "description": "1xESRGAN + previous attempts"
+    }
+}

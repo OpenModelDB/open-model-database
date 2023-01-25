@@ -1,0 +1,38 @@
+{
+    "name": "1x_BroadcastToStudioLite_485k",
+    "author": "saurusx",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: Will greatly increase the visual quality of bad broadcast tape sources of '80s and '90s cartoons (e.g. Garfield and Friends, Heathcliff, DuckTales, etc). Directly addresses chroma blur, dot crawl, and rainbowing. You're highly advised to take care of haloing beforehand in your favorite video editor as the model will not fix it and may make existing halos more noticeable.\n\nImprovement of low-quality cartoons from broadcast sources.",
+    "date": "2022-03-05",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20098601,
+            "sha256": "912ff494e454a135ba2341d522c38089736654daf32bd6c7bb81549bb9512d38",
+            "urls": [
+                "https://mega.nz/file/TO4S3KoT#eOiYCKWp0-O0rgBC0xgUl87DrPTbZ2or-NDgf22kPGA"
+            ]
+        }
+    ],
+    "trainingIterations": 485000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "DVD",
+    "datasetSize": 3418,
+    "pretrainedModelG": {
+        "description": "Will greatly increase the visual quality of bad broadcast tape sources of '80s and '90s cartoons (e.g. Garfield and Friends, Heathcliff, DuckTales, etc). Directly addresses chroma blur, dot crawl, and rainbowing. You're highly advised to take care of haloing beforehand in your favorite video editor as the model will not fix it and may make existing halos more noticeable."
+    }
+}

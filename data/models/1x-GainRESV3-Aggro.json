@@ -1,0 +1,36 @@
+{
+    "name": "1x_GainRESV3 (Aggro)",
+    "author": "cf2lter",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anti-aliasing"
+    ],
+    "description": "Category: Aliasing\nPurpose: Anti aliasing / Deblur\nPretrained: BCGONE_DetailedV2\n\nTo eliminate aliasing and general artifacts caused by not enough resolution while bringing out details Im stopping its training here because it's getting worse, i think of some aligment issues by game's rendering pipeline + downscaling... Dataset: 5K resolution shots from paladins rendered by 200% for hr and 37.5%(1080p) for lr then downscaled to 1080",
+    "date": "2022-02-26",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "254f3c5dd1c21097d770d5878072e8cb4cec43d38e9bac76d35778b45a83c49f",
+            "urls": [
+                "https://mega.nz/folder/yg0lHQoJ#sP8_BfDk2YlshFjOL9Qrtg"
+            ]
+        }
+    ],
+    "trainingIterations": 9000,
+    "trainingEpochs": 1000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 32,
+    "dataset": "5K resolution shots from paladins rendered by 200% for hr and 37.5%(1080p) for lr then downscaled to 1080",
+    "datasetSize": 150,
+    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60"
+}

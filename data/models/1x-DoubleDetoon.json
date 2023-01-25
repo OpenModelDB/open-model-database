@@ -1,0 +1,36 @@
+{
+    "name": "1xDoubleDetoon",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: DeToon\nPurpose: Detooning\nPretrained: 1xESRGAN\n\nAn attempt to detoon images/drawings of people",
+    "date": "2020-07-31",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "780a091b2409fdfd1ee7cb4896af52e904043a50c33aa4304f25cd8d8a82343e",
+            "urls": [
+                "https://drive.google.com/file/d/12vkDn35cuVnq2KYpkaA3XfCmk6zY_u4_/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 58,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "trainingOTF": true,
+    "dataset": "Images from reddit, cartoonized using https://github.com/SystemErrorWang/White-box-Cartoonization",
+    "datasetSize": 6604,
+    "pretrainedModelG": "1x-ESRGAN"
+}

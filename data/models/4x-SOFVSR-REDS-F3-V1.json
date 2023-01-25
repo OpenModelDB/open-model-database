@@ -1,0 +1,30 @@
+{
+    "name": "SOFVSR_REDS_F3_V1",
+    "author": "sunseille",
+    "license": "WTFPL",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\nPretrained: none\n\nupscale IRL videos. Use not recommended by creator",
+    "date": "2021-02-26",
+    "architecture": "SOFVSR",
+    "size": null,
+    "scale": 4,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 69022363,
+            "sha256": "76fefbc8147d7f11b7cb919c419fd024e38074ee481cdbbc3937638decc21a3f",
+            "urls": [
+                "https://mega.nz/file/bpA2QTxI#j_ALxzI5rNjt-T5XcOu8P6ogtAjmFHJeggJbXLGy_Nc"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "REDS"
+}

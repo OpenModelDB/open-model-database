@@ -1,0 +1,29 @@
+{
+    "name": "1x_DeBLR",
+    "author": "blackscout",
+    "license": null,
+    "tags": [
+        "image",
+        "deblur"
+    ],
+    "description": "Category: Blurring\nPurpose: Deblur\nPretrained: \n\nGeneral Deblurring",
+    "date": "2020-02-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66658224,
+            "sha256": "33bacbe39bdd40fc41a8d080f2d10b7a2276689c3e983a26f7f3c4c02ad3bdff",
+            "urls": [
+                "https://mega.nz/file/zcBRHRbJ#iLStv-F5ax-vQBPG7N6OaRv_xBhRHux3pdnSG43GuMg"
+            ]
+        }
+    ]
+}

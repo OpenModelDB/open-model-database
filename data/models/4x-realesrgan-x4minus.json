@@ -1,0 +1,39 @@
+{
+    "name": "realesrgan-x4minus",
+    "author": "dinjerr",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "general-upscaler"
+    ],
+    "description": "Category: Universal Models\nPurpose: General Upscaler\nPretrained: realesrgan-x4plus\n\nBasically realesrgan-x4plus without the degradation training. Supposed to help retain more details, but unfortunately due to the dataset (I think) still blurs details adjacent to other objects.",
+    "date": "2022-04-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67020037,
+            "sha256": "4cb1e750d8402daf59e450a8ba0a23beab728b246e589363a14fe547481b631b",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY282_jrOsPVdjxc3by?e=2paTnK"
+            ]
+        }
+    ],
+    "trainingIterations": 400000,
+    "trainingEpochs": 44,
+    "trainingBatchSize": 2,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "dataset": "Same as realesrgan-x4plus, but later modified to crop some shallow focus images.",
+    "datasetSize": 58000,
+    "pretrainedModelG": {
+        "description": "realesrgan-x4plus"
+    }
+}

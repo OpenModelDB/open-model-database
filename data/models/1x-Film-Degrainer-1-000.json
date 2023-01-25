@@ -1,0 +1,30 @@
+{
+    "name": "Film-Degrainer_1-000",
+    "author": "tika",
+    "license": "CC0-1.0",
+    "tags": [
+        "image",
+        "denoise"
+    ],
+    "description": "Category: Noise\nPurpose: denoise\nPretrained: none\n\nRemove film grain/noise",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "47nf",
+        "17nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 37843615,
+            "sha256": "6a4ecccaea32825a09150df1106fd6990308e1442d71c1bd9f6a17e6196364fd",
+            "urls": [
+                "https://drive.google.com/file/d/1kO3fx9FL5rKhoDk2n4kiiPWuCNHojkIR/view",
+                "https://drive.google.com/file/d/1a25Y2S_4LUOOiAyJfFJF29Jp8IGjlBuZ/view"
+            ]
+        }
+    ]
+}

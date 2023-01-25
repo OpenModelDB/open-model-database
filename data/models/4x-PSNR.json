@@ -1,0 +1,28 @@
+{
+    "name": "4x PSNR Pretrained Model",
+    "author": "blueamulet",
+    "license": "Apache-2.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Pretrained Models\nPurpose: Pretrained\nPretrained: RRDB_PSNR_x4.pth\n\nThe original RRDB_PSNR_x4.pth model converted to 1x, 2x, 8x and 16x scales, intended to be used as pretrained models for new models at those scales. These are compatible with victor's 4xESRGAN.pth conversions",
+    "date": "2020-04-20",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66954395,
+            "sha256": "985fba37421353716ef2fbd7fbbab061e76409994d168cf52527aa8ee53f81ec",
+            "urls": [
+                "https://drive.google.com/open?id=1ldwajXL50uC7PCS63B4Wato6Dnk-svNL"
+            ]
+        }
+    ]
+}

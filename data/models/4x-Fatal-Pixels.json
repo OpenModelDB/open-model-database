@@ -1,0 +1,29 @@
+{
+    "name": "Fatal Pixels (4x_FatalPixels_340000_G.pth)",
+    "author": "twittman",
+    "license": null,
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Fatality_MKII_90k\n\nDataset: Anime, Manga",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "d30ac78343e0a7ffaa805b8ab7840fb1d6b9e6083fe1728c651e2064210e5994",
+            "urls": [
+                "https://de-next.owncube.com/index.php/s/KRa4bDzZpAGgyWr"
+            ]
+        }
+    ]
+}

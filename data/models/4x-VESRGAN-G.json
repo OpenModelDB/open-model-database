@@ -1,0 +1,25 @@
+{
+    "name": "VESRGAN_G",
+    "author": "victorca25",
+    "license": null,
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained SOFVSR Models\nPurpose: \nPretrained: none\n\nTrained on REDS' size dataset",
+    "date": null,
+    "architecture": "SOFVSR",
+    "size": null,
+    "scale": 4,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 69026745,
+            "sha256": "3980a2e9ed6895c14a6d6379debe395e412dd9599fd53d951ea7c69d3ac14c0d",
+            "urls": [
+                "https://mega.nz/file/TwwEWD7Q#wCfUvVudI17weYc1JLeM3nTeK2xiMlVdc_JN1Nov3ac"
+            ]
+        }
+    ]
+}

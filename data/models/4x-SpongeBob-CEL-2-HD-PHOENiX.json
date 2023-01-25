@@ -1,0 +1,38 @@
+{
+    "name": "SpongeBob.CEL.2.HD.125ki.499e-PHOENiX.pth",
+    "author": "pheonix",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: RRDB_PSNR_x4.pth\n\nRestorative CEL Animation MPEG-1 and 2 Model specifically crafted for SpongeBob S01.",
+    "date": "2019-12-24",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66929193,
+            "sha256": "cb84a6c8330e115cda0458a23ef98b58af0837763426ca0e6306e7e3adbb2944",
+            "urls": [
+                "https://drive.google.com/open?id=1D3AjglmYlQ2HGda7iw4JXckSGbVBqsQr"
+            ]
+        }
+    ],
+    "trainingIterations": 125000,
+    "trainingEpochs": 5,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "datasetSize": 4012,
+    "pretrainedModelG": {
+        "description": "RRDB_PSNR_x4.pth"
+    }
+}

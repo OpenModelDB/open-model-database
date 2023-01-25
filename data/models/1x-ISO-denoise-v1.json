@@ -1,0 +1,29 @@
+{
+    "name": "1x_ISO_denoise_v1",
+    "author": "alpha",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "denoise"
+    ],
+    "description": "Category: Noise\nPurpose: denoise\nPretrained: 1xESRGAN\n\nRemove high ISO noise",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66658226,
+            "sha256": "7db96abc2636106ec4f1e6152ce4d951fbabc07862442e886f0dd288e7a45d20",
+            "urls": [
+                "https://drive.google.com/file/d/1f5kIr3gG5GjbN_EM96CCB0nqu_2_56gh/view"
+            ]
+        }
+    ]
+}

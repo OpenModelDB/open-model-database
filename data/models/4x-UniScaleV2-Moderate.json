@@ -1,0 +1,35 @@
+{
+    "name": "UniScaleV2_Moderate",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "general-upscaler"
+    ],
+    "description": "Category: Universal Models\nPurpose: Universal Upscaler\nPretrained: 4xESRGAN\n\nThese models work great on game textures when interpolated 50/50 with UniScale_Restore, and work amazingly on uncompressed images. DO NOT USE FOR COMPRESSED IMAGES, use the original UniScale or UltraSharp for that.",
+    "date": "2021-09-06",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67010245,
+            "sha256": "229eddb4e6d3546bc75ac5b19eeced11522ecaf57be9da227d541edf9435605d",
+            "urls": [
+                "https://mega.nz/folder/zZhA1KoD#ds2nmgDNV4hfFpNSfEqN6Q"
+            ]
+        }
+    ],
+    "trainingIterations": 111000,
+    "trainingEpochs": 8,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 112,
+    "dataset": "Custom Dataset consisting of lossless 4k frames from Metal Arms: Glitch in the System, Just Cause 3, Dirt 3, Forza Horizon 3, Sleeping Dogs, and self-edited photos from SignatureEdits + ATLA DVD images",
+    "pretrainedModelG": "4x-ESRGAN"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "2x_BIGOLDIES_415000_G.pth",
+    "author": "solidd93110",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 2x_PSNR.pth\n\nupscaling old anime. help to denoise and find lines and dehalo",
+    "date": "2020-12-09",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66758126,
+            "sha256": "a7bc580a3c4abb2b04a2cc8b47679de207741f79cebc952eedc03b27e2f27cef",
+            "urls": [
+                "https://1fichier.com/?23hzkj20isef5b75cw3y"
+            ]
+        }
+    ],
+    "trainingIterations": 415000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "LR from severals dvd anime and HR from bluray anime",
+    "datasetSize": 2300,
+    "pretrainedModelG": "2x-PSNR"
+}

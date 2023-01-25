@@ -1,0 +1,30 @@
+{
+    "name": "4x_SmolFace Clean",
+    "author": "dinjerr",
+    "license": null,
+    "tags": [
+        "image",
+        "faces",
+        "face-upscaling"
+    ],
+    "description": "Category: Faces\nPurpose: Art/People\nPretrained: 4x_NMKD-UltraYandere_300k\n\nA sharp upscaler trained specifically for small sprite faces. Does not blend, so avoid using on painted/photo portraits unless you were trying to retain more of the outlines somehow.",
+    "date": "2022-08-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "7199e861ab465eefa449e229d847a9b17f9da12704d32d5d692af591ae2a5f56",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY29BRdcYSnTpgx0LWd?e=I6x5R7"
+            ]
+        }
+    ]
+}

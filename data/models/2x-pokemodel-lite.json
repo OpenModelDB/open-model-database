@@ -1,0 +1,36 @@
+{
+    "name": "2x_pokemodel_lite_100000_G",
+    "author": "neo-raws",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: none\n\nUpscale old anime like pokemon",
+    "date": "2020-11-01",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20133756,
+            "sha256": "ad5d18490463ec75976fe1b93435bfef9bce8167867c9c91a00cdc9bf6814666",
+            "urls": [
+                "https://www115.zippyshare.com/v/O2do1VCf/file.html"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 3030,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "Images from pokemon episodes",
+    "datasetSize": 268
+}

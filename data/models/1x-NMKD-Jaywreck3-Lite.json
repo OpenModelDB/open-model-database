@@ -1,0 +1,34 @@
+{
+    "name": "NMKD Jaywreck3 (Lite)",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\nPretrained: 1xESRGAN\n\n1xESRGAN",
+    "date": "2020-10-13",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20096393,
+            "sha256": "3b2654a3bfa6e07bdebde48414d69b89ee3a1d1516ff9b26c3f4c6ee14f7d3f0",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ],
+    "trainingIterations": 320000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 112,
+    "dataset": "DIV2K Train + Valid",
+    "pretrainedModelG": "1x-ESRGAN"
+}

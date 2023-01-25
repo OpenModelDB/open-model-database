@@ -1,0 +1,34 @@
+{
+    "name": "BS_Colorizer/Vapourizer",
+    "author": "blackscout",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "colorization"
+    ],
+    "description": "Category: Image De/Colorization\nPurpose: Colorization\nPretrained: 1xESRGAN\n\nB/W | 100% Desaturated images. It mostly results in Blue and Yellow images with slight hints of Green, Orange and Magenta. You are free to use this as a pretrain to achieve better results.",
+    "date": "2020-01-30",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "db6f922e8067c70b2b201ae753534bf5b4ab3fb40371846b9bb216e975e64c58",
+            "urls": [
+                "https://drive.google.com/file/d/1UgxnymTfLaVhY3aaDuBRnTZ9ehckKVKJ"
+            ]
+        }
+    ],
+    "trainingIterations": 22000,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 128,
+    "dataset": "Wallpapers",
+    "pretrainedModelG": "1x-ESRGAN"
+}

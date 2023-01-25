@@ -1,0 +1,36 @@
+{
+    "name": "1x_BCGone_Smooth_110000_G",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\nPretrained: 1xESRGAN\n\nAttempts to remove the damages done by BC1 compression.",
+    "date": "2020-08-02",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "095e69633e235350817065e6a72c733e38f2900f9271bc537844dd2b4bfe3f43",
+            "urls": [
+                "https://drive.google.com/drive/u/1/folders/1pnyPklpLPtMAHeNC5NVU1mV_Qh61wWnx"
+            ]
+        }
+    ],
+    "trainingIterations": 110000,
+    "trainingEpochs": 311,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Images from DIV2K and random anime drawings",
+    "pretrainedModelG": "1x-ESRGAN"
+}

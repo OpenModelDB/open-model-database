@@ -1,0 +1,37 @@
+{
+    "name": "Loyaldk Kororo",
+    "author": "chasemmd",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: Pony Models\n\nUpscale Anime while keeping as much of the original detail as possible. Isn't among the sharpest models and if the anime is somewhat blurry it will retain that detail but add more pixels to give a smoother edge. Doesn't change the color very much and may make some scene's very slightly darker.",
+    "date": "2021-06-07",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "f2126f5eaf76b0384cddf7b784b7c6f60923188c0be5e3c3142504ff09894415",
+            "urls": [
+                "https://mega.nz/folder/5UAlQCRJ#2Bj1lq8PYeB3P9k5UKSvkQ"
+            ]
+        }
+    ],
+    "trainingIterations": 650000,
+    "trainingOTF": false,
+    "dataset": "Saga of Tanya The Evil, Gravity Falls, Lucky Star, One Punch Man, Redline, Soul Eater, Spirited Away, Your Lie in April and Your Name. Converted Episodes and Movies to 4:4:4 Chroma Subsampling using custom 1x model included. LR's Include H264 Compression, H265 Compression, 1x_DotCrawl_125000_G, 1x_DeteriorationFrames V1_102000_G, Gaussian Blur, Poisson Noise, Uniform Noise, JPEG Compression, 4:2:0 Chroma Subsampling, Dithering.",
+    "datasetSize": 70263,
+    "pretrainedModelG": {
+        "description": "Pony Models"
+    }
+}

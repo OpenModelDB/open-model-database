@@ -1,0 +1,36 @@
+{
+    "name": "2x_BSTexty",
+    "author": "blackscout",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "text"
+    ],
+    "description": "Category: Text\nPurpose: Text\nPretrained: 2x_ESRGAN\n\nAs the name might suggest, this model aims to upscale text with less distortion that other models. It seems to do a good job generally, but don't expect it to be a state of the art model that can upscale magazines and stuff. It makes things more readable but since it was train on B/W pictures it desaturates them.",
+    "date": "2020-03-04",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66811909,
+            "sha256": "e67a3542bb963d7ca17401a678679340c70120695eb985ddeb5d2697834fbcde",
+            "urls": [
+                "https://drive.google.com/file/d/15ovbadCoYs7q8nSd5Mq02PqBOpwiBkoS/view"
+            ]
+        }
+    ],
+    "trainingIterations": 86000,
+    "trainingEpochs": 7,
+    "trainingBatchSize": 4,
+    "trainingOTF": false,
+    "dataset": "Randomly generated text, with randomly chosen fonts with varying sizes. Black text on white background",
+    "datasetSize": 44550,
+    "pretrainedModelG": "2x-ESRGAN"
+}

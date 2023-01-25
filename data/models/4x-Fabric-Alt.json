@@ -1,0 +1,35 @@
+{
+    "name": "4x-Fabric-Alt",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Fabric/Cloth\nPurpose: Fabric\nPretrained: 4xESRGAN\n\nThis model set upscales fabric or cloth textures (works on cats too!). The Alt model is just an earlier iteration version. It may work better on some images.The images need to be minimally compressed or passed through a decompression model first. It works with DDS compression though.",
+    "date": "2021-09-15",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "8d74aafc824a882ac7e958f1ed2c9504327574d11f4bb1e6c489faf2e21730d8",
+            "urls": [
+                "https://mega.nz/folder/6EJjwADL#oDvv9p0z1t9nQvObbvBRBQ"
+            ]
+        }
+    ],
+    "trainingIterations": 115000,
+    "trainingEpochs": 3350,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "dataset": "Custom Dataset consisting of edited RAW images taken by myself. Macro shots of fabrics and various other materials.",
+    "datasetSize": 346,
+    "pretrainedModelG": "4x-ESRGAN"
+}

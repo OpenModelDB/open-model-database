@@ -1,0 +1,35 @@
+{
+    "name": "2x_KemonoScale_v2",
+    "author": "ezogaming",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: x2_CGIMaster_v1\n\nUpscaling frames from Irodori anime (namely kemono friends) from 540p (the source render resolution) to 1080p, low resolution flat shaded art, de-JPEG of the aforementioned",
+    "date": "2021-06-05",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66758126,
+            "sha256": "b64cec8f4c2a848e0e67eb8d8992b8dd9e0d6a82b330f09150c36b3089d9878b",
+            "urls": [
+                "https://drive.google.com/drive/u/4/folders/19IQNM5Vo5vGcoKaRJaRrLScfxBbFBVff"
+            ]
+        }
+    ],
+    "trainingEpochs": 51,
+    "trainingHRSize": 256,
+    "dataset": "@irodori7 twitter, irodori KF artbook scans, KF guidebook scans, custom renders in similar style",
+    "datasetSize": 251,
+    "pretrainedModelG": "2x-CGIMaster-v1"
+}

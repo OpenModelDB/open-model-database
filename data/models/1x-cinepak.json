@@ -1,0 +1,33 @@
+{
+    "name": "1x_cinepak_200000",
+    "author": "twittman",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Video Compression\nPurpose: Compression\nPretrained: none\n\nRemoval of Compression such as Cinepak, msvideo1 and Roq",
+    "date": "2019-07-03",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "daff496050e7eccd300f011e3abe08cdcb44d100236fe66cc291de86cb7262b5",
+            "urls": [
+                "https://de-next.owncube.com/index.php/s/wKjLmYsq7M5JAmx"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingEpochs": 21,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 128,
+    "datasetSize": 8000
+}

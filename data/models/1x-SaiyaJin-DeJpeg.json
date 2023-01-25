@@ -1,0 +1,29 @@
+{
+    "name": "SaiyaJin DeJpeg",
+    "author": "twittman",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: 1x_DeJpeg_Fatality_PlusULTRA_200000_G.pth\n\nDataset: Anime, real life, manga, generated",
+    "date": "2019-10-29",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "01b61695d20543009a0c8bf17ee80d31f6d8e4e237134ecded3fd9266dbe3750",
+            "urls": [
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Saiyajin_DeJPEG_300000_G.pth"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "1x_normals_generator_general_215k",
+    "author": "lyonhrt",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "game-texture-maps"
+    ],
+    "description": "Category: Normal Map/Bump Map Generation\nPurpose: Map Generation - Normal Maps\nPretrained: none (no interpolation)\n\nThis model generates \"Franken Maps\" (named after Frankenstein), which is a custom material map combination I made. Basically, the Red channel of RGB is just the texture converted to grayscale, the Green channel is the roughness map, and the Blue channel is the displacement map. I had to do this to get around the current limitation of CX loss where it requires a 3 channel output (otherwise I would have just made a 2 channel model, or separate single channel models). As of right now the channels need to be manually split from each other but I will be making a tool for doing this automatically in the coming days.",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "49b4031476a8102c1624188d29c934287279ac7d6b2f0abcf2220e01dba2f10e",
+            "urls": [
+                "https://drive.google.com/file/d/1uksv1uyyZjQcU4567OrfU0w2NECcG8dY/view"
+            ]
+        }
+    ]
+}

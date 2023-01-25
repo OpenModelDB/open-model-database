@@ -1,0 +1,28 @@
+{
+    "name": "cainliteanime.pth",
+    "author": "hubert",
+    "license": "MIT",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained SOFVSR Models\nPurpose: Anime - interpolation\nPretrained: \n\n",
+    "date": "2021-08-06",
+    "architecture": "CAIN",
+    "size": null,
+    "scale": 2,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 35959343,
+            "sha256": "092401d94d9b0aef33017df9f38ec6915d82171ea40fb109dee7b8d8b34ca761",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/873173887427416114/874695897257246770/726770_JIT.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 450533,
+    "trainingEpochs": 207,
+    "trainingBatchSize": 3
+}

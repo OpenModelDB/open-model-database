@@ -1,0 +1,29 @@
+{
+    "name": "1x_NMKD-YandereInpaint_375000_G.pth",
+    "author": "nmkd",
+    "license": null,
+    "tags": [
+        "image",
+        "inpainting"
+    ],
+    "description": "Category: Inpainting\nPurpose: Inpainting\nPretrained: None\n\n",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "7c2f0ff3c38dbfb1818b3eba736cb8cb2502abf65eec898773fb76a31075aaef",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "name": "SpongeBob (4x_SpongeBob_235000_G / 4xSpongebob)",
+    "author": "joey",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 4xESRGAN\n\n",
+    "date": "2019-09-12",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "a5ab019cc05c770d67c2c664fc4dd8148e3ca60caef5039c61d00be8e86cb91e",
+            "urls": [
+                "https://drive.google.com/file/d/1dT7Pw0iwPkQC4-rWriibrVLuA3KS3pS4/view"
+            ]
+        }
+    ]
+}

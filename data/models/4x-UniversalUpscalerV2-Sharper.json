@@ -1,0 +1,35 @@
+{
+    "name": "UniversalUpscalerV2 Sharper",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "general-upscaler"
+    ],
+    "description": "Category: Universal Models\nPurpose: General Upscaler\nPretrained: 1xESRGAN\n\nGeneral Upscaler",
+    "date": "2021-04-01",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "7203b094ed8ef5a4381a4b02d96684272f91b58902a4f59718c96cec0c8c2c31",
+            "urls": [
+                "https://drive.google.com/drive/u/1/folders/15dV3rhMcq_LXg5Vrn7DG6lwo4M6cXt6C"
+            ]
+        }
+    ],
+    "trainingIterations": 103000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Realistic images",
+    "pretrainedModelG": "1x-ESRGAN"
+}

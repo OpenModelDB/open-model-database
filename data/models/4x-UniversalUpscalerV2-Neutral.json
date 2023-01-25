@@ -1,0 +1,35 @@
+{
+    "name": "UniversalUpscalerV2 Neutral",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "general-upscaler"
+    ],
+    "description": "Category: Universal Models\nPurpose: General Upscaler\nPretrained: 1xESRGAN\n\nGeneral Upscaler",
+    "date": "2021-04-01",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906127,
+            "sha256": "60fccf5f605c8aab7bba1c6e05f055967c6b693d24468bf42215599cd3d78323",
+            "urls": [
+                "https://drive.google.com/drive/u/1/folders/15dV3rhMcq_LXg5Vrn7DG6lwo4M6cXt6C"
+            ]
+        }
+    ],
+    "trainingIterations": 115000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Realistic images",
+    "pretrainedModelG": "1x-ESRGAN"
+}

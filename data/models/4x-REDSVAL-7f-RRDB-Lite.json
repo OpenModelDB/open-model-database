@@ -1,0 +1,32 @@
+{
+    "name": "4x_REDSVAL-7f-RRDB-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\nPretrained: \n\nnone",
+    "date": "2020-12-03",
+    "architecture": "SOFVSR",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 4,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 22343759,
+            "sha256": "2d65f1f6733437e1870c0d147279b07494d7ed538bf1bda0ed2e1257e4ed8c4c",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZojwLXZfeqA3Eoyv6SKXXt01AlSeuHH0WKX"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingHRSize": 128,
+    "dataset": "REDS validation set (OTF downscaled with various filters, 1/10 JPEG chance)",
+    "datasetSize": 3000
+}

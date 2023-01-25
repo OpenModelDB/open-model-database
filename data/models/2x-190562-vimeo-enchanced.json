@@ -1,0 +1,28 @@
+{
+    "name": "190562_vimeo_enchanced.pth",
+    "author": "hubert",
+    "license": "MIT",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: Pretrained SOFVSR Models\nPurpose: RL videos - interpolation\nPretrained: \n\n",
+    "date": "2021-07-13",
+    "architecture": "CAIN",
+    "size": null,
+    "scale": 2,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": null,
+            "sha256": null,
+            "urls": [
+                "http://91.232.191.56/models/190581.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 190562,
+    "dataset": "vimeo90k + my data",
+    "datasetSize": 100000
+}

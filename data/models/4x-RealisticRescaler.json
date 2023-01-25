@@ -1,0 +1,38 @@
+{
+    "name": "4x_RealisticRescaler_100000_G",
+    "author": "mutin-choler",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "photo"
+    ],
+    "description": "Category: Realistic Photos\nPurpose: Realistic Photos\nPretrained: RealESRGAN_x4plus\n\nThis model was made to upscale realistic low-res textures that are compressed by either JPEG or BC1. From my testing, this works rather well on realistic GameCube textures such as the ones from Shrek Extra Large and the board textures from Mario Party 4. This model could also work on some real life images, especially the ones that are taken outdoors.",
+    "date": "2023-01-01",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 134051293,
+            "sha256": "7381a1229143c9301a94421b610d95eb312e2555743cc9e80099a0e15ac5bd3b",
+            "urls": [
+                "https://drive.google.com/drive/folders/13OC-hQNz_S-kX0EVjVgNO1eoGvcXrTfk?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "DIV2K, Flick2R, AmbientCG, Poly Haven, nomos2k",
+    "datasetSize": 861,
+    "pretrainedModelG": {
+        "description": "RealESRGAN_x4plus"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Manga109Attempt",
+    "author": "kingdomakrillic",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "image",
+        "manga"
+    ],
+    "description": "Category: Manga\nPurpose: Anime / Manga\nPretrained: \n\nPretrained model: 4xPSNR",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66946549,
+            "sha256": "fa4ef999435d9dda0e68c855bbddf1fa54dcc8fe207b05c5867193446f59ac4c",
+            "urls": [
+                "http://www.mediafire.com/file/w3jujtm752hvdj1/Manga109Attempt.pth.zip/file"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "name": "2x_AnimeClassics_UltraLite_510K",
+    "author": "cg1989",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\nPretrained: 2X_DigitalFilmV5_Lite.pth\n\nA 2x Ultra Lite model coming in under 8MB. Trained with over 15 sets of LRs ranging in a wide amount of issues. Handles Rainbows, Dot Crawl, MPEG/H.264 Compression, and may even assist in removing halos, and fixing blurriness in certain cases. This is my first public model for everyone. Best when used on old anime that is grainy. I can't say what anime it's best suited for as I have tried multiple series, and have found it does a good job on most all the tests. I wouldn't say use this for Western Animation, but it may work. I have done a few tests that I have shown in the upscale results, but that was chained with other models to achieve such a result. This model is meant to retain the more natural look of a series. There is a color shift on the end result, not drastic, but still noticable. I figure you should fix any color issues in post that way to give a more polished upscale. Big thanks to @SaurusX for the model name, and just helping out in general with anything.",
+    "date": "2022-03-08",
+    "architecture": "ESRGAN",
+    "size": [
+        "12nf",
+        "8nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 8177814,
+            "sha256": "4db0458090cb83a006882ef2469479d6277f2c682012c36cbfe928915db652ad",
+            "urls": [
+                "https://mega.nz/file/taBFxAAR#6wW-DrGh6oy2uz6aAKJpa36ngE2eKcDNA8Psy11oK10"
+            ]
+        }
+    ],
+    "trainingIterations": 510000,
+    "trainingEpochs": 111,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "Blu-ray Remaster HRs/Generated LRs, and DVD Sources",
+    "datasetSize": 4222,
+    "pretrainedModelG": "2x-DigitalFilmV5-Lite"
+}

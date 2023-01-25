@@ -1,0 +1,36 @@
+{
+    "name": "4xJaypeg90",
+    "author": "jacob",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\nPretrained: 4xESRGAN\n\nPhotos/realistic 3D with JPEG compression, quality 85-95 and 4:2:0 chroma subsampling. - Created for Myst3 images, since all have 4:2:0 chroma subsampling and existing JPEG models did not give good results. Favors smoothing over over-sharpening.",
+    "date": "2020-07-20",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "93ca5ab7e09af273ae9b10620e2142a52f16352c826ff4b96d32a901afd14881",
+            "urls": [
+                "https://drive.google.com/file/d/17k72r01xTkeOzqsaYCN6ZqnAktKqTLyw/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 66000,
+    "trainingEpochs": 229,
+    "trainingBatchSize": 24,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Flickr2K+Div2K, JPEG compressed with random quality from 85-95 and scaled with either cubic or NN scaling.",
+    "pretrainedModelG": "4x-ESRGAN"
+}

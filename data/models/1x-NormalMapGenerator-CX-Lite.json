@@ -1,0 +1,37 @@
+{
+    "name": "1x_NormalMapGenerator-CX-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "game-texture-maps"
+    ],
+    "description": "Category: Normal Map/Bump Map Generation\nPurpose: Map Generation - normal maps\nPretrained: 1x_DIV2K-Lite_450k.pth\n\nGenerating normal maps from textures",
+    "date": "2020-11-04",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20098601,
+            "sha256": "dce313777fac7b2f98101538f15a153acfa92cbf4bb62a8cd4a89edc0eb313dc",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZEdNHXZ3bpVwUoge94d9igFWxbjQQrcbpny"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingEpochs": 149,
+    "trainingHRSize": 64,
+    "dataset": "CC0 textures/normals, 2K size, randomly downscaled OTF (by 1, 2, and 4) to get more variation",
+    "datasetSize": 14848,
+    "pretrainedModelG": {
+        "description": "1x_DIV2K-Lite_450k.pth"
+    }
+}

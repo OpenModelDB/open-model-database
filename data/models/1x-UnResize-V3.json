@@ -1,0 +1,29 @@
+{
+    "name": "UnResize V3 (1x_UnResize_V3_200000_G.pth)",
+    "author": "twittman",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "deblur"
+    ],
+    "description": "Category: Blurring\nPurpose: Deblur / Unresize\nPretrained: 1x_UnResize_MKII_030000_G.pth\n\nDataset: Anime, manga, and photos -\n\nPurpose: Fix images that have been arbitrarily / poorly resized, such as non-integer nearest-neighbor upscaling/downscaling - Also acts as an image sharpener/deblur when used on slightly soft inputs",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "41c1fd640c265375b4649f6c41772714081ea77faf07593456c8021638d3e1d3",
+            "urls": [
+                "https://de-next.owncube.com/index.php/s/nmNfcd33mnLLwEC"
+            ]
+        }
+    ]
+}

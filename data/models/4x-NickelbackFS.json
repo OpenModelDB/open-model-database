@@ -1,0 +1,36 @@
+{
+    "name": "NickelbackFS",
+    "author": "blackscout",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "photo"
+    ],
+    "description": "Category: Realistic Photos\nPurpose: Realistic Photos\nPretrained: 4xESRGAN\n\nThis model aims to improve further on what has been achieved by the old Nickelback which was an improvement attempt over 4xESRGAN and also 4xBox. It can upscale most pictures/photos (granted they are clean enough) without destroying as much detail as Box and basic ESRGAN.",
+    "date": "2020-07-10",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67077535,
+            "sha256": "a177fe6c4c125ca0e5dd5d70453112ca17c9de62eb055bef70111edd220d07fa",
+            "urls": [
+                "https://drive.google.com/file/d/1GL0OjGPsMwSmCr_FmkqtRjZu2IM0s019/view"
+            ]
+        }
+    ],
+    "trainingIterations": 72000,
+    "trainingEpochs": 12,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Wallpapers",
+    "pretrainedModelG": "4x-ESRGAN"
+}

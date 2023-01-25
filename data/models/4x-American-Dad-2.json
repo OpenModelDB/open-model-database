@@ -1,0 +1,30 @@
+{
+    "name": "American Dad 2 (American.Dad.2.HD.150ki.5e-PHOENiX.pth)",
+    "author": "pheonix",
+    "license": null,
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: \n\nAmerican Dad",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66960011,
+            "sha256": "072eae97c38a92d8f55da5b13f16566654e7f963289e54e3c9b6203165dd6506",
+            "urls": [
+                "https://drive.google.com/file/d/1i68bWo7xh3JPFIO-zLv9UMD72E-5xNr_/view"
+            ]
+        }
+    ]
+}

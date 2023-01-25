@@ -1,0 +1,32 @@
+{
+    "name": "BS_ScreenBooster_SPSR",
+    "author": "blackscout",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Game Screenshots\nPurpose: CGI\nPretrained: Screenbooster V2\n\nThis model is designed to upscale game screenshots (3D Games) by 4 times. The SPSR version is an improvement over the ESRGAN based V2.",
+    "date": "2020-07-18",
+    "architecture": "SPSR",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 99689039,
+            "sha256": "a55527c00c465e3032ee53f3fc802b77c1aea6db37b5005462863e2f025a3776",
+            "urls": [
+                "https://drive.google.com/file/d/1JI8VZSSHpH9u7HzE8MvuNG351Dgn4jwU/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 88000,
+    "trainingHRSize": 128,
+    "dataset": "My own screenshots",
+    "pretrainedModelG": "4x-ScreenBooster-V2"
+}

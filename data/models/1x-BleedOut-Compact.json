@@ -1,0 +1,31 @@
+{
+    "name": "1x_BleedOut_Compact",
+    "author": "zarxrax",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\nPretrained: \n\nThis model helps repair color bleed and heavy chroma noise that may be present on some older footage, particularly that which was recorded on VHS. It also cleans up rainbows if they are present.",
+    "date": "2022-07-25",
+    "architecture": "Compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 4795821,
+            "sha256": "86a9c0bbeb130aa01b7d5c3ea32691a521a4de65771d7133fa57a58ac4f5485c",
+            "urls": [
+                "https://mega.nz/file/lNdTmSKD#R7GIISShx-zsUVwDHw0oosv72ifbB31GClXXV3UtLLo"
+            ]
+        }
+    ]
+}

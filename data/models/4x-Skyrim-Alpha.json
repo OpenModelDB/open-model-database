@@ -1,0 +1,28 @@
+{
+    "name": "Skyrim Alpha",
+    "author": "deorder",
+    "license": "CC0-1.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\nPretrained: Unknown\n\nDataset: Alpha Channels from Skyrim",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66952231,
+            "sha256": "d26dbfbaf8a366c9714623f01f0c3fae93e58893948bc19d8409a865a2c18809",
+            "urls": [
+                "https://drive.google.com/file/d/1trYs4AuC9s2JWAbryHdNyy5cgYV-V8cH/view"
+            ]
+        }
+    ]
+}

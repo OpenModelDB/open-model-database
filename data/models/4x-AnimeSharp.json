@@ -1,0 +1,35 @@
+{
+    "name": "4x-AnimeSharp",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\nPretrained: \n\nInterpolation between 4x-UltraSharp and 4x-TextSharp-v0.5. Works amazingly on anime. It also upscales text, but it's far better with anime content. I rebranded this model on 2/10/22 to 4x-AnimeSharp from 4x-TextSharpV1.",
+    "date": "2021-12-28",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67010245,
+            "sha256": "e7a7de2dafd7331c1992862bbbcd9e9712a9f9f8e6303f0aaa59b4341d359bab",
+            "urls": [
+                "https://mega.nz/folder/rdpkjZzC#eUXPed_vntJKLrB0wpeJ-w"
+            ]
+        }
+    ],
+    "trainingHRSize": 128,
+    "dataset": "Custom",
+    "pretrainedModelG": {
+        "description": "Interpolation between 4x-UltraSharp and 4x-TextSharp-v0.5"
+    }
+}

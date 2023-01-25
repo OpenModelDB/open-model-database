@@ -1,0 +1,39 @@
+{
+    "name": "1x_SpongeBC1-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: BC1/DXT1 compression\nPretrained: 1x_DIV2K-Lite_80k\n\nFirst ever lite BC1/DXT1 model. Probably only useful for cartoony textures like those in spongebob games or other cartoon licensed games.",
+    "date": "2020-11-01",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20098601,
+            "sha256": "6d31cdd85e382035ba2946017fd10e9268c70b33be2ec7fbc0f6d212c509167b",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZ8f9HXZaNaKIDTqP9YPl33NGlz7VmaA3kqV"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 32,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 64,
+    "dataset": "Spongebob season 11 frames downscaled 8x with box and compressed using Wand (imagemagick)'s BC1/DXT1 compression.",
+    "datasetSize": 24123,
+    "pretrainedModelG": {
+        "description": "1x_DIV2K-Lite_80k"
+    }
+}

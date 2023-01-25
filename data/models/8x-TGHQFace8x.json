@@ -1,0 +1,38 @@
+{
+    "name": "TGHQFace8x",
+    "author": "tg",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "faces",
+        "face-upscaling"
+    ],
+    "description": "Category: Faces\nPurpose: Faces\nPretrained: 8xESRGAN\n\nUpscales blurry 128px faces, usefull for enhancing that someone in a small picture.",
+    "date": "2019-11-27",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 8,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67106707,
+            "sha256": "b23f718215c16c4299156b8cd93af8758b07a5a9d3e7b9775b76f5eb03d11e43",
+            "urls": [
+                "https://drive.google.com/open?id=1OyOJIW224hBhb-aTCbuUQb0qzKmE4oH6"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingEpochs": 54,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Flickr Cropped Faces",
+    "datasetSize": 70000,
+    "pretrainedModelG": "8x-ESRGAN"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "1x_SBDV-DeJPEG-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\nPretrained: 1x_DIV2K-Lite_80k.pth\n\n",
+    "date": "2020-10-10",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20098601,
+            "sha256": "4a25b158ec7830e742890872a21b5cf900d7653338bbaebd3a67dc8419eed7e5",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZvfeFXZMyUSYScxAizUmTKjax0JQzTk9Gfk"
+            ]
+        }
+    ],
+    "trainingIterations": 130000,
+    "trainingEpochs": 60,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 64,
+    "dataset": "Season 11 SpongeBob frames and DIV2K, randomly downscaled and JPEG compressed with varying quality",
+    "pretrainedModelG": {
+        "description": "1x_DIV2K-Lite_80k.pth"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "1x_artifacts_bc1_free_alsa.pth",
+    "author": "alsa",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "restoration"
+    ],
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\nPretrained: BC1 take 2\n\n",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66663810,
+            "sha256": "6ea3aeb56bf2da663896dae19d22800849c71dfc987fb493e9db477766407296",
+            "urls": [
+                "https://e.pcloud.link/publink/show?code=XZXbsZK03Y0UsmtR0W7wRMHWGvYkzgPII7"
+            ]
+        }
+    ]
+}

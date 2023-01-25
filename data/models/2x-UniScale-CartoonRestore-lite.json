@@ -1,0 +1,38 @@
+{
+    "name": "2x-UniScale_CartoonRestore-lite",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art\nPretrained: 4x-MMScale\n\nThis model has VERY strong compression removal and line restructuring that allows it to restore any heavily compressed drawings, animation, cartoons, or anime. Also works on games as well as DDS compression. It renders frames very quickly and is very viable for restoring videos.",
+    "date": "2021-08-31",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "3533d7e303b78bfe15e416a0bc3f42697edd3c20f995dc9333b093214f196768",
+            "urls": [
+                "https://mega.nz/folder/eBwyyKbA#CApT1_CrbpGBymLmc-FCTQ"
+            ]
+        }
+    ],
+    "trainingIterations": 165000,
+    "trainingEpochs": 68,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "dataset": "Custom Dataset consisting of lossless 4k frames from Metal Arms: Glitch in the System, Just Cause 3, Dirt 3, Forza Horizon 3, Sleeping Dogs, ATLA DVD, and self-edited photos from SignatureEdits",
+    "pretrainedModelG": {
+        "description": "4x-MMScale (Yes, 4x. mistakes were made)"
+    }
+}

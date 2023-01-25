@@ -1,0 +1,36 @@
+{
+    "name": "escale",
+    "author": "katoumegumi",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime / Visual Novel Art\nPretrained: \n\nThird iteration of my eroge upscaling model. Discriminator: https://drive.google.com/file/d/18q-4ktFNZ8tPjkszuoG6kVBhCjKl8iFa/view?usp=sharing",
+    "date": "2022-12-17",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66963362,
+            "sha256": "5a5c24d303f8ec0db73ddf6442eac01e7482cb6988648042004029c055c622e3",
+            "urls": [
+                "https://drive.google.com/file/d/15VfEwR61Y1Je8EyPMWl40wW01S6bJuPJ/view?usp=share_link"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 0,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "dataset": "Various eroge dumps",
+    "pretrainedModelG": "4x-muy4-035-1"
+}

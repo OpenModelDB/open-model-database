@@ -1,0 +1,35 @@
+{
+    "name": "Futsuu Anime",
+    "author": "zarxrax",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2x_Compact_Pretrain.pth\n\nThis model upscales while doing some sharpening and line darkening. Can also clean up some minor artifacts of various types. It is intended to to be a good general purpose upscaler that will work well with most animation.",
+    "date": "2023-01-18",
+    "architecture": "Compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 4838409,
+            "sha256": "5ed232c71599b01911e045c0246530fcfe5b2e0791242ff7d3964f97d74f8df0",
+            "urls": [
+                "https://mega.nz/file/wdszCQRZ#bs7VIgvjgRiKiL5JVPqzCLlNl0kIQnDeD48-6ltWSLw"
+            ]
+        }
+    ],
+    "trainingIterations": 130000,
+    "trainingHRSize": 192,
+    "dataset": "Frames from a wide variety of animated sources",
+    "datasetSize": 2661,
+    "pretrainedModelG": "2x-Compact-Pretrain"
+}

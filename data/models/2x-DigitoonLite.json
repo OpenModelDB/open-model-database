@@ -1,0 +1,35 @@
+{
+    "name": "2x_DigitoonLite_216k",
+    "author": "saurusx",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: 2x_DigiGradients_Lite_486k.pth\n\nMeant as a versatile model for upscaling high detail digital anime and cartoons. Has debanding, MPEG-2 correction, and halo reduction. Trained to handle both 4:3 and 16:9 DVD material with equal efficacy. Will retain a lot of textures except for the really high freq stuff.",
+    "date": "2022-07-05",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "3b08cbf2e9adb3121dd5c010812485f43a6e0403cdfd5f3c02fef44aefdd99d2",
+            "urls": [
+                "https://mega.nz/file/XWpFzRID#398qZx763bMSBsPB2MfgZqROGxdB0VldrIgH_prwa7U"
+            ]
+        }
+    ],
+    "trainingIterations": 216000,
+    "trainingEpochs": 104,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "Blu-ray, HDTV, and DVD",
+    "datasetSize": 21000,
+    "pretrainedModelG": "2x-DigiGradients-Lite"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "BigFArt Blend",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel art\nPretrained: Face Focus\n\nLarger-scaled pixels to digital painting",
+    "date": "2020-15-31",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906130,
+            "sha256": "a7a22bd42eb34ded9d95650422d730409cd8a850b61d040f67861da59fecc906",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY23if0ac150Sj2qnbp?e=qLp7SP"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "name": "2x_Byousoku_5_Centimeter.pth",
+    "author": "mystery-bullet",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\nPretrained: 2xESRGAN\n\nAnime landscape upscale. Trained on Frames from BluRay of Byousoku 5 Centimeter",
+    "date": "2020-04-08",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66806309,
+            "sha256": "40c78a2d689fcf0243fba2eede909735bfe9300dc97b6c94305b7376b61bf613",
+            "urls": [
+                "https://drive.google.com/file/d/1FWzEgqaSg2z0qOSjcmAxEUB3clEkm1PG/view"
+            ]
+        }
+    ]
+}

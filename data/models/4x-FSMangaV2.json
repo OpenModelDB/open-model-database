@@ -1,0 +1,38 @@
+{
+    "name": "FSMangaV2",
+    "author": "jacob",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "manga"
+    ],
+    "description": "Category: Manga\nPurpose: Manga\nPretrained: RRDB_PSNR_x4\n\nManga-style images with or without dithering - cartoons, maybe pixel art, etc",
+    "date": "2020-12-14",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906127,
+            "sha256": "1058ebd0ef063cb51b89b32a5d4c9b5da81e8bb37d2adcc49f95c32dc348fe79",
+            "urls": [
+                "https://drive.google.com/file/d/1uraeNuUPx46HKZ77xUI1PCBBoH-LhikY/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 400000,
+    "trainingEpochs": 4208,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "dataset": "Manga109 copied a bunch of times with different dithering methods, and both linear and nearest-neighbor scaling.",
+    "datasetSize": 1526,
+    "pretrainedModelG": {
+        "description": "RRDB_PSNR_x4"
+    }
+}

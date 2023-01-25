@@ -1,0 +1,36 @@
+{
+    "name": "1x_N64clean",
+    "author": "blueamulet",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "debanding"
+    ],
+    "description": "Category: Banding\nPurpose: Banding\nPretrained: 1x_BC1-smooth2.pth\n\nN64 textures use a color depth of 5-bits per channel, this model attempts to clean them, restoring smooth gradients in textures",
+    "date": "2020-07-16",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66658154,
+            "sha256": "448159f8f36880b2498ba19280be55fcd775071697a179d0f30f45f6c1e6d898",
+            "urls": [
+                "https://drive.google.com/file/d/1GNguVMV4E5t_4dn23w6UMXVKN6Ff9XPt/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 277000,
+    "trainingEpochs": 1369,
+    "trainingBatchSize": 20,
+    "trainingHRSize": 48,
+    "trainingOTF": false,
+    "dataset": "CC0 Textures",
+    "pretrainedModelG": "1x-BC1-smooth2"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "4x_HDCube3",
+    "author": "venomalia",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "game-textures"
+    ],
+    "description": "Category: Video Game Textures\nPurpose: Gamecube and Wii textures.\nPretrained: 4x_HDcube2\n\nIt can be used for all image formats supported by Gamecube and Wii hardware and can remove its typical artifacts like CMPR Block Compression (DXT1 algorithm, also known as BC1), color palette errors, color reduction up to 8bit color depth and 1bit alpha depth.",
+    "date": "2022-12-13",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67020101,
+            "sha256": "fdffd8999df0f99d581888f78acb29e1c32f72f791691a29fcaa421319acc131",
+            "urls": [
+                "https://github.com/Venomalia/HDcube/tree/main/v3#hdcube-3"
+            ]
+        }
+    ]
+}

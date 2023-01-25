@@ -1,0 +1,29 @@
+{
+    "name": "Morrowind Mixed",
+    "author": "mkultra",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "game-textures"
+    ],
+    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: 4xESRGAN\n\nMorrowind Mod Textures",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "e5259a0b5a273b3d0018a2d4e095d1fb695eff564df5f98bc10498af6c97e96a",
+            "urls": [
+                "https://mega.nz/folder/tFhl0L5b#CK4WLHYxjX7KFXU1PLNDuQ"
+            ]
+        }
+    ]
+}

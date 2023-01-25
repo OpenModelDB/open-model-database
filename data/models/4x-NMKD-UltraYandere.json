@@ -1,0 +1,30 @@
+{
+    "name": "NMKD UltraYandere",
+    "author": "nmkd",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Art/Anime\nPretrained: 4xESRGAN\n\nHighly flexible 2D Art upscaling",
+    "date": "2020-10-08",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "717ec8b63ae676b3b6ca6bcc0c7446b75c68a356fde404c725ee4dc8d40e37b2",
+            "urls": [
+                "https://icedrive.net/1/43GNBihZyi"
+            ]
+        }
+    ]
+}

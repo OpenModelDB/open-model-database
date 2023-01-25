@@ -1,0 +1,35 @@
+{
+    "name": "2x_Faithful-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "game-textures"
+    ],
+    "description": "Category: Video Game Textures\nPurpose: Pixel Art\nPretrained: none\n\nA \"lite\" model version of my Faithful model",
+    "date": "2020-10-12",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20133416,
+            "sha256": "6794a3df8a9f3999ce7ce5d20f93241857a661be1ba0d99a99db1229313b3448",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=XZHawFXZhqD7dF4qtYHnqJVPnQd0ey0vW1JX"
+            ]
+        }
+    ],
+    "trainingIterations": 275000,
+    "trainingEpochs": 12398,
+    "trainingBatchSize": 128,
+    "trainingHRSize": 32,
+    "dataset": "Faithful32x Minecraft texture pack for versions 1.13 and 1.16",
+    "datasetSize": 2928
+}

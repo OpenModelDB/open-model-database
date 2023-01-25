@@ -1,0 +1,36 @@
+{
+    "name": "1x_sudo_inpaint_PartialConv2D_424000_G.pth",
+    "author": "sudo",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "inpainting"
+    ],
+    "description": "Category: Inpainting\nPurpose: Inpainting\nPretrained: None\n\nExperimental PartialConv2D attempt to paint with ESRGAN. Took ~10.4 days of training on a P100 and around 1.5 months in total due to Colab limits. Not sure if I will continue training it since training is very slow, but may get better.. Warning: Result can vary with different tilesizes. Try not to tile your data.",
+    "date": "2020-12-05",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66661577,
+            "sha256": "43214e91a82328f1c6db7f38cdd20ada477bc7a0ce2c130faa0a54a8369a89d2",
+            "urls": [
+                "https://e.pcloud.link/publink/show?code=kZQOu7ZldzmFyMPUcFNGkEvwqOxQ8Bl3CeX"
+            ]
+        }
+    ],
+    "trainingIterations": 424000,
+    "trainingEpochs": 26,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 310,
+    "trainingOTF": false,
+    "dataset": "Full res yande.re images",
+    "datasetSize": 9147
+}

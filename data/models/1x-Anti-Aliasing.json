@@ -1,0 +1,29 @@
+{
+    "name": "Anti Aliasing",
+    "author": "twittman",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "anti-aliasing"
+    ],
+    "description": "Category: Aliasing\nPurpose: Anti aliasing / Images with pixelated edges\nPretrained: none (no interpolation)\n\nDataset: Custom (?)",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "7a4cb10276899d6d93ba35f174653a11ebdcea5c6ca93aee226c108d177f311f",
+            "urls": [
+                "https://de-next.owncube.com/index.php/s/mmYCcK4H3rQQR5Y"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "name": "1x_SwatKatsLite_360000_G.pth",
+    "author": "saurusx",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2xESRGAN\n\nFix vertical blur / split lines / shadowing. A 1x lite model of my 2xSwatKats. Resolves the same video problems as before, but 1x and faster and meant for chaining to other 2x models (or whatever). Input MUST be 540 vertical as the blur problem is very resolution sensitive.",
+    "date": "2021-11-17",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20098601,
+            "sha256": "fc49168dc58e000f2bdaedc69590a34cd7ff0abe970b6691d953c5d7559fcf07",
+            "urls": [
+                "https://mega.nz/file/La5AQCKb#aXvqZE9ZhlImJICJ8DRGI9CZfdtL9J9quQvoRmYFan0"
+            ]
+        }
+    ],
+    "trainingIterations": 360000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "WEB-DL",
+    "datasetSize": 5000,
+    "pretrainedModelG": "2x-ESRGAN"
+}

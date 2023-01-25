@@ -1,0 +1,36 @@
+{
+    "name": "Face-Ality V1 (4x_Fatality_Faces_310000_G.pth)",
+    "author": "twittman",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "faces",
+        "face-upscaling"
+    ],
+    "description": "Category: Faces\nPurpose: Faces\nPretrained: 4x_Faces_04_N_180000_G.pth\n\nDataset: Custom (Faces)",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "6bc795427098441bb1a90a56244fe0970fa80b2c25e9a7a88fd98d89824877cf",
+            "urls": [
+                "https://de-next.owncube.com/index.php/s/mZRG4HB3KdP2iP6"
+            ]
+        }
+    ],
+    "trainingIterations": 310000,
+    "trainingEpochs": 257,
+    "trainingBatchSize": 10,
+    "trainingHRSize": 128,
+    "dataset": "Lots of faces, mostly real life but some anime.",
+    "pretrainedModelG": "4x-Faces-04-N"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Misc",
+    "author": "alsa",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "photo"
+    ],
+    "description": "Category: Realistic Photos\nPurpose: General Upscaler\nPretrained: Manga109Attempt\n\nThe Misc model is trained on various pictures shot by myself (Alsa), including bricks, stone, dirt, grass, plants, wood, bark, metal and a few others.",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66960011,
+            "sha256": "3f379331b50e54efea46a3221ecb107b1ff369bba65f3f0a9468b29f815406bb",
+            "urls": [
+                "https://e.pcloud.link/publink/show?code=XZ6msZu8BOExSFH4SxixhuxoyrmbRYGQQk"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 0,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "dataset": "Various eroge dumps",
+    "pretrainedModelG": "4x-muy4-035-1"
+}

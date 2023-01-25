@@ -1,0 +1,38 @@
+{
+    "name": "8x_BoyMeBob-Redux",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 8xBoyMeBob (unreleased) which used 8xESRGAN\n\nUpscaling cartoons",
+    "date": "2021-08-19",
+    "architecture": "ESRGAN+",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 8,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67690702,
+            "sha256": "8631be6b3eb0bc0b7289c563dff93cffd01aa35c0910c7c2f2687858d28aad24",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZy6TKXZruJNkiysJ3R2fqxMra9RQQquMczV"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingEpochs": 33,
+    "trainingHRSize": 256,
+    "dataset": "SpongeBob Season 11",
+    "datasetSize": 24123,
+    "pretrainedModelG": {
+        "description": "8xBoyMeBob (unreleased) which used 8xESRGAN"
+    }
+}

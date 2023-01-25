@@ -1,0 +1,35 @@
+{
+    "name": "1xBaldrickVHSFix_180000_G_V0.2",
+    "author": "nimrodzorg",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: VHS Tapes\nPurpose: VHS\nPretrained: 1xESRGAN\n\nFixing minor VHS Chroma and Pattern Noise - NOTE: only works on deinterlaced sources",
+    "date": "2021-03-03",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "9c945b10ab0d45f8f53d2e18f9bfe1017dbc3c6e7233d657cb4845de81cd5ea1",
+            "urls": [
+                "https://icedrive.net/0/d3bwO9Byjo"
+            ]
+        }
+    ],
+    "trainingIterations": 180000,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Old vhs film recording for LR and cropped and downscaled Blu-ray rip of same film for HR",
+    "datasetSize": 663,
+    "pretrainedModelG": "1x-ESRGAN"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Arzenal (v1.1)",
+    "author": "computerk",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: Interpolated from nmkd's pixel art upscaling models with different interpolation settings and de-dithered versions\n\nSmooth general pixel art, Minecraft textures",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": null,
+    "scale": 8,
+    "inputChannels": null,
+    "outputChannels": null,
+    "resources": [
+        {
+            "type": "pth",
+            "size": null,
+            "sha256": null,
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZ4WthXZDDnqbo4Hye8zBgCkhgbbQf3WXT27"
+            ]
+        }
+    ]
+}

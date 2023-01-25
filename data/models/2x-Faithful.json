@@ -1,0 +1,36 @@
+{
+    "name": "Faithful 2x",
+    "author": "joey",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: 2xESRGAN\n\n",
+    "date": "2019-09-08",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66810509,
+            "sha256": "6b686f8e4d6eb44d14586c5bd267c99734a5f220aee4be8539bf973e24638e32",
+            "urls": [
+                "https://drive.google.com/open?id=1BzT-KwUBiZzACxGdIN6w930aOVvvfhg7"
+            ]
+        }
+    ],
+    "trainingIterations": 130000,
+    "trainingEpochs": 3713,
+    "trainingBatchSize": 80,
+    "trainingHRSize": 32,
+    "dataset": "Faithful 32x32 for Minecraft 1.13 and 1.14 (HR) and default Minecraft 1.13 and 1.14 resources (LR)",
+    "datasetSize": 2858,
+    "pretrainedModelG": "2x-ESRGAN"
+}

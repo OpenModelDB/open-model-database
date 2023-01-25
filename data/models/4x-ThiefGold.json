@@ -1,0 +1,36 @@
+{
+    "name": "4x_ThiefGold_110000",
+    "author": "akven",
+    "license": null,
+    "tags": [
+        "image",
+        "game-textures"
+    ],
+    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: RRDB_ESRGAN_x4\n\nVarious game textures. Primary wood, metal, stone",
+    "date": "2020-05-15",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "9ac3a42d81b97037983b66f5b29e26e7e5cebcd87471496631f047c153603e51",
+            "urls": [
+                "https://drive.google.com/file/d/1L8reADxi5Nt-8Tki0oY5jkQlv6kJg6w4/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 110000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "Thief Gold & Thief II community made textures",
+    "pretrainedModelG": {
+        "description": "RRDB_ESRGAN_x4"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "name": "1x_ArtClarity",
+    "author": "dinjerr",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "deblur"
+    ],
+    "description": "Category: Blurring\nPurpose: Pixel Art\nPretrained: 4xPSNR\n\nTexture retaining denoiser and sharpener for digital artwork",
+    "date": "2021-08-05",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66713677,
+            "sha256": "0eb0513fb93ca401b516315f88a983e757ed6beeba2c7c825dcd1e37f1c154e8",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY28w0Zkd9fdANYH3j6?e=9zwxII"
+            ]
+        }
+    ],
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "ArtStation illustrations, then interpolated with some other 1x models",
+    "datasetSize": 800,
+    "pretrainedModelG": "1x-ESRGAN"
+}

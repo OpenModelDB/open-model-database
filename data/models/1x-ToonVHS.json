@@ -1,0 +1,35 @@
+{
+    "name": "ToonVHS",
+    "author": "redslam",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "video"
+    ],
+    "description": "Category: VHS Tapes\nPurpose: VHS\nPretrained: 1xESRGAN\n\nBest when used on cartoons, it can work on anime. Due to the dataset it does struggle a bit with orange colors and grainy dark spots. This model is meant to be used to clean up the image before using it on a 2x or 4x model.",
+    "date": "2022-02-06",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "81824273c32b78657ff5c7042b2728f613e4fadf9463a2343b194e3625b39be0",
+            "urls": [
+                "https://drive.google.com/file/d/1w88lL_XGrE8n9sSIq97nLcVASqQNCtP6/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 300000,
+    "trainingEpochs": 33327,
+    "trainingBatchSize": 5,
+    "trainingHRSize": 64,
+    "dataset": "An old Cartoon Network VHS Tape upload.",
+    "datasetSize": 44,
+    "pretrainedModelG": "1x-ESRGAN"
+}

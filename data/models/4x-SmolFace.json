@@ -1,0 +1,37 @@
+{
+    "name": "4x_SmolFace_200k",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "faces",
+        "face-upscaling"
+    ],
+    "description": "Category: Faces\nPurpose: Art/People\nPretrained: 4x_NMKD-UltraYandere_300k\n\nA sharp upscaler trained specifically for small sprite faces. Does not blend, so avoid using on painted/photo portraits unless you were trying to retain more of the outlines somehow.",
+    "date": "2022-08-19",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "6a3d09dc4943b3bbf03de716886a4f13b95fe9986a266c533f3034169430dd31",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY29BRdcYSnTpgx0LWd?e=I6x5R7"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 64,
+    "trainingOTF": true,
+    "dataset": "FatalityFaces + danbooru side faces",
+    "datasetSize": 5500,
+    "pretrainedModelG": "4x-NMKD-UltraYandere"
+}

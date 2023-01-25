@@ -1,0 +1,35 @@
+{
+    "name": "SS Anti Alias 9x",
+    "author": "blueamulet",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "anti-aliasing"
+    ],
+    "description": "Category: Aliasing\nPurpose: Anti aliasing\nPretrained: none (no interpolation)\n\nDataset: Custom (9x Supersampling AA)",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "c0066eb6e6013839c20d0a986a1cd3067e857801c6cc0a879091c2d095753800",
+            "urls": [
+                "https://drive.google.com/open?id=11nMqVF9sUN2jRRagYc3wdWNX5acEy0MJ"
+            ]
+        }
+    ],
+    "trainingIterations": 125280,
+    "trainingEpochs": 367,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 32,
+    "dataset": "Randomly generated images",
+    "datasetSize": 4096
+}

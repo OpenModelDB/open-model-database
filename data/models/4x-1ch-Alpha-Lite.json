@@ -1,0 +1,34 @@
+{
+    "name": "4x_1ch-Alpha-Lite",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Alphas\nPurpose: Alpha\nPretrained: none\n\nObsoleted by Joey's Fork - Alpha channels of PNGs",
+    "date": "2020-12-15",
+    "architecture": "ESRGAN",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 4,
+    "inputChannels": 1,
+    "outputChannels": 1,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 20167004,
+            "sha256": "a34d4d6a1a6501c44a92e6547db2b1c5a7ff1d5738219c94a448328a73c2bf9b",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZQfN4XZmIrkODabBWhtmmA95c0GMb19WUuy"
+            ]
+        }
+    ],
+    "trainingIterations": 212000,
+    "trainingEpochs": 682,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "dataset": "Alpha channels from high resolution pokemon drawings and sprites, as well as 256x items from Sphax PureBDCraft. Randomly downscaled with a few different OTF filters.",
+    "datasetSize": 4853
+}

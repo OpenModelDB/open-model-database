@@ -1,0 +1,28 @@
+{
+    "name": "2xESRGAN",
+    "author": "victorca25",
+    "license": "Apache-2.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Pretrained Models\nPurpose: Pretrained\nPretrained: RRDB_ESRGAN_x4.pth\n\n",
+    "date": "2019-07-06",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66804909,
+            "sha256": "fedd0660312effd7febb8c06a4ac0304eaee5ca119b508895a95b0aa11ba6310",
+            "urls": [
+                "https://mega.nz/#!vtgSWKQT!K7Asn2zKe4N70R2aV89KEMTKhH3aiyGAAiuQDJF09qs"
+            ]
+        }
+    ]
+}

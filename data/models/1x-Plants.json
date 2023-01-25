@@ -1,0 +1,35 @@
+{
+    "name": "1x_Plants_400000_G.pth",
+    "author": "muf",
+    "license": "CC0-1.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Foliage/Ground\nPurpose: bad upscale\nPretrained: 1x_NMKD-h264Texturize_500k.pth\n\nImages of plants, trees or other foliage upscaled with Photoshop Preserve Details 2.0. Sharpens and \"subdivides\" details and noise so it doesn't look upscaled.",
+    "date": "2021-06-23",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "da384a902498f9bbfdbdc76fb63fdd5405b0157a894e79d115595a96e4fc2697",
+            "urls": [
+                "https://drive.google.com/drive/folders/1ZcMD3hy1YCm-hsrT6xYGvhboxSzhrJKg"
+            ]
+        }
+    ],
+    "trainingIterations": 400000,
+    "trainingEpochs": 3099,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "plant.zip from OutdoorSceneTrain_v2 upscaled 200% with Preserve Details 2.0",
+    "datasetSize": 1036,
+    "pretrainedModelG": "1x-NMKD-h264Texturize"
+}

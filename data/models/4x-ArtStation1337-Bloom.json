@@ -1,0 +1,29 @@
+{
+    "name": "ArtStation1337 Bloom",
+    "author": "dinjerr",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "pixel-art"
+    ],
+    "description": "Category: Art/Pixel Art\nPurpose: Digital Art/People\nPretrained: Mainly for digital art, but can be used to upscale pixel art.\n\n",
+    "date": "2019-08-21",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66958607,
+            "sha256": "7acdb20a27690674193fd64ffa5b2bb7920af02f7fdb7866cc9c56ee09a4cb7a",
+            "urls": [
+                "https://1drv.ms/u/s!Aip-EMByJHY21WF47rcqn7fhr7fq?e=I8mnX6"
+            ]
+        }
+    ]
+}

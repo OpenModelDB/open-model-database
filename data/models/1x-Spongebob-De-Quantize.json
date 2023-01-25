@@ -1,0 +1,39 @@
+{
+    "name": "Spongebob De-Quantize",
+    "author": "joey",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\nPretrained: 1x_1xDEDITHER_32_512_126900_G\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures",
+    "date": "2019-11-02",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "787bb98d7be5b6f5e369b4f500eb54ee5cc188dbc26b4f6cd1eb127404b879c3",
+            "urls": [
+                "https://drive.google.com/file/d/1qoiIvjMuazD6MCw_aZ5pEPESA6Pi03oM/view"
+            ]
+        }
+    ],
+    "trainingIterations": 130000,
+    "trainingEpochs": 26,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 128,
+    "dataset": "1 frame from every scene of every episode of season 11 of Spongebob, downscaled 50% with nearest neighbor, then downscaled by 25% with box for the HR, then color quantized with 256 colors for the LR",
+    "datasetSize": 4803,
+    "pretrainedModelG": {
+        "description": "1x_1xDEDITHER_32_512_126900_G"
+    }
+}

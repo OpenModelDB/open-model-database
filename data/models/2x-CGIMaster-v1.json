@@ -1,0 +1,35 @@
+{
+    "name": "CGIMaster_v1",
+    "author": "madiator",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: CGI\nPurpose: CGI Animation\nPretrained: Sharp_Anime_v2\n\nmixed 3D/2D CGI animations on some 2D animations it might sharpen the edges. General usage is to upscale CGI animations compressed by YouTube.",
+    "date": "2021-01-14",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66870739,
+            "sha256": "1cd831c35f1ac3a74d054e96362c145ac9d2a3abd0651fbb9802f42cc302b013",
+            "urls": [
+                "https://lbry.tv/@Madiator2011:e/x2_CGIMaster_v1:6"
+            ]
+        }
+    ],
+    "trainingIterations": 409000,
+    "trainingEpochs": 1920,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "dataset": "Full frames of Dragon Prince as HQ and for LR frames compressed with YouTube compression",
+    "datasetSize": 1800,
+    "pretrainedModelG": "2x-SHARP-ANIME-V2"
+}

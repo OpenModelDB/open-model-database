@@ -1,0 +1,36 @@
+{
+    "name": "MinecraftAlphaUpscaler with Good data",
+    "author": "washed-up",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\nPretrained: RRDB_PNSR_x4.pth\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.",
+    "date": "2020-01-29",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66923577,
+            "sha256": "b618c40d2d3d7d870043a7ee4803a1f12cecd6e74818c65fdde4cfbd9b7fe682",
+            "urls": [
+                "https://drive.google.com/drive/folders/1XsOFqGx_cGMWQTBuE9K9smwULg_wiaWc?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 50500,
+    "trainingEpochs": 50,
+    "trainingBatchSize": 132,
+    "dataset": "https://drive.google.com/open?id=1udZWK-NQVHyzm7wpjcw0JwB2z9s7plmu",
+    "datasetSize": 90000,
+    "pretrainedModelG": {
+        "description": "RRDB_PNSR_x4.pth"
+    }
+}

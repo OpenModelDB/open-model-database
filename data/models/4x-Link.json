@@ -1,0 +1,35 @@
+{
+    "name": "4x_Link",
+    "author": "fielran",
+    "license": "GPL-3.0-only",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Game Screenshots\nPurpose: Chainmail game textures. Alternatively, it can be used to turn plain images into chainmail.\nPretrained: 4x_Nickelfront_14000G.pth\n\nA highly generative model for chainmail game textures. Works fairly well on items without visible chainmail texture (ie just a grey area) or items with clear chainmail texture, less well on items with present but poorly defined chainmail texture. I'm not 100% happy with it but it is still an improvement over existing models in enough situations to be worth releasing.",
+    "date": "2022-10-06",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "bb75d390ea9cba25ae24cdeaa258a33485ad5d48c6f7b9ca08fbab02bf513242",
+            "urls": [
+                "https://drive.google.com/drive/u/0/folders/1zM07-eMja0PISoUz0dWGqx8b_YspU-gl"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingEpochs": 7813,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 64,
+    "dataset": "pexels.com, ambientcg.com, Wikimedia Commons. photos of chainmail from DeviantArt, game textures with chainmail, diffuse maps of chainmail from DAZ items. All items downscaled by factors of 2 to add capacity for LOD texture upscaling and increase generative effect of model.",
+    "datasetSize": 561,
+    "pretrainedModelG": "4x-Nickelfront"
+}

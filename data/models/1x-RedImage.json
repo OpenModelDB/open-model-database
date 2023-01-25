@@ -1,0 +1,28 @@
+{
+    "name": "1xRedImage10000.pth",
+    "author": "3majsie1995",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: CGI\nPurpose: Correct old color photos that are tinted red\nPretrained: 1xESRGAN\n\nCorrect old color photos that are tinted red. Model only tested in nature.",
+    "date": "2022-08-04",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "7f91b2280c0746427c967ed97bad1e5b6ceda5ef059d5c97a1a26f2eb07c693b",
+            "urls": [
+                "https://drive.google.com/drive/folders/1m7fO9ywNNRc2FZBKycJiC556rBJpbGoH"
+            ]
+        }
+    ]
+}

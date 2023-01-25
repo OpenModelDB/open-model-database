@@ -1,0 +1,38 @@
+{
+    "name": "2x_LD-Anime_Skr_v1.0",
+    "author": "skr",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Denoise/Dehalo\nPretrained: 2xESRGAN\n\nDenoise, dehalo, derainbow old anime",
+    "date": "2021-04-17",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66876751,
+            "sha256": "f93891555a37e5809bbf701fcae0f1c39464baa9630e03ba6d223151ca13ba74",
+            "urls": [
+                "https://drive.google.com/file/d/18iWj4eWiMfUd2WyLCEzMlZK1JVT7L8nT/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 400000,
+    "trainingEpochs": 100,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 96,
+    "trainingOTF": false,
+    "dataset": "Laserdisc rips and remastered Blu-rays.",
+    "datasetSize": 50000,
+    "pretrainedModelG": "2x-ESRGAN"
+}

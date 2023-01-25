@@ -1,0 +1,36 @@
+{
+    "name": "fidelbd_pokemodel",
+    "author": "neo-raws",
+    "license": "WTFPL",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 2xESRGAN\n\nMade this model to upscale old anime that looks blurry.",
+    "date": "2020-08-29",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66810509,
+            "sha256": "79ad512557eaf052f1d540c117b4408a7fa24999c75abbf1c2f52a5b1d2353b2",
+            "urls": [
+                "https://www23.zippyshare.com/v/lhOStpVa/file.html"
+            ]
+        }
+    ],
+    "trainingIterations": 300000,
+    "trainingEpochs": 114,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "Made with images from the first episode of pokemon released on blu ray for the HRs and 112.5% upscaled images for the LRs to match 1/2x the HRs.",
+    "pretrainedModelG": "2x-ESRGAN"
+}

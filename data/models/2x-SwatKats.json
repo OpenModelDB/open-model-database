@@ -1,0 +1,36 @@
+{
+    "name": "2x_SwatKats_154000_G",
+    "author": "saurusx",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2xESRGAN\n\nIn addition to removing the vertical blur, the model upscales, sharpens and will remove MPEG-2 artifacting and a small amount of rainbowing and dot crawl. Another series afflicted with the vertical blur is Avatar the Last Airbender, which can be repaired by this model. The video fed into the model MUST be 540 vertical for the deblur to work properly.",
+    "date": "2021-11-17",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66813860,
+            "sha256": "3683c8259a13a91760e4f99002fa2a3c363440abd4d589a04db9b3b987285d10",
+            "urls": [
+                "https://mega.nz/file/vOwmULKK#nFznUd8ZY3-P0x9_63OyYE8eZifmTvZqDejIrMBXJtk"
+            ]
+        }
+    ],
+    "trainingIterations": 154000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "WEB-DL",
+    "datasetSize": 5000,
+    "pretrainedModelG": "2x-ESRGAN"
+}

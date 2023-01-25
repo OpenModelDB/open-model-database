@@ -1,0 +1,39 @@
+{
+    "name": "4x_SpongeBob-Reloaded-SWAG",
+    "author": "joey",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "anime",
+        "cartoon"
+    ],
+    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art\nPretrained: 4xSpongeBob\n\n",
+    "date": "2020-12-11",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66906127,
+            "sha256": "5f91f943485625aa365c862498509e663c381f0cda6f9a84d440a408f8c0f0b0",
+            "urls": [
+                "https://u.pcloud.link/publink/show?code=kZh614XZIyy5JlX7rFm4d3HJJTBovbSz3ycy"
+            ]
+        }
+    ],
+    "trainingIterations": 153000,
+    "trainingEpochs": 122,
+    "trainingBatchSize": 20,
+    "trainingHRSize": 128,
+    "dataset": "SpongeBob Season 11, downscaled with linear. Random OTF JPEG, dither, and indexing.",
+    "datasetSize": 24123,
+    "pretrainedModelG": {
+        "description": "4xSpongeBob"
+    }
+}

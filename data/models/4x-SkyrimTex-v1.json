@@ -1,0 +1,29 @@
+{
+    "name": "4x-SkyrimTexV1",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "image",
+        "game-textures"
+    ],
+    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: 4xESRGAN\n\nThis model set upscales most Skyrim textures. I hope it helps 🙂 The base model (2.1) works well on stone, wood, metals, and most other textures. The Fabric model is a 50/50 interpolation with a stronger iteration of this model and my Fabric model. As you can tell by the name, it's intended for Fabric textures. If you want to upscale Alpha textures, use a model dedicated to it. There's an INFO file in the folder, it just explains the extra models",
+    "date": "2021-09-25",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 67010245,
+            "sha256": "1a97b60576f0d734a8b3bda154a731d8084b8ee887829ab00f39c686f925f0f6",
+            "urls": [
+                "https://mega.nz/folder/fcp2SLKC#tF3vG7zjvfpnXK7OLUaFRA"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "4x_GameAI_2.0",
+    "author": "tal",
+    "license": "WTFPL",
+    "tags": [
+        "image"
+    ],
+    "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\nPretrained: 4x_GameAI_1.0\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons. Dataset: I used textures from, \"(A Hat in Time, Kingdom Hearts 3 and World of Final Fantasy) for GameAI_2.0\" \"(Skyrim, The Witcher 3, Resident Evil 4, Final Fantasy XV and Tales of Vesperia ) for GameAI_1.0\" Dataset_size: 21.9k to 70k textures , up to 1024x1024 per texture",
+    "date": "2022-02-27",
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "3e21c3cebb50e647644e9d1dd6bab4d49cbdaa4d4b14c4eaafa1670d8a9f15ef",
+            "urls": [
+                "https://drive.google.com/file/d/15KhApV05F8nEqTa5ZjLE821rhe1k8VOg/view?usp=sharing",
+                "https://drive.google.com/file/d/1-s7iSK9ivJaoyvTXwDZvMjuyGG72bTQA/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingEpochs": 367,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "pretrainedModelG": "4x-GameAI-1-0"
+}

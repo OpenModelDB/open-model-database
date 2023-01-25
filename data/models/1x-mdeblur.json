@@ -1,0 +1,29 @@
+{
+    "name": "mdeblur",
+    "author": "lyonhrt",
+    "license": null,
+    "tags": [
+        "image",
+        "deblur"
+    ],
+    "description": "Category: Blurring\nPurpose: Blurring\nPretrained: \n\nStrong deblurring model",
+    "date": null,
+    "architecture": "ESRGAN",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "type": "pth",
+            "size": 66662414,
+            "sha256": "e4c19f65bc0d217b4c3c17e32ac12d4a351ba6e3f7d5d36118c1f4f7a5b7abec",
+            "urls": [
+                "https://cloud.owncube.com/s/p3w7M2sfaWWYCK9/download?path=%2F&files=1x_mdeblur.pth"
+            ]
+        }
+    ]
+}
