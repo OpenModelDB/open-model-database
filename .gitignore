@@ -3,3 +3,5 @@
 *.onnx
 *.bin
 *.param
+
+node_modules/
