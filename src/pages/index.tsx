@@ -1,8 +1,9 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { getWriter } from 'src/lib/edit-mode';
 import { Model, ModelId } from 'src/lib/schema';
-import { geAllModelIds, getModelData } from 'src/lib/static';
+import { getAllModelIds, getModelData } from 'src/lib/static-data';
 import styles from '../styles/Home.module.scss';
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
     other: string;
 }
 
-export default function Home({ modelIds, modelData, other }: Props) {
+export default function Page({ modelIds, modelData, other }: Props) {
     return (
         <>
             <Head>
@@ -32,6 +33,16 @@ export default function Home({ modelIds, modelData, other }: Props) {
             <main className={styles.main}>
                 <div>
                     <p>{modelIds.length} models</p>
+                    <button
+                        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+                        onClick={async () => {
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                            const writer = (await getWriter())!;
+                            await writer.updateModels([{ id: '8x-MS-Unpainter' as ModelId }]);
+                        }}
+                    >
+                        Click me!
+                    </button>
                     <br />
                     <pre>{other}</pre>
                     <pre>
@@ -49,7 +60,7 @@ export default function Home({ modelIds, modelData, other }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (_context) => {
-    const modelIds = await geAllModelIds();
+    const modelIds = await getAllModelIds();
     const modelData = await getModelData(modelIds);
     return {
         props: {

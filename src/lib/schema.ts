@@ -1,16 +1,16 @@
-export type ModelId = string;
-export type UserId = string;
+export type ModelId = string & { readonly ModelId: never };
+export type UserId = string & { readonly UserId: never };
 /**
  * A SPDX license expressions.
  * @see https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/
  */
-export type SPDXLicense = string;
+export type SPDXLicense = string & { readonly SPDXLicense: never };
 /**
  * A SPDX license id (short).
  * @see https://spdx.org/licenses/
  */
 export type SPDXLicenseId = string & { readonly SPDXLicenseId: never };
-export type TagId = string;
+export type TagId = string & { readonly TagId: never };
 export type MarkDownString = string;
 
 export interface Model extends Partial<ExtraModelProperties> {
