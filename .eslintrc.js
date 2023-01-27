@@ -50,6 +50,7 @@ module.exports = {
             },
             rules: {
                 '@typescript-eslint/no-unnecessary-condition': 'warn',
+                '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
             },
         },
     ],
