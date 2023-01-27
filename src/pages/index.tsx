@@ -1,7 +1,8 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Model, ModelId } from 'src/lib/schema';
-import { geAllModelIds, getModelData } from 'src/lib/static/data';
+import { geAllModelIds, getModelData } from 'src/lib/static';
 import styles from '../styles/Home.module.scss';
 
 interface Props {
@@ -33,7 +34,14 @@ export default function Home({ modelIds, modelData, other }: Props) {
                     <p>{modelIds.length} models</p>
                     <br />
                     <pre>{other}</pre>
-                    <pre>{modelIds.map((id) => `${id} - ${modelData[id].license ?? 'no license'}`).join('\n')}</pre>
+                    <pre>
+                        {modelIds.map((id) => (
+                            <span key={id}>
+                                <Link href={'/models/' + id}>{id}</Link> - {modelData[id].license ?? 'no license'}
+                                {'\n'}
+                            </span>
+                        ))}
+                    </pre>
                 </div>
             </main>
         </>

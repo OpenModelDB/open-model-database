@@ -1,6 +1,6 @@
 import { readFile, readdir } from 'fs/promises';
 import { join } from 'path';
-import { Model, ModelId, Tag, TagId, User, UserId } from '../schema';
+import { Model, ModelId, Tag, TagId, User, UserId } from './schema';
 
 const DATA_DIR = './data/';
 const USERS_JSON = join(DATA_DIR, 'users.json');
@@ -13,8 +13,6 @@ function getModelDataPath(id: ModelId): string {
 export async function geAllModelIds(): Promise<ModelId[]> {
     const files = await readdir(join(DATA_DIR, 'models'));
     const ids = files.filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -'.json'.length));
-    console.log(ids);
-
     return ids;
 }
 
