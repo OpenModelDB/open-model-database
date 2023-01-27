@@ -2,10 +2,10 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import { Model, ModelId } from 'src/lib/schema';
-import { geAllModelIds, getModelData } from 'src/lib/static';
+import { getAllModelIds, getModelData } from 'src/lib/static-data';
 
 interface Params extends ParsedUrlQuery {
-    id: string;
+    id: ModelId;
 }
 interface Props {
     modelId: ModelId;
@@ -41,7 +41,7 @@ export default function Page({ modelId, modelData }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-    const modelIds = await geAllModelIds();
+    const modelIds = await getAllModelIds();
 
     return {
         paths: modelIds.map((id) => ({ params: { id } })),
