@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && stylelint \"src/**/*.{scss,css}\"",
-    "lint:fix": "next lint --fix && stylelint \"src/**/*.{scss,css}\" --fix"
+    "lint": "eslint . --ext \".js,.jsx,.ts,.tsx\" && stylelint \"src/**/*.{scss,css}\"",
+    "lint:fix": "eslint . --ext \".js,.jsx,.ts,.tsx\" --fix && stylelint \"src/**/*.{scss,css}\" --fix",
+    "lint:ci": "eslint . --ext \".js,.jsx,.ts,.tsx\" --max-warnings 0 && stylelint src/**/*.scss"
   },
   "dependencies": {
     "@next/font": "13.1.5",
