@@ -13,8 +13,41 @@ export function lazy<T>(fn: () => T): () => T {
     };
 }
 
-export const delay = (ms: number): Promise<void> => {
+export function delay(ms: number): Promise<void> {
     return new Promise((resolve) => {
         setTimeout(resolve, ms);
     });
-};
+}
+
+export function sortObjectKeys(obj: Record<string, unknown>, order: readonly string[] = []): void {
+    const old = { ...obj };
+    const objKeys = Object.keys(obj);
+    for (const key of objKeys) {
+        delete obj[key];
+    }
+
+    let keys: string[];
+    if (order.length === 0) {
+        keys = objKeys.sort();
+    } else {
+        const keySet = new Set<string>();
+        const objKeySet = new Set(objKeys);
+        for (const key of order) {
+            if (objKeySet.has(key)) {
+                keySet.add(key);
+            }
+        }
+        for (const key of objKeys.sort()) {
+            keySet.add(key);
+        }
+        keys = [...keySet];
+    }
+
+    for (const key of keys) {
+        obj[key] = old[key];
+    }
+}
+
+export function hasOwn(obj: object, key: string | number | symbol): boolean {
+    return Object.prototype.hasOwnProperty.call(obj, key);
+}

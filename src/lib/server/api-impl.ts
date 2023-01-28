@@ -1,10 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { delay } from './util';
-
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type UpdateRequest<Id, Value extends {}> = ChangeRequest<Id, Value> | DeleteRequest<Id>;
-export type ChangeRequest<Id, Value> = { id: Id; value: Value };
-export type DeleteRequest<Id> = { id: Id; value?: undefined };
+import { UpdateRequest } from '../api-types';
+import { delay } from '../util';
 
 interface GroupedChangeRequests<Id, Value> {
     change: Map<Id, Value>;
@@ -21,8 +17,10 @@ export function groupUpdatesByType<Id extends string, Value extends {}>(
     for (const update of updates) {
         if (update.value === undefined) {
             result.delete.add(update.id);
+            result.change.delete(update.id);
         } else {
             result.change.set(update.id, update.value);
+            result.delete.delete(update.id);
         }
     }
     return result;

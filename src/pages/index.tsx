@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { getWriter } from 'src/lib/edit-mode';
 import { Model, ModelId } from 'src/lib/schema';
-import { getAllModelIds, getModelData } from 'src/lib/static-data';
+import { getAllModelIds, getModelData } from 'src/lib/server/data';
 import styles from '../styles/Home.module.scss';
 
 interface Props {

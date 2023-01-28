@@ -1,6 +1,7 @@
-import { readFile, readdir } from 'fs/promises';
+import { readFile, readdir, writeFile } from 'fs/promises';
 import { join } from 'path';
-import { Model, ModelId, Tag, TagId, User, UserId } from './schema';
+import { Model, ModelId, Tag, TagId, User, UserId } from '../schema';
+import { sortObjectKeys } from '../util';
 
 export const DATA_DIR = './data/';
 export const USERS_JSON = join(DATA_DIR, 'users.json');
@@ -39,4 +40,33 @@ export async function getUsers(): Promise<Record<UserId, User>> {
 export async function getTags(): Promise<Record<TagId, Tag>> {
     const content = await readFile(TAGS_JSON, 'utf-8');
     return JSON.parse(content) as Record<TagId, Tag>;
+}
+
+// mutation
+
+export async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void> {
+    const file = getModelDataPath(id);
+    await writeFile(file, JSON.stringify(model, undefined, 4), 'utf-8');
+}
+
+export async function writeUsers(users: Readonly<Record<UserId, User>>): Promise<void> {
+    users = { ...users };
+    sortObjectKeys(users);
+    await writeFile(USERS_JSON, JSON.stringify(users, undefined, 4), 'utf-8');
+}
+
+export async function writeTags(tags: Readonly<Record<TagId, Tag>>): Promise<void> {
+    await writeFile(TAGS_JSON, JSON.stringify(tags, undefined, 4), 'utf-8');
+}
+
+export async function mutateModels(mutate: (model: Model) => boolean | void): Promise<void> {
+    const modelIds = await getAllModelIds();
+    await Promise.all(
+        modelIds.map(async (id) => {
+            const model = await getSingleModelData(id);
+            if (mutate(model)) {
+                await writeModelData(id, model);
+            }
+        })
+    );
 }
