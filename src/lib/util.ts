@@ -51,3 +51,11 @@ export function sortObjectKeys(obj: Record<string, unknown>, order: readonly str
 export function hasOwn(obj: object, key: string | number | symbol): boolean {
     return Object.prototype.hasOwnProperty.call(obj, key);
 }
+
+export function asArray<T>(value: T | T[] | readonly T[]): readonly T[] {
+    if (Array.isArray(value)) {
+        return value;
+    } else {
+        return [value as T];
+    }
+}
