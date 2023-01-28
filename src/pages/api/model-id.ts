@@ -12,7 +12,7 @@ export default post<ModelsRequestBody>(
 
         const modelIds = await getAllModelIds();
         if (!modelIds.includes(id)) {
-            throw new Error('Cannot change model id ' + id + ' because it does not exist');
+            throw new Error(`Cannot change model id ${id} because it does not exist`);
         }
         if (modelIds.includes(newId)) {
             throw new Error(`Cannot change model id ${id} to ${newId} because ${newId} already exists`);
@@ -23,7 +23,7 @@ export default post<ModelsRequestBody>(
         // then Windows won't actually rename the file.
         const from = getModelDataPath(id);
         const to = getModelDataPath(newId);
-        const temp = to + '.tmp';
+        const temp = `${to}.tmp`;
         await rename(from, temp);
         await rename(temp, to);
 

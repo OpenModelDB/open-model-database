@@ -5,6 +5,8 @@ module.exports = {
     extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
     plugins: ['prettier', 'unused-imports', 'react-hooks'],
     rules: {
+        'prefer-template': 'warn',
+
         'unused-imports/no-unused-imports': 'error',
 
         'sort-imports': ['error', { ignoreDeclarationSort: true }],

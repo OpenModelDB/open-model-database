@@ -48,7 +48,7 @@ export default function Page({ modelIds, modelData, other }: Props) {
                     <pre>
                         {modelIds.map((id) => (
                             <span key={id}>
-                                <Link href={'/models/' + id}>{id}</Link> - {modelData[id].license ?? 'no license'}
+                                <Link href={`/models/${id}`}>{id}</Link> - {modelData[id].license ?? 'no license'}
                                 {'\n'}
                             </span>
                         ))}
@@ -66,7 +66,7 @@ export const getStaticProps: GetStaticProps<Props> = async (_context) => {
         props: {
             modelIds: modelIds,
             modelData: Object.fromEntries(modelIds.map((id, i) => [id, modelData[i]])),
-            other: [...new Set(modelData.map((m) => m.license))].join('\n') + '\n\n',
+            other: `${[...new Set(modelData.map((m) => m.license))].join('\n')}\n\n`,
         },
     };
 };

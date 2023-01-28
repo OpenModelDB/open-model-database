@@ -13,7 +13,7 @@ export default post<UsersRequestBody>(
         const users = await getUsers();
 
         if (!hasOwn(users, id)) {
-            throw new Error('Cannot change user id ' + id + ' because it does not exist');
+            throw new Error(`Cannot change user id ${id} because it does not exist`);
         }
         if (hasOwn(users, newId)) {
             throw new Error(`Cannot change user id ${id} to ${newId} because ${newId} already exists`);
