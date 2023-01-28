@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import { Model, ModelId } from 'src/lib/schema';
-import { getAllModelIds, getModelData } from 'src/lib/static-data';
+import { getAllModelIds, getModelData } from 'src/lib/server/data';
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;

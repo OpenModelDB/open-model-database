@@ -1,7 +1,7 @@
-import { readFile, writeFile } from 'fs/promises';
-import { UpdateRequest, groupUpdatesByType, post, synchronizeDB } from 'src/lib/api';
+import { UpdateRequest } from 'src/lib/api-types';
 import { Tag, TagId } from 'src/lib/schema';
-import { TAGS_JSON } from 'src/lib/static-data';
+import { groupUpdatesByType, post, synchronizeDB } from 'src/lib/server/api-impl';
+import { getTags, writeTags } from 'src/lib/server/data';
 
 export type TagsRequestBody = UpdateRequest<TagId, Tag>[];
 
@@ -9,9 +9,7 @@ export default post<TagsRequestBody>(
     synchronizeDB(async (updates) => {
         if (updates.length === 0) return;
 
-        // update is done synchronously to prevent race conditions
-        const originalContent = await readFile(TAGS_JSON, 'utf-8');
-        const tags = JSON.parse(originalContent) as Record<TagId, Tag>;
+        const tags = await getTags();
 
         const groups = groupUpdatesByType(updates);
 
@@ -28,6 +26,6 @@ export default post<TagsRequestBody>(
             }
         }
 
-        await writeFile(TAGS_JSON, JSON.stringify(tags, undefined, 4), 'utf-8');
+        await writeTags(tags);
     })
 );
