@@ -33,7 +33,9 @@ export default function Page({ modelId, modelData }: Props) {
             <main>
                 <div>
                     <p>{modelId}</p>
-                    <pre>{JSON.stringify(modelData, undefined, 4)}\n</pre>
+                    <p>{modelData.name}</p>
+                    <br />
+                    <pre>{JSON.stringify(modelData, undefined, 4)}</pre>
                 </div>
             </main>
         </>

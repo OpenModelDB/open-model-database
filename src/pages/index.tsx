@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { getWriter } from 'src/lib/edit-mode';
 import { Model, ModelId } from 'src/lib/schema';
 import { getAllModelIds, getModelData } from 'src/lib/server/data';
+import { asArray } from 'src/lib/util';
 import styles from '../styles/Home.module.scss';
 
 interface Props {
@@ -33,22 +33,22 @@ export default function Page({ modelIds, modelData, other }: Props) {
             <main className={styles.main}>
                 <div>
                     <p>{modelIds.length} models</p>
-                    <button
-                        // eslint-disable-next-line @typescript-eslint/no-misused-promises
-                        onClick={async () => {
-                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                            const writer = (await getWriter())!;
-                            await writer.updateModels([{ id: '8x-MS-Unpainter' as ModelId }]);
-                        }}
-                    >
-                        Click me!
-                    </button>
                     <br />
                     <pre>{other}</pre>
                     <pre>
                         {modelIds.map((id) => (
                             <span key={id}>
-                                <Link href={`/models/${id}`}>{id}</Link> - {modelData[id].license ?? 'no license'}
+                                <Link href={`/models/${id}`}>{id}</Link> <span style={{ opacity: 0.5 }}>by</span>{' '}
+                                {asArray(modelData[id].author).map((userId) => (
+                                    <>
+                                        <Link
+                                            href={`/users/${userId}`}
+                                            key={userId}
+                                        >
+                                            {userId}
+                                        </Link>{' '}
+                                    </>
+                                ))}
                                 {'\n'}
                             </span>
                         ))}
