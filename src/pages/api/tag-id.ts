@@ -16,7 +16,7 @@ export default post<TagsRequestBody>(
 
         const index = tagIds.indexOf(id);
         if (index === -1) {
-            throw new Error('Cannot change tag id ' + id + ' because it does not exist');
+            throw new Error(`Cannot change tag id ${id} because it does not exist`);
         }
         if (hasOwn(tags, newId)) {
             throw new Error(`Cannot change tag id ${id} to ${newId} because ${newId} already exists`);

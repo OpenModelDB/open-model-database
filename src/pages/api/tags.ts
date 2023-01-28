@@ -15,14 +15,14 @@ export default post<TagsRequestBody>(
 
         for (const [id, value] of groups.change) {
             tags[id] = value;
-            console.warn('Updated tag ' + id);
+            console.warn(`Updated tag ${id}`);
         }
         for (const id of groups.delete) {
             if (id in tags) {
                 delete tags[id];
-                console.warn('Delete tag ' + id);
+                console.warn(`Delete tag ${id}`);
             } else {
-                console.warn('Tag ' + id + " cannot be deleted because it doesn't exist");
+                console.warn(`Tag ${id} cannot be deleted because it doesn't exist`);
             }
         }
 

@@ -14,7 +14,7 @@ export default post<ModelsRequestBody>(
         await Promise.all(
             [...groups.change].map(async ([id, value]) => {
                 await writeModelData(id, value);
-                console.warn('Updated model data of ' + id);
+                console.warn(`Updated model data of ${id}`);
             })
         );
 
@@ -23,9 +23,9 @@ export default post<ModelsRequestBody>(
                 const file = getModelDataPath(id);
                 if (await fileExists(file)) {
                     await unlink(file);
-                    console.warn('Delete model data of ' + id);
+                    console.warn(`Delete model data of ${id}`);
                 } else {
-                    console.warn('Model data of ' + id + " cannot be deleted because it doesn't exist");
+                    console.warn(`Model data of ${id} cannot be deleted because it doesn't exist`);
                 }
             })
         );
