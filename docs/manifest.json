@@ -1,0 +1,23 @@
+{
+	"routes": [
+		{
+			"file": "faq.md"
+		},
+		{
+			"file": "training.md",
+			"subHeadings": true
+		},
+		{
+			"directory": "contributing/",
+			"title": "Contributing",
+			"routes": [
+				{
+					"file": "documentation.md"
+				}
+			]
+		}
+	],
+	"redirects": {
+		"": "faq"
+	}
+}
