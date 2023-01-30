@@ -4,7 +4,6 @@ import { ParsedUrlQuery } from 'querystring';
 import { Doc, DocPagePath, docPathToSlug } from 'src/lib/docs/doc';
 import { SideBar, generateSideBar } from 'src/lib/docs/side-bar';
 import { getAllDocPaths, getAllDocs, getManifest } from 'src/lib/server/docs';
-import { hasOwn } from 'src/lib/util';
 
 interface Params extends ParsedUrlQuery {
     slug?: string[];
@@ -43,20 +42,7 @@ export default function Page({ title, markdown, sideBar }: Props) {
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
     const mdPaths = await getAllDocPaths();
-    const manifest = await getManifest();
-
     const paths = new Set(mdPaths.map(docPathToSlug));
-    for (const from of Object.keys(manifest.redirects ?? {})) {
-        if (!/^(?:[^./]+(?:\/[^./]+)*)?$/.test(from)) {
-            console.error(`Ignoring redirect from ${from} because it is not a valid slug`);
-            continue;
-        }
-        if (paths.has(from)) {
-            console.error(`Ignoring redirect from ${from} because it shadows a MarkDown file with the same slug`);
-            continue;
-        }
-        paths.add(from);
-    }
 
     return {
         paths: [...paths].map((path) => {
@@ -69,20 +55,9 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
     const manifest = await getManifest();
-    manifest.redirects ??= {};
 
     const slugSegments = context.params?.slug ?? [];
     const slug = slugSegments.join('/');
-
-    if (hasOwn(manifest.redirects, slug)) {
-        // redirect
-
-        let destination = manifest.redirects[slug];
-        if (!destination.startsWith('/')) {
-            destination = `/docs/${destination}`;
-        }
-        return { redirect: { destination, permanent: false } };
-    }
 
     const docs = await getAllDocs();
     const [docPath, doc] = getDocFromSlug(slug, docs);

@@ -1,24 +1,5 @@
 export interface Manifest {
     routes: Route[];
-    /**
-     * An optional mapping of redirects.
-     *
-     * The keys in this map are the slugs of the previously generated page relative to `/docs`.
-     * The values are the targets. these come in 2 flavors: absolute targets and relative targets.
-     * Relative targets the slug of a doc page relative to `/docs`.
-     * Absolute targets are the slugs of any page on the site and they start with `/`.
-     *
-     * Example:
-     * ```js
-     * redirects: {
-     *   "": "foo", // maps /docs to /docs/foo
-     *   "faq": "questions", // maps /docs/faq to /docs/questions
-     *   "about": "/about", // maps /docs/about to /about
-     *   "getting-started": "", // maps /docs/getting-started to /docs
-     * }
-     * ```
-     */
-    redirects?: Record<string, string>;
 }
 
 export type Route = FileRoute | DirectoryRoute;
