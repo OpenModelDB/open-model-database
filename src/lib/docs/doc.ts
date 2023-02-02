@@ -15,3 +15,10 @@ export function docPathToSlug(path: DocPagePath): string {
 export function docPathToLink(path: DocPagePath): string {
     return `/docs/${docPathToSlug(path)}`;
 }
+
+export function textToLinkId(text: string): string {
+    return text
+        .trim()
+        .replace(/[^a-zA-Z0-9]/g, '-')
+        .toLowerCase();
+}

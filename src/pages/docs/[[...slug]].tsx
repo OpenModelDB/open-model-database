@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
+import { MarkdownContainer } from 'src/elements/markdown';
 import { Doc, DocPagePath, docPathToSlug } from 'src/lib/docs/doc';
 import { SideBar, generateSideBar } from 'src/lib/docs/side-bar';
 import { getAllDocPaths, getAllDocs, getManifest } from 'src/lib/server/docs';
@@ -33,7 +34,7 @@ export default function Page({ title, markdown, sideBar }: Props) {
                     <p>{title}</p>
                     <pre>{JSON.stringify(sideBar, undefined, 4)}</pre>
                     <br />
-                    <pre>{markdown}</pre>
+                    <MarkdownContainer markdown={markdown} />
                 </div>
             </main>
         </>
