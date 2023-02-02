@@ -1,4 +1,4 @@
-import { Doc, DocPagePath, docPathToLink } from './doc';
+import { Doc, DocPagePath, docPathToLink, textToLinkId } from './doc';
 import { Manifest, Route } from './manifest';
 
 export interface SideBar {
@@ -38,8 +38,7 @@ export function generateSideBar(
                     const items: SideBarItem[] = [];
                     if (route.subHeadings) {
                         for (const heading of doc.subheadings) {
-                            const hash = heading.toLowerCase().replace(/[^a-zA-Z0-9_]+/g, '-');
-                            items.push({ title: heading, link: `${link}#${hash}` });
+                            items.push({ title: heading, link: `${link}#${textToLinkId(heading)}` });
                         }
                     }
 

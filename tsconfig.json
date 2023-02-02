@@ -17,6 +17,6 @@
     "baseUrl": ".",
     "plugins": [{"name": "typescript-plugin-css-modules"}]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/"],
   "exclude": ["node_modules"]
 }
