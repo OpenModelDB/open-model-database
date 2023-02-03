@@ -1,0 +1,36 @@
+@mixin h-stack {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+@mixin v-stack {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+@mixin transition($duration: 0.5s, $property: color background) {
+    transition-delay: 0s;
+    transition-duration: $duration;
+    transition-property: $property;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+    transition-timing-function: ease-in-out;
+}
+
+@mixin normal-button {
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    text-align: start;
+    background: none;
+    border: none;
+    line-height: inherit;
+}

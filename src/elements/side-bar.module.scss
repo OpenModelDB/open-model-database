@@ -1,0 +1,58 @@
+@import './util.module';
+
+.sideBar {
+    color: var(--font-color-light);
+
+    & > p {
+        font-size: 110%;
+    }
+
+    .branch .list {
+        padding-left: 0.5em;
+        margin-left: 0.5em;
+        border-left: 1px solid var(--line-color);
+    }
+
+    .list.level1 > * {
+        margin: 0.5em 0;
+    }
+
+    .item {
+        @include h-stack;
+
+        .itemIcon {
+            width: 1em;
+            height: 1em;
+            padding-right: 0.5em;
+            flex-shrink: 0;
+            transition: color 0.1s linear;
+        }
+
+        .itemText {
+            @include normal-button;
+
+            padding: 0.25em 0;
+            user-select: none;
+        }
+
+        &.current {
+            font-weight: bold;
+        }
+
+        .clickable {
+            cursor: pointer;
+            transition: color 0.1s linear;
+
+            &:hover,
+            &:focus {
+                color: var(--font-color-light-hover);
+            }
+        }
+    }
+
+    .level1,
+    .level2,
+    .level3 {
+        color: inherit;
+    }
+}

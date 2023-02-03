@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: col nowrap;
+
+    & > *:first-child {
+        width: 270px;
+        padding-right: 3em;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+}
+
+.content {
+    color: inherit;
+}
