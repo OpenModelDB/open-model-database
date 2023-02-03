@@ -1,18 +1,18 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import React from 'react';
+import { PageContainer } from 'src/elements/page';
 import { Model, ModelId } from 'src/lib/schema';
 import { getAllModelIds, getModelData } from 'src/lib/server/data';
 import { asArray } from 'src/lib/util';
-import styles from '../styles/Home.module.scss';
 
 interface Props {
     modelIds: ModelId[];
     modelData: Record<ModelId, Model>;
-    other: string;
 }
 
-export default function Page({ modelIds, modelData, other }: Props) {
+export default function Page({ modelIds, modelData }: Props) {
     return (
         <>
             <Head>
@@ -30,31 +30,23 @@ export default function Page({ modelIds, modelData, other }: Props) {
                     rel="icon"
                 />
             </Head>
-            <main className={styles.main}>
-                <div>
-                    <p>{modelIds.length} models</p>
-                    <br />
-                    <pre>{other}</pre>
-                    <pre>
-                        {modelIds.map((id) => (
-                            <span key={id}>
-                                <Link href={`/models/${id}`}>{id}</Link> <span style={{ opacity: 0.5 }}>by</span>{' '}
-                                {asArray(modelData[id].author).map((userId) => (
-                                    <>
-                                        <Link
-                                            href={`/users/${userId}`}
-                                            key={userId}
-                                        >
-                                            {userId}
-                                        </Link>{' '}
-                                    </>
-                                ))}
-                                {'\n'}
-                            </span>
-                        ))}
-                    </pre>
-                </div>
-            </main>
+            <PageContainer>
+                <p>{modelIds.length} models</p>
+                <br />
+                <pre>
+                    {modelIds.map((id) => (
+                        <span key={id}>
+                            <Link href={`/models/${id}`}>{id}</Link> <span style={{ opacity: 0.5 }}>by</span>{' '}
+                            {asArray(modelData[id].author).map((userId) => (
+                                <React.Fragment key={userId}>
+                                    <Link href={`/users/${userId}`}>{userId}</Link>{' '}
+                                </React.Fragment>
+                            ))}
+                            {'\n'}
+                        </span>
+                    ))}
+                </pre>
+            </PageContainer>
         </>
     );
 }
@@ -66,7 +58,6 @@ export const getStaticProps: GetStaticProps<Props> = async (_context) => {
         props: {
             modelIds: modelIds,
             modelData: Object.fromEntries(modelIds.map((id, i) => [id, modelData[i]])),
-            other: `${[...new Set(modelData.map((m) => m.license))].join('\n')}\n\n`,
         },
     };
 };

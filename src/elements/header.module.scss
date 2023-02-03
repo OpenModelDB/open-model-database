@@ -1,0 +1,50 @@
+@import './util.module';
+
+.header {
+    background-color: var(--header-bg);
+
+    & > div {
+        @include h-stack;
+
+        max-width: var(--max-page-width);
+        box-sizing: border-box;
+        padding: 0.5em 1em;
+        margin: auto;
+    }
+
+    img {
+        max-height: 50px;
+    }
+}
+
+.docLink {
+    margin: 0.5em;
+    font-size: 100%;
+}
+
+.iconLink,
+.lightThemeButton,
+.darkThemeButton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0.5em;
+    font-size: 150%;
+    cursor: pointer;
+    transition: color 0.1s linear;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+
+    &:hover {
+        color: var(--font-color-hover);
+    }
+}
+
+.lightThemeButton {
+    display: var(--light-mode-switch);
+}
+
+.darkThemeButton {
+    display: var(--dark-mode-switch);
+}

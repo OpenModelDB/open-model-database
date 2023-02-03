@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { textToLinkId } from 'src/lib/docs/doc';
@@ -18,7 +19,7 @@ export function MarkdownContainer(props: MarkdownProps) {
 
                     return (
                         <h2 id={id}>
-                            <a href={`#${id}`}>{children}</a>
+                            <Link href={`#${id}`}>{children}</Link>
                         </h2>
                     );
                 },

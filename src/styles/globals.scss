@@ -1,28 +1,45 @@
 // theme colors
 
-@function color($theme, $light, $dark) {
+@function select($theme, $light, $dark) {
     @if $theme == dark {
         @return $dark;
-    } @else {
+    }
+    @if $theme == light {
         @return $light;
     }
+    @error "#{$theme} is not a valid theme. Only light and dark mode are supported.";
 }
 
 @mixin theme-colors($theme) {
-    --bar: #{color($theme, #fff, #000)};
-    --header-bg: #{color($theme, #ddd, #111)};
+    --page-bg: #{select($theme, #fff, #000)};
+    --header-bg: #{select($theme, #c8c8c8, #181818)};
+
+    --accent-color: #484ba8;
+
+    --font-color: #{select($theme, #000, #ddd)};
+    --font-color-hover: #{select($theme, var(--accent-color), var(--accent-color))};
+    --font-color-light: #{select($theme, #444, #bbb)};
+    --font-color-light-hover: #{select($theme, #000, #fff)};
+
+    --line-color: #{select($theme, #ccc, #444)};
 }
 
 :root:not([data-theme='dark']) {
     @include theme-colors(light);
 
     color-scheme: light;
+
+    --dark-mode-switch: block;
+    --light-mode-switch: none;
 }
 
 :root[data-theme='dark'] {
     @include theme-colors(dark);
 
     color-scheme: dark;
+
+    --dark-mode-switch: none;
+    --light-mode-switch: block;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,12 +47,17 @@
         @include theme-colors(dark);
 
         color-scheme: dark;
+
+        --dark-mode-switch: none;
+        --light-mode-switch: block;
     }
 }
 
 // global variables
 
 :root {
+    --max-page-width: 1400px;
+
     --fonts-heading: -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif, 'Apple Color Emoji',
         'Segoe UI Emoji', 'Segoe UI Symbol';
     --fonts-body: -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif, 'Apple Color Emoji',
@@ -50,6 +72,12 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--fonts-body);
+    color: var(--font-color);
+}
+
+body {
+    background-color: var(--page-bg);
+    line-height: 1.5;
 }
 
 code,

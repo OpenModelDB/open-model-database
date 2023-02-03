@@ -7,16 +7,13 @@ export interface SideBar {
 
 export interface SideBarItem {
     title: string;
-    link?: string;
-    current?: true;
+    link: string;
+
+    fakeLink?: boolean;
     items?: SideBarItem[];
 }
 
-export function generateSideBar(
-    manifest: Manifest,
-    docs: ReadonlyMap<DocPagePath, Doc>,
-    current: DocPagePath
-): SideBar {
+export function generateSideBar(manifest: Manifest, docs: ReadonlyMap<DocPagePath, Doc>): SideBar {
     const mapRoutes = (routes: readonly Route[], prefix: string): SideBarItem[] => {
         return routes
             .map<SideBarItem | undefined>((route) => {
@@ -42,11 +39,9 @@ export function generateSideBar(
                         }
                     }
 
-                    const isCurrent = current === path;
                     return {
                         title: doc.title,
                         link,
-                        ...(isCurrent ? { current: true } : {}),
                         ...(items.length ? { items } : {}),
                     };
                 } else {
@@ -69,16 +64,16 @@ export function generateSideBar(
                             } will be ignored because it has an index page.`
                         );
 
-                        const isCurrent = current === indexPath;
                         return {
                             title: indexDoc.title,
                             link: docPathToLink(indexPath),
-                            ...(isCurrent ? { current: true } : {}),
                             ...(items.length ? { items } : {}),
                         };
                     } else {
                         return {
                             title: route.title ?? `Missing title: ${prefix}${route.directory}`,
+                            link: docPathToLink(`${prefix + route.directory.slice(0, -1)}` as DocPagePath),
+                            fakeLink: true,
                             ...(items.length ? { items } : {}),
                         };
                     }

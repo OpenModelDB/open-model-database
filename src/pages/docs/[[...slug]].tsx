@@ -2,9 +2,12 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import { MarkdownContainer } from 'src/elements/markdown';
+import { PageContainer } from 'src/elements/page';
+import { SideBarView } from 'src/elements/side-bar';
 import { Doc, DocPagePath, docPathToSlug } from 'src/lib/docs/doc';
 import { SideBar, generateSideBar } from 'src/lib/docs/side-bar';
 import { getAllDocPaths, getAllDocs, getManifest } from 'src/lib/server/docs';
+import style from './docs.module.scss';
 
 interface Params extends ParsedUrlQuery {
     slug?: string[];
@@ -29,14 +32,14 @@ export default function Page({ title, markdown, sideBar }: Props) {
                     rel="icon"
                 />
             </Head>
-            <main>
-                <div>
-                    <p>{title}</p>
-                    <pre>{JSON.stringify(sideBar, undefined, 4)}</pre>
-                    <br />
-                    <MarkdownContainer markdown={markdown} />
+            <PageContainer>
+                <div className={style.container}>
+                    <SideBarView sideBar={sideBar} />
+                    <div className={style.content}>
+                        <MarkdownContainer markdown={markdown} />
+                    </div>
                 </div>
-            </main>
+            </PageContainer>
         </>
     );
 }
@@ -61,13 +64,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const slug = slugSegments.join('/');
 
     const docs = await getAllDocs();
-    const [docPath, doc] = getDocFromSlug(slug, docs);
+    const [, doc] = getDocFromSlug(slug, docs);
 
     return {
         props: {
             title: doc.title,
             markdown: doc.markdown,
-            sideBar: generateSideBar(manifest, docs, docPath),
+            sideBar: generateSideBar(manifest, docs),
         },
     };
 };
