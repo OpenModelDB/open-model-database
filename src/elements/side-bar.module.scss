@@ -44,8 +44,7 @@
             cursor: pointer;
             transition: color 0.1s linear;
 
-            &:hover,
-            &:focus {
+            &:hover {
                 color: var(--font-color-light-hover);
             }
         }
