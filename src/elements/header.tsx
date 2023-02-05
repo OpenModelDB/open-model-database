@@ -5,6 +5,7 @@ import React from 'react';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { toggleColorScheme } from 'src/lib/color-scheme';
+import Logo from '../../public/logo.svg';
 import style from './header.module.scss';
 import { ExternalLink } from './link';
 
@@ -14,7 +15,7 @@ export function Header() {
             <div className={style.headerSpacer} />
             <header className={style.header}>
                 <div>
-                    <img src="/logo.png" />
+                    <Logo width="275px" />
 
                     <Link
                         className={style.docLink}
