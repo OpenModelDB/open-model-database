@@ -36,6 +36,10 @@
 
     --dark-mode-switch: block;
     --light-mode-switch: none;
+
+    --logo-dark: #111018;
+    --logo-light: #fff;
+    --logo-accent: #454aab;
 }
 
 :root[data-theme='dark'] {
@@ -45,6 +49,10 @@
 
     --dark-mode-switch: none;
     --light-mode-switch: block;
+
+    --logo-dark: #fff;
+    --logo-light: #111018;
+    --logo-accent: #454aab;
 }
 
 @media (prefers-color-scheme: dark) {
