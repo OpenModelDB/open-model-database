@@ -26,13 +26,15 @@
         margin: auto;
     }
 
-    img {
-        max-height: 50px;
+    .logo {
+        display: flex;
+        flex-shrink: 0;
+        width: 275px;
     }
 }
 
 .docLink {
-    margin: 0.5em;
+    margin-left: 2em;
     font-size: 100%;
 }
 
