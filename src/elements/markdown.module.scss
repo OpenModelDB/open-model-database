@@ -1,0 +1,39 @@
+.markdown {
+    h2 {
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    h3 {
+        margin-top: 1.75em;
+        margin-bottom: 1em;
+    }
+
+    @media screen and (max-width: 900px) {
+        & {
+            overflow-wrap: break-word;
+        }
+    }
+}
+
+.code {
+    background-color: var(--code-inline-bg);
+    color: var(--code-inline-color);
+    font-size: 90%;
+    padding: 0.2em 0.5em;
+    white-space: break-spaces;
+    border-radius: 0.25em;
+}
+
+.linkableHeading {
+    a:hover {
+        border-bottom: 1px dotted;
+
+        &::after {
+            content: '#';
+            opacity: 0.5;
+            margin-left: 0.33em;
+            position: absolute;
+        }
+    }
+}

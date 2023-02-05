@@ -59,3 +59,7 @@ export function asArray<T>(value: T | T[] | readonly T[]): readonly T[] {
         return [value as T];
     }
 }
+
+export function joinClasses(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
