@@ -1,13 +1,18 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
+import { useMemo } from 'react';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import { ExternalTextLink } from 'src/elements/link';
 import { MarkdownContainer } from 'src/elements/markdown';
 import { PageContainer } from 'src/elements/page';
 import { SideBarView } from 'src/elements/side-bar';
 import { Doc, DocPagePath, docPathToSlug } from 'src/lib/docs/doc';
-import { SideBar, generateSideBar } from 'src/lib/docs/side-bar';
+import { SideBar, SideBarItem, generateSideBar, getPageList } from 'src/lib/docs/side-bar';
+import { useCurrentPath } from 'src/lib/hooks/use-current-path';
 import { getAllDocPaths, getAllDocs, getDocFileMetadata, getManifest } from 'src/lib/server/docs';
+import { withoutHash } from 'src/lib/util';
 import style from './docs.module.scss';
 
 interface Params extends ParsedUrlQuery {
@@ -22,6 +27,16 @@ interface Props {
 }
 
 export default function Page({ title, markdown, sideBar, docPath, lastModified }: Props) {
+    const currentPath = useCurrentPath();
+
+    console.log(currentPath);
+    const [prev, next] = useMemo((): [SideBarItem | undefined, SideBarItem | undefined] => {
+        const list = getPageList(sideBar).filter((item) => item.link === withoutHash(item.link));
+        const index = list.findIndex((item) => item.link === currentPath);
+        if (index === -1) return [undefined, undefined];
+        return [list[index - 1], list[index + 1]];
+    }, [currentPath, sideBar]);
+
     return (
         <>
             <Head>
@@ -42,6 +57,29 @@ export default function Page({ title, markdown, sideBar, docPath, lastModified }
                     </div>
                     <div className={style.content}>
                         <MarkdownContainer markdown={markdown} />
+                        {(prev || next) && (
+                            <div className={style.links}>
+                                {prev && (
+                                    <Link
+                                        className={style.prev}
+                                        href={prev.link}
+                                    >
+                                        <BiChevronLeft />
+                                        <span>{prev.title}</span>
+                                    </Link>
+                                )}
+                                <span className={style.spacer} />
+                                {next && (
+                                    <Link
+                                        className={style.next}
+                                        href={next.link}
+                                    >
+                                        <span>{next.title}</span>
+                                        <BiChevronRight />
+                                    </Link>
+                                )}
+                            </div>
+                        )}
                         <div className={style.footer}>
                             <div className={style.meta}>
                                 <span className={style.lastModified}> {lastModified}</span>

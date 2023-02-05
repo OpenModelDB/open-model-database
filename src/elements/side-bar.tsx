@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
 import { BsDot } from 'react-icons/bs';
 import { IconType } from 'react-icons/lib';
+import { withoutHash } from 'src/lib/util';
 import { SideBar, SideBarItem } from '../lib/docs/side-bar';
 import style from './side-bar.module.scss';
 
@@ -13,7 +14,7 @@ export interface SideBarProps {
 export function SideBarView({ sideBar }: SideBarProps) {
     const { asPath } = useRouter();
 
-    const [currentLink, setCurrentLink] = useState<string | undefined>(asPath.replace(/\/?(?:#[^]*)?$/, ''));
+    const [currentLink, setCurrentLink] = useState<string | undefined>(withoutHash(asPath));
 
     useEffect(() => {
         setCurrentLink(asPath);

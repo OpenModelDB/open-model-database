@@ -44,3 +44,44 @@
         }
     }
 }
+
+.links {
+    @include h-stack;
+
+    width: 100%;
+    margin-top: 3em;
+
+    .spacer {
+        min-width: 1em;
+    }
+
+    a {
+        @include h-stack;
+
+        color: var(--link-color);
+        border: 1px solid var(--line-color);
+        padding: 0.33em 0.5em;
+        border-radius: 0.33em;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        svg {
+            width: 2em;
+            height: 2em;
+        }
+
+        span {
+            text-align: center;
+        }
+    }
+
+    .prev span {
+        margin-right: 0.5em;
+    }
+
+    .next span {
+        margin-left: 0.5em;
+    }
+}
