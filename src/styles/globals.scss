@@ -11,10 +11,10 @@
 }
 
 @mixin theme-colors($theme) {
-    --page-bg: #{select($theme, #fff, #111)};
+    --page-bg: #{select($theme, #fff, #111018)};
     --header-bg: #{select($theme, rgb(255 255 255/80%), rgb(0 0 0/80%))};
 
-    --accent-color: #484ba8;
+    --accent-color: #454aab;
 
     --font-color: #{select($theme, #000, #eee)};
     --font-color-hover: #{select($theme, var(--accent-color), var(--accent-color))};
@@ -27,6 +27,11 @@
     --code-inline-color: inherit;
 
     --link-color: #{select($theme, hsl(212deg 100% 45%), hsl(212deg 100% 67%))};
+
+    --logo-text: #{select($theme, #111018, #fff)};
+    --logo-jelly: #{select($theme, #fff, #fff)};
+    --logo-circle: #{select($theme, #111018, #111018)};
+    --logo-accent: var(--accent-color);
 }
 
 :root:not([data-theme='dark']) {
@@ -36,10 +41,6 @@
 
     --dark-mode-switch: block;
     --light-mode-switch: none;
-
-    --logo-dark: #111018;
-    --logo-light: #fff;
-    --logo-accent: #454aab;
 }
 
 :root[data-theme='dark'] {
@@ -49,10 +50,6 @@
 
     --dark-mode-switch: none;
     --light-mode-switch: block;
-
-    --logo-dark: #fff;
-    --logo-light: #111018;
-    --logo-accent: #454aab;
 }
 
 @media (prefers-color-scheme: dark) {
