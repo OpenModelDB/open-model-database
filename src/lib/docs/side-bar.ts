@@ -83,3 +83,20 @@ export function generateSideBar(manifest: Manifest, docs: ReadonlyMap<DocPagePat
     };
     return { items: mapRoutes(manifest.routes, '') };
 }
+
+type SideBarItemWithLink = SideBarItem & { fakeLink: false | undefined };
+
+export function getPageList(sideBar: SideBar): SideBarItemWithLink[] {
+    const transverse = (item: SideBarItem): SideBarItemWithLink[] => {
+        const result: SideBarItemWithLink[] = [];
+        if (!item.fakeLink) {
+            result.push(item as SideBarItemWithLink);
+        }
+        if (item.items) {
+            result.push(...item.items.flatMap(transverse));
+        }
+        return result;
+    };
+
+    return sideBar.items.flatMap(transverse);
+}

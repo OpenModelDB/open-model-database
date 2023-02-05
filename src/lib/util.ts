@@ -63,3 +63,9 @@ export function asArray<T>(value: T | T[] | readonly T[]): readonly T[] {
 export function joinClasses(...classes: (string | undefined | null | false)[]) {
     return classes.filter(Boolean).join(' ');
 }
+
+export function withoutHash(urlFragment: string, removeTrailingSlash = true): string {
+    const fragment = urlFragment.replace(/#[\s\S]*$/, '');
+    if (removeTrailingSlash) return fragment.replace(/\/$/, '');
+    return fragment;
+}
