@@ -1,5 +1,6 @@
 import { lstat, readFile, readdir } from 'fs/promises';
 import { join } from 'path';
+import { simpleGit } from 'simple-git';
 import { Doc, DocPagePath } from '../docs/doc';
 import { Manifest } from '../docs/manifest';
 
@@ -41,7 +42,7 @@ export async function getAllDocs(): Promise<Map<DocPagePath, Doc>> {
 }
 
 export function parseDocFile(content: string): Doc {
-    const regex = /(^# .+)|(^## .+)|^```[^\s\S]*?^```/gm;
+    const regex = /(^# .+)|(^## .+)|^```[\s\S]*?^```/gm;
 
     const doc: Doc = {
         title: 'No title',
@@ -71,4 +72,36 @@ export async function getManifest(): Promise<Manifest> {
     const content = await readFile(join(DOCS_DIR, 'manifest.json'), 'utf-8');
     const manifest = JSON.parse(content) as Manifest;
     return manifest;
+}
+
+export interface DocMetadata {
+    /** UTC timestamp in milliseconds. */
+    lastModified: number;
+}
+
+export async function getDocFileMetadata(path: DocPagePath): Promise<DocMetadata> {
+    const git = simpleGit();
+
+    const file = join(DOCS_DIR, path).replace(/\\/g, '/');
+
+    const log = await git.log({ file, maxCount: 1 }).catch(() => undefined);
+    const lastModified = Date.parse(log?.latest?.date ?? '') || Date.now();
+
+    const status = await git.status({}).catch(() => undefined);
+    const dirty =
+        status &&
+        (status.modified.includes(file) ||
+            status.staged.includes(file) ||
+            status.created.includes(file) ||
+            status.not_added.includes(file));
+
+    let mtime = undefined;
+    if (dirty) {
+        try {
+            const stat = await lstat(file);
+            mtime = stat.mtime.valueOf();
+        } catch {}
+    }
+
+    return { lastModified: mtime || lastModified };
 }

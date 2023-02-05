@@ -1,16 +1,46 @@
+@import '../../elements/util.module';
+
 .container {
     display: flex;
     align-items: flex-start;
     flex-flow: col nowrap;
 
-    & > *:first-child {
+    .sideBar {
         width: 270px;
         padding-right: 3em;
         flex-shrink: 0;
         box-sizing: border-box;
     }
+
+    .content {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 900px) {
+        .sideBar {
+            display: none;
+        }
+    }
 }
 
-.content {
-    color: inherit;
+.footer {
+    margin-top: 2em;
+    border-top: 1px solid var(--line-color);
+
+    .meta {
+        @include h-stack;
+
+        padding: 1em 0;
+        font-size: 85%;
+
+        .edit {
+            width: 100%;
+            text-align: right;
+        }
+
+        .lastModified {
+            flex-shrink: 0;
+            color: var(--font-color-light);
+        }
+    }
 }

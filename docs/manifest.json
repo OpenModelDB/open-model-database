@@ -4,8 +4,12 @@
 			"file": "faq.md"
 		},
 		{
-			"file": "training.md",
-			"subHeadings": true
+			"directory": "training/",
+			"routes": [
+				{
+					"file": "datasets.md"
+				}
+			]
 		},
 		{
 			"directory": "contributing/",
@@ -13,6 +17,9 @@
 			"routes": [
 				{
 					"file": "documentation.md"
+				},
+				{
+					"file": "github.md"
 				}
 			]
 		}
