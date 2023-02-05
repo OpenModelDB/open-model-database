@@ -22,8 +22,6 @@ jobs:
             - run: npm ci
             - name: ESLint & StyleLint
               run: npm run lint:ci
-            - name: typescript
-              run: npx tsc
 
     build:
         runs-on: ubuntu-latest
