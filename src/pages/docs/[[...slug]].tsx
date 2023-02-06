@@ -29,7 +29,6 @@ interface Props {
 export default function Page({ title, markdown, sideBar, docPath, lastModified }: Props) {
     const currentPath = useCurrentPath();
 
-    console.log(currentPath);
     const [prev, next] = useMemo((): [SideBarItem | undefined, SideBarItem | undefined] => {
         const list = getPageList(sideBar).filter((item) => item.link === withoutHash(item.link));
         const index = list.findIndex((item) => item.link === currentPath);
