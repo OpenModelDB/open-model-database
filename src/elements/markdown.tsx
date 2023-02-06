@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import React from 'react';
 import { ReactElement, ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { HeadingComponent } from 'react-markdown/lib/ast-to-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import { textToLinkId } from 'src/lib/docs/doc';
 import { useCurrentPath } from 'src/lib/hooks/use-current-path';
@@ -83,24 +84,40 @@ export function MarkdownContainer(props: MarkdownProps) {
                         return <ExternalTextLink href={href}>{children}</ExternalTextLink>;
                     },
                     code: ({ inline, className, children }) => {
-                        if (inline) {
-                            return <code className={`${className ?? ''} ${style.code}`}>{children}</code>;
+                        const text = getTextContent(children).replace(/\n$/, '');
+                        let lang = /language-([\w-]+)/.exec(className || '')?.[1];
+
+                        if (!lang) {
+                            // try to detect language
+                            if (isValidJson(text)) {
+                                lang = 'json';
+                            }
                         }
 
-                        const match = /language-([\w-]+)/.exec(className || '');
-                        if (match) {
-                            const [, lang] = match;
+                        if (inline) {
+                            // return <code className={`${className ?? ''} ${style.code}`}>{children}</code>;
                             return (
-                                <SyntaxHighlighter
-                                    PreTag="div"
-                                    language={lang}
-                                    style={tomorrow}
-                                >
-                                    {getTextContent(children).replace(/\n$/, '')}
-                                </SyntaxHighlighter>
+                                <span className={style.codeWrapper}>
+                                    <SyntaxHighlighter
+                                        PreTag={NoProps}
+                                        language={lang || 'none'}
+                                        style={atomDark}
+                                    >
+                                        {text}
+                                    </SyntaxHighlighter>
+                                </span>
                             );
                         }
-                        return <code className={className}>{children}</code>;
+
+                        return (
+                            <SyntaxHighlighter
+                                PreTag={'div'}
+                                language={lang || 'none'}
+                                style={atomDark}
+                            >
+                                {text}
+                            </SyntaxHighlighter>
+                        );
                     },
                 }}
                 remarkPlugins={[remarkGfm]}
@@ -120,4 +137,17 @@ function getTextContent(node: ReactNode): string {
 
     if ('children' in node) return getTextContent(node.children);
     return getTextContent((node as ReactElement<{ children?: ReactNode }>).props.children);
+}
+
+function isValidJson(text: string): boolean {
+    try {
+        JSON.parse(text);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+function NoProps({ children }: React.PropsWithChildren<unknown>) {
+    return <>{children}</>;
 }

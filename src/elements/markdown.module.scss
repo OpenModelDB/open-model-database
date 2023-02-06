@@ -16,13 +16,13 @@
     }
 }
 
-.code {
-    background-color: var(--code-inline-bg);
-    color: var(--code-inline-color);
+.codeWrapper > code {
+    background-color: rgb(29 31 33); // color of the theme we use for code blocks
     font-size: 90%;
-    padding: 0.2em 0.5em;
-    white-space: break-spaces;
+    padding: 0.25em 0.5em;
+    white-space: break-spaces !important;
     border-radius: 0.25em;
+    line-height: inherit !important;
 }
 
 .linkableHeading {

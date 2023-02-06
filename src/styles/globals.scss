@@ -23,9 +23,6 @@
 
     --line-color: #{select($theme, hsl(0deg 0% 80%), hsl(0deg 0% 15%))};
 
-    --code-inline-bg: #{select($theme, #ddd, #222)};
-    --code-inline-color: inherit;
-
     --link-color: #{select($theme, hsl(212deg 100% 45%), hsl(212deg 100% 67%))};
 
     --logo-text: #{select($theme, #111018, #fff)};
@@ -91,7 +88,7 @@ body {
 
 code,
 pre {
-    font-family: var(--fonts-mono);
+    font-family: var(--fonts-mono) !important;
 }
 
 h1,
