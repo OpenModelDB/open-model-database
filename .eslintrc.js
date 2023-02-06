@@ -3,7 +3,7 @@ module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
     extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
-    plugins: ['prettier', 'unused-imports', 'react-hooks'],
+    plugins: ['prettier', 'unused-imports', 'react-hooks', 'tailwindcss'],
     rules: {
         'prefer-template': 'warn',
 
@@ -28,6 +28,11 @@ module.exports = {
 
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': ['warn', { additionalHooks: '(useAsyncEffect)' }],
+
+        'tailwindcss/enforces-shorthand': 'warn',
+        'tailwindcss/no-contradicting-classname': 'error',
+        'tailwindcss/enforces-negative-arbitrary-values': 'warn',
+        'tailwindcss/no-arbitrary-value': 'error',
     },
 
     settings: {
@@ -57,5 +62,5 @@ module.exports = {
         },
     ],
 
-    ignorePatterns: ['next-env.d.ts'],
+    ignorePatterns: ['next-env.d.ts', 'node_modules/', 'out/', '.next/'],
 };
