@@ -1,3 +1,8 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+// @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // theme colors
 
 @function select($theme, $light, $dark) {
