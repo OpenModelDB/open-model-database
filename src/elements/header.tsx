@@ -15,7 +15,12 @@ export function Header() {
             <div className={style.headerSpacer} />
             <header className={style.header}>
                 <div>
-                    <Logo width="275px" />
+                    <Link
+                        className={style.logo}
+                        href="/"
+                    >
+                        <Logo />
+                    </Link>
 
                     <Link
                         className={style.docLink}

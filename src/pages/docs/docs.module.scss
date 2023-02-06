@@ -6,7 +6,7 @@
     flex-flow: col nowrap;
 
     .sideBar {
-        width: 270px;
+        width: calc(275px + 2em);
         padding-right: 3em;
         flex-shrink: 0;
         box-sizing: border-box;
