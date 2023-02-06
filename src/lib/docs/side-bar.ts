@@ -58,11 +58,13 @@ export function generateSideBar(manifest: Manifest, docs: ReadonlyMap<DocPagePat
                     const items = mapRoutes(route.routes, prefix + route.directory);
 
                     if (indexDoc) {
-                        console.warn(
-                            `manifest.json: The title of directory ${
-                                prefix + route.directory
-                            } will be ignored because it has an index page.`
-                        );
+                        if (route.title) {
+                            console.warn(
+                                `manifest.json: The title of directory ${
+                                    prefix + route.directory
+                                } will be ignored because it has an index page.`
+                            );
+                        }
 
                         return {
                             title: indexDoc.title,
