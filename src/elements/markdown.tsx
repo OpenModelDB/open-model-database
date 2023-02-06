@@ -95,7 +95,6 @@ export function MarkdownContainer(props: MarkdownProps) {
                         }
 
                         if (inline) {
-                            // return <code className={`${className ?? ''} ${style.code}`}>{children}</code>;
                             return (
                                 <span className={style.codeWrapper}>
                                     <SyntaxHighlighter
