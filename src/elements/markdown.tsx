@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { ReactElement, ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -8,7 +7,7 @@ import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import { textToLinkId } from 'src/lib/docs/doc';
 import { useCurrentPath } from 'src/lib/hooks/use-current-path';
-import { ExternalTextLink, TextLink } from './link';
+import { Link, TextLink } from './components/link';
 import style from './markdown.module.scss';
 
 const LinkableHeading: HeadingComponent = ({ children, level }) => {
@@ -65,7 +64,7 @@ export function MarkdownContainer(props: MarkdownProps) {
                     h4: LinkableHeading,
                     a: ({ href, children }) => {
                         if (!href) {
-                            return <Link href="">{children}</Link>;
+                            return <>{children}</>;
                         }
 
                         const origin = 'https://openmodeldb.info';
@@ -81,7 +80,14 @@ export function MarkdownContainer(props: MarkdownProps) {
                             }
                             return <TextLink href={relative}>{children}</TextLink>;
                         }
-                        return <ExternalTextLink href={href}>{children}</ExternalTextLink>;
+                        return (
+                            <TextLink
+                                external
+                                href={href}
+                            >
+                                {children}
+                            </TextLink>
+                        );
                     },
                     code: ({ inline, className, children }) => {
                         const text = getTextContent(children).replace(/\n$/, '');

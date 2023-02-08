@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import Link from 'next/link';
 import React from 'react';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { toggleColorScheme } from 'src/lib/color-scheme';
 import Logo from '../../public/logo.svg';
+import { Link } from './components/link';
 import style from './header.module.scss';
-import { ExternalLink } from './link';
 
 export function Header() {
     return (
@@ -31,18 +30,20 @@ export function Header() {
 
                     <span className={style.spacer}></span>
 
-                    <ExternalLink
+                    <Link
+                        external
                         className={style.iconLink}
                         href="https://github.com/OpenModelDB/open-model-database"
                     >
                         <FaGithub />
-                    </ExternalLink>
-                    <ExternalLink
+                    </Link>
+                    <Link
+                        external
                         className={style.iconLink}
                         href="https://discord.gg/enhance-everything-547949405949657098"
                     >
                         <FaDiscord />
-                    </ExternalLink>
+                    </Link>
                     <button
                         className={style.lightThemeButton}
                         onClick={toggleColorScheme}
