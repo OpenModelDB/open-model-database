@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint . --ext \".js,.jsx,.ts,.tsx\" && stylelint \"src/**/*.{scss,css}\"",
     "lint:fix": "eslint . --ext \".js,.jsx,.ts,.tsx\" --fix && stylelint \"src/**/*.{scss,css}\" --fix",
-    "lint:ci": "eslint . --ext \".js,.jsx,.ts,.tsx\" --max-warnings 0 && stylelint src/**/*.scss"
+    "lint:ci": "eslint . --ext \".js,.jsx,.ts,.tsx\" --max-warnings 0 && stylelint src/**/*.scss",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.9",
@@ -23,6 +25,15 @@
     "simple-git": "^3.16.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
     "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
@@ -31,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.3.0",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
     "eslint-config-prettier": "^8.6.0",
@@ -39,6 +51,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.10",
     "eslint-plugin-tailwindcss": "^3.8.3",
     "eslint-plugin-unused-imports": "^2.0.0",
     "postcss": "^8.4.21",
