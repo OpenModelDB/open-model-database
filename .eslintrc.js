@@ -6,21 +6,15 @@ module.exports = {
     plugins: ['prettier', 'unused-imports', 'react-hooks', 'tailwindcss'],
     rules: {
         'prefer-template': 'warn',
+
         'unused-imports/no-unused-imports': 'error',
-        'sort-imports': [
-            'error',
-            {
-                ignoreDeclarationSort: true,
-            },
-        ],
+
+        'sort-imports': ['error', { ignoreDeclarationSort: true }],
         'import/order': [
             'error',
             {
                 groups: [['builtin', 'external'], 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-                alphabetize: {
-                    order: 'asc',
-                    caseInsensitive: true,
-                },
+                alphabetize: { order: 'asc', caseInsensitive: true },
             },
         ],
         'react/jsx-sort-props': [
@@ -31,12 +25,7 @@ module.exports = {
             },
         ],
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': [
-            'warn',
-            {
-                additionalHooks: '(useAsyncEffect)',
-            },
-        ],
+        'react-hooks/exhaustive-deps': ['warn', { additionalHooks: '(useAsyncEffect)' }],
         'tailwindcss/enforces-shorthand': 'warn',
         'tailwindcss/no-contradicting-classname': 'error',
         'tailwindcss/enforces-negative-arbitrary-values': 'warn',
@@ -47,7 +36,6 @@ module.exports = {
         'import/resolver': {
             typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
         },
-
         'import/ignore': [/\.(?:css|scss|sass)$/i],
     },
     overrides: [
@@ -65,12 +53,7 @@ module.exports = {
             },
             rules: {
                 '@typescript-eslint/no-unnecessary-condition': 'warn',
-                '@typescript-eslint/no-unused-vars': [
-                    'warn',
-                    {
-                        argsIgnorePattern: '^_',
-                    },
-                ],
+                '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
             },
         },
     ],
