@@ -6,5 +6,8 @@
 		"Luma",
 		"Pretrained",
 		"pth"
-	]
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true
+	}
 }
