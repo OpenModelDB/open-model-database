@@ -1,8 +1,8 @@
-import { ChangeIdRequest } from 'src/lib/api-types';
-import { UserId } from 'src/lib/schema';
-import { post, synchronizeDB } from 'src/lib/server/api-impl';
-import { getUsers, mutateModels, writeUsers } from 'src/lib/server/data';
-import { hasOwn } from 'src/lib/util';
+import { ChangeIdRequest } from '../../lib/api-types';
+import { UserId } from '../../lib/schema';
+import { post, synchronizeDB } from '../../lib/server/api-impl';
+import { getUsers, mutateModels, writeUsers } from '../../lib/server/data';
+import { hasOwn } from '../../lib/util';
 
 export type UsersRequestBody = ChangeIdRequest<UserId>;
 

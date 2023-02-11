@@ -4,8 +4,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
 import { BsDot } from 'react-icons/bs';
 import { IconType } from 'react-icons/lib';
-import { withoutHash } from 'src/lib/util';
 import { SideBar, SideBarItem } from '../lib/docs/side-bar';
+import { withoutHash } from '../lib/util';
 import style from './side-bar.module.scss';
 
 export interface SideBarProps {

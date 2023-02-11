@@ -3,8 +3,8 @@
 import React from 'react';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
-import { toggleColorScheme } from 'src/lib/color-scheme';
 import Logo from '../../public/logo.svg';
+import { toggleColorScheme } from '../lib/color-scheme';
 import { Link } from './components/link';
 import style from './header.module.scss';
 
