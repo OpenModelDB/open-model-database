@@ -5,8 +5,8 @@ import { HeadingComponent } from 'react-markdown/lib/ast-to-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
-import { textToLinkId } from 'src/lib/docs/doc';
-import { useCurrentPath } from 'src/lib/hooks/use-current-path';
+import { textToLinkId } from '../lib/docs/doc';
+import { useCurrentPath } from '../lib/hooks/use-current-path';
 import { Link, TextLink } from './components/link';
 import style from './markdown.module.scss';
 

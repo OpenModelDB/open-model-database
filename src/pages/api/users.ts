@@ -1,7 +1,7 @@
-import { UpdateRequest } from 'src/lib/api-types';
-import { User, UserId } from 'src/lib/schema';
-import { groupUpdatesByType, post, synchronizeDB } from 'src/lib/server/api-impl';
-import { getUsers, writeUsers } from 'src/lib/server/data';
+import { UpdateRequest } from '../../lib/api-types';
+import { User, UserId } from '../../lib/schema';
+import { groupUpdatesByType, post, synchronizeDB } from '../../lib/server/api-impl';
+import { getUsers, writeUsers } from '../../lib/server/data';
 
 export type UsersRequestBody = UpdateRequest<UserId, User>[];
 

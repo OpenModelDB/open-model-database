@@ -1,8 +1,8 @@
-import { ChangeIdRequest } from 'src/lib/api-types';
-import { TagId } from 'src/lib/schema';
-import { post, synchronizeDB } from 'src/lib/server/api-impl';
-import { getTags, mutateModels, writeTags } from 'src/lib/server/data';
-import { hasOwn, sortObjectKeys } from 'src/lib/util';
+import { ChangeIdRequest } from '../../lib/api-types';
+import { TagId } from '../../lib/schema';
+import { post, synchronizeDB } from '../../lib/server/api-impl';
+import { getTags, mutateModels, writeTags } from '../../lib/server/data';
+import { hasOwn, sortObjectKeys } from '../../lib/util';
 
 export type TagsRequestBody = ChangeIdRequest<TagId>;
 

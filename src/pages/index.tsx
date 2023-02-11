@@ -2,10 +2,10 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
-import { PageContainer } from 'src/elements/page';
-import { Model, ModelId } from 'src/lib/schema';
-import { getAllModelIds, getModelData } from 'src/lib/server/data';
-import { asArray } from 'src/lib/util';
+import { PageContainer } from '../elements/page';
+import { Model, ModelId } from '../lib/schema';
+import { getAllModelIds, getModelData } from '../lib/server/data';
+import { asArray } from '../lib/util';
 
 interface Props {
     modelIds: ModelId[];

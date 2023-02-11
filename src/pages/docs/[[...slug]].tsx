@@ -4,15 +4,15 @@ import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import { useMemo } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
-import { TextLink } from 'src/elements/components/link';
-import { MarkdownContainer } from 'src/elements/markdown';
-import { PageContainer } from 'src/elements/page';
-import { SideBarView } from 'src/elements/side-bar';
-import { Doc, DocPagePath, docPathToSlug } from 'src/lib/docs/doc';
-import { SideBar, SideBarItem, generateSideBar, getPageList } from 'src/lib/docs/side-bar';
-import { useCurrentPath } from 'src/lib/hooks/use-current-path';
-import { getAllDocPaths, getAllDocs, getDocFileMetadata, getManifest } from 'src/lib/server/docs';
-import { withoutHash } from 'src/lib/util';
+import { TextLink } from '../../elements/components/link';
+import { MarkdownContainer } from '../../elements/markdown';
+import { PageContainer } from '../../elements/page';
+import { SideBarView } from '../../elements/side-bar';
+import { Doc, DocPagePath, docPathToSlug } from '../../lib/docs/doc';
+import { SideBar, SideBarItem, generateSideBar, getPageList } from '../../lib/docs/side-bar';
+import { useCurrentPath } from '../../lib/hooks/use-current-path';
+import { getAllDocPaths, getAllDocs, getDocFileMetadata, getManifest } from '../../lib/server/docs';
+import { withoutHash } from '../../lib/util';
 import style from './docs.module.scss';
 
 interface Params extends ParsedUrlQuery {
