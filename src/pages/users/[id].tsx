@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
-import { Model, ModelId, User, UserId } from 'src/lib/schema';
-import { getAllModelIds, getModelData, getUsers } from 'src/lib/server/data';
+import { Model, ModelId, User, UserId } from '../../lib/schema';
+import { getAllModelIds, getModelData, getUsers } from '../../lib/server/data';
 
 interface Params extends ParsedUrlQuery {
     id: UserId;
