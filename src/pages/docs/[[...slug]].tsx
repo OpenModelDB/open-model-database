@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import { useMemo } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
-import { ExternalTextLink } from 'src/elements/link';
+import { TextLink } from 'src/elements/components/link';
 import { MarkdownContainer } from 'src/elements/markdown';
 import { PageContainer } from 'src/elements/page';
 import { SideBarView } from 'src/elements/side-bar';
@@ -83,11 +83,12 @@ export default function Page({ title, markdown, sideBar, docPath, lastModified }
                             <div className={style.meta}>
                                 <span className={style.lastModified}> {lastModified}</span>
                                 <span className={style.edit}>
-                                    <ExternalTextLink
+                                    <TextLink
+                                        external
                                         href={`https://github.com/OpenModelDB/open-model-database/edit/main/docs/${docPath}`}
                                     >
                                         Edit this page on GitHub
-                                    </ExternalTextLink>
+                                    </TextLink>
                                 </span>
                             </div>
                         </div>
