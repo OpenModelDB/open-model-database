@@ -1,9 +1,9 @@
 import { unlink } from 'fs/promises';
-import { UpdateRequest } from 'src/lib/api-types';
-import { Model, ModelId } from 'src/lib/schema';
-import { groupUpdatesByType, post, synchronizeDB } from 'src/lib/server/api-impl';
-import { getModelDataPath, writeModelData } from 'src/lib/server/data';
-import { fileExists } from 'src/lib/server/fs-util';
+import { UpdateRequest } from '../../lib/api-types';
+import { Model, ModelId } from '../../lib/schema';
+import { groupUpdatesByType, post, synchronizeDB } from '../../lib/server/api-impl';
+import { getModelDataPath, writeModelData } from '../../lib/server/data';
+import { fileExists } from '../../lib/server/fs-util';
 
 export type ModelsRequestBody = UpdateRequest<ModelId, Model>[];
 

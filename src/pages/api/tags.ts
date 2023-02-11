@@ -1,7 +1,7 @@
-import { UpdateRequest } from 'src/lib/api-types';
-import { Tag, TagId } from 'src/lib/schema';
-import { groupUpdatesByType, post, synchronizeDB } from 'src/lib/server/api-impl';
-import { getTags, writeTags } from 'src/lib/server/data';
+import { UpdateRequest } from '../../lib/api-types';
+import { Tag, TagId } from '../../lib/schema';
+import { groupUpdatesByType, post, synchronizeDB } from '../../lib/server/api-impl';
+import { getTags, writeTags } from '../../lib/server/data';
 
 export type TagsRequestBody = UpdateRequest<TagId, Tag>[];
 

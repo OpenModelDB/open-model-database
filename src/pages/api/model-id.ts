@@ -1,8 +1,8 @@
 import { rename } from 'fs/promises';
-import { ChangeIdRequest } from 'src/lib/api-types';
-import { ModelId } from 'src/lib/schema';
-import { post, synchronizeDB } from 'src/lib/server/api-impl';
-import { getAllModelIds, getModelDataPath, mutateModels } from 'src/lib/server/data';
+import { ChangeIdRequest } from '../../lib/api-types';
+import { ModelId } from '../../lib/schema';
+import { post, synchronizeDB } from '../../lib/server/api-impl';
+import { getAllModelIds, getModelDataPath, mutateModels } from '../../lib/server/data';
 
 export type ModelsRequestBody = ChangeIdRequest<ModelId>;
 
