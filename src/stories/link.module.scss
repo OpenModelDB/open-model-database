@@ -1,0 +1,13 @@
+.textLink {
+    color: var(--link-color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &.external *:last-child {
+        margin-bottom: -0.125em;
+        margin-left: 0.1em;
+        margin-right: 0.1em;
+    }
+}
