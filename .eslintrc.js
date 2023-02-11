@@ -17,6 +17,7 @@ module.exports = {
                 alphabetize: { order: 'asc', caseInsensitive: true },
             },
         ],
+
         'react/jsx-sort-props': [
             'error',
             {
@@ -24,8 +25,10 @@ module.exports = {
                 shorthandFirst: true,
             },
         ],
+
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': ['warn', { additionalHooks: '(useAsyncEffect)' }],
+
         'tailwindcss/enforces-shorthand': 'warn',
         'tailwindcss/no-contradicting-classname': 'error',
         'tailwindcss/enforces-negative-arbitrary-values': 'warn',
