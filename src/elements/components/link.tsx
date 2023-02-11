@@ -1,6 +1,6 @@
 import { default as InternalLink } from 'next/link';
 import { BiLinkExternal } from 'react-icons/bi';
-import { joinClasses } from 'src/lib/util';
+import { joinClasses } from '../../../src/lib/util';
 import style from './link.module.scss';
 
 export interface LinkProps {
