@@ -2,7 +2,7 @@
 module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
-    extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
+    extends: ['next/core-web-vitals', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
     plugins: ['prettier', 'unused-imports', 'react-hooks', 'tailwindcss'],
     rules: {
         'prefer-template': 'warn',

@@ -89,6 +89,15 @@ body {
 body {
     background-color: var(--page-bg);
     line-height: 1.6;
+
+    // Storybook hacks
+    &.sb-show-main {
+        background-color: var(--page-bg) !important;
+    }
+
+    #storybook-docs .sbdocs-preview .docs-story {
+        background-color: var(--page-bg) !important;
+    }
 }
 
 code,
