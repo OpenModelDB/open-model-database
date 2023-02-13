@@ -60,6 +60,12 @@ module.exports = {
                 '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
             },
         },
+        {
+            files: ['**/*.stories.tsx'],
+            rules: {
+                'react-hooks/rules-of-hooks': 'off',
+            },
+        },
     ],
 
     ignorePatterns: ['next-env.d.ts', 'node_modules/', 'out/', '.next/'],
