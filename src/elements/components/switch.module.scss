@@ -8,7 +8,7 @@
     height: var(--switch-inner-height);
     width: calc(var(--switch-inner-height) * var(--switch-ratio));
     box-sizing: content-box;
-    background-color: hsl(0deg 0% 40% / 50%); // TODO:
+    background-color: hsl(0deg 0% 40% / 50%);
     transition: background-color 200ms linear;
     padding: calc(var(--switch-inner-height) * 0.125);
     flex-shrink: 0;
