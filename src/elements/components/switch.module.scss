@@ -1,0 +1,42 @@
+.switch {
+    --switch-inner-height: 1.25rem;
+    --switch-ratio: 1.9;
+
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+    height: var(--switch-inner-height);
+    width: calc(var(--switch-inner-height) * var(--switch-ratio));
+    box-sizing: content-box;
+    background-color: hsl(0deg 0% 40% / 50%); // TODO:
+    transition: background-color 200ms linear;
+    padding: calc(var(--switch-inner-height) * 0.125);
+    flex-shrink: 0;
+    border: none;
+    border-radius: 9999px;
+    outline-offset: 1px;
+    outline-width: 2px;
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    .circle {
+        background-color: white;
+        display: inline-block;
+        pointer-events: none;
+        border-radius: 100%;
+        width: var(--switch-inner-height);
+        height: var(--switch-inner-height);
+        transition: transform 200ms ease-in-out;
+        transform: translate(0, 0);
+    }
+
+    &[data-headlessui-state='checked'] {
+        background-color: var(--accent-color);
+
+        .circle {
+            transform: translate(calc(var(--switch-inner-height) * (var(--switch-ratio) - 1)), 0);
+        }
+    }
+}
