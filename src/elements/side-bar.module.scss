@@ -12,6 +12,7 @@
         padding-left: 0.5em;
         margin-left: 0.5em;
         border-left: 1px solid var(--line-color);
+        transition: border-color linear 0.2s;
     }
 
     .list.level1 > * {
