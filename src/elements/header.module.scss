@@ -1,4 +1,7 @@
+@use 'sass:color';
+
 @import './util.module';
+@import '../styles/theme';
 
 .headerSpacer {
     width: 100%;
@@ -8,7 +11,11 @@
 }
 
 .header {
-    background-color: var(--header-bg);
+    @include themed using ($t) {
+        background-color: t($t, color.change(white, $alpha: 0.8), color.change($n-900, $alpha: 0.8));
+    }
+
+    transition: background-color linear 0.2s, border-color linear 0.2s;
     backdrop-filter: saturate(200%) blur(5px);
     border-bottom: 1px solid var(--line-color);
     position: fixed;

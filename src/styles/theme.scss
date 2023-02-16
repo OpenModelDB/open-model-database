@@ -1,0 +1,28 @@
+// re-export colors for easy access
+@import './colors';
+
+@mixin themed {
+    :root:not([data-theme='dark']) #{if(&, '&', '')} {
+        @content (light);
+    }
+
+    :root[data-theme='dark'] #{if(&, '&', '')} {
+        @content (dark);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) #{if(&, '&', '')} {
+            @content (dark);
+        }
+    }
+}
+
+@function t($theme, $light, $dark) {
+    @if $theme == dark {
+        @return $dark;
+    }
+    @if $theme == light {
+        @return $light;
+    }
+    @error "#{$theme} is not a valid theme. Only light and dark mode are supported.";
+}
