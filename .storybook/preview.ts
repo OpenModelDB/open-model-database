@@ -1,7 +1,8 @@
 import { Decorator } from '@storybook/react'
+import { Parameters, GlobalTypes } from '@storybook/types'
 import '../src/styles/globals.scss'
 
-export const parameters = {
+export const parameters: Parameters = {
   backgrounds: {
     default: 'light',
   },
@@ -14,7 +15,7 @@ export const parameters = {
   },
 }
 
-export const globalTypes = {
+export const globalTypes: GlobalTypes = {
   theme: {
     name: 'Theme',
     description: 'Global theme for components',
