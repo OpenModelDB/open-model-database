@@ -17,7 +17,7 @@
     --font-color-light: #{t($t, $n-700, $n-400)};
     --font-color-light-hover: #{t($t, black, white)};
 
-    --line-color: #{t($t, $n-300, hsl(0deg 0% 15%))};
+    --line-color: #{t($t, $n-300, $n-800)};
 
     --link-color: #{t($t, hsl(212deg 100% 45%), hsl(212deg 100% 67%))};
 
