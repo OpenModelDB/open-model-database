@@ -33,7 +33,7 @@
     }
 
     &[data-headlessui-state='checked'] {
-        background-color: var(--accent-color);
+        background-color: var(--accent);
 
         .circle {
             transform: translate(calc(var(--switch-inner-height) * (var(--switch-ratio) - 1)), 0);

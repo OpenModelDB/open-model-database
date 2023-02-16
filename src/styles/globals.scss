@@ -1,68 +1,49 @@
 /* stylelint-disable scss/at-rule-no-unknown */
+@import './theme';
+
 // @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 // theme colors
 
-@function select($theme, $light, $dark) {
-    @if $theme == dark {
-        @return $dark;
-    }
-    @if $theme == light {
-        @return $light;
-    }
-    @error "#{$theme} is not a valid theme. Only light and dark mode are supported.";
+@mixin theme-colors($t) {
+    --accent: #{t($t, $accent-600, $accent-500)};
+
+    --page-bg: #{t($t, white, $n-900)};
+
+    --font-color: #{t($t, black, $n-100)};
+    --font-color-hover: var(--accent);
+    --font-color-light: #{t($t, $n-700, $n-400)};
+    --font-color-light-hover: #{t($t, black, white)};
+
+    --line-color: #{t($t, $n-300, hsl(0deg 0% 15%))};
+
+    --link-color: #{t($t, hsl(212deg 100% 45%), hsl(212deg 100% 67%))};
+
+    --logo-text: #{t($t, $n-900, white)};
+    --logo-jelly: #{t($t, white, white)};
+    --logo-circle: #{t($t, $n-900, black)};
+    --logo-accent: var(--accent);
+
+    --primary-bg: var(--accent);
+    --primary-bg-hover: #{t($t, $accent-500, $accent-600)};
+    --primary-color: #{t($t, white, white)};
+    --primary-color-hover: #{t($t, white, white)};
+
+    --secondary-bg: #{t($t, transparent, transparent)};
+    --secondary-bg-hover: #{t($t, $accent-300, $accent-fade-800)};
+    --secondary-color: #{t($t, black, $accent-fade-200)};
+    --secondary-color-hover: #{t($t, black, white)};
 }
 
-@mixin theme-colors($theme) {
-    --page-bg: #{select($theme, #fff, #111018)};
-    --header-bg: #{select($theme, rgb(255 255 255/80%), rgb(0 0 0/80%))};
+@include themed using ($t) {
+    @include theme-colors($t);
 
-    --accent-color: #454aab;
+    color-scheme: #{t($t, light, dark)};
 
-    --font-color: #{select($theme, #000, #eee)};
-    --font-color-hover: #{select($theme, var(--accent-color), var(--accent-color))};
-    --font-color-light: #{select($theme, #444, #bbb)};
-    --font-color-light-hover: #{select($theme, #000, #fff)};
-
-    --line-color: #{select($theme, hsl(0deg 0% 80%), hsl(0deg 0% 15%))};
-
-    --link-color: #{select($theme, hsl(212deg 100% 45%), hsl(212deg 100% 67%))};
-
-    --logo-text: #{select($theme, #111018, #fff)};
-    --logo-jelly: #{select($theme, #fff, #fff)};
-    --logo-circle: #{select($theme, #111018, #111018)};
-    --logo-accent: var(--accent-color);
-}
-
-:root:not([data-theme='dark']) {
-    @include theme-colors(light);
-
-    color-scheme: light;
-
-    --dark-mode-switch: block;
-    --light-mode-switch: none;
-}
-
-:root[data-theme='dark'] {
-    @include theme-colors(dark);
-
-    color-scheme: dark;
-
-    --dark-mode-switch: none;
-    --light-mode-switch: block;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) {
-        @include theme-colors(dark);
-
-        color-scheme: dark;
-
-        --dark-mode-switch: none;
-        --light-mode-switch: block;
-    }
+    --dark-mode-switch: #{t($t, block, none)};
+    --light-mode-switch: #{t($t, none, block)};
 }
 
 // global variables
@@ -88,6 +69,7 @@ body {
 
 body {
     background-color: var(--page-bg);
+    transition: background-color linear 0.2s;
     line-height: 1.6;
 
     // Storybook hacks
