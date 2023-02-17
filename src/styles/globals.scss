@@ -41,9 +41,6 @@
     @include theme-colors($t);
 
     color-scheme: #{t($t, light, dark)};
-
-    --dark-mode-switch: #{t($t, block, none)};
-    --light-mode-switch: #{t($t, none, block)};
 }
 
 // global variables

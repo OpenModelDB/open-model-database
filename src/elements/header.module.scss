@@ -46,8 +46,7 @@
 }
 
 .iconLink,
-.lightThemeButton,
-.darkThemeButton {
+.themeButton {
     background: none;
     border: none;
     padding: 0;
@@ -64,10 +63,14 @@
     }
 }
 
-.lightThemeButton {
-    display: var(--light-mode-switch);
-}
+.themeButton {
+    @include themed using ($t) {
+        .light {
+            display: t($t, none, block);
+        }
 
-.darkThemeButton {
-    display: var(--dark-mode-switch);
+        .dark {
+            display: t($t, block, none);
+        }
+    }
 }
