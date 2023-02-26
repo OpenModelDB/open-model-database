@@ -6,7 +6,7 @@ type ImageSize = 'sm' | 'md' | 'lg';
 export interface CardProps {
     title: string;
     description: string;
-    tags: string[];
+    tags: readonly string[];
     image?: string;
     href?: string;
     imgSize?: ImageSize;
