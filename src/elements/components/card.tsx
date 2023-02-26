@@ -1,30 +1,49 @@
 import { joinClasses } from '../../lib/util';
 import style from './card.module.scss';
 
+type ImageSize = 'sm' | 'md' | 'lg';
+
 export interface CardProps {
     title: string;
     description: string;
     tags: string[];
-    image: string;
+    image?: string;
+    href?: string;
+    imgSize?: ImageSize;
 }
 
-export function Card({ title, description, tags, image }: React.PropsWithChildren<CardProps>) {
+const getImgSize = (size: ImageSize) => {
+    switch (size) {
+        case 'sm':
+            return 'h-32';
+        case 'md':
+            return 'h-64';
+        case 'lg':
+            return 'h-96';
+        default:
+            return 'h-32';
+    }
+};
+
+export function Card({ title, description, tags, image, href, imgSize = 'sm' }: CardProps) {
     return (
         <a
             className={joinClasses(
                 'relative flex w-64 flex-col items-start justify-between overflow-hidden rounded-xl border border-gray-100 shadow-xl',
                 style.card
             )}
-            href="#"
+            href={href}
         >
-            <div className="m-0 h-32 w-full p-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    alt="img"
-                    className="h-32 w-full overflow-hidden object-cover"
-                    src={image}
-                />
-            </div>
+            {image && (
+                <div className={joinClasses('m-0 w-full p-0', getImgSize(imgSize))}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        alt="img"
+                        className={joinClasses('w-full overflow-hidden object-cover', getImgSize(imgSize))}
+                        src={image}
+                    />
+                </div>
+            )}
             <div className="p-4 text-gray-500 ">
                 <h3 className="my-0 text-lg font-bold text-gray-900">{title}</h3>
 
