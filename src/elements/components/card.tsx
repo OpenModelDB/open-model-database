@@ -29,7 +29,7 @@ export function Card({ title, description, tags, image, href, imgSize = 'sm' }: 
     return (
         <a
             className={joinClasses(
-                'relative flex w-64 flex-col items-start justify-between overflow-hidden rounded-xl border border-gray-100 shadow-xl',
+                'relative flex w-64 flex-col items-start justify-between overflow-hidden rounded-xl shadow-md',
                 style.card
             )}
             href={href}
@@ -44,8 +44,8 @@ export function Card({ title, description, tags, image, href, imgSize = 'sm' }: 
                     />
                 </div>
             )}
-            <div className="p-4 text-gray-500 ">
-                <h3 className="my-0 text-lg font-bold text-gray-900">{title}</h3>
+            <div className="p-4 text-gray-500">
+                <h3 className="my-0 text-lg font-bold text-gray-900 ">{title}</h3>
 
                 <p className="my-3 hidden text-sm sm:block">{description}</p>
 
