@@ -45,16 +45,11 @@ export function Header() {
                         <FaDiscord />
                     </Link>
                     <button
-                        className={style.lightThemeButton}
+                        className={style.themeButton}
                         onClick={toggleColorScheme}
                     >
-                        <MdLightMode />
-                    </button>
-                    <button
-                        className={style.darkThemeButton}
-                        onClick={toggleColorScheme}
-                    >
-                        <MdDarkMode />
+                        <MdLightMode className={style.light} />
+                        <MdDarkMode className={style.dark} />
                     </button>
                 </div>
             </header>
