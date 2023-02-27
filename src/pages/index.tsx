@@ -31,8 +31,24 @@ export default function Page({ modelIds, modelData }: Props) {
                 />
             </Head>
             <PageContainer>
-                <p>{modelIds.length} models</p>
-                <br />
+                <div className="py-4 sm:py-4 lg:py-6">
+                    <div className="mx-auto max-w-screen-2xl">
+                        <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800 md:py-6 lg:py-8">
+                            <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 md:mb-6 lg:text-3xl">
+                                The best place to find AI Upscaling models
+                            </h1>
+
+                            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+                                OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a
+                                better way to find and compare models than existing sources.
+                            </p>
+
+                            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+                                Currently listing <a className="font-bold text-accent-500">{modelIds.length}</a> models.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <pre>
                     {modelIds.map((id) => (
                         <span key={id}>
