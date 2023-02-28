@@ -78,7 +78,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                                         {id}
                                                     </div>
                                                 </Link>
-                                                <a className="mt-2 text-gray-600 dark:text-gray-400">
+                                                <div className="mt-2 text-gray-600 dark:text-gray-400">
                                                     {asArray(modelData[id].author).map((userId) => (
                                                         <React.Fragment key={userId}>
                                                             <Link href={`/users/${userId}`}>
@@ -91,17 +91,17 @@ export default function Page({ modelIds, modelData }: Props) {
                                                             </Link>
                                                         </React.Fragment>
                                                     ))}
-                                                </a>
+                                                </div>
 
                                                 {/* Description */}
-                                                <p className="flex flex-col justify-between">
+                                                <div className="my-2 flex flex-col justify-between">
                                                     <div className="truncate text-gray-500 dark:text-gray-400">
                                                         <strong>Purpose:</strong> {purpose}
                                                     </div>
                                                     <div className="truncate text-gray-500 dark:text-gray-400">
                                                         <strong>Category:</strong> {category}
                                                     </div>
-                                                </p>
+                                                </div>
 
                                                 {/* Tags */}
                                                 <div className="mt-2 flex flex-row flex-wrap">
