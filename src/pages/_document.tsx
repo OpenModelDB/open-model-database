@@ -3,7 +3,11 @@ import Script from 'next/script';
 
 // This little script will read the last theme from localStorage and assign it to the HTML element.
 // This ensure that the website is always displayed with the correct them.
-const themeInit = `(()=>{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t})()`;
+const themeInit =
+    `document.documentElement.dataset.theme=` +
+    `localStorage.getItem('theme')` +
+    `||` +
+    `(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')`;
 
 export default function Document() {
     return (

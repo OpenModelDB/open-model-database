@@ -9,12 +9,6 @@
     :root[data-theme='dark'] #{if(&, '&', '')} {
         @content (dark);
     }
-
-    @media (prefers-color-scheme: dark) {
-        :root:not([data-theme]) #{if(&, '&', '')} {
-            @content (dark);
-        }
-    }
 }
 
 @function t($theme, $light, $dark) {
