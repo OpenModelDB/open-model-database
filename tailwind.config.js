@@ -14,7 +14,7 @@ module.exports = {
                 'fade-700': '#403f47',
                 'fade-800': '#28272f',
                 'fade-900': '#17171e',
-                'accent': '#4d48a9',
+                accent: '#4d48a9',
                 'accent-50': '#feeaff',
                 'accent-100': '#f8e4ff',
                 'accent-200': '#e9d6ff',
