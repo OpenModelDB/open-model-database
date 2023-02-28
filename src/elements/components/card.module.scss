@@ -1,0 +1,8 @@
+@import '../util.module';
+@import '../../styles/theme';
+
+.card {
+    @include themed using($t) {
+        border: 1px solid t($t, $n-200, $n-800);
+    }
+}
