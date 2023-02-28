@@ -49,19 +49,79 @@ export default function Page({ modelIds, modelData }: Props) {
                         </div>
                     </div>
                 </div>
-                <pre>
-                    {modelIds.map((id) => (
-                        <span key={id}>
-                            <Link href={`/models/${id}`}>{id}</Link> <span style={{ opacity: 0.5 }}>by</span>{' '}
-                            {asArray(modelData[id].author).map((userId) => (
-                                <React.Fragment key={userId}>
-                                    <Link href={`/users/${userId}`}>{userId}</Link>{' '}
-                                </React.Fragment>
-                            ))}
-                            {'\n'}
-                        </span>
-                    ))}
-                </pre>
+                <div className="py-4 sm:py-4 lg:py-6">
+                    <div className="mx-auto max-w-screen-2xl">
+                        <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800 md:py-2 lg:py-4">
+                            <h1 className="mb-6 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 md:mb-8 lg:text-3xl">
+                                Models
+                            </h1>
+                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                {modelIds.map((id) => {
+                                    const category = (modelData[id].description.split('\n')[0] ?? '').replace(
+                                        'Category: ',
+                                        ''
+                                    );
+                                    const purpose = (modelData[id].description.split('\n')[1] ?? '').replace(
+                                        'Purpose: ',
+                                        ''
+                                    );
+                                    const tags = modelData[id].tags;
+
+                                    return (
+                                        <div
+                                            className="rounded-lg bg-white shadow-lg dark:bg-fade-900"
+                                            key={id}
+                                        >
+                                            <div className="p-4">
+                                                <Link href={`/models/${id}`}>
+                                                    <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
+                                                        {id}
+                                                    </div>
+                                                </Link>
+                                                <a className="mt-2 text-gray-600 dark:text-gray-400">
+                                                    {asArray(modelData[id].author).map((userId) => (
+                                                        <React.Fragment key={userId}>
+                                                            <Link href={`/users/${userId}`}>
+                                                                <div className="flex">
+                                                                    <div className="mr-1">by</div>
+                                                                    <div className="font-bold text-accent-500">
+                                                                        {userId}
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
+                                                        </React.Fragment>
+                                                    ))}
+                                                </a>
+
+                                                {/* Description */}
+                                                <p className="flex flex-col justify-between">
+                                                    <div className="truncate text-gray-500 dark:text-gray-400">
+                                                        <strong>Purpose:</strong> {purpose}
+                                                    </div>
+                                                    <div className="truncate text-gray-500 dark:text-gray-400">
+                                                        <strong>Category:</strong> {category}
+                                                    </div>
+                                                </p>
+
+                                                {/* Tags */}
+                                                <div className="mt-2 flex flex-row flex-wrap">
+                                                    {tags.map((tag) => (
+                                                        <div
+                                                            className="mr-2 mb-2 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                                            key={tag}
+                                                        >
+                                                            {tag}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </PageContainer>
         </>
     );
