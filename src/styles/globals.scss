@@ -10,20 +10,20 @@
 @mixin theme-colors($t) {
     --accent: #{t($t, $accent-600, $accent-500)};
 
-    --page-bg: #{t($t, white, $n-900)};
+    --page-bg: #{t($t, white, $fade-900)};
 
-    --font-color: #{t($t, black, $n-100)};
+    --font-color: #{t($t, black, $fade-100)};
     --font-color-hover: var(--accent);
-    --font-color-light: #{t($t, $n-700, $n-400)};
+    --font-color-light: #{t($t, $fade-700, $fade-400)};
     --font-color-light-hover: #{t($t, black, white)};
 
-    --line-color: #{t($t, $n-300, $n-800)};
+    --line-color: #{t($t, $fade-300, $fade-800)};
 
     --link-color: #{t($t, hsl(212deg 100% 45%), hsl(212deg 100% 67%))};
 
-    --logo-text: #{t($t, $n-900, white)};
+    --logo-text: #{t($t, $fade-900, white)};
     --logo-jelly: #{t($t, white, white)};
-    --logo-circle: #{t($t, $n-900, black)};
+    --logo-circle: #{t($t, $fade-900, black)};
     --logo-accent: var(--accent);
 
     --primary-bg: var(--accent);
