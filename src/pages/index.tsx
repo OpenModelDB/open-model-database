@@ -17,10 +17,6 @@ export default function Page({ modelIds, modelData }: Props) {
     modelIds.forEach((id) => {
         modelData[id].tags.forEach((tag) => allTags.add(tag));
     });
-    console.log({
-        allTags,
-    });
-
     const [selectedTag, setSelectedTag] = useState<TagId>();
 
     return (
@@ -73,7 +69,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                             selectedTag == tag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
                                         )}
                                         key={tag}
-                                        onClick={() => setSelectedTag(tag as TagId)}
+                                        onClick={() => setSelectedTag(selectedTag == tag ? undefined : (tag as TagId))}
                                     >
                                         {tag}
                                     </div>
