@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { PageContainer } from '../elements/page';
-import { Model, ModelId } from '../lib/schema';
+import { Model, ModelId, TagId } from '../lib/schema';
 import { getAllModelIds, getModelData } from '../lib/server/data';
-import { asArray } from '../lib/util';
+import { asArray, joinClasses } from '../lib/util';
 
 interface Props {
     modelIds: ModelId[];
@@ -20,6 +20,8 @@ export default function Page({ modelIds, modelData }: Props) {
     console.log({
         allTags,
     });
+
+    const [selectedTag, setSelectedTag] = useState<TagId>();
 
     return (
         <>
@@ -66,76 +68,82 @@ export default function Page({ modelIds, modelData }: Props) {
                             <div className="mb-3 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
                                 {Array.from(allTags).map((tag) => (
                                     <div
-                                        className="mr-2 mb-2 w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                        className={joinClasses(
+                                            'mr-2 mb-2 w-fit cursor-pointer rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 transition-colors ease-in-out hover:bg-accent-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
+                                            selectedTag == tag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
+                                        )}
                                         key={tag}
+                                        onClick={() => setSelectedTag(tag as TagId)}
                                     >
                                         {tag}
                                     </div>
                                 ))}
                             </div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                {modelIds.map((id) => {
-                                    const category = (modelData[id].description.split('\n')[0] ?? '').replace(
-                                        'Category: ',
-                                        ''
-                                    );
-                                    const purpose = (modelData[id].description.split('\n')[1] ?? '').replace(
-                                        'Purpose: ',
-                                        ''
-                                    );
-                                    const tags = modelData[id].tags;
+                                {modelIds
+                                    .filter((id) => (selectedTag ? modelData[id].tags.includes(selectedTag) : true))
+                                    .map((id) => {
+                                        const category = (modelData[id].description.split('\n')[0] ?? '').replace(
+                                            'Category: ',
+                                            ''
+                                        );
+                                        const purpose = (modelData[id].description.split('\n')[1] ?? '').replace(
+                                            'Purpose: ',
+                                            ''
+                                        );
+                                        const tags = modelData[id].tags;
 
-                                    return (
-                                        <div
-                                            className="rounded-lg bg-white shadow-lg dark:bg-fade-900"
-                                            key={id}
-                                        >
-                                            <div className="p-4">
-                                                <Link href={`/models/${id}`}>
-                                                    <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                                        {id}
-                                                    </div>
-                                                </Link>
-                                                <div className="mt-2 text-gray-600 dark:text-gray-400">
-                                                    {asArray(modelData[id].author).map((userId) => (
-                                                        <React.Fragment key={userId}>
-                                                            <Link href={`/users/${userId}`}>
-                                                                <div className="flex">
-                                                                    <div className="mr-1">by</div>
-                                                                    <div className="font-bold text-accent-500">
-                                                                        {userId}
-                                                                    </div>
-                                                                </div>
-                                                            </Link>
-                                                        </React.Fragment>
-                                                    ))}
-                                                </div>
-
-                                                {/* Description */}
-                                                <div className="my-2 flex flex-col justify-between">
-                                                    <div className="truncate text-gray-500 dark:text-gray-400">
-                                                        <strong>Purpose:</strong> {purpose}
-                                                    </div>
-                                                    <div className="truncate text-gray-500 dark:text-gray-400">
-                                                        <strong>Category:</strong> {category}
-                                                    </div>
-                                                </div>
-
-                                                {/* Tags */}
-                                                <div className="mt-2 flex flex-row flex-wrap">
-                                                    {tags.map((tag) => (
-                                                        <div
-                                                            className="mr-2 mb-2 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
-                                                            key={tag}
-                                                        >
-                                                            {tag}
+                                        return (
+                                            <div
+                                                className="rounded-lg bg-white shadow-lg dark:bg-fade-900"
+                                                key={id}
+                                            >
+                                                <div className="p-4">
+                                                    <Link href={`/models/${id}`}>
+                                                        <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
+                                                            {id}
                                                         </div>
-                                                    ))}
+                                                    </Link>
+                                                    <div className="mt-2 text-gray-600 dark:text-gray-400">
+                                                        {asArray(modelData[id].author).map((userId) => (
+                                                            <React.Fragment key={userId}>
+                                                                <Link href={`/users/${userId}`}>
+                                                                    <div className="flex">
+                                                                        <div className="mr-1">by</div>
+                                                                        <div className="font-bold text-accent-500">
+                                                                            {userId}
+                                                                        </div>
+                                                                    </div>
+                                                                </Link>
+                                                            </React.Fragment>
+                                                        ))}
+                                                    </div>
+
+                                                    {/* Description */}
+                                                    <div className="my-2 flex flex-col justify-between">
+                                                        <div className="truncate text-gray-500 dark:text-gray-400">
+                                                            <strong>Purpose:</strong> {purpose}
+                                                        </div>
+                                                        <div className="truncate text-gray-500 dark:text-gray-400">
+                                                            <strong>Category:</strong> {category}
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Tags */}
+                                                    <div className="mt-2 flex flex-row flex-wrap">
+                                                        {tags.map((tag) => (
+                                                            <div
+                                                                className="mr-2 mb-2 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                                                key={tag}
+                                                            >
+                                                                {tag}
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    );
-                                })}
+                                        );
+                                    })}
                             </div>
                         </div>
                     </div>
