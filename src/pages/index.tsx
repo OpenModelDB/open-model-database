@@ -13,6 +13,14 @@ interface Props {
 }
 
 export default function Page({ modelIds, modelData }: Props) {
+    const allTags = new Set<string>();
+    modelIds.forEach((id) => {
+        modelData[id].tags.forEach((tag) => allTags.add(tag));
+    });
+    console.log({
+        allTags,
+    });
+
     return (
         <>
             <Head>
@@ -52,9 +60,19 @@ export default function Page({ modelIds, modelData }: Props) {
                 <div className="py-4 sm:py-4 lg:py-6">
                     <div className="mx-auto max-w-screen-2xl">
                         <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800 md:py-2 lg:py-4">
-                            <h1 className="mb-6 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 md:mb-8 lg:text-3xl">
+                            <h1 className="mb-6 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 lg:text-3xl">
                                 Models
                             </h1>
+                            <div className="mb-3 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
+                                {Array.from(allTags).map((tag) => (
+                                    <div
+                                        className="mr-2 mb-2 w-fit rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                        key={tag}
+                                    >
+                                        {tag}
+                                    </div>
+                                ))}
+                            </div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 {modelIds.map((id) => {
                                     const category = (modelData[id].description.split('\n')[0] ?? '').replace(
