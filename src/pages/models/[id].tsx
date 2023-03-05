@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
+import { FiExternalLink } from 'react-icons/fi';
 import { PageContainer } from '../../elements/page';
 import { Model, ModelId } from '../../lib/schema';
 import { getAllModelIds, getModelData } from '../../lib/server/data';
@@ -58,53 +59,95 @@ export default function Page({ modelId, modelData }: Props) {
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
                         {modelData.resources.map((resource) => {
-                            console.log('🚀 ~ file: [id].tsx:63 ~ {modelData.resources.map ~ resource:', resource);
-                            if (resource.type === 'pth') {
+                            return resource.urls.map((url) => {
+                                const isExternal = !url.includes('oracle');
+                                let host = 'unknown';
+                                if (url.includes('github')) {
+                                    host = 'GitHub';
+                                } else if (url.includes('drive.google')) {
+                                    host = 'Google Drive';
+                                } else if (url.includes('mega.nz')) {
+                                    host = 'Mega';
+                                }
+
                                 return (
                                     <div key={resource.sha256}>
-                                        {/* Download Label */}
-                                        <div className="flex items-center align-middle">
-                                            <svg
-                                                className="mr-2 h-4 w-4 fill-current"
-                                                viewBox="0 0 20.97 24.99"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M17.88 7.31 16 9.17a7.61 7.61 0 0 1 0 11 7.89 7.89 0 0 1-11.11 0 7.61 7.61 0 0 1 0-11l4.9-4.84.7-.69V0l-7.4 7.29a10.24 10.24 0 0 0 0 14.71 10.53 10.53 0 0 0 14.81 0 10.25 10.25 0 0 0-.02-14.69Z"
-                                                    fill="currentColor"
-                                                />
-                                                <path
-                                                    d="M14.18 6.87a1.35 1.35 0 1 0-1.37-1.35 1.36 1.36 0 0 0 1.37 1.35Z"
-                                                    fill="currentColor"
-                                                />
-                                            </svg>
-                                            PyTorch
-                                        </div>
                                         <button
                                             className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-500 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-accent-600 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:focus:ring-accent-500"
-                                            key={resource.sha256}
                                             type="button"
-                                            onClick={() => window.open(resource.urls[0], '_blank')}
+                                            onClick={() => window.open(url, '_blank')}
                                         >
                                             <div className="w-full">
-                                                <svg
-                                                    className="mr-2 h-4 w-4 fill-current"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                                                </svg>
+                                                {isExternal ? (
+                                                    <FiExternalLink
+                                                        className="mr-2 h-4 w-4"
+                                                        viewBox="0 0 22 22"
+                                                    />
+                                                ) : (
+                                                    <svg
+                                                        className="mr-2 h-4 w-4 fill-current"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                                                    </svg>
+                                                )}
                                                 Download{' '}
                                                 {resource.size
                                                     ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)`
                                                     : ''}
                                             </div>
                                         </button>
+                                        <div className="w-full text-center">
+                                            {isExternal ? `Hosted offsite by ${host}` : 'Hosted by OpenModelDB'}
+                                        </div>
                                     </div>
                                 );
-                            }
-                            return 'No Download link';
+                            });
                         })}
+
+                        <div className="relative table-auto overflow-hidden rounded-lg">
+                            <table className="w-full overflow-hidden rounded-lg text-left text-sm text-gray-500 dark:text-gray-400">
+                                <tbody className="overflow-hidden rounded-lg">
+                                    <tr className="border-b border-fade-200 dark:border-fade-600">
+                                        <th
+                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
+                                            scope="row"
+                                        >
+                                            Architecture
+                                        </th>
+                                        <td className="px-6 py-4">{modelData.architecture}</td>
+                                    </tr>
+                                    <tr className="border-b">
+                                        <th
+                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
+                                            scope="row"
+                                        >
+                                            Scale
+                                        </th>
+                                        <td className="px-6 py-4 ">{modelData.scale}</td>
+                                    </tr>
+                                    <tr className="border-b">
+                                        <th
+                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
+                                            scope="row"
+                                        >
+                                            Size
+                                        </th>
+                                        <td className="px-6 py-4">{modelData.size?.join(', ')}</td>
+                                    </tr>
+                                    <tr className="border-b">
+                                        <th
+                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
+                                            scope="row"
+                                        >
+                                            Tags
+                                        </th>
+                                        <td className="px-6 py-4">{modelData.tags}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                         {modelData.license}
                     </div>
