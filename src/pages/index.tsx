@@ -1,21 +1,17 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import React, { useState } from 'react';
+import { ModelCard } from '../elements/components/model-card';
+import { SearchBar } from '../elements/components/searchbar';
 import { PageContainer } from '../elements/page';
 import { Model, ModelId, TagId } from '../lib/schema';
 import { getAllModelIds, getModelData } from '../lib/server/data';
-import { asArray, joinClasses } from '../lib/util';
+import { joinClasses } from '../lib/util';
 
 interface Props {
     modelIds: ModelId[];
     modelData: Record<ModelId, Model>;
 }
-
-const startsWithVowel = (str: string) => {
-    const firstLetter = str[0].toLowerCase();
-    return ['a', 'e', 'i', 'o', 'u'].includes(firstLetter);
-};
 
 export default function Page({ modelIds, modelData }: Props) {
     const allTags = new Set<string>();
@@ -72,32 +68,10 @@ export default function Page({ modelIds, modelData }: Props) {
                             </p>
 
                             {/* Search */}
-                            <div className="relative mb-4 flex h-10 w-full">
-                                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                    <svg
-                                        aria-hidden="true"
-                                        className="h-5 w-5 text-gray-500 dark:text-gray-400"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                        />
-                                    </svg>
-                                </div>
-                                <input
-                                    className="w-full rounded-lg border border-solid border-gray-300 bg-white px-4 py-2 pl-10 text-gray-700 shadow-sm focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 dark:border-gray-700 dark:bg-fade-900 dark:text-gray-100 dark:focus:border-accent-500 dark:focus:ring-accent-500"
-                                    placeholder="Search"
-                                    type="text"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
-                            </div>
+                            <SearchBar
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
 
                             {/* Tags */}
                             <div className="mb-2 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
@@ -162,82 +136,15 @@ export default function Page({ modelIds, modelData }: Props) {
                                                 : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
 
                                         return (
-                                            <div
-                                                // eslint-disable-next-line tailwindcss/no-arbitrary-value
-                                                className="group relative h-[435px] overflow-hidden rounded-lg border border-solid border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 "
+                                            <ModelCard
+                                                architecture={architecture}
+                                                author={author}
+                                                description={actualDescription}
+                                                id={id}
                                                 key={id}
-                                            >
-                                                <div className="relative flex h-full w-full flex-col  transition-all ease-in-out">
-                                                    {/* Arch tag on image */}
-                                                    <div className="absolute top-0 right-0 m-2">
-                                                        <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
-                                                            <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
-                                                                {architecture}
-                                                            </div>
-                                                            <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
-                                                                {scale}x
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <a
-                                                        // eslint-disable-next-line tailwindcss/no-arbitrary-value
-                                                        className="h-auto w-full flex-1  bg-[url(https://picsum.photos/512/312)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:h-full"
-                                                        href={`/models/${id}`}
-                                                        rel="noreferrer"
-                                                        target="_blank"
-                                                    />
-
-                                                    <div className="relative inset-x-0 bottom-0 bg-white p-4   dark:bg-fade-900">
-                                                        <Link href={`/models/${id}`}>
-                                                            <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                                                {id}
-                                                            </div>
-                                                        </Link>
-                                                        <div className="text-gray-600 dark:text-gray-400">
-                                                            <div className="flex">
-                                                                <div className="mr-1">
-                                                                    {startsWithVowel(architecture) ? 'an' : 'a'}
-                                                                </div>
-                                                                <Link href={`/architectures/${architecture}`}>
-                                                                    <div className="mr-1 font-bold text-accent-500">
-                                                                        {architecture}
-                                                                    </div>
-                                                                </Link>
-                                                                <div className="mr-1">model by</div>
-                                                                {asArray(author).map((userId) => (
-                                                                    <React.Fragment key={userId}>
-                                                                        <Link href={`/users/${userId}`}>
-                                                                            <div className="font-bold text-accent-500">
-                                                                                {userId}
-                                                                            </div>
-                                                                        </Link>
-                                                                    </React.Fragment>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-
-                                                        {/* Description */}
-                                                        <div className="my-2 flex flex-col justify-between">
-                                                            <div className="text-gray-500 line-clamp-3 dark:text-gray-400">
-                                                                {actualDescription}
-                                                            </div>
-                                                        </div>
-
-                                                        {/* Tags */}
-                                                        <div className="mt-2 flex flex-row flex-wrap">
-                                                            {tags.map((tag) => (
-                                                                <div
-                                                                    className="mr-2 mt-1 rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
-                                                                    key={tag}
-                                                                >
-                                                                    {tag}
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                scale={scale}
+                                                tags={tags}
+                                            />
                                         );
                                     })}
                                 </div>
