@@ -27,6 +27,17 @@ export default function Page({ modelIds, modelData }: Props) {
 
     const [searchQuery, setSearchQuery] = useState<string>();
 
+    const availableModels = modelIds
+        .filter((id) => (selectedTag ? modelData[id].tags.includes(selectedTag) : true))
+        .filter((id) => {
+            const { name, architecture, author, scale } = modelData[id];
+            return searchQuery
+                ? `${name} ${architecture} ${scale}x ${String(author)}`
+                      .toLowerCase()
+                      .includes(searchQuery.toLowerCase())
+                : true;
+        });
+
     return (
         <>
             <Head>
@@ -63,7 +74,7 @@ export default function Page({ modelIds, modelData }: Props) {
                         </div>
                     </div>
                 </div>
-                <div className="py-4 sm:py-4 lg:py-6">
+                <div className="py-2">
                     <div className="mx-auto">
                         <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800 md:py-2 lg:py-4">
                             <h1 className="mb-6 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 lg:text-3xl">
@@ -112,18 +123,9 @@ export default function Page({ modelIds, modelData }: Props) {
                                 ))}
                             </div>
                             {/* Model Cards */}
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                {modelIds
-                                    .filter((id) => (selectedTag ? modelData[id].tags.includes(selectedTag) : true))
-                                    .filter((id) => {
-                                        const { name, architecture, author, scale } = modelData[id];
-                                        return searchQuery
-                                            ? `${name} ${architecture} ${scale}x ${String(author)}`
-                                                  .toLowerCase()
-                                                  .includes(searchQuery.toLowerCase())
-                                            : true;
-                                    })
-                                    .map((id) => {
+                            {availableModels.length > 0 ? (
+                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                    {availableModels.map((id) => {
                                         const { name, architecture, author, scale } = modelData[id];
                                         const category = (modelData[id].description.split('\n')[0] ?? '').replace(
                                             'Category: ',
@@ -222,7 +224,17 @@ export default function Page({ modelIds, modelData }: Props) {
                                             </div>
                                         );
                                     })}
-                            </div>
+                                </div>
+                            ) : (
+                                <div className="flex flex-col items-center justify-center p-6">
+                                    <div className="text-2xl font-bold text-accent-500 dark:text-gray-100">
+                                        No models found
+                                    </div>
+                                    <div className="text-gray-500 dark:text-gray-400">
+                                        Try changing your search filters
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
