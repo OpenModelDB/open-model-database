@@ -18,7 +18,6 @@ const startsWithVowel = (str: string) => {
 };
 
 export default function Page({ modelIds, modelData }: Props) {
-    console.log('🚀 ~ file: index.tsx:16 ~ Page ~ modelData:', modelData);
     const allTags = new Set<string>();
     modelIds.forEach((id) => {
         modelData[id].tags.forEach((tag) => allTags.add(tag));
@@ -32,7 +31,7 @@ export default function Page({ modelIds, modelData }: Props) {
         .filter((id) => {
             const { name, architecture, author, scale } = modelData[id];
             return searchQuery
-                ? `${name} ${architecture} ${scale}x ${String(author)}`
+                ? `${id} ${name} ${architecture} ${scale}x ${String(author)}`
                       .toLowerCase()
                       .includes(searchQuery.toLowerCase())
                 : true;
@@ -71,15 +70,7 @@ export default function Page({ modelIds, modelData }: Props) {
                             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
                                 Currently listing <a className="font-bold text-accent-500">{modelIds.length}</a> models.
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="py-2">
-                    <div className="mx-auto">
-                        <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800 md:py-2 lg:py-4">
-                            <h1 className="mb-6 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 lg:text-3xl">
-                                Models
-                            </h1>
+
                             {/* Search */}
                             <div className="relative mb-6 flex h-10 w-full">
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -109,10 +100,19 @@ export default function Page({ modelIds, modelData }: Props) {
                             </div>
                             {/* Tags */}
                             <div className="mb-3 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
+                                <div
+                                    className={joinClasses(
+                                        'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
+                                        !selectedTag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
+                                    )}
+                                    onClick={() => setSelectedTag(undefined)}
+                                >
+                                    All
+                                </div>
                                 {Array.from(allTags).map((tag) => (
                                     <div
                                         className={joinClasses(
-                                            'mr-2 mb-2 w-fit cursor-pointer rounded-full bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
+                                            'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
                                             selectedTag == tag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
                                         )}
                                         key={tag}
@@ -126,7 +126,7 @@ export default function Page({ modelIds, modelData }: Props) {
                             {availableModels.length > 0 ? (
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                     {availableModels.map((id) => {
-                                        const { name, architecture, author, scale } = modelData[id];
+                                        const { architecture, author, scale } = modelData[id];
                                         const category = (modelData[id].description.split('\n')[0] ?? '').replace(
                                             'Category: ',
                                             ''
@@ -173,7 +173,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                                 <div className="p-4">
                                                     <Link href={`/models/${id}`}>
                                                         <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                                            {name}
+                                                            {id}
                                                         </div>
                                                     </Link>
                                                     <div className="text-gray-600 dark:text-gray-400">
@@ -213,7 +213,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                                     <div className="mt-2 flex flex-row flex-wrap">
                                                         {tags.map((tag) => (
                                                             <div
-                                                                className="mr-2 mb-1 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                                                className="mr-2 mb-1 rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
                                                                 key={tag}
                                                             >
                                                                 {tag}
