@@ -13,11 +13,14 @@ interface Props {
 }
 
 export default function Page({ modelIds, modelData }: Props) {
+    console.log('🚀 ~ file: index.tsx:16 ~ Page ~ modelData:', modelData);
     const allTags = new Set<string>();
     modelIds.forEach((id) => {
         modelData[id].tags.forEach((tag) => allTags.add(tag));
     });
     const [selectedTag, setSelectedTag] = useState<TagId>();
+
+    const [searchQuery, setSearchQuery] = useState<string>();
 
     return (
         <>
@@ -56,11 +59,39 @@ export default function Page({ modelIds, modelData }: Props) {
                     </div>
                 </div>
                 <div className="py-4 sm:py-4 lg:py-6">
-                    <div className="mx-auto max-w-screen-2xl">
+                    <div className="mx-auto">
                         <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800 md:py-2 lg:py-4">
                             <h1 className="mb-6 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 lg:text-3xl">
                                 Models
                             </h1>
+                            {/* Search */}
+                            <div className="relative mb-6 flex h-10 w-full">
+                                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <svg
+                                        aria-hidden="true"
+                                        className="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <input
+                                    className="w-full rounded-lg border border-solid border-gray-300 bg-white px-4 py-2 pl-10 text-gray-700 shadow-sm focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 dark:border-gray-700 dark:bg-fade-900 dark:text-gray-100 dark:focus:border-accent-500 dark:focus:ring-accent-500"
+                                    placeholder="Search"
+                                    type="text"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                />
+                            </div>
+                            {/* Tags */}
                             <div className="mb-3 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
                                 {Array.from(allTags).map((tag) => (
                                     <div
@@ -75,9 +106,15 @@ export default function Page({ modelIds, modelData }: Props) {
                                     </div>
                                 ))}
                             </div>
+                            {/* Model Cards */}
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 {modelIds
                                     .filter((id) => (selectedTag ? modelData[id].tags.includes(selectedTag) : true))
+                                    .filter((id) =>
+                                        searchQuery
+                                            ? modelData[id].name.toLowerCase().includes(searchQuery.toLowerCase())
+                                            : true
+                                    )
                                     .map((id) => {
                                         const category = (modelData[id].description.split('\n')[0] ?? '').replace(
                                             'Category: ',
@@ -91,7 +128,7 @@ export default function Page({ modelIds, modelData }: Props) {
 
                                         return (
                                             <div
-                                                className="rounded-lg bg-white shadow-lg dark:bg-fade-900"
+                                                className="rounded-lg border border-solid border-gray-300 bg-white shadow-lg dark:border-gray-700 dark:bg-fade-900"
                                                 key={id}
                                             >
                                                 <div className="p-4">
