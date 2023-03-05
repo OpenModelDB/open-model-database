@@ -101,7 +101,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                 {Array.from(allTags).map((tag) => (
                                     <div
                                         className={joinClasses(
-                                            'mr-2 mb-2 w-fit cursor-pointer rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 transition-colors ease-in-out hover:bg-accent-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
+                                            'mr-2 mb-2 w-fit cursor-pointer rounded-full bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
                                             selectedTag == tag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
                                         )}
                                         key={tag}
@@ -115,13 +115,16 @@ export default function Page({ modelIds, modelData }: Props) {
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 {modelIds
                                     .filter((id) => (selectedTag ? modelData[id].tags.includes(selectedTag) : true))
-                                    .filter((id) =>
-                                        searchQuery
-                                            ? modelData[id].name.toLowerCase().includes(searchQuery.toLowerCase())
-                                            : true
-                                    )
+                                    .filter((id) => {
+                                        const { name, architecture, author, scale } = modelData[id];
+                                        return searchQuery
+                                            ? `${name} ${architecture} ${scale}x ${String(author)}`
+                                                  .toLowerCase()
+                                                  .includes(searchQuery.toLowerCase())
+                                            : true;
+                                    })
                                     .map((id) => {
-                                        const { architecture, author } = modelData[id];
+                                        const { name, architecture, author, scale } = modelData[id];
                                         const category = (modelData[id].description.split('\n')[0] ?? '').replace(
                                             'Category: ',
                                             ''
@@ -134,16 +137,44 @@ export default function Page({ modelIds, modelData }: Props) {
 
                                         return (
                                             <div
-                                                className="rounded-lg border border-solid border-gray-300 bg-white shadow-lg dark:border-gray-700 dark:bg-fade-900"
+                                                className="transform overflow-hidden rounded-lg border border-solid border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900"
                                                 key={id}
                                             >
+                                                <div className="m-0 -mb-2 w-full p-0">
+                                                    <a
+                                                        className="relative block"
+                                                        href={`/models/${id}`}
+                                                        rel="noreferrer"
+                                                        target="_blank"
+                                                    >
+                                                        {/* Arch tag on image */}
+                                                        <div className="absolute top-0 right-0 m-2">
+                                                            <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
+                                                                <div className="cursor-pointer rounded-full bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100  transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                                                                    {architecture}
+                                                                </div>
+                                                                <div className="cursor-pointer rounded-full bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100  transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                                                                    {scale}x
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                        <img
+                                                            alt="img"
+                                                            className={joinClasses(
+                                                                'w-full overflow-hidden object-cover'
+                                                            )}
+                                                            src={`https://picsum.photos/512/256`}
+                                                        />
+                                                    </a>
+                                                </div>
                                                 <div className="p-4">
                                                     <Link href={`/models/${id}`}>
                                                         <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                                            {id}
+                                                            {name}
                                                         </div>
                                                     </Link>
-                                                    <div className="mt-2 text-gray-600 dark:text-gray-400">
+                                                    <div className="text-gray-600 dark:text-gray-400">
                                                         <div className="flex">
                                                             <div className="mr-1">
                                                                 {startsWithVowel(architecture) ? 'an' : 'a'}
@@ -180,7 +211,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                                     <div className="mt-2 flex flex-row flex-wrap">
                                                         {tags.map((tag) => (
                                                             <div
-                                                                className="mr-2 mb-1 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                                                className="mr-2 mb-1 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
                                                                 key={tag}
                                                             >
                                                                 {tag}
