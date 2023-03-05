@@ -59,24 +59,51 @@ export default function Page({ modelId, modelData }: Props) {
                         {/* Download Button */}
                         {modelData.resources.map((resource) => {
                             console.log('🚀 ~ file: [id].tsx:63 ~ {modelData.resources.map ~ resource:', resource);
-                            return (
-                                <button
-                                    className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-500 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-accent-600 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:focus:ring-accent-500"
-                                    key={resource.sha256}
-                                    type="button"
-                                    onClick={() => window.open(resource.urls[0], '_blank')}
-                                >
-                                    <svg
-                                        className="mr-2 h-4 w-4 fill-current"
-                                        viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                                    </svg>
-                                    Download (PyTorch){' '}
-                                    {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
-                                </button>
-                            );
+                            if (resource.type === 'pth') {
+                                return (
+                                    <div key={resource.sha256}>
+                                        {/* Download Label */}
+                                        <div className="flex items-center align-middle">
+                                            <svg
+                                                className="mr-2 h-4 w-4 fill-current"
+                                                viewBox="0 0 20.97 24.99"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M17.88 7.31 16 9.17a7.61 7.61 0 0 1 0 11 7.89 7.89 0 0 1-11.11 0 7.61 7.61 0 0 1 0-11l4.9-4.84.7-.69V0l-7.4 7.29a10.24 10.24 0 0 0 0 14.71 10.53 10.53 0 0 0 14.81 0 10.25 10.25 0 0 0-.02-14.69Z"
+                                                    fill="currentColor"
+                                                />
+                                                <path
+                                                    d="M14.18 6.87a1.35 1.35 0 1 0-1.37-1.35 1.36 1.36 0 0 0 1.37 1.35Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                            PyTorch
+                                        </div>
+                                        <button
+                                            className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-500 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-accent-600 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:focus:ring-accent-500"
+                                            key={resource.sha256}
+                                            type="button"
+                                            onClick={() => window.open(resource.urls[0], '_blank')}
+                                        >
+                                            <div className="w-full">
+                                                <svg
+                                                    className="mr-2 h-4 w-4 fill-current"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                                                </svg>
+                                                Download{' '}
+                                                {resource.size
+                                                    ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)`
+                                                    : ''}
+                                            </div>
+                                        </button>
+                                    </div>
+                                );
+                            }
+                            return 'No Download link';
                         })}
 
                         {modelData.license}
