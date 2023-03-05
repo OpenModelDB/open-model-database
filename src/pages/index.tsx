@@ -87,7 +87,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                             strokeWidth="2"
-                                        ></path>
+                                        />
                                     </svg>
                                 </div>
                                 <input
@@ -98,6 +98,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                 />
                             </div>
+
                             {/* Tags */}
                             <div className="mb-3 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
                                 <div
