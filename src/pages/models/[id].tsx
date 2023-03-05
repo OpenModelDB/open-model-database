@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
+import { PageContainer } from '../../elements/page';
 import { Model, ModelId } from '../../lib/schema';
 import { getAllModelIds, getModelData } from '../../lib/server/data';
 
@@ -13,6 +14,7 @@ interface Props {
 }
 
 export default function Page({ modelId, modelData }: Props) {
+    console.log('🚀 ~ file: [id].tsx:17 ~ Page ~ modelData:', modelData);
     return (
         <>
             <Head>
@@ -30,14 +32,57 @@ export default function Page({ modelId, modelData }: Props) {
                     rel="icon"
                 />
             </Head>
-            <main>
-                <div>
+            <PageContainer>
+                {/* <div>
                     <p>{modelId}</p>
                     <p>{modelData.name}</p>
                     <br />
                     <pre>{JSON.stringify(modelData, undefined, 4)}</pre>
+                </div> */}
+                {/* Two columns */}
+                <div className="grid w-full grid-cols-3 gap-4 py-6">
+                    {/* Left column */}
+                    <div className="col-span-2 flex flex-col gap-4">
+                        <div className="h-72 rounded-lg bg-fade-100 p-4 dark:bg-fade-800"></div>
+                        <div className="">
+                            <div>
+                                <h1 className="m-0">{modelData.name}</h1>
+                                <h3 className="m-0">by {modelData.author}</h3>
+                            </div>
+                            <div>
+                                <p className="whitespace-pre-line">{modelData.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Right column */}
+                    <div className="col-span-1 w-full">
+                        {/* Download Button */}
+                        {modelData.resources.map((resource) => {
+                            console.log('🚀 ~ file: [id].tsx:63 ~ {modelData.resources.map ~ resource:', resource);
+                            return (
+                                <button
+                                    className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-500 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-accent-600 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:focus:ring-accent-500"
+                                    key={resource.sha256}
+                                    type="button"
+                                    onClick={() => window.open(resource.urls[0], '_blank')}
+                                >
+                                    <svg
+                                        className="mr-2 h-4 w-4 fill-current"
+                                        viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                                    </svg>
+                                    Download (PyTorch){' '}
+                                    {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
+                                </button>
+                            );
+                        })}
+
+                        {modelData.license}
+                    </div>
                 </div>
-            </main>
+            </PageContainer>
         </>
     );
 }
