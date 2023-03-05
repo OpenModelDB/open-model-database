@@ -58,7 +58,7 @@ export default function Page({ modelIds, modelData }: Props) {
                 <div className="py-6">
                     <div className="mx-auto max-w-screen-2xl">
                         <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
-                            <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 md:mb-6 lg:text-3xl">
+                            <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
                                 The best place to find AI Upscaling models
                             </h1>
 
@@ -127,99 +127,114 @@ export default function Page({ modelIds, modelData }: Props) {
                             {availableModels.length > 0 ? (
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                     {availableModels.map((id) => {
-                                        const { architecture, author, scale } = modelData[id];
-                                        const category = (modelData[id].description.split('\n')[0] ?? '').replace(
-                                            'Category: ',
-                                            ''
-                                        );
-                                        const purpose = (modelData[id].description.split('\n')[1] ?? '').replace(
-                                            'Purpose: ',
-                                            ''
-                                        );
-                                        const tags = modelData[id].tags;
+                                        const { architecture, author, scale, description, tags } = modelData[id];
+                                        const lines = description.split('\n');
+                                        const descLines: string[] = [];
+                                        let category = '',
+                                            purpose = '',
+                                            pretrained = '',
+                                            dataset = '';
+                                        lines.forEach((line) => {
+                                            if (line.startsWith('Category: ')) {
+                                                category = String(line).replace('Category: ', '');
+                                            } else if (line.startsWith('Purpose: ')) {
+                                                purpose = String(line).replace('Purpose: ', '');
+                                            } else if (line.startsWith('Pretrained: ')) {
+                                                pretrained = String(line).replace('Pretrained: ', '');
+                                            } else if (line.startsWith('Dataset: ')) {
+                                                dataset = String(line).replace('Dataset: ', '');
+                                            } else if (line !== '') {
+                                                descLines.push(line.trim());
+                                            }
+                                        });
+                                        const purposeSentence = category
+                                            ? `A ${scale}x model for ${purpose}.`
+                                            : `A ${scale}x model.`;
+                                        const datasetSentence = dataset
+                                            ? `Trained on ${dataset}.`
+                                            : 'Unknown training dataset.';
+                                        const pretrainedSentence = pretrained
+                                            ? `Pretrained using ${pretrained}.`
+                                            : 'Unknown pretrained model.';
+                                        const actualDescription =
+                                            descLines.length > 0
+                                                ? descLines.join('\n').trim()
+                                                : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
 
                                         return (
                                             <div
-                                                className="transform overflow-hidden rounded-lg border border-solid border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900"
+                                                // eslint-disable-next-line tailwindcss/no-arbitrary-value
+                                                className="group relative h-[435px] overflow-hidden rounded-lg border border-solid border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 "
                                                 key={id}
                                             >
-                                                <div className="m-0 -mb-2 w-full p-0">
+                                                <div className="relative flex h-full w-full flex-col  transition-all ease-in-out">
+                                                    {/* Arch tag on image */}
+                                                    <div className="absolute top-0 right-0 m-2">
+                                                        <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
+                                                            <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                                                                {architecture}
+                                                            </div>
+                                                            <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                                                                {scale}x
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                     <a
-                                                        className="relative block"
+                                                        // eslint-disable-next-line tailwindcss/no-arbitrary-value
+                                                        className="h-auto w-full flex-1  bg-[url(https://picsum.photos/512/312)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:h-full"
                                                         href={`/models/${id}`}
                                                         rel="noreferrer"
                                                         target="_blank"
-                                                    >
-                                                        {/* Arch tag on image */}
-                                                        <div className="absolute top-0 right-0 m-2">
-                                                            <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
-                                                                <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
-                                                                    {architecture}
+                                                    />
+
+                                                    <div className="relative inset-x-0 bottom-0 bg-white p-4   dark:bg-fade-900">
+                                                        <Link href={`/models/${id}`}>
+                                                            <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
+                                                                {id}
+                                                            </div>
+                                                        </Link>
+                                                        <div className="text-gray-600 dark:text-gray-400">
+                                                            <div className="flex">
+                                                                <div className="mr-1">
+                                                                    {startsWithVowel(architecture) ? 'an' : 'a'}
                                                                 </div>
-                                                                <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
-                                                                    {scale}x
-                                                                </div>
+                                                                <Link href={`/architectures/${architecture}`}>
+                                                                    <div className="mr-1 font-bold text-accent-500">
+                                                                        {architecture}
+                                                                    </div>
+                                                                </Link>
+                                                                <div className="mr-1">model by</div>
+                                                                {asArray(author).map((userId) => (
+                                                                    <React.Fragment key={userId}>
+                                                                        <Link href={`/users/${userId}`}>
+                                                                            <div className="font-bold text-accent-500">
+                                                                                {userId}
+                                                                            </div>
+                                                                        </Link>
+                                                                    </React.Fragment>
+                                                                ))}
                                                             </div>
                                                         </div>
-                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                        <img
-                                                            alt="img"
-                                                            className={joinClasses(
-                                                                'w-full overflow-hidden object-cover'
-                                                            )}
-                                                            src={`https://picsum.photos/512/256`}
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="p-4">
-                                                    <Link href={`/models/${id}`}>
-                                                        <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                                            {id}
-                                                        </div>
-                                                    </Link>
-                                                    <div className="text-gray-600 dark:text-gray-400">
-                                                        <div className="flex">
-                                                            <div className="mr-1">
-                                                                {startsWithVowel(architecture) ? 'an' : 'a'}
+
+                                                        {/* Description */}
+                                                        <div className="my-2 flex flex-col justify-between">
+                                                            <div className="text-gray-500 line-clamp-3 dark:text-gray-400">
+                                                                {actualDescription}
                                                             </div>
-                                                            <Link href={`/architectures/${architecture}`}>
-                                                                <div className="mr-1 font-bold text-accent-500">
-                                                                    {architecture}
+                                                        </div>
+
+                                                        {/* Tags */}
+                                                        <div className="mt-2 flex flex-row flex-wrap">
+                                                            {tags.map((tag) => (
+                                                                <div
+                                                                    className="mr-2 mt-1 rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                                                    key={tag}
+                                                                >
+                                                                    {tag}
                                                                 </div>
-                                                            </Link>
-                                                            <div className="mr-1">model by</div>
-                                                            {asArray(author).map((userId) => (
-                                                                <React.Fragment key={userId}>
-                                                                    <Link href={`/users/${userId}`}>
-                                                                        <div className="font-bold text-accent-500">
-                                                                            {userId}
-                                                                        </div>
-                                                                    </Link>
-                                                                </React.Fragment>
                                                             ))}
                                                         </div>
-                                                    </div>
-
-                                                    {/* Description */}
-                                                    <div className="my-2 flex flex-col justify-between">
-                                                        <div className="truncate text-gray-500 dark:text-gray-400">
-                                                            <strong>Purpose:</strong> {purpose}
-                                                        </div>
-                                                        <div className="truncate text-gray-500 dark:text-gray-400">
-                                                            <strong>Category:</strong> {category}
-                                                        </div>
-                                                    </div>
-
-                                                    {/* Tags */}
-                                                    <div className="mt-2 flex flex-row flex-wrap">
-                                                        {tags.map((tag) => (
-                                                            <div
-                                                                className="mr-2 mb-1 rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
-                                                                key={tag}
-                                                            >
-                                                                {tag}
-                                                            </div>
-                                                        ))}
                                                     </div>
                                                 </div>
                                             </div>
