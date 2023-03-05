@@ -72,7 +72,7 @@ export default function Page({ modelIds, modelData }: Props) {
                             </p>
 
                             {/* Search */}
-                            <div className="relative mb-6 flex h-10 w-full">
+                            <div className="relative mb-4 flex h-10 w-full">
                                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                     <svg
                                         aria-hidden="true"
@@ -100,7 +100,7 @@ export default function Page({ modelIds, modelData }: Props) {
                             </div>
 
                             {/* Tags */}
-                            <div className="mb-3 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
+                            <div className="mb-2 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
                                 <div
                                     className={joinClasses(
                                         'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
@@ -153,10 +153,10 @@ export default function Page({ modelIds, modelData }: Props) {
                                                         {/* Arch tag on image */}
                                                         <div className="absolute top-0 right-0 m-2">
                                                             <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
-                                                                <div className="cursor-pointer rounded-full bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100  transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                                                                <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
                                                                     {architecture}
                                                                 </div>
-                                                                <div className="cursor-pointer rounded-full bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100  transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                                                                <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
                                                                     {scale}x
                                                                 </div>
                                                             </div>
