@@ -73,7 +73,7 @@ export default function Page({ modelId, modelData }: Props) {
                                 return (
                                     <div key={resource.sha256}>
                                         <button
-                                            className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-500 px-5 py-2.5 text-center text-lg font-medium text-white hover:bg-accent-600 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:focus:ring-accent-500"
+                                            className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-500 px-5 py-2.5 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-600 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:focus:ring-accent-500"
                                             type="button"
                                             onClick={() => window.open(url, '_blank')}
                                         >
@@ -143,7 +143,20 @@ export default function Page({ modelId, modelData }: Props) {
                                         >
                                             Tags
                                         </th>
-                                        <td className="px-6 py-4">{modelData.tags}</td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex flex-row flex-wrap gap-2">
+                                                {modelData.tags.map((tag) => {
+                                                    return (
+                                                        <span
+                                                            className="inline-flex items-center rounded-full bg-fade-100 px-2.5 py-0.5 text-xs font-medium text-fade-800 dark:bg-fade-800 dark:text-fade-200"
+                                                            key={tag}
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    );
+                                                })}
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
