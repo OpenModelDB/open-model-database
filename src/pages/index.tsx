@@ -12,6 +12,11 @@ interface Props {
     modelData: Record<ModelId, Model>;
 }
 
+const startsWithVowel = (str: string) => {
+    const firstLetter = str[0].toLowerCase();
+    return ['a', 'e', 'i', 'o', 'u'].includes(firstLetter);
+};
+
 export default function Page({ modelIds, modelData }: Props) {
     console.log('🚀 ~ file: index.tsx:16 ~ Page ~ modelData:', modelData);
     const allTags = new Set<string>();
@@ -40,9 +45,9 @@ export default function Page({ modelIds, modelData }: Props) {
                 />
             </Head>
             <PageContainer>
-                <div className="py-4 sm:py-4 lg:py-6">
+                <div className="py-6">
                     <div className="mx-auto max-w-screen-2xl">
-                        <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800 md:py-6 lg:py-8">
+                        <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
                             <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-gray-200 md:mb-6 lg:text-3xl">
                                 The best place to find AI Upscaling models
                             </h1>
@@ -77,9 +82,9 @@ export default function Page({ modelIds, modelData }: Props) {
                                     >
                                         <path
                                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
                                         ></path>
                                     </svg>
                                 </div>
@@ -116,6 +121,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                             : true
                                     )
                                     .map((id) => {
+                                        const { architecture, author } = modelData[id];
                                         const category = (modelData[id].description.split('\n')[0] ?? '').replace(
                                             'Category: ',
                                             ''
@@ -138,18 +144,26 @@ export default function Page({ modelIds, modelData }: Props) {
                                                         </div>
                                                     </Link>
                                                     <div className="mt-2 text-gray-600 dark:text-gray-400">
-                                                        {asArray(modelData[id].author).map((userId) => (
-                                                            <React.Fragment key={userId}>
-                                                                <Link href={`/users/${userId}`}>
-                                                                    <div className="flex">
-                                                                        <div className="mr-1">by</div>
+                                                        <div className="flex">
+                                                            <div className="mr-1">
+                                                                {startsWithVowel(architecture) ? 'an' : 'a'}
+                                                            </div>
+                                                            <Link href={`/architectures/${architecture}`}>
+                                                                <div className="mr-1 font-bold text-accent-500">
+                                                                    {architecture}
+                                                                </div>
+                                                            </Link>
+                                                            <div className="mr-1">model by</div>
+                                                            {asArray(author).map((userId) => (
+                                                                <React.Fragment key={userId}>
+                                                                    <Link href={`/users/${userId}`}>
                                                                         <div className="font-bold text-accent-500">
                                                                             {userId}
                                                                         </div>
-                                                                    </div>
-                                                                </Link>
-                                                            </React.Fragment>
-                                                        ))}
+                                                                    </Link>
+                                                                </React.Fragment>
+                                                            ))}
+                                                        </div>
                                                     </div>
 
                                                     {/* Description */}
@@ -166,7 +180,7 @@ export default function Page({ modelIds, modelData }: Props) {
                                                     <div className="mt-2 flex flex-row flex-wrap">
                                                         {tags.map((tag) => (
                                                             <div
-                                                                className="mr-2 mb-2 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                                                className="mr-2 mb-1 rounded-full bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
                                                                 key={tag}
                                                             >
                                                                 {tag}
