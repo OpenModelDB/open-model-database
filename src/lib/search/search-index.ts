@@ -123,7 +123,9 @@ export class SearchIndex<Id, Tag> {
             for (const { text, weight } of entry.texts) {
                 score += scoreFn(text) * weight;
             }
-            results.push({ id, score });
+            if (score > 0) {
+                results.push({ id, score });
+            }
         }
         return results;
     }
