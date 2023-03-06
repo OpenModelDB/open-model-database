@@ -114,7 +114,7 @@ export default function Page({ modelId, modelData }: Props) {
                             </div>
                             <div className="space-between flex w-full py-2">
                                 <button
-                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 px-5 py-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
                                     onClick={() => {
                                         setImageIndex((imageIndex + images.length - 1) % images.length);
                                     }}
@@ -123,14 +123,17 @@ export default function Page({ modelId, modelData }: Props) {
                                 </button>
                                 <div className="flex grow items-center justify-center justify-items-center gap-2 align-middle">
                                     {images.map((image, index) => (
-                                        <button
+                                        // eslint-disable-next-line @next/next/no-img-element
+                                        <img
+                                            alt="Thumbnail"
                                             className={joinClasses(
-                                                'line-height-1 h-4 w-4 cursor-pointer rounded-full border-0 text-center transition duration-100 ease-in-out',
+                                                'border-3 m-0 h-12 w-12 cursor-pointer rounded-sm border-solid p-0 transition duration-100 ease-in-out',
                                                 index === imageIndex
-                                                    ? 'bg-accent-500'
-                                                    : 'bg-fade-200 hover:bg-fade-300 dark:bg-fade-700 dark:hover:bg-fade-600'
+                                                    ? 'border-accent-500'
+                                                    : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
                                             )}
                                             key={image}
+                                            src={image}
                                             onClick={() => {
                                                 setImageIndex(index);
                                             }}
@@ -138,7 +141,7 @@ export default function Page({ modelId, modelData }: Props) {
                                     ))}
                                 </div>
                                 <button
-                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 px-5 py-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
                                     onClick={() => {
                                         setImageIndex((imageIndex + 1) % images.length);
                                     }}
