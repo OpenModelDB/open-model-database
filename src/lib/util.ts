@@ -72,3 +72,10 @@ export function withoutHash(urlFragment: string, removeTrailingSlash = true): st
     if (removeTrailingSlash) return fragment.replace(/\/$/, '');
     return fragment;
 }
+
+export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][] {
+    return Object.entries(o) as [K, V][];
+}
+export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
+    return Object.keys(o) as K[];
+}
