@@ -79,3 +79,16 @@ export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][] {
 export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
     return Object.keys(o) as K[];
 }
+
+export function getColorMode(numberOfChannels: number | string) {
+    switch (Number(numberOfChannels)) {
+        case 1:
+            return 'grayscale';
+        case 3:
+            return 'rgb';
+        case 4:
+            return 'rgba';
+        default:
+            return numberOfChannels;
+    }
+}
