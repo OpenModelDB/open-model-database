@@ -47,7 +47,7 @@ const getColorMode = (numberOfChannels: number) => {
     }
 };
 
-export default function Page({ modelId, modelData }: Props) {
+export default function Page({ modelData }: Props) {
     const sizes = ['64', '256', '512', '1024'];
     const images = sizes.map((size) => {
         return `https://picsum.photos/${size}/${sizes[(Math.random() * sizes.length) | 0]}`;
@@ -127,7 +127,7 @@ export default function Page({ modelId, modelData }: Props) {
                                         <img
                                             alt="Thumbnail"
                                             className={joinClasses(
-                                                'border-3 m-0 h-12 w-12 cursor-pointer rounded-sm border-solid p-0 transition duration-100 ease-in-out',
+                                                'border-3 m-0 h-12 w-12 cursor-pointer rounded-lg border-solid p-0 transition duration-100 ease-in-out',
                                                 index === imageIndex
                                                     ? 'border-accent-500'
                                                     : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
