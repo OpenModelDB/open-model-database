@@ -96,7 +96,7 @@ export default function Page({ modelId, modelData }: Props) {
                                     itemOne={
                                         <ReactCompareSliderImage
                                             alt="LR"
-                                            className="rendering-pixelated h-full w-full object-scale-down"
+                                            className="h-full w-full object-scale-down"
                                             src={images[imageIndex]}
                                             style={{
                                                 filter: 'blur(6px)',
@@ -106,7 +106,7 @@ export default function Page({ modelId, modelData }: Props) {
                                     itemTwo={
                                         <ReactCompareSliderImage
                                             alt="HR"
-                                            className="h-full w-full  object-scale-down"
+                                            className="rendering-pixelated h-full w-full  object-scale-down"
                                             src={images[imageIndex]}
                                         />
                                     }
