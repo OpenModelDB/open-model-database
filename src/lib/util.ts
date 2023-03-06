@@ -1,3 +1,6 @@
+export const EMPTY_ARRAY: readonly never[] = [];
+export const EMPTY_SET: ReadonlySet<never> = new Set();
+
 export function assertNever(value: never): never {
     throw new Error(`Unreachable code path. The value ${String(value)} is invalid.`);
 }
@@ -68,4 +71,11 @@ export function withoutHash(urlFragment: string, removeTrailingSlash = true): st
     const fragment = urlFragment.replace(/#[\s\S]*$/, '');
     if (removeTrailingSlash) return fragment.replace(/\/$/, '');
     return fragment;
+}
+
+export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][] {
+    return Object.entries(o) as [K, V][];
+}
+export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
+    return Object.keys(o) as K[];
 }

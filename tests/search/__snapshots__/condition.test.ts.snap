@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compileCondition a 1`] = `
+{
+  "negated": false,
+  "type": "var",
+  "value": "a",
+}
+`;
+
+exports[`compileCondition ¬a 1`] = `
+{
+  "negated": true,
+  "type": "var",
+  "value": "a",
+}
+`;
+
+exports[`compileCondition ¬¬¬¬a 1`] = `
+{
+  "negated": false,
+  "type": "var",
+  "value": "a",
+}
+`;
+
+exports[`compileCondition ∧() 1`] = `
+{
+  "type": "const",
+  "value": true,
+}
+`;
+
+exports[`compileCondition ∧(a a) 1`] = `
+{
+  "negated": false,
+  "type": "var",
+  "value": "a",
+}
+`;
+
+exports[`compileCondition ∧(a b c a b c) 1`] = `
+{
+  "items": [
+    {
+      "negated": false,
+      "type": "var",
+      "value": "a",
+    },
+    {
+      "negated": false,
+      "type": "var",
+      "value": "b",
+    },
+    {
+      "negated": false,
+      "type": "var",
+      "value": "c",
+    },
+  ],
+  "type": "and",
+}
+`;
+
+exports[`compileCondition ∧(a ¬a) 1`] = `
+{
+  "type": "const",
+  "value": false,
+}
+`;
+
+exports[`compileCondition ∧(a ¬b F) 1`] = `
+{
+  "type": "const",
+  "value": false,
+}
+`;
+
+exports[`compileCondition ∧(a ¬b T) 1`] = `
+{
+  "items": [
+    {
+      "negated": false,
+      "type": "var",
+      "value": "a",
+    },
+    {
+      "negated": true,
+      "type": "var",
+      "value": "b",
+    },
+  ],
+  "type": "and",
+}
+`;
+
+exports[`compileCondition ∧(a ∨(b) ∧(d) ∨(∧(a))) 1`] = `
+{
+  "items": [
+    {
+      "negated": false,
+      "type": "var",
+      "value": "a",
+    },
+    {
+      "negated": false,
+      "type": "var",
+      "value": "b",
+    },
+    {
+      "negated": false,
+      "type": "var",
+      "value": "d",
+    },
+  ],
+  "type": "and",
+}
+`;
+
+exports[`compileCondition ∧(a) 1`] = `
+{
+  "negated": false,
+  "type": "var",
+  "value": "a",
+}
+`;
+
+exports[`compileCondition ∨() 1`] = `
+{
+  "type": "const",
+  "value": false,
+}
+`;
+
+exports[`compileCondition ∨(a a) 1`] = `
+{
+  "negated": false,
+  "type": "var",
+  "value": "a",
+}
+`;
+
+exports[`compileCondition ∨(a b c a b c) 1`] = `
+{
+  "items": [
+    {
+      "negated": false,
+      "type": "var",
+      "value": "a",
+    },
+    {
+      "negated": false,
+      "type": "var",
+      "value": "b",
+    },
+    {
+      "negated": false,
+      "type": "var",
+      "value": "c",
+    },
+  ],
+  "type": "or",
+}
+`;
+
+exports[`compileCondition ∨(a ¬a) 1`] = `
+{
+  "type": "const",
+  "value": true,
+}
+`;
+
+exports[`compileCondition ∨(a ¬b F) 1`] = `
+{
+  "items": [
+    {
+      "negated": false,
+      "type": "var",
+      "value": "a",
+    },
+    {
+      "negated": true,
+      "type": "var",
+      "value": "b",
+    },
+  ],
+  "type": "or",
+}
+`;
+
+exports[`compileCondition ∨(a ¬b T) 1`] = `
+{
+  "type": "const",
+  "value": true,
+}
+`;
+
+exports[`compileCondition ∨(a) 1`] = `
+{
+  "negated": false,
+  "type": "var",
+  "value": "a",
+}
+`;
