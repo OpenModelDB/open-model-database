@@ -74,11 +74,11 @@ export default function Page({ modelId, modelData }: Props) {
                     {/* Left column */}
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
                         <div className="relative rounded-lg">
-                            <div className="h-96 rounded-lg bg-fade-100 dark:bg-fade-800">
+                            <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     alt="Model preview"
-                                    className="h-full w-full rounded-lg object-contain"
+                                    className="m-auto h-full w-full object-scale-down"
                                     src={images[imageIndex]}
                                 />
                             </div>
