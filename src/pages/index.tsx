@@ -1,37 +1,65 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ModelCard } from '../elements/components/model-card';
 import { SearchBar } from '../elements/components/searchbar';
 import { PageContainer } from '../elements/page';
 import { Model, ModelId, TagId } from '../lib/schema';
+import { Condition, compileCondition } from '../lib/search/logical-condition';
+import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
+import { tokenize } from '../lib/search/token';
 import { getAllModelIds, getModelData } from '../lib/server/data';
-import { joinClasses } from '../lib/util';
+import { asArray, joinClasses, typedEntries } from '../lib/util';
 
 interface Props {
-    modelIds: ModelId[];
     modelData: Record<ModelId, Model>;
 }
 
-export default function Page({ modelIds, modelData }: Props) {
-    const allTags = new Set<string>();
-    modelIds.forEach((id) => {
-        modelData[id].tags.forEach((tag) => allTags.add(tag));
-    });
+export default function Page({ modelData }: Props) {
+    const searchIndex = useMemo(() => {
+        return new SearchIndex(
+            typedEntries(modelData).map(([id, model]): CorpusEntry<ModelId, TagId> => {
+                return {
+                    id,
+                    tags: new Set(model.tags),
+                    texts: [
+                        {
+                            text: [id, model.name].filter(Boolean).join('\n').toLowerCase(),
+                            weight: 8,
+                        },
+                        {
+                            text: asArray(model.author).filter(Boolean).join('\n').toLowerCase(),
+                            weight: 4,
+                        },
+                        {
+                            text: [model.architecture, `${model.scale}x`, model.dataset]
+                                .filter(Boolean)
+                                .join('\n')
+                                .toLowerCase(),
+                            weight: 1,
+                        },
+                        { text: model.description.toLowerCase(), weight: 1 },
+                    ],
+                };
+            })
+        );
+    }, [modelData]);
+    const modelCount = searchIndex.entries.size;
+
+    const allTags = useMemo(() => new Set<string>(Object.values(modelData).flatMap((m) => m.tags)), [modelData]);
     const [selectedTag, setSelectedTag] = useState<TagId>();
+    const [searchQuery, setSearchQuery] = useState<string>('');
 
-    const [searchQuery, setSearchQuery] = useState<string>();
+    const availableModels = useMemo(() => {
+        const tagCondition: Condition<TagId> = selectedTag ? Condition.variable(selectedTag) : true;
+        const queryTokens = tokenize(searchQuery);
 
-    const availableModels = modelIds
-        .filter((id) => (selectedTag ? modelData[id].tags.includes(selectedTag) : true))
-        .filter((id) => {
-            const { name, architecture, author, scale } = modelData[id];
-            return searchQuery
-                ? `${id} ${name} ${architecture} ${scale}x ${String(author)}`
-                      .toLowerCase()
-                      .includes(searchQuery.toLowerCase())
-                : true;
-        });
+        const searchResults = searchIndex
+            .retrieve(compileCondition(tagCondition), queryTokens)
+            .sort((a, b) => a.id.localeCompare(b.id))
+            .sort((a, b) => b.score - a.score);
+        return searchResults.map((r) => r.id);
+    }, [selectedTag, searchQuery, searchIndex]);
 
     return (
         <>
@@ -64,7 +92,7 @@ export default function Page({ modelIds, modelData }: Props) {
                             </p>
 
                             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                                Currently listing <a className="font-bold text-accent-500">{modelIds.length}</a> models.
+                                Currently listing <a className="font-bold text-accent-500">{modelCount}</a> models.
                             </p>
 
                             {/* Search */}
@@ -171,7 +199,6 @@ export const getStaticProps: GetStaticProps<Props> = async (_context) => {
     const modelData = await getModelData(modelIds);
     return {
         props: {
-            modelIds: modelIds,
             modelData: Object.fromEntries(modelIds.map((id, i) => [id, modelData[i]])),
         },
     };
