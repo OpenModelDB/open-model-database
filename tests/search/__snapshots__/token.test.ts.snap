@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tokenize  1`] = `[]`;
+
+exports[`tokenize 1x-AnimeUndeint-Compact 1`] = `
+[
+  "1x",
+  "anime",
+  "undeint",
+  "compact",
+]
+`;
+
+exports[`tokenize 1x-BCGone-DetailedV2-40-60 1`] = `
+[
+  "1x",
+  "bc",
+  "gone",
+  "detailed",
+  "v2",
+  "40",
+  "60",
+]
+`;
+
+exports[`tokenize 1x-BSChroma 1`] = `
+[
+  "1x",
+  "bs",
+  "chroma",
+]
+`;
+
+exports[`tokenize 1x-BaldrickVHSFixV0-2 1`] = `
+[
+  "1x",
+  "baldrick",
+  "vhs",
+  "fix",
+  "v0",
+  "2",
+]
+`;
+
+exports[`tokenize 1x-BleedOut-Compact 1`] = `
+[
+  "1x",
+  "bleed",
+  "out",
+  "compact",
+]
+`;
+
+exports[`tokenize 1x-BroadcastToStudioLite 1`] = `
+[
+  "1x",
+  "broadcast",
+  "to",
+  "studio",
+  "lite",
+]
+`;
+
+exports[`tokenize 1x-DEDXT 1`] = `
+[
+  "1x",
+  "de",
+  "dxt",
+]
+`;
+
+exports[`tokenize 1x-GainRESV3-Natural 1`] = `
+[
+  "1x",
+  "gain",
+  "res",
+  "v3",
+  "natural",
+]
+`;
+
+exports[`tokenize 1x-HurrDeblur-SuperUltraCompact 1`] = `
+[
+  "1x",
+  "hurr",
+  "deblur",
+  "super",
+  "ultra",
+  "compact",
+]
+`;
+
+exports[`tokenize 1x-ITF-SkinDiffDDS-v1 1`] = `
+[
+  "1x",
+  "itf",
+  "skin",
+  "diff",
+  "dds",
+  "v1",
+]
+`;
+
+exports[`tokenize 1x-MangaJPEGLQ 1`] = `
+[
+  "1x",
+  "manga",
+  "jpeg",
+  "lq",
+]
+`;
+
+exports[`tokenize 1x-SpongeBC1-Lite 1`] = `
+[
+  "1x",
+  "sponge",
+  "bc",
+  "1",
+  "lite",
+]
+`;
+
+exports[`tokenize 2x-ATLA-KORRA 1`] = `
+[
+  "2x",
+  "atla",
+  "korra",
+]
+`;
+
+exports[`tokenize 2x-Bubble-AnimeScale-SwinIR-Small-v1 1`] = `
+[
+  "2x",
+  "bubble",
+  "anime",
+  "scale",
+  "swin",
+  "ir",
+  "small",
+  "v1",
+]
+`;
+
+exports[`tokenize 2x-Byousoku-5-Centimeter 1`] = `
+[
+  "2x",
+  "byousoku",
+  "5",
+  "centimeter",
+]
+`;
+
+exports[`tokenize 2x-GT-evA 1`] = `
+[
+  "2x",
+  "gt",
+  "eva",
+]
+`;
+
+exports[`tokenize 2x-Loyaldk-LitePonyV2-0 1`] = `
+[
+  "2x",
+  "loyaldk",
+  "lite",
+  "pony",
+  "v2",
+  "0",
+]
+`;
+
+exports[`tokenize 2x-SHARP-ANIME-V2 1`] = `
+[
+  "2x",
+  "sharp",
+  "anime",
+  "v2",
+]
+`;
+
+exports[`tokenize 2x-Waifaux-NL3-SuperLite 1`] = `
+[
+  "2x",
+  "waifaux",
+  "nl",
+  "3",
+  "super",
+  "lite",
+]
+`;
+
+exports[`tokenize 2x-sudo-RealESRGAN-Dropout 1`] = `
+[
+  "2x",
+  "sudo",
+  "real",
+  "esrgan",
+  "dropout",
+]
+`;
+
+exports[`tokenize 4x-BooruGan-650k 1`] = `
+[
+  "4x",
+  "booru",
+  "gan",
+  "650",
+  "k",
+]
+`;
+
+exports[`tokenize FOO_BAR 1`] = `
+[
+  "foo",
+  "bar",
+]
+`;
+
+exports[`tokenize Foo Bar 1`] = `
+[
+  "foo",
+  "bar",
+]
+`;
+
+exports[`tokenize FooBar 1`] = `
+[
+  "foo",
+  "bar",
+]
+`;
+
+exports[`tokenize foo 1`] = `
+[
+  "foo",
+]
+`;
+
+exports[`tokenize fooBar 1`] = `
+[
+  "foo",
+  "bar",
+]
+`;

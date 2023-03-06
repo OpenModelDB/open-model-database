@@ -1,3 +1,6 @@
+export const EMPTY_ARRAY: readonly never[] = [];
+export const EMPTY_SET: ReadonlySet<never> = new Set();
+
 export function assertNever(value: never): never {
     throw new Error(`Unreachable code path. The value ${String(value)} is invalid.`);
 }
