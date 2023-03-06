@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
+import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import { PageContainer } from '../../elements/page';
@@ -47,8 +48,9 @@ const getColorMode = (numberOfChannels: number) => {
 };
 
 export default function Page({ modelId, modelData }: Props) {
-    const images = ['256', '512', '1024'].map((size) => {
-        return `https://picsum.photos/${size}/256`;
+    const sizes = ['64', '256', '512', '1024'];
+    const images = sizes.map((size) => {
+        return `https://picsum.photos/${size}/${sizes[(Math.random() * sizes.length) | 0]}`;
     });
     const [imageIndex, setImageIndex] = React.useState(0);
     return (
@@ -75,11 +77,39 @@ export default function Page({ modelId, modelData }: Props) {
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
                         <div className="relative rounded-lg">
                             <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    alt="Model preview"
-                                    className="m-auto h-full w-full object-scale-down"
-                                    src={images[imageIndex]}
+                                <ReactCompareSlider
+                                    className="w-full rounded-lg"
+                                    handle={
+                                        <ReactCompareSliderHandle
+                                            buttonStyle={{
+                                                height: '48px',
+                                                width: '12px',
+                                                borderRadius: '1rem',
+                                                backdropFilter: undefined,
+                                                background: 'white',
+                                                border: 0,
+                                                color: 'transparent',
+                                                overflow: 'hidden',
+                                            }}
+                                        />
+                                    }
+                                    itemOne={
+                                        <ReactCompareSliderImage
+                                            alt="LR"
+                                            className="rendering-pixelated h-full w-full object-scale-down"
+                                            src={images[imageIndex]}
+                                            style={{
+                                                filter: 'blur(6px)',
+                                            }}
+                                        />
+                                    }
+                                    itemTwo={
+                                        <ReactCompareSliderImage
+                                            alt="HR"
+                                            className="h-full w-full  object-scale-down"
+                                            src={images[imageIndex]}
+                                        />
+                                    }
                                 />
                             </div>
                             <div className="space-between flex w-full py-2">
