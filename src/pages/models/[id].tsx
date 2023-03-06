@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
+import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import { PageContainer } from '../../elements/page';
@@ -46,9 +47,10 @@ const getColorMode = (numberOfChannels: number) => {
     }
 };
 
-export default function Page({ modelId, modelData }: Props) {
-    const images = ['256', '512', '1024'].map((size) => {
-        return `https://picsum.photos/${size}/256`;
+export default function Page({ modelData }: Props) {
+    const sizes = ['64', '256', '512', '1024'];
+    const images = sizes.map((size) => {
+        return `https://picsum.photos/${size}/${sizes[(Math.random() * sizes.length) | 0]}`;
     });
     const [imageIndex, setImageIndex] = React.useState(0);
     return (
@@ -75,16 +77,44 @@ export default function Page({ modelId, modelData }: Props) {
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
                         <div className="relative rounded-lg">
                             <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    alt="Model preview"
-                                    className="m-auto h-full w-full object-scale-down"
-                                    src={images[imageIndex]}
+                                <ReactCompareSlider
+                                    className="w-full rounded-lg"
+                                    handle={
+                                        <ReactCompareSliderHandle
+                                            buttonStyle={{
+                                                height: '48px',
+                                                width: '12px',
+                                                borderRadius: '1rem',
+                                                backdropFilter: undefined,
+                                                background: 'white',
+                                                border: 0,
+                                                color: 'transparent',
+                                                overflow: 'hidden',
+                                            }}
+                                        />
+                                    }
+                                    itemOne={
+                                        <ReactCompareSliderImage
+                                            alt="LR"
+                                            className="h-full w-full object-scale-down"
+                                            src={images[imageIndex]}
+                                            style={{
+                                                filter: 'blur(6px)',
+                                            }}
+                                        />
+                                    }
+                                    itemTwo={
+                                        <ReactCompareSliderImage
+                                            alt="HR"
+                                            className="rendering-pixelated h-full w-full  object-scale-down"
+                                            src={images[imageIndex]}
+                                        />
+                                    }
                                 />
                             </div>
                             <div className="space-between flex w-full py-2">
                                 <button
-                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 px-5 py-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
                                     onClick={() => {
                                         setImageIndex((imageIndex + images.length - 1) % images.length);
                                     }}
@@ -93,14 +123,17 @@ export default function Page({ modelId, modelData }: Props) {
                                 </button>
                                 <div className="flex grow items-center justify-center justify-items-center gap-2 align-middle">
                                     {images.map((image, index) => (
-                                        <button
+                                        // eslint-disable-next-line @next/next/no-img-element
+                                        <img
+                                            alt="Thumbnail"
                                             className={joinClasses(
-                                                'line-height-1 h-4 w-4 cursor-pointer rounded-full border-0 text-center transition duration-100 ease-in-out',
+                                                'border-3 m-0 h-12 w-12 cursor-pointer rounded-lg border-solid p-0 transition duration-100 ease-in-out',
                                                 index === imageIndex
-                                                    ? 'bg-accent-500'
-                                                    : 'bg-fade-200 hover:bg-fade-300 dark:bg-fade-700 dark:hover:bg-fade-600'
+                                                    ? 'border-accent-500'
+                                                    : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
                                             )}
                                             key={image}
+                                            src={image}
                                             onClick={() => {
                                                 setImageIndex(index);
                                             }}
@@ -108,7 +141,7 @@ export default function Page({ modelId, modelData }: Props) {
                                     ))}
                                 </div>
                                 <button
-                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 px-5 py-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
                                     onClick={() => {
                                         setImageIndex((imageIndex + 1) % images.length);
                                     }}
