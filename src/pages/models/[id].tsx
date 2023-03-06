@@ -3,11 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
+import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import { PageContainer } from '../../elements/page';
 import { Model, ModelId } from '../../lib/schema';
 import { getAllModelIds, getModelData } from '../../lib/server/data';
-import { asArray } from '../../lib/util';
+import { asArray, joinClasses } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
@@ -46,7 +47,10 @@ const getColorMode = (numberOfChannels: number) => {
 };
 
 export default function Page({ modelId, modelData }: Props) {
-    console.log('🚀 ~ file: [id].tsx:17 ~ Page ~ modelData:', modelData);
+    const images = ['256', '512', '1024'].map((size) => {
+        return `https://picsum.photos/${size}/256`;
+    });
+    const [imageIndex, setImageIndex] = React.useState(0);
     return (
         <>
             <Head>
@@ -66,24 +70,65 @@ export default function Page({ modelId, modelData }: Props) {
             </Head>
             <PageContainer>
                 {/* Two columns */}
-                <div className="grid w-full grid-cols-3 gap-4 py-6">
+                <div className="grid h-full w-full grid-cols-3 gap-4 py-6">
                     {/* Left column */}
-                    <div className="col-span-2 flex flex-col gap-4">
-                        <div className="h-72 rounded-lg bg-fade-100 p-4 dark:bg-fade-800"></div>
-                        <div className="">
+                    <div className="relative col-span-2 flex h-full flex-col gap-4">
+                        <div className="relative rounded-lg">
+                            <div className="h-96 rounded-lg bg-fade-100 dark:bg-fade-800">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    alt="Model preview"
+                                    className="h-full w-full rounded-lg object-contain"
+                                    src={images[imageIndex]}
+                                />
+                            </div>
+                            <div className="space-between flex w-full py-2">
+                                <button
+                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 px-5 py-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                                    onClick={() => {
+                                        setImageIndex((imageIndex + images.length - 1) % images.length);
+                                    }}
+                                >
+                                    <BsCaretLeftFill />
+                                </button>
+                                <div className="flex grow items-center justify-center justify-items-center gap-2 align-middle">
+                                    {images.map((image, index) => (
+                                        <button
+                                            className={joinClasses(
+                                                'line-height-1 h-4 w-4 cursor-pointer rounded-full border-0 text-center transition duration-100 ease-in-out',
+                                                index === imageIndex
+                                                    ? 'bg-accent-500'
+                                                    : 'bg-fade-200 hover:bg-fade-300 dark:bg-fade-700 dark:hover:bg-fade-600'
+                                            )}
+                                            key={image}
+                                            onClick={() => {
+                                                setImageIndex(index);
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                                <button
+                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 px-5 py-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                                    onClick={() => {
+                                        setImageIndex((imageIndex + 1) % images.length);
+                                    }}
+                                >
+                                    <BsCaretRightFill />
+                                </button>
+                            </div>
+                        </div>
+                        <div className="relative">
                             <div>
                                 <h1 className="m-0">{modelData.name}</h1>
                                 <p className="m-0">
                                     by{' '}
-                                    <a>
-                                        <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
-                                            {asArray(modelData.author).map((userId) => (
-                                                <React.Fragment key={userId}>
-                                                    <Link href={`/users/${userId}`}>{userId}</Link>
-                                                </React.Fragment>
-                                            ))}
-                                        </strong>
-                                    </a>
+                                    <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
+                                        {asArray(modelData.author).map((userId) => (
+                                            <React.Fragment key={userId}>
+                                                <Link href={`/users/${userId}`}>{userId}</Link>
+                                            </React.Fragment>
+                                        ))}
+                                    </strong>
                                 </p>
                             </div>
                             <div>
