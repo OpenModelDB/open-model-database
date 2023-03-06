@@ -56,6 +56,7 @@ export default function Page({ modelData }: Props) {
 
         const searchResults = searchIndex
             .retrieve(compileCondition(tagCondition), queryTokens)
+            .sort((a, b) => a.id.localeCompare(b.id))
             .sort((a, b) => b.score - a.score);
         return searchResults.map((r) => r.id);
     }, [selectedTag, searchQuery, searchIndex]);
