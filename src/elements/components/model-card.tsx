@@ -27,10 +27,10 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
                 {/* Arch tag on image */}
                 <div className="absolute top-0 right-0 m-2">
                     <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
-                        <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                        <div className="rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out dark:bg-accent-600 dark:text-gray-100 ">
                             {architecture}
                         </div>
-                        <div className="cursor-pointer rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out hover:bg-accent-600 hover:text-gray-100 dark:bg-accent-600 dark:text-gray-100 dark:hover:bg-accent-700">
+                        <div className="rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out dark:bg-accent-600 dark:text-gray-100 ">
                             {scale}x
                         </div>
                     </div>
