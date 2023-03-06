@@ -47,11 +47,23 @@ const getColorMode = (numberOfChannels: number) => {
     }
 };
 
+const dummyImages = [
+    {
+        LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
+        HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
+    },
+    {
+        LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
+        HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
+    },
+    {
+        LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
+        HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
+    },
+];
+
 export default function Page({ modelData }: Props) {
-    const sizes = ['64', '256', '512', '1024'];
-    const images = sizes.map((size) => {
-        return `https://picsum.photos/${size}/${sizes[(Math.random() * sizes.length) | 0]}`;
-    });
+    const images = dummyImages;
     const [imageIndex, setImageIndex] = React.useState(0);
     return (
         <>
@@ -96,18 +108,15 @@ export default function Page({ modelData }: Props) {
                                     itemOne={
                                         <ReactCompareSliderImage
                                             alt="LR"
-                                            className="h-full w-full object-scale-down"
-                                            src={images[imageIndex]}
-                                            style={{
-                                                filter: 'blur(6px)',
-                                            }}
+                                            className="rendering-pixelated h-full w-full object-scale-down"
+                                            src={images[imageIndex].LR}
                                         />
                                     }
                                     itemTwo={
                                         <ReactCompareSliderImage
                                             alt="HR"
                                             className="rendering-pixelated h-full w-full  object-scale-down"
-                                            src={images[imageIndex]}
+                                            src={images[imageIndex].HR}
                                         />
                                     }
                                 />
@@ -132,8 +141,8 @@ export default function Page({ modelData }: Props) {
                                                     ? 'border-accent-500'
                                                     : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
                                             )}
-                                            key={image}
-                                            src={image}
+                                            key={image.LR + image.HR}
+                                            src={image.LR}
                                             onClick={() => {
                                                 setImageIndex(index);
                                             }}
