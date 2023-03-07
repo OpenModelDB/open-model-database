@@ -9,7 +9,6 @@ type DownloadButtonProps = {
 const getHostFromUrl = (url: string) => {
     try {
         const parsedUrl = new URL(url);
-        console.log('🚀 ~ file: download-button.tsx:12 ~ getHostFromUrl ~ parsedUrl:', parsedUrl);
         const domainParts = parsedUrl.hostname.split('.');
         const domainAndTld = domainParts.slice(domainParts.length - 2).join('.');
 
