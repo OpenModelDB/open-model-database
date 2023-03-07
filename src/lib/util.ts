@@ -5,6 +5,10 @@ export function assertNever(value: never): never {
     throw new Error(`Unreachable code path. The value ${String(value)} is invalid.`);
 }
 
+export function noop() {
+    // do nothing
+}
+
 export function lazy<T>(fn: () => T): () => T {
     let hasValue = false;
     let value: T;
@@ -79,3 +83,46 @@ export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][] {
 export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
     return Object.keys(o) as K[];
 }
+
+export function getColorMode(numberOfChannels: number) {
+    switch (numberOfChannels) {
+        case 1:
+            return 'grayscale';
+        case 3:
+            return 'rgb';
+        case 4:
+            return 'rgba';
+        default:
+            return numberOfChannels;
+    }
+}
+
+export const fixDescription = (description: string, scale: number) => {
+    const lines = description.split('\n');
+    const descLines: string[] = [];
+    let category = '',
+        purpose = '',
+        pretrained = '',
+        dataset = '';
+    lines.forEach((line) => {
+        if (line.startsWith('Category: ')) {
+            category = String(line).replace('Category: ', '');
+        } else if (line.startsWith('Purpose: ')) {
+            purpose = String(line).replace('Purpose: ', '');
+        } else if (line.startsWith('Pretrained: ')) {
+            pretrained = String(line).replace('Pretrained: ', '');
+        } else if (line.startsWith('Dataset: ')) {
+            dataset = String(line).replace('Dataset: ', '');
+        } else if (line !== '') {
+            descLines.push(line.trim());
+        }
+    });
+    const purposeSentence = category ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
+    const datasetSentence = dataset ? `Trained on ${dataset}.` : 'Unknown training dataset.';
+    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : 'Unknown pretrained model.';
+    const actualDescription =
+        descLines.length > 0
+            ? descLines.join('\n').trim()
+            : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
+    return actualDescription;
+};

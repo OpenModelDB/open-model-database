@@ -8,8 +8,8 @@ import { Model, ModelId, TagId } from '../lib/schema';
 import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
-import { getAllModelIds, getModelData } from '../lib/server/data';
-import { asArray, joinClasses, typedEntries } from '../lib/util';
+import { fileApi } from '../lib/server/file-data';
+import { asArray, fixDescription, joinClasses, typedEntries } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
@@ -130,38 +130,8 @@ export default function Page({ modelData }: Props) {
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                     {availableModels.map((id) => {
                                         const { architecture, author, scale, description, tags } = modelData[id];
-                                        const lines = description.split('\n');
-                                        const descLines: string[] = [];
-                                        let category = '',
-                                            purpose = '',
-                                            pretrained = '',
-                                            dataset = '';
-                                        lines.forEach((line) => {
-                                            if (line.startsWith('Category: ')) {
-                                                category = String(line).replace('Category: ', '');
-                                            } else if (line.startsWith('Purpose: ')) {
-                                                purpose = String(line).replace('Purpose: ', '');
-                                            } else if (line.startsWith('Pretrained: ')) {
-                                                pretrained = String(line).replace('Pretrained: ', '');
-                                            } else if (line.startsWith('Dataset: ')) {
-                                                dataset = String(line).replace('Dataset: ', '');
-                                            } else if (line !== '') {
-                                                descLines.push(line.trim());
-                                            }
-                                        });
-                                        const purposeSentence = category
-                                            ? `A ${scale}x model for ${purpose}.`
-                                            : `A ${scale}x model.`;
-                                        const datasetSentence = dataset
-                                            ? `Trained on ${dataset}.`
-                                            : 'Unknown training dataset.';
-                                        const pretrainedSentence = pretrained
-                                            ? `Pretrained using ${pretrained}.`
-                                            : 'Unknown pretrained model.';
-                                        const actualDescription =
-                                            descLines.length > 0
-                                                ? descLines.join('\n').trim()
-                                                : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
+
+                                        const actualDescription = fixDescription(description, scale);
 
                                         return (
                                             <ModelCard
@@ -195,11 +165,9 @@ export default function Page({ modelData }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (_context) => {
-    const modelIds = await getAllModelIds();
-    const modelData = await getModelData(modelIds);
     return {
         props: {
-            modelData: Object.fromEntries(modelIds.map((id, i) => [id, modelData[i]])),
+            modelData: Object.fromEntries(await fileApi.models.getAll()),
         },
     };
 };
