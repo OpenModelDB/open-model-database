@@ -5,7 +5,7 @@ import React from 'react';
 import { ModelCard } from '../../elements/components/model-card';
 import { PageContainer } from '../../elements/page';
 import { Model, ModelId, User, UserId } from '../../lib/schema';
-import { getAllModelIds, getModelData, getUsers } from '../../lib/server/data';
+import { fileApi } from '../../lib/server/file-data';
 
 interface Params extends ParsedUrlQuery {
     id: UserId;
@@ -101,10 +101,10 @@ export default function Page({ user, models }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-    const users = await getUsers();
+    const userIds = await fileApi.users.getIds();
 
     return {
-        paths: Object.keys(users).map((id) => ({ params: { id: id as UserId } })),
+        paths: userIds.map((id) => ({ params: { id } })),
         fallback: false,
     };
 };
@@ -113,22 +113,15 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const userId = context.params?.id;
     if (!userId) throw new Error("Missing path param 'id'");
 
-    const users = await getUsers();
-    const user = users[userId];
-
-    const modelIds = await getAllModelIds();
-    const allModels = await Promise.all(
-        modelIds.map(async (id) => {
-            return [id, await getModelData(id)] as const;
-        })
-    );
+    const user = await fileApi.users.get(userId);
+    const models = await fileApi.models.getAll();
 
     return {
         props: {
             userId,
             user,
             models: Object.fromEntries(
-                allModels.filter(([, model]) => {
+                [...models].filter(([, model]) => {
                     return model.author === userId || (Array.isArray(model.author) && model.author.includes(userId));
                 })
             ),

@@ -5,6 +5,10 @@ export function assertNever(value: never): never {
     throw new Error(`Unreachable code path. The value ${String(value)} is invalid.`);
 }
 
+export function noop() {
+    // do nothing
+}
+
 export function lazy<T>(fn: () => T): () => T {
     let hasValue = false;
     let value: T;
@@ -78,4 +82,17 @@ export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][] {
 }
 export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
     return Object.keys(o) as K[];
+}
+
+export function getColorMode(numberOfChannels: number) {
+    switch (numberOfChannels) {
+        case 1:
+            return 'grayscale';
+        case 3:
+            return 'rgb';
+        case 4:
+            return 'rgba';
+        default:
+            return numberOfChannels;
+    }
 }

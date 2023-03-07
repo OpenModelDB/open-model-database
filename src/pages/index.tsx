@@ -8,7 +8,7 @@ import { Model, ModelId, TagId } from '../lib/schema';
 import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
-import { getAllModelIds, getModelData } from '../lib/server/data';
+import { fileApi } from '../lib/server/file-data';
 import { asArray, joinClasses, typedEntries } from '../lib/util';
 
 interface Props {
@@ -195,11 +195,9 @@ export default function Page({ modelData }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (_context) => {
-    const modelIds = await getAllModelIds();
-    const modelData = await getModelData(modelIds);
     return {
         props: {
-            modelData: Object.fromEntries(modelIds.map((id, i) => [id, modelData[i]])),
+            modelData: Object.fromEntries(await fileApi.models.getAll()),
         },
     };
 };
