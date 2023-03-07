@@ -7,7 +7,7 @@ import { DownloadButton } from '../../elements/components/download-button';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { Model, ModelId } from '../../lib/schema';
-import { getAllModelIds, getModelData } from '../../lib/server/data';
+import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
@@ -206,7 +206,7 @@ export default function Page({ modelData }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-    const modelIds = await getAllModelIds();
+    const modelIds = await fileApi.models.getAllIds();
 
     return {
         paths: modelIds.map((id) => ({ params: { id } })),
@@ -218,7 +218,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const modelId = context.params?.id;
     if (!modelId) throw new Error("Missing path param 'id'");
 
-    const modelData = await getModelData(modelId);
+    const modelData = await fileApi.models.get(modelId);
 
     return {
         props: { modelId, modelData },
