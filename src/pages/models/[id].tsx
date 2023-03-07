@@ -3,13 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
-import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
-import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
-import { FiExternalLink } from 'react-icons/fi';
+import { DownloadButton } from '../../elements/components/download-button';
+import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { Model, ModelId } from '../../lib/schema';
 import { getAllModelIds, getModelData } from '../../lib/server/data';
-import { asArray, joinClasses } from '../../lib/util';
+import { asArray, getColorMode } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
@@ -34,28 +33,7 @@ const renderTags = (tags: string[]) => (
     </div>
 );
 
-const getColorMode = (numberOfChannels: number) => {
-    switch (numberOfChannels) {
-        case 1:
-            return 'grayscale';
-        case 3:
-            return 'rgb';
-        case 4:
-            return 'rgba';
-        default:
-            return numberOfChannels;
-    }
-};
-
 const dummyImages = [
-    {
-        LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
-        HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
-    },
-    {
-        LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
-        HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
-    },
     {
         LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
         HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
@@ -63,8 +41,6 @@ const dummyImages = [
 ];
 
 export default function Page({ modelData }: Props) {
-    const images = dummyImages;
-    const [imageIndex, setImageIndex] = React.useState(0);
     return (
         <>
             <Head>
@@ -87,78 +63,7 @@ export default function Page({ modelData }: Props) {
                 <div className="grid h-full w-full grid-cols-3 gap-4 py-6">
                     {/* Left column */}
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
-                        <div className="relative rounded-lg">
-                            <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
-                                <ReactCompareSlider
-                                    className="w-full rounded-lg"
-                                    handle={
-                                        <ReactCompareSliderHandle
-                                            buttonStyle={{
-                                                height: '48px',
-                                                width: '12px',
-                                                borderRadius: '1rem',
-                                                backdropFilter: undefined,
-                                                background: 'white',
-                                                border: 0,
-                                                color: 'transparent',
-                                                overflow: 'hidden',
-                                            }}
-                                        />
-                                    }
-                                    itemOne={
-                                        <ReactCompareSliderImage
-                                            alt="LR"
-                                            className="rendering-pixelated h-full w-full object-scale-down"
-                                            src={images[imageIndex].LR}
-                                        />
-                                    }
-                                    itemTwo={
-                                        <ReactCompareSliderImage
-                                            alt="HR"
-                                            className="rendering-pixelated h-full w-full  object-scale-down"
-                                            src={images[imageIndex].HR}
-                                        />
-                                    }
-                                />
-                            </div>
-                            <div className="space-between flex w-full py-2">
-                                <button
-                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
-                                    onClick={() => {
-                                        setImageIndex((imageIndex + images.length - 1) % images.length);
-                                    }}
-                                >
-                                    <BsCaretLeftFill />
-                                </button>
-                                <div className="flex grow items-center justify-center justify-items-center gap-2 align-middle">
-                                    {images.map((image, index) => (
-                                        // eslint-disable-next-line @next/next/no-img-element
-                                        <img
-                                            alt="Thumbnail"
-                                            className={joinClasses(
-                                                'border-3 m-0 h-12 w-12 cursor-pointer rounded-lg border-solid p-0 transition duration-100 ease-in-out',
-                                                index === imageIndex
-                                                    ? 'border-accent-500'
-                                                    : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
-                                            )}
-                                            key={image.LR + image.HR}
-                                            src={image.LR}
-                                            onClick={() => {
-                                                setImageIndex(index);
-                                            }}
-                                        />
-                                    ))}
-                                </div>
-                                <button
-                                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
-                                    onClick={() => {
-                                        setImageIndex((imageIndex + 1) % images.length);
-                                    }}
-                                >
-                                    <BsCaretRightFill />
-                                </button>
-                            </div>
-                        </div>
+                        <ImageCarousel images={dummyImages} />
                         <div className="relative">
                             <div>
                                 <h1 className="m-0">{modelData.name}</h1>
@@ -183,51 +88,13 @@ export default function Page({ modelData }: Props) {
                         {/* Download Button */}
                         <div className="mb-2">
                             {modelData.resources.map((resource) => {
-                                return resource.urls.map((url) => {
-                                    const isExternal = !url.includes('oracle');
-                                    let host = 'unknown';
-                                    if (url.includes('github')) {
-                                        host = 'GitHub';
-                                    } else if (url.includes('drive.google')) {
-                                        host = 'Google Drive';
-                                    } else if (url.includes('mega.nz')) {
-                                        host = 'Mega';
-                                    }
-
-                                    return (
-                                        <div key={resource.sha256}>
-                                            <button
-                                                className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-600 px-5 py-2.5 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
-                                                type="button"
-                                                onClick={() => window.open(url, '_blank')}
-                                            >
-                                                <div className="w-full">
-                                                    {isExternal ? (
-                                                        <FiExternalLink
-                                                            className="mr-2 h-4 w-4"
-                                                            viewBox="0 0 22 22"
-                                                        />
-                                                    ) : (
-                                                        <svg
-                                                            className="mr-2 h-4 w-4 fill-current"
-                                                            viewBox="0 0 20 20"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                        >
-                                                            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                                                        </svg>
-                                                    )}
-                                                    Download{' '}
-                                                    {resource.size
-                                                        ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)`
-                                                        : ''}
-                                                </div>
-                                            </button>
-                                            <div className="w-full text-center">
-                                                {isExternal ? `Hosted offsite by ${host}` : 'Hosted by OpenModelDB'}
-                                            </div>
-                                        </div>
-                                    );
-                                });
+                                return resource.urls.map((url) => (
+                                    <DownloadButton
+                                        key={url}
+                                        resource={resource}
+                                        url={url}
+                                    />
+                                ));
                             })}
                         </div>
 
