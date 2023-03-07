@@ -81,7 +81,7 @@ export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
 }
 
 export function getColorMode(numberOfChannels: number) {
-    switch (Number(numberOfChannels)) {
+    switch (numberOfChannels) {
         case 1:
             return 'grayscale';
         case 3:
