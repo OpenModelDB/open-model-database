@@ -2,11 +2,12 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import { PageContainer } from '../../elements/page';
+import { DBWriter, getWriter } from '../../lib/edit-mode';
 import { Model, ModelId } from '../../lib/schema';
 import { getAllModelIds, getModelData } from '../../lib/server/data';
 import { asArray, joinClasses } from '../../lib/util';
@@ -62,7 +63,34 @@ const dummyImages = [
     },
 ];
 
-export default function Page({ modelData }: Props) {
+const updateDbProperty = (dbWriter: DBWriter, modelId: ModelId, value: Model) => {
+    dbWriter
+        .updateModels([
+            {
+                id: modelId,
+                value,
+            },
+        ])
+        .catch((error) => {
+            console.error(error);
+        });
+};
+
+export default function Page({ modelId, modelData }: Props) {
+    const [isInEditMode, setIsInEditMode] = useState(false);
+    const [dbWriter, setDbWriter] = useState<DBWriter>();
+    useEffect(() => {
+        getWriter()
+            .then((writer) => {
+                setDbWriter(writer);
+                setIsInEditMode(!!writer);
+            })
+            .catch((error) => {
+                console.error(error);
+                setIsInEditMode(false);
+            });
+    }, []);
+
     const images = dummyImages;
     const [imageIndex, setImageIndex] = React.useState(0);
     return (
@@ -161,7 +189,33 @@ export default function Page({ modelData }: Props) {
                         </div>
                         <div className="relative">
                             <div>
-                                <h1 className="m-0">{modelData.name}</h1>
+                                <h1
+                                    className="m-0"
+                                    contentEditable={isInEditMode}
+                                    suppressContentEditableWarning={true}
+                                    onBlur={(event) => {
+                                        const content = String(event.target.textContent);
+                                        if (isInEditMode && dbWriter) {
+                                            updateDbProperty(dbWriter, modelId, {
+                                                ...modelData,
+                                                name: content,
+                                            });
+                                        }
+                                    }}
+                                    onInput={(event) => {
+                                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                        // @ts-ignore
+                                        const content = String(event.target.textContent);
+                                        if (isInEditMode && dbWriter) {
+                                            updateDbProperty(dbWriter, modelId, {
+                                                ...modelData,
+                                                name: content,
+                                            });
+                                        }
+                                    }}
+                                >
+                                    {modelData.name}
+                                </h1>
                                 <p className="m-0">
                                     by{' '}
                                     <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
@@ -174,7 +228,33 @@ export default function Page({ modelData }: Props) {
                                 </p>
                             </div>
                             <div>
-                                <p className="whitespace-pre-line">{modelData.description}</p>
+                                <p
+                                    className="whitespace-pre-line"
+                                    contentEditable={isInEditMode}
+                                    suppressContentEditableWarning={true}
+                                    onBlur={(event) => {
+                                        const content = String(event.target.textContent);
+                                        if (isInEditMode && dbWriter) {
+                                            updateDbProperty(dbWriter, modelId, {
+                                                ...modelData,
+                                                description: content,
+                                            });
+                                        }
+                                    }}
+                                    onInput={(event) => {
+                                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                        // @ts-ignore
+                                        const content = String(event.target.textContent);
+                                        if (isInEditMode && dbWriter) {
+                                            updateDbProperty(dbWriter, modelId, {
+                                                ...modelData,
+                                                description: content,
+                                            });
+                                        }
+                                    }}
+                                >
+                                    {modelData.description}
+                                </p>
                             </div>
                         </div>
                     </div>
