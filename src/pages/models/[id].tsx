@@ -63,7 +63,7 @@ const dummyImages = [
     },
 ];
 
-const updateDbProperty = (dbWriter: DBWriter, modelId: ModelId, value: Model) => {
+const updateModelValue = (dbWriter: DBWriter, modelId: ModelId, value: Model) => {
     dbWriter
         .updateModels([
             {
@@ -94,7 +94,7 @@ export default function Page({ modelId, modelData }: Props) {
     const updateModelProperty = useCallback(
         (key: string, value: string) => {
             if (isInEditMode && dbWriter) {
-                updateDbProperty(dbWriter, modelId, {
+                updateModelValue(dbWriter, modelId, {
                     ...modelData,
                     [key]: value,
                 });
