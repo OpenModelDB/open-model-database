@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
@@ -90,6 +90,18 @@ export default function Page({ modelId, modelData }: Props) {
                 setIsInEditMode(false);
             });
     }, []);
+
+    const updateModelProperty = useCallback(
+        (key: string, value: string) => {
+            if (isInEditMode && dbWriter) {
+                updateDbProperty(dbWriter, modelId, {
+                    ...modelData,
+                    [key]: value,
+                });
+            }
+        },
+        [modelData, isInEditMode, dbWriter, modelId]
+    );
 
     const images = dummyImages;
     const [imageIndex, setImageIndex] = React.useState(0);
@@ -195,23 +207,13 @@ export default function Page({ modelId, modelData }: Props) {
                                     suppressContentEditableWarning={true}
                                     onBlur={(event) => {
                                         const content = String(event.target.textContent);
-                                        if (isInEditMode && dbWriter) {
-                                            updateDbProperty(dbWriter, modelId, {
-                                                ...modelData,
-                                                name: content,
-                                            });
-                                        }
+                                        updateModelProperty('name', content);
                                     }}
                                     onInput={(event) => {
                                         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                         // @ts-ignore
                                         const content = String(event.target.textContent);
-                                        if (isInEditMode && dbWriter) {
-                                            updateDbProperty(dbWriter, modelId, {
-                                                ...modelData,
-                                                name: content,
-                                            });
-                                        }
+                                        updateModelProperty('name', content);
                                     }}
                                 >
                                     {modelData.name}
@@ -234,23 +236,13 @@ export default function Page({ modelId, modelData }: Props) {
                                     suppressContentEditableWarning={true}
                                     onBlur={(event) => {
                                         const content = String(event.target.textContent);
-                                        if (isInEditMode && dbWriter) {
-                                            updateDbProperty(dbWriter, modelId, {
-                                                ...modelData,
-                                                description: content,
-                                            });
-                                        }
+                                        updateModelProperty('description', content);
                                     }}
                                     onInput={(event) => {
                                         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                         // @ts-ignore
                                         const content = String(event.target.textContent);
-                                        if (isInEditMode && dbWriter) {
-                                            updateDbProperty(dbWriter, modelId, {
-                                                ...modelData,
-                                                description: content,
-                                            });
-                                        }
+                                        updateModelProperty('description', content);
                                     }}
                                 >
                                     {modelData.description}
