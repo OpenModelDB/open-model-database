@@ -5,6 +5,10 @@ export function assertNever(value: never): never {
     throw new Error(`Unreachable code path. The value ${String(value)} is invalid.`);
 }
 
+export function noop() {
+    // do nothing
+}
+
 export function lazy<T>(fn: () => T): () => T {
     let hasValue = false;
     let value: T;

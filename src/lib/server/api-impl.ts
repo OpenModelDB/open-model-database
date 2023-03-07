@@ -1,30 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { UpdateRequest } from '../api-types';
-import { delay } from '../util';
-
-interface GroupedChangeRequests<Id, Value> {
-    change: Map<Id, Value>;
-    delete: Set<Id>;
-}
-// eslint-disable-next-line @typescript-eslint/ban-types
-export function groupUpdatesByType<Id extends string, Value extends {}>(
-    updates: Iterable<UpdateRequest<Id, Value>>
-): GroupedChangeRequests<Id, Value> {
-    const result: GroupedChangeRequests<Id, Value> = {
-        change: new Map(),
-        delete: new Set(),
-    };
-    for (const update of updates) {
-        if (update.value === undefined) {
-            result.delete.add(update.id);
-            result.change.delete(update.id);
-        } else {
-            result.change.set(update.id, update.value);
-            result.delete.delete(update.id);
-        }
-    }
-    return result;
-}
+import { CollectionApi } from '../data-api';
+import { JsonRequest, JsonResponse, createCollectionRequestHandler } from '../data-json-api';
 
 export function post<T>(handler: (body: T, req: NextApiRequest) => Promise<void> | void) {
     return async (req: NextApiRequest, res: NextApiResponse) => {
@@ -38,21 +14,16 @@ export function post<T>(handler: (body: T, req: NextApiRequest) => Promise<void>
     };
 }
 
-let dbLocked = false;
-export function synchronizeDB<A extends unknown[]>(
-    handler: (...args: A) => Promise<void>
-): (...args: A) => Promise<void> {
-    return async (...args) => {
-        // a simple spin lock to act as a mutex
-        while (dbLocked) {
-            await delay(10);
-        }
+export function handleJsonApi<Id, Value>(collection: CollectionApi<Id, Value>) {
+    const handler = createCollectionRequestHandler(collection);
 
-        dbLocked = true;
+    return async (req: NextApiRequest, res: NextApiResponse) => {
         try {
-            await handler(...args);
-        } finally {
-            dbLocked = false;
+            const reqJson = JSON.parse(req.body as string) as JsonRequest<Id, Value>;
+            const resJson: JsonResponse<Id, Value> = { data: await handler(reqJson.method, reqJson.data) };
+            res.status(200).json(resJson);
+        } catch (err) {
+            res.status(500).json({ error: String(err) });
         }
     };
 }
