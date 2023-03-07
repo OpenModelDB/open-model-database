@@ -71,7 +71,7 @@ function renameObjectKey<K extends string>(o: Record<K, unknown>, from: K, to: K
 
 const modelApi: CollectionApi<ModelId, Model> = {
     get: getSingleModelData,
-    getAllIds: getAllModelIds,
+    getIds: getAllModelIds,
     async getAll(): Promise<Map<ModelId, Model>> {
         const ids = await getAllModelIds();
         const data = await getModelData(ids);
@@ -138,7 +138,7 @@ const userApi: CollectionApi<UserId, User> = {
     async get(id: UserId): Promise<User> {
         return (await usersFile.read())[id];
     },
-    async getAllIds(): Promise<UserId[]> {
+    async getIds(): Promise<UserId[]> {
         return typedKeys(await usersFile.read());
     },
     async getAll(): Promise<Map<UserId, User>> {
@@ -193,7 +193,7 @@ const tagApi: CollectionApi<TagId, Tag> = {
     async get(id: TagId): Promise<Tag> {
         return (await tagsFile.read())[id];
     },
-    async getAllIds(): Promise<TagId[]> {
+    async getIds(): Promise<TagId[]> {
         return typedKeys(await tagsFile.read());
     },
     async getAll(): Promise<Map<TagId, Tag>> {

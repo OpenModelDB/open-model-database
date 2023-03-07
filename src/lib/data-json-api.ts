@@ -2,7 +2,7 @@ import { CollectionApi } from './data-api';
 
 interface ApiMapping<Id, Value> {
     get: (data: Id) => Value;
-    getAllIds: () => Id[];
+    getIds: () => Id[];
     getAll: () => [Id, Value][];
 
     update: (data: (readonly [Id, Value])[]) => void;
@@ -37,8 +37,8 @@ export function createCollectionRequestHandler<Id, Value>(
         get: (data) => {
             return collection.get(data);
         },
-        getAllIds: () => {
-            return collection.getAllIds();
+        getIds: () => {
+            return collection.getIds();
         },
         getAll: async () => {
             return [...(await collection.getAll())];
@@ -72,8 +72,8 @@ export class JsonApiCollection<Id, Value> implements CollectionApi<Id, Value> {
     get(id: Id): Promise<Value> {
         return this.requestHandler('get', id);
     }
-    getAllIds(): Promise<Id[]> {
-        return this.requestHandler('getAllIds', undefined);
+    getIds(): Promise<Id[]> {
+        return this.requestHandler('getIds', undefined);
     }
     async getAll(): Promise<Map<Id, Value>> {
         return new Map(await this.requestHandler('getAll', undefined));

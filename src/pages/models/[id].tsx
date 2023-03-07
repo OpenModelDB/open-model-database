@@ -206,7 +206,7 @@ export default function Page({ modelData }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-    const modelIds = await fileApi.models.getAllIds();
+    const modelIds = await fileApi.models.getIds();
 
     return {
         paths: modelIds.map((id) => ({ params: { id } })),

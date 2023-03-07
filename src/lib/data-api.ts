@@ -10,7 +10,7 @@ export interface DBApi {
 
 export interface CollectionApi<Id, Value> {
     get(id: Id): Promise<Value>;
-    getAllIds(): Promise<Id[]>;
+    getIds(): Promise<Id[]>;
     getAll(): Promise<Map<Id, Value>>;
 
     update(updates: Iterable<readonly [Id, Value]>): Promise<void>;
@@ -29,8 +29,8 @@ export class SynchronizedCollection<Id, Value> implements CollectionApi<Id, Valu
     get(id: Id): Promise<Value> {
         return this.lock.read(() => this.collection.get(id));
     }
-    getAllIds(): Promise<Id[]> {
-        return this.lock.read(() => this.collection.getAllIds());
+    getIds(): Promise<Id[]> {
+        return this.lock.read(() => this.collection.getIds());
     }
     getAll(): Promise<Map<Id, Value>> {
         return this.lock.read(() => this.collection.getAll());
