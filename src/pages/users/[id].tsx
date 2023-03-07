@@ -16,6 +16,36 @@ interface Props {
     models: Record<ModelId, Model>;
 }
 
+const fixDescription = (description: string, scale: number) => {
+    const lines = description.split('\n');
+    const descLines: string[] = [];
+    let category = '',
+        purpose = '',
+        pretrained = '',
+        dataset = '';
+    lines.forEach((line) => {
+        if (line.startsWith('Category: ')) {
+            category = String(line).replace('Category: ', '');
+        } else if (line.startsWith('Purpose: ')) {
+            purpose = String(line).replace('Purpose: ', '');
+        } else if (line.startsWith('Pretrained: ')) {
+            pretrained = String(line).replace('Pretrained: ', '');
+        } else if (line.startsWith('Dataset: ')) {
+            dataset = String(line).replace('Dataset: ', '');
+        } else if (line !== '') {
+            descLines.push(line.trim());
+        }
+    });
+    const purposeSentence = category ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
+    const datasetSentence = dataset ? `Trained on ${dataset}.` : 'Unknown training dataset.';
+    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : 'Unknown pretrained model.';
+    const actualDescription =
+        descLines.length > 0
+            ? descLines.join('\n').trim()
+            : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
+    return actualDescription;
+};
+
 export default function Page({ user, models }: Props) {
     return (
         <>
@@ -46,38 +76,8 @@ export default function Page({ user, models }: Props) {
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 {Object.keys(models).map((id) => {
                                     const { architecture, author, scale, description, tags } = models[id as ModelId];
-                                    const lines = description.split('\n');
-                                    const descLines: string[] = [];
-                                    let category = '',
-                                        purpose = '',
-                                        pretrained = '',
-                                        dataset = '';
-                                    lines.forEach((line) => {
-                                        if (line.startsWith('Category: ')) {
-                                            category = String(line).replace('Category: ', '');
-                                        } else if (line.startsWith('Purpose: ')) {
-                                            purpose = String(line).replace('Purpose: ', '');
-                                        } else if (line.startsWith('Pretrained: ')) {
-                                            pretrained = String(line).replace('Pretrained: ', '');
-                                        } else if (line.startsWith('Dataset: ')) {
-                                            dataset = String(line).replace('Dataset: ', '');
-                                        } else if (line !== '') {
-                                            descLines.push(line.trim());
-                                        }
-                                    });
-                                    const purposeSentence = category
-                                        ? `A ${scale}x model for ${purpose}.`
-                                        : `A ${scale}x model.`;
-                                    const datasetSentence = dataset
-                                        ? `Trained on ${dataset}.`
-                                        : 'Unknown training dataset.';
-                                    const pretrainedSentence = pretrained
-                                        ? `Pretrained using ${pretrained}.`
-                                        : 'Unknown pretrained model.';
-                                    const actualDescription =
-                                        descLines.length > 0
-                                            ? descLines.join('\n').trim()
-                                            : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
+
+                                    const actualDescription = fixDescription(description, scale);
 
                                     return (
                                         <ModelCard
