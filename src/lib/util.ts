@@ -80,7 +80,7 @@ export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
     return Object.keys(o) as K[];
 }
 
-export function getColorMode(numberOfChannels: number | string) {
+export function getColorMode(numberOfChannels: number) {
     switch (Number(numberOfChannels)) {
         case 1:
             return 'grayscale';
