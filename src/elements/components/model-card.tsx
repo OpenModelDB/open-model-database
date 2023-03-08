@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import React from 'react';
 import { asArray } from '../../lib/util';
+import { Link } from './link';
 
 const startsWithVowel = (str: string) => {
     const firstLetter = str[0].toLowerCase();
@@ -21,7 +21,6 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
         <div
             // eslint-disable-next-line tailwindcss/no-arbitrary-value
             className="group relative h-[350px] overflow-hidden rounded-lg border border-solid border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 "
-            key={id}
         >
             <div className="relative flex h-full w-full flex-col transition-all ease-in-out">
                 {/* Arch tag on image */}
@@ -36,12 +35,10 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
                     </div>
                 </div>
 
-                <a
+                <Link
                     // eslint-disable-next-line tailwindcss/no-arbitrary-value
                     className="h-auto w-full flex-1  bg-[url(https://picsum.photos/512/312)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:h-full"
                     href={`/models/${id}`}
-                    rel="noreferrer"
-                    target="_blank"
                 />
 
                 <div className="relative inset-x-0 bottom-0 bg-white p-3 pt-2 dark:bg-fade-900">
@@ -56,11 +53,12 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
                             </Link>
                             <div className="mr-1">model by</div>
                             {asArray(author).map((userId) => (
-                                <React.Fragment key={userId}>
-                                    <Link href={`/users/${userId}`}>
-                                        <div className="font-bold text-accent-500">{userId}</div>
-                                    </Link>
-                                </React.Fragment>
+                                <Link
+                                    href={`/users/${userId}`}
+                                    key={userId}
+                                >
+                                    <div className="font-bold text-accent-500">{userId}</div>
+                                </Link>
                             ))}
                         </div>
                     </div>
