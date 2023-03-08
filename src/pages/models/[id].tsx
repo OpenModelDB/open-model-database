@@ -82,18 +82,12 @@ export default function Page({ modelId, modelData }: Props) {
                                 <h1
                                     className="m-0"
                                     contentEditable={editMode}
-                                    suppressContentEditableWarning={true}
-                                    onBlur={(event) => {
-                                        const content = String(event.target.textContent);
-                                        updateModelProperty('name', content);
-                                    }}
+                                    dangerouslySetInnerHTML={{ __html: modelData.name }}
                                     onInput={(event) => {
                                         const content = String((event.target as Element).textContent);
                                         updateModelProperty('name', content);
                                     }}
-                                >
-                                    {model.name}
-                                </h1>
+                                />
                                 <p className="m-0">
                                     by{' '}
                                     <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
@@ -109,18 +103,12 @@ export default function Page({ modelId, modelData }: Props) {
                                 <p
                                     className="whitespace-pre-line"
                                     contentEditable={editMode}
-                                    suppressContentEditableWarning={true}
-                                    onBlur={(event) => {
-                                        const content = String(event.target.textContent);
-                                        updateModelProperty('description', content);
-                                    }}
+                                    dangerouslySetInnerHTML={{ __html: modelData.description }}
                                     onInput={(event) => {
                                         const content = String((event.target as Element).textContent);
                                         updateModelProperty('description', content);
                                     }}
-                                >
-                                    {model.description}
-                                </p>
+                                />
                             </div>
                         </div>
                     </div>
