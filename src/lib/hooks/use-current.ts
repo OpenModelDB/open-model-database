@@ -16,12 +16,12 @@ export function useCurrent<T extends Type>(
     const [current, setCurrent] = useState(value);
 
     useEffect(() => {
-        return addUpdateListener(() => {
-            if (api) {
+        if (api) {
+            return addUpdateListener(() => {
                 const collection = api[`${type}s`] as CollectionApi<IdOf<T>, ValueOf<T>>;
                 collection.get(id).then(setCurrent, (e) => console.error(e));
-            }
-        });
+            });
+        }
     }, [api, id, type]);
 
     return current;
