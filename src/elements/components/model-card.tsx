@@ -20,10 +20,10 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
     return (
         <div
             // eslint-disable-next-line tailwindcss/no-arbitrary-value
-            className="group relative h-[435px] overflow-hidden rounded-lg border border-solid border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 "
+            className="group relative h-[350px] overflow-hidden rounded-lg border border-solid border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 "
             key={id}
         >
-            <div className="relative flex h-full w-full flex-col  transition-all ease-in-out">
+            <div className="relative flex h-full w-full flex-col transition-all ease-in-out">
                 {/* Arch tag on image */}
                 <div className="absolute top-0 right-0 m-2">
                     <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
@@ -44,11 +44,11 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
                     target="_blank"
                 />
 
-                <div className="relative inset-x-0 bottom-0 bg-white p-4   dark:bg-fade-900">
+                <div className="relative inset-x-0 bottom-0 bg-white p-3 pt-2 dark:bg-fade-900">
                     <Link href={`/models/${id}`}>
-                        <div className="block text-2xl font-bold text-gray-800 dark:text-gray-100">{id}</div>
+                        <div className="block text-xl font-bold text-gray-800 dark:text-gray-100">{id}</div>
                     </Link>
-                    <div className="text-gray-600 dark:text-gray-400">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
                         <div className="flex">
                             <div className="mr-1">{startsWithVowel(architecture) ? 'an' : 'a'}</div>
                             <Link href={`/architectures/${architecture}`}>
@@ -66,15 +66,15 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
                     </div>
 
                     {/* Description */}
-                    <div className="my-2 flex flex-col justify-between">
+                    <div className="mb-1 flex flex-col justify-between py-1 text-sm">
                         <div className="text-gray-500 line-clamp-3 dark:text-gray-400">{description}</div>
                     </div>
 
                     {/* Tags */}
-                    <div className="mt-2 flex flex-row flex-wrap">
+                    <div className="flex flex-row flex-wrap gap-1">
                         {tags.map((tag) => (
                             <div
-                                className="mr-2 mt-1 rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
                                 key={tag}
                             >
                                 {tag}
