@@ -116,7 +116,7 @@ export default function Page({ modelId, modelData }: Props) {
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
                         <div className="mb-2">
-                            {model.resources.map((resource) => {
+                            {model.resources.flatMap((resource) => {
                                 return resource.urls.map((url) => (
                                     <DownloadButton
                                         key={url}

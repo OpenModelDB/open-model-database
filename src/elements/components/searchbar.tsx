@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 
 type SearchBarProps = {
-    value?: string;
+    value: string;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
