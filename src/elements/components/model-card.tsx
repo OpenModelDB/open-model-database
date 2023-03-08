@@ -1,11 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
+import { joinList } from '../../lib/react-util';
 import { asArray } from '../../lib/util';
-
-const startsWithVowel = (str: string) => {
-    const firstLetter = str[0].toLowerCase();
-    return ['a', 'e', 'i', 'o', 'u'].includes(firstLetter);
-};
 
 type ModelCardProps = {
     id: string;
@@ -49,19 +45,19 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
                         <div className="block text-xl font-bold text-gray-800 dark:text-gray-100">{id}</div>
                     </Link>
                     <div className="text-sm text-gray-600 dark:text-gray-400">
-                        <div className="flex">
-                            <div className="mr-1">{startsWithVowel(architecture) ? 'an' : 'a'}</div>
-                            <Link href={`/architectures/${architecture}`}>
-                                <div className="mr-1 font-bold text-accent-500">{architecture}</div>
-                            </Link>
-                            <div className="mr-1">model by</div>
-                            {asArray(author).map((userId) => (
-                                <React.Fragment key={userId}>
-                                    <Link href={`/users/${userId}`}>
-                                        <div className="font-bold text-accent-500">{userId}</div>
+                        <div>
+                            <span>by </span>
+                            {joinList(
+                                asArray(author).map((userId) => (
+                                    <Link
+                                        className="font-bold text-accent-500"
+                                        href={`/users/${userId}`}
+                                        key={userId}
+                                    >
+                                        {userId}
                                     </Link>
-                                </React.Fragment>
-                            ))}
+                                ))
+                            )}
                         </div>
                     </div>
 
