@@ -97,6 +97,7 @@ export default function Page({ modelId, modelData, userIds }: Props) {
                                                 return (
                                                     <select
                                                         key={userId}
+                                                        value={userId}
                                                         onChange={(event) => {
                                                             const content = event.target.value as UserId;
                                                             if (Array.isArray(model.author)) {
@@ -111,7 +112,6 @@ export default function Page({ modelId, modelData, userIds }: Props) {
                                                         {userIds.map((user) => (
                                                             <option
                                                                 key={user}
-                                                                selected={user === userId}
                                                                 value={user}
                                                             >
                                                                 {user}
