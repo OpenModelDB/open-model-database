@@ -7,37 +7,32 @@ export interface LinkProps {
     href: string;
     className?: string;
     external?: boolean;
+    type?: string;
+    title?: string;
 }
 
-export function Link({ external, className, href, children }: React.PropsWithChildren<LinkProps>) {
+export function Link({ external, children, ...props }: React.PropsWithChildren<LinkProps>) {
     if (external) {
         return (
             <a
-                className={className}
-                href={href}
                 rel="noopener noreferrer"
                 target="_blank"
+                {...props}
             >
                 {children}
             </a>
         );
     }
 
-    return (
-        <InternalLink
-            className={className}
-            href={href}
-        >
-            {children}
-        </InternalLink>
-    );
+    return <InternalLink {...props}>{children}</InternalLink>;
 }
 
-export function TextLink({ external, className, href, children }: React.PropsWithChildren<LinkProps>) {
+export function TextLink({ external, className, children, ...props }: React.PropsWithChildren<LinkProps>) {
     return (
         <Link
             className={joinClasses(className, style.textLink)}
-            href={href}
+            external={external}
+            {...props}
         >
             {children}
             {external && <BiLinkExternal className={style.externalIcon} />}

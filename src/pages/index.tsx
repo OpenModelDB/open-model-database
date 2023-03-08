@@ -92,7 +92,8 @@ export default function Page({ modelData }: Props) {
                             </p>
 
                             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                                Currently listing <a className="font-bold text-accent-500">{modelCount}</a> models.
+                                Currently listing <span className="font-bold text-accent-500">{modelCount}</span>{' '}
+                                models.
                             </p>
 
                             {/* Search */}
