@@ -8,7 +8,7 @@ import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { Model, ModelId } from '../../lib/schema';
+import { Model, ModelId, UserId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -18,6 +18,7 @@ interface Params extends ParsedUrlQuery {
 interface Props {
     modelId: ModelId;
     modelData: Model;
+    userIds: UserId[];
 }
 
 const renderTags = (tags: string[]) => (
@@ -42,12 +43,12 @@ const dummyImages = [
     },
 ];
 
-export default function Page({ modelId, modelData }: Props) {
+export default function Page({ modelId, modelData, userIds }: Props) {
     const { webApi, editMode } = useWebApi();
     const model = useCurrent(webApi, 'model', modelId, modelData);
 
     const updateModelProperty = useCallback(
-        (key: string, value: string) => {
+        (key: string, value: string | string[] | UserId | UserId[]) => {
             const newModel: Model = { ...model, [key]: value };
             webApi?.models.update([[modelId, newModel]]).catch((e) => console.error(e));
         },
@@ -91,11 +92,40 @@ export default function Page({ modelId, modelData }: Props) {
                                 <p className="m-0">
                                     by{' '}
                                     <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
-                                        {asArray(model.author).map((userId) => (
-                                            <React.Fragment key={userId}>
-                                                <Link href={`/users/${userId}`}>{userId}</Link>
-                                            </React.Fragment>
-                                        ))}
+                                        {asArray(model.author).map((userId, userIndex) => {
+                                            if (editMode) {
+                                                return (
+                                                    <select
+                                                        key={userId}
+                                                        onChange={(event) => {
+                                                            const content = event.target.value as UserId;
+                                                            if (Array.isArray(model.author)) {
+                                                                const newAuthor = [...model.author];
+                                                                newAuthor[userIndex] = content;
+                                                                updateModelProperty('author', newAuthor);
+                                                            } else {
+                                                                updateModelProperty('author', content);
+                                                            }
+                                                        }}
+                                                    >
+                                                        {userIds.map((user) => (
+                                                            <option
+                                                                key={user}
+                                                                selected={user === userId}
+                                                                value={user}
+                                                            >
+                                                                {user}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                );
+                                            }
+                                            return (
+                                                <React.Fragment key={userId}>
+                                                    <Link href={`/users/${userId}`}>{userId}</Link>
+                                                </React.Fragment>
+                                            );
+                                        })}
                                     </strong>
                                 </p>
                             </div>
@@ -248,8 +278,9 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     if (!modelId) throw new Error("Missing path param 'id'");
 
     const modelData = await fileApi.models.get(modelId);
+    const userIds = await fileApi.users.getIds();
 
     return {
-        props: { modelId, modelData },
+        props: { modelId, modelData, userIds },
     };
 };
