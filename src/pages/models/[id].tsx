@@ -48,7 +48,7 @@ export default function Page({ modelId, modelData, userIds }: Props) {
     const model = useCurrent(webApi, 'model', modelId, modelData);
 
     const updateModelProperty = useCallback(
-        (key: string, value: string | string[] | UserId | UserId[]) => {
+        <K extends keyof Model>(key: K, value: Model[K]) => {
             const newModel: Model = { ...model, [key]: value };
             webApi?.models.update([[modelId, newModel]]).catch((e) => console.error(e));
         },
