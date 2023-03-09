@@ -6,7 +6,7 @@ import { ModelCard } from '../../elements/components/model-card';
 import { PageContainer } from '../../elements/page';
 import { Model, ModelId, User, UserId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
-import { fixDescription } from '../../lib/util';
+import { fixDescription, typedKeys } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
     id: UserId;
@@ -45,8 +45,8 @@ export default function Page({ user, models }: Props) {
 
                             {/* Model Cards */}
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                {Object.keys(models).map((id) => {
-                                    const { architecture, author, scale, description, tags } = models[id as ModelId];
+                                {typedKeys(models).map((id) => {
+                                    const { name, architecture, author, scale, description, tags } = models[id];
 
                                     const actualDescription = fixDescription(description, scale);
 
@@ -57,6 +57,7 @@ export default function Page({ user, models }: Props) {
                                             description={actualDescription}
                                             id={id}
                                             key={id}
+                                            name={name}
                                             scale={scale}
                                             tags={tags}
                                         />
