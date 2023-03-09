@@ -1,18 +1,25 @@
 import React from 'react';
+import { useTags } from '../../lib/hooks/use-tags';
+import { useUsers } from '../../lib/hooks/use-users';
 import { joinList } from '../../lib/react-util';
+import { ModelId, TagId, UserId } from '../../lib/schema';
 import { asArray } from '../../lib/util';
 import { Link } from './link';
 
 type ModelCardProps = {
-    id: string;
-    author: string | string[];
+    id: ModelId;
+    name: string;
+    author: UserId | UserId[];
     architecture: string;
     scale: number;
-    tags: string[];
+    tags: TagId[];
     description: string;
 };
 
-export const ModelCard = ({ id, author, architecture, scale, tags, description }: ModelCardProps) => {
+export const ModelCard = ({ id, name, author, architecture, scale, tags, description }: ModelCardProps) => {
+    const { tagData } = useTags();
+    const { userData } = useUsers();
+
     return (
         <div
             // eslint-disable-next-line tailwindcss/no-arbitrary-value
@@ -39,7 +46,7 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
 
                 <div className="relative inset-x-0 bottom-0 bg-white p-3 pt-2 dark:bg-fade-900">
                     <Link href={`/models/${id}`}>
-                        <div className="block text-xl font-bold text-gray-800 dark:text-gray-100">{id}</div>
+                        <div className="block text-xl font-bold text-gray-800 dark:text-gray-100">{name}</div>
                     </Link>
                     <div className="text-sm text-gray-600 dark:text-gray-400">
                         <div>
@@ -51,7 +58,7 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
                                         href={`/users/${userId}`}
                                         key={userId}
                                     >
-                                        {userId}
+                                        {userData.get(userId)?.name ?? `unknown user:${userId}`}
                                     </Link>
                                 ))
                             )}
@@ -65,12 +72,12 @@ export const ModelCard = ({ id, author, architecture, scale, tags, description }
 
                     {/* Tags */}
                     <div className="flex flex-row flex-wrap gap-1">
-                        {tags.map((tag) => (
+                        {tags.map((tagId) => (
                             <div
-                                className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium uppercase text-gray-800 dark:bg-gray-700 dark:text-gray-100"
-                                key={tag}
+                                className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
+                                key={tagId}
                             >
-                                {tag}
+                                {tagData.get(tagId)?.name ?? `unknown tag:${tagId}`}
                             </div>
                         ))}
                     </div>
