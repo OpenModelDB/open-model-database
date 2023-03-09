@@ -1,5 +1,5 @@
 {
-    "name": "4x_scalenx_90k",
+    "name": "4x scalenx",
     "author": "lyonhrt",
     "license": "CC-BY-NC-4.0",
     "tags": [
@@ -26,5 +26,6 @@
             ]
         }
     ],
+    "trainingIterations": 90000,
     "pretrainedModelG": "4x-PSNR"
 }

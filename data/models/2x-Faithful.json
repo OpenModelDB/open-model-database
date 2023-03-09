@@ -1,12 +1,12 @@
 {
-    "name": "Faithful 2x",
+    "name": "2x Faithful",
     "author": "joey",
     "license": "CC-BY-NC-4.0",
     "tags": [
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: 2xESRGAN\n\n",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art",
     "date": "2019-09-08",
     "architecture": "ESRGAN",
     "size": [
