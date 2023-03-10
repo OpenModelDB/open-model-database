@@ -18,7 +18,6 @@ interface Params extends ParsedUrlQuery {
 interface Props {
     modelId: ModelId;
     modelData: Model;
-    userIds: UserId[];
 }
 
 const renderTags = (tags: string[]) => (
