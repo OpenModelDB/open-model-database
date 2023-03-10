@@ -1,5 +1,5 @@
 {
-    "name": "1x_normals_generator_general_215k",
+    "name": "Normals Generator General",
     "author": "lyonhrt",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
@@ -25,5 +25,6 @@
                 "https://drive.google.com/file/d/1uksv1uyyZjQcU4567OrfU0w2NECcG8dY/view"
             ]
         }
-    ]
+    ],
+    "trainingIterations": 215000
 }
