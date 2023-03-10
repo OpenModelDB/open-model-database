@@ -1,5 +1,5 @@
 {
-    "name": "Lady0101_208000.pth",
+    "name": "Lady0101",
     "author": "dinjerr",
     "license": null,
     "tags": [
@@ -25,5 +25,6 @@
                 "https://1drv.ms/u/s!Aip-EMByJHY20xsc9EvnxVZ50Ja7?e=Loa5Gz"
             ]
         }
-    ]
+    ],
+    "trainingIterations": 208000
 }
