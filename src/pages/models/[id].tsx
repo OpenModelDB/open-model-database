@@ -7,8 +7,8 @@ import { DownloadButton } from '../../elements/components/download-button';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useCurrent } from '../../lib/hooks/use-current';
-import { useWebApi } from '../../lib/hooks/use-web-api';
 import { useUsers } from '../../lib/hooks/use-users';
+import { useWebApi } from '../../lib/hooks/use-web-api';
 import { Model, ModelId, UserId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
@@ -124,7 +124,9 @@ export default function Page({ modelId, modelData }: Props) {
                                             }
                                             return (
                                                 <React.Fragment key={userId}>
-                                                    <Link href={`/users/${userId}`}>{userData.get(userId) ?? `unknow user:${userId}`}</Link>
+                                                    <Link href={`/users/${userId}`}>
+                                                        {userData.get(userId)?.name ?? `unknow user:${userId}`}
+                                                    </Link>
                                                 </React.Fragment>
                                             );
                                         })}
