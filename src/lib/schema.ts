@@ -56,8 +56,20 @@ interface OnnxFile extends SingleFile {
     type: 'onnx';
 }
 
+export interface DiscordData {
+    id: string;
+    username: string;
+    discriminator: string;
+    avatar_url: string | null;
+    banner_url: string | null;
+    accent_color: number | null;
+    banner_color: number | null;
+    display_name: string | null;
+}
+
 export interface User {
     name: string;
+    discordData: DiscordData | null;
 }
 
 export interface Tag {
