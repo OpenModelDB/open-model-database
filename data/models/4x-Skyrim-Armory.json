@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures/equipment\nPretrained: Manga109Attempt\n\n",
+    "description": "Category: Video Game Textures\nPurpose: Game textures/equipment\n\n",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://e.pcloud.link/publink/show?code=XZGmsZo1yNrot19O4R5SrPVD1GWpRy1MKX"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-Manga109Attempt"
 }

@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 8xBoyMeBob (unreleased) which used 8xESRGAN\n\nUpscaling cartoons",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscaling cartoons",
     "date": "2021-08-19",
     "architecture": "ESRGAN+",
     "size": [

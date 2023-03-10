@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Pretrained SOFVSR Models\nPurpose: \nPretrained: none\n\nTrained on REDS' size dataset",
+    "description": "Category: Pretrained SOFVSR Models\nPurpose: \n\nTrained on REDS' size dataset",
     "date": null,
     "architecture": "SOFVSR",
     "size": null,

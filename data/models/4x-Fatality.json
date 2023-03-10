@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: 4x_Faces_04_N_180000_G.pth\n\nUpscales medium resolution Sprites, dithered or undithered, can also upscale manga/anime and gameboy camera images.",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\n\nUpscales medium resolution Sprites, dithered or undithered, can also upscale manga/anime and gameboy camera images.",
     "date": "2019-07-29",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://de-next.owncube.com/index.php/s/LQSgW98ZeaoA3Po"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-Faces-04-N"
 }

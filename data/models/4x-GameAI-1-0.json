@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\nPretrained: 4x_GameAI_1.0\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
+    "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
     "date": "2022-02-27",
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Art\nPretrained: 4xPSNR\n\nUpscaling airbrush/pencil-based artwork",
+    "description": "Category: Art/Pixel Art\nPurpose: Art\n\nUpscaling airbrush/pencil-based artwork",
     "date": "2020-10-12",
     "architecture": "ESRGAN",
     "size": [

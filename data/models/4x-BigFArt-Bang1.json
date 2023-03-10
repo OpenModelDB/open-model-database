@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel art\nPretrained: Face Focus\n\nLarger-scaled pixels to digital painting",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel art\n\nLarger-scaled pixels to digital painting",
     "date": "2020-15-31",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://1drv.ms/u/s!Aip-EMByJHY23if0ac150Sj2qnbp?e=qLp7SP"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-Face-Focus"
 }

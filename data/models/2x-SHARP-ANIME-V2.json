@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: \n\n2x_PSNR.pth",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\n2x_PSNR.pth",
     "date": "2020-12-09",
     "architecture": "ESRGAN",
     "size": [

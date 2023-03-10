@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Fatality_MKII_90k",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
             ]
         }
     ],
-    "dataset": "Anime, Manga"
+    "dataset": "Anime, Manga",
+    "pretrainedModelG": "4x-Fatality-MK2"
 }

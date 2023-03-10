@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\nPretrained: 4xFireAlpha\n\nReplica of sphax with transparency",
+    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\n\nReplica of sphax with transparency",
     "date": "2021-02-04",
     "architecture": "ESRGAN",
     "size": [

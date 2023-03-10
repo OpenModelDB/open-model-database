@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: 4xPSNR\n\nScalenx style pixel art upscaler",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nScalenx style pixel art upscaler",
     "date": "2019-06-15",
     "architecture": "ESRGAN",
     "size": [

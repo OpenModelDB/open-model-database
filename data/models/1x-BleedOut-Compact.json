@@ -8,7 +8,7 @@
         "cartoon",
         "restoration"
     ],
-    "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\nPretrained: \n\nThis model helps repair color bleed and heavy chroma noise that may be present on some older footage, particularly that which was recorded on VHS. It also cleans up rainbows if they are present.",
+    "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\n\nThis model helps repair color bleed and heavy chroma noise that may be present on some older footage, particularly that which was recorded on VHS. It also cleans up rainbows if they are present.",
     "date": "2022-07-25",
     "architecture": "Compact",
     "size": [

@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Drawings\nPurpose: Art\nPretrained: 4xfalcoon300(manga).pth\n\nDigital Art Upscaler",
+    "description": "Category: Drawings\nPurpose: Art\n\nDigital Art Upscaler",
     "date": "2019-09-07",
     "architecture": "ESRGAN",
     "size": [

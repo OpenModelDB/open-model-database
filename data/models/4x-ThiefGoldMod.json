@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: 4x_Manga109Attempt\n\nVersion of the previous model but based on Manga109 pretrained model and with slightly different dataset. Sometimes gives better results especially for wood and metal, sometimes worse. Sometime generates the same dotted artifacts on very bright/white images.",
+    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nVersion of the previous model but based on Manga109 pretrained model and with slightly different dataset. Sometimes gives better results especially for wood and metal, sometimes worse. Sometime generates the same dotted artifacts on very bright/white images.",
     "date": "2020-05-15",
     "architecture": "ESRGAN",
     "size": [

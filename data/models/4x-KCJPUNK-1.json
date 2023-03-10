@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: 4x_fatal_Anime_500000_G\n\nUp-scaling Digital Animation",
+    "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nUp-scaling Digital Animation",
     "date": "2021-03-23",
     "architecture": "ESRGAN",
     "size": [

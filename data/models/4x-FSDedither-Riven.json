@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: 4xESRGAN\n\nFine-tuned 4xFSDedither to upscale images from the game Riven, but should be better in general, particularly on ordered dithering. I adjusted the dataset to have a better variety of dithering parameters, and turned up the HFEN and pixel loss to get better details and color restoration with less noise.",
+    "description": "Category: Dithering\nPurpose: Dithering\n\nFine-tuned 4xFSDedither to upscale images from the game Riven, but should be better in general, particularly on ordered dithering. I adjusted the dataset to have a better variety of dithering parameters, and turned up the HFEN and pixel loss to get better details and color restoration with less noise.",
     "date": "2020-07-11",
     "architecture": "ESRGAN",
     "size": [

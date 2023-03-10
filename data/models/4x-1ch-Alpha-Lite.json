@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Alphas\nPurpose: Alpha\nPretrained: none\n\nObsoleted by Joey's Fork - Alpha channels of PNGs",
+    "description": "Category: Alphas\nPurpose: Alpha\n\nObsoleted by Joey's Fork - Alpha channels of PNGs",
     "date": "2020-12-15",
     "architecture": "ESRGAN",
     "size": [

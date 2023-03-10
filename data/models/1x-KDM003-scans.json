@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Drawings\nPurpose: Art\nPretrained: Failed attempts based on ESRGAN_1x_JPEG_80to100\n\nClean up model for scanned illustrations. - Made to remove moire patterns, reduce small imperfections, and correct mild compression artifacts in scanned Kingdom Death: Monster illustrations. CMYK printing often shifts colors, so this is intended to reverse that color shifting as well.",
+    "description": "Category: Drawings\nPurpose: Art\n\nClean up model for scanned illustrations. - Made to remove moire patterns, reduce small imperfections, and correct mild compression artifacts in scanned Kingdom Death: Monster illustrations. CMYK printing often shifts colors, so this is intended to reverse that color shifting as well.",
     "date": "2019-07-29",
     "architecture": "ESRGAN",
     "size": [

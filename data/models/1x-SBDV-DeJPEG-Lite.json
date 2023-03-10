@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\nPretrained: 1x_DIV2K-Lite_80k.pth\n\n",
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\n\n",
     "date": "2020-10-10",
     "architecture": "ESRGAN",
     "size": [

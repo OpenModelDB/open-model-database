@@ -6,7 +6,7 @@
         "image",
         "manga"
     ],
-    "description": "Category: Manga\nPurpose: Manga\nPretrained: RRDB_PSNR_x4\n\nManga-style images with or without dithering - cartoons, maybe pixel art, etc",
+    "description": "Category: Manga\nPurpose: Manga\n\nManga-style images with or without dithering - cartoons, maybe pixel art, etc",
     "date": "2020-12-14",
     "architecture": "ESRGAN",
     "size": [

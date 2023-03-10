@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\nPretrained: RRDB_PSNR_x4\n\nNTSC DVD-spec encode x4 scale super-resolution for Anime Drawing style content. The dataset has a LOT of data throughout almost every frame, so it had a lot of stuff to learn. The resulting DVD-spec encode also had some blocking at times so it also learned to fight off blocking.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\n\nNTSC DVD-spec encode x4 scale super-resolution for Anime Drawing style content. The dataset has a LOT of data throughout almost every frame, so it had a lot of stuff to learn. The resulting DVD-spec encode also had some blocking at times so it also learned to fight off blocking.",
     "date": "2020-04-08",
     "architecture": "ESRGAN",
     "size": [

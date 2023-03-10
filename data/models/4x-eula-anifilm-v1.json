@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\nPretrained: 4xPSNR\n\nUpscaling cel animation. Trained this more than a year ago, releasing cause I've got a much better v2 and v3 now.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nUpscaling cel animation. Trained this more than a year ago, releasing cause I've got a much better v2 and v3 now.",
     "date": "2022-12-14",
     "architecture": "ESRGAN",
     "size": [

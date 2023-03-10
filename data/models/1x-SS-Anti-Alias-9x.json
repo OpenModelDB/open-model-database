@@ -6,7 +6,7 @@
         "image",
         "anti-aliasing"
     ],
-    "description": "Category: Aliasing\nPurpose: Anti aliasing\nPretrained: none (no interpolation)",
+    "description": "Category: Aliasing\nPurpose: Anti aliasing",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

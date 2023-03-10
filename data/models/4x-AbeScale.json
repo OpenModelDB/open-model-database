@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Linework Cartoons\nPretrained: 4xESRGAN",
+    "description": "Category: Anime and Cartoons\nPurpose: Linework Cartoons",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "dataset": "LR: Clone High DVD, HR: Re-illustrated Vectors from Frames"
+    "dataset": "LR: Clone High DVD, HR: Re-illustrated Vectors from Frames",
+    "pretrainedModelG": "4x-ESRGAN"
 }

@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2x_ESRGAN\n\nUpscale MLP episodes. Liter version.",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale MLP episodes. Liter version.",
     "date": "2021-03-01",
     "architecture": "ESRGAN",
     "size": [

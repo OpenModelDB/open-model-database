@@ -6,7 +6,7 @@
         "image",
         "manga"
     ],
-    "description": "Category: Manga\nPurpose: Anime / Manga\nPretrained: \n\nPretrained model: 4xPSNR",
+    "description": "Category: Manga\nPurpose: Anime / Manga\n\nPretrained model: 4xPSNR",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

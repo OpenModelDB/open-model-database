@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Art/People\nPretrained: 4x_BigFace\n\n",
+    "description": "Category: Faces\nPurpose: Art/People\n\n",
     "date": "2020-07-22",
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
                 "https://1drv.ms/u/s!Aip-EMByJHY27CHg3-1Uue5KgbtK?e=6k0COU"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-BigFace"
 }

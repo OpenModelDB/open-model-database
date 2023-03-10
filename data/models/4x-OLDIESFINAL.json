@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: RRDB_PSNR_x4.pth\n\ni made this model to upscale old anime and denoise.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\ni made this model to upscale old anime and denoise.",
     "date": "2020-08-16",
     "architecture": "ESRGAN",
     "size": [

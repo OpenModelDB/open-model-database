@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: DeToon\nPurpose: Detooning\nPretrained: 1xESRGAN\n\nAn attempt to detoon images/drawings of people",
+    "description": "Category: DeToon\nPurpose: Detooning\n\nAn attempt to detoon images/drawings of people",
     "date": "2020-07-31",
     "architecture": "ESRGAN",
     "size": [

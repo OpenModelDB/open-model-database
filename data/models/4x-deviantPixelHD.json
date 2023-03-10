@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: RRDB_PSNR_x4\n\nSimilar to Manga109, can be used as a general digital upscaler as well as with pixel art",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nSimilar to Manga109, can be used as a general digital upscaler as well as with pixel art",
     "date": "2019-09-09",
     "architecture": "ESRGAN",
     "size": [

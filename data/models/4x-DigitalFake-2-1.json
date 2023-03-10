@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: RRDB_ESRGAN_x4_old_arch.pth\n\nReplica of DigitalFrames 2.1 but interpolatable",
+    "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nReplica of DigitalFrames 2.1 but interpolatable",
     "date": "2021-02-18",
     "architecture": "ESRGAN",
     "size": [

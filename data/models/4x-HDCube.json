@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Gamecube and Wii textures.\nPretrained: 4x_NMKD Siax\n\nGamecube and Wii textures (mainly DXT and 8bit color compression). Is good for preserving fine details without affecting the original style too much, it is not suitable for pixel art, small icons and text under 16 pixel.",
+    "description": "Category: Video Game Textures\nPurpose: Gamecube and Wii textures.\n\nGamecube and Wii textures (mainly DXT and 8bit color compression). Is good for preserving fine details without affecting the original style too much, it is not suitable for pixel art, small icons and text under 16 pixel.",
     "date": "2022-05-10",
     "architecture": "ESRGAN",
     "size": [
@@ -33,6 +33,6 @@
     "dataset": "artifact free textures and photos (stone, wood, metal, clothes, plants, characters, FX)",
     "datasetSize": 2000,
     "pretrainedModelG": {
-        "description": "NMKD Siax"
+        "description": "4x_NMKD Siax"
     }
 }

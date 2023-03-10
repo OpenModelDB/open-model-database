@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: Universal Upscaler\nPretrained: 4xESRGAN\n\nUniScale strikes a nice balance between sharpness and realism. This model can upscale almost anything well. It was originally intended to upscale game textures, but was expanded into a universal upscaler. Interp is these two models interpolated.",
+    "description": "Category: Universal Models\nPurpose: Universal Upscaler\n\nUniScale strikes a nice balance between sharpness and realism. This model can upscale almost anything well. It was originally intended to upscale game textures, but was expanded into a universal upscaler. Interp is these two models interpolated.",
     "date": "2021-08-23",
     "architecture": "ESRGAN",
     "size": [

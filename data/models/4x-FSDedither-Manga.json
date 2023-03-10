@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: RRDB_ESRGAN_x4.pth\n\nCartoons/pixel art/other non-realistic stuff with dithering",
+    "description": "Category: Dithering\nPurpose: Dithering\n\nCartoons/pixel art/other non-realistic stuff with dithering",
     "date": "2020-04-21",
     "architecture": "ESRGAN",
     "size": [

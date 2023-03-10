@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\nPretrained: 4xPSNR\n\nFace De-blur - slightly out of focus / blurred images of faces. It is aimed at faces / hair",
+    "description": "Category: Faces\nPurpose: Faces\n\nFace De-blur - slightly out of focus / blurred images of faces. It is aimed at faces / hair",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
                 "https://drive.google.com/file/d/19ICMKNuS4PbhmtA7Be9lUE6v8NHDDEzP/view"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-PSNR"
 }

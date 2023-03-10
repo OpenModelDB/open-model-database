@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: 2x_DigiGradients_Lite_486k.pth\n\nMeant as a versatile model for upscaling high detail digital anime and cartoons. Has debanding, MPEG-2 correction, and halo reduction. Trained to handle both 4:3 and 16:9 DVD material with equal efficacy. Will retain a lot of textures except for the really high freq stuff.",
+    "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nMeant as a versatile model for upscaling high detail digital anime and cartoons. Has debanding, MPEG-2 correction, and halo reduction. Trained to handle both 4:3 and 16:9 DVD material with equal efficacy. Will retain a lot of textures except for the really high freq stuff.",
     "date": "2022-07-05",
     "architecture": "ESRGAN",
     "size": [
