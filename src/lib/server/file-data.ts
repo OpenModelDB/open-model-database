@@ -3,15 +3,25 @@ import { join } from 'path';
 import { CollectionApi, DBApi, SynchronizedCollection } from '../data-api';
 import { RWLock } from '../lock';
 import { Model, ModelId, Tag, TagId, User, UserId } from '../schema';
-import { hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
+import { compareTagId, hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
 import { JsonFile, fileExists } from './fs-util';
 
 const DATA_DIR = './data/';
 const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
 
-const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON);
-const tagsFile = new JsonFile<Record<TagId, Tag>>(TAGS_JSON);
+const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON, {
+    beforeWrite(data) {
+        sortObjectKeys(data);
+        return data;
+    },
+});
+const tagsFile = new JsonFile<Record<TagId, Tag>>(TAGS_JSON, {
+    beforeWrite(data) {
+        sortObjectKeys(data, compareTagId);
+        return data;
+    },
+});
 
 function getModelDataPath(id: ModelId): string {
     return join(DATA_DIR, 'models', `${id}.json`);
@@ -52,21 +62,16 @@ async function mutateModels(mutate: (model: Model) => boolean | void): Promise<v
 }
 
 function renameObjectKey<K extends string>(o: Record<K, unknown>, from: K, to: K): void {
-    const keys = Object.keys(o);
-
-    const index = keys.indexOf(from);
-    if (index === -1) {
+    if (hasOwn(o, from)) {
         throw new Error(`Cannot change id ${from} because it does not exist`);
     }
     if (hasOwn(o, to)) {
         throw new Error(`Cannot change id ${from} to ${to} because ${to} already exists`);
     }
 
-    keys[index] = to;
     const value = o[from];
     delete o[from];
     o[to] = value;
-    sortObjectKeys(o, keys);
 }
 
 const modelApi: CollectionApi<ModelId, Model> = {
