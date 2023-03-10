@@ -1,94 +1,186 @@
 {
-    "image": {
-        "name": "Image",
-        "description": ""
-    },
-    "video": {
-        "name": "Video",
-        "description": ""
-    },
-    "audio": {
-        "name": "Audio",
-        "description": ""
-    },
-    "general-upscaler": {
-        "name": "General Upscaler",
-        "description": ""
-    },
-    "face-upscaling": {
-        "name": "Face Upscaling",
-        "description": ""
-    },
-    "game-textures": {
-        "name": "Game Textures",
-        "description": ""
-    },
-    "game-texture-maps": {
-        "name": "Game Texture Maps",
-        "description": ""
-    },
-    "text": {
-        "name": "Text",
-        "description": ""
-    },
-    "faces": {
-        "name": "Faces",
-        "description": ""
-    },
-    "photo": {
-        "name": "Photo",
-        "description": ""
-    },
     "anime": {
         "name": "Anime",
-        "description": ""
-    },
-    "manga": {
-        "name": "Manga",
-        "description": ""
-    },
-    "cartoon": {
-        "name": "Cartoon",
-        "description": ""
-    },
-    "restoration": {
-        "name": "Restoration",
-        "description": ""
-    },
-    "colorization": {
-        "name": "Colorization",
         "description": ""
     },
     "anti-aliasing": {
         "name": "Anti-aliasing",
         "description": ""
     },
-    "pixel-art": {
-        "name": "Pixel Art",
+    "audio": {
+        "name": "Audio",
         "description": ""
     },
-    "inpainting": {
-        "name": "Inpainting",
+    "cartoon": {
+        "name": "Cartoon",
         "description": ""
     },
-    "deblur": {
-        "name": "Deblur",
+    "colorization": {
+        "name": "Colorization",
         "description": ""
     },
     "debanding": {
         "name": "Debanding",
         "description": ""
     },
-    "denoise": {
-        "name": "Denoise",
+    "deblur": {
+        "name": "Deblur",
+        "description": ""
+    },
+    "dedither": {
+        "name": "Dedither",
         "description": ""
     },
     "dehalo": {
         "name": "Dehalo",
         "description": ""
     },
-    "dedither": {
-        "name": "Dedither",
+    "denoise": {
+        "name": "Denoise",
+        "description": ""
+    },
+    "face-upscaling": {
+        "name": "Face Upscaling",
+        "description": ""
+    },
+    "faces": {
+        "name": "Faces",
+        "description": ""
+    },
+    "game-texture-maps": {
+        "name": "Game Texture Maps",
+        "description": ""
+    },
+    "game-textures": {
+        "name": "Game Textures",
+        "description": ""
+    },
+    "general-upscaler": {
+        "name": "General Upscaler",
+        "description": ""
+    },
+    "image": {
+        "name": "Image",
+        "description": ""
+    },
+    "inpainting": {
+        "name": "Inpainting",
+        "description": ""
+    },
+    "manga": {
+        "name": "Manga",
+        "description": ""
+    },
+    "photo": {
+        "name": "Photo",
+        "description": ""
+    },
+    "pixel-art": {
+        "name": "Pixel Art",
+        "description": ""
+    },
+    "restoration": {
+        "name": "Restoration",
+        "description": ""
+    },
+    "text": {
+        "name": "Text",
+        "description": ""
+    },
+    "video": {
+        "name": "Video",
+        "description": ""
+    },
+    "color:1": {
+        "name": "Grayscale",
+        "description": ""
+    },
+    "color:1-3": {
+        "name": "Grayscale→RGB",
+        "description": ""
+    },
+    "color:3": {
+        "name": "RGB",
+        "description": "This model upscales images without transparency. Some applications (e.g. chaiNNer) may still be able to upscale images with transparency using this model."
+    },
+    "color:4": {
+        "name": "RGBA",
+        "description": "This model upscales images with transparency."
+    },
+    "color:null": {
+        "name": "color:null",
+        "description": ""
+    },
+    "license:by": {
+        "name": "Credit",
+        "description": ""
+    },
+    "license:commercial": {
+        "name": "Commercial",
+        "description": ""
+    },
+    "license:modifications": {
+        "name": "Modifications",
+        "description": ""
+    },
+    "license:no-license": {
+        "name": "No License",
+        "description": "This model is not licensed by the author."
+    },
+    "license:sa": {
+        "name": "Same license",
+        "description": "This model requires derivative works to have the same or a compatible license. Derivative works include interpolations and models using this model as their pretrained model."
+    },
+    "license:unknown": {
+        "name": "Unknown License",
+        "description": "This model is licensed under a custom or infrequently used license."
+    },
+    "platform:ncnn": {
+        "name": "NCNN",
+        "description": ""
+    },
+    "platform:ncnn-compatible": {
+        "name": "NCNN Compatible",
+        "description": ""
+    },
+    "platform:onnx": {
+        "name": "ONNX",
+        "description": ""
+    },
+    "platform:onnx-compatible": {
+        "name": "ONNX Compatible",
+        "description": ""
+    },
+    "platform:pytorch": {
+        "name": "PyTorch",
+        "description": ""
+    },
+    "platform:pytorch-compatible": {
+        "name": "PyTorch Compatible",
+        "description": ""
+    },
+    "scale:1": {
+        "name": "1x",
+        "description": ""
+    },
+    "scale:16": {
+        "name": "16x",
+        "description": ""
+    },
+    "scale:2": {
+        "name": "2x",
+        "description": ""
+    },
+    "scale:3": {
+        "name": "3x",
+        "description": ""
+    },
+    "scale:4": {
+        "name": "4x",
+        "description": ""
+    },
+    "scale:8": {
+        "name": "8x",
         "description": ""
     }
 }
