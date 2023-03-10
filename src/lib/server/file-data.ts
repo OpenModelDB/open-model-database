@@ -7,7 +7,7 @@ import { hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
 import { JsonFile, fileExists } from './fs-util';
 
 const DATA_DIR = './data/';
-const USERS_JSON = join(DATA_DIR, 'users.json');
+const USERS_JSON = join(DATA_DIR, 'users-discord.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
 
 const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON);
