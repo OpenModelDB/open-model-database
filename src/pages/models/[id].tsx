@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { DownloadButton } from '../../elements/components/download-button';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
@@ -43,7 +43,7 @@ const dummyImages = [
     },
 ];
 
-export default function Page({ modelId, modelData, userIds }: Props) {
+export default function Page({ modelId, modelData }: Props) {
     const { webApi, editMode } = useWebApi();
     const model = useCurrent(webApi, 'model', modelId, modelData);
 
@@ -54,6 +54,14 @@ export default function Page({ modelId, modelData, userIds }: Props) {
         },
         [webApi, modelId, model]
     );
+
+    const [userIds, setUserIds] = useState<UserId[]>([]);
+    useEffect(() => {
+        webApi?.users
+            .getIds()
+            .then((data) => setUserIds(data))
+            .catch((e) => console.error(e));
+    }, [webApi?.users]);
 
     return (
         <>
@@ -278,9 +286,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     if (!modelId) throw new Error("Missing path param 'id'");
 
     const modelData = await fileApi.models.get(modelId);
-    const userIds = await fileApi.users.getIds();
 
     return {
-        props: { modelId, modelData, userIds },
+        props: { modelId, modelData },
     };
 };
