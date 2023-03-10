@@ -4,13 +4,14 @@ import React, { useMemo, useState } from 'react';
 import { ModelCard } from '../elements/components/model-card';
 import { SearchBar } from '../elements/components/searchbar';
 import { PageContainer } from '../elements/page';
+import { deriveTags } from '../lib/derive-tags';
 import { useTags } from '../lib/hooks/use-tags';
 import { Model, ModelId, TagId } from '../lib/schema';
 import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
-import { asArray, fixDescription, joinClasses, typedEntries } from '../lib/util';
+import { asArray, compareTagId, joinClasses, typedEntries } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
@@ -22,7 +23,7 @@ export default function Page({ modelData }: Props) {
             typedEntries(modelData).map(([id, model]): CorpusEntry<ModelId, TagId> => {
                 return {
                     id,
-                    tags: new Set(model.tags),
+                    tags: new Set(deriveTags(model)),
                     texts: [
                         {
                             text: [id, model.name].filter(Boolean).join('\n').toLowerCase(),
@@ -47,7 +48,17 @@ export default function Page({ modelData }: Props) {
     }, [modelData]);
     const modelCount = searchIndex.entries.size;
 
-    const allTags = useMemo(() => [...new Set(Object.values(modelData).flatMap((m) => m.tags))], [modelData]);
+    const allTags = useMemo(
+        () => [
+            ...new Set(
+                Object.values(modelData)
+                    .flatMap(deriveTags)
+                    .filter((t) => !t.startsWith('by:'))
+                    .sort(compareTagId)
+            ),
+        ],
+        [modelData]
+    );
     const [selectedTag, setSelectedTag] = useState<TagId>();
     const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -133,20 +144,11 @@ export default function Page({ modelData }: Props) {
                             {availableModels.length > 0 ? (
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                                     {availableModels.map((id) => {
-                                        const { name, architecture, author, scale, description, tags } = modelData[id];
-
-                                        const actualDescription = fixDescription(description, scale);
-
                                         return (
                                             <ModelCard
-                                                architecture={architecture}
-                                                author={author}
-                                                description={actualDescription}
                                                 id={id}
                                                 key={id}
-                                                name={name}
-                                                scale={scale}
-                                                tags={tags}
+                                                model={modelData[id]}
                                             />
                                         );
                                     })}

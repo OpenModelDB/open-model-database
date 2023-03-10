@@ -1,3 +1,5 @@
+import { TagId } from './schema';
+
 export const EMPTY_ARRAY: readonly never[] = [];
 export const EMPTY_SET: ReadonlySet<never> = new Set();
 
@@ -19,6 +21,30 @@ export function lazy<T>(fn: () => T): () => T {
         return value;
     };
 }
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function lazyWithKey<K, T extends {} | null>(fn: (key: K) => T): (key: K) => T {
+    const cache = new Map<K, T>();
+    return (key) => {
+        let value = cache.get(key);
+        if (value === undefined) {
+            value = fn(key);
+            cache.set(key, value);
+        }
+        return value;
+    };
+}
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function lazyWithWeakKey<K extends object, T extends {} | null>(fn: (key: K) => T): (key: K) => T {
+    const cache = new WeakMap<K, T>();
+    return (key) => {
+        let value = cache.get(key);
+        if (value === undefined) {
+            value = fn(key);
+            cache.set(key, value);
+        }
+        return value;
+    };
+}
 
 export function delay(ms: number): Promise<void> {
     return new Promise((resolve) => {
@@ -26,18 +52,23 @@ export function delay(ms: number): Promise<void> {
     });
 }
 
-export function sortObjectKeys(obj: Record<string, unknown>, order: readonly string[] = []): void {
+export function sortObjectKeys<K extends string>(
+    obj: Record<K, unknown>,
+    order?: readonly K[] | ((a: K, b: K) => number)
+): void {
     const old = { ...obj };
-    const objKeys = Object.keys(obj);
+    const objKeys = typedKeys(obj);
     for (const key of objKeys) {
         delete obj[key];
     }
 
-    let keys: string[];
-    if (order.length === 0) {
+    let keys: K[];
+    if (!order) {
         keys = objKeys.sort();
+    } else if (typeof order === 'function') {
+        keys = objKeys.sort(order);
     } else {
-        const keySet = new Set<string>();
+        const keySet = new Set<K>();
         const objKeySet = new Set(objKeys);
         for (const key of order) {
             if (objKeySet.has(key)) {
@@ -84,6 +115,21 @@ export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
     return Object.keys(o) as K[];
 }
 
+export function compareString(a: string, b: string): number {
+    if (a < b) return -1;
+    if (a > b) return 1;
+    return 0;
+}
+
+function getTagCategory(id: TagId): string | undefined {
+    const colon = id.indexOf(':');
+    if (colon === -1) return undefined;
+    return id.slice(0, colon);
+}
+export function compareTagId(a: TagId, b: TagId): number {
+    return compareString(getTagCategory(a) ?? '', getTagCategory(b) ?? '') || compareString(a, b);
+}
+
 export function getColorMode(numberOfChannels: number) {
     switch (numberOfChannels) {
         case 1:
@@ -96,33 +142,3 @@ export function getColorMode(numberOfChannels: number) {
             return numberOfChannels;
     }
 }
-
-export const fixDescription = (description: string, scale: number) => {
-    const lines = description.split('\n');
-    const descLines: string[] = [];
-    let category = '',
-        purpose = '',
-        pretrained = '',
-        dataset = '';
-    lines.forEach((line) => {
-        if (line.startsWith('Category: ')) {
-            category = String(line).replace('Category: ', '');
-        } else if (line.startsWith('Purpose: ')) {
-            purpose = String(line).replace('Purpose: ', '');
-        } else if (line.startsWith('Pretrained: ')) {
-            pretrained = String(line).replace('Pretrained: ', '');
-        } else if (line.startsWith('Dataset: ')) {
-            dataset = String(line).replace('Dataset: ', '');
-        } else if (line !== '') {
-            descLines.push(line.trim());
-        }
-    });
-    const purposeSentence = category ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
-    const datasetSentence = dataset ? `Trained on ${dataset}.` : 'Unknown training dataset.';
-    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : 'Unknown pretrained model.';
-    const actualDescription =
-        descLines.length > 0
-            ? descLines.join('\n').trim()
-            : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
-    return actualDescription;
-};

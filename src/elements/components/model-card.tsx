@@ -2,23 +2,20 @@ import React from 'react';
 import { useTags } from '../../lib/hooks/use-tags';
 import { useUsers } from '../../lib/hooks/use-users';
 import { joinList } from '../../lib/react-util';
-import { ModelId, TagId, UserId } from '../../lib/schema';
+import { Model, ModelId } from '../../lib/schema';
 import { asArray } from '../../lib/util';
 import { Link } from './link';
 
 type ModelCardProps = {
     id: ModelId;
-    name: string;
-    author: UserId | UserId[];
-    architecture: string;
-    scale: number;
-    tags: TagId[];
-    description: string;
+    model: Model;
 };
 
-export const ModelCard = ({ id, name, author, architecture, scale, tags, description }: ModelCardProps) => {
+export const ModelCard = ({ id, model }: ModelCardProps) => {
     const { tagData } = useTags();
     const { userData } = useUsers();
+
+    const description = fixDescription(model.description, model.scale);
 
     return (
         <div
@@ -30,10 +27,10 @@ export const ModelCard = ({ id, name, author, architecture, scale, tags, descrip
                 <div className="absolute top-0 right-0 m-2">
                     <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
                         <div className="rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out dark:bg-accent-600 dark:text-gray-100 ">
-                            {architecture}
+                            {model.architecture}
                         </div>
                         <div className="rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out dark:bg-accent-600 dark:text-gray-100 ">
-                            {scale}x
+                            {model.scale}x
                         </div>
                     </div>
                 </div>
@@ -46,13 +43,13 @@ export const ModelCard = ({ id, name, author, architecture, scale, tags, descrip
 
                 <div className="relative inset-x-0 bottom-0 bg-white p-3 pt-2 dark:bg-fade-900">
                     <Link href={`/models/${id}`}>
-                        <div className="block text-xl font-bold text-gray-800 dark:text-gray-100">{name}</div>
+                        <div className="block text-xl font-bold text-gray-800 dark:text-gray-100">{model.name}</div>
                     </Link>
                     <div className="text-sm text-gray-600 dark:text-gray-400">
                         <div>
                             <span>by </span>
                             {joinList(
-                                asArray(author).map((userId) => (
+                                asArray(model.author).map((userId) => (
                                     <Link
                                         className="font-bold text-accent-500"
                                         href={`/users/${userId}`}
@@ -72,7 +69,7 @@ export const ModelCard = ({ id, name, author, architecture, scale, tags, descrip
 
                     {/* Tags */}
                     <div className="flex flex-row flex-wrap gap-1">
-                        {tags.map((tagId) => (
+                        {model.tags.map((tagId) => (
                             <div
                                 className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
                                 key={tagId}
@@ -86,3 +83,33 @@ export const ModelCard = ({ id, name, author, architecture, scale, tags, descrip
         </div>
     );
 };
+
+function fixDescription(description: string, scale: number): string {
+    const lines = description.split('\n');
+    const descLines: string[] = [];
+    let category = '',
+        purpose = '',
+        pretrained = '',
+        dataset = '';
+    lines.forEach((line) => {
+        if (line.startsWith('Category: ')) {
+            category = String(line).replace('Category: ', '');
+        } else if (line.startsWith('Purpose: ')) {
+            purpose = String(line).replace('Purpose: ', '');
+        } else if (line.startsWith('Pretrained: ')) {
+            pretrained = String(line).replace('Pretrained: ', '');
+        } else if (line.startsWith('Dataset: ')) {
+            dataset = String(line).replace('Dataset: ', '');
+        } else if (line !== '') {
+            descLines.push(line.trim());
+        }
+    });
+    const purposeSentence = category ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
+    const datasetSentence = dataset ? `Trained on ${dataset}.` : 'Unknown training dataset.';
+    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : 'Unknown pretrained model.';
+    const actualDescription =
+        descLines.length > 0
+            ? descLines.join('\n').trim()
+            : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
+    return actualDescription;
+}
