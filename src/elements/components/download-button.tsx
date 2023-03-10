@@ -19,7 +19,7 @@ const getHostFromUrl = (url: string) => {
         if (parsedUrl.hostname === 'drive.google.com') {
             return 'Google Drive';
         }
-        if (parsedUrl.hostname === '1drv.ms') {
+        if (domainAndTld === '1drv.ms') {
             return 'OneDrive';
         }
         if (domainAndTld === 'mega.nz') {
