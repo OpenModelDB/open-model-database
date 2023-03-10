@@ -54,13 +54,7 @@ export default function Page({ modelId, modelData }: Props) {
         [webApi, modelId, model]
     );
 
-    const [userIds, setUserIds] = useState<UserId[]>([]);
-    useEffect(() => {
-        webApi?.users
-            .getIds()
-            .then((data) => setUserIds(data))
-            .catch((e) => console.error(e));
-    }, [webApi?.users]);
+    const { userData } = useUsers();
 
     return (
         <>
