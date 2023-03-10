@@ -6,7 +6,7 @@
         "image",
         "debanding"
     ],
-    "description": "Category: Banding\nPurpose: Debanding images\nPretrained: None\n\nDataset: Anime, real life, manga",
+    "description": "Category: Banding\nPurpose: Debanding images",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Debandurh_FS_lite_140000_G.pth"
             ]
         }
-    ]
+    ],
+    "dataset": "Anime, real life, manga"
 }

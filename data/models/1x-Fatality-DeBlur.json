@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Deblur\nPretrained: 1x_DeJpeg_Fatality_01_175000_G.pth\n\nDataset: Mix of anime, manga, and photos",
+    "description": "",
     "date": "2019-10-16",
     "architecture": "ESRGAN",
     "size": [
@@ -30,6 +30,7 @@
     "trainingEpochs": 4,
     "trainingBatchSize": 1,
     "trainingHRSize": 128,
+    "dataset": "Mix of anime, manga, and photos",
     "datasetSize": 41000,
     "pretrainedModelG": {
         "description": "1x_DeJpeg_Fatality_01_175000_G.pth"

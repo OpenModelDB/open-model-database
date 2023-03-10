@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Deblur\nPretrained: 1xESRGAN\n\nThese models deblur most images. It was trained mostly on aniso2 and iso blurring (BSRGAN augmentation) with some gaussian mixed in. It performs well on most blurry images, but I'd recommend using something like Fatality_Deblur for very strong gaussian blur. Dataset: The UniScale Dataset + My Fabric dataset",
+    "description": "Category: Blurring\nPurpose: Deblur\nPretrained: 1xESRGAN\n\nThese models deblur most images. It was trained mostly on aniso2 and iso blurring (BSRGAN augmentation) with some gaussian mixed in. It performs well on most blurry images, but I'd recommend using something like Fatality_Deblur for very strong gaussian blur.",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

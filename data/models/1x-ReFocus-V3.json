@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Deblur / ReFocus\nPretrained: 1x_Saiyajin_DeJPEG_300000_G.pth\n\nDataset: Photos, Anime, and manga -\n\nPurpose: DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",
+    "description": "Category: Blurring\nPurpose: Deblur / ReFocus\nPretrained: 1x_Saiyajin_DeJPEG_300000_G.pth\n\nPurpose: DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",
     "date": "2022-03-12",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://de-next.owncube.com/index.php/s/HyygDgXEB45JqBH"
             ]
         }
-    ]
+    ],
+    "dataset": "Photos, Anime, and manga"
 }

@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\nPretrained: 4x_GameAI_1.0\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons. Dataset: I used textures from, \"(A Hat in Time, Kingdom Hearts 3 and World of Final Fantasy) for GameAI_2.0\" \"(Skyrim, The Witcher 3, Resident Evil 4, Final Fantasy XV and Tales of Vesperia ) for GameAI_1.0\" Dataset_size: 21.9k to 70k textures , up to 1024x1024 per texture",
+    "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\nPretrained: 4x_GameAI_1.0\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
     "date": "2022-02-27",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,7 @@
                 "https://drive.google.com/file/d/1-s7iSK9ivJaoyvTXwDZvMjuyGG72bTQA/view?usp=sharing"
             ]
         }
-    ]
+    ],
+    "dataset": "Textures from Skyrim, The Witcher 3, Resident Evil 4, Final Fantasy XV and Tales of Vesperia. 21.9k to 70k textures, up to 1024x1024 per texture.",
+    "datasetSize": 21900
 }

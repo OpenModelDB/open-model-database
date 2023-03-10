@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Detoon\n\nDataset: Custom prepared sprites from kof 94 rebout, which with gradients blending",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Detoon",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://drive.google.com/u/1/uc?id=1h-bY4gq_61sRF_xK3F4OiVK1cWRX0Q9w&export=download"
             ]
         }
-    ]
+    ],
+    "dataset": "Custom prepared sprites from kof 94 rebout, which with gradients blending"
 }

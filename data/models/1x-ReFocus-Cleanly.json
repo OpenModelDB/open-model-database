@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Deblur / ReFocus\nPretrained: 1x_ReFocus_V3_110000_G.pth\n\nDataset: Anime, manga, and photos -\n\nPurpose: DeBlur, ReFocus, Sharpen Manga, Anime and cartoon style images, but will work on real life images too.",
+    "description": "Category: Blurring\nPurpose: Deblur / ReFocus\nPretrained: 1x_ReFocus_V3_110000_G.pth\n\nPurpose: DeBlur, ReFocus, Sharpen Manga, Anime and cartoon style images, but will work on real life images too.",
     "date": "2022-01-21",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://de-next.owncube.com/index.php/s/GjbBw7pcgm5gmYm"
             ]
         }
-    ]
+    ],
+    "dataset": "Anime, manga, and photos"
 }

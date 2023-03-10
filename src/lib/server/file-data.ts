@@ -34,8 +34,34 @@ function getModelData(ids: readonly ModelId[]): Promise<Model[]> {
 
 // mutation
 
+const modelKeyOrder = [
+    'name',
+    'author',
+    'license',
+    'tags',
+    'description',
+    'date',
+    'architecture',
+    'size',
+    'scale',
+    'inputChannels',
+    'outputChannels',
+    'resources',
+    'trainingIterations',
+    'trainingEpochs',
+    'trainingBatchSize',
+    'trainingHRSize',
+    'trainingOTF',
+    // 'dataset',
+    'datasetSize',
+    'pretrainedModelG',
+    'pretrainedModelD',
+] as const satisfies readonly (keyof Model)[];
+type _valid = never;
+
 async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void> {
     const file = getModelDataPath(id);
+    sortObjectKeys(model, modelKeyOrder);
     await writeFile(file, JSON.stringify(model, undefined, 4), 'utf-8');
 }
 

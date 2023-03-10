@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Foliage/Ground\nPurpose: Upscales ground textures\nPretrained: \n\nDataset: Custom (Ground textures Google)",
+    "description": "Category: Foliage/Ground\nPurpose: Upscales ground textures",
     "date": "2021-06-23",
     "architecture": "ESRGAN",
     "size": [
@@ -24,5 +24,6 @@
                 "https://drive.google.com/file/d/1dGmhHUPmb3lO9buX_Bt2nq97Nk5MCTb4/view"
             ]
         }
-    ]
+    ],
+    "dataset": "Custom (Ground textures Google)"
 }
