@@ -7,8 +7,9 @@ import { DownloadButton } from '../../elements/components/download-button';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useCurrent } from '../../lib/hooks/use-current';
+import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { Model, ModelId } from '../../lib/schema';
+import { Model, ModelId, UserId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -47,12 +48,14 @@ export default function Page({ modelId, modelData }: Props) {
     const model = useCurrent(webApi, 'model', modelId, modelData);
 
     const updateModelProperty = useCallback(
-        (key: string, value: string) => {
+        <K extends keyof Model>(key: K, value: Model[K]) => {
             const newModel: Model = { ...model, [key]: value };
             webApi?.models.update([[modelId, newModel]]).catch((e) => console.error(e));
         },
         [webApi, modelId, model]
     );
+
+    const { userData } = useUsers();
 
     return (
         <>
@@ -91,11 +94,42 @@ export default function Page({ modelId, modelData }: Props) {
                                 <p className="m-0">
                                     by{' '}
                                     <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
-                                        {asArray(model.author).map((userId) => (
-                                            <React.Fragment key={userId}>
-                                                <Link href={`/users/${userId}`}>{userId}</Link>
-                                            </React.Fragment>
-                                        ))}
+                                        {asArray(model.author).map((userId, userIndex) => {
+                                            if (editMode) {
+                                                return (
+                                                    <select
+                                                        key={userId}
+                                                        value={userId}
+                                                        onChange={(event) => {
+                                                            const content = event.target.value as UserId;
+                                                            if (Array.isArray(model.author)) {
+                                                                const newAuthor = [...model.author];
+                                                                newAuthor[userIndex] = content;
+                                                                updateModelProperty('author', newAuthor);
+                                                            } else {
+                                                                updateModelProperty('author', content);
+                                                            }
+                                                        }}
+                                                    >
+                                                        {[...userData].map(([userId, user]) => (
+                                                            <option
+                                                                key={userId}
+                                                                value={userId}
+                                                            >
+                                                                {user.name}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                );
+                                            }
+                                            return (
+                                                <React.Fragment key={userId}>
+                                                    <Link href={`/users/${userId}`}>
+                                                        {userData.get(userId)?.name ?? `unknow user:${userId}`}
+                                                    </Link>
+                                                </React.Fragment>
+                                            );
+                                        })}
                                     </strong>
                                 </p>
                             </div>
