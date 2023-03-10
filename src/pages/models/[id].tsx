@@ -110,12 +110,12 @@ export default function Page({ modelId, modelData }: Props) {
                                                             }
                                                         }}
                                                     >
-                                                        {userIds.map((user) => (
+                                                        {[...userData].map(([userId, user]) => (
                                                             <option
-                                                                key={user}
-                                                                value={user}
+                                                                key={userId}
+                                                                value={userId}
                                                             >
-                                                                {user}
+                                                                {user.name}
                                                             </option>
                                                         ))}
                                                     </select>
