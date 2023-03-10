@@ -4,6 +4,7 @@ import React, { useMemo, useState } from 'react';
 import { ModelCard } from '../elements/components/model-card';
 import { SearchBar } from '../elements/components/searchbar';
 import { PageContainer } from '../elements/page';
+import { useTags } from '../lib/hooks/use-tags';
 import { Model, ModelId, TagId } from '../lib/schema';
 import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
@@ -46,7 +47,7 @@ export default function Page({ modelData }: Props) {
     }, [modelData]);
     const modelCount = searchIndex.entries.size;
 
-    const allTags = useMemo(() => new Set<string>(Object.values(modelData).flatMap((m) => m.tags)), [modelData]);
+    const allTags = useMemo(() => [...new Set(Object.values(modelData).flatMap((m) => m.tags))], [modelData]);
     const [selectedTag, setSelectedTag] = useState<TagId>();
     const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -60,6 +61,8 @@ export default function Page({ modelData }: Props) {
             .sort((a, b) => b.score - a.score);
         return searchResults.map((r) => r.id);
     }, [selectedTag, searchQuery, searchIndex]);
+
+    const { tagData } = useTags();
 
     return (
         <>
@@ -92,7 +95,8 @@ export default function Page({ modelData }: Props) {
                             </p>
 
                             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                                Currently listing <a className="font-bold text-accent-500">{modelCount}</a> models.
+                                Currently listing <span className="font-bold text-accent-500">{modelCount}</span>{' '}
+                                models.
                             </p>
 
                             {/* Search */}
@@ -105,31 +109,31 @@ export default function Page({ modelData }: Props) {
                             <div className="mb-2 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
                                 <div
                                     className={joinClasses(
-                                        'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
+                                        'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
                                         !selectedTag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
                                     )}
                                     onClick={() => setSelectedTag(undefined)}
                                 >
                                     All
                                 </div>
-                                {Array.from(allTags).map((tag) => (
+                                {allTags.map((tag) => (
                                     <div
                                         className={joinClasses(
-                                            'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium uppercase text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
+                                            'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
                                             selectedTag == tag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
                                         )}
                                         key={tag}
-                                        onClick={() => setSelectedTag(selectedTag == tag ? undefined : (tag as TagId))}
+                                        onClick={() => setSelectedTag(selectedTag == tag ? undefined : tag)}
                                     >
-                                        {tag}
+                                        {tagData.get(tag)?.name ?? `unknown tag:${tag}`}
                                     </div>
                                 ))}
                             </div>
                             {/* Model Cards */}
                             {availableModels.length > 0 ? (
-                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                                     {availableModels.map((id) => {
-                                        const { architecture, author, scale, description, tags } = modelData[id];
+                                        const { name, architecture, author, scale, description, tags } = modelData[id];
 
                                         const actualDescription = fixDescription(description, scale);
 
@@ -140,6 +144,7 @@ export default function Page({ modelData }: Props) {
                                                 description={actualDescription}
                                                 id={id}
                                                 key={id}
+                                                name={name}
                                                 scale={scale}
                                                 tags={tags}
                                             />
