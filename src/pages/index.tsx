@@ -11,7 +11,7 @@ import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
-import { asArray, compareTagId, fixDescription, joinClasses, typedEntries } from '../lib/util';
+import { asArray, compareTagId, joinClasses, typedEntries } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
@@ -144,20 +144,11 @@ export default function Page({ modelData }: Props) {
                             {availableModels.length > 0 ? (
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                                     {availableModels.map((id) => {
-                                        const { name, architecture, author, scale, description, tags } = modelData[id];
-
-                                        const actualDescription = fixDescription(description, scale);
-
                                         return (
                                             <ModelCard
-                                                architecture={architecture}
-                                                author={author}
-                                                description={actualDescription}
                                                 id={id}
                                                 key={id}
-                                                name={name}
-                                                scale={scale}
-                                                tags={tags}
+                                                model={modelData[id]}
                                             />
                                         );
                                     })}

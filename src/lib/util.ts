@@ -142,33 +142,3 @@ export function getColorMode(numberOfChannels: number) {
             return numberOfChannels;
     }
 }
-
-export const fixDescription = (description: string, scale: number) => {
-    const lines = description.split('\n');
-    const descLines: string[] = [];
-    let category = '',
-        purpose = '',
-        pretrained = '',
-        dataset = '';
-    lines.forEach((line) => {
-        if (line.startsWith('Category: ')) {
-            category = String(line).replace('Category: ', '');
-        } else if (line.startsWith('Purpose: ')) {
-            purpose = String(line).replace('Purpose: ', '');
-        } else if (line.startsWith('Pretrained: ')) {
-            pretrained = String(line).replace('Pretrained: ', '');
-        } else if (line.startsWith('Dataset: ')) {
-            dataset = String(line).replace('Dataset: ', '');
-        } else if (line !== '') {
-            descLines.push(line.trim());
-        }
-    });
-    const purposeSentence = category ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
-    const datasetSentence = dataset ? `Trained on ${dataset}.` : 'Unknown training dataset.';
-    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : 'Unknown pretrained model.';
-    const actualDescription =
-        descLines.length > 0
-            ? descLines.join('\n').trim()
-            : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
-    return actualDescription;
-};
