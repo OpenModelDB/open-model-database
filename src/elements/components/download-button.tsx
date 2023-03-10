@@ -19,6 +19,9 @@ const getHostFromUrl = (url: string) => {
         if (parsedUrl.hostname === 'drive.google.com') {
             return 'Google Drive';
         }
+        if (parsedUrl.hostname === '1drv.ms') {
+            return 'OneDrive';
+        }
         if (domainAndTld === 'mega.nz') {
             return 'Mega';
         }
@@ -28,10 +31,13 @@ const getHostFromUrl = (url: string) => {
         if (domainAndTld === 'icedrive.net') {
             return 'Icedrive';
         }
+        if (domainAndTld === 'dropbox.com') {
+            return 'Dropbox';
+        }
         return parsedUrl.hostname;
     } catch (e) {
         console.error(e);
-        return 'unknown';
+        return 'an unknown hoster';
     }
 };
 
