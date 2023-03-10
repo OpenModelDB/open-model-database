@@ -62,16 +62,18 @@ const modelKeyOrder = [
     'trainingBatchSize',
     'trainingHRSize',
     'trainingOTF',
-    // 'dataset',
+    'dataset',
     'datasetSize',
     'pretrainedModelG',
     'pretrainedModelD',
 ] as const satisfies readonly (keyof Model)[];
-type _valid = never;
+type IsNever<T extends never> = T;
+type MissingKeys = Exclude<keyof Model, (typeof modelKeyOrder)[number]>;
+type _valid = IsNever<MissingKeys>;
 
 async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void> {
     const file = getModelDataPath(id);
-    sortObjectKeys(model, modelKeyOrder);
+    sortObjectKeys<string | _valid>(model, modelKeyOrder);
     await writeFile(file, JSON.stringify(model, undefined, 4), 'utf-8');
 }
 
