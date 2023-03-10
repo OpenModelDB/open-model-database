@@ -8,6 +8,7 @@ import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useWebApi } from '../../lib/hooks/use-web-api';
+import { useUsers } from '../../lib/hooks/use-users';
 import { Model, ModelId, UserId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
