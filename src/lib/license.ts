@@ -6,7 +6,7 @@ export type LicensePermission = 'commercial-use' | 'modifications' | 'private-us
 export type LicenseConditions = 'include-copyright' | 'disclose-source' | 'same-license' | 'state-changes';
 export type LicenseLimitations = 'liability' | 'trademark-use' | 'warranty' | 'patent-use';
 
-interface LicenseProperties {
+export interface LicenseProperties {
     readonly name: string;
     readonly link?: string;
     readonly permissions: readonly LicensePermission[];
@@ -94,7 +94,7 @@ export function parseLicense(license: SPDXLicense | null | undefined): SPDXLicen
 
     const parts = license.split(/\s+OR\s+/i);
     return parts.map((id) => {
-        if (!/^[a-z0-9.\-]$/i.test(id)) {
+        if (!/^[a-z0-9.\-]+$/i.test(id)) {
             throw new Error(`"${id}" is not a valid SPDX license ID`);
         }
         return id as SPDXLicenseId;
