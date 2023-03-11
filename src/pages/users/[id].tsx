@@ -4,9 +4,9 @@ import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
 import { ModelCard } from '../../elements/components/model-card';
 import { PageContainer } from '../../elements/page';
+import { useModels } from '../../lib/hooks/use-models';
 import { Model, ModelId, User, UserId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
-import { typedEntries } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
     id: UserId;
@@ -17,7 +17,9 @@ interface Props {
     models: Record<ModelId, Model>;
 }
 
-export default function Page({ user, models }: Props) {
+export default function Page({ userId, user, models }: Props) {
+    const { modelData } = useModels(models);
+
     return (
         <>
             <Head>
@@ -45,15 +47,17 @@ export default function Page({ user, models }: Props) {
 
                             {/* Model Cards */}
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                {typedEntries(models).map(([id, model]) => {
-                                    return (
-                                        <ModelCard
-                                            id={id}
-                                            key={id}
-                                            model={model}
-                                        />
-                                    );
-                                })}
+                                {[...modelData]
+                                    .filter(([, model]) => hasAuthor(model, userId))
+                                    .map(([id, model]) => {
+                                        return (
+                                            <ModelCard
+                                                id={id}
+                                                key={id}
+                                                model={model}
+                                            />
+                                        );
+                                    })}
                             </div>
                         </div>
                     </div>
@@ -83,11 +87,11 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
         props: {
             userId,
             user,
-            models: Object.fromEntries(
-                [...models].filter(([, model]) => {
-                    return model.author === userId || (Array.isArray(model.author) && model.author.includes(userId));
-                })
-            ),
+            models: Object.fromEntries([...models].filter(([, model]) => hasAuthor(model, userId))),
         },
     };
 };
+
+function hasAuthor(model: Model, author: UserId): boolean {
+    return model.author === author || (Array.isArray(model.author) && model.author.includes(author));
+}

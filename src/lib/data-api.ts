@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { RWLock } from './lock';
 import { Model, ModelId, Tag, TagId, User, UserId } from './schema';
+import { noop } from './util';
 
 export interface DBApi {
     readonly models: CollectionApi<ModelId, Model>;
@@ -45,4 +46,33 @@ export class SynchronizedCollection<Id, Value> implements CollectionApi<Id, Valu
     changeId(from: Id, to: Id): Promise<void> {
         return this.lock.write(() => this.collection.changeId(from, to));
     }
+}
+
+export function notifyOnWrite<Id, Value>(
+    collection: CollectionApi<Id, Value>,
+    { before = noop, after = noop }: { before?: () => void | Promise<void>; after?: () => void | Promise<void> }
+): CollectionApi<Id, Value> {
+    return {
+        get(id: Id): Promise<Value> {
+            return collection.get(id);
+        },
+        getIds(): Promise<Id[]> {
+            return collection.getIds();
+        },
+        getAll(): Promise<Map<Id, Value>> {
+            return collection.getAll();
+        },
+        async update(updates: Iterable<readonly [Id, Value]>): Promise<void> {
+            await before();
+            return collection.update(updates).then(after);
+        },
+        async delete(ids: Iterable<Id>): Promise<void> {
+            await before();
+            return collection.delete(ids).then(after);
+        },
+        async changeId(from: Id, to: Id): Promise<void> {
+            await before();
+            return collection.changeId(from, to).then(after);
+        },
+    };
 }

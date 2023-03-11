@@ -1,12 +1,14 @@
+import { FSWatcher } from 'chokidar';
 import { readFile, readdir, rename, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
-import { CollectionApi, DBApi, SynchronizedCollection } from '../data-api';
+import { CollectionApi, DBApi, SynchronizedCollection, notifyOnWrite } from '../data-api';
 import { RWLock } from '../lock';
 import { Model, ModelId, Tag, TagId, User, UserId } from '../schema';
 import { compareTagId, hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
 import { JsonFile, fileExists } from './fs-util';
 
 const DATA_DIR = './data/';
+const MODEL_DIR = join(DATA_DIR, 'models');
 const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
 
@@ -24,11 +26,11 @@ const tagsFile = new JsonFile<Record<TagId, Tag>>(TAGS_JSON, {
 });
 
 function getModelDataPath(id: ModelId): string {
-    return join(DATA_DIR, 'models', `${id}.json`);
+    return join(MODEL_DIR, `${id}.json`);
 }
 
 async function getAllModelIds(): Promise<ModelId[]> {
-    const files = await readdir(join(DATA_DIR, 'models'));
+    const files = await readdir(MODEL_DIR);
     const ids = files.filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -'.json'.length) as ModelId);
     return ids;
 }
@@ -249,8 +251,28 @@ const tagApi: CollectionApi<TagId, Tag> = {
 };
 
 const fileLock = new RWLock();
-export const fileApi: DBApi = {
-    models: new SynchronizedCollection(modelApi, fileLock),
-    users: new SynchronizedCollection(userApi, fileLock),
-    tags: new SynchronizedCollection(tagApi, fileLock),
+let mutationCounter = 0;
+const addMutation = () => {
+    mutationCounter++;
 };
+const wrapCollection = <Id, Value>(collection: CollectionApi<Id, Value>): CollectionApi<Id, Value> => {
+    collection = new SynchronizedCollection(collection, fileLock);
+    collection = notifyOnWrite(collection, { after: addMutation });
+    return collection;
+};
+
+export const fileApi: DBApi = {
+    models: wrapCollection(modelApi),
+    users: wrapCollection(userApi),
+    tags: wrapCollection(tagApi),
+};
+
+export function getFileApiMutationCounter(): Promise<number> {
+    return fileLock.read(() => Promise.resolve(mutationCounter));
+}
+
+const watcher = new FSWatcher({ persistent: false, ignorePermissionErrors: true, usePolling: true });
+watcher.add(MODEL_DIR);
+watcher.on('add', addMutation);
+watcher.on('unlink', addMutation);
+watcher.on('change', addMutation);
