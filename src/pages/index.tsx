@@ -5,22 +5,25 @@ import { ModelCard } from '../elements/components/model-card';
 import { SearchBar } from '../elements/components/searchbar';
 import { PageContainer } from '../elements/page';
 import { deriveTags } from '../lib/derive-tags';
+import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { Model, ModelId, TagId } from '../lib/schema';
 import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
-import { asArray, compareTagId, joinClasses, typedEntries } from '../lib/util';
+import { asArray, compareTagId, joinClasses } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
 }
 
-export default function Page({ modelData }: Props) {
+export default function Page({ modelData: staticModelData }: Props) {
+    const { modelData } = useModels(staticModelData);
+
     const searchIndex = useMemo(() => {
         return new SearchIndex(
-            typedEntries(modelData).map(([id, model]): CorpusEntry<ModelId, TagId> => {
+            [...modelData].map(([id, model]): CorpusEntry<ModelId, TagId> => {
                 return {
                     id,
                     tags: new Set(deriveTags(model)),
@@ -51,7 +54,7 @@ export default function Page({ modelData }: Props) {
     const allTags = useMemo(
         () => [
             ...new Set(
-                Object.values(modelData)
+                [...modelData.values()]
                     .flatMap(deriveTags)
                     .filter((t) => !t.startsWith('by:'))
                     .sort(compareTagId)
@@ -148,7 +151,8 @@ export default function Page({ modelData }: Props) {
                                             <ModelCard
                                                 id={id}
                                                 key={id}
-                                                model={modelData[id]}
+                                                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                                model={modelData.get(id)!}
                                             />
                                         );
                                     })}
