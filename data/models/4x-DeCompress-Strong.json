@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG (works on many compression formats)\nPretrained: 4xESRGAN\n\nUSE 4x-UltraSharp INSTEAD - This is UniScaleV2, but intended for images with compression. Seems to work best on realistic images.",
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG (works on many compression formats)\n\nUSE 4x-UltraSharp INSTEAD - This is UniScaleV2, but intended for images with compression. Seems to work best on realistic images.",
     "date": "2021-09-07",
     "architecture": "ESRGAN",
     "size": [

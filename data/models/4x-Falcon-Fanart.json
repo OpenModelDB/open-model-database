@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 4xPSNR\n\n",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\n",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
                 "https://drive.google.com/file/d/1bqyG9llxkJ6i6MJTaNUiSgSXtrlPi0d7/view"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-PSNR"
 }

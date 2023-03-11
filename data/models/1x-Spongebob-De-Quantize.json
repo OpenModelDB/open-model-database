@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\nPretrained: 1x_1xDEDITHER_32_512_126900_G\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures",
     "date": "2019-11-02",
     "architecture": "ESRGAN",
     "size": [

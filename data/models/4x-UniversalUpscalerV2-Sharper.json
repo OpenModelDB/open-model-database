@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: General Upscaler\nPretrained: 1xESRGAN\n\nGeneral Upscaler",
+    "description": "Category: Universal Models\nPurpose: General Upscaler\n\nGeneral Upscaler",
     "date": "2021-04-01",
     "architecture": "ESRGAN",
     "size": [

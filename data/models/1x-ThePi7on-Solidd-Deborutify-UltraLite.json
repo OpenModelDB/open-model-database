@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Deblur\nPretrained: \n\nSharpening, line darkening and slight line thinning, specifically made for the Boruto anime.",
+    "description": "Category: Blurring\nPurpose: Deblur\n\nSharpening, line darkening and slight line thinning, specifically made for the Boruto anime.",
     "date": "2021-05-09",
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Blurring\nPretrained: \n\nStrong deblurring model",
+    "description": "Category: Blurring\nPurpose: Blurring\n\nStrong deblurring model",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

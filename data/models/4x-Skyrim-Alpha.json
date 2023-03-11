@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\nPretrained: Unknown\n\nDataset: Alpha Channels from Skyrim",
+    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -24,5 +24,6 @@
                 "https://drive.google.com/file/d/1trYs4AuC9s2JWAbryHdNyy5cgYV-V8cH/view"
             ]
         }
-    ]
+    ],
+    "dataset": "Alpha Channels from Skyrim"
 }

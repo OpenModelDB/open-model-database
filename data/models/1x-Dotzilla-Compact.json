@@ -8,7 +8,7 @@
         "cartoon",
         "restoration"
     ],
-    "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\nPretrained: 1x_Compact_Pretrain.pth\n\nWipes out dot crawl and rainbows in animation.",
+    "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\n\nWipes out dot crawl and rainbows in animation.",
     "date": "2022-12-09",
     "architecture": "Compact",
     "size": [

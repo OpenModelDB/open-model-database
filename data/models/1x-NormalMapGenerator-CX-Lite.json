@@ -6,7 +6,7 @@
         "image",
         "game-texture-maps"
     ],
-    "description": "Category: Normal Map/Bump Map Generation\nPurpose: Map Generation - normal maps\nPretrained: 1x_DIV2K-Lite_450k.pth\n\nGenerating normal maps from textures",
+    "description": "Category: Normal Map/Bump Map Generation\nPurpose: Map Generation - normal maps\n\nGenerating normal maps from textures",
     "date": "2020-11-04",
     "architecture": "ESRGAN",
     "size": [

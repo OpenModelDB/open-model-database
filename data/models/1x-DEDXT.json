@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: DXT compression\nPretrained: \n\nTo retain details while removing artifacts caused by dxt compression on textures",
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: DXT compression\n\nTo retain details while removing artifacts caused by dxt compression on textures",
     "date": "2022-02-26",
     "architecture": "ESRGAN",
     "size": [

@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\nPretrained: 8xESRGAN\n\nUpscales blurry 128px faces, usefull for enhancing that someone in a small picture.",
+    "description": "Category: Faces\nPurpose: Faces\n\nUpscales blurry 128px faces, usefull for enhancing that someone in a small picture.",
     "date": "2019-11-27",
     "architecture": "ESRGAN",
     "size": [

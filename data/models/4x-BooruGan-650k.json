@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 4x_Manga109Attempt\n\nThis model is designed to mainly upscale anime artworks. If you have issues with chroma then try the 600k iterations release.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nThis model is designed to mainly upscale anime artworks. If you have issues with chroma then try the 600k iterations release.",
     "date": "2021-11-26",
     "architecture": "ESRGAN",
     "size": [

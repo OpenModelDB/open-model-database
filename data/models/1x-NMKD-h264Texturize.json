@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Video Compression\nPurpose: Texturizing\nPretrained: 4x ESRGAN\n\nTries to reverse heavy h264 compression. Fails. Can be used to texturize images though.",
+    "description": "Category: Video Compression\nPurpose: Texturizing\n\nTries to reverse heavy h264 compression. Fails. Can be used to texturize images though.",
     "date": "2020-10-20",
     "architecture": "ESRGAN",
     "size": [

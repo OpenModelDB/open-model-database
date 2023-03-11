@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Art/Anime\nPretrained: 4xESRGAN\n\nHighly flexible 2D Art upscaling",
+    "description": "Category: Anime and Cartoons\nPurpose: Art/Anime\n\nHighly flexible 2D Art upscaling",
     "date": "2020-10-08",
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
                 "https://icedrive.net/1/43GNBihZyi"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-ESRGAN"
 }

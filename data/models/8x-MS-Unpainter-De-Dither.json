@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: A mix of: 8x_glasshopper_ArzenalV1.1, 8x_glasshopper_MS-Unpainter, 8x_NMKD-Sphax + Sphax de-dither, and 8x_NMKD-YanderePixelArt4 + Yandere De-Dither, all interpolated with adjustments using the interpolate function in Cupscale\n\nLow-resolution MS Paint drawings, general pixel art, and general dithered pixel art, all kinds of pixel art",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nLow-resolution MS Paint drawings, general pixel art, and general dithered pixel art, all kinds of pixel art",
     "date": "2021-03-24",
     "architecture": "ESRGAN",
     "size": null,

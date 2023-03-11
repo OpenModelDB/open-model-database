@@ -6,7 +6,7 @@
         "image",
         "dehalo"
     ],
-    "description": "Category: Halo Removal\nPurpose: Halo remover\nPretrained: 1xESRGAN\n\n",
+    "description": "Category: Halo Removal\nPurpose: Halo remover\n\n",
     "date": "2020-11-03",
     "architecture": "ESRGAN",
     "size": [

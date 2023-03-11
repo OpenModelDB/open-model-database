@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: RRDB_PSNR_x4.pth\n\nThis model was made for my project captain tsubasa anime so i don't know if it works good for anything else. just try it ;)",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nThis model was made for my project captain tsubasa anime so i don't know if it works good for anything else. just try it ;)",
     "date": "2020-09-01",
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "manga"
     ],
-    "description": "Category: Manga\nPurpose: Manga\nPretrained: 4xPSNR\n\nBlack and white digital manga with halftones.",
+    "description": "Category: Manga\nPurpose: Manga\n\nBlack and white digital manga with halftones.",
     "date": "2022-01-26",
     "architecture": "ESRGAN",
     "size": [

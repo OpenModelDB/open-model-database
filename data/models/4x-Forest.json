@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: none\n\nWood / Leaves",
+    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nWood / Leaves",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

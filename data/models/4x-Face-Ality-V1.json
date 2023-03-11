@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\nPretrained: 4x_Faces_04_N_180000_G.pth\n\nDataset: Custom (Faces)",
+    "description": "",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

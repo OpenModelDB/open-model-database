@@ -6,7 +6,7 @@
         "image",
         "text"
     ],
-    "description": "Category: Text\nPurpose: Text\nPretrained: 2x_ESRGAN\n\nAs the name might suggest, this model aims to upscale text with less distortion that other models. It seems to do a good job generally, but don't expect it to be a state of the art model that can upscale magazines and stuff. It makes things more readable but since it was train on B/W pictures it desaturates them.",
+    "description": "Category: Text\nPurpose: Text\n\nAs the name might suggest, this model aims to upscale text with less distortion that other models. It seems to do a good job generally, but don't expect it to be a state of the art model that can upscale magazines and stuff. It makes things more readable but since it was train on B/W pictures it desaturates them.",
     "date": "2020-03-04",
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Category: Noise\nPurpose: Noise remover\nPretrained: 1xESRGAN\n\n",
+    "description": "Category: Noise\nPurpose: Noise remover\n\n",
     "date": "2020-10-14",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://drive.google.com/drive/u/1/folders/12j6BvuR7SU48ui9DHjBPB1vzPpQri9bD"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "1x-ESRGAN"
 }

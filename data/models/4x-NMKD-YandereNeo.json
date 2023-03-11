@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 4x_DIV2K-Lite_1M\n\n",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime",
     "date": "2021-01-26",
     "architecture": "ESRGAN",
     "size": [

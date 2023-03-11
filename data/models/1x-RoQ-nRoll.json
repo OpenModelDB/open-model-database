@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Video Compression\nPurpose: Compression\nPretrained: none\n\nThis model decompresses images and video compressed using RoQ. Config and presets will be added when Mega decides to let me use their site!",
+    "description": "Category: Video Compression\nPurpose: Compression\n\nThis model decompresses images and video compressed using RoQ. Config and presets will be added when Mega decides to let me use their site!",
     "date": "2021-11-21",
     "architecture": "ESRGAN",
     "size": [

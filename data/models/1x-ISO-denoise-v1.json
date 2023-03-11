@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Category: Noise\nPurpose: denoise\nPretrained: 1xESRGAN\n\nRemove high ISO noise",
+    "description": "Category: Noise\nPurpose: denoise\n\nRemove high ISO noise",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://drive.google.com/file/d/1f5kIr3gG5GjbN_EM96CCB0nqu_2_56gh/view"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "1x-ESRGAN"
 }

@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Video Compression\nPurpose: Indeo Compression Artifacts\nPretrained: 4xESRGAN\n\nDataset: Custom",
+    "description": "Category: Video Compression\nPurpose: Indeo Compression Artifacts",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -30,6 +30,6 @@
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "trainingOTF": false,
-    "dataset": "own custom  dataset",
+    "dataset": "own custom dataset",
     "pretrainedModelG": "4x-ESRGAN"
 }

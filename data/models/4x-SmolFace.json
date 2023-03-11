@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Art/People\nPretrained: 4x_NMKD-UltraYandere_300k\n\nA sharp upscaler trained specifically for small sprite faces. Does not blend, so avoid using on painted/photo portraits unless you were trying to retain more of the outlines somehow.",
+    "description": "Category: Faces\nPurpose: Art/People\n\nA sharp upscaler trained specifically for small sprite faces. Does not blend, so avoid using on painted/photo portraits unless you were trying to retain more of the outlines somehow.",
     "date": "2022-08-19",
     "architecture": "ESRGAN",
     "size": [

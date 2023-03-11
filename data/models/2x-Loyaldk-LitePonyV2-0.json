@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: none\n\nUpscale MLP episodes. Liter version. Able to handle compression better compared to V1.0 and no longer creates halo's/rainbows. Good for Vector 2D art however converts detail to blobs.",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale MLP episodes. Liter version. Able to handle compression better compared to V1.0 and no longer creates halo's/rainbows. Good for Vector 2D art however converts detail to blobs.",
     "date": "2021-04-06",
     "architecture": "ESRGAN",
     "size": [

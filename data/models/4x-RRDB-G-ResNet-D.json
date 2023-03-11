@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Pretrained Discriminators\nPurpose: Pretrained\nPretrained: RRDB_ESRGAN_x4_old_arch.pth\n\nClean bicubic downscales / Pretrained models (G/D)",
+    "description": "Category: Pretrained Discriminators\nPurpose: Pretrained\n\nClean bicubic downscales / Pretrained models (G/D)",
     "date": "2021-01-17",
     "architecture": "ESRGAN",
     "size": [

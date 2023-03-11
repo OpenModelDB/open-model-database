@@ -6,7 +6,7 @@
         "image",
         "inpainting"
     ],
-    "description": "Category: Inpainting\nPurpose: Inpainting\nPretrained: None\n\n",
+    "description": "Category: Inpainting\nPurpose: Inpainting\n\n",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

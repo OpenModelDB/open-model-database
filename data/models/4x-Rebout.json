@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Detoon\n\nFor upscaling character sprites",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\n\nFor upscaling character sprites",
     "date": "2019-08-04",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://drive.google.com/u/1/uc?id=1WXJQzqVGTKaX_8_Ma1hJ45W5nUkZBGFu&export=download"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-detoon"
 }

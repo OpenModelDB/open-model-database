@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: JPG (0-20%)\n\nDithered Images",
+    "description": "Category: Dithering\nPurpose: Dithering\n\nDithered Images",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
                 "https://mega.nz/file/IsABVIJb#ljH6JDvFahi6KLWpaeQ_G9DOSQlvhwjbitlPBbSHcuo"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "1x-JPG-00-20-alsa"
 }

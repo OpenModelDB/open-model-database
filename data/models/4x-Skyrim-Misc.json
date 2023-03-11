@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: ?\n\nSkyrim Diffuse Textures",
+    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nSkyrim Diffuse Textures",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Category: Noise\nPurpose: Denoise\nPretrained: RRDB_ESRGAN_x4.pth\n\nRemove noise, grain, box blur, lens blur and gaussian blur and increase overall image quality.",
+    "description": "Category: Noise\nPurpose: Denoise\n\nRemove noise, grain, box blur, lens blur and gaussian blur and increase overall image quality.",
     "date": "2019-11-13",
     "architecture": "ESRGAN",
     "size": [

@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: CGI\nPurpose: CGI\nPretrained: Manga109v2.pth\n\nUpscaling CG-painted anime with variable outlines.",
+    "description": "Category: CGI\nPurpose: CGI\n\nUpscaling CG-painted anime with variable outlines.",
     "date": "2019-07-12",
     "architecture": "ESRGAN",
     "size": [

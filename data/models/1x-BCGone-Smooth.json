@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\nPretrained: 1xESRGAN\n\nAttempts to remove the damages done by BC1 compression.",
+    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\n\nAttempts to remove the damages done by BC1 compression.",
     "date": "2020-08-02",
     "architecture": "ESRGAN",
     "size": [

@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\nPretrained: 4x_Faces_N_250000.pth\n\nUpscale faces both pixelized and real",
+    "description": "Category: Faces\nPurpose: Faces\n\nUpscale faces both pixelized and real",
     "date": "2019-07-23",
     "architecture": "ESRGAN",
     "size": [

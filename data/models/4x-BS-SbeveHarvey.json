@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\nPretrained: 4xESRGAN\n\nUpscale Steve Harvey, but maybe other things, somehow??",
+    "description": "Category: Faces\nPurpose: Faces\n\nUpscale Steve Harvey, but maybe other things, somehow??",
     "date": "2020-07-24",
     "architecture": "ESRGAN",
     "size": [

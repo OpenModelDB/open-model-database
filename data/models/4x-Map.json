@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: none\n\nMap / Old Paper with text",
+    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nMap / Old Paper with text",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

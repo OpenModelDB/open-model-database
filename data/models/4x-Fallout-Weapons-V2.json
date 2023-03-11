@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: Fallout 4 Weapons\n\nVideo game textures, mostly metal rusty, clean or painted",
+    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nVideo game textures, mostly metal rusty, clean or painted",
     "date": "2019-08-23",
     "architecture": "ESRGAN",
     "size": [

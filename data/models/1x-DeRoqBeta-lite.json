@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Video Compression\nPurpose: Compression\nPretrained: \n\nIncomplete lite model to remove ROQ compression",
+    "description": "Category: Video Compression\nPurpose: Compression\n\nIncomplete lite model to remove ROQ compression",
     "date": "2022-07-26",
     "architecture": "ESRGAN",
     "size": [

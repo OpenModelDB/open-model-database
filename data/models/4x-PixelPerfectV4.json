@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: 4xESRGAN\n\nSprite Upscaler",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\n\nSprite Upscaler",
     "date": "2020-11-16",
     "architecture": "ESRGAN",
     "size": [

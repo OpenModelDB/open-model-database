@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Art\nPretrained: 4x_UltraFArt\n\nIllustrations with with larger shaped features (?).",
+    "description": "Category: Art/Pixel Art\nPurpose: Art\n\nIllustrations with with larger shaped features (?).",
     "date": "2021-05-14",
     "architecture": "ESRGAN",
     "size": [

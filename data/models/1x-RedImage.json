@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: CGI\nPurpose: Correct old color photos that are tinted red\nPretrained: 1xESRGAN\n\nCorrect old color photos that are tinted red. Model only tested in nature.",
+    "description": "Category: CGI\nPurpose: Correct old color photos that are tinted red\n\nCorrect old color photos that are tinted red. Model only tested in nature.",
     "date": "2022-08-04",
     "architecture": "ESRGAN",
     "size": [
@@ -24,5 +24,6 @@
                 "https://drive.google.com/drive/folders/1m7fO9ywNNRc2FZBKycJiC556rBJpbGoH"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "1x-ESRGAN"
 }

@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: \n\n",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\n",
     "date": "2021-01-26",
     "architecture": "ESRGAN",
     "size": [

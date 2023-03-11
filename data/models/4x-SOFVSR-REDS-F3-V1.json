@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\nPretrained: none\n\nupscale IRL videos. Use not recommended by creator",
+    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nupscale IRL videos. Use not recommended by creator",
     "date": "2021-02-26",
     "architecture": "SOFVSR",
     "size": null,

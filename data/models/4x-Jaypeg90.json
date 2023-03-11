@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\nPretrained: 4xESRGAN\n\nPhotos/realistic 3D with JPEG compression, quality 85-95 and 4:2:0 chroma subsampling. - Created for Myst3 images, since all have 4:2:0 chroma subsampling and existing JPEG models did not give good results. Favors smoothing over over-sharpening.",
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\n\nPhotos/realistic 3D with JPEG compression, quality 85-95 and 4:2:0 chroma subsampling. - Created for Myst3 images, since all have 4:2:0 chroma subsampling and existing JPEG models did not give good results. Favors smoothing over over-sharpening.",
     "date": "2020-07-20",
     "architecture": "ESRGAN",
     "size": [

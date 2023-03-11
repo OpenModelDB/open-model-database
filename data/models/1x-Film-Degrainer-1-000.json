@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Category: Noise\nPurpose: denoise\nPretrained: none\n\nRemove film grain/noise",
+    "description": "Category: Noise\nPurpose: denoise\n\nRemove film grain/noise",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
