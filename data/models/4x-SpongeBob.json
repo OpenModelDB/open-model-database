@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 4xESRGAN\n\n",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\n",
     "date": "2019-09-12",
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
                 "https://drive.google.com/file/d/1dT7Pw0iwPkQC4-rWriibrVLuA3KS3pS4/view"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-ESRGAN"
 }

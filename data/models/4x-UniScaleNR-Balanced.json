@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: Universal Upscaler\nPretrained: 4xESRGAN\n\nVersion of UniScale trained with camera noise injection (NR = Noise Removal). This model removes noise from images while upscaling.",
+    "description": "Category: Universal Models\nPurpose: Universal Upscaler\n\nVersion of UniScale trained with camera noise injection (NR = Noise Removal). This model removes noise from images while upscaling.",
     "date": "2021-08-23",
     "architecture": "ESRGAN",
     "size": [

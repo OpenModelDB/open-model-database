@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Foliage/Ground\nPurpose: bad upscale\nPretrained: 1x_NMKD-h264Texturize_500k.pth\n\nImages of plants, trees or other foliage upscaled with Photoshop Preserve Details 2.0. Sharpens and \"subdivides\" details and noise so it doesn't look upscaled.",
+    "description": "Category: Foliage/Ground\nPurpose: bad upscale\n\nImages of plants, trees or other foliage upscaled with Photoshop Preserve Details 2.0. Sharpens and \"subdivides\" details and noise so it doesn't look upscaled.",
     "date": "2021-06-23",
     "architecture": "ESRGAN",
     "size": [

@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Video Compression\nPurpose: Compression\nPretrained: none\n\nRemoval of Compression such as Cinepak, msvideo1 and Roq",
+    "description": "Category: Video Compression\nPurpose: Compression\n\nRemoval of Compression such as Cinepak, msvideo1 and Roq",
     "date": "2019-07-03",
     "architecture": "ESRGAN",
     "size": [

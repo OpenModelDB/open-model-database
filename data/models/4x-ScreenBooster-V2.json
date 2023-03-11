@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Game Screenshots\nPurpose: CGI\nPretrained: none\n\nGame Screenshots",
+    "description": "Category: Game Screenshots\nPurpose: CGI\n\nGame Screenshots",
     "date": "2020-01-29",
     "architecture": "ESRGAN",
     "size": [

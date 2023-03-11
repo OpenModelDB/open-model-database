@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\nPretrained: \n\nnone",
+    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nnone",
     "date": "2020-12-03",
     "architecture": "SOFVSR",
     "size": [

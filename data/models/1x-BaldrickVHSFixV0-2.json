@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: VHS Tapes\nPurpose: VHS\nPretrained: 1xESRGAN\n\nFixing minor VHS Chroma and Pattern Noise - NOTE: only works on deinterlaced sources",
+    "description": "Category: VHS Tapes\nPurpose: VHS\n\nFixing minor VHS Chroma and Pattern Noise - NOTE: only works on deinterlaced sources",
     "date": "2021-03-03",
     "architecture": "ESRGAN",
     "size": [

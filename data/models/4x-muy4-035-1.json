@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: \n\nUpscaling of anime art (Specifically visual novel CG art)",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscaling of anime art (Specifically visual novel CG art)",
     "date": "2021-07-18",
     "architecture": "ESRGAN",
     "size": null,

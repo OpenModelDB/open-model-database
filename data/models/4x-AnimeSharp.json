@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\nPretrained: \n\nInterpolation between 4x-UltraSharp and 4x-TextSharp-v0.5. Works amazingly on anime. It also upscales text, but it's far better with anime content. I rebranded this model on 2/10/22 to 4x-AnimeSharp from 4x-TextSharpV1.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nInterpolation between 4x-UltraSharp and 4x-TextSharp-v0.5. Works amazingly on anime. It also upscales text, but it's far better with anime content. I rebranded this model on 2/10/22 to 4x-AnimeSharp from 4x-TextSharpV1.",
     "date": "2021-12-28",
     "architecture": "ESRGAN",
     "size": [

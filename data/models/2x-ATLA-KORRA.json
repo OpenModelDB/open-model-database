@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2xESRGAN.pth\n\nUpscaling of Animation based on The Legend of Korra.",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation.pth\n\nUpscaling of Animation based on The Legend of Korra.",
     "date": "2021-07-22",
     "architecture": "ESRGAN",
     "size": [

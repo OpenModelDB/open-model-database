@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: 2xESRGAN\n\nMade this model to upscale old anime that looks blurry.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nMade this model to upscale old anime that looks blurry.",
     "date": "2020-08-29",
     "architecture": "ESRGAN",
     "size": [

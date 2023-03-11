@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: 1x_DeJpeg_Fatality_01_200000_G.pth\n\n",
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\n",
     "date": "2019-10-29",
     "architecture": "ESRGAN",
     "size": [

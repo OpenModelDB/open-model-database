@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Pixel Art\nPretrained: none\n\nA \"lite\" model version of my Faithful model",
+    "description": "Category: Video Game Textures\nPurpose: Pixel Art\n\nA \"lite\" model version of my Faithful model",
     "date": "2020-10-12",
     "architecture": "ESRGAN",
     "size": [

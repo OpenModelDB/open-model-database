@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: 1x_DeJpeg_Fatality_PlusULTRA_200000_G.pth\n\nDataset: Anime, real life, manga, generated",
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\n",
     "date": "2019-10-29",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,7 @@
                 "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Saiyajin_DeJPEG_300000_G.pth"
             ]
         }
-    ]
+    ],
+    "dataset": "Anime, real life, manga, generated",
+    "pretrainedModelG": "1x-DeJpeg-Fatality-PlusULTRA"
 }

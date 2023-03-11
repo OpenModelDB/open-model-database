@@ -44,8 +44,36 @@ function getModelData(ids: readonly ModelId[]): Promise<Model[]> {
 
 // mutation
 
+const modelKeyOrder = [
+    'name',
+    'author',
+    'license',
+    'tags',
+    'description',
+    'date',
+    'architecture',
+    'size',
+    'scale',
+    'inputChannels',
+    'outputChannels',
+    'resources',
+    'trainingIterations',
+    'trainingEpochs',
+    'trainingBatchSize',
+    'trainingHRSize',
+    'trainingOTF',
+    'dataset',
+    'datasetSize',
+    'pretrainedModelG',
+    'pretrainedModelD',
+] as const satisfies readonly (keyof Model)[];
+type IsNever<T extends never> = T;
+type MissingKeys = Exclude<keyof Model, (typeof modelKeyOrder)[number]>;
+type _valid = IsNever<MissingKeys>;
+
 async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void> {
     const file = getModelDataPath(id);
+    sortObjectKeys<string | _valid>(model, modelKeyOrder);
     await writeFile(file, JSON.stringify(model, undefined, 4), 'utf-8');
 }
 

@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: 1xESRGAN\n\nAttempts to remove the damages done by dithering. For this model, I downscaled all of the HR images to make their pixel size closer to 1000x1000 using the Box filter and then downscaled them again by 50% using the Point filter. Afterwards, I applied 32-bit Riemersma to every image in the dataset.",
+    "description": "Category: Dithering\nPurpose: Dithering\n\nAttempts to remove the damages done by dithering. For this model, I downscaled all of the HR images to make their pixel size closer to 1000x1000 using the Box filter and then downscaled them again by 50% using the Point filter. Afterwards, I applied 32-bit Riemersma to every image in the dataset.",
     "date": "2021-04-18",
     "architecture": "ESRGAN",
     "size": [

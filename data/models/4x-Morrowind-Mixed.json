@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: 4xESRGAN\n\nMorrowind Mod Textures",
+    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nMorrowind Mod Textures",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://mega.nz/folder/tFhl0L5b#CK4WLHYxjX7KFXU1PLNDuQ"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-ESRGAN"
 }

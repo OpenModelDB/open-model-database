@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: \nPretrained: none\n\nEmulating Waifu2x at Noise Level 3 NOTE: You can't use this with regular esrgan forks or the bot, it has to be run through basicsr",
+    "description": "Category: Anime and Cartoons\nPurpose: \n\nEmulating Waifu2x at Noise Level 3 NOTE: You can't use this with regular esrgan forks or the bot, it has to be run through basicsr",
     "date": "2021-02-25",
     "architecture": "EDSR (SRResNet)",
     "size": null,

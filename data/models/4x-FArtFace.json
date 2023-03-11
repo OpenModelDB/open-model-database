@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\nPretrained: \n\n",
+    "description": "Category: Faces\nPurpose: Faces\n\n",
     "date": "2019-11-28",
     "architecture": "ESRGAN",
     "size": [

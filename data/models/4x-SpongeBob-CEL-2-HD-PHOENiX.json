@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: RRDB_PSNR_x4.pth\n\nRestorative CEL Animation MPEG-1 and 2 Model specifically crafted for SpongeBob S01.",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nRestorative CEL Animation MPEG-1 and 2 Model specifically crafted for SpongeBob S01.",
     "date": "2019-12-24",
     "architecture": "ESRGAN",
     "size": [

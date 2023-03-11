@@ -5,7 +5,7 @@
     "tags": [
         "video"
     ],
-    "description": "Category: Pretrained SOFVSR Models\nPurpose: RL videos - interpolation\nPretrained: \n\n",
+    "description": "Category: Pretrained SOFVSR Models\nPurpose: RL videos - interpolation\n\n",
     "date": "2021-07-13",
     "architecture": "CAIN",
     "size": null,

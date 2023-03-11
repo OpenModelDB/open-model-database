@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: CGI\nPurpose: CGI Animation\nPretrained: 2xESRGAN\n\nPixar Movies or Wall-E pictures/frames",
+    "description": "Category: CGI\nPurpose: CGI Animation\n\nPixar Movies or Wall-E pictures/frames",
     "date": "2020-02-07",
     "architecture": "ESRGAN",
     "size": [

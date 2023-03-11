@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: Fatality_MKII_90k\n\nDataset: Anime, Manga",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,7 @@
                 "https://de-next.owncube.com/index.php/s/KRa4bDzZpAGgyWr"
             ]
         }
-    ]
+    ],
+    "dataset": "Anime, Manga",
+    "pretrainedModelG": "4x-Fatality-MK2"
 }

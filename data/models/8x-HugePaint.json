@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Digital Illustrations\nPretrained: HugePeeps\n\nTrained on a variety of images from ArtStation",
+    "description": "Category: Art/Pixel Art\nPurpose: Digital Illustrations\n\nTrained on a variety of images from ArtStation",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://1drv.ms/u/s!Aip-EMByJHY26wU-wOqApp7Hu7tt?e=4ihnBr"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "8x-HugePeeps-v1"
 }

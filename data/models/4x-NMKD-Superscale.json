@@ -6,7 +6,7 @@
         "image",
         "photo"
     ],
-    "description": "Category: Realistic Photos\nPurpose: Clean Real-World Images\nPretrained: 4xESRGAN\n\nUpscaling of realistic images/photos with noise and compression artifacts",
+    "description": "Category: Realistic Photos\nPurpose: Clean Real-World Images\n\nUpscaling of realistic images/photos with noise and compression artifacts",
     "date": "2020-07-22",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://icedrive.net/1/43GNBihZyi"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "4x-ESRGAN"
 }

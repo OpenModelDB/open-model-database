@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art\nPretrained: 4xSpongeBob\n\n",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art\n\n",
     "date": "2020-12-11",
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Paintings\nPretrained: WaifuGAN_v3_30000.pth\n\nUpscale pixel art/paintings to digital painting style",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Paintings\n\nUpscale pixel art/paintings to digital painting style",
     "date": "2019-07-25",
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
             ]
         }
     ],
-    "trainingIterations": 208000
+    "trainingIterations": 208000,
+    "pretrainedModelG": "4x-WaifuGAN-v3"
 }

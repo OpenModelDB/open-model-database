@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: \n\nAmerican Dad",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nAmerican Dad",
     "date": null,
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\nPretrained: 1xESRGAN\n\n1xESRGAN",
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\n\n1xESRGAN",
     "date": "2020-10-13",
     "architecture": "ESRGAN",
     "size": [

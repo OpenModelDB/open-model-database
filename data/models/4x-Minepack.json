@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\nPretrained: 4xESRGAN.pth\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
+    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png.pth\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
     "date": "2020-01-26",
     "architecture": "ESRGAN",
     "size": [

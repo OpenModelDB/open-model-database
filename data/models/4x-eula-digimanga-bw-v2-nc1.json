@@ -6,7 +6,7 @@
         "image",
         "manga"
     ],
-    "description": "Category: Manga\nPurpose: Manga\nPretrained: 4x_eula_digimanga_bw_v1_860k\n\nVast improvement over v1 in low frequency detail; moiré and artifacting reduced significantly and less random noise from JPEG artefacts in the input. Also now only works on 1 channel images, so it runs slightly faster on average and resulting images are much smaller but it might not work on some ESRGAN implementations, I personally recommend using chaiNNer. v1 may still be better in some edge cases.\n\nThere's also a supplementary 1x model that denoises very low quality LRs and smooths halftones so the image works better with the 4x model. Only trained it to help build the dataset and it's useless for already decent-ish LRs but may help you in some situations.",
+    "description": "Category: Manga\nPurpose: Manga\n\nVast improvement over v1 in low frequency detail; moiré and artifacting reduced significantly and less random noise from JPEG artefacts in the input. Also now only works on 1 channel images, so it runs slightly faster on average and resulting images are much smaller but it might not work on some ESRGAN implementations, I personally recommend using chaiNNer. v1 may still be better in some edge cases.\n\nThere's also a supplementary 1x model that denoises very low quality LRs and smooths halftones so the image works better with the 4x model. Only trained it to help build the dataset and it's useless for already decent-ish LRs but may help you in some situations.",
     "date": "2022-08-17",
     "architecture": "ESRGAN",
     "size": [

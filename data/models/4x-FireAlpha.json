@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Alphas\nPurpose: Alpha (4 channel)\nPretrained: none\n\n",
+    "description": "Category: Alphas\nPurpose: Alpha (4 channel)\n\n",
     "date": "2019-11-12",
     "architecture": "ESRGAN",
     "size": [

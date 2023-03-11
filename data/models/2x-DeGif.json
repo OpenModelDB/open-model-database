@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: GIF\nPurpose: GIF Restoration\nPretrained: 2xESRGAN\n\nGIF Restoration",
+    "description": "Category: GIF\nPurpose: GIF Restoration\n\nGIF Restoration",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://icedrive.net/1/43GNBihZyi"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "2x-ESRGAN"
 }

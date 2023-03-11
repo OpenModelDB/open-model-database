@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\nPretrained: 2xESRGAN\n\nAnime landscape upscale. Trained on Frames from BluRay of Byousoku 5 Centimeter",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\n\nAnime landscape upscale. Trained on Frames from BluRay of Byousoku 5 Centimeter",
     "date": "2020-04-08",
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,6 @@
                 "https://drive.google.com/file/d/1FWzEgqaSg2z0qOSjcmAxEUB3clEkm1PG/view"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "2x-ESRGAN"
 }

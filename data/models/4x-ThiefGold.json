@@ -6,7 +6,7 @@
         "image",
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\nPretrained: RRDB_ESRGAN_x4\n\nVarious game textures. Primary wood, metal, stone",
+    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nVarious game textures. Primary wood, metal, stone",
     "date": "2020-05-15",
     "architecture": "ESRGAN",
     "size": [

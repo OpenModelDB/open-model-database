@@ -6,7 +6,7 @@
         "image",
         "anti-aliasing"
     ],
-    "description": "Category: Aliasing\nPurpose: Anti aliasing\nPretrained: none (no interpolation)\n\nDataset: Custom (9x Supersampling AA)",
+    "description": "Category: Aliasing\nPurpose: Anti aliasing",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -30,6 +30,6 @@
     "trainingEpochs": 367,
     "trainingBatchSize": 12,
     "trainingHRSize": 32,
-    "dataset": "Randomly generated images",
+    "dataset": "Randomly generated images. Custom (9x Supersampling AA)",
     "datasetSize": 4096
 }

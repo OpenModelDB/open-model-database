@@ -6,7 +6,7 @@
         "image",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: none\n\nRemove JPEG artifacts from manga without destroying screentone and other details. For 80-50 JPEG Quality",
+    "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\nRemove JPEG artifacts from manga without destroying screentone and other details. For 80-50 JPEG Quality",
     "date": "2021-06-17",
     "architecture": "ESRGAN",
     "size": [

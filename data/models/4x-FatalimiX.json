@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 4x_Fatality_MKII_90000_G_02.pth\n\nComic and Cartoon style images",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nComic and Cartoon style images",
     "date": "2019-10-29",
     "architecture": "ESRGAN",
     "size": [

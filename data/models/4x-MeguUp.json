@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: Interpolated custom, hence the license.\n\nUpscaling of lossless (uncompressed) anime art.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscaling of lossless (uncompressed) anime art.",
     "date": "2020-09-16",
     "architecture": "ESRGAN",
     "size": [

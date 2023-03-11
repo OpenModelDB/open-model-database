@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Denoise/Dehalo\nPretrained: 2xESRGAN\n\nDenoise, dehalo, derainbow old anime",
+    "description": "Category: Anime and Cartoons\nPurpose: Denoise/Dehalo\n\nDenoise, dehalo, derainbow old anime",
     "date": "2021-04-17",
     "architecture": "ESRGAN",
     "size": [

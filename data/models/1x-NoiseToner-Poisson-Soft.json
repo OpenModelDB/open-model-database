@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Pretrained: 1xESRGAN",
+    "description": "",
     "date": "2020-10-14",
     "architecture": "ESRGAN",
     "size": [

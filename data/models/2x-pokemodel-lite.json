@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: none\n\nUpscale old anime like pokemon",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscale old anime like pokemon",
     "date": "2020-11-01",
     "architecture": "ESRGAN",
     "size": [

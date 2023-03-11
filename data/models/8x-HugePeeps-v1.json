@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Art/People\nPretrained: TGHQFace8x\n\nPainted humans",
+    "description": "Category: Art/Pixel Art\nPurpose: Art/People\n\nPainted humans",
     "date": "2020-06-16",
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://1drv.ms/u/s!Aip-EMByJHY26nuB0Lo0rdirfGoi?e=XI9Fa2"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": "8x-TGHQFace8x"
 }

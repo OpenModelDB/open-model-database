@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: Universal Upscaler\nPretrained: 4xESRGAN\n\nThese models work great on game textures when interpolated 50/50 with UniScale_Restore, and work amazingly on uncompressed images. DO NOT USE FOR COMPRESSED IMAGES, use the original UniScale or UltraSharp for that.",
+    "description": "Category: Universal Models\nPurpose: Universal Upscaler\n\nThese models work great on game textures when interpolated 50/50 with UniScale_Restore, and work amazingly on uncompressed images. DO NOT USE FOR COMPRESSED IMAGES, use the original UniScale or UltraSharp for that.",
     "date": "2021-09-06",
     "architecture": "ESRGAN",
     "size": [

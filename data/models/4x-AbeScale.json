@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Linework Cartoons\nPretrained: 4xESRGAN\n\nDataset: LR: Clone High DVD, HR: Re-illustrated Vectors from Frames",
+    "description": "Category: Anime and Cartoons\nPurpose: Linework Cartoons",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -26,5 +26,7 @@
                 "http://cloud.mitch.best/index.php/s/iio9SL9BdgWiCoi"
             ]
         }
-    ]
+    ],
+    "dataset": "LR: Clone High DVD, HR: Re-illustrated Vectors from Frames",
+    "pretrainedModelG": "4x-ESRGAN"
 }

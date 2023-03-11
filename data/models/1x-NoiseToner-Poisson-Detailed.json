@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Category: Noise\nPurpose: Noise remover\nPretrained: 1xESRGAN\n\nAttempts to remove the damages done from noise. Successor of sorts to Noisetoner_Poisson_150000_G",
+    "description": "Category: Noise\nPurpose: Noise remover\n\nAttempts to remove the damages done from noise. Successor of sorts to Noisetoner_Poisson_150000_G",
     "date": "2021-10-08",
     "architecture": "ESRGAN",
     "size": [

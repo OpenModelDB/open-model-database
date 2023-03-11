@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art\nPretrained: 4x-MMScale\n\nThis model has VERY strong compression removal and line restructuring that allows it to restore any heavily compressed drawings, animation, cartoons, or anime. Also works on games as well as DDS compression. It renders frames very quickly and is very viable for restoring videos.",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art\n\nThis model has VERY strong compression removal and line restructuring that allows it to restore any heavily compressed drawings, animation, cartoons, or anime. Also works on games as well as DDS compression. It renders frames very quickly and is very viable for restoring videos.",
     "date": "2021-08-31",
     "architecture": "ESRGAN",
     "size": [

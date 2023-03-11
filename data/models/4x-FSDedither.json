@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: RRDB_ESRGAN_x4\n\nFor photos/realistic images, but worth trying on other images that have reduced colors and dithering along with fine details. Trained using the ESRGAN-FS code (https://github.com/ManuelFritsche/real-world-sr/tree/master/esrgan-fs/codes) for better details compared to plain ESRGAN.",
+    "description": "Category: Dithering\nPurpose: Dithering\n\nFor photos/realistic images, but worth trying on other images that have reduced colors and dithering along with fine details. Trained using the ESRGAN-FS code (https://github.com/ManuelFritsche/real-world-sr/tree/master/esrgan-fs/codes) for better details compared to plain ESRGAN.",
     "date": "2020-01-29",
     "architecture": "ESRGAN",
     "size": [

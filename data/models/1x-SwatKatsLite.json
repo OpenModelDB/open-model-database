@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: 2xESRGAN\n\nFix vertical blur / split lines / shadowing. A 1x lite model of my 2xSwatKats. Resolves the same video problems as before, but 1x and faster and meant for chaining to other 2x models (or whatever). Input MUST be 540 vertical as the blur problem is very resolution sensitive.",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nFix vertical blur / split lines / shadowing. A 1x lite model of my 2xSwatKats. Resolves the same video problems as before, but 1x and faster and meant for chaining to other 2x models (or whatever). Input MUST be 540 vertical as the blur problem is very resolution sensitive.",
     "date": "2021-11-17",
     "architecture": "ESRGAN",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: A previously attempted MK2\n\nDataset: Anime, Manga and some real life",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: A previously attempted MK2",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
@@ -25,5 +25,6 @@
                 "https://de-next.owncube.com/index.php/s/bT8nHoK4oD2MjoH"
             ]
         }
-    ]
+    ],
+    "dataset": "Anime, Manga and some real life"
 }

@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: none (no interpolation)\n\nComic / Drawings. Trained on Custom (Spider-Man) dataset",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nComic / Drawings. Trained on Custom (Spider-Man) dataset",
     "date": null,
     "architecture": "ESRGAN",
     "size": [
