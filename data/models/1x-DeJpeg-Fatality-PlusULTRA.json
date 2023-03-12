@@ -22,6 +22,7 @@
             "size": 66662414,
             "sha256": "1c93728803e9a3525afa4d7b23e08be531202e2ffc1f046f79bd1733be139c21",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-DeJpeg-Fatality-PlusULTRA.pth",
                 "https://de-next.owncube.com/index.php/s/w82HLrLWmWi4SQ5"
             ]
         }

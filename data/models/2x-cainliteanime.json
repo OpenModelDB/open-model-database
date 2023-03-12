@@ -18,6 +18,7 @@
             "size": 35959343,
             "sha256": "092401d94d9b0aef33017df9f38ec6915d82171ea40fb109dee7b8d8b34ca761",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-cainliteanime.pth",
                 "https://cdn.discordapp.com/attachments/873173887427416114/874695897257246770/726770_JIT.pth"
             ]
         }

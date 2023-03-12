@@ -21,6 +21,7 @@
             "size": 20099337,
             "sha256": "94d368b633614958f84f335b129fd85abd30200e8fbc575b859ba6762116222b",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-ITF-SkinDiffDetail-Lite-v1.pth",
                 "https://drive.google.com/drive/folders/1VkT6tpbCPn2gKZYPtawDJGMpLg6EyRpO?usp=sharing"
             ]
         }

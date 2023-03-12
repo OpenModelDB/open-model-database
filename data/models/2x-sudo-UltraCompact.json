@@ -23,6 +23,7 @@
             "size": 1226766,
             "sha256": "e53987f0312dee424b4dbd9dce7b2eacbe03fdf1380e44a11f8a4d2ca88c99e3",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-sudo-UltraCompact.pth",
                 "https://e1.pcloud.link/publink/show?code=kZufYRZj1INMisvFehhfS763L4ow5YUy0VV",
                 "https://www.mediafire.com/folder/7e7752gf42eky/sudo_UltraCompact_2x_1.121.175"
             ]

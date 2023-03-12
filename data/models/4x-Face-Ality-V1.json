@@ -23,6 +23,7 @@
             "size": 66958607,
             "sha256": "6bc795427098441bb1a90a56244fe0970fa80b2c25e9a7a88fd98d89824877cf",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-Face-Ality-V1.pth",
                 "https://de-next.owncube.com/index.php/s/mZRG4HB3KdP2iP6"
             ]
         }

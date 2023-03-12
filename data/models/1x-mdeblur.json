@@ -22,6 +22,7 @@
             "size": 66662414,
             "sha256": "e4c19f65bc0d217b4c3c17e32ac12d4a351ba6e3f7d5d36118c1f4f7a5b7abec",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-mdeblur.pth",
                 "https://cloud.owncube.com/s/p3w7M2sfaWWYCK9/download?path=%2F&files=1x_mdeblur.pth"
             ]
         }

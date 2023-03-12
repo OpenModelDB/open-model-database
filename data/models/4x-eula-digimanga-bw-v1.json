@@ -22,6 +22,7 @@
             "size": 67010245,
             "sha256": "a3ba78a589cf2f2c39fe77cf3f472173cdcb3ade7dcc77ee5d1cd266d733e3d3",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-eula-digimanga-bw-v1.pth",
                 "https://cdn.discordapp.com/attachments/450036622940045325/936099965300768808/4x_eula_digimanga_bw_v1_860k.pth"
             ]
         }

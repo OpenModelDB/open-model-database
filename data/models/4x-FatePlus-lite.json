@@ -21,6 +21,7 @@
             "size": 20173354,
             "sha256": "959c8d9c39e57092d02cb90d82ad1a8d9297cd57d59e43c0243bea2c9eae83da",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-FatePlus-lite.pth",
                 "https://mega.nz/folder/zRYh3SII#QIm6T-rzhxjBLeYF1zSDpg"
             ]
         }

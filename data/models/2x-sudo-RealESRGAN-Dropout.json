@@ -23,6 +23,7 @@
             "size": 17784133,
             "sha256": "d5f184e41865201b251c693d96e3a787eaaa9736179a4037c01a69d3125469a7",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-sudo-RealESRGAN-Dropout.pth",
                 "https://e1.pcloud.link/publink/show?code=kZ7rGRZW2IcOpNMQeXDTTRQ4aPVBFyyJV5X",
                 "https://www.mediafire.com/folder/gk7f61e2kut0z/sudo_RealESRGAN2x"
             ]

@@ -22,6 +22,7 @@
             "size": 20133416,
             "sha256": "6794a3df8a9f3999ce7ce5d20f93241857a661be1ba0d99a99db1229313b3448",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-Faithful-Lite.pth",
                 "https://u.pcloud.link/publink/show?code=XZHawFXZhqD7dF4qtYHnqJVPnQd0ey0vW1JX"
             ]
         }
