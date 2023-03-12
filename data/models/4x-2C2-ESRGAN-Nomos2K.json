@@ -19,6 +19,7 @@
             "size": 39444095,
             "sha256": "7d728ac6e7a673be71b0222a11a0bf159d773a2f8e1330e22b302dead24d4f70",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-2C2-ESRGAN-Nomos2K.pth",
                 "https://github.com/joeyballentine/2C2-ESRGAN/tree/main/models"
             ]
         }

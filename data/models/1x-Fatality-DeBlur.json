@@ -22,6 +22,7 @@
             "size": 66662414,
             "sha256": "949ab41ddccaa13f4ae89c0f2ec3715b6786cca521e5300f5f57f66e85cf4dec",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-Fatality-DeBlur.pth",
                 "https://de-next.owncube.com/index.php/s/aAojXwLTPZto8rP"
             ]
         }

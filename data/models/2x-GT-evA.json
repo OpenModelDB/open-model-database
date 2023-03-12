@@ -23,6 +23,7 @@
             "size": 2417798,
             "sha256": "eeccd98ec73326e13cc4fcd2a4c8394e85b28094c275e3e9dfb8390b80857502",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-GT-evA.pth",
                 "https://drive.google.com/file/d/1bwJpBHynGTIedIaZwp5XapCrJjO4BruF/view?usp=share_link"
             ]
         }

@@ -24,6 +24,7 @@
             "size": 16834553,
             "sha256": "aea80c061b41e1cbc5b0c0f9bb2603a82c7d00d2451bfd5b98a495244dd5fb2f",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-Bubble-AnimeScale-SwinIR-Small-v1.pth",
                 "https://github.com/Bubblemint864/AI-Models/releases/tag/2x_Bubble_AnimeScale_SwinIR_Small_v1"
             ]
         }
