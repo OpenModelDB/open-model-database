@@ -42,7 +42,9 @@ const getHostFromUrl = (url: string) => {
 };
 
 export const DownloadButton = ({ url, resource }: DownloadButtonProps) => {
-    const isExternal = !url.includes('oracle');
+    const isExternal = !url.startsWith(
+        'https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/'
+    );
     const host = getHostFromUrl(url);
 
     return (

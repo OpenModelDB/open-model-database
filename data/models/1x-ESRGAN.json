@@ -21,6 +21,7 @@
             "size": 66656830,
             "sha256": "25e733e2b0d6ada63b07ace241e0f1065cec0d08945d6b20b9d46cc88bfa8b5d",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-ESRGAN.pth",
                 "https://mega.nz/#!D940CAKR!-BAx7tSj1CgeopGkaMW31VuPsC3hvNBL35TEVAj4LIo"
             ]
         }

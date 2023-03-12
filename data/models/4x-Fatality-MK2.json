@@ -22,6 +22,7 @@
             "size": 66958607,
             "sha256": "4240715ce77c04159a0712ffe065acf098b458109d63824686c8fafeed857a30",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-Fatality-MK2.pth",
                 "https://de-next.owncube.com/index.php/s/bT8nHoK4oD2MjoH"
             ]
         }

@@ -18,6 +18,7 @@
             "size": 18979084,
             "sha256": "16e48f46a1f284c4a0e88ca001a0c491c35e8d9b865a9bcfd64dfc03b8c9504d",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-cainREALTIME.pth",
                 "https://cdn.discordapp.com/attachments/579685650824036387/936636497640165436/model.pth"
             ]
         }

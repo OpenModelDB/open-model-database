@@ -23,6 +23,7 @@
             "size": 20098601,
             "sha256": "6d31cdd85e382035ba2946017fd10e9268c70b33be2ec7fbc0f6d212c509167b",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-SpongeBC1-Lite.pth",
                 "https://u.pcloud.link/publink/show?code=kZ8f9HXZaNaKIDTqP9YPl33NGlz7VmaA3kqV"
             ]
         }

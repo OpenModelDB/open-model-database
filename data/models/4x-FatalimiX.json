@@ -23,6 +23,7 @@
             "size": 66958607,
             "sha256": "3d3ebdc1abcd24b02556a64d9c65adc3c31ec2f55d731f70370ddc49067ecbb8",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-FatalimiX.pth",
                 "https://de-next.owncube.com/index.php/s/jYnFtncarkBmpcF"
             ]
         }

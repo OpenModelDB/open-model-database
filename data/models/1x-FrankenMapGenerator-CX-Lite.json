@@ -22,6 +22,7 @@
             "size": 20098601,
             "sha256": "15405908c94795a13e1c320bda01287b72f76a0b5ed0bd40d00192dd1223326d",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-FrankenMapGenerator-CX-Lite.pth",
                 "https://u.pcloud.link/publink/show?code=kZecVzXZEO6fAyO6w25YDc43BkSVHRgFdOwX"
             ]
         }

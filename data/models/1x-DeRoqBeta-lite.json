@@ -21,6 +21,7 @@
             "size": 20098601,
             "sha256": "47522c0342d41e5d40db84105f3973db2700462b62c2625479201e3f897f44a0",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-DeRoqBeta-lite.pth",
                 "https://mega.nz/file/qAY11ZBR#zgLbwfSI2MDYHb0HxehLkq4cppEg-U9bplxHu5hVrgU"
             ]
         }

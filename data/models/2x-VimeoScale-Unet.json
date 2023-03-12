@@ -21,6 +21,7 @@
             "size": 21938817,
             "sha256": "d83d246f10c93057047abab15dab113075b3595eae41c6cc539e9e8f5ca5181c",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-VimeoScale-Unet.pth",
                 "https://mega.nz/folder/qslgTZYQ#wE9l53sTH78B6wjPX5GRwQ"
             ]
         }

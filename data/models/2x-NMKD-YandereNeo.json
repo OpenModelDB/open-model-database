@@ -23,6 +23,7 @@
             "size": 20135976,
             "sha256": "a305101b33f804206a9d16d3b53725ed7d9f2b8550830fcdc6bcf68ece32f0ff",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-NMKD-YandereNeo.pth",
                 "https://icedrive.net/1/f0UAiRqz3N"
             ]
         }

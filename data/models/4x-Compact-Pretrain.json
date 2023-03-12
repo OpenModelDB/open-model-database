@@ -21,6 +21,7 @@
             "size": "8896f4755f63a2c7cc427e17644c39c7c3a37b0207a370b90b1e1b436da370a1",
             "sha256": null,
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-Compact-Pretrain.pth",
                 "https://mega.nz/file/Bc0SmIyK#ThTyculaFvrLGMIY8FicUUWBem8O_ZF8LgpPXCn7aVQ"
             ]
         }
