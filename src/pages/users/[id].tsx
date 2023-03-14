@@ -38,28 +38,24 @@ export default function Page({ userId, user, models }: Props) {
                 />
             </Head>
             <PageContainer>
-                <div className="py-6">
-                    <div className="mx-auto max-w-screen-2xl">
-                        <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
-                            <h1 className="mb-4 text-center text-2xl font-bold text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
-                                {`${user.name}'s Models`}
-                            </h1>
+                <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
+                    <h1 className="mb-4 text-center text-2xl font-bold text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
+                        {`${user.name}'s Models`}
+                    </h1>
 
-                            {/* Model Cards */}
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                {[...modelData]
-                                    .filter(([, model]) => hasAuthor(model, userId))
-                                    .map(([id, model]) => {
-                                        return (
-                                            <ModelCard
-                                                id={id}
-                                                key={id}
-                                                model={model}
-                                            />
-                                        );
-                                    })}
-                            </div>
-                        </div>
+                    {/* Model Cards */}
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {[...modelData]
+                            .filter(([, model]) => hasAuthor(model, userId))
+                            .map(([id, model]) => {
+                                return (
+                                    <ModelCard
+                                        id={id}
+                                        key={id}
+                                        model={model}
+                                    />
+                                );
+                            })}
                     </div>
                 </div>
             </PageContainer>
