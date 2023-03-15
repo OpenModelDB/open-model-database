@@ -2,13 +2,26 @@ import React from 'react';
 import { ReactElement, ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { HeadingComponent } from 'react-markdown/lib/ast-to-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
+import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx';
+import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism-light';
+import { atomDark as theme } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import { textToLinkId } from '../lib/docs/doc';
 import { useCurrentPath } from '../lib/hooks/use-current-path';
 import { Link, TextLink } from './components/link';
 import style from './markdown.module.scss';
+
+SyntaxHighlighter.registerLanguage('html', jsx);
+SyntaxHighlighter.registerLanguage('markup', jsx);
+SyntaxHighlighter.registerLanguage('xml', jsx);
+SyntaxHighlighter.registerLanguage('javascript', jsx);
+SyntaxHighlighter.registerLanguage('js', jsx);
+SyntaxHighlighter.registerLanguage('jsx', jsx);
+SyntaxHighlighter.registerLanguage('md', markdown);
+SyntaxHighlighter.registerLanguage('markdown', markdown);
+SyntaxHighlighter.registerLanguage('json', json);
 
 const LinkableHeading: HeadingComponent = ({ children, level }) => {
     const text = getTextContent(children);
@@ -106,7 +119,7 @@ export function MarkdownContainer(props: MarkdownProps) {
                                     <SyntaxHighlighter
                                         PreTag={NoProps}
                                         language={lang || 'none'}
-                                        style={atomDark}
+                                        style={theme}
                                     >
                                         {text}
                                     </SyntaxHighlighter>
@@ -118,7 +131,7 @@ export function MarkdownContainer(props: MarkdownProps) {
                             <SyntaxHighlighter
                                 PreTag={'div'}
                                 language={lang || 'none'}
-                                style={atomDark}
+                                style={theme}
                             >
                                 {text}
                             </SyntaxHighlighter>
