@@ -1,0 +1,32 @@
+.view {
+    position: relative;
+
+    & > button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    & > div {
+        & > *:first-child {
+            margin-top: 0 !important;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+.textarea {
+    color: inherit;
+    font: inherit;
+    width: 100%;
+    min-height: 10em;
+    resize: vertical;
+}
