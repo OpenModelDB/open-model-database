@@ -107,17 +107,13 @@
         "name": "RGBA",
         "description": "This model upscales images with transparency."
     },
-    "color:null": {
-        "name": "color:null",
-        "description": ""
-    },
     "license:by": {
         "name": "Credit",
         "description": ""
     },
     "license:commercial": {
         "name": "Commercial",
-        "description": ""
+        "description": "This model may be included in commercial products."
     },
     "license:modifications": {
         "name": "Modifications",

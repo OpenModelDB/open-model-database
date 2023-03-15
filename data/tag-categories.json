@@ -1,0 +1,89 @@
+{
+    "media-type": {
+        "name": "Media type",
+        "description": "",
+        "order": 0,
+        "tags": [
+            "audio",
+            "image",
+            "video"
+        ]
+    },
+    "purpose": {
+        "name": "Purpose",
+        "description": "",
+        "order": 1,
+        "tags": [
+            "anime",
+            "anti-aliasing",
+            "cartoon",
+            "colorization",
+            "debanding",
+            "deblur",
+            "dedither",
+            "dehalo",
+            "denoise",
+            "face-upscaling",
+            "faces",
+            "game-texture-maps",
+            "game-textures",
+            "general-upscaler",
+            "inpainting",
+            "manga",
+            "photo",
+            "pixel-art",
+            "restoration",
+            "text"
+        ]
+    },
+    "color": {
+        "name": "Color",
+        "description": "",
+        "order": 2,
+        "tags": [
+            "color:1",
+            "color:3",
+            "color:4",
+            "color:1-3"
+        ]
+    },
+    "license": {
+        "name": "License",
+        "description": "",
+        "order": 3,
+        "tags": [
+            "license:by",
+            "license:commercial",
+            "license:modifications",
+            "license:sa",
+            "license:no-license",
+            "license:unknown"
+        ]
+    },
+    "platform": {
+        "name": "Platform",
+        "description": "",
+        "order": 4,
+        "tags": [
+            "platform:pytorch",
+            "platform:pytorch-compatible",
+            "platform:onnx",
+            "platform:onnx-compatible",
+            "platform:ncnn",
+            "platform:ncnn-compatible"
+        ]
+    },
+    "scale": {
+        "name": "Scale",
+        "description": "",
+        "order": 5,
+        "tags": [
+            "scale:1",
+            "scale:2",
+            "scale:3",
+            "scale:4",
+            "scale:8",
+            "scale:16"
+        ]
+    }
+}

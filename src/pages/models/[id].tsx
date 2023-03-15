@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback } from 'react';
 import { DownloadButton } from '../../elements/components/download-button';
+import { EditableLabel } from '../../elements/components/editable-label';
+import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useCurrent } from '../../lib/hooks/use-current';
@@ -82,15 +84,13 @@ export default function Page({ modelId, modelData }: Props) {
                         <ImageCarousel images={dummyImages} />
                         <div className="relative">
                             <div>
-                                <h1
-                                    className="m-0"
-                                    contentEditable={editMode}
-                                    dangerouslySetInnerHTML={{ __html: modelData.name }}
-                                    onInput={(event) => {
-                                        const content = String((event.target as Element).textContent);
-                                        updateModelProperty('name', content);
-                                    }}
-                                />
+                                <h1 className="m-0">
+                                    <EditableLabel
+                                        readonly={!editMode}
+                                        text={modelData.name}
+                                        onChange={(value) => updateModelProperty('name', value)}
+                                    />
+                                </h1>
                                 <p className="m-0">
                                     by{' '}
                                     <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
@@ -133,15 +133,11 @@ export default function Page({ modelId, modelData }: Props) {
                                     </strong>
                                 </p>
                             </div>
-                            <div>
-                                <p
-                                    className="whitespace-pre-line"
-                                    contentEditable={editMode}
-                                    dangerouslySetInnerHTML={{ __html: modelData.description }}
-                                    onInput={(event) => {
-                                        const content = String((event.target as Element).textContent);
-                                        updateModelProperty('description', content);
-                                    }}
+                            <div className="py-4">
+                                <EditableMarkdownContainer
+                                    markdown={modelData.description}
+                                    readonly={!editMode}
+                                    onChange={(value) => updateModelProperty('description', value)}
                                 />
                             </div>
                         </div>
@@ -171,7 +167,13 @@ export default function Page({ modelId, modelData }: Props) {
                                         >
                                             Architecture
                                         </th>
-                                        <td className="px-6 py-4">{model.architecture}</td>
+                                        <td className="px-6 py-4">
+                                            <EditableLabel
+                                                readonly={!editMode}
+                                                text={model.architecture}
+                                                onChange={(value) => updateModelProperty('architecture', value)}
+                                            />
+                                        </td>
                                     </tr>
                                     <tr className="">
                                         <th
