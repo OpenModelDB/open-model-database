@@ -13,7 +13,7 @@ interface TagViewProps {
     onDelete?: () => void;
 }
 export function TagView({ tag, usage, onRename, onDelete, onDescriptionChange }: TagViewProps) {
-    const { webApi, editMode } = useWebApi();
+    const { editMode } = useWebApi();
 
     return (
         <div className={style.tagView}>
