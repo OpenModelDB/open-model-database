@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { RWLock } from './lock';
-import { Model, ModelId, Tag, TagId, User, UserId } from './schema';
+import { Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from './schema';
 import { noop } from './util';
 
 export interface DBApi {
     readonly models: CollectionApi<ModelId, Model>;
     readonly tags: CollectionApi<TagId, Tag>;
+    readonly tagCategories: CollectionApi<TagCategoryId, TagCategory>;
     readonly users: CollectionApi<UserId, User>;
 }
 

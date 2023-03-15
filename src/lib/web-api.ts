@@ -71,8 +71,9 @@ function createWebCollection<Id, Value>(path: string): CollectionApi<Id, Value> 
 export const getWebApi = lazy(async (): Promise<DBApi | undefined> => {
     const webApi: DBApi = {
         models: createWebCollection('/api/models'),
-        tags: createWebCollection('/api/tags'),
         users: createWebCollection('/api/users'),
+        tags: createWebCollection('/api/tags'),
+        tagCategories: createWebCollection('/api/tag-categories'),
     };
 
     // we do an empty update to test the waters

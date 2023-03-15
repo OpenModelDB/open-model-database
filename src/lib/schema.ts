@@ -11,6 +11,7 @@ export type SPDXLicense = string & { readonly SPDXLicense: never };
  */
 export type SPDXLicenseId = string & { readonly SPDXLicenseId: never };
 export type TagId = string & { readonly TagId: never };
+export type TagCategoryId = string & { readonly TagCategoryId: never };
 export type MarkDownString = string;
 
 export interface Model extends Partial<ExtraModelProperties> {
@@ -62,6 +63,13 @@ export interface User {
 export interface Tag {
     name: string;
     description: MarkDownString;
+}
+
+export interface TagCategory {
+    name: string;
+    description: MarkDownString;
+    order: number;
+    tags: TagId[];
 }
 
 export const ModelIdPattern = /^\d+x-[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/;

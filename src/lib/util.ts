@@ -1,4 +1,4 @@
-import { TagId } from './schema';
+import { TagCategory, TagCategoryId, TagId } from './schema';
 
 export const EMPTY_ARRAY: readonly never[] = [];
 export const EMPTY_SET: ReadonlySet<never> = new Set();
@@ -129,6 +129,9 @@ function getTagCategory(id: TagId): string | undefined {
 export function compareTagId(a: TagId, b: TagId): number {
     return compareString(getTagCategory(a) ?? '', getTagCategory(b) ?? '') || compareString(a, b);
 }
+export function isDerivedTags(id: TagId): boolean {
+    return id.includes(':');
+}
 
 export function getColorMode(numberOfChannels: number) {
     switch (numberOfChannels) {
@@ -141,4 +144,16 @@ export function getColorMode(numberOfChannels: number) {
         default:
             return numberOfChannels;
     }
+}
+
+export function getTagCategoryOrder(
+    iter: Iterable<readonly [TagCategoryId, TagCategory]>
+): (readonly [TagCategoryId, TagCategory])[] {
+    const array = [...iter];
+    array.sort((a, b) => {
+        const order = a[1].order - b[1].order;
+        if (order) return order;
+        return compareString(a[0], b[0]);
+    });
+    return array;
 }

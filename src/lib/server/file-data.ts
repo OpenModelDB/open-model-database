@@ -3,14 +3,15 @@ import { readFile, readdir, rename, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { CollectionApi, DBApi, SynchronizedCollection, notifyOnWrite } from '../data-api';
 import { RWLock } from '../lock';
-import { Model, ModelId, Tag, TagId, User, UserId } from '../schema';
-import { compareTagId, hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
+import { Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from '../schema';
+import { compareTagId, getTagCategoryOrder, hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
 import { JsonFile, fileExists } from './fs-util';
 
 const DATA_DIR = './data/';
 const MODEL_DIR = join(DATA_DIR, 'models');
 const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
+const TAG_CATEGORIES_JSON = join(DATA_DIR, 'tag-categories.json');
 
 const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON, {
     beforeWrite(data) {
@@ -21,6 +22,15 @@ const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON, {
 const tagsFile = new JsonFile<Record<TagId, Tag>>(TAGS_JSON, {
     beforeWrite(data) {
         sortObjectKeys(data, compareTagId);
+        return data;
+    },
+});
+const tagCategoriesFile = new JsonFile<Record<TagCategoryId, TagCategory>>(TAG_CATEGORIES_JSON, {
+    beforeWrite(data) {
+        sortObjectKeys(
+            data,
+            getTagCategoryOrder(typedEntries(data)).map((e) => e[0])
+        );
         return data;
     },
 });
@@ -261,6 +271,14 @@ const tagApi: CollectionApi<TagId, Tag> = {
                 return true;
             }
         });
+
+        // remove from tag categories
+        await tagCategoriesFile.update((old) => {
+            for (const category of Object.values(old)) {
+                category.tags = category.tags.filter((t) => !idSet.has(t));
+            }
+            return old;
+        });
     },
     async changeId(from: TagId, to: TagId): Promise<void> {
         if (from === to) return;
@@ -274,6 +292,52 @@ const tagApi: CollectionApi<TagId, Tag> = {
                 model.tags = model.tags.map((t) => (t === from ? to : t));
                 return true;
             }
+        });
+        await tagCategoriesFile.update((old) => {
+            for (const category of Object.values(old)) {
+                category.tags = category.tags.map((t) => (t === from ? to : t));
+            }
+            return old;
+        });
+    },
+};
+
+const tagCategoryApi: CollectionApi<TagCategoryId, TagCategory> = {
+    async get(id: TagCategoryId): Promise<TagCategory> {
+        return (await tagCategoriesFile.read())[id];
+    },
+    async getIds(): Promise<TagCategoryId[]> {
+        return typedKeys(await tagCategoriesFile.read());
+    },
+    async getAll(): Promise<Map<TagCategoryId, TagCategory>> {
+        return new Map(typedEntries(await tagCategoriesFile.read()));
+    },
+
+    async update(updates: Iterable<readonly [TagCategoryId, TagCategory]>): Promise<void> {
+        await tagCategoriesFile.update((old) => {
+            for (const [id, value] of updates) {
+                old[id] = value;
+            }
+            return old;
+        });
+    },
+    async delete(ids: Iterable<TagCategoryId>): Promise<void> {
+        const idSet = new Set(ids);
+        if (idSet.size === 0) return;
+
+        await tagCategoriesFile.update((old) => {
+            for (const id of idSet) {
+                delete old[id];
+            }
+            return old;
+        });
+    },
+    async changeId(from: TagCategoryId, to: TagCategoryId): Promise<void> {
+        if (from === to) return;
+
+        await tagCategoriesFile.update((tags) => {
+            renameObjectKey(tags, from, to);
+            return tags;
         });
     },
 };
@@ -293,6 +357,7 @@ export const fileApi: DBApi = {
     models: wrapCollection(modelApi),
     users: wrapCollection(userApi),
     tags: wrapCollection(tagApi),
+    tagCategories: wrapCollection(tagCategoryApi),
 };
 
 export function getFileApiMutationCounter(): Promise<number> {
