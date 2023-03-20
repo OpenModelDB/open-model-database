@@ -2,9 +2,15 @@ import { TagCategory, TagCategoryId, TagId } from './schema';
 
 export const EMPTY_ARRAY: readonly never[] = [];
 export const EMPTY_SET: ReadonlySet<never> = new Set();
+export const EMPTY_MAP: ReadonlyMap<never, never> = new Map<never, never>();
 
 export function assertNever(value: never): never {
     throw new Error(`Unreachable code path. The value ${String(value)} is invalid.`);
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function isNonNull<T extends {}>(value: T | undefined | null): value is T {
+    return value != null;
 }
 
 export function noop() {

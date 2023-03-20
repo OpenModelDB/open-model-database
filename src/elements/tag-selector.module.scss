@@ -1,0 +1,46 @@
+@import '../styles/theme';
+
+.tagSelector {
+    color: inherit;
+
+    h4 {
+        margin: 0.5em 0;
+    }
+}
+
+.tagButton {
+    margin: 0 0.5em 0.5em 0;
+    font: inherit;
+    cursor: pointer;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    padding: 0;
+    border: none;
+    display: inline-flex;
+    overflow: hidden;
+    transition: all 0.1s linear;
+
+    .icon {
+        line-height: 1;
+        padding: 0.25em 0.25rem;
+        display: inline-block;
+        width: 1.4em;
+        height: 1.5em;
+        @include themed using ($t) {
+            background-color: t($t, rgb(0 0 0/8%), rgb(255 255 255/12%));
+        }
+
+        svg {
+            width: 1.4em;
+            height: 1.4em;
+        }
+    }
+
+    .text {
+        line-height: 1.4;
+        height: 1.4em;
+        font-weight: 500;
+        padding: 0.25rem 0.5rem;
+        display: inline-block;
+    }
+}
