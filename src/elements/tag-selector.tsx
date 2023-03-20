@@ -30,7 +30,7 @@ function TagButton({ state, name, onClick }: TagButtonProps) {
                     ? 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200'
                     : state === 'required'
                     ? 'bg-accent-500 text-white dark:bg-accent-600 dark:text-white'
-                    : 'bg-gray-200 text-gray-700 opacity-75 dark:bg-gray-800 dark:text-gray-300'
+                    : 'bg-gray-300 text-red-800 dark:bg-gray-900 dark:text-red-400'
             )}
             onClick={onClick}
         >
