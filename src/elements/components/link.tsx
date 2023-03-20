@@ -9,6 +9,7 @@ export interface LinkProps {
     external?: boolean;
     type?: string;
     title?: string;
+    tabIndex?: number;
 }
 
 export function Link({ external, children, ...props }: React.PropsWithChildren<LinkProps>) {

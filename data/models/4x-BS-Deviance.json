@@ -1,9 +1,6 @@
 {
     "name": "BSDeviance",
-    "author": [
-        "blackscout",
-        "systemd-resolved"
-    ],
+    "author": "blackscout",
     "license": "GPL-3.0-only",
     "tags": [
         "image",
