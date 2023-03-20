@@ -5,11 +5,12 @@ import { joinList } from '../../lib/react-util';
 import { Model, ModelId } from '../../lib/schema';
 import { asArray } from '../../lib/util';
 import { Link } from './link';
+import style from './model-card.module.scss';
 
-type ModelCardProps = {
+interface ModelCardProps {
     id: ModelId;
     model: Model;
-};
+}
 
 export const ModelCard = ({ id, model }: ModelCardProps) => {
     const { tagData } = useTags();
@@ -18,64 +19,49 @@ export const ModelCard = ({ id, model }: ModelCardProps) => {
     const description = fixDescription(model.description, model.scale);
 
     return (
-        <div
-            // eslint-disable-next-line tailwindcss/no-arbitrary-value
-            className="group relative h-[350px] overflow-hidden rounded-lg border border-solid border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 "
-        >
-            <div className="relative flex h-full w-full flex-col transition-all ease-in-out">
+        <div className={`${style.modelCard} border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 `}>
+            <div className={style.inner}>
                 {/* Arch tag on image */}
-                <div className="absolute top-0 right-0 m-2">
-                    <div className="flex flex-row flex-wrap place-content-center justify-items-center gap-x-2 align-middle">
-                        <div className="rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out dark:bg-accent-600 dark:text-gray-100 ">
-                            {model.architecture}
-                        </div>
-                        <div className="rounded-lg bg-accent-500 px-2 py-1 text-sm font-medium text-gray-100 transition-colors ease-in-out dark:bg-accent-600 dark:text-gray-100 ">
-                            {model.scale}x
-                        </div>
-                    </div>
+                <div className={style.topTags}>
+                    <AccentTag>{model.architecture}</AccentTag>
+                    <AccentTag>{model.scale}x</AccentTag>
                 </div>
 
                 <Link
-                    // eslint-disable-next-line tailwindcss/no-arbitrary-value
-                    className="h-auto w-full flex-1  bg-[url(https://picsum.photos/512/312)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:h-full"
+                    className={style.thumbnail}
                     href={`/models/${id}`}
+                    tabIndex={-1}
                 />
 
                 <div className="relative inset-x-0 bottom-0 bg-white p-3 pt-2 dark:bg-fade-900">
-                    <Link href={`/models/${id}`}>
-                        <div className="block text-xl font-bold text-gray-800 dark:text-gray-100">{model.name}</div>
+                    <Link
+                        className="block text-xl font-bold text-gray-800 dark:text-gray-100"
+                        href={`/models/${id}`}
+                    >
+                        {model.name}
                     </Link>
                     <div className="text-sm text-gray-600 dark:text-gray-400">
-                        <div>
-                            <span>by </span>
-                            {joinList(
-                                asArray(model.author).map((userId) => (
-                                    <Link
-                                        className="font-bold text-accent-500"
-                                        href={`/users/${userId}`}
-                                        key={userId}
-                                    >
-                                        {userData.get(userId)?.name ?? `unknown user:${userId}`}
-                                    </Link>
-                                ))
-                            )}
-                        </div>
+                        {'by '}
+                        {joinList(
+                            asArray(model.author).map((userId) => (
+                                <Link
+                                    className="font-bold text-accent-600 dark:text-accent-400"
+                                    href={`/users/${userId}`}
+                                    key={userId}
+                                >
+                                    {userData.get(userId)?.name ?? `unknown user:${userId}`}
+                                </Link>
+                            ))
+                        )}
                     </div>
 
                     {/* Description */}
-                    <div className="mb-1 flex flex-col justify-between py-1 text-sm">
-                        <div className="text-gray-500 line-clamp-3 dark:text-gray-400">{description}</div>
-                    </div>
+                    <div className="mb-1 py-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">{description}</div>
 
                     {/* Tags */}
                     <div className="flex flex-row flex-wrap gap-1">
                         {model.tags.map((tagId) => (
-                            <div
-                                className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-100"
-                                key={tagId}
-                            >
-                                {tagData.get(tagId)?.name ?? `unknown tag:${tagId}`}
-                            </div>
+                            <RegularTag key={tagId}>{tagData.get(tagId)?.name ?? `unknown tag:${tagId}`}</RegularTag>
                         ))}
                     </div>
                 </div>
@@ -112,4 +98,16 @@ function fixDescription(description: string, scale: number): string {
             ? descLines.join('\n').trim()
             : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
     return actualDescription;
+}
+
+function AccentTag({ children }: React.PropsWithChildren<unknown>) {
+    return <div className={`${style.tagBase} bg-accent-600 text-sm text-gray-100`}>{children}</div>;
+}
+
+function RegularTag({ children }: React.PropsWithChildren<unknown>) {
+    return (
+        <div className={`${style.tagBase} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}>
+            {children}
+        </div>
+    );
 }
