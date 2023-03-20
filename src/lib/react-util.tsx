@@ -20,7 +20,7 @@ export function joinList(elements: JSX.Element[], conjunction: 'and' | 'or' = 'a
                     if (i === 0) {
                         prefix = '';
                     } else if (i === elements.length - 1) {
-                        prefix = `, ${conjunction}`;
+                        prefix = `, ${conjunction} `;
                     } else {
                         prefix = ', ';
                     }
