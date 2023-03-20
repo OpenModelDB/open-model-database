@@ -62,14 +62,8 @@
     "dinjerr": {
         "name": "DinJerr"
     },
-    "dinnjerr": {
-        "name": "DinnJerr"
-    },
-    "end-user-license-agreement": {
-        "name": "end user license agreement#9756"
-    },
     "eula": {
-        "name": "eula"
+        "name": "end user license agreement#9756"
     },
     "eva-01": {
         "name": "evA-01"
@@ -196,9 +190,6 @@
     },
     "sunseille": {
         "name": "Sunseille"
-    },
-    "systemd-resolved": {
-        "name": "systemd-resolved/BlackScout"
     },
     "tal": {
         "name": "Tal"
