@@ -7,6 +7,11 @@ export function assertNever(value: never): never {
     throw new Error(`Unreachable code path. The value ${String(value)} is invalid.`);
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function isNonNull<T extends {}>(value: T | undefined | null): value is T {
+    return value != null;
+}
+
 export function noop() {
     // do nothing
 }

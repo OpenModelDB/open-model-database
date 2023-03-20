@@ -4,6 +4,7 @@ import React, { useMemo, useState } from 'react';
 import { ModelCard } from '../elements/components/model-card';
 import { SearchBar } from '../elements/components/searchbar';
 import { PageContainer } from '../elements/page';
+import { TagSelector } from '../elements/tag-selector';
 import { deriveTags } from '../lib/derive-tags';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
@@ -12,7 +13,7 @@ import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
-import { asArray, compareTagId, joinClasses } from '../lib/util';
+import { EMPTY_SET, asArray, compareTagId, joinClasses } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
@@ -78,6 +79,9 @@ export default function Page({ modelData: staticModelData }: Props) {
 
     const { tagData } = useTags();
 
+    const [requiredTags, setRequiredTags] = useState<ReadonlySet<TagId>>(EMPTY_SET);
+    const [forbiddenTags, setForbiddenTags] = useState<ReadonlySet<TagId>>(EMPTY_SET);
+
     return (
         <>
             <Head>
@@ -117,6 +121,18 @@ export default function Page({ modelData: staticModelData }: Props) {
                     />
 
                     {/* Tags */}
+
+                    <div className="my-8">
+                        <TagSelector
+                            forbidden={forbiddenTags}
+                            required={requiredTags}
+                            onChange={({ required, forbidden }) => {
+                                setRequiredTags(required);
+                                setForbiddenTags(forbidden);
+                            }}
+                        />
+                    </div>
+
                     <div className="mb-2 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
                         <div
                             className={joinClasses(
