@@ -1,11 +1,12 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { ModelCard } from '../elements/components/model-card';
 import { SearchBar } from '../elements/components/searchbar';
 import { PageContainer } from '../elements/page';
 import { TagSelector } from '../elements/tag-selector';
 import { deriveTags } from '../lib/derive-tags';
+import { useMemoDelay } from '../lib/hooks/use-memo-delay';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
@@ -63,15 +64,18 @@ export default function Page({ modelData: staticModelData }: Props) {
         [tagSelection, tagCategoryData]
     );
 
-    const availableModels = useMemo(() => {
-        const queryTokens = tokenize(searchQuery);
+    const availableModels = useMemoDelay(
+        useCallback(() => {
+            const queryTokens = tokenize(searchQuery);
 
-        const searchResults = searchIndex
-            .retrieve(tagCondition, queryTokens)
-            .sort((a, b) => a.id.localeCompare(b.id))
-            .sort((a, b) => b.score - a.score);
-        return searchResults.map((r) => r.id);
-    }, [tagCondition, searchQuery, searchIndex]);
+            const searchResults = searchIndex
+                .retrieve(tagCondition, queryTokens)
+                .sort((a, b) => a.id.localeCompare(b.id))
+                .sort((a, b) => b.score - a.score);
+            return searchResults.map((r) => r.id);
+        }, [tagCondition, searchQuery, searchIndex]),
+        500
+    );
 
     const { webApi, editMode } = useWebApi();
     const clickFunction = async () => {
