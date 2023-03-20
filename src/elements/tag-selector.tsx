@@ -4,6 +4,7 @@ import { BsCheck } from 'react-icons/bs';
 import { HiOutlinePlusSm } from 'react-icons/hi';
 import { useTags } from '../lib/hooks/use-tags';
 import { TagId } from '../lib/schema';
+import { SelectionState, TagSelection } from '../lib/tag-condition';
 import { assertNever, isNonNull, joinClasses } from '../lib/util';
 import style from './tag-selector.module.scss';
 
@@ -25,7 +26,6 @@ function TagButton({ state, name, onClick }: TagButtonProps) {
         <button
             className={joinClasses(
                 style.tagButton,
-                style[state],
                 state === 'any'
                     ? 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200'
                     : state === 'required'
@@ -40,18 +40,12 @@ function TagButton({ state, name, onClick }: TagButtonProps) {
     );
 }
 
-export interface TagSelection {
-    required: ReadonlySet<TagId>;
-    forbidden: ReadonlySet<TagId>;
-}
-
 export interface TagSelectorProps {
-    required: ReadonlySet<TagId>;
-    forbidden: ReadonlySet<TagId>;
+    selection: TagSelection;
     onChange: (selection: TagSelection) => void;
 }
 
-export function TagSelector({ required, forbidden, onChange }: TagSelectorProps) {
+export function TagSelector({ selection, onChange }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
 
     return (
@@ -72,14 +66,14 @@ export function TagSelector({ required, forbidden, onChange }: TagSelectorProps)
                         <h4>{category.name}</h4>
                         <div>
                             {tags.map(([tagId, tag]) => {
-                                const state = getState(tagId, required, forbidden);
+                                const state = getState(tagId, selection);
                                 return (
                                     <TagButton
                                         key={tagId}
                                         name={tag.name}
                                         state={state}
                                         onClick={() => {
-                                            onChange(setState(tagId, NEXT_STATE[state], required, forbidden));
+                                            onChange(setState(tagId, NEXT_STATE[state], selection));
                                         }}
                                     />
                                 );
@@ -97,33 +91,34 @@ const NEXT_STATE = {
     required: 'forbidden',
     forbidden: 'any',
 } as const satisfies Record<State, State>;
-function getState(tag: TagId, required: ReadonlySet<TagId>, forbidden: ReadonlySet<TagId>): State {
-    if (required.has(tag)) return 'required';
-    if (forbidden.has(tag)) return 'forbidden';
+function getState(tag: TagId, selection: TagSelection): State {
+    const state = selection.get(tag);
+    if (state === SelectionState.Required) return 'required';
+    if (state === SelectionState.Forbidden) return 'forbidden';
     return 'any';
 }
-function setState(tag: TagId, state: State, required: ReadonlySet<TagId>, forbidden: ReadonlySet<TagId>): TagSelection {
+function stateToSelectionState(state: State): SelectionState | undefined {
     switch (state) {
         case 'required':
-            return { required: add(required, tag), forbidden: remove(forbidden, tag) };
+            return SelectionState.Required;
         case 'forbidden':
-            return { required: remove(required, tag), forbidden: add(forbidden, tag) };
+            return SelectionState.Forbidden;
         case 'any':
-            return { required: remove(required, tag), forbidden: remove(forbidden, tag) };
+            return undefined;
         default:
             return assertNever(state);
     }
 }
-
-function add<T>(set: ReadonlySet<T>, value: T): ReadonlySet<T> {
-    if (set.has(value)) return set;
-    const result = new Set(set);
-    result.add(value);
-    return result;
-}
-function remove<T>(set: ReadonlySet<T>, value: T): ReadonlySet<T> {
-    if (!set.has(value)) return set;
-    const result = new Set(set);
-    result.delete(value);
-    return result;
+function setState(tag: TagId, state: State, selection: TagSelection): TagSelection {
+    const target = stateToSelectionState(state);
+    if (selection.get(tag) === target) {
+        return selection;
+    }
+    const copy = new Map(selection);
+    if (target === undefined) {
+        copy.delete(tag);
+    } else {
+        copy.set(tag, target);
+    }
+    return copy;
 }

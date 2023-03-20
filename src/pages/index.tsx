@@ -10,11 +10,12 @@ import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { Model, ModelId, TagId } from '../lib/schema';
-import { Condition, compileCondition } from '../lib/search/logical-condition';
+import { compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
-import { EMPTY_SET, asArray, compareTagId, joinClasses } from '../lib/util';
+import { TagSelection, getTagCondition } from '../lib/tag-condition';
+import { EMPTY_MAP, asArray } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
@@ -22,6 +23,7 @@ interface Props {
 
 export default function Page({ modelData: staticModelData }: Props) {
     const { modelData } = useModels(staticModelData);
+    const { tagCategoryData } = useTags();
 
     const searchIndex = useMemo(() => {
         return new SearchIndex(
@@ -53,35 +55,23 @@ export default function Page({ modelData: staticModelData }: Props) {
     }, [modelData]);
     const modelCount = searchIndex.entries.size;
 
-    const allTags = useMemo(
-        () => [
-            ...new Set(
-                [...modelData.values()]
-                    .flatMap(deriveTags)
-                    .filter((t) => !t.startsWith('by:'))
-                    .sort(compareTagId)
-            ),
-        ],
-        [modelData]
-    );
-    const [selectedTag, setSelectedTag] = useState<TagId>();
     const [searchQuery, setSearchQuery] = useState<string>('');
 
+    const [tagSelection, setTagSelection] = useState<TagSelection>(EMPTY_MAP);
+    const tagCondition = useMemo(
+        () => compileCondition(getTagCondition(tagSelection, tagCategoryData.values())),
+        [tagSelection, tagCategoryData]
+    );
+
     const availableModels = useMemo(() => {
-        const tagCondition: Condition<TagId> = selectedTag ? Condition.variable(selectedTag) : true;
         const queryTokens = tokenize(searchQuery);
 
         const searchResults = searchIndex
-            .retrieve(compileCondition(tagCondition), queryTokens)
+            .retrieve(tagCondition, queryTokens)
             .sort((a, b) => a.id.localeCompare(b.id))
             .sort((a, b) => b.score - a.score);
         return searchResults.map((r) => r.id);
-    }, [selectedTag, searchQuery, searchIndex]);
-
-    const { tagData } = useTags();
-
-    const [requiredTags, setRequiredTags] = useState<ReadonlySet<TagId>>(EMPTY_SET);
-    const [forbiddenTags, setForbiddenTags] = useState<ReadonlySet<TagId>>(EMPTY_SET);
+    }, [tagCondition, searchQuery, searchIndex]);
 
     const { webApi, editMode } = useWebApi();
     const clickFunction = async () => {
@@ -144,41 +134,13 @@ export default function Page({ modelData: staticModelData }: Props) {
                     />
 
                     {/* Tags */}
-
                     <div className="my-8">
                         <TagSelector
-                            forbidden={forbiddenTags}
-                            required={requiredTags}
-                            onChange={({ required, forbidden }) => {
-                                setRequiredTags(required);
-                                setForbiddenTags(forbidden);
-                            }}
+                            selection={tagSelection}
+                            onChange={setTagSelection}
                         />
                     </div>
 
-                    <div className="mb-2 flex flex-row flex-wrap place-content-center justify-items-center align-middle">
-                        <div
-                            className={joinClasses(
-                                'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
-                                !selectedTag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
-                            )}
-                            onClick={() => setSelectedTag(undefined)}
-                        >
-                            All
-                        </div>
-                        {allTags.map((tag) => (
-                            <div
-                                className={joinClasses(
-                                    'mr-2 mb-2 w-fit cursor-pointer rounded-lg bg-gray-200 px-2 py-1 text-sm font-medium text-gray-800 transition-colors ease-in-out hover:bg-fade-500 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-fade-500',
-                                    selectedTag == tag && 'bg-accent-500 text-gray-100 dark:bg-accent-500 '
-                                )}
-                                key={tag}
-                                onClick={() => setSelectedTag(selectedTag == tag ? undefined : tag)}
-                            >
-                                {tagData.get(tag)?.name ?? `unknown tag:${tag}`}
-                            </div>
-                        ))}
-                    </div>
                     {/* Model Cards */}
                     {availableModels.length > 0 ? (
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
