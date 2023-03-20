@@ -24,14 +24,14 @@ exports[`compileCondition ¬¬¬¬a 1`] = `
 }
 `;
 
-exports[`compileCondition ∧() 1`] = `
+exports[`compileCondition ∀() 1`] = `
 {
   "type": "const",
   "value": true,
 }
 `;
 
-exports[`compileCondition ∧(a a) 1`] = `
+exports[`compileCondition ∀(a a) 1`] = `
 {
   "negated": false,
   "type": "var",
@@ -39,7 +39,7 @@ exports[`compileCondition ∧(a a) 1`] = `
 }
 `;
 
-exports[`compileCondition ∧(a b c a b c) 1`] = `
+exports[`compileCondition ∀(a b c a b c) 1`] = `
 {
   "items": [
     {
@@ -62,21 +62,21 @@ exports[`compileCondition ∧(a b c a b c) 1`] = `
 }
 `;
 
-exports[`compileCondition ∧(a ¬a) 1`] = `
+exports[`compileCondition ∀(a ¬a) 1`] = `
 {
   "type": "const",
   "value": false,
 }
 `;
 
-exports[`compileCondition ∧(a ¬b F) 1`] = `
+exports[`compileCondition ∀(a ¬b F) 1`] = `
 {
   "type": "const",
   "value": false,
 }
 `;
 
-exports[`compileCondition ∧(a ¬b T) 1`] = `
+exports[`compileCondition ∀(a ¬b T) 1`] = `
 {
   "items": [
     {
@@ -94,7 +94,7 @@ exports[`compileCondition ∧(a ¬b T) 1`] = `
 }
 `;
 
-exports[`compileCondition ∧(a ∨(b) ∧(d) ∨(∧(a))) 1`] = `
+exports[`compileCondition ∀(a ∃(b) ∀(d) ∃(∀(a))) 1`] = `
 {
   "items": [
     {
@@ -117,7 +117,7 @@ exports[`compileCondition ∧(a ∨(b) ∧(d) ∨(∧(a))) 1`] = `
 }
 `;
 
-exports[`compileCondition ∧(a) 1`] = `
+exports[`compileCondition ∀(a) 1`] = `
 {
   "negated": false,
   "type": "var",
@@ -125,14 +125,14 @@ exports[`compileCondition ∧(a) 1`] = `
 }
 `;
 
-exports[`compileCondition ∨() 1`] = `
+exports[`compileCondition ∃() 1`] = `
 {
   "type": "const",
   "value": false,
 }
 `;
 
-exports[`compileCondition ∨(a a) 1`] = `
+exports[`compileCondition ∃(a a) 1`] = `
 {
   "negated": false,
   "type": "var",
@@ -140,7 +140,7 @@ exports[`compileCondition ∨(a a) 1`] = `
 }
 `;
 
-exports[`compileCondition ∨(a b c a b c) 1`] = `
+exports[`compileCondition ∃(a b c a b c) 1`] = `
 {
   "items": [
     {
@@ -163,14 +163,14 @@ exports[`compileCondition ∨(a b c a b c) 1`] = `
 }
 `;
 
-exports[`compileCondition ∨(a ¬a) 1`] = `
+exports[`compileCondition ∃(a ¬a) 1`] = `
 {
   "type": "const",
   "value": true,
 }
 `;
 
-exports[`compileCondition ∨(a ¬b F) 1`] = `
+exports[`compileCondition ∃(a ¬b F) 1`] = `
 {
   "items": [
     {
@@ -188,14 +188,14 @@ exports[`compileCondition ∨(a ¬b F) 1`] = `
 }
 `;
 
-exports[`compileCondition ∨(a ¬b T) 1`] = `
+exports[`compileCondition ∃(a ¬b T) 1`] = `
 {
   "type": "const",
   "value": true,
 }
 `;
 
-exports[`compileCondition ∨(a) 1`] = `
+exports[`compileCondition ∃(a) 1`] = `
 {
   "negated": false,
   "type": "var",

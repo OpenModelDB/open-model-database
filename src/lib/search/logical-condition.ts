@@ -21,20 +21,30 @@ export namespace Condition {
         return { type: 'not', item: condition };
     }
 
-    export function stringify<T>(condition: Condition<T>, toString: (variable: T) => string = String): string {
+    export function stringify<T>(
+        condition: Condition<T> | CompiledCondition<T>,
+        toString: (variable: T) => string = String
+    ): string {
         if (typeof condition === 'boolean') {
             return condition ? 'T' : 'F';
         }
 
         switch (condition.type) {
-            case 'var':
-                return toString(condition.value);
+            case 'const':
+                return condition.value ? 'T' : 'F';
+            case 'var': {
+                const value = toString(condition.value);
+                if ('negated' in condition && condition.negated) {
+                    return `¬${value}`;
+                }
+                return value;
+            }
             case 'not':
                 return `¬${stringify(condition.item, toString)}`;
             case 'and':
-                return `∧(${condition.items.map((i) => stringify(i, toString)).join(' ')})`;
+                return `∀(${condition.items.map((i) => stringify(i, toString)).join(' ')})`;
             case 'or':
-                return `∨(${condition.items.map((i) => stringify(i, toString)).join(' ')})`;
+                return `∃(${condition.items.map((i) => stringify(i, toString)).join(' ')})`;
             default:
                 return assertNever(condition);
         }
