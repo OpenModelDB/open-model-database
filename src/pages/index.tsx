@@ -7,6 +7,7 @@ import { PageContainer } from '../elements/page';
 import { deriveTags } from '../lib/derive-tags';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
+import { useWebApi } from '../lib/hooks/use-web-api';
 import { Model, ModelId, TagId } from '../lib/schema';
 import { Condition, compileCondition } from '../lib/search/logical-condition';
 import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
@@ -78,6 +79,17 @@ export default function Page({ modelData: staticModelData }: Props) {
 
     const { tagData } = useTags();
 
+    const { webApi, editMode } = useWebApi();
+    const clickFunction = async () => {
+        if (!webApi) return;
+
+        const models = await webApi.models.getAll();
+        // for (const [id, model] of models) {
+        //     // todo
+        // }
+        await webApi.models.update(models);
+    };
+
     return (
         <>
             <Head>
@@ -97,6 +109,17 @@ export default function Page({ modelData: staticModelData }: Props) {
             </Head>
             <PageContainer>
                 <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
+                    {editMode && (
+                        <button
+                            className="text-l absolute opacity-0 hover:opacity-100"
+                            onClick={() => {
+                                clickFunction().catch((e) => console.error(e));
+                            }}
+                        >
+                            Click me!
+                        </button>
+                    )}
+
                     <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
                         The best place to find AI Upscaling models
                     </h1>
