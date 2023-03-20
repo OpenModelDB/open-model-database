@@ -1,0 +1,40 @@
+.modelCard {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+
+    .inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .topTags {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0.5rem;
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 0.5rem;
+    }
+
+    .thumbnail {
+        height: 100%;
+        width: 100%;
+        background: url('https://picsum.photos/512/312');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .tagBase {
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        font-weight: 500;
+    }
+}
