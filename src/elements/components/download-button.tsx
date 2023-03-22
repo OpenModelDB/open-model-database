@@ -51,7 +51,7 @@ export const DownloadButton = ({ url, resource }: DownloadButtonProps) => {
         <div>
             <Link
                 external
-                className="mr-2 mb-2 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-600 px-5 py-2.5 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
+                className="mr-2 mb-1 inline-flex w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-600 px-5 py-2.5 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
                 href={url}
                 type="button"
             >
