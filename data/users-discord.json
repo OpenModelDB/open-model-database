@@ -218,34 +218,8 @@
       "accent_color": null
     }
   },
-  "dinnjerr": {
-    "name": "DinnJerr",
-    "discordData": {
-      "id": "358577579244126209",
-      "username": "DinJerr",
-      "display_name": null,
-      "discriminator": "6955",
-      "avatar_url": "https://cdn.discordapp.com/avatars/358577579244126209/22e73cf018fea3912e6a4a4de972869a.png?size=256",
-      "banner_url": null,
-      "banner_color": null,
-      "accent_color": null
-    }
-  },
-  "end-user-license-agreement": {
-    "name": "end user license agreement#9756",
-    "discordData": {
-      "id": "447803386142654475",
-      "username": "end user license agreement",
-      "display_name": null,
-      "discriminator": "9756",
-      "avatar_url": "https://cdn.discordapp.com/avatars/447803386142654475/e9c50649eaebf0d82177f0e04ae968ca.png?size=256",
-      "banner_url": "https://cdn.discordapp.com/banners/447803386142654475/ea1f65d98f380e18dc8d80eac7de6d16.png?size=256",
-      "banner_color": "#2d264b",
-      "accent_color": 2958923
-    }
-  },
   "eula": {
-    "name": "eula",
+    "name": "end user license agreement#9756",
     "discordData": {
       "id": "447803386142654475",
       "username": "end user license agreement",
@@ -729,19 +703,6 @@
       "banner_url": null,
       "banner_color": "#5e99ff",
       "accent_color": 6199807
-    }
-  },
-  "systemd-resolved": {
-    "name": "systemd-resolved/BlackScout",
-    "discordData": {
-      "id": "316431254478258176",
-      "username": "BlackScout",
-      "display_name": null,
-      "discriminator": "7806",
-      "avatar_url": "https://cdn.discordapp.com/avatars/316431254478258176/eee84633d80b9f6fa2f8382f6d27aff6.png?size=256",
-      "banner_url": null,
-      "banner_color": "#ff0046",
-      "accent_color": 16711750
     }
   },
   "tal": {
