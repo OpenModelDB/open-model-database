@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
+import { BsDiscord } from 'react-icons/bs';
+import { Link } from '../../elements/components/link';
 import { ModelCard } from '../../elements/components/model-card';
 import { PageContainer } from '../../elements/page';
 import { useModels } from '../../lib/hooks/use-models';
@@ -21,9 +23,9 @@ interface Props {
 }
 
 export default function Page({ userId, user, models, discordData }: Props) {
-    const { name } = user;
+    const { name, discordId } = user;
 
-    const { avatarUrl } = discordData || {};
+    const { avatarUrl, bannerUrl, username, discriminator } = discordData || {};
 
     const { modelData } = useModels(models);
 
@@ -46,43 +48,60 @@ export default function Page({ userId, user, models, discordData }: Props) {
             </Head>
             <PageContainer>
                 <div className="py-6">
-                    <div className="mx-auto max-w-screen-2xl">
-                        <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
-                            <div className="my-6 flex w-full content-center items-center gap-2 align-middle">
-                                <div className="m-auto flex gap-2">
-                                    <div className="m-auto flex h-full content-center align-middle">
-                                        {avatarUrl ? (
-                                            <Image
-                                                alt="avatar"
-                                                className="relative m-auto h-10 w-10 rounded-full p-1 ring-2 ring-fade-300 dark:ring-fade-500"
-                                                height={40}
-                                                src={avatarUrl}
-                                                width={40}
-                                            />
-                                        ) : (
-                                            <span className="relative flex h-10 w-10 content-center items-center rounded-full bg-fade-300 p-1 text-center align-middle  font-bold text-gray-600 dark:bg-fade-700 dark:text-gray-300">
-                                                <div className="w-full">{name[0]}</div>
+                    <div className="rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
+                        <div className="my-3 flex w-full content-center items-center gap-2 align-middle">
+                            <div className="m-auto flex gap-2 rounded-lg px-4 py-2">
+                                <div className="m-auto flex h-full content-center align-middle">
+                                    {avatarUrl ? (
+                                        <Image
+                                            alt="avatar"
+                                            className="relative m-auto h-10 w-10 rounded-full p-1 ring-2 ring-fade-300 dark:ring-fade-500"
+                                            height={40}
+                                            src={avatarUrl}
+                                            width={40}
+                                        />
+                                    ) : (
+                                        <span className="relative flex h-10 w-10 content-center items-center rounded-full bg-fade-300 p-1 text-center align-middle  font-bold text-gray-600 dark:bg-fade-700 dark:text-gray-300">
+                                            <div className="w-full">{name[0]}</div>
+                                        </span>
+                                    )}
+                                </div>
+
+                                <div className="flex flex-col align-middle">
+                                    <h1 className="relative m-0 h-full text-center text-2xl font-bold text-accent-500 dark:text-fade-200 lg:text-3xl">
+                                        {`${name}'s Models`}
+                                    </h1>
+                                    {discordId && discordData && (
+                                        <div className="flex flex-row content-center items-center gap-1 align-middle">
+                                            <BsDiscord />
+                                            <span>
+                                                <Link
+                                                    external
+                                                    href={`https://discordapp.com/users/${discordId}`}
+                                                >
+                                                    {username}#{discriminator}
+                                                </Link>
                                             </span>
-                                        )}
-                                    </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Model Cards */}
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {[...modelData]
-                            .filter(([, model]) => hasAuthor(model, userId))
-                            .map(([id, model]) => {
-                                return (
-                                    <ModelCard
-                                        id={id}
-                                        key={id}
-                                        model={model}
-                                    />
-                                );
-                            })}
+                        {/* Model Cards */}
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            {[...modelData]
+                                .filter(([, model]) => hasAuthor(model, userId))
+                                .map(([id, model]) => {
+                                    return (
+                                        <ModelCard
+                                            id={id}
+                                            key={id}
+                                            model={model}
+                                        />
+                                    );
+                                })}
+                        </div>
                     </div>
                 </div>
             </PageContainer>
