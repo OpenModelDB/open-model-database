@@ -145,7 +145,7 @@ export default function Page({ modelId, modelData }: Props) {
                     {/* Right column */}
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
-                        <div className="mb-2">
+                        <div className="mb-2 flex flex-col gap-2">
                             {model.resources.flatMap((resource) => {
                                 return resource.urls.map((url) => (
                                     <DownloadButton
