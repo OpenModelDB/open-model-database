@@ -6,7 +6,7 @@ const discordApiToken = process.env.DISCORD_API_TOKEN || '';
 
 const rest = new REST().setToken(discordApiToken);
 
-export interface IDiscordUser {
+interface IDiscordUser {
     id: string;
     username: string;
     discriminator: string;
