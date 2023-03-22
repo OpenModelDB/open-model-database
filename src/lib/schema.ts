@@ -60,16 +60,16 @@ export interface DiscordData {
     id: string;
     username: string;
     discriminator: string;
-    avatar_url: string | null;
-    banner_url: string | null;
-    accent_color: number | null;
-    banner_color: number | null;
-    display_name: string | null;
+    avatarUrl: string | null;
+    bannerUrl: string | null;
+    accentColor: number | null;
+    bannerColor: number | null;
+    displayName: string | null;
 }
 
 export interface User {
     name: string;
-    discordData: DiscordData | null;
+    discordId: string | null;
 }
 
 export interface Tag {

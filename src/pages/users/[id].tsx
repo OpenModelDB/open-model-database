@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
-import { BsDiscord } from 'react-icons/bs';
 import { ModelCard } from '../../elements/components/model-card';
 import { PageContainer } from '../../elements/page';
 import { useModels } from '../../lib/hooks/use-models';
-import { Model, ModelId, User, UserId } from '../../lib/schema';
+import { DiscordData, Model, ModelId, User, UserId } from '../../lib/schema';
+import { getDiscordUserInfo } from '../../lib/server/discord-data';
 import { fileApi } from '../../lib/server/file-data';
 
 interface Params extends ParsedUrlQuery {
@@ -17,12 +17,16 @@ interface Props {
     userId: UserId;
     user: User;
     models: Record<ModelId, Model>;
+    discordData: DiscordData | null;
 }
 
-export default function Page({ userId, user, models }: Props) {
-    console.log('🚀 ~ file: [id].tsx:21 ~ Page ~ user:', user);
-    const { name, discordData } = user;
-    const { avatar_url: avatarUrl, banner_url: bannerUrl, discriminator, username } = discordData ?? {};
+export default function Page({ userId, user, models, discordData }: Props) {
+    const { name } = user;
+
+    const { avatarUrl } = discordData || {};
+
+    const { modelData } = useModels(models);
+
     return (
         <>
             <Head>
@@ -61,6 +65,10 @@ export default function Page({ userId, user, models }: Props) {
                                             </span>
                                         )}
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     {/* Model Cards */}
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -97,12 +105,14 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 
     const user = await fileApi.users.get(userId);
     const models = await fileApi.models.getAll();
+    const discordData = user.discordId ? await getDiscordUserInfo(user.discordId) : null;
 
     return {
         props: {
             userId,
             user,
             models: Object.fromEntries([...models].filter(([, model]) => hasAuthor(model, userId))),
+            discordData,
         },
     };
 };
