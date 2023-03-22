@@ -25,7 +25,7 @@ interface Props {
 export default function Page({ userId, user, models, discordData }: Props) {
     const { name, discordId } = user;
 
-    const { avatarUrl, bannerUrl, username, discriminator } = discordData || {};
+    const { avatarUrl, username, discriminator } = discordData || {};
 
     const { modelData } = useModels(models);
 
