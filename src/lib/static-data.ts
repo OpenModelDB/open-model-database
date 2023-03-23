@@ -1,6 +1,6 @@
 import tagCategories from '../../data/tag-categories.json';
 import tags from '../../data/tags.json';
-import users from '../../data/users-discord.json';
+import users from '../../data/users.json';
 import { Tag, TagCategory, TagCategoryId, TagId, User, UserId } from './schema';
 
 export const STATIC_TAG_DATA: ReadonlyMap<TagId, Tag> = new Map(Object.entries(tags) as [TagId, Tag][]);

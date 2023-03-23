@@ -1,239 +1,318 @@
 {
-    "3majsie1995": {
-        "name": "3majsie1995"
-    },
-    "akven": {
-        "name": "Akven"
-    },
-    "alexander-syring": {
-        "name": "Alexander Syring"
-    },
-    "alpha": {
-        "name": "Alpha"
-    },
-    "alsa": {
-        "name": "Alsa"
-    },
-    "aptitude": {
-        "name": "aptitude"
-    },
-    "archerpolation": {
-        "name": "Archerpolation"
-    },
-    "blackscout": {
-        "name": "BlackScout"
-    },
-    "blueamulet": {
-        "name": "BlueAmulet"
-    },
-    "bob": {
-        "name": "Bob"
-    },
-    "boxdrop": {
-        "name": "BoxDrop"
-    },
-    "bubblemint": {
-        "name": "Bubblemint#6472"
-    },
-    "buildist": {
-        "name": "buildist"
-    },
-    "bunzero": {
-        "name": "Bunzero++"
-    },
-    "cf2lter": {
-        "name": "CF2lter"
-    },
-    "cg1989": {
-        "name": "CG1989"
-    },
-    "chasemmd": {
-        "name": "ChaseMMD"
-    },
-    "chrisnonyminus": {
-        "name": "ChrisNonyminus"
-    },
-    "computerk": {
-        "name": "ComputerK"
-    },
-    "deorder": {
-        "name": "Deorder"
-    },
-    "dinjerr": {
-        "name": "DinJerr"
-    },
-    "eula": {
-        "name": "end user license agreement#9756"
-    },
-    "eva-01": {
-        "name": "evA-01"
-    },
-    "ezogaming": {
-        "name": "EzoGaming"
-    },
-    "fielran": {
-        "name": "Fielran#1024"
-    },
-    "foolhardy": {
-        "name": "FoolhardyVEVO"
-    },
-    "hubert": {
-        "name": "hubert"
-    },
-    "intheflesh-3116": {
-        "name": "intheflesh#3116"
-    },
-    "itewreed": {
-        "name": "Itewreed"
-    },
-    "jacob": {
-        "name": "Jacob"
-    },
-    "joey": {
-        "name": "Joey"
-    },
-    "josephthekp": {
-        "name": "JosephtheKP"
-    },
-    "katoumegumi": {
-        "name": "katoumegumi_"
-    },
-    "kcjpunk": {
-        "name": "KCJPUNK"
-    },
-    "kim2091": {
-        "name": "Kim2091"
-    },
-    "kingdomakrillic": {
-        "name": "Kingdomakrillic"
-    },
-    "laeris": {
-        "name": "Laeris"
-    },
-    "laserschwert": {
-        "name": "Laserschwert"
-    },
-    "loinne": {
-        "name": "Loinne"
-    },
-    "lyonhrt": {
-        "name": "LyonHrt"
-    },
-    "madiator": {
-        "name": "Madiator"
-    },
-    "mitch": {
-        "name": "mitch#1337"
-    },
-    "mkultra": {
-        "name": "mkultra"
-    },
-    "muf": {
-        "name": "Muf"
-    },
-    "musl": {
-        "name": "musl"
-    },
-    "mutin-choler": {
-        "name": "Mutin Choler"
-    },
-    "mystery-bullet": {
-        "name": "Mystery_Bullet#0642 (Shady Adel)"
-    },
-    "neo-raws": {
-        "name": "Neo-Raws#4055"
-    },
-    "nimrodzorg": {
-        "name": "NimRodZorg"
-    },
-    "nmkd": {
-        "name": "Nmkd"
-    },
-    "nonogamester": {
-        "name": "nonogamester#3975"
-    },
-    "optimusprimal": {
-        "name": "OptimusPrimal"
-    },
-    "pheonix": {
-        "name": "PHEONiX"
-    },
-    "rastrum": {
-        "name": "Rastrum"
-    },
-    "raulsangonzalo": {
-        "name": "raulsangonzalo"
-    },
-    "redslam": {
-        "name": "Redslam"
-    },
-    "rek": {
-        "name": "Rek"
-    },
-    "rtx-2080-ti-hoarder": {
-        "name": "RTX 2080 ti hoarder"
-    },
-    "saurusx": {
-        "name": "SaurusX"
-    },
-    "sazoji": {
-        "name": "Sazoji"
-    },
-    "skr": {
-        "name": "Skr"
-    },
-    "solidd93110": {
-        "name": "solidd93110"
-    },
-    "sudo": {
-        "name": "sudo rm -rf / --no-preserve-root#8353"
-    },
-    "sunseille": {
-        "name": "Sunseille"
-    },
-    "tal": {
-        "name": "Tal"
-    },
-    "tg": {
-        "name": "tg"
-    },
-    "thepi7on": {
-        "name": "ThePi7on"
-    },
-    "tika": {
-        "name": "Tika"
-    },
-    "tldr-coder": {
-        "name": "tldr_coder"
-    },
-    "torrentguy": {
-        "name": "Torrentguy"
-    },
-    "twittman": {
-        "name": "Twittman"
-    },
-    "venomalia": {
-        "name": "Venomalia"
-    },
-    "vgdckeroro": {
-        "name": "VGDCKeroro"
-    },
-    "victorca25": {
-        "name": "victorca25"
-    },
-    "washed-up": {
-        "name": "Washed Up"
-    },
-    "wild-west-quest": {
-        "name": "Wild West Quest#7975"
-    },
-    "xeller": {
-        "name": "Xeller"
-    },
-    "xinntao": {
-        "name": "xinntao"
-    },
-    "zarxrax": {
-        "name": "Zarxrax"
-    }
+  "3majsie1995": {
+    "name": "3majsie1995",
+    "discordId": null
+  },
+  "akven": {
+    "name": "Akven",
+    "discordId": null
+  },
+  "alexander-syring": {
+    "name": "Alexander Syring",
+    "discordId": null
+  },
+  "alpha": {
+    "name": "Alpha",
+    "discordId": null
+  },
+  "alsa": {
+    "name": "Alsa",
+    "discordId": null
+  },
+  "aptitude": {
+    "name": "aptitude",
+    "discordId": null
+  },
+  "archerpolation": {
+    "name": "Archerpolation",
+    "discordId": null
+  },
+  "blackscout": {
+    "name": "BlackScout",
+    "discordId": null
+  },
+  "blueamulet": {
+    "name": "BlueAmulet",
+    "discordId": null
+  },
+  "bob": {
+    "name": "Bob",
+    "discordId": null
+  },
+  "boxdrop": {
+    "name": "BoxDrop",
+    "discordId": null
+  },
+  "bubblemint": {
+    "name": "Bubblemint#6472",
+    "discordId": null
+  },
+  "buildist": {
+    "name": "buildist",
+    "discordId": null
+  },
+  "bunzero": {
+    "name": "Bunzero++",
+    "discordId": null
+  },
+  "cf2lter": {
+    "name": "CF2lter",
+    "discordId": null
+  },
+  "cg1989": {
+    "name": "CG1989",
+    "discordId": null
+  },
+  "chasemmd": {
+    "name": "ChaseMMD",
+    "discordId": null
+  },
+  "chrisnonyminus": {
+    "name": "ChrisNonyminus",
+    "discordId": null
+  },
+  "computerk": {
+    "name": "ComputerK",
+    "discordId": null
+  },
+  "deorder": {
+    "name": "Deorder",
+    "discordId": null
+  },
+  "dinjerr": {
+    "name": "DinJerr",
+    "discordId": null
+  },
+  "eula": {
+    "name": "end user license agreement#9756",
+    "discordId": null
+  },
+  "eva-01": {
+    "name": "evA-01",
+    "discordId": null
+  },
+  "ezogaming": {
+    "name": "EzoGaming",
+    "discordId": null
+  },
+  "fielran": {
+    "name": "Fielran#1024",
+    "discordId": null
+  },
+  "foolhardy": {
+    "name": "FoolhardyVEVO",
+    "discordId": null
+  },
+  "hubert": {
+    "name": "hubert",
+    "discordId": null
+  },
+  "intheflesh-3116": {
+    "name": "intheflesh#3116",
+    "discordId": null
+  },
+  "itewreed": {
+    "name": "Itewreed",
+    "discordId": null
+  },
+  "jacob": {
+    "name": "Jacob",
+    "discordId": null
+  },
+  "joey": {
+    "name": "Joey#4305",
+    "discordId": "66238401078112256"
+  },
+  "josephthekp": {
+    "name": "JosephtheKP",
+    "discordId": null
+  },
+  "katoumegumi": {
+    "name": "katoumegumi_",
+    "discordId": null
+  },
+  "kcjpunk": {
+    "name": "KCJPUNK",
+    "discordId": null
+  },
+  "kim2091": {
+    "name": "Kim2091",
+    "discordId": null
+  },
+  "kingdomakrillic": {
+    "name": "Kingdomakrillic",
+    "discordId": null
+  },
+  "laeris": {
+    "name": "Laeris",
+    "discordId": null
+  },
+  "laserschwert": {
+    "name": "Laserschwert",
+    "discordId": null
+  },
+  "loinne": {
+    "name": "Loinne",
+    "discordId": null
+  },
+  "lyonhrt": {
+    "name": "LyonHrt",
+    "discordId": null
+  },
+  "madiator": {
+    "name": "Madiator",
+    "discordId": null
+  },
+  "mitch": {
+    "name": "mitch#1337",
+    "discordId": null
+  },
+  "mkultra": {
+    "name": "mkultra",
+    "discordId": null
+  },
+  "muf": {
+    "name": "Muf",
+    "discordId": null
+  },
+  "musl": {
+    "name": "musl",
+    "discordId": null
+  },
+  "mutin-choler": {
+    "name": "Mutin Choler",
+    "discordId": null
+  },
+  "mystery-bullet": {
+    "name": "Mystery_Bullet#0642 (Shady Adel)",
+    "discordId": null
+  },
+  "neo-raws": {
+    "name": "Neo-Raws#4055",
+    "discordId": null
+  },
+  "nimrodzorg": {
+    "name": "NimRodZorg",
+    "discordId": null
+  },
+  "nmkd": {
+    "name": "Nmkd",
+    "discordId": null
+  },
+  "nonogamester": {
+    "name": "nonogamester#3975",
+    "discordId": null
+  },
+  "optimusprimal": {
+    "name": "OptimusPrimal",
+    "discordId": null
+  },
+  "pheonix": {
+    "name": "PHEONiX",
+    "discordId": null
+  },
+  "rastrum": {
+    "name": "Rastrum",
+    "discordId": null
+  },
+  "raulsangonzalo": {
+    "name": "raulsangonzalo",
+    "discordId": null
+  },
+  "redslam": {
+    "name": "Redslam",
+    "discordId": null
+  },
+  "rek": {
+    "name": "Rek",
+    "discordId": null
+  },
+  "rtx-2080-ti-hoarder": {
+    "name": "RTX 2080 ti hoarder",
+    "discordId": null
+  },
+  "saurusx": {
+    "name": "SaurusX",
+    "discordId": null
+  },
+  "sazoji": {
+    "name": "Sazoji",
+    "discordId": null
+  },
+  "skr": {
+    "name": "Skr",
+    "discordId": null
+  },
+  "solidd93110": {
+    "name": "solidd93110",
+    "discordId": null
+  },
+  "sudo": {
+    "name": "sudo rm -rf / --no-preserve-root#8353",
+    "discordId": null
+  },
+  "sunseille": {
+    "name": "Sunseille",
+    "discordId": null
+  },
+  "tal": {
+    "name": "Tal",
+    "discordId": null
+  },
+  "tg": {
+    "name": "tg",
+    "discordId": null
+  },
+  "thepi7on": {
+    "name": "ThePi7on",
+    "discordId": null
+  },
+  "tika": {
+    "name": "Tika",
+    "discordId": null
+  },
+  "tldr-coder": {
+    "name": "tldr_coder",
+    "discordId": null
+  },
+  "torrentguy": {
+    "name": "Torrentguy",
+    "discordId": null
+  },
+  "twittman": {
+    "name": "Twittman",
+    "discordId": null
+  },
+  "venomalia": {
+    "name": "Venomalia",
+    "discordId": null
+  },
+  "vgdckeroro": {
+    "name": "VGDCKeroro",
+    "discordId": null
+  },
+  "victorca25": {
+    "name": "victorca25",
+    "discordId": null
+  },
+  "washed-up": {
+    "name": "Washed Up",
+    "discordId": null
+  },
+  "wild-west-quest": {
+    "name": "Wild West Quest#7975",
+    "discordId": null
+  },
+  "xeller": {
+    "name": "Xeller",
+    "discordId": null
+  },
+  "xinntao": {
+    "name": "xinntao",
+    "discordId": null
+  },
+  "zarxrax": {
+    "name": "Zarxrax",
+    "discordId": null
+  }
 }

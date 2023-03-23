@@ -9,7 +9,7 @@ import { JsonFile, fileExists } from './fs-util';
 
 const DATA_DIR = './data/';
 const MODEL_DIR = join(DATA_DIR, 'models');
-const USERS_JSON = join(DATA_DIR, 'users-discord.json');
+const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
 const TAG_CATEGORIES_JSON = join(DATA_DIR, 'tag-categories.json');
 
