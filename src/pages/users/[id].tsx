@@ -8,8 +8,8 @@ import { Link } from '../../elements/components/link';
 import { ModelCard } from '../../elements/components/model-card';
 import { PageContainer } from '../../elements/page';
 import { useModels } from '../../lib/hooks/use-models';
-import { DiscordData, Model, ModelId, User, UserId } from '../../lib/schema';
-import { getDiscordUserInfo } from '../../lib/server/discord-data';
+import { Model, ModelId, User, UserId } from '../../lib/schema';
+import { DiscordData, getDiscordUserInfo } from '../../lib/server/discord-data';
 import { fileApi } from '../../lib/server/file-data';
 
 interface Params extends ParsedUrlQuery {

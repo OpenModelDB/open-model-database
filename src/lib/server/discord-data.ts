@@ -1,23 +1,31 @@
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v10';
-import { DiscordData } from '../schema';
+export interface DiscordData {
+    id: string;
+    username: string;
+    discriminator: string;
+    avatarUrl: string | null;
+    bannerUrl: string | null;
+    accentColor: number | null;
+    bannerColor: number | null;
+    displayName: string | null;
+}
 
 const discordApiToken = process.env.DISCORD_API_TOKEN || '';
 
 const rest = new REST().setToken(discordApiToken);
 
-interface IDiscordUser {
-    id: string;
-    username: string;
-    discriminator: string;
-    avatar: string | null;
-    banner: string | null;
-    accent_color: number | null;
-    banner_color: number | null;
-    display_name: string | null;
-}
-
-const fetchUser = async (id: string) => rest.get(Routes.user(id)) as Promise<IDiscordUser>;
+const fetchUser = async (id: string) =>
+    rest.get(Routes.user(id)) as Promise<{
+        id: string;
+        username: string;
+        discriminator: string;
+        avatar: string | null;
+        banner: string | null;
+        accent_color: number | null;
+        banner_color: number | null;
+        display_name: string | null;
+    }>;
 
 export const getDiscordUserInfo = async (userId: string): Promise<DiscordData | null> => {
     if (!discordApiToken) {
