@@ -2,7 +2,7 @@ name: Frontend
 
 on:
     pull_request:
-        branches: ["*"]
+        branches: ['*']
         types:
             - opened
             - synchronize
@@ -19,6 +19,8 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 16.x
+              env:
+                  DISCORD_API_TOKEN: ${{ secrets.DISCORD_API_TOKEN }}
             - run: npm ci
             - name: ESLint & StyleLint
               run: npm run lint:ci
@@ -31,6 +33,8 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 16.x
+              env:
+                  DISCORD_API_TOKEN: ${{ secrets.DISCORD_API_TOKEN }}
             - run: npm ci
             - run: npm run build
 
@@ -42,5 +46,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 16.x
+              env:
+                  DISCORD_API_TOKEN: ${{ secrets.DISCORD_API_TOKEN }}
             - run: npm ci
             - run: npm test
