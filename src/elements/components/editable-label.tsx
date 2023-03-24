@@ -4,13 +4,14 @@ import { joinClasses } from '../../lib/util';
 import style from './editable-label.module.scss';
 
 export interface EditableLabelProps {
-    text: string;
+    text: string | number;
     className?: string;
     readonly?: boolean;
-    onChange?: (newText: string) => void;
+    onChange?: (newText: string | number) => void;
+    type?: 'text' | 'number';
 }
 
-export function EditableLabel({ className, text, onChange, readonly }: EditableLabelProps) {
+export function EditableLabel({ className, text, onChange, readonly, type = 'text' }: EditableLabelProps) {
     const [edit, setEdit] = useState(false);
     const [value, setValue] = useState(text);
 
@@ -35,7 +36,16 @@ export function EditableLabel({ className, text, onChange, readonly }: EditableL
 
     const submit = () => {
         if (value !== text) {
-            onChange(value);
+            if (type === 'number') {
+                const num = Number(value);
+                if (isNaN(num)) {
+                    setValue(text);
+                    return;
+                }
+                onChange(num);
+            } else {
+                onChange(value);
+            }
         }
         setEdit(false);
     };
@@ -44,7 +54,7 @@ export function EditableLabel({ className, text, onChange, readonly }: EditableL
         <input
             autoFocus
             className={style.input}
-            type="text"
+            type={type}
             value={value}
             onBlur={submit}
             onChange={(e) => setValue(e.target.value)}

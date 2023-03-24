@@ -182,7 +182,14 @@ export default function Page({ modelId, modelData }: Props) {
                                         >
                                             Scale
                                         </th>
-                                        <td className="px-6 py-4 ">{model.scale}</td>
+                                        <td className="px-6 py-4 ">
+                                            <EditableLabel
+                                                readonly={!editMode}
+                                                text={model.scale}
+                                                type="number"
+                                                onChange={(value) => updateModelProperty('scale', Number(value))}
+                                            />
+                                        </td>
                                     </tr>
                                     {model.size && (
                                         <tr className="">
