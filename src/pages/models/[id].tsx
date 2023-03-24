@@ -8,6 +8,7 @@ import { EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
+import { ARCHITECTURES } from '../../lib/architecture-data';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
@@ -168,11 +169,25 @@ export default function Page({ modelId, modelData }: Props) {
                                             Architecture
                                         </th>
                                         <td className="px-6 py-4">
-                                            <EditableLabel
-                                                readonly={!editMode}
-                                                text={model.architecture}
-                                                onChange={(value) => updateModelProperty('architecture', value)}
-                                            />
+                                            {editMode ? (
+                                                <select
+                                                    value={model.architecture}
+                                                    onChange={(event) => {
+                                                        updateModelProperty('architecture', event.target.value);
+                                                    }}
+                                                >
+                                                    {Object.keys(ARCHITECTURES).map((arch) => (
+                                                        <option
+                                                            key={arch}
+                                                            value={arch}
+                                                        >
+                                                            {arch}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            ) : (
+                                                model.architecture
+                                            )}
                                         </td>
                                     </tr>
                                     <tr className="">
