@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback } from 'react';
+import { BsPersonFillAdd } from 'react-icons/bs';
+import { MdRemoveCircle } from 'react-icons/md';
 import { DownloadButton } from '../../elements/components/download-button';
 import { EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
@@ -91,35 +93,52 @@ export default function Page({ modelId, modelData }: Props) {
                                         onChange={(value) => updateModelProperty('name', value)}
                                     />
                                 </h1>
-                                <p className="m-0">
+                                <p className="m-0 flex flex-row gap-2">
                                     by{' '}
-                                    <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
+                                    <strong className="m-0 flex flex-row gap-2 text-lg text-accent-600 dark:text-accent-500">
                                         {asArray(model.author).map((userId, userIndex) => {
                                             if (editMode) {
                                                 return (
-                                                    <select
+                                                    <div
+                                                        className="flex flex-row gap-2"
                                                         key={userId}
-                                                        value={userId}
-                                                        onChange={(event) => {
-                                                            const content = event.target.value as UserId;
-                                                            if (Array.isArray(model.author)) {
-                                                                const newAuthor = [...model.author];
-                                                                newAuthor[userIndex] = content;
-                                                                updateModelProperty('author', newAuthor);
-                                                            } else {
-                                                                updateModelProperty('author', content);
-                                                            }
-                                                        }}
                                                     >
-                                                        {[...userData].map(([userId, user]) => (
-                                                            <option
-                                                                key={userId}
-                                                                value={userId}
+                                                        <select
+                                                            value={userId}
+                                                            onChange={(event) => {
+                                                                const content = event.target.value as UserId;
+                                                                if (Array.isArray(model.author)) {
+                                                                    const newAuthor = [...model.author];
+                                                                    newAuthor[userIndex] = content;
+                                                                    updateModelProperty('author', newAuthor);
+                                                                } else {
+                                                                    updateModelProperty('author', content);
+                                                                }
+                                                            }}
+                                                        >
+                                                            {[...userData].map(([userId, user]) => (
+                                                                <option
+                                                                    key={userId}
+                                                                    value={userId}
+                                                                >
+                                                                    {user.name}
+                                                                </option>
+                                                            ))}
+                                                        </select>
+                                                        {userIndex > 0 && (
+                                                            <button
+                                                                onClick={() => {
+                                                                    if (Array.isArray(model.author)) {
+                                                                        const newAuthor = [...model.author];
+                                                                        newAuthor.splice(userIndex, 1);
+                                                                        updateModelProperty('author', newAuthor);
+                                                                    }
+                                                                }}
                                                             >
-                                                                {user.name}
-                                                            </option>
-                                                        ))}
-                                                    </select>
+                                                                <MdRemoveCircle />
+                                                            </button>
+                                                        )}
+                                                    </div>
                                                 );
                                             }
                                             return (
@@ -131,6 +150,21 @@ export default function Page({ modelId, modelData }: Props) {
                                             );
                                         })}
                                     </strong>
+                                    {editMode && (
+                                        <button
+                                            onClick={() => {
+                                                const firstUser = userData.keys().next().value as UserId;
+                                                if (Array.isArray(model.author)) {
+                                                    const newAuthor = [...model.author, firstUser];
+                                                    updateModelProperty('author', newAuthor);
+                                                } else {
+                                                    updateModelProperty('author', [model.author, firstUser]);
+                                                }
+                                            }}
+                                        >
+                                            <BsPersonFillAdd />
+                                        </button>
+                                    )}
                                 </p>
                             </div>
                             <div className="py-4">
