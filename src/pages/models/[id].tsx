@@ -144,7 +144,7 @@ export default function Page({ modelId, modelData }: Props) {
                                             return (
                                                 <React.Fragment key={userId}>
                                                     <Link href={`/users/${userId}`}>
-                                                        {userData.get(userId)?.name ?? `unknow user:${userId}`}
+                                                        {userData.get(userId)?.name ?? `unknown user:${userId}`}
                                                     </Link>
                                                 </React.Fragment>
                                             );
