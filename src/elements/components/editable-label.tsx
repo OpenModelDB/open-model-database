@@ -4,10 +4,10 @@ import { joinClasses } from '../../lib/util';
 import style from './editable-label.module.scss';
 
 export interface EditableLabelProps {
-    text: string | number;
+    text: string;
     className?: string;
     readonly?: boolean;
-    onChange?: (newText: string | number) => void;
+    onChange?: (newText: string) => void;
     type?: 'text' | 'number';
 }
 
@@ -38,11 +38,12 @@ export function EditableLabel({ className, text, onChange, readonly, type = 'tex
         if (value !== text) {
             if (type === 'number') {
                 const num = Number(value);
-                if (isNaN(num)) {
-                    setValue(text);
+                if (isNaN(num) || !value) {
+                    setValue('0');
+                    onChange('0');
                     return;
                 }
-                onChange(num);
+                onChange(String(num));
             } else {
                 onChange(value);
             }
