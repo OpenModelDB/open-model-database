@@ -1,18 +1,17 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback } from 'react';
 import { DownloadButton } from '../../elements/components/download-button';
 import { EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
+import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
-import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId, UserId } from '../../lib/schema';
+import { ArchId, Model, ModelId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -47,7 +46,6 @@ const dummyImages = [
 ];
 
 export default function Page({ modelId, modelData }: Props) {
-    const { userData } = useUsers();
     const { archData } = useArchitectures();
 
     const { webApi, editMode } = useWebApi();
@@ -93,47 +91,16 @@ export default function Page({ modelId, modelData }: Props) {
                                         onChange={(value) => updateModelProperty('name', value)}
                                     />
                                 </h1>
-                                <p className="m-0">
+                                <div className="m-0 flex w-full max-w-full flex-row gap-2">
                                     by{' '}
-                                    <strong className="m-0 text-lg text-accent-600 dark:text-accent-500">
-                                        {asArray(model.author).map((userId, userIndex) => {
-                                            if (editMode) {
-                                                return (
-                                                    <select
-                                                        key={userId}
-                                                        value={userId}
-                                                        onChange={(event) => {
-                                                            const content = event.target.value as UserId;
-                                                            if (Array.isArray(model.author)) {
-                                                                const newAuthor = [...model.author];
-                                                                newAuthor[userIndex] = content;
-                                                                updateModelProperty('author', newAuthor);
-                                                            } else {
-                                                                updateModelProperty('author', content);
-                                                            }
-                                                        }}
-                                                    >
-                                                        {[...userData].map(([userId, user]) => (
-                                                            <option
-                                                                key={userId}
-                                                                value={userId}
-                                                            >
-                                                                {user.name}
-                                                            </option>
-                                                        ))}
-                                                    </select>
-                                                );
-                                            }
-                                            return (
-                                                <React.Fragment key={userId}>
-                                                    <Link href={`/users/${userId}`}>
-                                                        {userData.get(userId)?.name ?? `unknow user:${userId}`}
-                                                    </Link>
-                                                </React.Fragment>
-                                            );
-                                        })}
-                                    </strong>
-                                </p>
+                                    <EditableUsers
+                                        readonly={!editMode}
+                                        users={asArray(model.author)}
+                                        onChange={(users) => {
+                                            updateModelProperty('author', users.length === 1 ? users[0] : users);
+                                        }}
+                                    />
+                                </div>
                             </div>
                             <div className="py-4">
                                 <EditableMarkdownContainer
