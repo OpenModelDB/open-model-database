@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Art\n\nThis model upscales Digital Drawings. It was trained on random drawings found on DeviantArt. Mostly Landscape and Scenery and Illustrations of Characters. It does fairly well and works on many different styles.",
     "date": "2020-02-25",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "e237af48c942a37237c177f967442c678edb932e9507706b4f6580c2abfe9bdb",

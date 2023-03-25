@@ -8,7 +8,7 @@
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures/equipment\n\n",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "125ed92b5f7ef11557e38ac322e07afe6f67fd8a1865ede2ed5fba853d6ab4c2",

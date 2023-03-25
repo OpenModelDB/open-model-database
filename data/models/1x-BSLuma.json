@@ -7,7 +7,7 @@
     ],
     "description": "Category: Luminance/Chroma\nPurpose: Luma\n\nFix Luminance issues?? LumaSharpen ESRGAN Edition? - This model mostly does what \"Lumasharpen\" algorithms do. It may help fixing images with Luminance images issues? Like old DVD rips? I am not sure, didn't test.",
     "date": "2020-02-28",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66663810,
             "sha256": "3d4d1897d41c9e33cf77d744ce9fb873c4103110e52b71a25e97245f09d94230",

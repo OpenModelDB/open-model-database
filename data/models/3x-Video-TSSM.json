@@ -7,13 +7,14 @@
     ],
     "description": "Category: Pretrained Discriminators\nPurpose: Animation\n\nnone",
     "date": "2020-11-17",
-    "architecture": "SOFVSR",
+    "architecture": "sofvsr",
     "size": null,
     "scale": 3,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4730412,
             "sha256": "3ed58c98012ee903fcda6c26fd28f27bd2e3560a10d4904fb384b3de6f7c52fb",

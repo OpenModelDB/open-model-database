@@ -8,7 +8,7 @@
     ],
     "description": "Category: Aliasing\nPurpose: Anti aliasing / Deblur\n\nTo eliminate aliasing and general artifacts caused by not enough resolution while bringing out details Im stopping its training here because it's getting worse, i think of some aligment issues by game's rendering pipeline + downscaling...",
     "date": "2022-02-26",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "254f3c5dd1c21097d770d5878072e8cb4cec43d38e9bac76d35778b45a83c49f",

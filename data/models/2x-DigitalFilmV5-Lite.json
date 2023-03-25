@@ -7,7 +7,7 @@
     ],
     "description": "Category: Cel Animation\nPurpose: Traditional Animation\n\nUpscaling Dragon Ball Z DBox DVD's. - grainy sources. It keeps some grain, but also doing some cleaning, sharpening, and fixing.",
     "date": "2021-02-19",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "12nf",
         "8nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 8199999,
             "sha256": "ed75272d5c55318c7307bcb4faaba63a69f0cfa1576dd1068b9737ecdfd3e734",

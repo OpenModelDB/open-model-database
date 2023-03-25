@@ -7,7 +7,7 @@
     ],
     "description": "Category: CGI\nPurpose: CGI\n\nUpscaling CG-painted anime with variable outlines.",
     "date": "2019-07-12",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "f2d8c985b59ff33cf1d70bdae489f748b687fff6124310da5c1bfbb8f8913486",

@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale Anime while keeping as much of the original detail as possible. Isn't among the sharpest models and if the anime is somewhat blurry it will retain that detail but add more pixels to give a smoother edge. Doesn't change the color very much and may make some scene's very slightly darker.",
     "date": "2021-06-07",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20173354,
             "sha256": "d7a06a03594c11209191c96df29a4df1d67e66a3b17455c6edcfecd38ab22ff1",

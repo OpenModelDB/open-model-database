@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nThis model upscales while doing some sharpening and line darkening. Can also clean up some minor artifacts of various types. It is intended to to be a good general purpose upscaler that will work well with most animation.",
     "date": "2023-01-18",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4838409,
             "sha256": "5ed232c71599b01911e045c0246530fcfe5b2e0791242ff7d3964f97d74f8df0",

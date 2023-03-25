@@ -7,7 +7,7 @@
     ],
     "description": "Category: Coins\nPurpose: Coins\n\nUpscale coins. That's it. If you were mad at me because Nickelback doesn't make any sense. Now you have the perfect solution to your problems. If you want to upscale nickels or anything with similar texture made out of metal, now you can. It works pretty well for a joke.",
     "date": "2020-02-13",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "a1aa83638978dce8da94c963dbc6bf2e6a7538058359b79c07b3e8a477822d28",

@@ -10,7 +10,7 @@
     ],
     "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\n\nWipes out dot crawl and rainbows in animation.",
     "date": "2022-12-09",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -20,6 +20,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4796829,
             "sha256": "197d59563f635e4ab7c78f558376b7c903737fe14889d3294ec198df27955507",

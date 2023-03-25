@@ -7,7 +7,7 @@
     ],
     "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.",
     "date": "2020-09-05",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "a300ea6af3554e2f077df6f01850f2fe243d4f4912516a7085c3641a6c60828c",

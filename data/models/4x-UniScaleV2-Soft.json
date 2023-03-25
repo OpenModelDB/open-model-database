@@ -8,7 +8,7 @@
     ],
     "description": "Category: Universal Models\nPurpose: Universal Upscaler\n\nThese models work great on game textures when interpolated 50/50 with UniScale_Restore, and work amazingly on uncompressed images. DO NOT USE FOR COMPRESSED IMAGES, use the original UniScale or UltraSharp for that.",
     "date": "2021-09-06",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67010245,
             "sha256": "5e2b1d5272d22728e6c14251c1197ae58872650a008a9f2c887b9c394c20e4f4",

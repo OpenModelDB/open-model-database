@@ -10,7 +10,7 @@
     ],
     "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\n\nThis is a sharpening/deblurring model for anime video. It was created with three goals in mind:\nBe blazing fast\nTry to avoid enhancing noise and compression artifacts\nTry to avoid over-enhancing intentionally blurred parts of the image\n\nDespite that last point, this is not intended to be used on modern anime which makes heavy of use depth-of-field effects.",
     "date": "2022-06-04",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "24nf",
         "8nc"
@@ -20,6 +20,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 362039,
             "sha256": "d91fa17c4392918af37e3b9b3a4ebbf2affe591f39046a34f0c67543a35f401e",

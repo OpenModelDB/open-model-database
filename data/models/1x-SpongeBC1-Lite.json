@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: BC1/DXT1 compression\n\nFirst ever lite BC1/DXT1 model. Probably only useful for cartoony textures like those in spongebob games or other cartoon licensed games.",
     "date": "2020-11-01",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20098601,
             "sha256": "6d31cdd85e382035ba2946017fd10e9268c70b33be2ec7fbc0f6d212c509167b",

@@ -7,7 +7,7 @@
     ],
     "description": "Category: VHS Tapes\nPurpose: VHS\n\nFixing minor VHS Chroma and Pattern Noise - NOTE: only works on deinterlaced sources",
     "date": "2021-03-03",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "9c945b10ab0d45f8f53d2e18f9bfe1017dbc3c6e7233d657cb4845de81cd5ea1",

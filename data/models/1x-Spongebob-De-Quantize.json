@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures",
     "date": "2019-11-02",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "787bb98d7be5b6f5e369b4f500eb54ee5cc188dbc26b4f6cd1eb127404b879c3",

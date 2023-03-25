@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: Compression\n\nIncomplete lite model to remove ROQ compression",
     "date": "2022-07-26",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20098601,
             "sha256": "47522c0342d41e5d40db84105f3973db2700462b62c2625479201e3f897f44a0",

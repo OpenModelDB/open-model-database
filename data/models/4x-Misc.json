@@ -8,7 +8,7 @@
     ],
     "description": "Category: Realistic Photos\nPurpose: General Upscaler\nPretrained: Manga109Attempt\n\nThe Misc model is trained on various pictures shot by myself (Alsa), including bricks, stone, dirt, grass, plants, wood, bark, metal and a few others.",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66960011,
             "sha256": "3f379331b50e54efea46a3221ecb107b1ff369bba65f3f0a9468b29f815406bb",

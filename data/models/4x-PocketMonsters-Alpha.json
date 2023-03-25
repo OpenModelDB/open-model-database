@@ -7,7 +7,7 @@
     ],
     "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\n\nupscaling pixel art with alpha channels that should perform better than any other. It should work well on both cartoon and 3D styled content.",
     "date": "2021-02-04",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 4,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66963219,
             "sha256": "5298d6ab606ec36a54acb220eb47c846f15609bc478ffbe2652897fe93a38ebf",

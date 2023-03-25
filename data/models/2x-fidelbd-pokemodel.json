@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nMade this model to upscale old anime that looks blurry.",
     "date": "2020-08-29",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66810509,
             "sha256": "79ad512557eaf052f1d540c117b4408a7fa24999c75abbf1c2f52a5b1d2353b2",

@@ -7,7 +7,7 @@
     ],
     "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nMeant as a versatile model for upscaling high detail digital anime and cartoons. Has debanding, MPEG-2 correction, and halo reduction. Trained to handle both 4:3 and 16:9 DVD material with equal efficacy. Will retain a lot of textures except for the really high freq stuff.",
     "date": "2022-07-05",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20135976,
             "sha256": "3b08cbf2e9adb3121dd5c010812485f43a6e0403cdfd5f3c02fef44aefdd99d2",

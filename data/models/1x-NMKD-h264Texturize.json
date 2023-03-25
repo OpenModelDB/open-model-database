@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: Texturizing\n\nTries to reverse heavy h264 compression. Fails. Can be used to texturize images though.",
     "date": "2020-10-20",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66661577,
             "sha256": "34d42258a18ecae1af73f6b4809584723631556670fd93212bbd20afebcb9db8",

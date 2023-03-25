@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Pixel Art",
     "date": "2019-09-08",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66810509,
             "sha256": "6b686f8e4d6eb44d14586c5bd267c99734a5f220aee4be8539bf973e24638e32",

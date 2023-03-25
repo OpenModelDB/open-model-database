@@ -7,7 +7,7 @@
     ],
     "description": "Category: Pretrained Discriminators\nPurpose: Pretrained\n\nClean bicubic downscales / Pretrained models (G/D)",
     "date": "2021-01-17",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "8d55ed06dc0d3ab3f355035f8de49b86e2c2bb8cf3e046330af6fcf673fa87ce",

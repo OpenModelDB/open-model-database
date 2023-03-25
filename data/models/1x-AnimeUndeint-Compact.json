@@ -10,7 +10,7 @@
     ],
     "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\n\nThis model corrects jagged lines on animation that has been deinterlaced. It handles simple line doubling, line interpolation, and even Yadif-style artifacts. It can also handle sources that were resized after deinterlacing, for example resizing from ntsc to pal resolutions. If a source has been upscaled after deinterlacing, it will need to be downsized before applying this model.",
     "date": "2022-06-05",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -20,6 +20,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4795821,
             "sha256": "f8b2b98c4e5dd3989b836414e2624e0795d74a8eba44e32cba6d18cce181140c",

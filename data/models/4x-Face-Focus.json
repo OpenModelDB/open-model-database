@@ -9,7 +9,7 @@
     ],
     "description": "Category: Faces\nPurpose: Faces\n\nFace De-blur - slightly out of focus / blurred images of faces. It is aimed at faces / hair",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "a5b0546243a01f98ae63faaa691351be55416bb723271fb4f5147548b8c0b613",

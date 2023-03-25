@@ -8,7 +8,7 @@
     ],
     "description": "Category: Noise\nPurpose: denoise\n\nRemove high ISO noise",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66658210,
             "sha256": "c3f9061143cb9c65add4f4d6b701416d251b6c22624bd5161a65357f52d5627d",

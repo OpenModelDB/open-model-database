@@ -8,7 +8,7 @@
     ],
     "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\n\nAttempts to remove the damages done by BC1 compression.",
     "date": "2020-08-02",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "095e69633e235350817065e6a72c733e38f2900f9271bc537844dd2b4bfe3f43",

@@ -8,7 +8,7 @@
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures\n\nMorrowind Mod Textures",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "e5259a0b5a273b3d0018a2d4e095d1fb695eff564df5f98bc10498af6c97e96a",

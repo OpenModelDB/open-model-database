@@ -8,13 +8,14 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\nPretrained: Interpolated from nmkd's pixel art upscaling models with different interpolation settings and de-dithered versions\n\nSmooth general pixel art, Minecraft textures",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": null,
     "scale": 8,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": null,
             "sha256": null,

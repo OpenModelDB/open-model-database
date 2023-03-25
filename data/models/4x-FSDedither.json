@@ -8,7 +8,7 @@
     ],
     "description": "Category: Dithering\nPurpose: Dithering\n\nFor photos/realistic images, but worth trying on other images that have reduced colors and dithering along with fine details. Trained using the ESRGAN-FS code (https://github.com/ManuelFritsche/real-world-sr/tree/master/esrgan-fs/codes) for better details compared to plain ESRGAN.",
     "date": "2020-01-29",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "be2e991e5f19a4b6bda3619fd806cb978ff91bed2afbf9453ba0d8e15bdff133",

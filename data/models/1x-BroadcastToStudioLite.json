@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nImprovement of low-quality cartoons from broadcast sources.",
     "date": "2022-03-05",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20098601,
             "sha256": "912ff494e454a135ba2341d522c38089736654daf32bd6c7bb81549bb9512d38",

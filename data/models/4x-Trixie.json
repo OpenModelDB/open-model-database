@@ -8,7 +8,7 @@
     ],
     "description": "Category: Video Game Textures\nPurpose: Faces / Game Textures\n\ncharacter textures for star wars games, including the heroes, rebels, sith and imperial. Plus a few main aliens…Why called trixie? Because jar jars big adventure would be too long of a name… This also provides good upscale for face textures for general purpose as well as basic star wars",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "c1095f0f53ce346d2caa1fe94f9a7c910d213dfd49cffa0408ae24245ca72db0",

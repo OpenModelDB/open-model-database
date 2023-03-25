@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale MLP episodes. Full version. Able to handle compression better compared to V1.0 and no longer creates halo's/rainbows. Good for Vector 2D art however converts detail to blobs.",
     "date": "2021-04-30",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "24nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 69847036,
             "sha256": "eadbc08f19129a729dbbb9a99926c77990fe3e98515fb120ada1b66b72d13bdc",

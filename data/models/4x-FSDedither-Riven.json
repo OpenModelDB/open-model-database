@@ -8,7 +8,7 @@
     ],
     "description": "Category: Dithering\nPurpose: Dithering\n\nFine-tuned 4xFSDedither to upscale images from the game Riven, but should be better in general, particularly on ordered dithering. I adjusted the dataset to have a better variety of dithering parameters, and turned up the HFEN and pixel loss to get better details and color restoration with less noise.",
     "date": "2020-07-11",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "712f18baca9bcc09cd30f4ba8a524d66d0960ea72e2fe33f939e190cdc27745d",

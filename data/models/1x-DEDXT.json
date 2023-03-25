@@ -8,7 +8,7 @@
     ],
     "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: DXT compression\n\nTo retain details while removing artifacts caused by dxt compression on textures",
     "date": "2022-02-26",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "4400aa3970a1bf8279f290a7c4c73ff655ece058e94aaa162955459d63093406",
