@@ -7,7 +7,7 @@
     ],
     "description": "Category: Pretrained Models\nPurpose: Pretrained\nPretrained: RRDB_ESRGAN_x4.pth\n\n",
     "date": "2019-07-06",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66656830,
             "sha256": "25e733e2b0d6ada63b07ace241e0f1065cec0d08945d6b20b9d46cc88bfa8b5d",

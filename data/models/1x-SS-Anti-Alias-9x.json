@@ -8,7 +8,7 @@
     ],
     "description": "Category: Aliasing\nPurpose: Anti aliasing",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "c0066eb6e6013839c20d0a986a1cd3067e857801c6cc0a879091c2d095753800",

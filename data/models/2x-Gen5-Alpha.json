@@ -7,7 +7,7 @@
     ],
     "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\n\n",
     "date": "2021-02-03",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 4,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66815121,
             "sha256": "cf5a17eb114b6d72b4d40f0c6acd6a732a15af8b799f919c58edf97ba4442542",

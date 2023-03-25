@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscaling frames from Irodori anime (namely kemono friends) from 540p (the source render resolution) to 1080p, low resolution flat shaded art, de-JPEG of the aforementioned",
     "date": "2021-06-05",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66758126,
             "sha256": "b64cec8f4c2a848e0e67eb8d8992b8dd9e0d6a82b330f09150c36b3089d9878b",

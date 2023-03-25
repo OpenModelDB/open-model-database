@@ -7,7 +7,7 @@
     ],
     "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: This is my first attempt to make Light model so I started with 2x version. This model is much faster and give better results than my previous one.\n\nUp-scaling Digital Animation",
     "date": "2021-03-23",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "11nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 18468480,
             "sha256": "821dc99a36bf16a1521be35e3ebd07c3a0c2572bc9248ea9ba93e1580020705f",

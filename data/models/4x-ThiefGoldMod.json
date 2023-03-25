@@ -8,7 +8,7 @@
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures\n\nVersion of the previous model but based on Manga109 pretrained model and with slightly different dataset. Sometimes gives better results especially for wood and metal, sometimes worse. Sometime generates the same dotted artifacts on very bright/white images.",
     "date": "2020-05-15",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "e9f35fade9e2ba35f3404e075b4e6ff31590807578260b56054bbceef434b966",

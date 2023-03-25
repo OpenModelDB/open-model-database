@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\n\nNTSC DVD-spec encode x4 scale super-resolution for Anime Drawing style content. The dataset has a LOT of data throughout almost every frame, so it had a lot of stuff to learn. The resulting DVD-spec encode also had some blocking at times so it also learned to fight off blocking.",
     "date": "2020-04-08",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66960011,
             "sha256": "d52833b5067a352b5894598d46d45b39c0c832ae42b34fdb2ddc8cba61a16a89",

@@ -8,10 +8,11 @@ import { EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
+import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { Model, ModelId, UserId } from '../../lib/schema';
+import { ArchId, Model, ModelId, UserId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -46,6 +47,9 @@ const dummyImages = [
 ];
 
 export default function Page({ modelId, modelData }: Props) {
+    const { userData } = useUsers();
+    const { archData } = useArchitectures();
+
     const { webApi, editMode } = useWebApi();
     const model = useCurrent(webApi, 'model', modelId, modelData);
 
@@ -56,8 +60,6 @@ export default function Page({ modelId, modelData }: Props) {
         },
         [webApi, modelId, model]
     );
-
-    const { userData } = useUsers();
 
     return (
         <>
@@ -168,11 +170,25 @@ export default function Page({ modelId, modelData }: Props) {
                                             Architecture
                                         </th>
                                         <td className="px-6 py-4">
-                                            <EditableLabel
-                                                readonly={!editMode}
-                                                text={model.architecture}
-                                                onChange={(value) => updateModelProperty('architecture', value)}
-                                            />
+                                            {editMode ? (
+                                                <select
+                                                    value={model.architecture}
+                                                    onChange={(e) => {
+                                                        updateModelProperty('architecture', e.target.value as ArchId);
+                                                    }}
+                                                >
+                                                    {[...archData].map(([archId, arch]) => (
+                                                        <option
+                                                            key={archId}
+                                                            value={archId}
+                                                        >
+                                                            {arch.name}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            ) : (
+                                                archData.get(model.architecture)?.name ?? 'unknown'
+                                            )}
                                         </td>
                                     </tr>
                                     <tr className="">

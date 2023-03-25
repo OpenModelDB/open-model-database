@@ -8,7 +8,7 @@
     ],
     "description": "Category: Image De/Colorization\nPurpose: Colorization\n\nB/W | 100% Desaturated images. It mostly results in Blue and Yellow images with slight hints of Green, Orange and Magenta. You are free to use this as a pretrain to achieve better results.",
     "date": "2020-01-30",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "db6f922e8067c70b2b201ae753534bf5b4ab3fb40371846b9bb216e975e64c58",

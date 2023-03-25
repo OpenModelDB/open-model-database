@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nFix vertical blur / split lines / shadowing. A 1x lite model of my 2xSwatKats. Resolves the same video problems as before, but 1x and faster and meant for chaining to other 2x models (or whatever). Input MUST be 540 vertical as the blur problem is very resolution sensitive.",
     "date": "2021-11-17",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20098601,
             "sha256": "fc49168dc58e000f2bdaedc69590a34cd7ff0abe970b6691d953c5d7559fcf07",

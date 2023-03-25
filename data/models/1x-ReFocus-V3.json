@@ -8,7 +8,7 @@
     ],
     "description": "Category: Blurring\nPurpose: Deblur / ReFocus\n\nPurpose: DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",
     "date": "2022-03-12",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "94d8f38726c7abaa83a3fad27c01863ba961f76a995d8541c173eb3195062547",

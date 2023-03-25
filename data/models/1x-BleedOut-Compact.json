@@ -10,7 +10,7 @@
     ],
     "description": "Category: Anime and Cartoon Restoration\nPurpose: Animation\n\nThis model helps repair color bleed and heavy chroma noise that may be present on some older footage, particularly that which was recorded on VHS. It also cleans up rainbows if they are present.",
     "date": "2022-07-25",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -20,6 +20,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4795821,
             "sha256": "86a9c0bbeb130aa01b7d5c3ea32691a521a4de65771d7133fa57a58ac4f5485c",

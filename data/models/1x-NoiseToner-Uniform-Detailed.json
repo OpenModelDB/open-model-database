@@ -8,7 +8,7 @@
     ],
     "description": "",
     "date": "2020-10-14",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66667161,
             "sha256": "5c94c0f4b069e7a77927283b28be72de367aa223094a879d2da25ea2e96029c4",

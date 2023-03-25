@@ -7,7 +7,7 @@
     ],
     "description": "Category: Digital Animation\nPurpose: Animation\n\nThis was trained on the dataset that OptimusPrimal used for his DigitalFilm models. This model cleans up the image removing some noise while upscaling. This model is very fast, running around 200x the speed of a standard ESRGAN model on my system. This is primarily a proof of concept for how fast Real-ESRGAN models can get while still producing nice results.",
     "date": "2022-05-14",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "24nf",
         "8nc"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 377655,
             "sha256": "c34cae569319688f1fa10aa75c5734040896790e41bb23f128cd633923d850e5",

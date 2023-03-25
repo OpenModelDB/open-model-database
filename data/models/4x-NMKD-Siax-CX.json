@@ -8,7 +8,7 @@
     ],
     "description": "Category: Universal Models\nPurpose: General upscaler\n\nUniversal upscaler for clean and slightly compressed images (JPEG quality 75 or better)",
     "date": "2020-11-06",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66957746,
             "sha256": "560424d9f68625713fc47e9e7289a98aabe1d744e1cd6a9ae5a35e9957fd127e",

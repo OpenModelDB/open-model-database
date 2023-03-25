@@ -8,7 +8,7 @@
     ],
     "description": "Category: Blurring\nPurpose: Pixel Art\n\nRestores blurry/upscaled pixel art.",
     "date": "2021-03-19",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66661571,
             "sha256": "357c3fc55a402b55e76647f21e8f790bfd583e97edac2ae1170beb9b3e88d728",

@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: Compression\n\nThis model was trained on lossless video frames of Metal Arms: Glitch in the System, compressed with Bink V1 for the LR frames. It's a lot more efficient than my first DeBink model, and also has less artifacts. It's not quite as robust, but the compression is barely noticeable in videos after processing with this.",
     "date": "2021-10-30",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20098601,
             "sha256": "4c2e3a7cde1fd73d9df41f5152aa5888c6e512ea5788ab87de486d1f97848a9f",

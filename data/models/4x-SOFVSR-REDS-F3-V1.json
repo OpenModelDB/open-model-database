@@ -7,13 +7,14 @@
     ],
     "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nupscale IRL videos. Use not recommended by creator",
     "date": "2021-02-26",
-    "architecture": "SOFVSR",
+    "architecture": "sofvsr",
     "size": null,
     "scale": 4,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 69022363,
             "sha256": "76fefbc8147d7f11b7cb919c419fd024e38074ee481cdbbc3937638decc21a3f",

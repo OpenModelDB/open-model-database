@@ -8,7 +8,7 @@
     ],
     "description": "Category: Realistic Photos\nPurpose: Realistic Photos\n\nRRDB_ESRGAN_x4 replacement for stuff that's supposed to look realistic.",
     "date": "2019-06-20",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "add6c8944c16d02fad148fc40485385dbfe98f32b0c6fb2cddb362d463e0b3d5",

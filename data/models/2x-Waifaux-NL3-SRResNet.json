@@ -9,13 +9,14 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: \n\nEmulating Waifu2x at Noise Level 3 NOTE: You can't use this with regular esrgan forks or the bot, it has to be run through basicsr",
     "date": "2021-02-25",
-    "architecture": "EDSR (SRResNet)",
+    "architecture": "edsr",
     "size": null,
     "scale": 2,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 7715528,
             "sha256": "0d6b1f9d25983f98cb8c4f44459985c3ba0c3f35978358dca4bbfbe4fce4b3f9",

@@ -7,7 +7,7 @@
     ],
     "description": "Category: DeToon\nPurpose: Detooning\n\nA toon to realistic shading style model to wiki under drawings",
     "date": "2019-06-24",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "67cec3186d2e36b75a81c2d2da04477a8e7ed771980bceea986333725bddf403",

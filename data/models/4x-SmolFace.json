@@ -9,7 +9,7 @@
     ],
     "description": "Category: Faces\nPurpose: Art/People\n\nA sharp upscaler trained specifically for small sprite faces. Does not blend, so avoid using on painted/photo portraits unless you were trying to retain more of the outlines somehow.",
     "date": "2022-08-19",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "6a3d09dc4943b3bbf03de716886a4f13b95fe9986a266c533f3034169430dd31",

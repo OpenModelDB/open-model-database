@@ -8,7 +8,7 @@
     ],
     "description": "Category: Dithering\nPurpose: Dithering\nPretrained: https://imgsli.com/Mzg0MTk/1/2\n\n1xESRGAN",
     "date": "2021-01-23",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "55887681f7bd0967ac52b483b7b6aa63309aae78fefc42853843cf21ad5f709a",

@@ -8,7 +8,7 @@
     ],
     "description": "Category: Halo Removal\nPurpose: Halo remover\n\n",
     "date": "2020-11-03",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "642cef174ce2811df91d1366552e7f2249e13130a41d34936b41c06b5aa9bdf5",

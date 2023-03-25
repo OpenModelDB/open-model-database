@@ -9,7 +9,7 @@
     ],
     "description": "Category: Faces\nPurpose: Faces\n\nUpscale Steve Harvey, but maybe other things, somehow??",
     "date": "2020-07-24",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "8a7a05f8bbbbc54b2a2f092923f120c47fff8514f4f278f821c20b74e0f9928b",

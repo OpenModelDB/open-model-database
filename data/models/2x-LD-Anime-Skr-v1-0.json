@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Denoise/Dehalo\n\nDenoise, dehalo, derainbow old anime",
     "date": "2021-04-17",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66876751,
             "sha256": "f93891555a37e5809bbf701fcae0f1c39464baa9630e03ba6d223151ca13ba74",

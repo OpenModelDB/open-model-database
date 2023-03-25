@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nThis model is based on a private model by @eula 5600x 3070 named 4x_eula_anifilm_v1_225k. He sent me a copy of the model, and I decided to train a compact model based on it with his permission. This model seems to fix the majority of the issues the original model had while being far faster, it's just a tiny bit softer in some images.\n\nThe dataset consists of Dragon Ball movies converted to YUV24 with @sgdisk --zap-all /dev/sda's help to reduce artifacts, then upscaled with ArtClarity and eula_anifilm. LRs are the original frames right from DVD. As a result, this model corrects some color space issues. The 2x model's HRs were downscaled by 50% with Lanczos.\n\nThe 2x and 4x models are pretty close in output despite being trained separately. The 2x model is a bit softer overall.\n\nThe models in the Real-ESRGAN Compatible folder are the original output from Real-ESRGANs training code for compatibility reasons.",
     "date": "2022-08-02",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 2502086,
             "sha256": "e0b43e038cf891fdd1aa5729e310c3f7532e84faaa53135795d18d495a10238b",

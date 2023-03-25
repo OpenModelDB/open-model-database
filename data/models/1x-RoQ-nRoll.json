@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: Compression\n\nThis model decompresses images and video compressed using RoQ. Config and presets will be added when Mega decides to let me use their site!",
     "date": "2021-11-21",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "647b6dd707a69a0b935f08942f6a79d9652cab346570be4614ba50a242a40f1d",

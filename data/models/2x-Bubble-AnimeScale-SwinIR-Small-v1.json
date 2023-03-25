@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\n2x_Bubble_AnimeScale_SwinIR_Small_v1 was trained to upscale anime frames faithfully without major contrast shifting compared to my compact model. Although much slower compared to my compact model, the results look significantly better! A few example upscales are listed below; more can be found by clicking the Overview link on the Github release page.",
     "date": "2022-11-13",
-    "architecture": "SwinIR",
+    "architecture": "swinir",
     "size": [
         "small",
         "s32w8",
@@ -20,6 +20,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 16834553,
             "sha256": "aea80c061b41e1cbc5b0c0f9bb2603a82c7d00d2451bfd5b98a495244dd5fb2f",

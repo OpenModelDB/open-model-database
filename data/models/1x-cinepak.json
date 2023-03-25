@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: Compression\n\nRemoval of Compression such as Cinepak, msvideo1 and Roq",
     "date": "2019-07-03",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "daff496050e7eccd300f011e3abe08cdcb44d100236fe66cc291de86cb7262b5",

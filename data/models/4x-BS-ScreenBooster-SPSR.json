@@ -7,7 +7,7 @@
     ],
     "description": "Category: Game Screenshots\nPurpose: CGI\n\nThis model is designed to upscale game screenshots (3D Games) by 4 times. The SPSR version is an improvement over the ESRGAN based V2.",
     "date": "2020-07-18",
-    "architecture": "SPSR",
+    "architecture": "spsr",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 99689039,
             "sha256": "a55527c00c465e3032ee53f3fc802b77c1aea6db37b5005462863e2f025a3776",

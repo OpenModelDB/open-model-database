@@ -9,7 +9,7 @@
     ],
     "description": "Category: Faces\nPurpose: Art/People\n\n",
     "date": "2020-07-22",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66906130,
             "sha256": "f8e9adbf1f97c116435d2653026a4da5ba63e227692d62d513f76efafb8b5b7f",

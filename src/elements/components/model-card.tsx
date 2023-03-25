@@ -1,4 +1,5 @@
 import React from 'react';
+import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useTags } from '../../lib/hooks/use-tags';
 import { useUsers } from '../../lib/hooks/use-users';
 import { joinList } from '../../lib/react-util';
@@ -15,6 +16,7 @@ interface ModelCardProps {
 export const ModelCard = ({ id, model }: ModelCardProps) => {
     const { tagData } = useTags();
     const { userData } = useUsers();
+    const { archData } = useArchitectures();
 
     const description = fixDescription(model.description, model.scale);
 
@@ -23,7 +25,7 @@ export const ModelCard = ({ id, model }: ModelCardProps) => {
             <div className={style.inner}>
                 {/* Arch tag on image */}
                 <div className={style.topTags}>
-                    <AccentTag>{model.architecture}</AccentTag>
+                    <AccentTag>{archData.get(model.architecture)?.name ?? 'Unknown'}</AccentTag>
                     <AccentTag>{model.scale}x</AccentTag>
                 </div>
 

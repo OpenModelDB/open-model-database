@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nThis model is far from perfect, but it does a decent job on removing dot crawl and dehalo\\deblock old anime at fast rate without removing many details. chaining it with models like 2x-anifilm-compact or 2xLD-ANIME or 2x_AnimeClassics_UltraLite_510K will give good results i think.",
     "date": "2022-12-03",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4795821,
             "sha256": "1326bd9e45a198be6ca84919ade3fec458a07d078894a644711ed72cef66d096",

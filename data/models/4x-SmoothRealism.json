@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nPixel art, rocky/grainy textures? Quantization smoothing, adding detail.",
     "date": "2020-03-04",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "3b391980b3b5a2b246133bad475b8f1c091c69ce0d6e50238dda3bce7bede27c",

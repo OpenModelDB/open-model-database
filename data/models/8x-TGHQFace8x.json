@@ -9,7 +9,7 @@
     ],
     "description": "Category: Faces\nPurpose: Faces\n\nUpscales blurry 128px faces, usefull for enhancing that someone in a small picture.",
     "date": "2019-11-27",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67106707,
             "sha256": "b23f718215c16c4299156b8cd93af8758b07a5a9d3e7b9775b76f5eb03d11e43",

@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nA model I trained to do both de-quantizing as well as upscaling. The results are pretty blurry but it works decently for what it is.",
     "date": "2019-11-08",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "1d7615814eaf121ccd52dde2a93d96cbd64441f34da44a1f330d6d36335a22e7",
