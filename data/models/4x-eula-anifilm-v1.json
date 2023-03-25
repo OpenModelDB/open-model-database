@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nUpscaling cel animation. Trained this more than a year ago, releasing cause I've got a much better v2 and v3 now.",
     "date": "2022-12-14",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "c168436f137f91e842d952821391b7efb689bfc7b316c0886b2913c31f0d02f0",

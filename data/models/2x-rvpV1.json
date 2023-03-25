@@ -7,13 +7,14 @@
     ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: Video Frame Interpolation for anime openings\nPretrained: My ~~first~~ (ok technically second) attempt to create a video frame interpolation model and I like how it turned out. To use it, you can either use https://gitlab.com/hubert.sontowski2007/cainapp, https://github.com/styler00dollar/Colab-CAIN or the bot in [Game Upscale] (model called rvpv1 there, just use --model rvpv1). Some demo videos in pcloud, but you need to download them. The web player seems to playback in low fps. The architecture is mainly the same to the original CAIN, but i modified the padding to be zero padding instead. ``.pt`` means JIT model, `.pth`, means normal pytorch model. Architecture file is in pcloud as well. And no, no cupscale or flowframes.",
     "date": "2021-09-14",
-    "architecture": "CAIN",
+    "architecture": "cain",
     "size": null,
     "scale": 2,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 70896469,
             "sha256": "8720b47f8ceded96dc61575acd23880f6d0bc95360b3ea9748f1fcbe6f27eb7a",

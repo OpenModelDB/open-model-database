@@ -8,7 +8,7 @@
     ],
     "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\nRemove JPEG artifacts from manga without destroying screentone and other details. For 80-50 JPEG Quality",
     "date": "2021-06-17",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -18,6 +18,7 @@
     "outputChannels": 1,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20092251,
             "sha256": "e2898bfba74083025a2bd2326b6c159031b882a890bd1cc30fd6910cda2ce4ee",

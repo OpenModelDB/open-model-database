@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscaling cartoons",
     "date": "2021-08-19",
-    "architecture": "ESRGAN+",
+    "architecture": "esrgan+",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67690702,
             "sha256": "8631be6b3eb0bc0b7289c563dff93cffd01aa35c0910c7c2f2687858d28aad24",

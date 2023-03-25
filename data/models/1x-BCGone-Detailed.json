@@ -8,7 +8,7 @@
     ],
     "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\n\n",
     "date": "2021-03-18",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "f433aaac96ecc55056c1cf029d7544514abe233377c4d4d6b627601c2ca006f3",

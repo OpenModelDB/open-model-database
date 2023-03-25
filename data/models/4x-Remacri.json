@@ -8,7 +8,7 @@
     ],
     "description": "Category: Universal Models\nPurpose: General Upscaler\nPretrained: none - interpolated\n\nA creation of BSRGAN with more details and less smoothing, made by interpolating IRL models such as Siax, Superscale, Superscale Artisoft, Pixel Perfect, etc. This was, things like skin and other details don't become mushy and blurry.",
     "date": "2021-04-09",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67025055,
             "sha256": "e1a73bd89c2da1ae494774746398689048b5a892bd9653e146713f9df8bca86a",

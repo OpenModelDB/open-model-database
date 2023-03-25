@@ -9,7 +9,7 @@
     ],
     "description": "Category: Faces\nPurpose: Faces\n\nUpscale faces both pixelized and real",
     "date": "2019-07-23",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "d2d7f702cdd22db2575f70694c2baabb7f6893bfdda84b1159fe158d065456bb",

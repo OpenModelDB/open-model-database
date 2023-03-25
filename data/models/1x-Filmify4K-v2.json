@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: artifact\n\nThis model attempts to make films upscaled to 4K with Topaz Gaia-HQ look more natural and filmic. It sharpens, adds film grain, and smooths out small artefacts from the upscaling process. I recommend adding a tiny amount of grain to the input to seed the model (you can do this in VEAI), otherwise the film grain will remain static across frames that don't move much. Pretrain model used with permission to relicense from Twittman.",
     "date": "2021-07-19",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "23ff46b9abb075f52b3cea3b30d534a15a5f9e3165a47a9fef8a1da72965478c",

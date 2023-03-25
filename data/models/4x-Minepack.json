@@ -7,7 +7,7 @@
     ],
     "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png.pth\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
     "date": "2020-01-26",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "d81e38f25ad84d0e0cf5656c5f7d3e304a5834aa779502b0e3393e5537da7a74",

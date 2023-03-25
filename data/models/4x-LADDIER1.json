@@ -8,7 +8,7 @@
     ],
     "description": "Category: Noise\nPurpose: Denoise\n\nRemove noise, grain, box blur, lens blur and gaussian blur and increase overall image quality.",
     "date": "2019-11-13",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "4ef7a08c0d79eedb11550f215f00cdb75b5dd8d7469f110ddd68ae6fa155a661",

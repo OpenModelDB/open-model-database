@@ -7,7 +7,7 @@
     ],
     "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nnone",
     "date": "2020-12-03",
-    "architecture": "SOFVSR",
+    "architecture": "sofvsr",
     "size": [
         "32nf",
         "12nb"
@@ -17,6 +17,7 @@
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 22343759,
             "sha256": "2d65f1f6733437e1870c0d147279b07494d7ed538bf1bda0ed2e1257e4ed8c4c",

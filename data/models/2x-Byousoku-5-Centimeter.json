@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\n\nAnime landscape upscale. Trained on Frames from BluRay of Byousoku 5 Centimeter",
     "date": "2020-04-08",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66806309,
             "sha256": "40c78a2d689fcf0243fba2eede909735bfe9300dc97b6c94305b7376b61bf613",

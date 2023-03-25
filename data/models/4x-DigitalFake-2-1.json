@@ -7,7 +7,7 @@
     ],
     "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nReplica of DigitalFrames 2.1 but interpolatable",
     "date": "2021-02-18",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "edb26c6f6d09526d4ee6d3c6c3ecb3bff5e48a2b1ebad91a320cd0a978f1ff37",

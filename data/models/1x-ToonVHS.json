@@ -7,7 +7,7 @@
     ],
     "description": "Category: VHS Tapes\nPurpose: VHS\n\nBest when used on cartoons, it can work on anime. Due to the dataset it does struggle a bit with orange colors and grainy dark spots. This model is meant to be used to clean up the image before using it on a 2x or 4x model.",
     "date": "2022-02-06",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "81824273c32b78657ff5c7042b2728f613e4fadf9463a2343b194e3625b39be0",

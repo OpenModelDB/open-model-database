@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: Compression\n\nThis model removes early 2000s Bink and other compression artifacts. Works well on almost any image or video compression type.",
     "date": "2021-06-08",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "11648e5d284c72a4e55829dfa4f5ce6f03247f0240621e7b42df111b33858322",

@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nThis model is a lite version of AnimeSharp. It was trained using student-teacher learning (if i'm using the term properly), where the HRs are LRs upscaled by the full size AnimeSharp ESRGAN model, and the lite model is trained on those outputs as the HR. It works best on clean or slightly blurry anime. Downscale by 50% first in almost all cases",
     "date": "2022-02-11",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20173354,
             "sha256": "a0a224521dcc547768e8442e83b68f98f485b3cbcc8bd207a6284fff6636329c",

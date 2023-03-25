@@ -8,13 +8,14 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nLow-resolution MS Paint drawings, general pixel art, and general dithered pixel art, all kinds of pixel art",
     "date": "2021-03-24",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": null,
     "scale": 8,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": null,
             "sha256": null,

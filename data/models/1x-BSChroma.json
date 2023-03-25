@@ -7,7 +7,7 @@
     ],
     "description": "Category: Luminance/Chroma\nPurpose: Sharpen\n\nChromaSharpen - makes the colors slightly more vibrant with a sideeffect of possibly adding Chromatic Abberation to the image. I am not sure about the usage of this model on real case scenarios but anything blurry or with fuzzy colors could work",
     "date": "2020-02-29",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66663810,
             "sha256": "391f3e82803995d543d76386a268d7f99241cbaf5f3749e5b050b49202a4ad98",

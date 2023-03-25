@@ -7,7 +7,7 @@
     ],
     "description": "Category: Images\nPurpose: Realistic Ghibli Grain\n\nText or Anime",
     "date": "2022-11-16",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66665765,
             "sha256": "ec6ebdf4d7e5b02d0ccc8235d7278e7a5f1b6a4530728dad17f5e6e4d8a182d0",

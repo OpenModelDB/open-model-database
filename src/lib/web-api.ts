@@ -74,6 +74,7 @@ export const getWebApi = lazy(async (): Promise<DBApi | undefined> => {
         users: createWebCollection('/api/users'),
         tags: createWebCollection('/api/tags'),
         tagCategories: createWebCollection('/api/tag-categories'),
+        architectures: createWebCollection('/api/architectures'),
     };
 
     // we do an empty update to test the waters

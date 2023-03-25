@@ -7,7 +7,7 @@
     ],
     "description": "Category: Alphas\nPurpose: Alpha\n\nObsoleted by Joey's Fork - Alpha channels of PNGs",
     "date": "2020-12-15",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -17,6 +17,7 @@
     "outputChannels": 1,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20167004,
             "sha256": "a34d4d6a1a6501c44a92e6547db2b1c5a7ff1d5738219c94a448328a73c2bf9b",

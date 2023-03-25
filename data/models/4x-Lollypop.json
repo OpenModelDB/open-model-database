@@ -8,7 +8,7 @@
     ],
     "description": "Category: Universal Models\nPurpose: General upscaler\n\nA universal model, that is aimed at prerendered images, but handles realistic faces, manga, pixel art and dedithering as well. Trained using the patchgan discriminator, with cx loss, cutmixup and frequency separation, it produces good results with a slight grain due to patchgan, with some sharpening using cutmixup.",
     "date": "2020-09-11",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "4e609039d8ece82dd6aba14b692181c6722a461a762eef538700683dfef6fb6e",

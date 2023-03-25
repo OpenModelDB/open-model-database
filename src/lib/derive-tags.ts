@@ -1,6 +1,6 @@
-import { ARCHITECTURES, PLATFORM_FILE_TYPES, Platform } from './architecture-data';
 import { KNOWN_LICENSES, LicenseProperties, parseLicense } from './license';
-import { Model, SPDXLicense, TagId } from './schema';
+import { Model, Platform, SPDXLicense, TagId } from './schema';
+import { STATIC_ARCH_DATA } from './static-data';
 import { EMPTY_ARRAY, asArray, lazyWithKey, lazyWithWeakKey } from './util';
 
 function intersect<T>(arrays: (readonly T[])[]): Iterable<T> {
@@ -54,12 +54,12 @@ const getLicenseTags = lazyWithKey((license: SPDXLicense | null): Iterable<Tag<'
 function getPlatformTags(model: Model): Iterable<Tag<'platform'>> {
     const tags = new Set<Tag<'platform'>>();
 
-    const platforms: Platform[] = model.resources.map(({ type }) => PLATFORM_FILE_TYPES[type]);
+    const platforms: Platform[] = model.resources.map(({ platform }) => platform);
     for (const p of platforms) {
         tags.add(`platform:${p}`);
     }
 
-    platforms.push(...(ARCHITECTURES[model.architecture]?.compatiblePlatforms ?? EMPTY_ARRAY));
+    platforms.push(...(STATIC_ARCH_DATA.get(model.architecture)?.compatiblePlatforms ?? EMPTY_ARRAY));
     for (const p of platforms) {
         tags.add(`platform:${p}-compatible`);
     }

@@ -7,7 +7,7 @@
     ],
     "description": "Category: Cats\nPurpose: Cats\nPretrained: previous attempt\n\n",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "9260fac8bee3794ba2b9081d317ddbdee82e2ab99338741bf00cd33020dd757a",

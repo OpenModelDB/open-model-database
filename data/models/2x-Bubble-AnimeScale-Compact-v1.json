@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\nPretrained: 4x_muy4_035_1.pth\n\nThis is my first model, so it's not perfect, but I wanted to see if I could train an upscaling model that didn't result in a lot of detail loss and deblurring like the current Compact upscaling models. I believe I accomplished this, but I was unable to reduce contrast shifting. The contrast shifting may cause skin tones to appear incorrect on bright frames, but it's not too bad overall! I'll list a few examples below; more can be found by clicking the Overview link on the Github release page.",
     "date": "2022-11-13",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4837293,
             "sha256": "8bdaed28134166520de28ddf75037aae84fd96c1d9bfc6deff1aadb24146d8b3",

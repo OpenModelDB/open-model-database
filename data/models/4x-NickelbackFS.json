@@ -8,7 +8,7 @@
     ],
     "description": "Category: Realistic Photos\nPurpose: Realistic Photos\n\nThis model aims to improve further on what has been achieved by the old Nickelback which was an improvement attempt over 4xESRGAN and also 4xBox. It can upscale most pictures/photos (granted they are clean enough) without destroying as much detail as Box and basic ESRGAN.",
     "date": "2020-07-10",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67077535,
             "sha256": "a177fe6c4c125ca0e5dd5d70453112ca17c9de62eb055bef70111edd220d07fa",

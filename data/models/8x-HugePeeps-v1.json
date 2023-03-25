@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Art/People\n\nPainted humans",
     "date": "2020-06-16",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67054134,
             "sha256": "7f13f82c6e9b5375ae255edff93c3f845d8e81ef103b8209bbcb03f62d710ccb",

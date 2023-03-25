@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Art\n\nUpscaling airbrush/pencil-based artwork",
     "date": "2020-10-12",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "94c4bd14ae1c539a6ad3e85556fa29b71475ddf80c66c5688c5030d7804a5396",

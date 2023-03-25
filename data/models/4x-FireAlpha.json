@@ -7,7 +7,7 @@
     ],
     "description": "Category: Alphas\nPurpose: Alpha (4 channel)\n\n",
     "date": "2019-11-12",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 4,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66959003,
             "sha256": "53f77c587b782c4bfbdbcccc7d6cf9b26b11ba92b8cb58e9d017bed00faeb047",

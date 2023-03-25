@@ -8,7 +8,7 @@
     ],
     "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\nThis model is meant to reduce or eliminate JPEG Compression without making the original images too smooth or killing detail. It manages to do a fairly good job but don't expect overly compressed images to work with this.",
     "date": "2020-02-19",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "87de04f371961fad38446871a305ef38817dfce8ccacd33db8c836737b0bdde7",

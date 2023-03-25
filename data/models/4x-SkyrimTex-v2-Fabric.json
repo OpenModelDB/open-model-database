@@ -8,7 +8,7 @@
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures\n\nThis model set upscales most Skyrim textures. I hope it helps 🙂 The base model (2.1) works well on stone, wood, metals, and most other textures. The Fabric model is a 50/50 interpolation with a stronger iteration of this model and my Fabric model. As you can tell by the name, it's intended for Fabric textures. If you want to upscale Alpha textures, use a model dedicated to it. There's an INFO file in the folder, it just explains the extra models",
     "date": "2021-09-25",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67010245,
             "sha256": "5ba302ca765516bf0350bf1d85960e3593dde70308b414559c5e0b128f802452",
