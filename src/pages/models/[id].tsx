@@ -11,7 +11,7 @@ import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId, UserId } from '../../lib/schema';
+import { ArchId, Model, ModelId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -46,7 +46,6 @@ const dummyImages = [
 ];
 
 export default function Page({ modelId, modelData }: Props) {
-    const { userData } = useUsers();
     const { archData } = useArchitectures();
 
     const { webApi, editMode } = useWebApi();
