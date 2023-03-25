@@ -7,7 +7,7 @@
     ],
     "description": "Category: Video Compression\nPurpose: Indeo Compression Artifacts",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "8fe6ebe1ea989a90f487deacdbf6800a307a77551fac1919951228c855f27538",

@@ -9,13 +9,14 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscaling of anime art (Specifically visual novel CG art)",
     "date": "2021-07-18",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": null,
     "scale": 4,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": null,
             "sha256": null,

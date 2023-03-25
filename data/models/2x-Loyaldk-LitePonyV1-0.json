@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale MLP episodes. Liter version.",
     "date": "2021-03-01",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20135976,
             "sha256": "25f4067bb54764011ceb7657971958c767b5c73e920df8beac1d1231bf662433",

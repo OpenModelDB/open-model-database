@@ -12,7 +12,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nI trained Skr's great LD-Anime model on compact architecture. It upscales while fixing numerous video problems, including: noise/grain, compression artifacts, rainbows, dot crawl, halos and color bleed. This compact version may look slightly worse than Skr's original model, but runs significantly faster and also retains the correct colors better than the original model did.",
     "date": "2022-12-22",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -22,6 +22,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4838409,
             "sha256": "92af3344f41272231508dd273c8861052c1261efed362d5f9da19bac4cbae361",

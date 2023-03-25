@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nThis is my first 2xcompact model, the main purpose of it is to upscale Dragon ball GT. for upscaling videos that have grain I would recommend denoising and dehaloing it before passing it to the model for temporal stability.",
     "date": "2022-12-14",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 2417798,
             "sha256": "eeccd98ec73326e13cc4fcd2a4c8394e85b28094c275e3e9dfb8390b80857502",

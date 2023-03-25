@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Digital Art/People\nPretrained: Mainly for digital art, but can be used to upscale pixel art.\n\n",
     "date": "2019-08-21",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "7acdb20a27690674193fd64ffa5b2bb7920af02f7fdb7866cc9c56ee09a4cb7a",

@@ -8,7 +8,7 @@
     ],
     "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: Custom JPEG dataset\n\nModel I forgot to release. This doesn't totally remove JPEG artifacts, but it does a decent job at a fast rate. It seemingly does a better job of retaining detail than some other JPEG models. The model is incomplete, I need to train it further on compact rather than ESRGAN. This is just a temporary release",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "16nf",
         "8nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 9163566,
             "sha256": "db343cb007e25a6fc2d750385cef21a15b55953a35d4993746998ee8453a91ec",

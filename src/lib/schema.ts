@@ -12,6 +12,7 @@ export type SPDXLicense = string & { readonly SPDXLicense: never };
 export type SPDXLicenseId = string & { readonly SPDXLicenseId: never };
 export type TagId = string & { readonly TagId: never };
 export type TagCategoryId = string & { readonly TagCategoryId: never };
+export type ArchId = string & { readonly ArchId: never };
 export type MarkDownString = string;
 
 export interface Model extends Partial<ExtraModelProperties> {
@@ -22,7 +23,7 @@ export interface Model extends Partial<ExtraModelProperties> {
     description: MarkDownString;
     /** The date the model was published. Format: yyyy-mm-dd */
     date: string;
-    architecture: string;
+    architecture: ArchId;
     size: string[] | null;
     scale: number;
     inputChannels: number;
@@ -48,12 +49,15 @@ interface SingleFile {
     size: number | null;
     sha256: string | null;
     urls: string[];
+    platform: Platform;
 }
 interface PthFile extends SingleFile {
     type: 'pth';
+    platform: 'pytorch';
 }
 interface OnnxFile extends SingleFile {
     type: 'onnx';
+    platform: 'onnx';
 }
 
 export interface User {
@@ -70,6 +74,13 @@ export interface TagCategory {
     description: MarkDownString;
     order: number;
     tags: TagId[];
+}
+
+export type Platform = 'pytorch' | 'onnx' | 'ncnn';
+
+export interface Arch {
+    name: string;
+    compatiblePlatforms: Platform[];
 }
 
 export const ModelIdPattern = /^\d+x-[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/;

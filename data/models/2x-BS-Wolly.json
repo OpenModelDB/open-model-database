@@ -7,7 +7,7 @@
     ],
     "description": "Category: CGI\nPurpose: CGI Animation\n\nPixar Movies or Wall-E pictures/frames",
     "date": "2020-02-07",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66810509,
             "sha256": "d4aa9195385b59c216956dedcdacb7776b6a16ec35d88940a9fe5687c4afaf75",

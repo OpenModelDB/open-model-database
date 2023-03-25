@@ -7,7 +7,7 @@
     ],
     "description": "Category: Pretrained Models\nPurpose: Pretrained\nPretrained: RRDB_PSNR_x4.pth\n\nThe original RRDB_PSNR_x4.pth model converted to 1x, 2x, 8x and 16x scales, intended to be used as pretrained models for new models at those scales. These are compatible with victor's 4xESRGAN.pth conversions",
     "date": "2020-04-20",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66954395,
             "sha256": "985fba37421353716ef2fbd7fbbab061e76409994d168cf52527aa8ee53f81ec",

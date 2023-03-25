@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: \n\nTrained this model to see how it would work trying to essentially get the same results as Waifu2x but with ESRGAN",
     "date": "2021-02-23",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "16nf",
         "6nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 6886862,
             "sha256": "b0b62d44d1f18f34d2eba4dfbbf0913fb528e49514166b8e9d147de09ffed49e",

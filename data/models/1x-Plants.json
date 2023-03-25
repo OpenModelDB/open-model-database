@@ -7,7 +7,7 @@
     ],
     "description": "Category: Foliage/Ground\nPurpose: bad upscale\n\nImages of plants, trees or other foliage upscaled with Photoshop Preserve Details 2.0. Sharpens and \"subdivides\" details and noise so it doesn't look upscaled.",
     "date": "2021-06-23",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "da384a902498f9bbfdbdc76fb63fdd5405b0157a894e79d115595a96e4fc2697",

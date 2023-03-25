@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nThis model is designed to mainly upscale anime artworks. If you have issues with chroma then try the 600k iterations release.",
     "date": "2021-11-26",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "75b35eb6084e6e95e5d890a3920151da832398a61904d4171fd90fbadbb34b08",

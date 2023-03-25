@@ -8,7 +8,7 @@
     ],
     "description": "Category: Universal Models\nPurpose: Universal Upscaler\n\nUniScale strikes a nice balance between sharpness and realism. This model can upscale almost anything well. It was originally intended to upscale game textures, but was expanded into a universal upscaler. Interp is these two models interpolated.",
     "date": "2021-08-23",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "abfd3fbcec247c88537b20acca1f023e7a11b7162e498145295a8461e291dcd2",

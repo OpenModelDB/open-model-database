@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\n\nFor upscaling character sprites",
     "date": "2019-08-04",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "c36a14ddb51ae094324a53b67c345da2d6b6bbf6a2249726056d5b94bdedab05",

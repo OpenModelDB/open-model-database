@@ -7,7 +7,7 @@
     ],
     "description": "Category: Game Screenshots\nPurpose: Chainmail game textures. Alternatively, it can be used to turn plain images into chainmail.\n\nA highly generative model for chainmail game textures. Works fairly well on items without visible chainmail texture (ie just a grey area) or items with clear chainmail texture, less well on items with present but poorly defined chainmail texture. I'm not 100% happy with it but it is still an improvement over existing models in enough situations to be worth releasing.",
     "date": "2022-10-06",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "bb75d390ea9cba25ae24cdeaa258a33485ad5d48c6f7b9ca08fbab02bf513242",

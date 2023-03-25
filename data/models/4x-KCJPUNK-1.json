@@ -7,7 +7,7 @@
     ],
     "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nUp-scaling Digital Animation",
     "date": "2021-03-23",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "38785d83c1bb1cb8b355f445dceeb99166c86d7128c053995ae964e11cede7e6",

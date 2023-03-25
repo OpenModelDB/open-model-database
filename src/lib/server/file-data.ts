@@ -3,7 +3,7 @@ import { readFile, readdir, rename, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { CollectionApi, DBApi, SynchronizedCollection, notifyOnWrite } from '../data-api';
 import { RWLock } from '../lock';
-import { Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from '../schema';
+import { Arch, ArchId, Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from '../schema';
 import { compareTagId, getTagCategoryOrder, hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
 import { JsonFile, fileExists } from './fs-util';
 
@@ -12,6 +12,7 @@ const MODEL_DIR = join(DATA_DIR, 'models');
 const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
 const TAG_CATEGORIES_JSON = join(DATA_DIR, 'tag-categories.json');
+const ARCHITECTURES_JSON = join(DATA_DIR, 'architectures.json');
 
 const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON, {
     beforeWrite(data) {
@@ -31,6 +32,12 @@ const tagCategoriesFile = new JsonFile<Record<TagCategoryId, TagCategory>>(TAG_C
             data,
             getTagCategoryOrder(typedEntries(data)).map((e) => e[0])
         );
+        return data;
+    },
+});
+const architecturesFile = new JsonFile<Record<ArchId, Arch>>(ARCHITECTURES_JSON, {
+    beforeWrite(data) {
+        sortObjectKeys(data);
         return data;
     },
 });
@@ -86,6 +93,9 @@ type _valid = IsNever<MissingKeys>;
 async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void> {
     const file = getModelDataPath(id);
     sortObjectKeys<string | _valid>(model, modelKeyOrder);
+    for (const r of model.resources) {
+        sortObjectKeys(r, ['platform', 'type', 'size', 'sha256', 'urls']);
+    }
     await writeFile(file, JSON.stringify(model, undefined, 4), 'utf-8');
 }
 
@@ -179,45 +189,64 @@ const modelApi: CollectionApi<ModelId, Model> = {
     },
 };
 
-const userApi: CollectionApi<UserId, User> = {
-    async get(id: UserId): Promise<User> {
-        return (await usersFile.read())[id];
-    },
-    async getIds(): Promise<UserId[]> {
-        return typedKeys(await usersFile.read());
-    },
-    async getAll(): Promise<Map<UserId, User>> {
-        return new Map(typedEntries(await usersFile.read()));
-    },
+function ofJsonFile<Id extends string, Value>(
+    file: JsonFile<Record<Id, Value>>,
+    {
+        onDelete,
+        onChangeId,
+    }: {
+        onDelete?: (ids: Set<Id>) => Promise<void>;
+        onChangeId?: (from: Id, to: Id) => Promise<void>;
+    } = {}
+): CollectionApi<Id, Value> {
+    return {
+        async get(id: Id): Promise<Value> {
+            return (await file.read())[id];
+        },
+        async getIds(): Promise<Id[]> {
+            return typedKeys(await file.read());
+        },
+        async getAll(): Promise<Map<Id, Value>> {
+            return new Map(typedEntries(await file.read()));
+        },
 
-    async update(updates: Iterable<readonly [UserId, User]>): Promise<void> {
-        await usersFile.update((old) => {
-            for (const [id, value] of updates) {
-                old[id] = value;
-            }
-            return old;
-        });
-    },
-    async delete(ids: Iterable<UserId>): Promise<void> {
-        const idSet = new Set(ids);
-        if (idSet.size === 0) return;
+        async update(updates: Iterable<readonly [Id, Value]>): Promise<void> {
+            await file.update((old) => {
+                for (const [id, value] of updates) {
+                    old[id] = value;
+                }
+                return old;
+            });
+        },
+        async delete(ids: Iterable<Id>): Promise<void> {
+            const idSet = new Set(ids);
+            if (idSet.size === 0) return;
 
-        await usersFile.update((old) => {
-            for (const id of idSet) {
-                delete old[id];
-            }
-            return old;
-        });
+            await file.update((old) => {
+                for (const id of idSet) {
+                    delete old[id];
+                }
+                return old;
+            });
 
-        // TODO: remove author from models
-    },
-    async changeId(from: UserId, to: UserId): Promise<void> {
-        if (from === to) return;
+            await onDelete?.(idSet);
+        },
+        async changeId(from: Id, to: Id): Promise<void> {
+            if (from === to) return;
 
-        await usersFile.update((tags) => {
-            renameObjectKey(tags, from, to);
-            return tags;
-        });
+            await file.update((tags) => {
+                renameObjectKey(tags, from, to);
+                return tags;
+            });
+
+            await onChangeId?.(from, to);
+        },
+    };
+}
+
+const userApi = ofJsonFile(usersFile, {
+    // TODO: remove author from models
+    async onChangeId(from, to) {
         await mutateModels((model) => {
             if (Array.isArray(model.author)) {
                 if (model.author.includes(from)) {
@@ -232,42 +261,14 @@ const userApi: CollectionApi<UserId, User> = {
             }
         });
     },
-};
+});
 
-const tagApi: CollectionApi<TagId, Tag> = {
-    async get(id: TagId): Promise<Tag> {
-        return (await tagsFile.read())[id];
-    },
-    async getIds(): Promise<TagId[]> {
-        return typedKeys(await tagsFile.read());
-    },
-    async getAll(): Promise<Map<TagId, Tag>> {
-        return new Map(typedEntries(await tagsFile.read()));
-    },
-
-    async update(updates: Iterable<readonly [TagId, Tag]>): Promise<void> {
-        await tagsFile.update((old) => {
-            for (const [id, value] of updates) {
-                old[id] = value;
-            }
-            return old;
-        });
-    },
-    async delete(ids: Iterable<TagId>): Promise<void> {
-        const idSet = new Set(ids);
-        if (idSet.size === 0) return;
-
-        await tagsFile.update((old) => {
-            for (const id of idSet) {
-                delete old[id];
-            }
-            return old;
-        });
-
+const tagApi = ofJsonFile(tagsFile, {
+    async onDelete(ids) {
         // remove tags from models
         await mutateModels((model) => {
-            if (model.tags.some((t) => idSet.has(t))) {
-                model.tags = model.tags.filter((t) => !idSet.has(t));
+            if (model.tags.some((t) => ids.has(t))) {
+                model.tags = model.tags.filter((t) => !ids.has(t));
                 return true;
             }
         });
@@ -275,18 +276,12 @@ const tagApi: CollectionApi<TagId, Tag> = {
         // remove from tag categories
         await tagCategoriesFile.update((old) => {
             for (const category of Object.values(old)) {
-                category.tags = category.tags.filter((t) => !idSet.has(t));
+                category.tags = category.tags.filter((t) => !ids.has(t));
             }
             return old;
         });
     },
-    async changeId(from: TagId, to: TagId): Promise<void> {
-        if (from === to) return;
-
-        await tagsFile.update((tags) => {
-            renameObjectKey(tags, from, to);
-            return tags;
-        });
+    async onChangeId(from, to) {
         await mutateModels((model) => {
             if (model.tags.includes(from)) {
                 model.tags = model.tags.map((t) => (t === from ? to : t));
@@ -300,47 +295,21 @@ const tagApi: CollectionApi<TagId, Tag> = {
             return old;
         });
     },
-};
+});
 
-const tagCategoryApi: CollectionApi<TagCategoryId, TagCategory> = {
-    async get(id: TagCategoryId): Promise<TagCategory> {
-        return (await tagCategoriesFile.read())[id];
-    },
-    async getIds(): Promise<TagCategoryId[]> {
-        return typedKeys(await tagCategoriesFile.read());
-    },
-    async getAll(): Promise<Map<TagCategoryId, TagCategory>> {
-        return new Map(typedEntries(await tagCategoriesFile.read()));
-    },
+const tagCategoryApi = ofJsonFile(tagCategoriesFile);
 
-    async update(updates: Iterable<readonly [TagCategoryId, TagCategory]>): Promise<void> {
-        await tagCategoriesFile.update((old) => {
-            for (const [id, value] of updates) {
-                old[id] = value;
+const archApi = ofJsonFile(architecturesFile, {
+    // TODO: remove arch from models
+    async onChangeId(from, to) {
+        await mutateModels((model) => {
+            if (model.architecture === from) {
+                model.architecture = to;
+                return true;
             }
-            return old;
         });
     },
-    async delete(ids: Iterable<TagCategoryId>): Promise<void> {
-        const idSet = new Set(ids);
-        if (idSet.size === 0) return;
-
-        await tagCategoriesFile.update((old) => {
-            for (const id of idSet) {
-                delete old[id];
-            }
-            return old;
-        });
-    },
-    async changeId(from: TagCategoryId, to: TagCategoryId): Promise<void> {
-        if (from === to) return;
-
-        await tagCategoriesFile.update((tags) => {
-            renameObjectKey(tags, from, to);
-            return tags;
-        });
-    },
-};
+});
 
 const fileLock = new RWLock();
 let mutationCounter = 0;
@@ -358,6 +327,7 @@ export const fileApi: DBApi = {
     users: wrapCollection(userApi),
     tags: wrapCollection(tagApi),
     tagCategories: wrapCollection(tagCategoryApi),
+    architectures: wrapCollection(archApi),
 };
 
 export function getFileApiMutationCounter(): Promise<number> {

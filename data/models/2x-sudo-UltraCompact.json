@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Realtime animation restauration and doing stuff like deblur and compression artefact removal\n\n(Teacher: RealESRGANv2-animevideo-xsx2.pth)\n\nMy first attempt to make a REALTIME 2x upscaling model while also applying teacher student learning. It beats Anime4k in every way. These benchmarks use a 3060ti and it shows that everything better than a 3060ti should be able to handle 1080p input if you create engine files and use my TensorRT code. You can see in the readme how to convert onnx files into engines. The 2 right bars compare normal Compact2 and Ultracompact in speed, the 2 on the left showcase older apis I used which isn't too important for this showcase. To use this, you need to use my code which is https://github.com/styler00dollar/VSGAN-tensorrt-docker. If you use Manjaro, it is also possible to pipe the data stream directly into mpv, so you can watch it in a video player without rendering a video. Yeah the model does seem a little noisy if you zoom in a lot, but don't forget that the model itself is only 1.2mb. I think it does quite well. I still try to improve on fast models, but this is good enough to share as a first model. Plz don't steal without credits, k thx.",
     "date": "2022-05-29",
-    "architecture": "Compact",
+    "architecture": "compact",
     "size": [
         "64nf",
         "8nc"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 1226766,
             "sha256": "e53987f0312dee424b4dbd9dce7b2eacbe03fdf1380e44a11f8a4d2ca88c99e3",

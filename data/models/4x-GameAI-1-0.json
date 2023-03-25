@@ -7,7 +7,7 @@
     ],
     "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
     "date": "2022-02-27",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "3b7b863ea6b083fb136ab00de7a492b8eeb07e7a1d1884f3ec395525aaedba54",

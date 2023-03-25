@@ -7,13 +7,14 @@
     ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: RL videos - interpolation\nArchitecture: CAIN (CAIN 1 Group)\n\nTrained mostly on abba music videos",
     "date": "2021-07-13",
-    "architecture": "CAIN",
+    "architecture": "cain",
     "size": null,
     "scale": 2,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 18979084,
             "sha256": "16e48f46a1f284c4a0e88ca001a0c491c35e8d9b865a9bcfd64dfc03b8c9504d",

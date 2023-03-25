@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Linework Cartoons",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67025055,
             "sha256": "ceb79b179c05bab71a8de3900f173de3a10cf17d0422e0e62e4e5b395db3ccaa",

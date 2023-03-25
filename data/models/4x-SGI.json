@@ -7,7 +7,7 @@
     ],
     "description": "Category: CGI\nPurpose: CGI\n\nUpscaling and dedithering pre-rendered sprites, images and textures made in the 90s. Basically vintage CGI.",
     "date": "2020-12-17",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "d6745bf5e30f5387b605a44eaa72b5e26585d145f516a9b377788b9c633eec58",

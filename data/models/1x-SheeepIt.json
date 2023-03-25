@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nRestoring frames from the show \"Sheeep\"",
     "date": "2022-07-21",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "16nf",
         "8nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 9163070,
             "sha256": "8361b9a7e4c0177d2b05246927b0e9c397dae82473c08587fba60532331d229c",

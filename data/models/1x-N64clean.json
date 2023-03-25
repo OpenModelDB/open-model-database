@@ -8,7 +8,7 @@
     ],
     "description": "Category: Banding\nPurpose: Banding\n\nN64 textures use a color depth of 5-bits per channel, this model attempts to clean them, restoring smooth gradients in textures",
     "date": "2020-07-16",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66658154,
             "sha256": "448159f8f36880b2498ba19280be55fcd775071697a179d0f30f45f6c1e6d898",

@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\n",
     "date": "2021-01-26",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20135976,
             "sha256": "a305101b33f804206a9d16d3b53725ed7d9f2b8550830fcdc6bcf68ece32f0ff",

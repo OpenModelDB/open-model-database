@@ -8,7 +8,7 @@
     ],
     "description": "Category: Video Game Textures\nPurpose: Pixel Art\n\nAn attempt at recreating the \"faithful\" style without using the faithful dataset -- aka keeping the \"pixel art\" style of pixel art.",
     "date": "2020-10-12",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20135976,
             "sha256": "51ee3b4b05422f1e48aee115c05dc6dca8fd5ff7b8341e7f6b84be820696c9db",

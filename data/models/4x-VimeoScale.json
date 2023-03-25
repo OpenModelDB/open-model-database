@@ -7,13 +7,14 @@
     ],
     "description": "Category: Pretrained Discriminators\nPurpose: Upscaling IRL video content\n\nThis model is one of the longest I have trained and tuned, includes some noise training but this is not intended for deblocking/decompression. Combined with https://github.com/JoeyBallentine/Video-Inference 's fp16 mode, this should handle most SD and 720p content at or faster than ESRGAN, with a significant bump in quality.",
     "date": "2021-10-08",
-    "architecture": "SOFVSR",
+    "architecture": "sofvsr",
     "size": null,
     "scale": 4,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 69247931,
             "sha256": "4446855e886b2683f43d504aaaa05bb9ff77bda76fa29f42c068bd42c96971d7",

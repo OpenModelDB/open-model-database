@@ -8,7 +8,7 @@
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Art\n\nIllustrations with with larger shaped features (?).",
     "date": "2021-05-14",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "128nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 139929695,
             "sha256": "3a88672ce64da50dca91b1c6c9e032194edbe856f085ae04d6cf93d6d330790d",

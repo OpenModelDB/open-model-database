@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscale old anime like pokemon",
     "date": "2020-11-01",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20133756,
             "sha256": "ad5d18490463ec75976fe1b93435bfef9bce8167867c9c91a00cdc9bf6814666",

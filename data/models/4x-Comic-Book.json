@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nComic / Drawings. Trained on Custom (Spider-Man) dataset",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66958607,
             "sha256": "2cfb978b41baabcb8919978d9d5321caa6928b0015365e64652ba2ba11a6f6f7",

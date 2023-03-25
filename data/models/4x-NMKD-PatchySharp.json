@@ -8,7 +8,7 @@
     ],
     "description": "Category: JPEG Artifacts\nPurpose: Art/CGI\n\nUpscaler for clean images or images with compression artifacts (jpeg quality >75) - Produces very sharp lines/edges due to NN-Filtered HR images. Proven to produce very, very good results on drawings (sharp lines) and CGI, but should also work pretty well for real-world images.",
     "date": "2020-09-12",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66961958,
             "sha256": "fbaba4b1fcad765cc6be5c7cc767026b2d9f5c7b3f9ff3ad256380edab13ed6b",

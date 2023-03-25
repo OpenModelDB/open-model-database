@@ -8,7 +8,7 @@
     ],
     "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: Trained on Custom (CC0 Textures)\n\n",
     "date": null,
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66658216,
             "sha256": "f6443ad1469750d7325dd25fcbf051238f455b9d5517eeea83a778f38c394a66",

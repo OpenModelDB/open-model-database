@@ -7,7 +7,7 @@
     ],
     "description": "Category: DeToon\nPurpose: Detooning\n\nAn attempt to detoon images/drawings of people",
     "date": "2020-07-31",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66662414,
             "sha256": "780a091b2409fdfd1ee7cb4896af52e904043a50c33aa4304f25cd8d8a82343e",

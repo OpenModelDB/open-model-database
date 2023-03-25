@@ -9,7 +9,7 @@
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Anime\n\n2x_PSNR.pth",
     "date": "2020-12-09",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -19,6 +19,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66758126,
             "sha256": "5f858442165478ddac475e75c24b9091b1f3c198aba1fe5d7e22008f43c2a87f",

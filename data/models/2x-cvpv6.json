@@ -7,13 +7,14 @@
     ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: Anime - interpolation\n\n",
     "date": "2021-09-21",
-    "architecture": "CAIN",
+    "architecture": "cain",
     "size": null,
     "scale": 2,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 105106008,
             "sha256": "44a8fb7c8b56b1669bc1e692dae51b3dd96cf6f49db142194480e50645db8618",

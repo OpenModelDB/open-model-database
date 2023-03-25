@@ -1,0 +1,73 @@
+{
+	"esrgan": {
+		"name": "ESRGAN",
+		"compatiblePlatforms": [
+			"pytorch",
+			"onnx",
+			"ncnn"
+		]
+	},
+	"compact": {
+		"name": "Compact",
+		"compatiblePlatforms": [
+			"pytorch",
+			"onnx",
+			"ncnn"
+		]
+	},
+	"cain": {
+		"name": "CAIN",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	},
+	"swinir": {
+		"name": "SwinIR",
+		"compatiblePlatforms": [
+			"pytorch",
+			"onnx"
+		]
+	},
+	"cain-yuv": {
+		"name": "CAIN YUV",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	},
+	"spsr": {
+		"name": "SPSR",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	},
+	"esrgan+": {
+		"name": "ESRGAN+",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	},
+	"sofvsr": {
+		"name": "SOFVSR",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	},
+	"rife": {
+		"name": "RIFE",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	},
+	"edsr": {
+		"name": "EDSR (SRResNet)",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	},
+	"2c2-esrgan": {
+		"name": "2C2-ESRGAN",
+		"compatiblePlatforms": [
+			"pytorch"
+		]
+	}
+}

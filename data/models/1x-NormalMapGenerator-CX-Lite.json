@@ -8,7 +8,7 @@
     ],
     "description": "Category: Normal Map/Bump Map Generation\nPurpose: Map Generation - normal maps\n\nGenerating normal maps from textures",
     "date": "2020-11-04",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "32nf",
         "12nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 20098601,
             "sha256": "dce313777fac7b2f98101538f15a153acfa92cbf4bb62a8cd4a89edc0eb313dc",

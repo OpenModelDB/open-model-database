@@ -7,7 +7,7 @@
     ],
     "description": "Category: CGI\nPurpose: CGI Animation\n\nmixed 3D/2D CGI animations on some 2D animations it might sharpen the edges. General usage is to upscale CGI animations compressed by YouTube.",
     "date": "2021-01-14",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [
         "64nf",
         "23nb"
@@ -17,6 +17,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 66870739,
             "sha256": "1cd831c35f1ac3a74d054e96362c145ac9d2a3abd0651fbb9802f42cc302b013",

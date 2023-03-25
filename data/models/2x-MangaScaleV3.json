@@ -8,7 +8,7 @@
     ],
     "description": "Category: Manga\nPurpose: Manga\nPretrained: unreleased model\n\nTo upscale manga including halftones, instead of trying to smooth them out.",
     "date": "2021-05-24",
-    "architecture": "ESRGAN+",
+    "architecture": "esrgan+",
     "size": [
         "64nf",
         "23nb"
@@ -18,6 +18,7 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 67335278,
             "sha256": "da2b113388bf199d69202b06d5c803d1dd85ce61955c7870f1106530a2ce142a",

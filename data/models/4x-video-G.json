@@ -7,13 +7,14 @@
     ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: \n\nTrained on REDS' size dataset",
     "date": null,
-    "architecture": "SOFVSR",
+    "architecture": "sofvsr",
     "size": null,
     "scale": 4,
     "inputChannels": null,
     "outputChannels": null,
     "resources": [
         {
+            "platform": "pytorch",
             "type": "pth",
             "size": 4204067,
             "sha256": "73ffa44dd7deab5a43c03b9776279ed64b1649c8e1596620e67c942aca353aa9",
