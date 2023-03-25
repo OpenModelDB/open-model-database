@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback } from 'react';
 import { DownloadButton } from '../../elements/components/download-button';
-import { EditableLabel } from '../../elements/components/editable-label';
+import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
@@ -198,7 +198,15 @@ export default function Page({ modelId, modelData }: Props) {
                                         >
                                             Scale
                                         </th>
-                                        <td className="px-6 py-4 ">{model.scale}</td>
+                                        <td className="px-6 py-4 ">
+                                            <EditableIntegerLabel
+                                                max={16}
+                                                min={1}
+                                                readonly={!editMode}
+                                                value={model.scale}
+                                                onChange={(value) => updateModelProperty('scale', value)}
+                                            />
+                                        </td>
                                     </tr>
                                     {model.size && (
                                         <tr className="">
@@ -228,10 +236,38 @@ export default function Page({ modelId, modelData }: Props) {
                                             Color Mode
                                         </th>
                                         <td className="px-6 py-4">
-                                            <div className="flex flex-row flex-wrap gap-2 uppercase">
+                                            <div className="uppercase">
                                                 {getColorMode(model.inputChannels)} →{' '}
                                                 {getColorMode(model.outputChannels)}
                                             </div>
+                                            {editMode && (
+                                                <>
+                                                    <div>
+                                                        Input:{' '}
+                                                        <EditableIntegerLabel
+                                                            max={4}
+                                                            min={0}
+                                                            readonly={!editMode}
+                                                            value={model.inputChannels}
+                                                            onChange={(value) =>
+                                                                updateModelProperty('inputChannels', value)
+                                                            }
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        Output:{' '}
+                                                        <EditableIntegerLabel
+                                                            max={4}
+                                                            min={0}
+                                                            readonly={!editMode}
+                                                            value={model.outputChannels}
+                                                            onChange={(value) =>
+                                                                updateModelProperty('outputChannels', value)
+                                                            }
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
                                         </td>
                                     </tr>
                                     {Object.entries(model)
