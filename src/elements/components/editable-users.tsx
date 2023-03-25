@@ -1,40 +1,39 @@
 import React from 'react';
 import { BsPersonFillAdd } from 'react-icons/bs';
 import { MdRemoveCircle } from 'react-icons/md';
-import { User, UserId } from '../../lib/schema';
-import { asArray } from '../../lib/util';
+import { useUsers } from '../../lib/hooks/use-users';
+import { UserId } from '../../lib/schema';
 import { Link } from './link';
 
 export interface EditableUsersProps {
-    author: readonly UserId[];
-    users: ReadonlyMap<UserId, User>;
+    users: readonly UserId[];
     readonly?: boolean;
-    onAdd?: () => void;
-    onChange?: (newAuthor: UserId, index: number) => void;
-    onRemove?: (index: number) => void;
+    onChange?: (users: UserId[]) => void;
 }
 
-export function EditableUsers({ author, users, onChange, onAdd, onRemove, readonly }: EditableUsersProps) {
+export function EditableUsers({ users, onChange, readonly }: EditableUsersProps) {
+    const { userData } = useUsers();
+    const [randomUser] = userData.keys();
+
     return (
         <div className="flex flex-row flex-wrap gap-2">
             <strong className="m-0 flex flex-row flex-wrap gap-2 text-lg text-accent-600 dark:text-accent-500">
-                {asArray(author).map((userId, userIndex) => {
-                    if (!readonly && onChange && onRemove) {
+                {users.map((userId, index) => {
+                    if (!readonly && onChange) {
                         return (
                             <div
                                 className="flex flex-row gap-2"
-                                key={`${userId}${userIndex}`}
+                                key={`${userId} ${index}`}
                             >
                                 <select
-                                    defaultValue=""
                                     value={userId}
                                     onChange={(event) => {
-                                        const content = event.target.value as UserId;
-                                        onChange(content, userIndex);
+                                        const newUsers = [...users];
+                                        newUsers[index] = event.target.value as UserId;
+                                        onChange(newUsers);
                                     }}
                                 >
-                                    <option value="">Select user</option>
-                                    {[...users].map(([userId, user]) => (
+                                    {[...userData].map(([userId, user]) => (
                                         <option
                                             key={userId}
                                             value={userId}
@@ -43,10 +42,12 @@ export function EditableUsers({ author, users, onChange, onAdd, onRemove, readon
                                         </option>
                                     ))}
                                 </select>
-                                {userIndex > 0 && (
+                                {index > 0 && (
                                     <button
                                         onClick={() => {
-                                            onRemove(userIndex);
+                                            const newUsers = [...users];
+                                            newUsers.splice(index, 1);
+                                            onChange(newUsers);
                                         }}
                                     >
                                         <MdRemoveCircle />
@@ -56,13 +57,20 @@ export function EditableUsers({ author, users, onChange, onAdd, onRemove, readon
                         );
                     }
                     return (
-                        <React.Fragment key={userId}>
-                            <Link href={`/users/${userId}`}>{users.get(userId)?.name ?? `unknown user:${userId}`}</Link>
-                        </React.Fragment>
+                        <Link
+                            href={`/users/${userId}`}
+                            key={userId}
+                        >
+                            {userData.get(userId)?.name ?? `unknown user:${userId}`}
+                        </Link>
                     );
                 })}
-                {!readonly && onAdd && (
-                    <button onClick={onAdd}>
+                {!readonly && onChange && (
+                    <button
+                        onClick={() => {
+                            onChange([...users, randomUser]);
+                        }}
+                    >
                         <BsPersonFillAdd />
                     </button>
                 )}

@@ -9,9 +9,8 @@ import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useCurrent } from '../../lib/hooks/use-current';
-import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { Model, ModelId, UserId } from '../../lib/schema';
+import { Model, ModelId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -57,8 +56,6 @@ export default function Page({ modelId, modelData }: Props) {
         [webApi, modelId, model]
     );
 
-    const { userData } = useUsers();
-
     return (
         <>
             <Head>
@@ -94,40 +91,10 @@ export default function Page({ modelId, modelData }: Props) {
                                 <div className="m-0 flex w-full max-w-full flex-row gap-2">
                                     by{' '}
                                     <EditableUsers
-                                        author={asArray(model.author)}
                                         readonly={!editMode}
-                                        users={userData}
-                                        onAdd={
-                                            asArray(model.author).slice(-1)[0] === ''
-                                                ? undefined
-                                                : () => {
-                                                      if (Array.isArray(model.author)) {
-                                                          const newAuthor = [...model.author, '' as UserId];
-                                                          updateModelProperty('author', newAuthor);
-                                                      } else {
-                                                          updateModelProperty('author', [model.author, '' as UserId]);
-                                                      }
-                                                  }
-                                        }
-                                        onChange={(changedAuthor, index) => {
-                                            if (Array.isArray(model.author)) {
-                                                const newAuthor = [...model.author];
-                                                newAuthor[index] = changedAuthor;
-                                                updateModelProperty('author', newAuthor);
-                                            } else {
-                                                updateModelProperty('author', changedAuthor);
-                                            }
-                                        }}
-                                        onRemove={(index) => {
-                                            if (Array.isArray(model.author)) {
-                                                const newAuthor = [...model.author];
-                                                newAuthor.splice(index, 1);
-                                                if (newAuthor.length === 1) {
-                                                    updateModelProperty('author', newAuthor[0]);
-                                                } else {
-                                                    updateModelProperty('author', newAuthor);
-                                                }
-                                            }
+                                        users={asArray(model.author)}
+                                        onChange={(users) => {
+                                            updateModelProperty('author', users.length === 1 ? users[0] : users);
                                         }}
                                     />
                                 </div>
