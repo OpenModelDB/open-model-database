@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback } from 'react';
+import { BsFillTrashFill } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
@@ -11,7 +12,7 @@ import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId } from '../../lib/schema';
+import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -114,14 +115,37 @@ export default function Page({ modelId, modelData }: Props) {
                     {/* Right column */}
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
-                        <div className="mb-2 flex flex-col gap-2">
+                        <div className="mb-2 flex w-full flex-col gap-2">
                             {model.resources.flatMap((resource) => {
                                 return resource.urls.map((url) => (
-                                    <DownloadButton
+                                    <div
+                                        className="flex w-full flex-row gap-2"
                                         key={url}
-                                        resource={resource}
-                                        url={url}
-                                    />
+                                    >
+                                        <DownloadButton
+                                            resource={resource}
+                                            url={url}
+                                        />
+                                        {editMode && (
+                                            <button
+                                                className="ml-auto h-12 cursor-pointer"
+                                                onClick={() => {
+                                                    const newUrls = resource.urls.filter((u) => u !== url);
+                                                    const newResource: Resource = {
+                                                        ...resource,
+                                                        urls: newUrls,
+                                                    };
+                                                    const newResources = model.resources.map((r) =>
+                                                        r.sha256 === resource.sha256 ? newResource : r
+                                                    );
+
+                                                    updateModelProperty('resources', newResources);
+                                                }}
+                                            >
+                                                <BsFillTrashFill />
+                                            </button>
+                                        )}
+                                    </div>
                                 ));
                             })}
                         </div>
