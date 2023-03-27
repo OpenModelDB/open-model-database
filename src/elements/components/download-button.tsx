@@ -1,3 +1,4 @@
+import { BsChevronDown } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import { Resource } from '../../lib/schema';
 import { Link } from './link';
@@ -49,30 +50,35 @@ export const DownloadButton = ({ url, resource }: DownloadButtonProps) => {
 
     return (
         <div className="w-full">
-            <Link
-                external
-                className="mr-2 mb-1 inline-flex h-12 w-full cursor-pointer items-center rounded-lg border-0 border-accent-700 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
-                href={url}
-                type="button"
-            >
-                <div className="w-full">
-                    {isExternal ? (
-                        <FiExternalLink
-                            className="mr-2 h-4 w-4"
-                            viewBox="0 0 22 22"
-                        />
-                    ) : (
-                        <svg
-                            className="mr-2 h-4 w-4 fill-current"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                        </svg>
-                    )}
-                    Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
-                </div>
-            </Link>
+            <div className="mb-1 flex w-full flex-row gap-0.5 overflow-hidden rounded-lg bg-accent-500 dark:bg-accent-400">
+                <Link
+                    external
+                    className="inline-flex h-12 w-full cursor-pointer items-center border-0 border-accent-700 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
+                    href={url}
+                    type="button"
+                >
+                    <div className="w-full">
+                        {isExternal ? (
+                            <FiExternalLink
+                                className="mr-2 h-4 w-4"
+                                viewBox="0 0 22 22"
+                            />
+                        ) : (
+                            <svg
+                                className="mr-2 h-4 w-4 fill-current"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                            </svg>
+                        )}
+                        Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
+                    </div>
+                </Link>
+                <a className="inline-flex h-12 w-12 cursor-pointer items-center border-0 border-accent-700 bg-accent-600 text-center align-middle text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500">
+                    <BsChevronDown className="w-full" />
+                </a>
+            </div>
             <div className="w-full text-center">
                 {isExternal ? `Hosted offsite by ${host}` : 'Hosted by OpenModelDB'}
             </div>
