@@ -12,7 +12,7 @@ import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId } from '../../lib/schema';
+import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -123,8 +123,17 @@ export default function Page({ modelId, modelData }: Props) {
                                         key={resource.sha256}
                                     >
                                         <DownloadButton
+                                            readonly={!editMode}
                                             resource={resource}
-                                            urls={resource.urls}
+                                            onChange={(newResource: Resource) => {
+                                                const newResources = model.resources.map((r) => {
+                                                    if (r.sha256 === resource.sha256) {
+                                                        return newResource;
+                                                    }
+                                                    return r;
+                                                });
+                                                updateModelProperty('resources', newResources);
+                                            }}
                                         />
                                         {editMode && (
                                             <button

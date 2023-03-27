@@ -8,8 +8,9 @@ import { Resource } from '../../lib/schema';
 import { Link } from './link';
 
 type DownloadButtonProps = {
-    urls: string[];
     resource: Resource;
+    readonly?: boolean;
+    onChange?: (resource: Resource) => void;
 };
 
 const getHostFromUrl = (url: string): string => {
@@ -67,8 +68,8 @@ const getIsExternal = (url: string) => {
     return !url.startsWith('https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/');
 };
 
-export const DownloadButton = ({ urls, resource }: DownloadButtonProps) => {
-    const [selectedMirror, setSelectedMirror] = useState(urls[0]);
+export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
+    const [selectedMirror, setSelectedMirror] = useState(resource.urls[0]);
 
     const isExternal = getIsExternal(selectedMirror);
     const host = getHostFromUrl(selectedMirror);
@@ -121,7 +122,7 @@ export const DownloadButton = ({ urls, resource }: DownloadButtonProps) => {
                     >
                         <Menu.Items className="absolute right-0 z-50 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-fade-700">
                             <div className="flex flex-col divide-y rounded-lg p-2 shadow-lg">
-                                {urls.map((url) => {
+                                {resource.urls.map((url) => {
                                     const externalUrl = getIsExternal(url);
                                     const host = externalUrl ? getHostFromUrl(url) : 'OpenModelDB';
 
@@ -145,6 +146,23 @@ export const DownloadButton = ({ urls, resource }: DownloadButtonProps) => {
                                         </Menu.Item>
                                     );
                                 })}
+                                {!readonly && (
+                                    <Menu.Item
+                                        as="a"
+                                        className="cursor-pointer rounded-lg p-2 text-center transition-colors duration-100 ease-in-out ui-active:bg-fade-300 ui-active:text-black ui-not-active:text-black dark:ui-active:bg-fade-600 dark:ui-active:text-white dark:ui-not-active:text-white"
+                                        onClick={() => {
+                                            const newUrl = prompt('Enter a new URL');
+                                            if (newUrl && onChange) {
+                                                onChange({
+                                                    ...resource,
+                                                    urls: resource.urls.concat(newUrl),
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        + Add URL
+                                    </Menu.Item>
+                                )}
                             </div>
                         </Menu.Items>
                     </Transition>
