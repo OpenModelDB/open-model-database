@@ -1,6 +1,6 @@
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
-import { BsChevronDown } from 'react-icons/bs';
+import { BsChevronDown, BsFillTrashFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import { SiDropbox, SiGithub, SiGoogledrive, SiMega, SiMicrosoftonedrive } from 'react-icons/si';
 import Logo from '../../../public/logo.svg';
@@ -42,7 +42,7 @@ const getHostFromUrl = (url: string): string => {
         }
         return parsedUrl.hostname;
     } catch (e) {
-        console.error(e);
+        console.debug(e);
         return 'an unknown hoster';
     }
 };
@@ -69,10 +69,10 @@ const getIsExternal = (url: string) => {
 };
 
 export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
-    const [selectedMirror, setSelectedMirror] = useState(resource.urls[0]);
+    const [selectedMirror, setSelectedMirror] = useState<string | undefined>(resource.urls[0]);
 
-    const isExternal = getIsExternal(selectedMirror);
-    const host = getHostFromUrl(selectedMirror);
+    const isExternal = getIsExternal(selectedMirror ?? '');
+    const host = getHostFromUrl(selectedMirror ?? '');
 
     return (
         <div className="w-full">
@@ -80,7 +80,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                 <Link
                     external
                     className="inline-flex h-12 w-full cursor-pointer items-center rounded-l-lg border-0 border-accent-700 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
-                    href={selectedMirror}
+                    href={selectedMirror ?? '#'}
                     type="button"
                 >
                     <div className="w-full">
@@ -129,7 +129,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                                     return (
                                         <Menu.Item
                                             as="a"
-                                            className="cursor-pointer rounded-lg p-2 transition-colors duration-100 ease-in-out ui-active:bg-fade-300 ui-active:text-black ui-not-active:text-black dark:ui-active:bg-fade-600 dark:ui-active:text-white dark:ui-not-active:text-white"
+                                            className="flex cursor-pointer rounded-lg p-2 transition-colors duration-100 ease-in-out ui-active:bg-fade-300 ui-active:text-black ui-not-active:text-black dark:ui-active:bg-fade-600 dark:ui-active:text-white dark:ui-not-active:text-white"
                                             key={url}
                                             onClick={() => setSelectedMirror(url)}
                                         >
@@ -142,6 +142,21 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                                                 </div>
                                             ) : (
                                                 <Logo className="-mb-2" />
+                                            )}
+                                            {!readonly && (
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        if (onChange) {
+                                                            onChange({
+                                                                ...resource,
+                                                                urls: resource.urls.filter((u) => u !== url),
+                                                            });
+                                                        }
+                                                    }}
+                                                >
+                                                    <BsFillTrashFill />
+                                                </button>
                                             )}
                                         </Menu.Item>
                                     );
