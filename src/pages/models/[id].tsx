@@ -12,7 +12,7 @@ import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
+import { ArchId, Model, ModelId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -117,28 +117,22 @@ export default function Page({ modelId, modelData }: Props) {
                         {/* Download Button */}
                         <div className="mb-2 flex w-full flex-col gap-2">
                             {model.resources.flatMap((resource) => {
-                                return resource.urls.map((url) => (
+                                return (
                                     <div
                                         className="flex w-full flex-row gap-2"
-                                        key={url}
+                                        key={resource.sha256}
                                     >
                                         <DownloadButton
                                             resource={resource}
-                                            url={url}
+                                            urls={resource.urls}
                                         />
                                         {editMode && (
                                             <button
                                                 className="ml-auto h-12 cursor-pointer"
                                                 onClick={() => {
-                                                    const newUrls = resource.urls.filter((u) => u !== url);
-                                                    const newResource: Resource = {
-                                                        ...resource,
-                                                        urls: newUrls,
-                                                    };
-                                                    const newResources = model.resources.map((r) =>
-                                                        r.sha256 === resource.sha256 ? newResource : r
+                                                    const newResources = model.resources.filter(
+                                                        (r) => r.sha256 !== resource.sha256
                                                     );
-
                                                     updateModelProperty('resources', newResources);
                                                 }}
                                             >
@@ -146,7 +140,7 @@ export default function Page({ modelId, modelData }: Props) {
                                             </button>
                                         )}
                                     </div>
-                                ));
+                                );
                             })}
                         </div>
 
