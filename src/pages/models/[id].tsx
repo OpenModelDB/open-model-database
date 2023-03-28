@@ -126,12 +126,14 @@ export default function Page({ modelId, modelData }: Props) {
                                             readonly={!editMode}
                                             resource={resource}
                                             onChange={(newResource: Resource) => {
-                                                const newResources = model.resources.map((r) => {
-                                                    if (r.sha256 === resource.sha256) {
-                                                        return newResource;
-                                                    }
-                                                    return r;
-                                                });
+                                                const newResources = model.resources
+                                                    .map((r) => {
+                                                        if (r.sha256 === resource.sha256) {
+                                                            return newResource;
+                                                        }
+                                                        return r;
+                                                    })
+                                                    .filter((r) => r.urls.length > 0);
                                                 updateModelProperty('resources', newResources);
                                             }}
                                         />

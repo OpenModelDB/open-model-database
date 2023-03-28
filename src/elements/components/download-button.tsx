@@ -69,10 +69,10 @@ const getIsExternal = (url: string) => {
 };
 
 export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
-    const [selectedMirror, setSelectedMirror] = useState<string | undefined>(resource.urls[0]);
+    const [selectedMirror, setSelectedMirror] = useState(resource.urls[0]);
 
-    const isExternal = getIsExternal(selectedMirror ?? '');
-    const host = getHostFromUrl(selectedMirror ?? '');
+    const isExternal = getIsExternal(selectedMirror);
+    const host = getHostFromUrl(selectedMirror);
 
     return (
         <div className="w-full">
@@ -80,7 +80,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                 <Link
                     external
                     className="inline-flex h-12 w-full cursor-pointer items-center rounded-l-lg border-0 border-accent-700 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
-                    href={selectedMirror ?? '#'}
+                    href={selectedMirror}
                     type="button"
                 >
                     <div className="w-full">
