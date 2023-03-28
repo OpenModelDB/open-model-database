@@ -13,7 +13,7 @@ type DownloadButtonProps = {
     onChange?: (resource: Resource) => void;
 };
 
-const getHostFromUrl = (url: string): string => {
+const hostFromUrl = (url: string): string => {
     try {
         const parsedUrl = new URL(url);
         const domainParts = parsedUrl.hostname.split('.');
@@ -47,7 +47,7 @@ const getHostFromUrl = (url: string): string => {
     }
 };
 
-const getHostIcon = (host: string) => {
+const iconFromHost = (host: string) => {
     switch (host) {
         case 'GitHub':
             return <SiGithub className="block" />;
@@ -64,15 +64,15 @@ const getHostIcon = (host: string) => {
     }
 };
 
-const getIsExternal = (url: string) => {
+const isMirrorExternal = (url: string) => {
     return !url.startsWith('https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/');
 };
 
 export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
     const [selectedMirror, setSelectedMirror] = useState(resource.urls[0]);
 
-    const isExternal = getIsExternal(selectedMirror);
-    const host = getHostFromUrl(selectedMirror);
+    const isExternal = isMirrorExternal(selectedMirror);
+    const host = hostFromUrl(selectedMirror);
 
     return (
         <div className="w-full">
@@ -123,8 +123,8 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                         <Menu.Items className="absolute right-0 z-50 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-fade-700">
                             <div className="flex flex-col divide-y rounded-lg p-2 shadow-lg">
                                 {resource.urls.map((url) => {
-                                    const externalUrl = getIsExternal(url);
-                                    const host = externalUrl ? getHostFromUrl(url) : 'OpenModelDB';
+                                    const externalUrl = isMirrorExternal(url);
+                                    const host = externalUrl ? hostFromUrl(url) : 'OpenModelDB';
 
                                     return (
                                         <Menu.Item
@@ -136,7 +136,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                                             {externalUrl ? (
                                                 <div className="flex h-full w-full flex-row items-center gap-2 align-middle">
                                                     <div className="m-0 block h-full align-middle">
-                                                        {getHostIcon(host)}
+                                                        {iconFromHost(host)}
                                                     </div>
                                                     <div className="m-0 h-full align-middle">{host}</div>
                                                 </div>
