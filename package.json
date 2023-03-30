@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.9",
+    "@headlessui/tailwindcss": "^0.1.2",
     "@next/font": "13.1.5",
     "@tailwindcss/line-clamp": "^0.4.2",
     "chokidar": "^3.5.3",
