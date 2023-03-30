@@ -10,10 +10,11 @@ import { ImageCarousel } from '../../elements/components/image-carousel';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
+import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { ArchId, Model, ModelId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
-import { asArray, getColorMode } from '../../lib/util';
+import { asArray, getColorMode, joinListString } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
@@ -47,9 +48,15 @@ const dummyImages = [
 
 export default function Page({ modelId, modelData }: Props) {
     const { archData } = useArchitectures();
+    const { userData } = useUsers();
 
     const { webApi, editMode } = useWebApi();
     const model = useCurrent(webApi, 'model', modelId, modelData);
+
+    const authors = asArray(model.author);
+    const authorsJoined = joinListString(authors.map((userId) => userData.get(userId)?.name ?? 'unknown'));
+
+    const archName = archData.get(model.architecture)?.name ?? 'unknown';
 
     const updateModelProperty = useCallback(
         <K extends keyof Model>(key: K, value: Model[K]) => {
@@ -64,9 +71,7 @@ export default function Page({ modelId, modelData }: Props) {
             <Head>
                 <title>{`${model.name} - OpenModelDB`}</title>
                 <meta
-                    content={`A ${model.scale}x ${archData.get(model.architecture)?.name ?? 'unknown'} by ${String(
-                        model.author
-                    )}.`}
+                    content={`A ${model.scale}x ${archName} model by ${authorsJoined}.`}
                     name="description"
                 />
                 <meta
@@ -78,7 +83,7 @@ export default function Page({ modelId, modelData }: Props) {
                     rel="icon"
                 />
                 <meta
-                    content={`${model.name} by ${String(model.author)} - OpenModelDB`}
+                    content={`${model.name} by ${authorsJoined} - OpenModelDB`}
                     property="og:title"
                 />
                 <meta
@@ -122,7 +127,7 @@ export default function Page({ modelId, modelData }: Props) {
                                     by{' '}
                                     <EditableUsers
                                         readonly={!editMode}
-                                        users={asArray(model.author)}
+                                        users={authors}
                                         onChange={(users) => {
                                             updateModelProperty('author', users.length === 1 ? users[0] : users);
                                         }}
@@ -181,7 +186,7 @@ export default function Page({ modelId, modelData }: Props) {
                                                     ))}
                                                 </select>
                                             ) : (
-                                                archData.get(model.architecture)?.name ?? 'unknown'
+                                                archName
                                             )}
                                         </td>
                                     </tr>
