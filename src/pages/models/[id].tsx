@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback } from 'react';
+import { BsFillTrashFill } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
@@ -11,7 +12,7 @@ import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId } from '../../lib/schema';
+import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode } from '../../lib/util';
 
@@ -114,15 +115,43 @@ export default function Page({ modelId, modelData }: Props) {
                     {/* Right column */}
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
-                        <div className="mb-2 flex flex-col gap-2">
-                            {model.resources.flatMap((resource) => {
-                                return resource.urls.map((url) => (
-                                    <DownloadButton
-                                        key={url}
-                                        resource={resource}
-                                        url={url}
-                                    />
-                                ));
+                        <div className="mb-2 flex w-full flex-col gap-2">
+                            {model.resources.map((resource) => {
+                                return (
+                                    <div
+                                        className="flex w-full flex-row gap-2"
+                                        key={resource.sha256}
+                                    >
+                                        <DownloadButton
+                                            readonly={!editMode}
+                                            resource={resource}
+                                            onChange={(newResource: Resource) => {
+                                                const newResources = model.resources
+                                                    .map((r) => {
+                                                        if (r.sha256 === resource.sha256) {
+                                                            return newResource;
+                                                        }
+                                                        return r;
+                                                    })
+                                                    .filter((r) => r.urls.length > 0);
+                                                updateModelProperty('resources', newResources);
+                                            }}
+                                        />
+                                        {editMode && (
+                                            <button
+                                                className="ml-auto h-12 cursor-pointer"
+                                                onClick={() => {
+                                                    const newResources = model.resources.filter(
+                                                        (r) => r.sha256 !== resource.sha256
+                                                    );
+                                                    updateModelProperty('resources', newResources);
+                                                }}
+                                            >
+                                                <BsFillTrashFill />
+                                            </button>
+                                        )}
+                                    </div>
+                                );
                             })}
                         </div>
 
