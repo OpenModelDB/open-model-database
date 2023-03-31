@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import { useMemo } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import { TextLink } from '../../elements/components/link';
+import { HeadCommon } from '../../elements/head-common';
 import { MarkdownContainer } from '../../elements/markdown';
 import { PageContainer } from '../../elements/page';
 import { SideBarView } from '../../elements/side-bar';
@@ -38,17 +38,7 @@ export default function Page({ title, markdown, sideBar, docPath, lastModified }
 
     return (
         <>
-            <Head>
-                <title>{`${title} - OpenModelDB`}</title>
-                <meta
-                    content="width=device-width, initial-scale=1"
-                    name="viewport"
-                />
-                <link
-                    href="/favicon.ico"
-                    rel="icon"
-                />
-            </Head>
+            <HeadCommon title={title} />
             <PageContainer>
                 <div className={style.container}>
                     <div className={style.sideBar}>
