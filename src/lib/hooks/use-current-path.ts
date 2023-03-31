@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
+import { SITE_URL } from '../site-data';
 
 /**
  * Returns the pathname of the current route.
@@ -10,5 +11,5 @@ import { useMemo } from 'react';
 export function useCurrentPath(): string {
     const { asPath } = useRouter();
 
-    return useMemo(() => new URL(asPath, 'https://openmodeldb.info').pathname, [asPath]);
+    return useMemo(() => new URL(asPath, SITE_URL).pathname, [asPath]);
 }
