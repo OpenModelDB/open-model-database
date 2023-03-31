@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import React, { useMemo } from 'react';
 import { EditableLabel } from '../elements/components/editable-label';
+import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
 import { TagView } from '../elements/tag-view';
 import { deriveTags } from '../lib/derive-tags';
@@ -54,17 +54,10 @@ export default function Page() {
 
     return (
         <>
-            <Head>
-                <title>Tags</title>
-                <meta
-                    content="width=device-width, initial-scale=1"
-                    name="viewport"
-                />
-                <link
-                    href="/favicon.ico"
-                    rel="icon"
-                />
-            </Head>
+            <HeadCommon
+                noIndex
+                title="Tags"
+            />
             <PageContainer>
                 <h1>Tags</h1>
 

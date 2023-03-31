@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import React, { useCallback, useMemo, useState } from 'react';
 import { ModelCard } from '../elements/components/model-card';
 import { SearchBar } from '../elements/components/searchbar';
+import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
 import { TagSelector } from '../elements/tag-selector';
 import { deriveTags } from '../lib/derive-tags';
@@ -90,42 +90,11 @@ export default function Page({ modelData: staticModelData }: Props) {
 
     return (
         <>
-            <Head>
-                <title>OpenModelDB</title>
-                <meta
-                    content="OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better way to find and compare models than existing sources."
-                    name="description"
-                />
-                <meta
-                    content="width=device-width, initial-scale=1"
-                    name="viewport"
-                />
-                <link
-                    href="/favicon.ico"
-                    rel="icon"
-                />
-                <meta
-                    content="OpenModelDB"
-                    property="og:title"
-                />
-                <meta
-                    content="OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better way to find and compare models than existing sources."
-                    property="og:description"
-                />
-                <meta
-                    content={process.env.SITE_URL}
-                    property="og:url"
-                />
-                <meta
-                    content="https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg"
-                    property="og:image"
-                />
-                <meta
-                    content="#4d48a9"
-                    data-react-helmet="true"
-                    name="theme-color"
-                />
-            </Head>
+            <HeadCommon
+                noTitlePrefix
+                description="OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better way to find and compare models than existing sources."
+                title="OpenModelDB"
+            />
             <PageContainer>
                 <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
                     {editMode && (

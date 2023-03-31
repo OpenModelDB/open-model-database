@@ -7,6 +7,7 @@ import { EditableIntegerLabel, EditableLabel } from '../../elements/components/e
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
+import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
@@ -68,41 +69,12 @@ export default function Page({ modelId, modelData }: Props) {
 
     return (
         <>
+            <HeadCommon
+                description={`A ${model.scale}x ${archName} model by ${authorsJoined}.`}
+                image={dummyImages[0].HR}
+                title={model.name}
+            />
             <Head>
-                <title>{`${model.name} - OpenModelDB`}</title>
-                <meta
-                    content={`A ${model.scale}x ${archName} model by ${authorsJoined}.`}
-                    name="description"
-                />
-                <meta
-                    content="width=device-width, initial-scale=1"
-                    name="viewport"
-                />
-                <link
-                    href="/favicon.ico"
-                    rel="icon"
-                />
-                <meta
-                    content={`${model.name} by ${authorsJoined} - OpenModelDB`}
-                    property="og:title"
-                />
-                <meta
-                    content={model.description}
-                    property="og:description"
-                />
-                <meta
-                    content={`${process.env.SITE_URL ?? ''}/models/${modelId}`}
-                    property="og:url"
-                />
-                <meta
-                    content={dummyImages[0].HR}
-                    property="og:image"
-                />
-                <meta
-                    content="#4d48a9"
-                    data-react-helmet="true"
-                    name="theme-color"
-                />
                 <meta
                     content="summary_large_image"
                     name="twitter:card"
