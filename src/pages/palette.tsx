@@ -1,7 +1,7 @@
 import chroma from 'chroma-js';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import { useState } from 'react';
+import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
 
 const steps = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
@@ -80,17 +80,10 @@ export default function Page() {
 
     return (
         <>
-            <Head>
-                <title>Palette Generator</title>
-                <meta
-                    content="width=device-width, initial-scale=1"
-                    name="viewport"
-                />
-                <link
-                    href="/favicon.ico"
-                    rel="icon"
-                />
-            </Head>
+            <HeadCommon
+                noIndex
+                title="Palette Generator"
+            />
             <PageContainer>
                 <div>
                     <p>
