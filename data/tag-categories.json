@@ -1,18 +1,8 @@
 {
-    "media-type": {
-        "name": "Media type",
-        "description": "",
-        "order": 0,
-        "tags": [
-            "audio",
-            "image",
-            "video"
-        ]
-    },
     "purpose": {
         "name": "Purpose",
         "description": "",
-        "order": 1,
+        "order": 0,
         "tags": [
             "anime",
             "anti-aliasing",
@@ -36,34 +26,10 @@
             "text"
         ]
     },
-    "color": {
-        "name": "Color",
-        "description": "",
-        "order": 2,
-        "tags": [
-            "color:1",
-            "color:3",
-            "color:4",
-            "color:1-3"
-        ]
-    },
-    "license": {
-        "name": "License",
-        "description": "",
-        "order": 3,
-        "tags": [
-            "license:by",
-            "license:commercial",
-            "license:modifications",
-            "license:sa",
-            "license:no-license",
-            "license:unknown"
-        ]
-    },
     "platform": {
         "name": "Platform",
         "description": "",
-        "order": 4,
+        "order": 1,
         "tags": [
             "platform:pytorch",
             "platform:pytorch-compatible",
@@ -76,7 +42,7 @@
     "scale": {
         "name": "Scale",
         "description": "",
-        "order": 5,
+        "order": 2,
         "tags": [
             "scale:1",
             "scale:2",
@@ -84,6 +50,40 @@
             "scale:4",
             "scale:8",
             "scale:16"
+        ]
+    },
+    "media-type": {
+        "name": "Input type",
+        "description": "",
+        "order": 3,
+        "tags": [
+            "audio",
+            "image",
+            "video"
+        ]
+    },
+    "color": {
+        "name": "Color",
+        "description": "",
+        "order": 4,
+        "tags": [
+            "color:1",
+            "color:3",
+            "color:4",
+            "color:1-3"
+        ]
+    },
+    "license": {
+        "name": "License",
+        "description": "",
+        "order": 5,
+        "tags": [
+            "license:by",
+            "license:commercial",
+            "license:modifications",
+            "license:sa",
+            "license:no-license",
+            "license:unknown"
         ]
     }
 }
