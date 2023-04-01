@@ -23,7 +23,13 @@ export function handleJsonApi<Id, Value>(collection: CollectionApi<Id, Value>) {
             const resJson: JsonResponse<Id, Value> = { data: await handler(reqJson.method, reqJson.data) };
             res.status(200).json(resJson);
         } catch (err) {
-            res.status(500).json({ error: String(err) });
+            console.error(err);
+
+            let message = String(err);
+            if (err instanceof Error) {
+                message += `\n${String(err.stack)}`;
+            }
+            res.status(500).json({ error: message });
         }
     };
 }
