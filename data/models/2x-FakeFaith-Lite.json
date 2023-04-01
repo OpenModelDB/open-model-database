@@ -6,7 +6,7 @@
         "game-textures",
         "pixel-art"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Pixel Art\n\nAn attempt at recreating the \"faithful\" style without using the faithful dataset -- aka keeping the \"pixel art\" style of pixel art.",
+    "description": "Category: Video Game Textures\n\nAn attempt at recreating the \"faithful\" style without using the faithful dataset -- aka keeping the \"pixel art\" style of pixel art.",
     "date": "2020-10-12",
     "architecture": "esrgan",
     "size": [

@@ -6,7 +6,7 @@
         "deblur",
         "pixel-art"
     ],
-    "description": "Purpose: Pixel Art\n\nRestores blurry/upscaled pixel art.",
+    "description": "Restores blurry/upscaled pixel art.",
     "date": "2021-03-19",
     "architecture": "esrgan",
     "size": [
