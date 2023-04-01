@@ -1,5 +1,6 @@
 import { CollectionApi, DBApi, notifyOnWrite } from './data-api';
 import { JsonApiCollection, JsonApiRequestHandler, JsonRequest, JsonResponse, Method } from './data-json-api';
+import { IS_DEPLOYED } from './site-data';
 import { delay, lazy, noop } from './util';
 
 const updateListeners = new Set<() => void>();
@@ -69,6 +70,11 @@ function createWebCollection<Id, Value>(path: string): CollectionApi<Id, Value> 
     });
 }
 export const getWebApi = lazy(async (): Promise<DBApi | undefined> => {
+    if (IS_DEPLOYED) {
+        // we only have API access locally
+        return Promise.resolve(undefined);
+    }
+
     const webApi: DBApi = {
         models: createWebCollection('/api/models'),
         users: createWebCollection('/api/users'),
