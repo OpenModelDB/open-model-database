@@ -3,7 +3,7 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "video"
+        "video-frame"
     ],
     "description": "Category: Video Compression\nPurpose: Compression\n\nThis model was trained on lossless video frames of Metal Arms: Glitch in the System, compressed with Bink V1 for the LR frames. It's a lot more efficient than my first DeBink model, and also has less artifacts. It's not quite as robust, but the compression is barely noticeable in videos after processing with this.",
     "date": "2021-10-30",

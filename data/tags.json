@@ -79,8 +79,8 @@
         "name": "Text",
         "description": ""
     },
-    "video": {
-        "name": "Video",
+    "video-frame": {
+        "name": "Video Frame",
         "description": ""
     },
     "arch:2c2-esrgan": {
