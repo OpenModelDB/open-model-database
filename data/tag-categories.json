@@ -13,7 +13,8 @@
             "manga",
             "photo",
             "pixel-art",
-            "text"
+            "text",
+            "video"
         ]
     },
     "purpose": {
@@ -88,9 +89,9 @@
         "order": 5,
         "simple": false,
         "tags": [
-            "audio",
-            "image",
-            "video"
+            "input:audio",
+            "input:image",
+            "input:video"
         ]
     },
     "color": {

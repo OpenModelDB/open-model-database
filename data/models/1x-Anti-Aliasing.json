@@ -3,7 +3,6 @@
     "author": "twittman",
     "license": "CC-BY-NC-4.0",
     "tags": [
-        "image",
         "anti-aliasing"
     ],
     "description": "Purpose: Anti aliasing / Images with pixelated edges",

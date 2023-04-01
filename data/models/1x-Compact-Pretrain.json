@@ -2,9 +2,7 @@
     "name": "Compact Pretrain",
     "author": "zarxrax",
     "license": "WTFPL",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Pretrained Models\nPurpose: Pretrained\n\nThis is a collection of pretrained models for Real-ESRGAN's Compact architecture. There are 1x, 2x, and 4x models, as well as 1x and 2x \"UltraCompact\" and \"SuperUltraCompact\" models (think of these as the equivalent to ESRGAN \"lite\" models). By using these are pretrains for your models, you can ensure that your models are able to be interpolated with other Compact models that were trained from these. These pretrains are compatible with most existing compact models.",
     "date": "2022-07-31",
     "architecture": "compact",

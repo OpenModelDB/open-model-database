@@ -3,7 +3,6 @@
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "colorization"
     ],
     "description": "The first attempt at ESRGAN colorization that produces more than 2 colors. Doesn't work that great but it was a neat experiment.",

@@ -7,10 +7,6 @@
         "name": "Anti-aliasing",
         "description": ""
     },
-    "audio": {
-        "name": "Audio",
-        "description": ""
-    },
     "cartoon": {
         "name": "Cartoon",
         "description": ""
@@ -57,10 +53,6 @@
     },
     "general-upscaler": {
         "name": "General Upscaler",
-        "description": ""
-    },
-    "image": {
-        "name": "Image",
         "description": ""
     },
     "inpainting": {
@@ -150,6 +142,18 @@
     "color:4": {
         "name": "RGBA",
         "description": "The model upscales images with transparency."
+    },
+    "input:audio": {
+        "name": "Audio",
+        "description": ""
+    },
+    "input:image": {
+        "name": "Image",
+        "description": ""
+    },
+    "input:video": {
+        "name": "Video",
+        "description": ""
     },
     "license:by": {
         "name": "Credit",

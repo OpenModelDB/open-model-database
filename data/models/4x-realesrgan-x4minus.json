@@ -3,7 +3,6 @@
     "author": "dinjerr",
     "license": "WTFPL",
     "tags": [
-        "image",
         "general-upscaler"
     ],
     "description": "Basically realesrgan-x4plus without the degradation training. Supposed to help retain more details, but unfortunately due to the dataset (I think) still blurs details adjacent to other objects.",

@@ -2,9 +2,7 @@
     "name": "RedImage10000",
     "author": "3majsie1995",
     "license": "CC-BY-NC-4.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: CGI\nPurpose: Correct old color photos that are tinted red\n\nCorrect old color photos that are tinted red. Model only tested in nature.",
     "date": "2022-08-04",
     "architecture": "esrgan",

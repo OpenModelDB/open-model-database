@@ -2,9 +2,7 @@
     "name": "1ch-Alpha Lite",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Alphas\nPurpose: Alpha\n\nObsoleted by Joey's Fork - Alpha channels of PNGs",
     "date": "2020-12-15",
     "architecture": "esrgan",

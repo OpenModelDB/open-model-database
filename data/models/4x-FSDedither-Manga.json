@@ -3,7 +3,6 @@
     "author": "jacob",
     "license": "GPL-3.0-only",
     "tags": [
-        "image",
         "dedither"
     ],
     "description": "Cartoons/pixel art/other non-realistic stuff with dithering",

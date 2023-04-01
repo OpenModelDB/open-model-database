@@ -2,9 +2,7 @@
     "name": "Sphax Alpha NN",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\n\nReplica of sphax with transparency",
     "date": "2021-02-04",
     "architecture": "esrgan",

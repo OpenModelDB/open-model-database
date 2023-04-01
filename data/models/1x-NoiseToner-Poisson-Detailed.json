@@ -3,7 +3,6 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
-        "image",
         "denoise"
     ],
     "description": "Purpose: Noise remover\n\nAttempts to remove the damages done from noise. Successor of sorts to Noisetoner_Poisson_150000_G",

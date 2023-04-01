@@ -89,6 +89,12 @@ export const deriveTags = lazyWithWeakKey((model: Model): readonly TagId[] => {
     // architecture
     tags.push(`arch:${model.architecture}`);
 
+    // input
+    const arch = STATIC_ARCH_DATA.get(model.architecture);
+    if (arch) {
+        tags.push(`input:${arch.input}`);
+    }
+
     // platform
     tags.push(...getPlatformTags(model));
 

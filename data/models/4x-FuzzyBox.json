@@ -3,7 +3,6 @@
     "author": "blueamulet",
     "license": "CC-BY-NC-4.0",
     "tags": [
-        "image",
         "general-upscaler"
     ],
     "description": "Photographs, Artwork, Textures, Anything really - Tried out a new pixel loss idea based on ensuring the HR downscaled matches the LR. Colors are pretty good as well as edges, but generated details seem slightly fuzzy hence the name.",

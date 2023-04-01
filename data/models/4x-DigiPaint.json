@@ -2,9 +2,7 @@
     "name": "DigiPaint",
     "author": "rastrum",
     "license": "CC0-1.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Drawings\nPurpose: Art\n\nDigital Art Upscaler",
     "date": "2019-09-07",
     "architecture": "esrgan",

@@ -3,7 +3,6 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
-        "image",
         "photo"
     ],
     "description": "Category: Realistic Photos\nPurpose: Clean Real-World Images\n\nUpscaling of realistic images/photos with noise and compression artifacts",

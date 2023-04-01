@@ -3,7 +3,6 @@
     "author": "bunzero",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "manga"
     ],
     "description": "To upscale manga including halftones, instead of trying to smooth them out.",

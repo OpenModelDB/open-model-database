@@ -3,7 +3,6 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "general-upscaler"
     ],
     "description": "UniScale strikes a nice balance between sharpness and realism. This model can upscale almost anything well. It was originally intended to upscale game textures, but was expanded into a universal upscaler. Interp is these two models interpolated.",

@@ -3,7 +3,6 @@
     "author": "foolhardy",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "general-upscaler"
     ],
     "description": "Pretrained: none - interpolated\n\nA creation of BSRGAN with more details and less smoothing, made by interpolating IRL models such as Siax, Superscale, Superscale Artisoft, Pixel Perfect, etc. This was, things like skin and other details don't become mushy and blurry.",

@@ -3,7 +3,6 @@
     "author": "bunzero",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "restoration"
     ],
     "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\nRemove JPEG artifacts from manga without destroying screentone and other details. For 25-5 JPEG Quality",
