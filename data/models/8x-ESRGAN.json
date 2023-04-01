@@ -2,9 +2,7 @@
     "name": "8xESRGAN",
     "author": "victorca25",
     "license": "Apache-2.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Pretrained Models\nPurpose: Pretrained\nPretrained: RRDB_ESRGAN_x4.pth\n\n",
     "date": "2019-07-06",
     "architecture": "esrgan",

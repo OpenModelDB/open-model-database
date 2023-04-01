@@ -2,9 +2,7 @@
     "name": "video_G",
     "author": "victorca25",
     "license": null,
-    "tags": [
-        "video"
-    ],
+    "tags": [],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: \n\nTrained on REDS' size dataset",
     "date": null,
     "architecture": "sofvsr",

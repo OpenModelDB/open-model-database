@@ -3,7 +3,6 @@
     "author": "blackscout",
     "license": "GPL-3.0-only",
     "tags": [
-        "image",
         "pixel-art"
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Art\n\nupscales Digital Drawings. It was trained on random drawings found on DeviantArt. Mostly Landscape and Scenery and Illustrations of Characters. It does fairly well and works on many different styles.",

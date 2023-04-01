@@ -2,9 +2,7 @@
     "name": "Ground",
     "author": "tldr-coder",
     "license": "WTFPL",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Foliage/Ground\nPurpose: Upscales ground textures",
     "date": "2021-06-23",
     "architecture": "esrgan",

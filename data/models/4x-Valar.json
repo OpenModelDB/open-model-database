@@ -3,7 +3,6 @@
     "author": "musl",
     "license": "CC0-1.0",
     "tags": [
-        "image",
         "photo"
     ],
     "description": "Category: Realistic Photos\nPurpose: Realistic Photos\n\nMeant as an experiment to test latest techniques implemented on traiNNer, including: AdaTarget, KernelGAN, UNet discriminator, nESRGAN+ arch, noise patches, camera noise, isotropic/anisotropic/sinc blur, frequency separation, contextual loss, mixup, clipL1 pixel loss, AdamP optimizer, etc. The config file is provided on the download link above. I encourage everybody to mirror the model, distribute and modify it in anywway you want.",

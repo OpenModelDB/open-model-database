@@ -2,9 +2,7 @@
     "name": "SOFVSR_REDS_F3 V1",
     "author": "sunseille",
     "license": "WTFPL",
-    "tags": [
-        "video"
-    ],
+    "tags": [],
     "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nupscale IRL videos. Use not recommended by creator",
     "date": "2021-02-26",
     "architecture": "sofvsr",

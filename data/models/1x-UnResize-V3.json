@@ -3,7 +3,6 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "deblur"
     ],
     "description": "Purpose: Deblur / Unresize\n\nPurpose: Fix images that have been arbitrarily / poorly resized, such as non-integer nearest-neighbor upscaling/downscaling - Also acts as an image sharpener/deblur when used on slightly soft inputs",

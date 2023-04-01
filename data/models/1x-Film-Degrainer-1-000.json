@@ -3,7 +3,6 @@
     "author": "tika",
     "license": "CC0-1.0",
     "tags": [
-        "image",
         "denoise"
     ],
     "description": "Remove film grain/noise",

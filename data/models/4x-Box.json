@@ -3,7 +3,6 @@
     "author": "buildist",
     "license": "GPL-3.0-only",
     "tags": [
-        "image",
         "photo"
     ],
     "description": "Category: Realistic Photos\nPurpose: Realistic Photos\n\nRRDB_ESRGAN_x4 replacement for stuff that's supposed to look realistic.",

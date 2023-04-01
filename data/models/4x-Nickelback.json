@@ -3,7 +3,6 @@
     "author": "blackscout",
     "license": "GPL-3.0-only",
     "tags": [
-        "image",
         "photo"
     ],
     "description": "Category: Realistic Photos\nPurpose: Realistic Photos\n\nthis model aims to improve further on what has been achieved by the regular 4xESRGAN and also 4xBox. It can upscale most pictures/photos (granted they are clean enough) without destroying as much detail as the aforementioned models. It generates less moiré like patterns and keeps details without oversharpening or blurring the image too much.",

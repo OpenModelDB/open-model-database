@@ -3,7 +3,7 @@
     "author": "muf",
     "license": "CC0-1.0",
     "tags": [
-        "video"
+        "video-frame"
     ],
     "description": "Category: Video Compression\nPurpose: artifact\n\nThis model attempts to make films upscaled to 4K with Topaz Gaia-HQ look more natural and filmic. It sharpens, adds film grain, and smooths out small artefacts from the upscaling process. I recommend adding a tiny amount of grain to the input to seed the model (you can do this in VEAI), otherwise the film grain will remain static across frames that don't move much. Pretrain model used with permission to relicense from Twittman.",
     "date": "2021-07-19",

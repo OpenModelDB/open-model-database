@@ -3,7 +3,6 @@
     "author": "alpha",
     "license": "WTFPL",
     "tags": [
-        "image",
         "denoise"
     ],
     "description": "Remove high ISO noise",

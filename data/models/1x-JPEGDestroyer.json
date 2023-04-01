@@ -3,7 +3,6 @@
     "author": "blackscout",
     "license": "GPL-3.0-only",
     "tags": [
-        "image",
         "restoration"
     ],
     "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\nThis model is meant to reduce or eliminate JPEG Compression without making the original images too smooth or killing detail. It manages to do a fairly good job but don't expect overly compressed images to work with this.",

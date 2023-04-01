@@ -2,9 +2,7 @@
     "name": "BSChroma",
     "author": "blackscout",
     "license": "GPL-3.0-only",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Luminance/Chroma\nPurpose: Sharpen\n\nChromaSharpen - makes the colors slightly more vibrant with a sideeffect of possibly adding Chromatic Abberation to the image. I am not sure about the usage of this model on real case scenarios but anything blurry or with fuzzy colors could work",
     "date": "2020-02-29",
     "architecture": "esrgan",

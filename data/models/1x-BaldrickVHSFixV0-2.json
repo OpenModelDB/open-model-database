@@ -3,7 +3,7 @@
     "author": "nimrodzorg",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "video"
+        "video-frame"
     ],
     "description": "Category: VHS Tapes\nPurpose: VHS\n\nFixing minor VHS Chroma and Pattern Noise - NOTE: only works on deinterlaced sources",
     "date": "2021-03-03",

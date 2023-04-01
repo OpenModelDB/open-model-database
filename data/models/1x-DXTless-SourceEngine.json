@@ -3,7 +3,6 @@
     "author": "xeller",
     "license": "WTFPL",
     "tags": [
-        "image",
         "game-textures"
     ],
     "description": "Category: Video Game Textures\nPurpose: DTX5 Compression\n\nThis model is made for Source Engine textures. It tries to remove compression artifacts such as blockyness, discoloration, green tint. It does pretty well on a lot of things, realistic stuff as well, but it was mostly made to work on TF2 textures. It's made to keep as much detail as possible, without any unnecessary denoising/sharpening. Huge thanks to Twittman for assisting me along this journey.",

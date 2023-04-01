@@ -2,9 +2,7 @@
     "name": "SBS11 RRDB",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "video"
-    ],
+    "tags": [],
     "description": "Category: Pretrained Discriminators\nPurpose: Animation\n\nnone",
     "date": "2020-12-03",
     "architecture": "sofvsr",

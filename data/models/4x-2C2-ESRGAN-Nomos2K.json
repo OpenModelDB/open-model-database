@@ -3,7 +3,6 @@
     "author": "joey",
     "license": "MIT",
     "tags": [
-        "image",
         "general-upscaler"
     ],
     "description": "Technically my previous experiment was the pretrained model, but for all intents and purposes this was trained from scratch. Description: Pretrained model for the new architecture modification I made. You can read more about it in the github README. Basically it makes smaller ESRGAN models that theoretically can produce the same level of quality. NOTE: THIS WILL NOT WORK IN CUPSCALE, IEU, OR CHAINNER (yet)! You have to use my fork to use it for now.",
