@@ -10,6 +10,7 @@ import { atomDark as theme } from 'react-syntax-highlighter/dist/cjs/styles/pris
 import remarkGfm from 'remark-gfm';
 import { textToLinkId } from '../lib/docs/doc';
 import { useCurrentPath } from '../lib/hooks/use-current-path';
+import { joinClasses } from '../lib/util';
 import { Link, TextLink } from './components/link';
 import style from './markdown.module.scss';
 
@@ -63,12 +64,13 @@ const LinkableHeading: HeadingComponent = ({ children, level }) => {
 
 export interface MarkdownProps {
     markdown: string;
+    className?: string;
 }
 export function MarkdownContainer(props: MarkdownProps) {
     const baseUrl = useCurrentPath();
 
     return (
-        <div className={style.markdown}>
+        <div className={joinClasses(style.markdown, props.className)}>
             <ReactMarkdown
                 skipHtml
                 components={{
