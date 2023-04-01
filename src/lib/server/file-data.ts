@@ -112,7 +112,7 @@ async function mutateModels(mutate: (model: Model) => boolean | void): Promise<v
 }
 
 function renameObjectKey<K extends string>(o: Record<K, unknown>, from: K, to: K): void {
-    if (hasOwn(o, from)) {
+    if (!hasOwn(o, from)) {
         throw new Error(`Cannot change id ${from} because it does not exist`);
     }
     if (hasOwn(o, to)) {
