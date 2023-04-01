@@ -93,43 +93,43 @@
     },
     "color:1": {
         "name": "Grayscale",
-        "description": ""
+        "description": "The model upscales grayscale images. A typical example for grayscale models are models that upscale the alpha channel of images."
     },
     "color:1-3": {
         "name": "Grayscale→RGB",
-        "description": ""
+        "description": "The model colorizes grayscale images to RGB."
     },
     "color:3": {
         "name": "RGB",
-        "description": "This model upscales images without transparency. Some applications (e.g. chaiNNer) may still be able to upscale images with transparency using this model."
+        "description": "The model upscales images without transparency. Some applications (e.g. chaiNNer and CupScale) can still upscale images with transparency using this model."
     },
     "color:4": {
         "name": "RGBA",
-        "description": "This model upscales images with transparency."
+        "description": "The model upscales images with transparency."
     },
     "license:by": {
         "name": "Credit",
-        "description": ""
+        "description": "Crediting the author is **required** when sharing the model or derivative works (e.g. model interpolations).\n\nSimply using the model to upscale images is typically okay, and no credit is required for upscaled images."
     },
     "license:commercial": {
         "name": "Commercial",
-        "description": "This model may be included in commercial products."
+        "description": "The model may be included and used in commercial products."
     },
     "license:modifications": {
         "name": "Modifications",
-        "description": ""
+        "description": "The author allows that this model may be used to create derivative works (e.g. model interpolations)."
     },
     "license:no-license": {
         "name": "No License",
-        "description": "This model is not licensed by the author."
+        "description": "The model is not licensed by the author."
     },
     "license:sa": {
         "name": "Same license",
-        "description": "This model requires derivative works to have the same or a compatible license. Derivative works include interpolations and models using this model as their pretrained model."
+        "description": "The author **requires** that derivative works have the same license or a compatible license as the model. Derivative works include model interpolations and using it a pretrained model."
     },
     "license:unknown": {
         "name": "Unknown License",
-        "description": "This model is licensed under a custom or infrequently used license."
+        "description": "The model is licensed under a custom or infrequently used license."
     },
     "platform:ncnn": {
         "name": "NCNN",
