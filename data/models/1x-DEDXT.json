@@ -3,9 +3,10 @@
     "author": "cf2lter",
     "license": "WTFPL",
     "tags": [
+        "dds",
         "restoration"
     ],
-    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: DXT compression\n\nTo retain details while removing artifacts caused by dxt compression on textures",
+    "description": "To retain details while removing artifacts caused by dxt compression on textures",
     "date": "2022-02-26",
     "architecture": "esrgan",
     "size": [

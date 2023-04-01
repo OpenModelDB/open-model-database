@@ -3,9 +3,10 @@
     "author": "blueamulet",
     "license": "CC-BY-NC-4.0",
     "tags": [
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG\nPretrained: Trained on Custom (CC0 Textures)\n\n",
+    "description": "Pretrained: Trained on Custom (CC0 Textures)",
     "date": null,
     "architecture": "esrgan",
     "size": [

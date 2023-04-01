@@ -3,10 +3,9 @@
     "author": "katoumegumi",
     "license": "GPL-3.0-only",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscaling of lossless (uncompressed) anime art.",
+    "description": "Upscaling of lossless (uncompressed) anime art.",
     "date": "2020-09-16",
     "architecture": "esrgan",
     "size": [

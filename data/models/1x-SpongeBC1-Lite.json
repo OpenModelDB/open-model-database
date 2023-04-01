@@ -3,8 +3,8 @@
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "anime",
-        "cartoon"
+        "cartoon",
+        "dds"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: BC1/DXT1 compression\n\nFirst ever lite BC1/DXT1 model. Probably only useful for cartoony textures like those in spongebob games or other cartoon licensed games.",
     "date": "2020-11-01",

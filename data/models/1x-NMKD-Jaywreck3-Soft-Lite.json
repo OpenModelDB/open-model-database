@@ -3,9 +3,10 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\n\n1xESRGAN",
+    "description": "",
     "date": "2020-10-13",
     "architecture": "esrgan",
     "size": [

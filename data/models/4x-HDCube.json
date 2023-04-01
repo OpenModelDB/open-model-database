@@ -3,7 +3,9 @@
     "author": "venomalia",
     "license": "CC0-1.0",
     "tags": [
-        "game-textures"
+        "dds",
+        "game-textures",
+        "pixel-art"
     ],
     "description": "Category: Video Game Textures\nPurpose: Gamecube and Wii textures.\n\nGamecube and Wii textures (mainly DXT and 8bit color compression). Is good for preserving fine details without affecting the original style too much, it is not suitable for pixel art, small icons and text under 16 pixel.",
     "date": "2022-05-10",

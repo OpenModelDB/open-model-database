@@ -3,10 +3,9 @@
     "author": "tal",
     "license": "WTFPL",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nThis model is designed to mainly upscale anime artworks.",
+    "description": "This model is designed to mainly upscale anime artworks.",
     "date": "2021-11-26",
     "architecture": "esrgan",
     "size": [

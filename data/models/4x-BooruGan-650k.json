@@ -3,10 +3,9 @@
     "author": "tal",
     "license": "WTFPL",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nThis model is designed to mainly upscale anime artworks. If you have issues with chroma then try the 600k iterations release.",
+    "description": "This model is designed to mainly upscale anime artworks. If you have issues with chroma then try the 600k iterations release.",
     "date": "2021-11-26",
     "architecture": "esrgan",
     "size": [

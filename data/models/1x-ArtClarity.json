@@ -3,9 +3,10 @@
     "author": "dinjerr",
     "license": "WTFPL",
     "tags": [
-        "deblur"
+        "deblur",
+        "pixel-art"
     ],
-    "description": "Purpose: Pixel Art\nPretrained: 4xPSNR\n\nTexture retaining denoiser and sharpener for digital artwork",
+    "description": "Pretrained: 4xPSNR\n\nTexture retaining denoiser and sharpener for digital artwork",
     "date": "2021-08-05",
     "architecture": "esrgan",
     "size": [

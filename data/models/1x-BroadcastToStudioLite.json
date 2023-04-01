@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nImprovement of low-quality cartoons from broadcast sources.",
+    "description": "Purpose: Animation\n\nImprovement of low-quality cartoons from broadcast sources.",
     "date": "2022-03-05",
     "architecture": "esrgan",
     "size": [

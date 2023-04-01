@@ -3,9 +3,10 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: Art/CGI\n\nUpscaler for clean images or images with compression artifacts (jpeg quality >75) - Produces very sharp lines/edges due to NN-Filtered HR images. Proven to produce very, very good results on drawings (sharp lines) and CGI, but should also work pretty well for real-world images.",
+    "description": "Purpose: Art/CGI\n\nUpscaler for clean images or images with compression artifacts (jpeg quality >75) - Produces very sharp lines/edges due to NN-Filtered HR images. Proven to produce very, very good results on drawings (sharp lines) and CGI, but should also work pretty well for real-world images.",
     "date": "2020-09-12",
     "architecture": "esrgan",
     "size": [

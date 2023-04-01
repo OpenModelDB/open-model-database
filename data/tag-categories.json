@@ -25,6 +25,7 @@
         "tags": [
             "anti-aliasing",
             "colorization",
+            "dds",
             "debanding",
             "deblur",
             "dedither",
@@ -33,6 +34,8 @@
             "face-upscaling",
             "general-upscaler",
             "inpainting",
+            "jpeg",
+            "pretrained",
             "restoration"
         ]
     },
