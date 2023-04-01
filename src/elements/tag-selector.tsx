@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { BiRadioCircle } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
-import { HiOutlinePlusSm } from 'react-icons/hi';
+import { HiChevronDoubleDown, HiChevronDoubleUp, HiOutlinePlusSm } from 'react-icons/hi';
 import { useTags } from '../lib/hooks/use-tags';
 import { TagId } from '../lib/schema';
 import { SelectionState, TagSelection } from '../lib/tag-condition';
@@ -20,8 +20,9 @@ interface TagButtonProps {
     state: State;
     name: string;
     onClick: () => void;
+    noIcon?: boolean;
 }
-function TagButton({ state, name, onClick }: TagButtonProps) {
+function TagButton({ state, name, onClick, noIcon = false }: TagButtonProps) {
     return (
         <button
             className={joinClasses(
@@ -34,7 +35,7 @@ function TagButton({ state, name, onClick }: TagButtonProps) {
             )}
             onClick={onClick}
         >
-            <span className={style.icon}>{stateIcon[state]()}</span>
+            {!noIcon && <span className={style.icon}>{stateIcon[state]()}</span>}
             <span className={style.text}>{name}</span>
         </button>
     );
@@ -46,6 +47,33 @@ export interface TagSelectorProps {
 }
 
 export function TagSelector({ selection, onChange }: TagSelectorProps) {
+    const [simple, setSimple] = useState(true);
+
+    return (
+        <div>
+            {simple ? (
+                <SimpleTagSelector
+                    selection={selection}
+                    onChange={onChange}
+                />
+            ) : (
+                <AdvancedTagSelector
+                    selection={selection}
+                    onChange={onChange}
+                />
+            )}
+            <button
+                className={`${style.modeButton} mt-1 text-neutral-700 hover:text-black dark:text-neutral-300 hover:dark:text-white`}
+                onClick={() => setSimple(!simple)}
+            >
+                {simple ? <HiChevronDoubleDown /> : <HiChevronDoubleUp />}
+                <span>{simple ? 'Advanced tag selector' : 'Simple tag selector'}</span>
+            </button>
+        </div>
+    );
+}
+
+function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
 
     return (
@@ -82,6 +110,90 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
                     </div>
                 );
             })}
+        </div>
+    );
+}
+
+export function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
+    const { tagData, categoryOrder } = useTags();
+
+    const [, category] = categoryOrder[0];
+
+    const tags = useMemo(
+        () =>
+            category.tags
+                .map((tagId) => {
+                    const tag = tagData.get(tagId);
+                    if (!tag) return undefined;
+                    return [tagId, tag] as const;
+                })
+                .filter(isNonNull),
+        [category.tags, tagData]
+    );
+
+    const selected: TagId | undefined = useMemo(() => {
+        const required = tags.filter(([tagId]) => selection.get(tagId) === SelectionState.Required);
+        if (required.length === 1) return required[0][0];
+        return undefined;
+    }, [selection, tags]);
+
+    useEffect(() => {
+        const changes: [TagId, SelectionState | undefined][] = [];
+
+        if (selected !== undefined && selection.get(selected) !== SelectionState.Required) {
+            changes.push([selected, SelectionState.Required]);
+        }
+
+        for (const [tag] of tags) {
+            if (tag !== selected && selection.has(tag)) {
+                changes.push([tag, undefined]);
+            }
+        }
+
+        if (changes.length > 0) {
+            const copy = new Map(selection);
+            for (const [tag, change] of changes) {
+                if (change === undefined) {
+                    copy.delete(tag);
+                } else {
+                    copy.set(tag, change);
+                }
+            }
+            onChange(copy);
+        }
+    }, [selected, selection, tags, onChange]);
+
+    return (
+        <div className={style.tagSelector}>
+            <div>
+                <TagButton
+                    noIcon
+                    name="All"
+                    state={selected === undefined ? 'required' : 'any'}
+                    onClick={() => {
+                        if (selected !== undefined) {
+                            onChange(setState(selected, 'any', selection));
+                        }
+                    }}
+                />
+                {tags.map(([tagId, tag]) => (
+                    <TagButton
+                        noIcon
+                        key={tagId}
+                        name={tag.name}
+                        state={selected === tagId ? 'required' : 'any'}
+                        onClick={() => {
+                            if (selected !== tagId) {
+                                let s = setState(tagId, 'required', selection);
+                                if (selected !== undefined) {
+                                    s = setState(selected, 'any', s);
+                                }
+                                onChange(s);
+                            }
+                        }}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
