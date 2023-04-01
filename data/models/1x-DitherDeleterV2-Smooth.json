@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Category: Dithering\nPurpose: Dithering\nPretrained: https://imgsli.com/Mzg0MTk/1/2\n\n1xESRGAN",
+    "description": "Pretrained: https://imgsli.com/Mzg0MTk/1/2\n\n1xESRGAN",
     "date": "2021-01-23",
     "architecture": "esrgan",
     "size": [

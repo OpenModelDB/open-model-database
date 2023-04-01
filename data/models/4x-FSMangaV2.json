@@ -6,7 +6,7 @@
         "image",
         "manga"
     ],
-    "description": "Category: Manga\nPurpose: Manga\n\nManga-style images with or without dithering - cartoons, maybe pixel art, etc",
+    "description": "Manga-style images with or without dithering - cartoons, maybe pixel art, etc",
     "date": "2020-12-14",
     "architecture": "esrgan",
     "size": [

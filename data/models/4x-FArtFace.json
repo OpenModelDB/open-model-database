@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\n\n",
+    "description": "",
     "date": "2019-11-28",
     "architecture": "esrgan",
     "size": [

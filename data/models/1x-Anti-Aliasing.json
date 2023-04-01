@@ -6,7 +6,7 @@
         "image",
         "anti-aliasing"
     ],
-    "description": "Category: Aliasing\nPurpose: Anti aliasing / Images with pixelated edges",
+    "description": "Purpose: Anti aliasing / Images with pixelated edges",
     "date": null,
     "architecture": "esrgan",
     "size": [

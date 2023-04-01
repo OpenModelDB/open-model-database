@@ -6,7 +6,7 @@
         "image",
         "colorization"
     ],
-    "description": "Category: Image De/Colorization\nPurpose: Colorization\n\nB/W | 100% Desaturated images. It mostly results in Blue and Yellow images with slight hints of Green, Orange and Magenta. You are free to use this as a pretrain to achieve better results.",
+    "description": "B/W | 100% Desaturated images. It mostly results in Blue and Yellow images with slight hints of Green, Orange and Magenta. You are free to use this as a pretrain to achieve better results.",
     "date": "2020-01-30",
     "architecture": "esrgan",
     "size": [

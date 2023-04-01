@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: General Upscaler\nPretrained: none - interpolated\n\nA creation of BSRGAN with more details and less smoothing, made by interpolating IRL models such as Siax, Superscale, Superscale Artisoft, Pixel Perfect, etc. This was, things like skin and other details don't become mushy and blurry.",
+    "description": "Pretrained: none - interpolated\n\nA creation of BSRGAN with more details and less smoothing, made by interpolating IRL models such as Siax, Superscale, Superscale Artisoft, Pixel Perfect, etc. This was, things like skin and other details don't become mushy and blurry.",
     "date": "2021-04-09",
     "architecture": "esrgan",
     "size": [

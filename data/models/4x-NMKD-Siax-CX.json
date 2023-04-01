@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: General upscaler\n\nUniversal upscaler for clean and slightly compressed images (JPEG quality 75 or better)",
+    "description": "Universal upscaler for clean and slightly compressed images (JPEG quality 75 or better)",
     "date": "2020-11-06",
     "architecture": "esrgan",
     "size": [

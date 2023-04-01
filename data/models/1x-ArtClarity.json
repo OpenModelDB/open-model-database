@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Pixel Art\nPretrained: 4xPSNR\n\nTexture retaining denoiser and sharpener for digital artwork",
+    "description": "Purpose: Pixel Art\nPretrained: 4xPSNR\n\nTexture retaining denoiser and sharpener for digital artwork",
     "date": "2021-08-05",
     "architecture": "esrgan",
     "size": [

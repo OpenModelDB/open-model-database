@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Category: Noise\nPurpose: Denoise\n\nRemove noise, grain, box blur, lens blur and gaussian blur and increase overall image quality.",
+    "description": "Remove noise, grain, box blur, lens blur and gaussian blur and increase overall image quality.",
     "date": "2019-11-13",
     "architecture": "esrgan",
     "size": [

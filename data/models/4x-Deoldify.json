@@ -6,7 +6,7 @@
         "image",
         "colorization"
     ],
-    "description": "Category: Image De/Colorization\nPurpose: Photos\n\nOld black and white photo restoration.",
+    "description": "Purpose: Photos\n\nOld black and white photo restoration.",
     "date": "2019-08-29",
     "architecture": "esrgan",
     "size": [
