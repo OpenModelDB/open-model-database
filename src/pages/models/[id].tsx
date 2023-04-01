@@ -143,7 +143,7 @@ export default function Page({ modelId, modelData }: Props) {
                                         />
                                         {editMode && (
                                             <button
-                                                className="ml-auto h-16 cursor-pointer"
+                                                className="cursor-pointer"
                                                 onClick={() => {
                                                     const newResources = model.resources.filter(
                                                         (r) => r.sha256 !== resource.sha256
