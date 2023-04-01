@@ -3,6 +3,7 @@ import { BiRadioCircle } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
 import { HiChevronDoubleDown, HiChevronDoubleUp, HiOutlinePlusSm } from 'react-icons/hi';
 import { Tooltip } from 'react-tooltip';
+import { useIsClient } from '../lib/hooks/use-is-client';
 import { useTags } from '../lib/hooks/use-tags';
 import { TagId } from '../lib/schema';
 import { SelectionState, TagSelection } from '../lib/tag-condition';
@@ -57,6 +58,7 @@ export interface TagSelectorProps {
 
 export function TagSelector({ selection, onChange }: TagSelectorProps) {
     const [simple, setSimple] = useState(true);
+    const isClient = useIsClient();
 
     const { tagData } = useTags();
 
@@ -81,21 +83,23 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
                 <span>{simple ? 'Advanced tag selector' : 'Simple tag selector'}</span>
             </button>
 
-            <Tooltip
-                clickable
-                closeOnEsc
-                className={style.tooltip}
-                id={TOOLTIP_ID}
-                render={({ content }) => {
-                    const tag = tagData.get(content as TagId);
-                    return (
-                        <MarkdownContainer
-                            className={style.markdown}
-                            markdown={tag?.description || 'No description.'}
-                        />
-                    );
-                }}
-            />
+            {isClient && (
+                <Tooltip
+                    clickable
+                    closeOnEsc
+                    className={style.tooltip}
+                    id={TOOLTIP_ID}
+                    render={({ content }) => {
+                        const tag = tagData.get(content as TagId);
+                        return (
+                            <MarkdownContainer
+                                className={style.markdown}
+                                markdown={tag?.description || 'No description.'}
+                            />
+                        );
+                    }}
+                />
+            )}
         </div>
     );
 }
