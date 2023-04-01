@@ -78,7 +78,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
     const showMenu = resource.urls.length !== 1 || !readonly;
 
     return (
-        <div className="mb-1 flex w-full flex-row gap-0.5 rounded-xl bg-accent-500 dark:bg-accent-400">
+        <div className="flex w-full flex-row gap-0.5 rounded-xl bg-accent-500 dark:bg-accent-400">
             <Link
                 external
                 className={joinClasses(
