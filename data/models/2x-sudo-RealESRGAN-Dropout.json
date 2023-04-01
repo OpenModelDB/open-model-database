@@ -7,7 +7,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\nPretrained: Pretrained_Model_G: RealESRGAN_x4plus_anime_6B.pth /\nRealESRGAN_x4plus_anime_6B.pth \n(sudo_RealESRGAN2x_3.332.758_G.pth)\n\nTried to make the best 2x model there is for drawings. I think i archived that. And yes, it is nearly 3.8 million iterations (probably a record nobody will beat here), took me nearly half a year to train. It can happen that in one edge is a noisy pattern in edges. You can use padding/crop for that. I aimed for perceptual quality without zooming in like 400%. Since RealESRGAN is 4x, I downscaled these images with bicubic. I would recommend my VSGAN code though and just load the onnx. https://github.com/styler00dollar/VSGAN-tensorrt-docker I just wanted a good 2x model for animations, but that model can also be used for wallpapers and so on. Before I hear people complaining, the dropout model is a modified architecture. Stuff like cupscale or chaiNNer won't work with pth. Load the onnx with VSGAN or chaiNNer. I did add the model before switching to dropout though, which is normal ESRGAN pth, that one should work everywhere. I also converted everything into onnx, jit and ncnn, so pretty much everything there is. If you want to use ncnn, don't use nihuis code (that also includes cupscale), these codes don't include propper tiling in C++, which is very bad for this model. I think chaiNNer should have overlap/padding with ncnn, so use that instead if you really want ncnn. Plz don't steal without credits, k thx.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nTried to make the best 2x model there is for drawings. I think i archived that. And yes, it is nearly 3.8 million iterations (probably a record nobody will beat here), took me nearly half a year to train. It can happen that in one edge is a noisy pattern in edges. You can use padding/crop for that. I aimed for perceptual quality without zooming in like 400%. Since RealESRGAN is 4x, I downscaled these images with bicubic. I would recommend my VSGAN code though and just load the onnx. https://github.com/styler00dollar/VSGAN-tensorrt-docker I just wanted a good 2x model for animations, but that model can also be used for wallpapers and so on. Before I hear people complaining, the dropout model is a modified architecture. Stuff like cupscale or chaiNNer won't work with pth. Load the onnx with VSGAN or chaiNNer. I did add the model before switching to dropout though, which is normal ESRGAN pth, that one should work everywhere. I also converted everything into onnx, jit and ncnn, so pretty much everything there is. If you want to use ncnn, don't use nihuis code (that also includes cupscale), these codes don't include propper tiling in C++, which is very bad for this model. I think chaiNNer should have overlap/padding with ncnn, so use that instead if you really want ncnn. Plz don't steal without credits, k thx.",
     "date": "2022-06-25",
     "architecture": "esrgan",
     "size": [
@@ -30,5 +30,6 @@
             ]
         }
     ],
-    "trainingIterations": 3799042
+    "trainingIterations": 3799042,
+    "pretrainedModelG": "2x-sudo-RealESRGAN"
 }

@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPretrained: Interpolated from nmkd's pixel art upscaling models with different interpolation settings and de-dithered versions\n\nSmooth general pixel art, Minecraft textures",
+    "description": "Category: Art/Pixel Art\n\nSmooth general pixel art, Minecraft textures",
     "date": null,
     "architecture": "esrgan",
     "size": null,
@@ -23,5 +23,8 @@
                 "https://u.pcloud.link/publink/show?code=kZ4WthXZDDnqbo4Hye8zBgCkhgbbQf3WXT27"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": {
+        "description": "Interpolated from nmkd's pixel art upscaling models with different interpolation settings and de-dithered versions"
+    }
 }
