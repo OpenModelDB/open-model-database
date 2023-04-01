@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nxbrz plus dedithering style pixel-art upscaling model to wiki under specialised",
+    "description": "Category: Art/Pixel Art\n\nxbrz plus dedithering style pixel-art upscaling model to wiki under specialised",
     "date": "2019-06-17",
     "architecture": "esrgan",
     "size": [

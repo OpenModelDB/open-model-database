@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nXbrz style pixel art upscaler",
+    "description": "Category: Art/Pixel Art\n\nXbrz style pixel art upscaler",
     "date": "2019-06-05",
     "architecture": "esrgan",
     "size": [
