@@ -1,12 +1,28 @@
 {
+    "subject": {
+        "name": "Subject",
+        "description": "",
+        "order": 0,
+        "simple": true,
+        "tags": [
+            "anime",
+            "cartoon",
+            "faces",
+            "game-texture-maps",
+            "game-textures",
+            "manga",
+            "photo",
+            "pixel-art",
+            "text"
+        ]
+    },
     "purpose": {
         "name": "Purpose",
         "description": "",
-        "order": 0,
+        "order": 1,
+        "simple": true,
         "tags": [
-            "anime",
             "anti-aliasing",
-            "cartoon",
             "colorization",
             "debanding",
             "deblur",
@@ -14,22 +30,16 @@
             "dehalo",
             "denoise",
             "face-upscaling",
-            "faces",
-            "game-texture-maps",
-            "game-textures",
             "general-upscaler",
             "inpainting",
-            "manga",
-            "photo",
-            "pixel-art",
-            "restoration",
-            "text"
+            "restoration"
         ]
     },
     "platform": {
         "name": "Platform",
         "description": "",
-        "order": 1,
+        "order": 2,
+        "simple": false,
         "tags": [
             "platform:pytorch",
             "platform:pytorch-compatible",
@@ -42,7 +52,8 @@
     "scale": {
         "name": "Scale",
         "description": "",
-        "order": 2,
+        "order": 3,
+        "simple": false,
         "tags": [
             "scale:1",
             "scale:2",
@@ -55,7 +66,8 @@
     "media-type": {
         "name": "Input type",
         "description": "",
-        "order": 3,
+        "order": 4,
+        "simple": false,
         "tags": [
             "audio",
             "image",
@@ -65,7 +77,8 @@
     "color": {
         "name": "Color",
         "description": "",
-        "order": 4,
+        "order": 5,
+        "simple": false,
         "tags": [
             "color:1",
             "color:3",
@@ -76,7 +89,8 @@
     "license": {
         "name": "License",
         "description": "",
-        "order": 5,
+        "order": 6,
+        "simple": false,
         "tags": [
             "license:by",
             "license:commercial",

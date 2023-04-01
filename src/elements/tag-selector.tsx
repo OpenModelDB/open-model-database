@@ -117,19 +117,20 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
 function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
 
-    const [, category] = categoryOrder[0];
-
-    const tags = useMemo(
-        () =>
-            category.tags
-                .map((tagId) => {
-                    const tag = tagData.get(tagId);
-                    if (!tag) return undefined;
-                    return [tagId, tag] as const;
-                })
-                .filter(isNonNull),
-        [category.tags, tagData]
-    );
+    const tags = useMemo(() => {
+        return categoryOrder
+            .map(([, category]) => category)
+            .filter((category) => category.simple)
+            .flatMap(({ tags }) => {
+                return tags
+                    .map((tagId) => {
+                        const tag = tagData.get(tagId);
+                        if (!tag) return undefined;
+                        return [tagId, tag] as const;
+                    })
+                    .filter(isNonNull);
+            });
+    }, [categoryOrder, tagData]);
 
     const selected: TagId | undefined = useMemo(() => {
         const required = tags.filter(([tagId]) => selection.get(tagId) === SelectionState.Required);
