@@ -91,6 +91,50 @@
         "name": "Video",
         "description": ""
     },
+    "arch:2c2-esrgan": {
+        "name": "2C2-ESRGAN",
+        "description": ""
+    },
+    "arch:cain": {
+        "name": "CAIN",
+        "description": ""
+    },
+    "arch:cain-yuv": {
+        "name": "CAIN YUV",
+        "description": ""
+    },
+    "arch:compact": {
+        "name": "Compact",
+        "description": ""
+    },
+    "arch:edsr": {
+        "name": "EDSR (SRResNet)",
+        "description": ""
+    },
+    "arch:esrgan": {
+        "name": "ESRGAN",
+        "description": ""
+    },
+    "arch:esrgan+": {
+        "name": "ESRGAN+",
+        "description": ""
+    },
+    "arch:rife": {
+        "name": "RIFE",
+        "description": ""
+    },
+    "arch:sofvsr": {
+        "name": "SOFVSR",
+        "description": ""
+    },
+    "arch:spsr": {
+        "name": "SPSR",
+        "description": ""
+    },
+    "arch:swinir": {
+        "name": "SwinIR",
+        "description": ""
+    },
     "color:1": {
         "name": "Grayscale",
         "description": "The model upscales grayscale images. A typical example for grayscale models are models that upscale the alpha channel of images."
