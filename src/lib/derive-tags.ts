@@ -86,6 +86,9 @@ export const deriveTags = lazyWithWeakKey((model: Model): readonly TagId[] => {
     // license
     tags.push(...getLicenseTags(model.license));
 
+    // architecture
+    tags.push(`arch:${model.architecture}`);
+
     // platform
     tags.push(...getPlatformTags(model));
 
