@@ -59,7 +59,7 @@ export function EditableMarkdownContainer({
             onBlur={submit}
             onChange={(e) => setValue(e.target.value)}
             onKeyDown={(e) => {
-                if (e.key === 'Enter') {
+                if ((e.key === 'Enter' && e.ctrlKey) || e.key === 'Escape') {
                     submit();
                 }
             }}
