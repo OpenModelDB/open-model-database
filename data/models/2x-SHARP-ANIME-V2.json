@@ -3,10 +3,9 @@
     "author": "solidd93110",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\n2x_PSNR.pth",
+    "description": "2x_PSNR.pth",
     "date": "2020-12-09",
     "architecture": "esrgan",
     "size": [

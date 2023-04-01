@@ -3,9 +3,10 @@
     "author": "jacob",
     "license": "GPL-3.0-only",
     "tags": [
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\n\nPhotos/realistic 3D with JPEG compression, quality 85-95 and 4:2:0 chroma subsampling. - Created for Myst3 images, since all have 4:2:0 chroma subsampling and existing JPEG models did not give good results. Favors smoothing over over-sharpening.",
+    "description": "Photos/realistic 3D with JPEG compression, quality 85-95 and 4:2:0 chroma subsampling. - Created for Myst3 images, since all have 4:2:0 chroma subsampling and existing JPEG models did not give good results. Favors smoothing over over-sharpening.",
     "date": "2020-07-20",
     "architecture": "esrgan",
     "size": [

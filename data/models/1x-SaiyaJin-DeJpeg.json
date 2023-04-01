@@ -3,9 +3,10 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG\n\n",
+    "description": "",
     "date": "2019-10-29",
     "architecture": "esrgan",
     "size": [

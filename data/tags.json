@@ -15,6 +15,10 @@
         "name": "Colorization",
         "description": ""
     },
+    "dds": {
+        "name": "DDS",
+        "description": ""
+    },
     "debanding": {
         "name": "Debanding",
         "description": ""
@@ -59,6 +63,10 @@
         "name": "Inpainting",
         "description": ""
     },
+    "jpeg": {
+        "name": "JPEG",
+        "description": ""
+    },
     "manga": {
         "name": "Manga",
         "description": ""
@@ -69,6 +77,10 @@
     },
     "pixel-art": {
         "name": "Pixel Art",
+        "description": ""
+    },
+    "pretrained": {
+        "name": "Pretrained",
         "description": ""
     },
     "restoration": {

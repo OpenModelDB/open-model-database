@@ -3,9 +3,10 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
+        "dds",
         "restoration"
     ],
-    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\n\n",
+    "description": "",
     "date": "2021-03-18",
     "architecture": "esrgan",
     "size": [

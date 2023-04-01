@@ -3,10 +3,9 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nFast Anime/Art upscaling",
+    "description": "Fast Anime/Art upscaling",
     "date": "2020-10-15",
     "architecture": "esrgan",
     "size": [

@@ -3,9 +3,10 @@
     "author": "alsa",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "dds",
         "restoration"
     ],
-    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\nPretrained: BC1 take 2\n\n",
+    "description": "Pretrained: BC1 take 2",
     "date": null,
     "architecture": "esrgan",
     "size": [

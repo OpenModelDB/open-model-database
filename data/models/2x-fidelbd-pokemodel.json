@@ -3,10 +3,9 @@
     "author": "neo-raws",
     "license": "WTFPL",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nMade this model to upscale old anime that looks blurry.",
+    "description": "Made this model to upscale old anime that looks blurry.",
     "date": "2020-08-29",
     "architecture": "esrgan",
     "size": [

@@ -2,8 +2,10 @@
     "name": "Gen5 Alpha",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
-    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\n\n",
+    "tags": [
+        "pixel-art"
+    ],
+    "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel",
     "date": "2021-02-03",
     "architecture": "esrgan",
     "size": [
