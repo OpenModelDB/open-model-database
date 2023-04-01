@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\n\nUpscale faces both pixelized and real",
+    "description": "Upscale faces both pixelized and real",
     "date": "2019-07-23",
     "architecture": "esrgan",
     "size": [

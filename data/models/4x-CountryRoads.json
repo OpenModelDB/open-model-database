@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: Universal Upscaler\n\nStreets with dense foliage in the background. Outdoor scenes.",
+    "description": "Streets with dense foliage in the background. Outdoor scenes.",
     "date": "2021-08-26",
     "architecture": "esrgan",
     "size": [

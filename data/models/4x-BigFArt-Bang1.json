@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel art\n\nLarger-scaled pixels to digital painting",
+    "description": "Category: Art/Pixel Art\n\nLarger-scaled pixels to digital painting",
     "date": "2020-15-31",
     "architecture": "esrgan",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: General upscaler\n\nPhotographs, Artwork, Textures, Anything really - Tried out a new pixel loss idea based on ensuring the HR downscaled matches the LR. Colors are pretty good as well as edges, but generated details seem slightly fuzzy hence the name.",
+    "description": "Photographs, Artwork, Textures, Anything really - Tried out a new pixel loss idea based on ensuring the HR downscaled matches the LR. Colors are pretty good as well as edges, but generated details seem slightly fuzzy hence the name.",
     "date": "2020-07-21",
     "architecture": "esrgan",
     "size": [

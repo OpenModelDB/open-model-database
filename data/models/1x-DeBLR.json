@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Deblur\n\nGeneral Deblurring",
+    "description": "General Deblurring",
     "date": "2020-02-19",
     "architecture": "esrgan",
     "size": [

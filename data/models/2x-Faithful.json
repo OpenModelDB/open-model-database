@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art",
+    "description": "Category: Art/Pixel Art",
     "date": "2019-09-08",
     "architecture": "esrgan",
     "size": [

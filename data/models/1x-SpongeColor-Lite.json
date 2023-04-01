@@ -6,7 +6,7 @@
         "image",
         "colorization"
     ],
-    "description": "Category: Image De/Colorization\nPurpose: Colorization\n\nThe first attempt at ESRGAN colorization that produces more than 2 colors. Doesn't work that great but it was a neat experiment.",
+    "description": "The first attempt at ESRGAN colorization that produces more than 2 colors. Doesn't work that great but it was a neat experiment.",
     "date": "2020-10-15",
     "architecture": "esrgan",
     "size": [

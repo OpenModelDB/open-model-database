@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Blurring\n\nStrong deblurring model",
+    "description": "Strong deblurring model",
     "date": null,
     "architecture": "esrgan",
     "size": [

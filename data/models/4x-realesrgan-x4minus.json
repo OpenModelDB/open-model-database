@@ -6,7 +6,7 @@
         "image",
         "general-upscaler"
     ],
-    "description": "Category: Universal Models\nPurpose: General Upscaler\n\nBasically realesrgan-x4plus without the degradation training. Supposed to help retain more details, but unfortunately due to the dataset (I think) still blurs details adjacent to other objects.",
+    "description": "Basically realesrgan-x4plus without the degradation training. Supposed to help retain more details, but unfortunately due to the dataset (I think) still blurs details adjacent to other objects.",
     "date": "2022-04-19",
     "architecture": "esrgan",
     "size": [

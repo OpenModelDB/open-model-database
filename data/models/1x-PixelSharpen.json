@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Pixel Art\n\nRestores blurry/upscaled pixel art.",
+    "description": "Purpose: Pixel Art\n\nRestores blurry/upscaled pixel art.",
     "date": "2021-03-19",
     "architecture": "esrgan",
     "size": [

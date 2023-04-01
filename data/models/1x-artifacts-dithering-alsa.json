@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Category: Dithering\nPurpose: Dithering\n\nDithered Images",
+    "description": "Dithered Images",
     "date": null,
     "architecture": "esrgan",
     "size": [
