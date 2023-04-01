@@ -6,7 +6,7 @@
         "image",
         "dedither"
     ],
-    "description": "Pretrained: https://imgsli.com/Mzg0MTk/1/2\n\n1xESRGAN",
+    "description": "https://imgsli.com/Mzg0MTk/1/2",
     "date": "2021-01-23",
     "architecture": "esrgan",
     "size": [
