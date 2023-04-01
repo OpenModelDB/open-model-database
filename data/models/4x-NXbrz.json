@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nBasic pixel art upscaling, for people who want a more simpler style and lightweight pixel art upscaling model.",
+    "description": "Category: Art/Pixel Art\n\nBasic pixel art upscaling, for people who want a more simpler style and lightweight pixel art upscaling model.",
     "date": "2021-06-09",
     "architecture": "esrgan",
     "size": [

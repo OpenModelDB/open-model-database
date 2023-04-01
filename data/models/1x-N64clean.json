@@ -6,7 +6,7 @@
         "image",
         "debanding"
     ],
-    "description": "Category: Banding\nPurpose: Banding\n\nN64 textures use a color depth of 5-bits per channel, this model attempts to clean them, restoring smooth gradients in textures",
+    "description": "N64 textures use a color depth of 5-bits per channel, this model attempts to clean them, restoring smooth gradients in textures",
     "date": "2020-07-16",
     "architecture": "esrgan",
     "size": [

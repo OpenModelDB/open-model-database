@@ -6,7 +6,7 @@
         "image",
         "deblur"
     ],
-    "description": "Category: Blurring\nPurpose: Deblur / ReFocus\n\nPurpose: DeBlur, ReFocus, Sharpen Manga, Anime and cartoon style images, but will work on real life images too.",
+    "description": "Purpose: Deblur / ReFocus\n\nPurpose: DeBlur, ReFocus, Sharpen Manga, Anime and cartoon style images, but will work on real life images too.",
     "date": "2022-01-21",
     "architecture": "esrgan",
     "size": [

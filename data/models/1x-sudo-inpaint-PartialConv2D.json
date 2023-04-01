@@ -6,7 +6,7 @@
         "image",
         "inpainting"
     ],
-    "description": "Category: Inpainting\nPurpose: Inpainting\n\nExperimental PartialConv2D attempt to paint with ESRGAN. Took ~10.4 days of training on a P100 and around 1.5 months in total due to Colab limits. Not sure if I will continue training it since training is very slow, but may get better.. Warning: Result can vary with different tilesizes. Try not to tile your data.",
+    "description": "Experimental PartialConv2D attempt to paint with ESRGAN. Took ~10.4 days of training on a P100 and around 1.5 months in total due to Colab limits. Not sure if I will continue training it since training is very slow, but may get better.. Warning: Result can vary with different tilesizes. Try not to tile your data.",
     "date": "2020-12-05",
     "architecture": "esrgan",
     "size": [

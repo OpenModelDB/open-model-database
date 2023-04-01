@@ -4,9 +4,10 @@
     "license": "CC-BY-4.0",
     "tags": [
         "image",
+        "anime",
         "manga"
     ],
-    "description": "Category: Manga\nPurpose: Anime / Manga\n\nPretrained model: 4xPSNR",
+    "description": "Pretrained model: 4xPSNR",
     "date": null,
     "architecture": "esrgan",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "denoise"
     ],
-    "description": "Category: Noise\nPurpose: denoise\n\nRemove high ISO noise",
+    "description": "Remove high ISO noise",
     "date": null,
     "architecture": "esrgan",
     "size": [

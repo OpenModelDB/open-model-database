@@ -6,7 +6,7 @@
         "image",
         "debanding"
     ],
-    "description": "Category: Banding\nPurpose: Debanding images",
+    "description": "Purpose: Debanding images",
     "date": null,
     "architecture": "esrgan",
     "size": [

@@ -6,7 +6,7 @@
         "image",
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art\n\nPixel art, rocky/grainy textures? Quantization smoothing, adding detail.",
+    "description": "Category: Art/Pixel Art\n\nPixel art, rocky/grainy textures? Quantization smoothing, adding detail.",
     "date": "2020-03-04",
     "architecture": "esrgan",
     "size": [

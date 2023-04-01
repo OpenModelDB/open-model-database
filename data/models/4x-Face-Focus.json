@@ -7,7 +7,7 @@
         "faces",
         "face-upscaling"
     ],
-    "description": "Category: Faces\nPurpose: Faces\n\nFace De-blur - slightly out of focus / blurred images of faces. It is aimed at faces / hair",
+    "description": "Face De-blur - slightly out of focus / blurred images of faces. It is aimed at faces / hair",
     "date": null,
     "architecture": "esrgan",
     "size": [
