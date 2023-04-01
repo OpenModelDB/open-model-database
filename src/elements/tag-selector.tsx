@@ -84,7 +84,7 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
             <Tooltip
                 clickable
                 closeOnEsc
-                className={`${style.tooltip} bg-gray-300`}
+                className={style.tooltip}
                 id={TOOLTIP_ID}
                 render={({ content }) => {
                     const tag = tagData.get(content as TagId);
