@@ -114,7 +114,7 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
     );
 }
 
-export function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
+function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
 
     const [, category] = categoryOrder[0];
