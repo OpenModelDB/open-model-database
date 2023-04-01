@@ -27,6 +27,7 @@
     "react-icons": "^4.8.0",
     "react-markdown": "^8.0.5",
     "react-syntax-highlighter": "^15.5.0",
+    "react-tooltip": "^5.10.4",
     "remark-gfm": "^3.0.1",
     "simple-git": "^3.16.0"
   },
