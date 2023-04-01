@@ -128,7 +128,7 @@ export default function Page({ modelData: staticModelData }: Props) {
                     />
 
                     {/* Tags */}
-                    <div className="my-8">
+                    <div className="mb-8 mt-4">
                         <TagSelector
                             selection={tagSelection}
                             onChange={setTagSelection}

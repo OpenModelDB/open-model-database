@@ -44,3 +44,19 @@
         display: inline-block;
     }
 }
+
+.modeButton {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+
+    span {
+        font-size: 0.875rem;
+        padding-left: 0.25rem;
+        font-weight: 400;
+    }
+}
