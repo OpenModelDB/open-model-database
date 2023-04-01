@@ -3,7 +3,6 @@
     "author": "lyonhrt",
     "license": null,
     "tags": [
-        "image",
         "deblur"
     ],
     "description": "Strong deblurring model",

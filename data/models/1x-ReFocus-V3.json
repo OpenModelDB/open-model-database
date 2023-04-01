@@ -3,7 +3,6 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "deblur"
     ],
     "description": "Purpose: Deblur / ReFocus\n\nPurpose: DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",

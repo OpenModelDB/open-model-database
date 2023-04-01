@@ -2,9 +2,7 @@
     "name": "DigitalFilmV5 Lite",
     "author": "optimusprimal",
     "license": "WTFPL",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Cel Animation\nPurpose: Traditional Animation\n\nUpscaling Dragon Ball Z DBox DVD's. - grainy sources. It keeps some grain, but also doing some cleaning, sharpening, and fixing.",
     "date": "2021-02-19",
     "architecture": "esrgan",

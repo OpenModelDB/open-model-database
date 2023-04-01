@@ -2,9 +2,7 @@
     "name": "PocketMonsters-Alpha",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel\n\nupscaling pixel art with alpha channels that should perform better than any other. It should work well on both cartoon and 3D styled content.",
     "date": "2021-02-04",
     "architecture": "esrgan",

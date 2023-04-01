@@ -3,7 +3,6 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
-        "image",
         "denoise"
     ],
     "description": "Noise remover",

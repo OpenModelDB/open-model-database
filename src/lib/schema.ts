@@ -79,9 +79,11 @@ export interface TagCategory {
 }
 
 export type Platform = 'pytorch' | 'onnx' | 'ncnn';
+export type InputType = 'image' | 'video' | 'audio';
 
 export interface Arch {
     name: string;
+    input: InputType;
     compatiblePlatforms: Platform[];
 }
 

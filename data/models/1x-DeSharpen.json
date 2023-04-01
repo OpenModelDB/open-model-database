@@ -2,9 +2,7 @@
     "name": "DeSharpen",
     "author": "loinne",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Oversharpening\nPurpose: Denoise\nPretrained: 1st attempt on random sharpening with the same dataset at 200000 iterations, which was trained on non-random desharp model, total ~600000 iterations on 3 models.\n\nMade for rare particular cases when the image was destroyed by applying noise, i.e. game textures or any badly exported photos. If your image does not have any oversharpening, it won't hurt them, leaving as is. In theory, this model knows when to activate and when to skip, also can successfully remove artifacts if only some parts of the image are oversharpened, for example in image consisting of several combined images, 1 of them with sharpen noise.",
     "date": "2019-06-03",
     "architecture": "esrgan",

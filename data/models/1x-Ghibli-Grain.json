@@ -2,9 +2,7 @@
     "name": "Ghibli Grain",
     "author": "nonogamester",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Images\nPurpose: Realistic Ghibli Grain\n\nText or Anime",
     "date": "2022-11-16",
     "architecture": "esrgan",

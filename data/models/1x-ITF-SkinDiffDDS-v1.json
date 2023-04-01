@@ -3,7 +3,6 @@
     "author": "intheflesh-3116",
     "license": "CC-BY-NC-4.0",
     "tags": [
-        "image",
         "restoration"
     ],
     "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\n\nRemoves banding, blocking, dithering, aliasing, noise and color tint on DDS Compressed Skin Diffuse Textures.\n\nThis should work extremely well on most modern DDS compression types. The training set was compressed with BC3/DXT5, BC3/DXT5 Fast, BC2/DXT3, BC2/DXT3 Fast, and a small number of JPEG compressed images to cover outliers.\n\nThis model is trained to remove the slight green color tint that DDS compression tends to add to skin textures, so the model output will not match the original color tone of the input image. This is the desired result though, as DDS compression shifts the colors to a sickly green tint and this model corrects that to more natural color tones.\n\nThe training set included faces, body parts, eyes, mouths and hair in a variety of skin types and tones so it should work well on most related diffuse textures.\n\nHowever it's not just limited to skin, many other images and textures can be cleaned with this model. Designed to be used as a first step cleaning pass before applying additional models after. Check out the other ITF Models.",

@@ -2,9 +2,7 @@
     "name": "KcjpunkAnime 2.0 Lite",
     "author": "kcjpunk",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Digital Animation\nPurpose: Digital Animation\nPretrained: This is my first attempt to make Light model so I started with 2x version. This model is much faster and give better results than my previous one.\n\nUp-scaling Digital Animation",
     "date": "2021-03-23",
     "architecture": "esrgan",

@@ -2,9 +2,7 @@
     "name": "Skyrim Alpha",
     "author": "deorder",
     "license": "CC0-1.0",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel",
     "date": null,
     "architecture": "esrgan",

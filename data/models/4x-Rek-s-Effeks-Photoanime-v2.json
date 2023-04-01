@@ -2,9 +2,7 @@
     "name": "Rek's Effeks Photoanime v2",
     "author": "rek",
     "license": "GPL-3.0-only",
-    "tags": [
-        "image"
-    ],
+    "tags": [],
     "description": "Category: Images\nPurpose: Stylization\n\nPhoto stylization from JPEGs. Trained on images upscaled by ISO Denoise v2 -> DeJPEG Fatality PlusULTRA -> NMKD Yan2. Essentially a combination of that model chain into one. Use if you're looking for a stylized output, not photo quality.",
     "date": "2020-10-17",
     "architecture": "esrgan",

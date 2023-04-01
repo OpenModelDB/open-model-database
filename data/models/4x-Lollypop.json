@@ -3,7 +3,6 @@
     "author": "lyonhrt",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "image",
         "general-upscaler"
     ],
     "description": "A universal model, that is aimed at prerendered images, but handles realistic faces, manga, pixel art and dedithering as well. Trained using the patchgan discriminator, with cx loss, cutmixup and frequency separation, it produces good results with a slight grain due to patchgan, with some sharpening using cutmixup.",

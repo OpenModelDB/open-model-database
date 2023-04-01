@@ -3,7 +3,6 @@
     "author": "blackscout",
     "license": "GPL-3.0-only",
     "tags": [
-        "image",
         "colorization"
     ],
     "description": "B/W | 100% Desaturated images. It mostly results in Blue and Yellow images with slight hints of Green, Orange and Magenta. You are free to use this as a pretrain to achieve better results.",

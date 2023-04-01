@@ -2,9 +2,7 @@
     "name": "Video TSSM",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [
-        "video"
-    ],
+    "tags": [],
     "description": "Category: Pretrained Discriminators\nPurpose: Animation\n\nnone",
     "date": "2020-11-17",
     "architecture": "sofvsr",

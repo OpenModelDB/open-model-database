@@ -1,24 +1,28 @@
 {
     "2c2-esrgan": {
         "name": "2C2-ESRGAN",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "cain": {
         "name": "CAIN",
+        "input": "video",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "cain-yuv": {
         "name": "CAIN YUV",
+        "input": "video",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "compact": {
         "name": "Compact",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch",
             "onnx",
@@ -27,12 +31,14 @@
     },
     "edsr": {
         "name": "EDSR (SRResNet)",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "esrgan": {
         "name": "ESRGAN",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch",
             "onnx",
@@ -41,30 +47,35 @@
     },
     "esrgan+": {
         "name": "ESRGAN+",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "rife": {
         "name": "RIFE",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "sofvsr": {
         "name": "SOFVSR",
+        "input": "video",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "spsr": {
         "name": "SPSR",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch"
         ]
     },
     "swinir": {
         "name": "SwinIR",
+        "input": "image",
         "compatiblePlatforms": [
             "pytorch",
             "onnx"

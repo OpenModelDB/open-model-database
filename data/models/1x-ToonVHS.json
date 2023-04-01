@@ -3,7 +3,7 @@
     "author": "redslam",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "video"
+        "video-frame"
     ],
     "description": "Category: VHS Tapes\nPurpose: VHS\n\nBest when used on cartoons, it can work on anime. Due to the dataset it does struggle a bit with orange colors and grainy dark spots. This model is meant to be used to clean up the image before using it on a 2x or 4x model.",
     "date": "2022-02-06",

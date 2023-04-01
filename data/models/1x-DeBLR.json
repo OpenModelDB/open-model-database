@@ -3,7 +3,6 @@
     "author": "blackscout",
     "license": null,
     "tags": [
-        "image",
         "deblur"
     ],
     "description": "General Deblurring",
