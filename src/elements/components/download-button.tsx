@@ -5,6 +5,7 @@ import { FiExternalLink } from 'react-icons/fi';
 import { SiDropbox, SiGithub, SiGoogledrive, SiMega, SiMicrosoftonedrive } from 'react-icons/si';
 import Logo from '../../../public/logo.svg';
 import { Resource } from '../../lib/schema';
+import { joinClasses } from '../../lib/util';
 import { Link } from './link';
 
 type DownloadButtonProps = {
@@ -74,40 +75,48 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
     const isExternal = isMirrorExternal(selectedMirror);
     const host = hostFromUrl(selectedMirror);
 
-    return (
-        <div className="w-full">
-            <div className="mb-1 flex w-full flex-row gap-0.5 rounded-xl bg-accent-500 dark:bg-accent-400">
-                <Link
-                    external
-                    className="inline-flex h-12 w-full cursor-pointer items-center rounded-l-lg border-0 border-accent-700 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500"
-                    href={selectedMirror}
-                    type="button"
-                >
-                    <div className="w-full">
-                        {isExternal ? (
-                            <FiExternalLink
-                                className="mr-2 h-4 w-4"
-                                viewBox="0 0 22 22"
-                            />
-                        ) : (
-                            <svg
-                                className="mr-2 h-4 w-4 fill-current"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                            </svg>
-                        )}
-                        Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
-                    </div>
-                </Link>
+    const showMenu = resource.urls.length !== 1 || !readonly;
 
+    return (
+        <div className="mb-1 flex w-full flex-row gap-0.5 rounded-xl bg-accent-500 dark:bg-accent-400">
+            <Link
+                external
+                className={joinClasses(
+                    'inline-flex h-16 w-full cursor-pointer items-center rounded-l-lg border-0 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600',
+                    !showMenu && 'rounded-r-lg'
+                )}
+                href={selectedMirror}
+                type="button"
+            >
+                <div className="w-full">
+                    {isExternal ? (
+                        <FiExternalLink
+                            className="mr-2 h-4 w-4"
+                            viewBox="0 0 22 22"
+                        />
+                    ) : (
+                        <svg
+                            className="mr-2 h-4 w-4 fill-current"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                        </svg>
+                    )}
+                    Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
+                    <div className="text-center text-sm font-normal">
+                        {isExternal ? `Hosted offsite by ${host}` : 'Hosted by OpenModelDB'}
+                    </div>
+                </div>
+            </Link>
+
+            {showMenu && (
                 <Menu
                     as="div"
                     className="relative inline-block text-left"
                 >
                     <div>
-                        <Menu.Button className="inline-flex h-12 w-12 cursor-pointer items-center rounded-r-lg border-0 border-accent-700 bg-accent-600 text-center align-middle text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600 dark:focus:ring-accent-500">
+                        <Menu.Button className="inline-flex h-16 w-12 cursor-pointer items-center rounded-r-lg border-0 bg-accent-600 text-center align-middle text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600">
                             <BsChevronDown className="w-full" />
                         </Menu.Button>
                     </div>
@@ -120,7 +129,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                     >
-                        <Menu.Items className="absolute right-0 z-50 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-fade-700">
+                        <Menu.Items className="absolute right-0 z-50 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 focus:outline-none dark:bg-fade-700">
                             <div className="flex flex-col divide-y rounded-lg p-2 shadow-lg">
                                 {resource.urls.map((url) => {
                                     const externalUrl = isMirrorExternal(url);
@@ -182,10 +191,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                         </Menu.Items>
                     </Transition>
                 </Menu>
-            </div>
-            <div className="w-full text-center">
-                {isExternal ? `Hosted offsite by ${host}` : 'Hosted by OpenModelDB'}
-            </div>
+            )}
         </div>
     );
 };
