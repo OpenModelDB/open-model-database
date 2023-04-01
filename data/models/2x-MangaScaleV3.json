@@ -6,7 +6,7 @@
         "image",
         "manga"
     ],
-    "description": "Pretrained: unreleased model\n\nTo upscale manga including halftones, instead of trying to smooth them out.",
+    "description": "To upscale manga including halftones, instead of trying to smooth them out.",
     "date": "2021-05-24",
     "architecture": "esrgan+",
     "size": [

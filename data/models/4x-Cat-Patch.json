@@ -5,7 +5,7 @@
     "tags": [
         "image"
     ],
-    "description": "Category: Cats\nPurpose: Cats\nPretrained: previous attempt\n\n",
+    "description": "Category: Cats\nPurpose: Cats",
     "date": null,
     "architecture": "esrgan",
     "size": [
@@ -26,5 +26,8 @@
                 "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/4x_cat_patch_325000_G.pth"
             ]
         }
-    ]
+    ],
+    "pretrainedModelG": {
+        "description": "Previous attempt"
+    }
 }
