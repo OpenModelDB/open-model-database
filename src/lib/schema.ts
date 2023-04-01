@@ -73,6 +73,8 @@ export interface TagCategory {
     name: string;
     description: MarkDownString;
     order: number;
+    /** Whether the tags of this category are part of the simple tag selector. */
+    simple: boolean;
     tags: TagId[];
 }
 
