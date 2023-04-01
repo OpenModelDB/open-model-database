@@ -3,9 +3,10 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG (works on many compression formats)\n\nUSE 4x-UltraSharp INSTEAD - This is UniScaleV2, but intended for images with compression. Seems to work best on realistic images.",
+    "description": "Purpose: JPEG (works on many compression formats)\n\nUSE 4x-UltraSharp INSTEAD - This is UniScaleV2, but intended for images with compression. Seems to work best on realistic images.",
     "date": "2021-09-07",
     "architecture": "esrgan",
     "size": [

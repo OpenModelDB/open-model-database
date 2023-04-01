@@ -3,7 +3,8 @@
     "author": "dinjerr",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "deblur"
+        "deblur",
+        "pixel-art"
     ],
     "description": "Purpose: Pixel Art\n\nRestores blurry/upscaled pixel art.",
     "date": "2021-03-19",

@@ -3,10 +3,9 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\n",
+    "description": "",
     "date": "2021-01-26",
     "architecture": "esrgan",
     "size": [

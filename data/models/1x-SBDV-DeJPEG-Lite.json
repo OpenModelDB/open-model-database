@@ -3,9 +3,10 @@
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: JPEG Artifacts\nPurpose: JPEG compression\n\n",
+    "description": "",
     "date": "2020-10-10",
     "architecture": "esrgan",
     "size": [

@@ -3,8 +3,8 @@
     "author": "dinjerr",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "faces",
-        "face-upscaling"
+        "face-upscaling",
+        "faces"
     ],
     "description": "Purpose: Art/People\n\nA sharp upscaler trained specifically for small sprite faces. Does not blend, so avoid using on painted/photo portraits unless you were trying to retain more of the outlines somehow.",
     "date": "2022-08-19",

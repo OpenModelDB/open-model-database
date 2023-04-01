@@ -3,9 +3,10 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
+        "dds",
         "restoration"
     ],
-    "description": "Category: DDS (BC1/DXT1, BC3/DXT5 Compression)\nPurpose: BC1 Compression\n\nAttempts to remove the damages done by BC1 compression.",
+    "description": "Attempts to remove the damages done by BC1 compression.",
     "date": "2020-08-02",
     "architecture": "esrgan",
     "size": [

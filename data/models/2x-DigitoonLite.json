@@ -2,7 +2,12 @@
     "name": "Digitoon Lite",
     "author": "saurusx",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "anime",
+        "cartoon",
+        "debanding",
+        "dehalo"
+    ],
     "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nMeant as a versatile model for upscaling high detail digital anime and cartoons. Has debanding, MPEG-2 correction, and halo reduction. Trained to handle both 4:3 and 16:9 DVD material with equal efficacy. Will retain a lot of textures except for the really high freq stuff.",
     "date": "2022-07-05",
     "architecture": "esrgan",

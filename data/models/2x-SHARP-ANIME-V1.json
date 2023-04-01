@@ -3,10 +3,9 @@
     "author": "solidd93110",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nthis model has been trained to work on lines and details - works well on animes which have fairly fine lines at the base but also the video must be progressive or deinterlaced",
+    "description": "this model has been trained to work on lines and details - works well on animes which have fairly fine lines at the base but also the video must be progressive or deinterlaced",
     "date": "2020-09-12",
     "architecture": "esrgan",
     "size": [

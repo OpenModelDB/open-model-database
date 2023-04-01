@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\ni made this model to upscale old anime and denoise.",
+    "description": "i made this model to upscale old anime and denoise.",
     "date": "2020-08-16",
     "architecture": "esrgan",
     "size": [

@@ -3,10 +3,9 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nThis model is a lite version of AnimeSharp. It was trained using student-teacher learning (if i'm using the term properly), where the HRs are LRs upscaled by the full size AnimeSharp ESRGAN model, and the lite model is trained on those outputs as the HR. It works best on clean or slightly blurry anime. Downscale by 50% first in almost all cases",
+    "description": "This model is a lite version of AnimeSharp. It was trained using student-teacher learning (if i'm using the term properly), where the HRs are LRs upscaled by the full size AnimeSharp ESRGAN model, and the lite model is trained on those outputs as the HR. It works best on clean or slightly blurry anime. Downscale by 50% first in almost all cases",
     "date": "2022-02-11",
     "architecture": "esrgan",
     "size": [

@@ -3,10 +3,9 @@
     "author": "neo-raws",
     "license": "WTFPL",
     "tags": [
-        "anime",
-        "cartoon"
+        "anime"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nUpscale old anime like pokemon",
+    "description": "Upscale old anime like pokemon",
     "date": "2020-11-01",
     "architecture": "esrgan",
     "size": [

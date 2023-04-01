@@ -3,8 +3,8 @@
     "author": "tg",
     "license": "GPL-3.0-only",
     "tags": [
-        "faces",
-        "face-upscaling"
+        "face-upscaling",
+        "faces"
     ],
     "description": "Upscales blurry 128px faces, usefull for enhancing that someone in a small picture.",
     "date": "2019-11-27",
