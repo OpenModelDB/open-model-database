@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
@@ -15,7 +15,8 @@ interface ModelCardProps {
     model: Model;
 }
 
-export const ModelCard = ({ id, model }: ModelCardProps) => {
+// eslint-disable-next-line react/display-name
+export const ModelCard = memo(({ id, model }: ModelCardProps) => {
     const { userData } = useUsers();
     const { archData } = useArchitectures();
 
@@ -78,7 +79,7 @@ export const ModelCard = ({ id, model }: ModelCardProps) => {
             </div>
         </div>
     );
-};
+});
 
 function fixDescription(description: string, scale: number): string {
     const lines = description.split('\n');
