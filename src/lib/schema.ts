@@ -75,6 +75,12 @@ export interface TagCategory {
     order: number;
     /** Whether the tags of this category are part of the simple tag selector. */
     simple: boolean;
+    /**
+     * Whether this category is only to be displayed in edit mode.
+     *
+     * @default false
+     */
+    editOnly?: boolean;
     tags: TagId[];
 }
 

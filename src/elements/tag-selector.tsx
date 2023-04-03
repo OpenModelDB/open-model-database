@@ -5,6 +5,7 @@ import { HiChevronDoubleDown, HiChevronDoubleUp, HiOutlinePlusSm } from 'react-i
 import { Tooltip } from 'react-tooltip';
 import { useIsClient } from '../lib/hooks/use-is-client';
 import { useTags } from '../lib/hooks/use-tags';
+import { useWebApi } from '../lib/hooks/use-web-api';
 import { TagId } from '../lib/schema';
 import { SelectionState, TagSelection } from '../lib/tag-condition';
 import { assertNever, isNonNull, joinClasses } from '../lib/util';
@@ -106,33 +107,29 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
 
 function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
+    const { editMode } = useWebApi();
 
     return (
         <div className={style.tagSelector}>
             {categoryOrder.map(([categoryId, category]) => {
-                const tags = category.tags
-                    .map((tagId) => {
-                        const tag = tagData.get(tagId);
-                        if (!tag) return undefined;
-                        return [tagId, tag] as const;
-                    })
-                    .filter(isNonNull);
-
-                if (tags.length === 0) return <React.Fragment key={categoryId} />;
+                if (category.tags.length === 0 || (category.editOnly && !editMode))
+                    return <React.Fragment key={categoryId} />;
 
                 return (
                     <div key={categoryId}>
                         <h4>{category.name}</h4>
                         <div>
-                            {tags.map(([tagId, tag]) => {
+                            {category.tags.map((tagId) => {
+                                const tag = tagData.get(tagId);
                                 const state = getState(tagId, selection);
+
                                 return (
                                     <TagButton
                                         key={tagId}
-                                        name={tag.name}
+                                        name={tag?.name ?? tagId}
                                         state={state}
-                                        tooltipContent={tag.description ? tagId : undefined}
-                                        tooltipId={tag.description ? TOOLTIP_ID : undefined}
+                                        tooltipContent={tag?.description ? tagId : undefined}
+                                        tooltipId={tag?.description ? TOOLTIP_ID : undefined}
                                         onClick={() => {
                                             onChange(setState(tagId, NEXT_STATE[state], selection));
                                         }}
