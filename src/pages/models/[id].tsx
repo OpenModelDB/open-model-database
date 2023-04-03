@@ -1,17 +1,19 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import React, { useCallback } from 'react';
+import React from 'react';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
+import { EditableTags } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
+import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
@@ -60,13 +62,7 @@ export default function Page({ modelId, modelData }: Props) {
 
     const archName = archData.get(model.architecture)?.name ?? 'unknown';
 
-    const updateModelProperty = useCallback(
-        <K extends keyof Model>(key: K, value: Model[K]) => {
-            const newModel: Model = { ...model, [key]: value };
-            webApi?.models.update([[modelId, newModel]]).catch((e) => console.error(e));
-        },
-        [webApi, modelId, model]
-    );
+    const { updateModelProperty } = useUpdateModel(webApi, modelId);
 
     return (
         <>
@@ -159,10 +155,10 @@ export default function Page({ modelId, modelData }: Props) {
                             })}
                         </div>
 
-                        <div className="relative table-auto overflow-hidden rounded-lg border-fade-700">
-                            <table className="w-full border-collapse overflow-hidden rounded-lg border-fade-700 text-left text-sm text-gray-500 dark:text-gray-400 ">
-                                <tbody className="overflow-hidden  rounded-lg ">
-                                    <tr className=" ">
+                        <div className="relative table-auto rounded-lg border-fade-700">
+                            <table className="w-full border-collapse rounded-lg border-fade-700 text-left text-sm text-gray-500 dark:text-gray-400 ">
+                                <tbody className="rounded-lg">
+                                    <tr>
                                         <th
                                             className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
                                             scope="row"
@@ -191,7 +187,7 @@ export default function Page({ modelId, modelData }: Props) {
                                             )}
                                         </td>
                                     </tr>
-                                    <tr className="">
+                                    <tr>
                                         <th
                                             className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
                                             scope="row"
@@ -209,7 +205,7 @@ export default function Page({ modelId, modelData }: Props) {
                                         </td>
                                     </tr>
                                     {model.size && (
-                                        <tr className="">
+                                        <tr>
                                             <th
                                                 className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
                                                 scope="row"
@@ -219,16 +215,22 @@ export default function Page({ modelId, modelData }: Props) {
                                             <td className="px-6 py-4">{renderTags(model.size)}</td>
                                         </tr>
                                     )}
-                                    <tr className="">
+                                    <tr>
                                         <th
                                             className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
                                             scope="row"
                                         >
                                             Tags
                                         </th>
-                                        <td className="px-6 py-4">{renderTags(model.tags)}</td>
+                                        <td className="px-6 py-4">
+                                            <EditableTags
+                                                readonly={!editMode}
+                                                tags={model.tags}
+                                                onChange={(tags) => updateModelProperty('tags', tags)}
+                                            />
+                                        </td>
                                     </tr>
-                                    <tr className="">
+                                    <tr>
                                         <th
                                             className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
                                             scope="row"
@@ -294,10 +296,7 @@ export default function Page({ modelId, modelData }: Props) {
                                         .sort()
                                         .map(([key, value]) => {
                                             return (
-                                                <tr
-                                                    className=""
-                                                    key={key}
-                                                >
+                                                <tr key={key}>
                                                     <th
                                                         className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium capitalize text-fade-900 dark:bg-fade-800 dark:text-white"
                                                         scope="row"

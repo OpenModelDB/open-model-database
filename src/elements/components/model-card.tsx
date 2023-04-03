@@ -1,10 +1,12 @@
 import React from 'react';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
-import { useTags } from '../../lib/hooks/use-tags';
+import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
+import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
 import { Model, ModelId } from '../../lib/schema';
 import { asArray } from '../../lib/util';
+import { EditableTags } from './editable-tags';
 import { Link } from './link';
 import style from './model-card.module.scss';
 
@@ -14,9 +16,11 @@ interface ModelCardProps {
 }
 
 export const ModelCard = ({ id, model }: ModelCardProps) => {
-    const { tagData } = useTags();
     const { userData } = useUsers();
     const { archData } = useArchitectures();
+
+    const { webApi, editMode } = useWebApi();
+    const { updateModelProperty } = useUpdateModel(webApi, id);
 
     const description = fixDescription(model.description, model.scale);
 
@@ -61,10 +65,12 @@ export const ModelCard = ({ id, model }: ModelCardProps) => {
                     <div className="mb-1 py-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">{description}</div>
 
                     {/* Tags */}
-                    <div className="flex flex-row flex-wrap gap-1">
-                        {model.tags.map((tagId) => (
-                            <RegularTag key={tagId}>{tagData.get(tagId)?.name ?? `unknown tag:${tagId}`}</RegularTag>
-                        ))}
+                    <div className="flex flex-row flex-wrap gap-1 text-xs">
+                        <EditableTags
+                            readonly={!editMode}
+                            tags={model.tags}
+                            onChange={(tags) => updateModelProperty('tags', tags)}
+                        />
                     </div>
                 </div>
             </div>
@@ -104,12 +110,4 @@ function fixDescription(description: string, scale: number): string {
 
 function AccentTag({ children }: React.PropsWithChildren<unknown>) {
     return <div className={`${style.tagBase} bg-accent-600 text-sm text-gray-100`}>{children}</div>;
-}
-
-function RegularTag({ children }: React.PropsWithChildren<unknown>) {
-    return (
-        <div className={`${style.tagBase} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}>
-            {children}
-        </div>
-    );
 }
