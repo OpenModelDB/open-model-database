@@ -6,7 +6,7 @@
         "denoise"
     ],
     "description": "Remove high ISO noise",
-    "date": null,
+    "date": "2020-03-16",
     "architecture": "esrgan",
     "size": [
         "64nf",

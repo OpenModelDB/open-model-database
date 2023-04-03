@@ -6,7 +6,7 @@
         "game-textures"
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures\n\nMorrowind Mod Textures",
-    "date": null,
+    "date": "2020-07-05",
     "architecture": "esrgan",
     "size": [
         "64nf",
@@ -26,5 +26,6 @@
             ]
         }
     ],
+    "trainingIterations": 130000,
     "pretrainedModelG": "4x-ESRGAN"
 }

@@ -7,7 +7,7 @@
         "restoration"
     ],
     "description": "Pretrained: Trained on Custom (Photos / Manga)",
-    "date": null,
+    "date": "2019-04-19",
     "architecture": "esrgan",
     "size": [
         "64nf",

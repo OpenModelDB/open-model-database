@@ -6,7 +6,7 @@
         "pixel-art"
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Digital Illustrations\n\nTrained on a variety of images from ArtStation",
-    "date": null,
+    "date": "2020-06-29",
     "architecture": "esrgan",
     "size": [
         "64nf",

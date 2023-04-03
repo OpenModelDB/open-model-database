@@ -6,7 +6,7 @@
         "pixel-art"
     ],
     "description": "Category: Art/Pixel Art\n\nSmooth general pixel art, Minecraft textures",
-    "date": null,
+    "date": "2021-02-10",
     "architecture": "esrgan",
     "size": null,
     "scale": 8,
@@ -16,7 +16,7 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": null,
+            "size": 67173423,
             "sha256": null,
             "urls": [
                 "https://u.pcloud.link/publink/show?code=kZ4WthXZDDnqbo4Hye8zBgCkhgbbQf3WXT27"

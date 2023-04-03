@@ -7,7 +7,7 @@
         "cartoon"
     ],
     "description": "",
-    "date": null,
+    "date": "2019-01-28",
     "architecture": "esrgan",
     "size": [
         "64nf",

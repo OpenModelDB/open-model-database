@@ -6,7 +6,7 @@
         "anti-aliasing"
     ],
     "description": "",
-    "date": null,
+    "date": "2020-02-27",
     "architecture": "esrgan",
     "size": [
         "64nf",

@@ -6,7 +6,7 @@
         "deblur"
     ],
     "description": "These models deblur most images. It was trained mostly on aniso2 and iso blurring (BSRGAN augmentation) with some gaussian mixed in. It performs well on most blurry images, but I'd recommend using something like Fatality_Deblur for very strong gaussian blur.",
-    "date": null,
+    "date": "2021-10-01",
     "architecture": "esrgan",
     "size": [
         "64nf",

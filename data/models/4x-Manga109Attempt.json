@@ -7,7 +7,7 @@
         "manga"
     ],
     "description": "Pretrained model: 4xPSNR",
-    "date": null,
+    "date": "2018-12-21",
     "architecture": "esrgan",
     "size": [
         "64nf",
