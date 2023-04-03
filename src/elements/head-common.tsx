@@ -13,7 +13,7 @@ export interface SiteMetaProps {
 export function HeadCommon({
     title,
     description,
-    image = 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
+    image = `${SITE_URL}/assets/OpenModelDB_Jelly.png`,
     noTitlePrefix = false,
     noIndex = false,
 }: SiteMetaProps) {
