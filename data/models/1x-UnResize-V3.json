@@ -30,5 +30,6 @@
     "dataset": "Anime, manga, and photos",
     "pretrainedModelG": {
         "description": "1x_UnResize_MKII_030000_G.pth"
-    }
+    },
+    "images": []
 }

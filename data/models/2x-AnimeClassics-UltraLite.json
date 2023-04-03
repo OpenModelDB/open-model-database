@@ -35,5 +35,6 @@
     "trainingHRSize": 128,
     "dataset": "Blu-ray Remaster HRs/Generated LRs, and DVD Sources",
     "datasetSize": 4222,
-    "pretrainedModelG": "2x-DigitalFilmV5-Lite"
+    "pretrainedModelG": "2x-DigitalFilmV5-Lite",
+    "images": []
 }

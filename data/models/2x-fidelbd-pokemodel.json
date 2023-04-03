@@ -32,5 +32,6 @@
     "trainingBatchSize": 4,
     "trainingHRSize": 128,
     "dataset": "Made with images from the first episode of pokemon released on blu ray for the HRs and 112.5% upscaled images for the LRs to match 1/2x the HRs.",
-    "pretrainedModelG": "2x-ESRGAN"
+    "pretrainedModelG": "2x-ESRGAN",
+    "images": []
 }

@@ -32,5 +32,6 @@
     "trainingEpochs": 23,
     "trainingBatchSize": 5,
     "trainingHRSize": 64,
-    "dataset": "Expanded self curated custom manga dataset"
+    "dataset": "Expanded self curated custom manga dataset",
+    "images": []
 }

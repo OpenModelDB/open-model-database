@@ -27,5 +27,6 @@
         }
     ],
     "trainingIterations": 208000,
-    "pretrainedModelG": "4x-WaifuGAN-v3"
+    "pretrainedModelG": "4x-WaifuGAN-v3",
+    "images": []
 }

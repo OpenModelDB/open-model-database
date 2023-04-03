@@ -28,5 +28,6 @@
         }
     ],
     "dataset": "Anime, manga, and photos",
-    "pretrainedModelG": "1x-ReFocus-V3"
+    "pretrainedModelG": "1x-ReFocus-V3",
+    "images": []
 }

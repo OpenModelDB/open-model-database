@@ -34,5 +34,6 @@
     "dataset": "CC0 Textures",
     "pretrainedModelG": {
         "description": "RRDB_ESRGAN_x4"
-    }
+    },
+    "images": []
 }

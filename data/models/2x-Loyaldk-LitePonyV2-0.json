@@ -34,5 +34,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "All MLP: FiM Episodes using scene detection frame grabbing as well as selected Prores4444 content https://shimmermare.com/4k-pony-project. Converted Episodes and Movies to 4:4:4 Chroma Subsampling using custom 1x model. LR's Include H264 Compression, H265 Compression, 1x_DotCrawl_125000_G, 1x_DeteriorationFrames V1_102000_G, Gaussian Blur, LitePony Chroma Bleed, Uniform Noise, JPEG Compression, 4:2:0 Chroma Subsampling.",
-    "datasetSize": 132120
+    "datasetSize": 132120,
+    "images": []
 }

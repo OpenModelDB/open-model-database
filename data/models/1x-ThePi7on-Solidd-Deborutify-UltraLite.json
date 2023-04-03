@@ -33,5 +33,6 @@
     "trainingBatchSize": 1,
     "trainingHRSize": 128,
     "trainingOTF": false,
-    "dataset": "Some frames from the sharper shippuden episodes"
+    "dataset": "Some frames from the sharper shippuden episodes",
+    "images": []
 }

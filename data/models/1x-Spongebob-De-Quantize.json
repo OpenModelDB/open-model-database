@@ -36,5 +36,6 @@
     "datasetSize": 4803,
     "pretrainedModelG": {
         "description": "1x_1xDEDITHER_32_512_126900_G"
-    }
+    },
+    "images": []
 }

@@ -36,5 +36,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "frames from remastered 80s-90s anime",
-    "pretrainedModelG": "1x-Compact-Pretrain"
+    "pretrainedModelG": "1x-Compact-Pretrain",
+    "images": []
 }

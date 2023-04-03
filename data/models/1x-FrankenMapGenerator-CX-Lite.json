@@ -34,5 +34,6 @@
     "datasetSize": 14784,
     "pretrainedModelG": {
         "description": "1x_DIV2K-Lite_450k.pth"
-    }
+    },
+    "images": []
 }

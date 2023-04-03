@@ -33,5 +33,6 @@
     "trainingOTF": true,
     "dataset": "FatalityFaces + danbooru side faces",
     "datasetSize": 5500,
-    "pretrainedModelG": "4x-NMKD-UltraYandere"
+    "pretrainedModelG": "4x-NMKD-UltraYandere",
+    "images": []
 }

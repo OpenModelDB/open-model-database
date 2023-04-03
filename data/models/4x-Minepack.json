@@ -30,5 +30,6 @@
     "trainingHRSize": 128,
     "dataset": "Custom -> `https://drive.google.com/file/d/1N5BQgLJ59zNRwiPbf4nRsLLBT2WoVwaN/view` + `https://mega.nz/#!lpMHRAqS!bHN9Ioj7l2Gfvm1HOxTR8rqcGNrrx3Ai-1-bj7YejuU` (crowdsourced, posted in #post-your-screenshot-zips-here in SalC1's Discord Server)",
     "datasetSize": 53390,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

@@ -34,5 +34,6 @@
     "trainingOTF": true,
     "dataset": "PixelJoint pixel art",
     "datasetSize": 186,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

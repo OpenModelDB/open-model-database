@@ -25,5 +25,6 @@
     ],
     "pretrainedModelG": {
         "description": "Interpolated from nmkd's pixel art upscaling models with different interpolation settings and de-dithered versions"
-    }
+    },
+    "images": []
 }

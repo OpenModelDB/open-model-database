@@ -33,5 +33,6 @@
     "trainingHRSize": 128,
     "dataset": "Compiled mainly by <@840750872954273852>  from various sources, including the different games released and art books by Wada Arco",
     "datasetSize": 21000,
-    "pretrainedModelG": "4x-AnimeSharp-lite"
+    "pretrainedModelG": "4x-AnimeSharp-lite",
+    "images": []
 }

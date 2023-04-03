@@ -34,5 +34,6 @@
     "trainingHRSize": 64,
     "dataset": "An old Cartoon Network VHS Tape upload.",
     "datasetSize": 44,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

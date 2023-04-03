@@ -30,5 +30,6 @@
     ],
     "trainingIterations": 110000,
     "dataset": "LR: Clone High DVD, HR: Re-illustrated Vectors from Frames",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

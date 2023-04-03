@@ -26,5 +26,6 @@
     ],
     "trainingIterations": 450533,
     "trainingEpochs": 207,
-    "trainingBatchSize": 3
+    "trainingBatchSize": 3,
+    "images": []
 }

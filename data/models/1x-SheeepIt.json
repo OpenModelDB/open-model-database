@@ -34,5 +34,6 @@
     "datasetSize": 4,
     "pretrainedModelG": {
         "description": "This model was trained to restore \"Sheeep\" while retaining and enhancing the noise present in the show. The model amazingly finished training in only 8.8k iterations with no pretrain, with a dataset of only 4 image pairs. This model should work well for animes and cartoons with a lot of grain present. There are some slight haloing issues in dark colors unfortunately, but I was unable to fix it."
-    }
+    },
+    "images": []
 }

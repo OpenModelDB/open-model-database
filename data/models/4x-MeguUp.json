@@ -35,5 +35,6 @@
     "datasetSize": 4193,
     "pretrainedModelG": {
         "description": "Interpolated custom, hence the license."
-    }
+    },
+    "images": []
 }

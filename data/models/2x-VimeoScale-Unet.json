@@ -30,5 +30,6 @@
     "dataset": "Combination of Collected Vimeo scenes (CG, realistic/video, movie trailers, and motion graphics) at original quality and REDS_sharp",
     "pretrainedModelG": {
         "description": "Self-Trained Base for the Unet finalisation with vgg_fea discrim"
-    }
+    },
+    "images": []
 }

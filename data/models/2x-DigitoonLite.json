@@ -36,5 +36,6 @@
     "trainingHRSize": 128,
     "dataset": "Blu-ray, HDTV, and DVD",
     "datasetSize": 21000,
-    "pretrainedModelG": "2x-DigiGradients-Lite"
+    "pretrainedModelG": "2x-DigiGradients-Lite",
+    "images": []
 }

@@ -31,5 +31,6 @@
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "dataset": "I used highres artworks from gelbooru",
-    "pretrainedModelG": "4x-Manga109Attempt"
+    "pretrainedModelG": "4x-Manga109Attempt",
+    "images": []
 }

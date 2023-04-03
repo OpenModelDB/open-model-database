@@ -30,5 +30,6 @@
         }
     ],
     "trainingIterations": 3799042,
-    "pretrainedModelG": "2x-sudo-RealESRGAN"
+    "pretrainedModelG": "2x-sudo-RealESRGAN",
+    "images": []
 }

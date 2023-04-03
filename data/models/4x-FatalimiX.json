@@ -33,5 +33,6 @@
     "trainingBatchSize": 10,
     "trainingHRSize": 128,
     "dataset": "Digital Comics",
-    "pretrainedModelG": "4x-Fatality-MK2"
+    "pretrainedModelG": "4x-Fatality-MK2",
+    "images": []
 }

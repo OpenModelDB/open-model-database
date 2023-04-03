@@ -33,5 +33,6 @@
     "trainingHRSize": 192,
     "dataset": "Blue Submarine No. 6 Toonami version aligned to the 2016 Discotek DVD release made up about half of the dataset. The remainder was hand selected frames from a variety of animated series cleaned up with Avisynth.",
     "datasetSize": 177,
-    "pretrainedModelG": "1x-Compact-Pretrain"
+    "pretrainedModelG": "1x-Compact-Pretrain",
+    "images": []
 }

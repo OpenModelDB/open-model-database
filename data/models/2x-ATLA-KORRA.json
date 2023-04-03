@@ -34,5 +34,6 @@
     "trainingOTF": false,
     "dataset": "The Legend of Korra first episode DVD frames and BluRay frames.",
     "datasetSize": 436,
-    "pretrainedModelG": "2x-ESRGAN"
+    "pretrainedModelG": "2x-ESRGAN",
+    "images": []
 }

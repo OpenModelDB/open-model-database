@@ -32,5 +32,6 @@
     "trainingHRSize": 64,
     "dataset": "pexels.com, ambientcg.com, Wikimedia Commons. photos of chainmail from DeviantArt, game textures with chainmail, diffuse maps of chainmail from DAZ items. All items downscaled by factors of 2 to add capacity for LOD texture upscaling and increase generative effect of model.",
     "datasetSize": 561,
-    "pretrainedModelG": "4x-Nickelfront"
+    "pretrainedModelG": "4x-Nickelfront",
+    "images": []
 }

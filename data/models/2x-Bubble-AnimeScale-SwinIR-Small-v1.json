@@ -35,5 +35,6 @@
     "trainingBatchSize": 8,
     "trainingOTF": false,
     "dataset": "SFW and NSFW anime frames that were sourced from Blu Ray discs. These were then degraded with various different methods.",
-    "datasetSize": 1042
+    "datasetSize": 1042,
+    "images": []
 }

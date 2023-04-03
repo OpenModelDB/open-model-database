@@ -31,5 +31,6 @@
     "trainingHRSize": 128,
     "dataset": "Streetside photos taken on Samsung Galaxy A21 camera with all enhancements disabled using GCam and FreeDCam, downscaled to 1024",
     "datasetSize": 236,
-    "pretrainedModelG": "4x-PSNR"
+    "pretrainedModelG": "4x-PSNR",
+    "images": []
 }

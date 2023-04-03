@@ -28,5 +28,6 @@
         }
     ],
     "trainingIterations": 260000,
-    "pretrainedModelG": "4x-xbrz"
+    "pretrainedModelG": "4x-xbrz",
+    "images": []
 }

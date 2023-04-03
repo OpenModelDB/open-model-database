@@ -32,5 +32,6 @@
     "trainingHRSize": 256,
     "dataset": "Sphax PureBDcraft Minecraft texture pack (256x) for HR, downscaled with nearest neighbor for LR.",
     "datasetSize": 2415,
-    "pretrainedModelG": "4x-FireAlpha"
+    "pretrainedModelG": "4x-FireAlpha",
+    "images": []
 }

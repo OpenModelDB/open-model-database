@@ -33,5 +33,6 @@
     "datasetSize": 679,
     "pretrainedModelG": {
         "description": "4x_RRDB_PSNR_old_arch.pth"
-    }
+    },
+    "images": []
 }

@@ -35,5 +35,6 @@
     "datasetSize": 7510,
     "pretrainedModelG": {
         "description": "4x_Faces_N_250000.pth"
-    }
+    },
+    "images": []
 }

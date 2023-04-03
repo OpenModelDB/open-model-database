@@ -35,5 +35,6 @@
     "datasetSize": 10100,
     "pretrainedModelG": {
         "description": "1xESRGAN + previous attempts"
-    }
+    },
+    "images": []
 }

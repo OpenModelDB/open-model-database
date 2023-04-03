@@ -29,5 +29,6 @@
         }
     ],
     "dataset": "Anime, real life, manga, generated",
-    "pretrainedModelG": "1x-DeJpeg-Fatality-PlusULTRA"
+    "pretrainedModelG": "1x-DeJpeg-Fatality-PlusULTRA",
+    "images": []
 }

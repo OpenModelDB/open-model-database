@@ -29,5 +29,6 @@
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "dataset": "My own screenshots (GTA V, ETS2, Minecaft, GTA SA, NFSUG2, Yakuza 0, Just Cause 3...)",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

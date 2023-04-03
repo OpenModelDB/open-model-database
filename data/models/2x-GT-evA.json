@@ -35,5 +35,6 @@
     "trainingOTF": false,
     "dataset": "German blu ray of detective Conan and other shows",
     "datasetSize": 2710,
-    "pretrainedModelG": "2x-Compact-Pretrain"
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": []
 }

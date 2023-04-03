@@ -30,5 +30,6 @@
     "trainingHRSize": 256,
     "dataset": "@irodori7 twitter, irodori KF artbook scans, KF guidebook scans, custom renders in similar style",
     "datasetSize": 251,
-    "pretrainedModelG": "2x-CGIMaster-v1"
+    "pretrainedModelG": "2x-CGIMaster-v1",
+    "images": []
 }

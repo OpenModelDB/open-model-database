@@ -32,5 +32,6 @@
     "dataset": "Custom",
     "pretrainedModelG": {
         "description": "Interpolation between 4x-UltraSharp and 4x-TextSharp-v0.5"
-    }
+    },
+    "images": []
 }

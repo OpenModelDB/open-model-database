@@ -32,5 +32,6 @@
     "trainingEpochs": 480,
     "trainingHRSize": 128,
     "dataset": "So many. I used: RAW images shot by myself, SignatureEdits, AdobeMIT-5K, DIV2K, TLOK from brucethemoose, some rock/stone images from ALSA, and many images provided by <@724494344270381097> (thanks!)",
-    "pretrainedModelG": "4x-UniScale-Balanced"
+    "pretrainedModelG": "4x-UniScale-Balanced",
+    "images": []
 }

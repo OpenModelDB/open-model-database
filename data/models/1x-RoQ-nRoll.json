@@ -30,5 +30,6 @@
     "trainingEpochs": 1793,
     "trainingHRSize": 32,
     "dataset": "Custom Dataset compressed with RoQ through ffmpeg. Consists of: Just Cause 3, Fallout 76, and Forza Horizon 3",
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

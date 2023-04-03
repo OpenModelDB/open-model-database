@@ -35,5 +35,6 @@
     "datasetSize": 58000,
     "pretrainedModelG": {
         "description": "realesrgan-x4plus"
-    }
+    },
+    "images": []
 }

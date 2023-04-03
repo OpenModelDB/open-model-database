@@ -33,5 +33,6 @@
     "trainingBatchSize": 10,
     "trainingHRSize": 128,
     "dataset": "Lots of faces, mostly real life but some anime.",
-    "pretrainedModelG": "4x-Faces-04-N"
+    "pretrainedModelG": "4x-Faces-04-N",
+    "images": []
 }

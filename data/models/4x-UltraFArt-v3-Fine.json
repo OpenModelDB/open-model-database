@@ -32,5 +32,6 @@
     "dataset": "ArtStation + Fatality Faces tiles.",
     "pretrainedModelG": {
         "description": "4x_UltraFArt"
-    }
+    },
+    "images": []
 }

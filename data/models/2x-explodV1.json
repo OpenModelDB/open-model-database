@@ -25,5 +25,6 @@
     ],
     "trainingIterations": 506951,
     "trainingEpochs": 83,
-    "dataset": "Animethemes"
+    "dataset": "Animethemes",
+    "images": []
 }

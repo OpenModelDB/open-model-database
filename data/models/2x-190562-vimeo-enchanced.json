@@ -25,5 +25,6 @@
     ],
     "trainingIterations": 190562,
     "dataset": "vimeo90k + my data",
-    "datasetSize": 100000
+    "datasetSize": 100000,
+    "images": []
 }

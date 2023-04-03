@@ -32,5 +32,6 @@
     "datasetSize": 73,
     "pretrainedModelG": {
         "description": "Manga109v2.pth"
-    }
+    },
+    "images": []
 }

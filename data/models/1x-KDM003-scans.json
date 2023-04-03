@@ -32,5 +32,6 @@
     "datasetSize": 11120,
     "pretrainedModelG": {
         "description": "Failed attempts based on ESRGAN_1x_JPEG_80to100"
-    }
+    },
+    "images": []
 }

@@ -28,5 +28,6 @@
         }
     ],
     "trainingIterations": 275000,
-    "pretrainedModelG": "4x-PSNR"
+    "pretrainedModelG": "4x-PSNR",
+    "images": []
 }

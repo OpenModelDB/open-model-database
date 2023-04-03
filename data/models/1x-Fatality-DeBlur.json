@@ -35,5 +35,6 @@
     "datasetSize": 41000,
     "pretrainedModelG": {
         "description": "1x_DeJpeg_Fatality_01_175000_G.pth"
-    }
+    },
+    "images": []
 }

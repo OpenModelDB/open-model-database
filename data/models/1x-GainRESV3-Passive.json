@@ -32,5 +32,6 @@
     "trainingHRSize": 32,
     "dataset": "5K resolution shots from paladins rendered by 200% for hr and 37.5%(1080p) for lr then downscaled to 1080",
     "datasetSize": 150,
-    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60"
+    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
+    "images": []
 }

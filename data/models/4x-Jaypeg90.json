@@ -33,5 +33,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "Flickr2K+Div2K, JPEG compressed with random quality from 85-95 and scaled with either cubic or NN scaling.",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

@@ -30,5 +30,6 @@
     "trainingIterations": 486000,
     "trainingBatchSize": 4,
     "trainingHRSize": 128,
-    "dataset": "Images from The Batman (series) HD WEB-DL."
+    "dataset": "Images from The Batman (series) HD WEB-DL.",
+    "images": []
 }

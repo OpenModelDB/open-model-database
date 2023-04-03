@@ -33,5 +33,6 @@
     "trainingHRSize": 128,
     "dataset": "Dragon Ball Level Sets",
     "datasetSize": 51000,
-    "pretrainedModelG": "4x-PSNR"
+    "pretrainedModelG": "4x-PSNR",
+    "images": []
 }

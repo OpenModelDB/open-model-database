@@ -32,5 +32,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "A few drawings from DA",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

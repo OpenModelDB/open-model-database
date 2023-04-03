@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "4x-PSNR"
+    "pretrainedModelG": "4x-PSNR",
+    "images": []
 }

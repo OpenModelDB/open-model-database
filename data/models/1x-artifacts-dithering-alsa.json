@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "1x-JPG-00-20-alsa"
+    "pretrainedModelG": "1x-JPG-00-20-alsa",
+    "images": []
 }

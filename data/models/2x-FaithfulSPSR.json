@@ -35,5 +35,6 @@
     "datasetSize": 2928,
     "pretrainedModelG": {
         "description": "2xFaithful32_1316"
-    }
+    },
+    "images": []
 }

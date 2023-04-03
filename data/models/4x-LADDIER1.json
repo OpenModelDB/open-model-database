@@ -33,5 +33,6 @@
     "dataset": "Mostly images of Nirvana some of other images",
     "pretrainedModelG": {
         "description": "RRDB_ESRGAN_x4.pth"
-    }
+    },
+    "images": []
 }

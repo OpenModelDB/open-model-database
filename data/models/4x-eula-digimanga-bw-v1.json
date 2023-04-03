@@ -31,5 +31,6 @@
     "trainingBatchSize": 4,
     "trainingHRSize": 128,
     "dataset": "600dpi digital manga. LR images repeated with different compression strengths, and gamma adjustments.",
-    "pretrainedModelG": "4x-PSNR"
+    "pretrainedModelG": "4x-PSNR",
+    "images": []
 }

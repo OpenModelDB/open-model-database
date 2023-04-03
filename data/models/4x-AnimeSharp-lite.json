@@ -32,5 +32,6 @@
     "trainingHRSize": 128,
     "dataset": "Used only thisanimedoesnotexist, upscaled with 4x-AnimeSharp",
     "datasetSize": 2700,
-    "pretrainedModelG": "2x-UniScale-CartoonRestore-lite"
+    "pretrainedModelG": "2x-UniScale-CartoonRestore-lite",
+    "images": []
 }

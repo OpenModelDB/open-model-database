@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "4x-BigFace"
+    "pretrainedModelG": "4x-BigFace",
+    "images": []
 }

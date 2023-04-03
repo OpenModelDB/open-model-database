@@ -28,5 +28,6 @@
         }
     ],
     "dataset": "Photos, Anime, and manga",
-    "pretrainedModelG": "1x-SaiyaJin-DeJpeg"
+    "pretrainedModelG": "1x-SaiyaJin-DeJpeg",
+    "images": []
 }

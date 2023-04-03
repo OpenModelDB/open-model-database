@@ -26,5 +26,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

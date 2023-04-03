@@ -31,5 +31,6 @@
     "trainingEpochs": 22,
     "trainingBatchSize": 12,
     "trainingHRSize": 64,
-    "dataset": "Spongebob season 11 and DIV2K, randomly downscaled and then converted to grayscale"
+    "dataset": "Spongebob season 11 and DIV2K, randomly downscaled and then converted to grayscale",
+    "images": []
 }
