@@ -7,7 +7,7 @@
         "cartoon"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Linework Cartoons",
-    "date": null,
+    "date": "2020-11-27",
     "architecture": "esrgan",
     "size": [
         "64nf",
@@ -28,6 +28,7 @@
             ]
         }
     ],
+    "trainingIterations": 110000,
     "dataset": "LR: Clone High DVD, HR: Re-illustrated Vectors from Frames",
     "pretrainedModelG": "4x-ESRGAN"
 }

@@ -6,7 +6,7 @@
         "game-textures"
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures\n\nMap / Old Paper with text",
-    "date": null,
+    "date": "2019-04-17",
     "architecture": "esrgan",
     "size": [
         "64nf",
@@ -25,5 +25,6 @@
                 "https://drive.google.com/file/d/1xPzqzTG5L6y5I0U3W0oQjexwGF5zfG32/view"
             ]
         }
-    ]
+    ],
+    "trainingIterations": 120000
 }

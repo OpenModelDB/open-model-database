@@ -7,7 +7,7 @@
         "cartoon"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nAmerican Dad",
-    "date": null,
+    "date": "2019-12-25",
     "architecture": "esrgan",
     "size": [
         "64nf",

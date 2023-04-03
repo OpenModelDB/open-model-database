@@ -7,7 +7,7 @@
         "restoration"
     ],
     "description": "Pretrained: Custom JPEG dataset\n\nModel I forgot to release. This doesn't totally remove JPEG artifacts, but it does a decent job at a fast rate. It seemingly does a better job of retaining detail than some other JPEG models. The model is incomplete, I need to train it further on compact rather than ESRGAN. This is just a temporary release",
-    "date": null,
+    "date": "2022-11-14",
     "architecture": "esrgan",
     "size": [
         "16nf",

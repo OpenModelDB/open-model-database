@@ -7,7 +7,7 @@
         "faces"
     ],
     "description": "Face De-blur - slightly out of focus / blurred images of faces. It is aimed at faces / hair",
-    "date": null,
+    "date": "2019-05-19",
     "architecture": "esrgan",
     "size": [
         "64nf",
@@ -27,5 +27,6 @@
             ]
         }
     ],
+    "trainingIterations": 275000,
     "pretrainedModelG": "4x-PSNR"
 }
