@@ -78,7 +78,11 @@ export default function Page({ modelId, modelData }: Props) {
                 <div className="grid h-full w-full grid-cols-3 gap-4 py-6">
                     {/* Left column */}
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
-                        <ImageCarousel images={model.images ?? []} />
+                        <ImageCarousel
+                            images={model.images ?? []}
+                            readonly={!editMode}
+                            onChange={(images) => updateModelProperty('images', images)}
+                        />
                         <div className="relative">
                             <div>
                                 <h1 className="m-0">
@@ -277,6 +281,8 @@ export default function Page({ modelId, modelData }: Props) {
                                                     'outputChannels',
                                                     // This is just messed up in the data
                                                     'pretrainedModelG',
+                                                    // Definitely don't want to show this
+                                                    'images',
                                                 ].includes(key)
                                         )
                                         .filter(([_key, value]) => !!value)
