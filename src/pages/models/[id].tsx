@@ -57,7 +57,8 @@ export default function Page({ modelId, modelData }: Props) {
 
     const { updateModelProperty } = useUpdateModel(webApi, modelId);
 
-    const firstImageValue = model.images?.[0];
+    const firstImageValue = model.images[0];
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
 
     return (
@@ -79,7 +80,7 @@ export default function Page({ modelId, modelData }: Props) {
                     {/* Left column */}
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
                         <ImageCarousel
-                            images={model.images ?? []}
+                            images={model.images}
                             readonly={!editMode}
                             onChange={(images) => updateModelProperty('images', images)}
                         />
