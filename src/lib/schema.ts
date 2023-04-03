@@ -29,7 +29,7 @@ export interface Model extends Partial<ExtraModelProperties> {
     inputChannels: number;
     outputChannels: number;
     resources: Resource[];
-    images?: Image[];
+    images: Image[];
 }
 interface ExtraModelProperties {
     trainingIterations: number;
