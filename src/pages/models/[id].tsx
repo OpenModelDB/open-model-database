@@ -96,8 +96,7 @@ export default function Page({ modelId, modelData }: Props) {
                                         onChange={(value) => updateModelProperty('name', value)}
                                     />
                                 </h1>
-                                <div className="m-0 flex w-full max-w-full flex-row gap-2">
-                                    by{' '}
+                                <div>
                                     <EditableUsers
                                         readonly={!editMode}
                                         users={authors}
