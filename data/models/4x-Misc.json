@@ -1,12 +1,12 @@
 {
-    "name": "Misc",
+    "name": "Realistic Misc",
     "author": "alsa",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "photo"
     ],
     "description": "Category: Realistic Photos\nPurpose: General Upscaler\nPretrained: Manga109Attempt\n\nThe Misc model is trained on various pictures shot by myself (Alsa), including bricks, stone, dirt, grass, plants, wood, bark, metal and a few others.",
-    "date": null,
+    "date": "2019-05-03",
     "architecture": "esrgan",
     "size": [
         "64nf",

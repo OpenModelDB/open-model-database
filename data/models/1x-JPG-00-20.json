@@ -7,7 +7,7 @@
         "restoration"
     ],
     "description": "Pretrained: Trained on Custom (CC0 Textures)",
-    "date": null,
+    "date": "2019-08-06",
     "architecture": "esrgan",
     "size": [
         "64nf",

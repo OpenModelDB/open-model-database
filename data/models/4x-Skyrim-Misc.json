@@ -6,7 +6,7 @@
         "game-textures"
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures\n\nSkyrim Diffuse Textures",
-    "date": null,
+    "date": "2019-03-24",
     "architecture": "esrgan",
     "size": [
         "64nf",
@@ -25,5 +25,6 @@
                 "https://drive.google.com/file/d/1RjVWNUFtVyz4ykqu6Pm9wmO03pPEBGqg/view"
             ]
         }
-    ]
+    ],
+    "trainingIterations": 110000
 }

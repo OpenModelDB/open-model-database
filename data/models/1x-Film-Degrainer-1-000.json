@@ -6,7 +6,7 @@
         "denoise"
     ],
     "description": "Remove film grain/noise",
-    "date": null,
+    "date": "2021-09-29",
     "architecture": "esrgan",
     "size": [
         "47nf",

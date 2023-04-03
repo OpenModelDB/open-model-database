@@ -6,7 +6,7 @@
         "pixel-art"
     ],
     "description": "Category: Alphas\nPurpose: Pixel Art with Tranparency / Alpha Channel",
-    "date": null,
+    "date": "2019-02-21",
     "architecture": "esrgan",
     "size": [
         "64nf",
@@ -26,5 +26,6 @@
             ]
         }
     ],
+    "trainingIterations": 105000,
     "dataset": "Alpha Channels from Skyrim"
 }

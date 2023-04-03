@@ -7,7 +7,7 @@
         "cartoon"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nComic / Drawings. Trained on Custom (Spider-Man) dataset",
-    "date": null,
+    "date": "2019-03-04",
     "architecture": "esrgan",
     "size": [
         "64nf",
@@ -26,5 +26,6 @@
                 "https://drive.google.com/open?id=1qjpxp8z4FGLZxieUDEVKd6FDum-8vpvJ"
             ]
         }
-    ]
+    ],
+    "trainingIterations": 115000
 }
