@@ -43,13 +43,6 @@ const renderTags = (tags: string[]) => (
     </div>
 );
 
-const dummyImages = [
-    {
-        LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
-        HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
-    },
-];
-
 export default function Page({ modelId, modelData }: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
