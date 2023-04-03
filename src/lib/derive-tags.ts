@@ -98,6 +98,20 @@ export const deriveTags = lazyWithWeakKey((model: Model): readonly TagId[] => {
     // platform
     tags.push(...getPlatformTags(model));
 
+    // helpers
+    if (!model.date) {
+        tags.push('helper:needs-date');
+    }
+    if (!model.description) {
+        tags.push('helper:needs-description');
+    }
+    if (typeof model.scale !== 'number') {
+        tags.push('helper:invalid-scale');
+    }
+    if (typeof model.inputChannels !== 'number' || typeof model.outputChannels !== 'number') {
+        tags.push('helper:invalid-channels');
+    }
+
     // sort tags to make sure that their order doesn't matter
     tags.sort();
     return tags as TagId[];
