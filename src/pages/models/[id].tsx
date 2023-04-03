@@ -103,6 +103,13 @@ export default function Page({ modelId, modelData }: Props) {
                                     />
                                 </div>
                             </div>
+                            <div className="mt-2 text-xs">
+                                <EditableTags
+                                    readonly={!editMode}
+                                    tags={model.tags}
+                                    onChange={(tags) => updateModelProperty('tags', tags)}
+                                />
+                            </div>
                             <div className="py-4">
                                 <EditableMarkdownContainer
                                     markdown={modelData.description}
@@ -215,21 +222,6 @@ export default function Page({ modelId, modelData }: Props) {
                                             <td className="px-6 py-4">{renderTags(model.size)}</td>
                                         </tr>
                                     )}
-                                    <tr>
-                                        <th
-                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
-                                            scope="row"
-                                        >
-                                            Tags
-                                        </th>
-                                        <td className="px-6 py-4">
-                                            <EditableTags
-                                                readonly={!editMode}
-                                                tags={model.tags}
-                                                onChange={(tags) => updateModelProperty('tags', tags)}
-                                            />
-                                        </td>
-                                    </tr>
                                     <tr>
                                         <th
                                             className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
