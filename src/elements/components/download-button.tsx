@@ -150,7 +150,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                                                     <div className="m-0 h-full align-middle">{host}</div>
                                                 </div>
                                             ) : (
-                                                <Logo className="-mb-2" />
+                                                <Logo />
                                             )}
                                             {!readonly && (
                                                 <button
