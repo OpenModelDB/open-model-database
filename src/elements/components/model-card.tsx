@@ -25,7 +25,9 @@ export const ModelCard = ({ id, model }: ModelCardProps) => {
     const description = fixDescription(model.description, model.scale);
 
     return (
-        <div className={`${style.modelCard} border-gray-300 shadow-lg hover:shadow-xl dark:border-gray-700 `}>
+        <div
+            className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900`}
+        >
             <div className={style.inner}>
                 {/* Arch tag on image */}
                 <div className={style.topTags}>
@@ -39,7 +41,7 @@ export const ModelCard = ({ id, model }: ModelCardProps) => {
                     tabIndex={-1}
                 />
 
-                <div className="relative inset-x-0 bottom-0 bg-white p-3 pt-2 dark:bg-fade-900">
+                <div className={style.details}>
                     <Link
                         className="block text-xl font-bold text-gray-800 dark:text-gray-100"
                         href={`/models/${id}`}
