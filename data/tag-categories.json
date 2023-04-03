@@ -122,5 +122,18 @@
             "license:no-license",
             "license:unknown"
         ]
+    },
+    "helpers": {
+        "name": "Helpers",
+        "description": "A collections of helper tags that mark missing data or models that are interesting for maintainers.",
+        "order": 8,
+        "simple": false,
+        "editOnly": true,
+        "tags": [
+            "helper:needs-date",
+            "helper:needs-description",
+            "helper:invalid-scale",
+            "helper:invalid-channels"
+        ]
     }
 }

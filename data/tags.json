@@ -155,6 +155,22 @@
         "name": "RGBA",
         "description": "The model upscales images with transparency."
     },
+    "helper:invalid-channels": {
+        "name": "Invalid channels",
+        "description": "The number of input or output channels of the model is not valid."
+    },
+    "helper:invalid-scale": {
+        "name": "Invalid scale",
+        "description": "The scale of the model is not valid."
+    },
+    "helper:needs-date": {
+        "name": "Needs date",
+        "description": "The model has no publish date."
+    },
+    "helper:needs-description": {
+        "name": "Needs description",
+        "description": "The model has no description."
+    },
     "input:audio": {
         "name": "Audio",
         "description": ""
