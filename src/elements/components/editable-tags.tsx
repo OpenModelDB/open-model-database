@@ -52,7 +52,6 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
 
     const [position, setPosition] = useState<'left' | 'right'>('left');
     const updatePosition = (element: HTMLElement): void => {
-        console.log(element);
         const buttonX = element.getBoundingClientRect().x;
         const viewportWidth = document.documentElement.clientWidth;
         setPosition(buttonX + 400 < viewportWidth ? 'left' : 'right');
@@ -92,7 +91,7 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
                             }
 
                             return (
-                                <>
+                                <Fragment key={categoryId}>
                                     <h3>{category.name}</h3>
                                     <div>
                                         {manual.map((tagId) => {
@@ -123,7 +122,7 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
                                             );
                                         })}
                                     </div>
-                                </>
+                                </Fragment>
                             );
                         })}
                     </div>
