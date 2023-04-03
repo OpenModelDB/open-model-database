@@ -4,6 +4,7 @@
     "license": "WTFPL",
     "tags": [
         "deblur",
+        "denoise",
         "pixel-art"
     ],
     "description": "Pretrained: 4xPSNR\n\nTexture retaining denoiser and sharpener for digital artwork",

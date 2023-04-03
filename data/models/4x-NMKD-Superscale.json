@@ -3,7 +3,9 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
-        "photo"
+        "denoise",
+        "photo",
+        "restoration"
     ],
     "description": "Category: Realistic Photos\nPurpose: Clean Real-World Images\n\nUpscaling of realistic images/photos with noise and compression artifacts",
     "date": "2020-07-22",

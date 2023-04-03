@@ -4,7 +4,10 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "dehalo",
+        "denoise",
+        "restoration"
     ],
     "description": "upscaling old anime. help to denoise and find lines and dehalo",
     "date": "2020-12-09",

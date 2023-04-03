@@ -2,7 +2,9 @@
     "name": "Vimeo Enchanced",
     "author": "hubert",
     "license": "MIT",
-    "tags": [],
+    "tags": [
+        "pretrained"
+    ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: RL videos - interpolation",
     "date": "2021-07-13",
     "architecture": "cain",

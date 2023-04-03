@@ -4,6 +4,7 @@
     "license": "WTFPL",
     "tags": [
         "dds",
+        "game-textures",
         "restoration"
     ],
     "description": "To retain details while removing artifacts caused by dxt compression on textures",

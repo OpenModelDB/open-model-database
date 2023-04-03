@@ -4,6 +4,7 @@
     "license": "WTFPL",
     "tags": [
         "dds",
+        "game-textures",
         "restoration"
     ],
     "description": "Removing compression artifacts from DXT1 compressed textures. This model was created to remove DXT1 compression artifacts from textures imported into the Source Engine. Compressed textures in the engine sometimes have a green-tint which this model also corrects. The data for this model contained a good mix of diffuse textures and normal maps which means this model is pretty good at removing compression from normals as well. Creating this model was a real learning experience for me and I hope someone finds a good use for it.",
