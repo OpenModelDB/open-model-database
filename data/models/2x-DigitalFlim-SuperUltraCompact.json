@@ -2,7 +2,11 @@
     "name": "DigitalFlim SuperUltraCompact",
     "author": "zarxrax",
     "license": "WTFPL",
-    "tags": [],
+    "tags": [
+        "anime",
+        "cartoon",
+        "denoise"
+    ],
     "description": "Category: Digital Animation\nPurpose: Animation\n\nThis was trained on the dataset that OptimusPrimal used for his DigitalFilm models. This model cleans up the image removing some noise while upscaling. This model is very fast, running around 200x the speed of a standard ESRGAN model on my system. This is primarily a proof of concept for how fast Real-ESRGAN models can get while still producing nice results.",
     "date": "2022-05-14",
     "architecture": "compact",

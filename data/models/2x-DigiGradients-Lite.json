@@ -2,7 +2,9 @@
     "name": "DigiGradients Lite",
     "author": "saurusx",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "debanding"
+    ],
     "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nA very focused model meant for upscaling the TMNT 2003 DVDs. Degradations were added via AVISynth in order to match the video on the TMNT 2003 DVDs to correct the source problems. Problems corrected include aliased red chroma, chroma vertical blur, bad deinterlacing, banding, compression \"grain\", and poor animation line detail. The AVS scripts for the LR's were run through HCEnc to get authentic low bit rate MPEG-2 artifacts for fixing. By design, the final model gives a very digital-looking result and does not do a good job of retaining textures as the style of TMNT 2003 is all flats and gradients.",
     "date": "2022-08-24",
     "architecture": "esrgan",

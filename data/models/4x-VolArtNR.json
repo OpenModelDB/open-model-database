@@ -3,6 +3,7 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "denoise",
         "game-textures"
     ],
     "description": "Category: Video Game Textures\nPurpose: Game textures/Art\n\nThis model upscales artwork for the game Volfoss (2001). The model peaked in quality very quickly. The NR model removes most noise, but has the downside of removing transparent portions. Use the main model in most cases.",

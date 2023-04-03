@@ -3,7 +3,9 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "general-upscaler"
+        "general-upscaler",
+        "jpeg",
+        "restoration"
     ],
     "description": "Pretrained: 4xESRGAN\n\nThis is my best model yet! It generates lots and lots of detail and leaves a nice texture on images. It works on most images, whether compressed or not. It does work best on JPEG compression though, as that's mostly what it was trained on. It has the ability to restore highly compressed images as well! If you want a more balanced output, check out the UltraMix Collection down below. It's a bunch of interpolated models based around UltraSharp and my other models",
     "date": "2021-10-27",
