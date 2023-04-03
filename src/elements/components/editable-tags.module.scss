@@ -1,0 +1,46 @@
+.tags {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
+}
+
+.tag,
+.editButton,
+.menuItem {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font: inherit;
+    font-weight: 500;
+    border: none;
+}
+
+.editButton {
+    cursor: pointer;
+}
+
+.editContainer {
+    padding: 0.5rem 0.75rem;
+
+    h3 {
+        margin: 0.5rem 0;
+    }
+
+    h3:first-child {
+        margin-top: 0;
+    }
+
+    button {
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+.menuItem {
+    cursor: pointer;
+
+    &[aria-disabled] {
+        opacity: 0.5;
+        user-select: none;
+        cursor: default;
+    }
+}
