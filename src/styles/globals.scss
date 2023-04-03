@@ -9,6 +9,7 @@
 
 @mixin theme-colors($t) {
     --accent: #{t($t, $accent-600, $accent-500)};
+    --accent-2: #2d2d59;
 
     --page-bg: #{t($t, white, $fade-900)};
 
@@ -25,6 +26,7 @@
     --logo-jelly: #{t($t, white, white)};
     --logo-circle: #{t($t, $fade-900, black)};
     --logo-accent: var(--accent);
+    --logo-accent-2: var(--accent-2);
 
     --primary-bg: var(--accent);
     --primary-bg-hover: #{t($t, $accent-500, $accent-600)};
