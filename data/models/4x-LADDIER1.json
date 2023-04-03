@@ -3,6 +3,7 @@
     "author": "alexander-syring",
     "license": null,
     "tags": [
+        "deblur",
         "denoise"
     ],
     "description": "Remove noise, grain, box blur, lens blur and gaussian blur and increase overall image quality.",

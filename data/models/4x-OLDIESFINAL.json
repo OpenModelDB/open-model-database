@@ -4,7 +4,8 @@
     "license": "WTFPL",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "denoise"
     ],
     "description": "i made this model to upscale old anime and denoise.",
     "date": "2020-08-16",

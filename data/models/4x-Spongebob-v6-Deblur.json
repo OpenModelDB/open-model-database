@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "deblur"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nAfter not being entirely happy with the main Spongebob v6 model, I trained a new one with blurring OTF options and two different downscale types. This one is much better in my opinion.",
     "date": "2019-11-08",

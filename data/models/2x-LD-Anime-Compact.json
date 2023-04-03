@@ -7,7 +7,10 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "dehalo",
+        "denoise",
+        "restoration"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nI trained Skr's great LD-Anime model on compact architecture. It upscales while fixing numerous video problems, including: noise/grain, compression artifacts, rainbows, dot crawl, halos and color bleed. This compact version may look slightly worse than Skr's original model, but runs significantly faster and also retains the correct colors better than the original model did.",
     "date": "2022-12-22",

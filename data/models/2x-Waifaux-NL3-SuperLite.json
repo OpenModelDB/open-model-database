@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "denoise"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: \n\nTrained this model to see how it would work trying to essentially get the same results as Waifu2x but with ESRGAN",
     "date": "2021-02-23",

@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "dedither"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures",
     "date": "2019-11-02",
