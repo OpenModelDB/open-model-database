@@ -1,52 +1,28 @@
 import { useState } from 'react';
-import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
+import { Image } from '../../lib/schema';
 import { joinClasses } from '../../lib/util';
+import { ImageCarouselImage } from './image-carousel-image';
 
 type ImageCarouselProps = {
-    images: {
-        LR: string;
-        HR: string;
-    }[];
+    images: Image[];
 };
 
 export const ImageCarousel = ({ images }: ImageCarouselProps) => {
     const [imageIndex, setImageIndex] = useState(0);
 
+    const selectedImage = images[imageIndex];
+
     return (
         <div className="relative rounded-lg">
             <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
-                <ReactCompareSlider
-                    className="w-full rounded-lg"
-                    handle={
-                        <ReactCompareSliderHandle
-                            buttonStyle={{
-                                height: '48px',
-                                width: '12px',
-                                borderRadius: '1rem',
-                                backdropFilter: undefined,
-                                background: 'white',
-                                border: 0,
-                                color: 'transparent',
-                                overflow: 'hidden',
-                            }}
-                        />
-                    }
-                    itemOne={
-                        <ReactCompareSliderImage
-                            alt="LR"
-                            className="rendering-pixelated h-full w-full object-scale-down"
-                            src={images[imageIndex].LR}
-                        />
-                    }
-                    itemTwo={
-                        <ReactCompareSliderImage
-                            alt="HR"
-                            className="rendering-pixelated h-full w-full  object-scale-down"
-                            src={images[imageIndex].HR}
-                        />
-                    }
-                />
+                {selectedImage ? (
+                    <ImageCarouselImage image={selectedImage} />
+                ) : (
+                    <div className="flex h-full w-full items-center align-middle">
+                        <div className="m-auto">This model does not have preview images.</div>
+                    </div>
+                )}
             </div>
             <div className="space-between flex w-full py-2">
                 <button
@@ -68,8 +44,8 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
                                     ? 'border-accent-500'
                                     : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
                             )}
-                            key={image.LR + image.HR}
-                            src={image.LR}
+                            key={image.type === 'paired' ? image.SR : image.url}
+                            src={image.type === 'paired' ? image.SR : image.url}
                             onClick={() => {
                                 setImageIndex(index);
                             }}

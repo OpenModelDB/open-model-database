@@ -29,6 +29,7 @@ export interface Model extends Partial<ExtraModelProperties> {
     inputChannels: number;
     outputChannels: number;
     resources: Resource[];
+    images?: Image[];
 }
 interface ExtraModelProperties {
     trainingIterations: number;
@@ -45,6 +46,7 @@ interface ExtraModelProperties {
 export type ModelReference = ModelId | { description: MarkDownString };
 
 export type Resource = PthFile | OnnxFile;
+
 interface SingleFile {
     size: number | null;
     sha256: string | null;
@@ -58,6 +60,21 @@ interface PthFile extends SingleFile {
 interface OnnxFile extends SingleFile {
     type: 'onnx';
     platform: 'onnx';
+}
+
+export type Image = PairedImage | StandaloneImage;
+
+interface PairedImage {
+    type: 'paired';
+    LR: string;
+    SR: string;
+    thumbnail: string | null;
+}
+
+interface StandaloneImage {
+    type: 'standalone';
+    url: string;
+    thumbnail: string | null;
 }
 
 export interface User {

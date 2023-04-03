@@ -18,7 +18,7 @@ import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
-import { asArray, getColorMode, joinListString } from '../../lib/util';
+import { asArray, getColorMode, getPreviewImage, joinListString } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
@@ -64,11 +64,14 @@ export default function Page({ modelId, modelData }: Props) {
 
     const { updateModelProperty } = useUpdateModel(webApi, modelId);
 
+    const firstImageValue = model.images?.[0];
+    const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
+
     return (
         <>
             <HeadCommon
                 description={`A ${model.scale}x ${archName} model by ${authorsJoined}.`}
-                image={dummyImages[0].HR}
+                image={previewImage}
                 title={model.name}
             />
             <Head>
@@ -82,7 +85,7 @@ export default function Page({ modelId, modelData }: Props) {
                 <div className="grid h-full w-full grid-cols-3 gap-4 py-6">
                     {/* Left column */}
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
-                        <ImageCarousel images={dummyImages} />
+                        <ImageCarousel images={model.images ?? []} />
                         <div className="relative">
                             <div>
                                 <h1 className="m-0">

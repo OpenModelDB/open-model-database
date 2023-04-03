@@ -26,5 +26,18 @@
                 "https://mega.nz/#!uhAVEaAA!qfwIQ44Ba3rXMAb2-M3aM3zFBCwzmyQ64IO_0O-csJE"
             ]
         }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/LR/baboon.png",
+            "SR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/results/baboon_ESRGAN.png",
+            "thumbnail": null
+        },
+        {
+            "type": "standalone",
+            "url": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/figures/baboon.jpg",
+            "thumbnail": null
+        }
     ]
 }
