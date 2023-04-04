@@ -101,6 +101,8 @@ export const deriveTags = lazyWithWeakKey((model: Model): readonly TagId[] => {
     // helpers
     if (!model.date) {
         tags.push('helper:needs-date');
+    } else if (!/^\d{4}-(?:0[1-9]|1[012])-(?:0[1-9]|[12][0-9]|3[01])$/.test(model.date)) {
+        tags.push('helper:invalid-date');
     }
     if (!model.description) {
         tags.push('helper:needs-description');
