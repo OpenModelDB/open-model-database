@@ -16,7 +16,7 @@ import { useCurrent } from '../../lib/hooks/use-current';
 import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
+import { ArchId, Image, Model, ModelId, Resource } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode, getPreviewImage, joinListString } from '../../lib/util';
 

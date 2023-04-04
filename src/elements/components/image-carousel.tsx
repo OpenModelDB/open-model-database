@@ -22,12 +22,11 @@ type ImageCarouselProps = {
 export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps) => {
     const [imageIndex, setImageIndex] = useState(0);
 
-    const selectedImage = images[imageIndex];
+    const selectedImage = images[imageIndex] as Image | undefined;
 
     return (
         <div className="relative rounded-lg">
             <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
-                {/* eslint-disable-next-line @typescript-eslint/no-unnecessary-condition */}
                 {selectedImage ? (
                     <ImageCarouselImage image={selectedImage} />
                 ) : (
