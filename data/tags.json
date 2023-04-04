@@ -159,6 +159,10 @@
         "name": "Invalid channels",
         "description": "The number of input or output channels of the model is not valid."
     },
+    "helper:invalid-date": {
+        "name": "Invalid date",
+        "description": "The model has a date, but it's invalid."
+    },
     "helper:invalid-scale": {
         "name": "Invalid scale",
         "description": "The scale of the model is not valid."
