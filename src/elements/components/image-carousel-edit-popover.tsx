@@ -52,10 +52,10 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
                 type="button"
                 onClick={() => {
                     if (!lr) {
-                        alert('LR is required');
+                        return alert('LR is required');
                     }
                     if (!sr) {
-                        alert('SR is required');
+                        return alert('SR is required');
                     }
                     if (onChange) {
                         onChange({
@@ -111,7 +111,7 @@ function StandaloneImageMenu({
                 type="button"
                 onClick={() => {
                     if (!url) {
-                        alert('URL is required');
+                        return alert('URL is required');
                     }
                     if (onChange) {
                         onChange({
