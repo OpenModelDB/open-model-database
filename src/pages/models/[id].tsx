@@ -2,8 +2,10 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
+import { AiFillEdit } from 'react-icons/ai';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
+import { EditResourceButton } from '../../elements/components/download-button-edit-popover';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { EditableTags } from '../../elements/components/editable-tags';
@@ -122,7 +124,7 @@ export default function Page({ modelId, modelData }: Props) {
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
                         <div className="mb-2 flex w-full flex-col gap-2">
-                            {model.resources.map((resource) => {
+                            {model.resources.map((resource, index) => {
                                 return (
                                     <div
                                         className="flex w-full flex-row gap-2"
@@ -144,21 +146,43 @@ export default function Page({ modelId, modelData }: Props) {
                                             }}
                                         />
                                         {editMode && (
-                                            <button
-                                                className="cursor-pointer"
-                                                onClick={() => {
-                                                    const newResources = model.resources.filter(
-                                                        (r) => r.sha256 !== resource.sha256
-                                                    );
-                                                    updateModelProperty('resources', newResources);
-                                                }}
-                                            >
-                                                <BsFillTrashFill />
-                                            </button>
+                                            <>
+                                                <button
+                                                    className="cursor-pointer"
+                                                    onClick={() => {
+                                                        const newResources = model.resources.filter(
+                                                            (r) => r.sha256 !== resource.sha256
+                                                        );
+                                                        updateModelProperty('resources', newResources);
+                                                    }}
+                                                >
+                                                    <BsFillTrashFill />
+                                                </button>
+                                                <EditResourceButton
+                                                    resource={resource}
+                                                    onChange={(newResource) => {
+                                                        const newResources = model.resources;
+                                                        newResources[index] = newResource;
+                                                        updateModelProperty('resources', newResources);
+                                                    }}
+                                                >
+                                                    <AiFillEdit />
+                                                </EditResourceButton>
+                                            </>
                                         )}
                                     </div>
                                 );
                             })}
+                            {editMode && (
+                                <EditResourceButton
+                                    onChange={(newResource) => {
+                                        const newResources = [...model.resources, newResource];
+                                        updateModelProperty('resources', newResources);
+                                    }}
+                                >
+                                    Add Resource
+                                </EditResourceButton>
+                            )}
                         </div>
 
                         <div className="relative table-auto rounded-lg border-fade-700">
