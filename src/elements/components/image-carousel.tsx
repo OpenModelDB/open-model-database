@@ -80,20 +80,24 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                                     </button>
                                 </div>
                             )}
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                alt="Thumbnail"
+                            <div
                                 className={joinClasses(
-                                    'border-3 m-0 h-12 w-12 cursor-pointer rounded-lg border-solid p-0 transition duration-100 ease-in-out',
+                                    'border-3 m-0 flex h-12 w-12 cursor-pointer rounded-lg border-solid p-0 transition duration-100 ease-in-out',
                                     index === imageIndex
                                         ? 'border-accent-500'
                                         : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
                                 )}
-                                src={image.type === 'paired' ? image.SR : image.url}
                                 onClick={() => {
                                     setImageIndex(index);
                                 }}
-                            />
+                            >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    alt="Thumbnail"
+                                    className="m-auto h-auto max-h-full w-auto max-w-full"
+                                    src={image.type === 'paired' ? image.SR : image.url}
+                                />
+                            </div>
                             {!readonly && (
                                 <div className="flex flex-row items-center">
                                     <button
