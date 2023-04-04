@@ -33,5 +33,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "Photos - DIV2K+Flickr2K with different types of dithering applied",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

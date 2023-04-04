@@ -32,5 +32,6 @@
     "trainingHRSize": 64,
     "trainingOTF": false,
     "dataset": "Images from DIV2K and random anime drawings",
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

@@ -26,5 +26,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "1x-ISO-denoise-v1"
+    "pretrainedModelG": "1x-ISO-denoise-v1",
+    "images": []
 }

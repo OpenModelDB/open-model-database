@@ -31,5 +31,6 @@
     "trainingEpochs": 21,
     "trainingBatchSize": 1,
     "trainingHRSize": 128,
-    "datasetSize": 8000
+    "datasetSize": 8000,
+    "images": []
 }

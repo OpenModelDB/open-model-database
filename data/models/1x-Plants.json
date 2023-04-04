@@ -30,5 +30,6 @@
     "trainingHRSize": 128,
     "dataset": "plant.zip from OutdoorSceneTrain_v2 upscaled 200% with Preserve Details 2.0",
     "datasetSize": 1036,
-    "pretrainedModelG": "1x-NMKD-h264Texturize"
+    "pretrainedModelG": "1x-NMKD-h264Texturize",
+    "images": []
 }

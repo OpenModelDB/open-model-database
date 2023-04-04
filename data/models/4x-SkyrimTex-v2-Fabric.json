@@ -31,5 +31,6 @@
     "trainingHRSize": 64,
     "dataset": "Extracted Skyrim Textures, HRs processed with BC1-Smooth2. IRL images of rocks and grass",
     "datasetSize": 485,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

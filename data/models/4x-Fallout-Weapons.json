@@ -31,5 +31,6 @@
     "trainingBatchSize": 13,
     "trainingHRSize": 128,
     "datasetSize": 531,
-    "pretrainedModelG": "4x-Manga109Attempt"
+    "pretrainedModelG": "4x-Manga109Attempt",
+    "images": []
 }

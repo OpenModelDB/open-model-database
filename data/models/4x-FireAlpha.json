@@ -26,5 +26,6 @@
     ],
     "trainingIterations": 1285000,
     "trainingHRSize": 128,
-    "dataset": "Fire Emblem artwork with transparency"
+    "dataset": "Fire Emblem artwork with transparency",
+    "images": []
 }

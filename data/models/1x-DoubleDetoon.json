@@ -31,5 +31,6 @@
     "trainingOTF": true,
     "dataset": "Images from reddit, cartoonized using https://github.com/SystemErrorWang/White-box-Cartoonization",
     "datasetSize": 6604,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

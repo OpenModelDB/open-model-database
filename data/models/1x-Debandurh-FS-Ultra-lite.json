@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "dataset": "Anime, real life, manga"
+    "dataset": "Anime, real life, manga",
+    "images": []
 }

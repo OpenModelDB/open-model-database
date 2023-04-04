@@ -36,5 +36,6 @@
     "datasetSize": 400,
     "pretrainedModelG": {
         "description": "50/50 Interpolation of DIV2K-Lite and SpongeBC1-Lite"
-    }
+    },
+    "images": []
 }

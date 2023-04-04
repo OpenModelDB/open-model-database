@@ -1,4 +1,4 @@
-import { TagCategory, TagCategoryId, TagId } from './schema';
+import { Image, TagCategory, TagCategoryId, TagId } from './schema';
 
 export const EMPTY_ARRAY: readonly never[] = [];
 export const EMPTY_SET: ReadonlySet<never> = new Set();
@@ -187,5 +187,18 @@ export function joinListString(elements: readonly string[], conjunction: 'and' |
                 return prefix + e;
             })
             .join('');
+    }
+}
+
+export function getPreviewImage(image: Image) {
+    switch (image.type) {
+        case 'paired':
+            return image.thumbnail || image.SR;
+            break;
+        case 'standalone':
+            return image.thumbnail || image.url;
+            break;
+        default:
+            return undefined;
     }
 }

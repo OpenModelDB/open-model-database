@@ -30,5 +30,6 @@
     "trainingBatchSize": 16,
     "trainingHRSize": 128,
     "dataset": "Alpha channels from high resolution pokemon drawings and sprites, as well as 256x items from Sphax PureBDCraft. Randomly downscaled with a few different OTF filters.",
-    "datasetSize": 4853
+    "datasetSize": 4853,
+    "images": []
 }

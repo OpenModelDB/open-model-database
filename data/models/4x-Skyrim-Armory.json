@@ -26,5 +26,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "4x-Manga109Attempt"
+    "pretrainedModelG": "4x-Manga109Attempt",
+    "images": []
 }

@@ -31,5 +31,6 @@
     "trainingHRSize": 256,
     "dataset": "Full frames of Dragon Prince as HQ and for LR frames compressed with YouTube compression",
     "datasetSize": 1800,
-    "pretrainedModelG": "2x-SHARP-ANIME-V2"
+    "pretrainedModelG": "2x-SHARP-ANIME-V2",
+    "images": []
 }

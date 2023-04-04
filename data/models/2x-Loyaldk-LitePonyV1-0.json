@@ -33,5 +33,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "All MLP: FiM Episodes using scene detection frame grabbing as well as selected Prores4444 content https://shimmermare.com/4k-pony-project. Ran 2 separate datasets. LR's Include H264 Compression, Halo, Sharpening Halo/Fringe, Gaussian Blur, Dot crawl, Uniform Noise, Rainbow.",
-    "pretrainedModelG": "2x-ESRGAN"
+    "pretrainedModelG": "2x-ESRGAN",
+    "images": []
 }

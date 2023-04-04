@@ -29,5 +29,6 @@
     "trainingIterations": 175000,
     "trainingBatchSize": 3,
     "dataset": "Custom - Typography images from Flickr",
-    "pretrainedModelG": "8x-ESRGAN"
+    "pretrainedModelG": "8x-ESRGAN",
+    "images": []
 }

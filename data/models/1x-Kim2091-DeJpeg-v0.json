@@ -29,5 +29,6 @@
         }
     ],
     "trainingIterations": 230000,
-    "dataset": "Custom JPEG dataset"
+    "dataset": "Custom JPEG dataset",
+    "images": []
 }

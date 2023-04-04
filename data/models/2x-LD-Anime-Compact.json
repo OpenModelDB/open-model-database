@@ -38,5 +38,6 @@
     "trainingHRSize": 192,
     "dataset": "DVD frames upscaled using Skr's LD-Anime model and color corrected.",
     "datasetSize": 1720,
-    "pretrainedModelG": "2x-Compact-Pretrain"
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": []
 }

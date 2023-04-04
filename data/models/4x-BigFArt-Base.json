@@ -26,5 +26,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "4x-Face-Focus"
+    "pretrainedModelG": "4x-Face-Focus",
+    "images": []
 }

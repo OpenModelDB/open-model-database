@@ -34,5 +34,6 @@
     "datasetSize": 24123,
     "pretrainedModelG": {
         "description": "8xBoyMeBob (unreleased) which used 8xESRGAN"
-    }
+    },
+    "images": []
 }

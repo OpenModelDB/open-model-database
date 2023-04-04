@@ -30,5 +30,6 @@
     "trainingBatchSize": 4,
     "trainingHRSize": 256,
     "dataset": "DB/DBZ/DBGT Dragon Box DVD frames, upscaled with various models such as DigitalFrames2.0, FilmFrames677k, SharpAnimeV2, and manually edited to only show the best parts of each model. I call it image stacking.",
-    "datasetSize": 561
+    "datasetSize": 561,
+    "images": []
 }

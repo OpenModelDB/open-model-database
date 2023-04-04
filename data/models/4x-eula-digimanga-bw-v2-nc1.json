@@ -32,5 +32,6 @@
     "trainingHRSize": 384,
     "dataset": "v1's dataset + real-life LRs upscaled with v1",
     "datasetSize": 19019,
-    "pretrainedModelG": "4x-eula-digimanga-bw-v1"
+    "pretrainedModelG": "4x-eula-digimanga-bw-v1",
+    "images": []
 }

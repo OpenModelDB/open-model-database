@@ -34,5 +34,6 @@
     "trainingHRSize": 64,
     "dataset": "Spongebob Season 11 frames, downscaled 50% with NN for the HR, and 50% NN again for the LR",
     "datasetSize": 24110,
-    "pretrainedModelG": "2x-Faithful-Lite"
+    "pretrainedModelG": "2x-Faithful-Lite",
+    "images": []
 }

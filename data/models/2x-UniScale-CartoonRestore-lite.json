@@ -37,5 +37,6 @@
     "dataset": "Custom Dataset consisting of lossless 4k frames from Metal Arms: Glitch in the System, Just Cause 3, Dirt 3, Forza Horizon 3, Sleeping Dogs, ATLA DVD, and self-edited photos from SignatureEdits",
     "pretrainedModelG": {
         "description": "4x-MMScale (Yes, 4x. mistakes were made)"
-    }
+    },
+    "images": []
 }

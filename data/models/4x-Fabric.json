@@ -32,5 +32,6 @@
     "trainingHRSize": 64,
     "dataset": "Custom Dataset consisting of edited RAW images taken by myself. Macro shots of fabrics and various other materials.",
     "datasetSize": 346,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

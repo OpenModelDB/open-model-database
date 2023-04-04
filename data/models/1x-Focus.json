@@ -31,5 +31,6 @@
     "trainingHRSize": 64,
     "dataset": "The UniScale Dataset + My Fabric dataset",
     "datasetSize": 3067,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

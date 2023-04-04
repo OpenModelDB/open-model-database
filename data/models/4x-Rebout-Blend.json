@@ -27,5 +27,6 @@
         }
     ],
     "dataset": "Custom prepared sprites from kof 94 rebout, which with gradients blending",
-    "pretrainedModelG": "4x-detoon"
+    "pretrainedModelG": "4x-detoon",
+    "images": []
 }

@@ -27,5 +27,6 @@
     "trainingIterations": 88000,
     "trainingHRSize": 128,
     "dataset": "My own screenshots",
-    "pretrainedModelG": "4x-ScreenBooster-V2"
+    "pretrainedModelG": "4x-ScreenBooster-V2",
+    "images": []
 }

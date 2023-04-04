@@ -31,5 +31,6 @@
     "trainingOTF": false,
     "dataset": "1080P BD anime frames",
     "datasetSize": 20000,
-    "pretrainedModelG": "4x-Fatal-Anime"
+    "pretrainedModelG": "4x-Fatal-Anime",
+    "images": []
 }

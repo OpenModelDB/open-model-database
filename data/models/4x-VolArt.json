@@ -31,5 +31,6 @@
     "trainingHRSize": 64,
     "dataset": "Artwork by Yasushi Nirasawa, provided by <@295426806188736523>",
     "datasetSize": 526,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

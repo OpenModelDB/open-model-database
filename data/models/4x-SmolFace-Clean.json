@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "4x-NMKD-UltraYandere"
+    "pretrainedModelG": "4x-NMKD-UltraYandere",
+    "images": []
 }

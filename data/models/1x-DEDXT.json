@@ -34,5 +34,6 @@
     "trainingHRSize": 64,
     "dataset": "Textures from paladins",
     "datasetSize": 150,
-    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60"
+    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
+    "images": []
 }

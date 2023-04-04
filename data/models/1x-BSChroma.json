@@ -29,5 +29,6 @@
     "trainingBatchSize": 15,
     "trainingHRSize": 128,
     "dataset": "Random Images, LRs were converted to Lab color, then had their a and b channel blurred with a gaussian function (random radius: 0.5 - 5.0).",
-    "datasetSize": 45045
+    "datasetSize": 45045,
+    "images": []
 }

@@ -26,5 +26,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "8x-HugePeeps-v1"
+    "pretrainedModelG": "8x-HugePeeps-v1",
+    "images": []
 }

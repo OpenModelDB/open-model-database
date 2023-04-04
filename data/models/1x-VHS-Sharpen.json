@@ -32,5 +32,6 @@
     "trainingHRSize": 64,
     "dataset": "4K Blu-Ray movie stills, de-grained and downscaled, and ran through a VCR onto a VHS.",
     "datasetSize": 9384,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

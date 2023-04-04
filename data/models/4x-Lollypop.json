@@ -34,5 +34,6 @@
     "trainingOTF": true,
     "dataset": "prerendered manga images",
     "datasetSize": 109564,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

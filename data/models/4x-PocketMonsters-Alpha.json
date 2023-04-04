@@ -32,5 +32,6 @@
     "trainingHRSize": 128,
     "dataset": "Pokemon drawings, vector art, and Pokemon Home 3D render sprites, downscaled to 256x256 for HR and downscaled with nearest neighbor for LR.",
     "datasetSize": 4415,
-    "pretrainedModelG": "4x-FireAlpha"
+    "pretrainedModelG": "4x-FireAlpha",
+    "images": []
 }

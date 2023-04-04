@@ -27,5 +27,6 @@
     ],
     "pretrainedModelG": {
         "description": "Previous attempt"
-    }
+    },
+    "images": []
 }

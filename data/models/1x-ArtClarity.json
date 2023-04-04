@@ -32,5 +32,6 @@
     "trainingOTF": true,
     "dataset": "ArtStation illustrations, then interpolated with some other 1x models",
     "datasetSize": 800,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

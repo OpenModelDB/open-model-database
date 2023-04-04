@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "trainingIterations": 115000
+    "trainingIterations": 115000,
+    "images": []
 }

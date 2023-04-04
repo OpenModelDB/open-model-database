@@ -32,5 +32,6 @@
     "trainingHRSize": 128,
     "dataset": "Textures from A Hat in Time, Kingdom Hearts 3 and World of Final Fantasy. 21.9k to 70k textures, up to 1024x1024 per texture.",
     "datasetSize": 21900,
-    "pretrainedModelG": "4x-GameAI-1-0"
+    "pretrainedModelG": "4x-GameAI-1-0",
+    "images": []
 }

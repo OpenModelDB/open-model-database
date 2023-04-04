@@ -33,5 +33,6 @@
     "trainingBatchSize": 128,
     "trainingHRSize": 32,
     "dataset": "Faithful32x Minecraft texture pack for versions 1.13 and 1.16",
-    "datasetSize": 2928
+    "datasetSize": 2928,
+    "images": []
 }

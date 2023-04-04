@@ -36,5 +36,6 @@
     "datasetSize": 861,
     "pretrainedModelG": {
         "description": "RealESRGAN_x4plus"
-    }
+    },
+    "images": []
 }

@@ -33,5 +33,6 @@
     "datasetSize": 3450,
     "pretrainedModelG": {
         "description": "RRDB_ESRGAN_x4"
-    }
+    },
+    "images": []
 }

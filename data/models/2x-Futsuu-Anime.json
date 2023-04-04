@@ -32,5 +32,6 @@
     "trainingHRSize": 192,
     "dataset": "Frames from a wide variety of animated sources",
     "datasetSize": 2661,
-    "pretrainedModelG": "2x-Compact-Pretrain"
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": []
 }

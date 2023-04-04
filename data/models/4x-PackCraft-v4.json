@@ -30,5 +30,6 @@
     "datasetSize": 60000,
     "pretrainedModelG": {
         "description": "4xESRGAN originally, but I used each previous version as a pretrained until I got to v4."
-    }
+    },
+    "images": []
 }

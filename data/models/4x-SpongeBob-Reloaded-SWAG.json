@@ -36,5 +36,6 @@
     "datasetSize": 24123,
     "pretrainedModelG": {
         "description": "4xSpongeBob"
-    }
+    },
+    "images": []
 }

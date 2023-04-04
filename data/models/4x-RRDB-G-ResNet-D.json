@@ -32,5 +32,6 @@
     "datasetSize": 900,
     "pretrainedModelG": {
         "description": "RRDB_ESRGAN_x4_old_arch.pth"
-    }
+    },
+    "images": []
 }

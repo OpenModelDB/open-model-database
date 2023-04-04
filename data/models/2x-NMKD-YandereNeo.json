@@ -32,5 +32,6 @@
     "dataset": "Yandere1200 (yande.re artworks)",
     "pretrainedModelG": {
         "description": "4x_DIV2K-Lite_1M (`4x_NMKD-YandereNeo-Lite_320k` for the 2x conversion)"
-    }
+    },
+    "images": []
 }

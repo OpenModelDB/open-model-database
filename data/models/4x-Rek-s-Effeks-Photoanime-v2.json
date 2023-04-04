@@ -33,5 +33,6 @@
     "datasetSize": 3074,
     "pretrainedModelG": {
         "description": "NMKD Yandere2"
-    }
+    },
+    "images": []
 }

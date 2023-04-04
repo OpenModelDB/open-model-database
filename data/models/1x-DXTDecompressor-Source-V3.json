@@ -33,5 +33,6 @@
     "trainingBatchSize": 2,
     "trainingHRSize": 64,
     "dataset": "Uncompressed textures from various Source Engine games (https://github.com/JosephtheKP/sourceengine_tga_archive) and some data provided by friends",
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

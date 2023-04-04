@@ -28,5 +28,6 @@
         }
     ],
     "dataset": "Anime, Manga",
-    "pretrainedModelG": "4x-Fatality-MK2"
+    "pretrainedModelG": "4x-Fatality-MK2",
+    "images": []
 }

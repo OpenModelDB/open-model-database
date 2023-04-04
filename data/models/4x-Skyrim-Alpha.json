@@ -27,5 +27,6 @@
         }
     ],
     "trainingIterations": 105000,
-    "dataset": "Alpha Channels from Skyrim"
+    "dataset": "Alpha Channels from Skyrim",
+    "images": []
 }

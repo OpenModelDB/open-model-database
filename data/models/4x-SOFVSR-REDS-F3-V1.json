@@ -27,5 +27,6 @@
     "trainingBatchSize": 12,
     "trainingHRSize": 128,
     "trainingOTF": false,
-    "dataset": "REDS"
+    "dataset": "REDS",
+    "images": []
 }

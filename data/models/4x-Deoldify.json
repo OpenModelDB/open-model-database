@@ -32,5 +32,6 @@
     "trainingHRSize": 128,
     "dataset": "ADE20K(https://groups.csail.mit.edu/vision/datasets/ADE20K/), DIV2K(https://data.vision.ee.ethz.ch/cvl/DIV2K/), Library of Congress Scans (http://www.loc.gov/pictures/). I hand picked few thousand images here.",
     "datasetSize": 2931607,
-    "pretrainedModelG": "4x-Falcon-Fanart"
+    "pretrainedModelG": "4x-Falcon-Fanart",
+    "images": []
 }

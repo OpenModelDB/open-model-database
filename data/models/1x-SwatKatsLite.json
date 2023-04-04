@@ -33,5 +33,6 @@
     "trainingHRSize": 128,
     "dataset": "WEB-DL",
     "datasetSize": 5000,
-    "pretrainedModelG": "2x-ESRGAN"
+    "pretrainedModelG": "2x-ESRGAN",
+    "images": []
 }

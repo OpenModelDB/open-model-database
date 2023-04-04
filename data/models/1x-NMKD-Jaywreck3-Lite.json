@@ -32,5 +32,6 @@
     "trainingBatchSize": 4,
     "trainingHRSize": 112,
     "dataset": "DIV2K Train + Valid",
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

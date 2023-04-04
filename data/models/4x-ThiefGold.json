@@ -32,5 +32,6 @@
     "dataset": "Thief Gold & Thief II community made textures",
     "pretrainedModelG": {
         "description": "RRDB_ESRGAN_x4"
-    }
+    },
+    "images": []
 }
