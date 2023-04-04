@@ -16,7 +16,7 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": null,
+            "size": 67173423,
             "sha256": null,
             "urls": [
                 "https://u.pcloud.link/publink/show?code=kZPTiBXZPnCIVsFUmrpu4NY1sKfKw8Pyw6rk"
