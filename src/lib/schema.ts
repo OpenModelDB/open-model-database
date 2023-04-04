@@ -64,14 +64,14 @@ interface OnnxFile extends SingleFile {
 
 export type Image = PairedImage | StandaloneImage;
 
-interface PairedImage {
+export interface PairedImage {
     type: 'paired';
     LR: string;
     SR: string;
     thumbnail: string | null;
 }
 
-interface StandaloneImage {
+export interface StandaloneImage {
     type: 'standalone';
     url: string;
     thumbnail: string | null;

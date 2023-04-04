@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AiFillEdit } from 'react-icons/ai';
 import {
     BsCaretLeftFill,
     BsCaretRightFill,
@@ -9,6 +10,7 @@ import {
 } from 'react-icons/bs';
 import { Image } from '../../lib/schema';
 import { joinClasses } from '../../lib/util';
+import { EditImageButton } from './image-carousel-edit-popover';
 import { ImageCarouselImage } from './image-carousel-image';
 
 type ImageCarouselProps = {
@@ -49,6 +51,34 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                             className="flex flex-col items-center"
                             key={image.type === 'paired' ? image.SR : image.url}
                         >
+                            {!readonly && (
+                                <div className="flex flex-row items-center">
+                                    <EditImageButton
+                                        image={image}
+                                        onChange={(editedImage) => {
+                                            const newImages = [...images];
+                                            newImages[index] = editedImage;
+                                            if (onChange) {
+                                                onChange(newImages);
+                                            }
+                                        }}
+                                    >
+                                        <AiFillEdit />
+                                    </EditImageButton>
+                                    <button
+                                        onClick={() => {
+                                            const newImages = [...images];
+                                            // Remove image
+                                            newImages.splice(index, 1);
+                                            if (onChange) {
+                                                onChange(newImages);
+                                            }
+                                        }}
+                                    >
+                                        <BsFillTrashFill />
+                                    </button>
+                                </div>
+                            )}
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 alt="Thumbnail"
@@ -63,57 +93,51 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                                     setImageIndex(index);
                                 }}
                             />
-                            <div className="flex flex-row items-center">
-                                <button
-                                    onClick={() => {
-                                        const newImages = [...images];
-                                        // Move image to the left
-                                        newImages.splice(index, 1);
-                                        newImages.splice(index - 1, 0, image);
-                                        if (onChange) {
-                                            onChange(newImages);
-                                        }
-                                    }}
-                                >
-                                    <BsChevronLeft />
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        const newImages = [...images];
-                                        // Remove image
-                                        newImages.splice(index, 1);
-                                        if (onChange) {
-                                            onChange(newImages);
-                                        }
-                                    }}
-                                >
-                                    <BsFillTrashFill />
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        const newImages = [...images];
-                                        // Move image to the right
-                                        newImages.splice(index, 1);
-                                        newImages.splice(index + 1, 0, image);
-                                        if (onChange) {
-                                            onChange(newImages);
-                                        }
-                                    }}
-                                >
-                                    <BsChevronRight />
-                                </button>
-                            </div>
+                            {!readonly && (
+                                <div className="flex flex-row items-center">
+                                    <button
+                                        onClick={() => {
+                                            const newImages = [...images];
+                                            // Move image to the left
+                                            newImages.splice(index, 1);
+                                            newImages.splice(index - 1, 0, image);
+                                            if (onChange) {
+                                                onChange(newImages);
+                                            }
+                                        }}
+                                    >
+                                        <BsChevronLeft />
+                                    </button>
+
+                                    <button
+                                        onClick={() => {
+                                            const newImages = [...images];
+                                            // Move image to the right
+                                            newImages.splice(index, 1);
+                                            newImages.splice(index + 1, 0, image);
+                                            if (onChange) {
+                                                onChange(newImages);
+                                            }
+                                        }}
+                                    >
+                                        <BsChevronRight />
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     ))}
                     {!readonly && (
-                        <button
-                            className="cursor-pointer"
-                            onClick={() => {
-                                console.log('not imlpemented');
+                        <EditImageButton
+                            onChange={(newImage) => {
+                                const newImages = [...images];
+                                newImages.push(newImage);
+                                if (onChange) {
+                                    onChange(newImages);
+                                }
                             }}
                         >
                             <BsPlusLg />
-                        </button>
+                        </EditImageButton>
                     )}
                 </div>
                 <button
