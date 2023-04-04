@@ -47,7 +47,7 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
                     onChange={(e) => setThumbnail(e.target.value)}
                 />
             </div>
-            <button
+            <Popover.Button
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
                 disabled={!lr || !sr}
                 type="button"
@@ -63,7 +63,7 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
                 }}
             >
                 Save
-            </button>
+            </Popover.Button>
         </div>
     );
 }
@@ -101,7 +101,7 @@ function StandaloneImageMenu({
                     onChange={(e) => setThumbnail(e.target.value)}
                 />
             </div>
-            <button
+            <Popover.Button
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
                 disabled={!url}
                 type="button"
@@ -116,7 +116,7 @@ function StandaloneImageMenu({
                 }}
             >
                 Save
-            </button>
+            </Popover.Button>
         </div>
     );
 }
