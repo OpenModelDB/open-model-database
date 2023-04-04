@@ -4,10 +4,10 @@ import { Image, PairedImage, StandaloneImage } from '../../lib/schema';
 
 export interface EditImageProps {
     image?: Image;
-    onChange?: (value: Image) => void;
+    onChange: (value: Image) => void;
 }
 
-function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: (value: PairedImage) => void }) {
+function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (value: PairedImage) => void }) {
     const [lr, setLR] = useState(image?.LR ?? '');
     const [sr, setSR] = useState(image?.SR ?? '');
     const [thumbnail, setThumbnail] = useState(image?.thumbnail ?? '');
@@ -52,14 +52,12 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
                 disabled={!lr || !sr}
                 type="button"
                 onClick={() => {
-                    if (onChange) {
-                        onChange({
-                            type: 'paired',
-                            LR: lr,
-                            SR: sr,
-                            thumbnail: thumbnail,
-                        });
-                    }
+                    onChange({
+                        type: 'paired',
+                        LR: lr,
+                        SR: sr,
+                        thumbnail: thumbnail,
+                    });
                 }}
             >
                 Save
@@ -73,7 +71,7 @@ function StandaloneImageMenu({
     onChange,
 }: {
     image?: StandaloneImage;
-    onChange?: (value: StandaloneImage) => void;
+    onChange: (value: StandaloneImage) => void;
 }) {
     const [url, setURL] = useState(image?.url ?? '');
     const [thumbnail, setThumbnail] = useState(image?.thumbnail ?? '');
@@ -106,13 +104,11 @@ function StandaloneImageMenu({
                 disabled={!url}
                 type="button"
                 onClick={() => {
-                    if (onChange) {
-                        onChange({
-                            type: 'standalone',
-                            url: url,
-                            thumbnail: thumbnail,
-                        });
-                    }
+                    onChange({
+                        type: 'standalone',
+                        url: url,
+                        thumbnail: thumbnail,
+                    });
                 }}
             >
                 Save
