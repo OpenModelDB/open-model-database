@@ -136,7 +136,7 @@ export function EditImageButton({ image, onChange, children }: React.PropsWithCh
         setPosition(buttonX + 400 < viewportWidth ? 'left' : 'right');
     };
 
-    const [mode, setMode] = useState<'paired' | 'standalone'>('paired');
+    const [mode, setMode] = useState<'paired' | 'standalone'>(image?.type ?? 'paired');
 
     return (
         <>
