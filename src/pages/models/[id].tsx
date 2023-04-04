@@ -57,8 +57,7 @@ export default function Page({ modelId, modelData }: Props) {
 
     const { updateModelProperty } = useUpdateModel(webApi, modelId);
 
-    const firstImageValue = model.images[0];
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    const firstImageValue = model.images[0] as Image | undefined;
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
 
     return (
