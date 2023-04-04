@@ -38,5 +38,6 @@
     "trainingOTF": false,
     "dataset": "Custom",
     "datasetSize": 870,
-    "pretrainedModelG": "1x-BC1-smooth2"
+    "pretrainedModelG": "1x-BC1-smooth2",
+    "images": []
 }

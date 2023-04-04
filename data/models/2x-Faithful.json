@@ -32,5 +32,6 @@
     "trainingHRSize": 32,
     "dataset": "Faithful 32x32 for Minecraft 1.13 and 1.14 (HR) and default Minecraft 1.13 and 1.14 resources (LR)",
     "datasetSize": 2858,
-    "pretrainedModelG": "2x-ESRGAN"
+    "pretrainedModelG": "2x-ESRGAN",
+    "images": []
 }

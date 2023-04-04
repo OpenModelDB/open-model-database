@@ -32,5 +32,6 @@
     "trainingHRSize": 310,
     "trainingOTF": false,
     "dataset": "Full res yande.re images",
-    "datasetSize": 9147
+    "datasetSize": 9147,
+    "images": []
 }

@@ -33,5 +33,6 @@
     "trainingHRSize": 128,
     "dataset": "Fallout 4 HD DLC(Weapon,Armor/Clothes,Vehicle and Interior/Architecture textures to be exact)",
     "datasetSize": 1999,
-    "pretrainedModelG": "4x-Fallout-Weapons"
+    "pretrainedModelG": "4x-Fallout-Weapons",
+    "images": []
 }

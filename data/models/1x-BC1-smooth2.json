@@ -30,5 +30,6 @@
     "trainingIterations": 1000000,
     "trainingBatchSize": 20,
     "trainingHRSize": 32,
-    "datasetSize": 4767
+    "datasetSize": 4767,
+    "images": []
 }

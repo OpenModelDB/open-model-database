@@ -29,5 +29,6 @@
     "trainingBatchSize": 1,
     "trainingHRSize": 256,
     "dataset": "BD 1080p of Wall-E (FFMPEG extraction at 1FPS with frames of the movie except intro but forgot the credits oops X)",
-    "pretrainedModelG": "2x-ESRGAN"
+    "pretrainedModelG": "2x-ESRGAN",
+    "images": []
 }

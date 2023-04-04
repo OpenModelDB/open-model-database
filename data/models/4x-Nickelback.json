@@ -31,5 +31,6 @@
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "dataset": "Wallpapers",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

@@ -30,5 +30,6 @@
     "trainingIterations": 90000,
     "pretrainedModelG": {
         "description": "4x Spongebob v6"
-    }
+    },
+    "images": []
 }

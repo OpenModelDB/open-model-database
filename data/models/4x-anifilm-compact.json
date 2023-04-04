@@ -31,5 +31,6 @@
     "trainingBatchSize": 6,
     "dataset": "Dragon Ball Z Movies",
     "datasetSize": 2836,
-    "pretrainedModelG": "4x-Compact-Pretrain"
+    "pretrainedModelG": "4x-Compact-Pretrain",
+    "images": []
 }

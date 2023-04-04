@@ -33,5 +33,6 @@
     "trainingEpochs": 564,
     "trainingBatchSize": 8,
     "trainingHRSize": 64,
-    "dataset": "Div2K + Spongebob frames, upscaled with Waifu2x (plus jpeg'd lrs)"
+    "dataset": "Div2K + Spongebob frames, upscaled with Waifu2x (plus jpeg'd lrs)",
+    "images": []
 }

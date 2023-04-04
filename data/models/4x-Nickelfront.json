@@ -29,5 +29,6 @@
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "dataset": "Coin images",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

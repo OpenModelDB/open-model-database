@@ -33,5 +33,6 @@
     "trainingOTF": false,
     "dataset": "Random anime images",
     "datasetSize": 300,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

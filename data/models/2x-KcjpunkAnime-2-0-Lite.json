@@ -34,5 +34,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "1080P BD anime frames",
-    "datasetSize": 6840
+    "datasetSize": 6840,
+    "images": []
 }

@@ -32,5 +32,6 @@
     "trainingHRSize": 128,
     "dataset": "High-res movie poster artwork by Drew Struzan and Bill Eaken",
     "datasetSize": 2790,
-    "pretrainedModelG": "4x-PSNR"
+    "pretrainedModelG": "4x-PSNR",
+    "images": []
 }

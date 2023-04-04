@@ -18,9 +18,9 @@ import { useCurrent } from '../../lib/hooks/use-current';
 import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId, Resource } from '../../lib/schema';
+import { ArchId, Image, Model, ModelId, Resource } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
-import { asArray, getColorMode, joinListString } from '../../lib/util';
+import { asArray, getColorMode, getPreviewImage, joinListString } from '../../lib/util';
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
@@ -45,13 +45,6 @@ const renderTags = (tags: string[]) => (
     </div>
 );
 
-const dummyImages = [
-    {
-        LR: 'https://imgsli.com/i/07b7f3f2-2d9f-4325-b0a6-824646131308.jpg',
-        HR: 'https://imgsli.com/i/986ec7cc-2c3e-43de-8b56-82040abe65a3.jpg',
-    },
-];
-
 export default function Page({ modelId, modelData }: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
@@ -66,11 +59,14 @@ export default function Page({ modelId, modelData }: Props) {
 
     const { updateModelProperty } = useUpdateModel(webApi, modelId);
 
+    const firstImageValue = model.images[0] as Image | undefined;
+    const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
+
     return (
         <>
             <HeadCommon
                 description={`A ${model.scale}x ${archName} model by ${authorsJoined}.`}
-                image={dummyImages[0].HR}
+                image={previewImage}
                 title={model.name}
             />
             <Head>
@@ -84,7 +80,11 @@ export default function Page({ modelId, modelData }: Props) {
                 <div className="grid h-full w-full grid-cols-3 gap-4 py-6">
                     {/* Left column */}
                     <div className="relative col-span-2 flex h-full flex-col gap-4">
-                        <ImageCarousel images={dummyImages} />
+                        <ImageCarousel
+                            images={model.images}
+                            readonly={!editMode}
+                            onChange={(images) => updateModelProperty('images', images)}
+                        />
                         <div className="relative">
                             <div>
                                 <h1 className="m-0">
@@ -305,6 +305,8 @@ export default function Page({ modelId, modelData }: Props) {
                                                     'outputChannels',
                                                     // This is just messed up in the data
                                                     'pretrainedModelG',
+                                                    // Definitely don't want to show this
+                                                    'images',
                                                 ].includes(key)
                                         )
                                         .filter(([_key, value]) => !!value)

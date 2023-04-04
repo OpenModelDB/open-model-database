@@ -32,5 +32,6 @@
     "datasetSize": 48493,
     "pretrainedModelG": {
         "description": "4xfalcoon300(manga).pth"
-    }
+    },
+    "images": []
 }

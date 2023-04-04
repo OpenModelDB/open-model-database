@@ -35,5 +35,6 @@
     "dataset": "Season 11 SpongeBob frames and DIV2K, randomly downscaled and JPEG compressed with varying quality",
     "pretrainedModelG": {
         "description": "1x_DIV2K-Lite_80k.pth"
-    }
+    },
+    "images": []
 }

@@ -30,5 +30,6 @@
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "dataset": "Thief Gold & Thief II community made textures",
-    "pretrainedModelG": "4x-Manga109Attempt"
+    "pretrainedModelG": "4x-Manga109Attempt",
+    "images": []
 }

@@ -31,5 +31,6 @@
     "trainingHRSize": 64,
     "dataset": "Lossless footage of Metal Arms: Glitch in the System from Dolphin emulator (provided by zstorm4), LR compressed with Bink and frames extracted losslessly",
     "datasetSize": 3620,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

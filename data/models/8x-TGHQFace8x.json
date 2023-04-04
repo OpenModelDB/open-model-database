@@ -34,5 +34,6 @@
     "trainingOTF": false,
     "dataset": "Flickr Cropped Faces",
     "datasetSize": 70000,
-    "pretrainedModelG": "8x-ESRGAN"
+    "pretrainedModelG": "8x-ESRGAN",
+    "images": []
 }

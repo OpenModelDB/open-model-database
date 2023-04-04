@@ -27,5 +27,6 @@
         }
     ],
     "trainingIterations": 150000,
-    "dataset": "Images upscaled with the Xbrz scaling filter and images upscaled with the ScaleNX filter, combined together to create a mix of both models."
+    "dataset": "Images upscaled with the Xbrz scaling filter and images upscaled with the ScaleNX filter, combined together to create a mix of both models.",
+    "images": []
 }

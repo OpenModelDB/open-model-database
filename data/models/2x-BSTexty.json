@@ -32,5 +32,6 @@
     "trainingOTF": false,
     "dataset": "Randomly generated text, with randomly chosen fonts with varying sizes. Black text on white background",
     "datasetSize": 44550,
-    "pretrainedModelG": "2x-ESRGAN"
+    "pretrainedModelG": "2x-ESRGAN",
+    "images": []
 }

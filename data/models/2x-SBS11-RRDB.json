@@ -26,5 +26,6 @@
     "trainingBatchSize": 6,
     "trainingHRSize": 128,
     "dataset": "Every 6 frames from every episode of Spongebob Season 11 (DVD and HD). DVD was resized with Spline36 to 540p. LR also got extra OTF JPEG (1/4 chance) and sharpening (15% chance)",
-    "datasetSize": 126956
+    "datasetSize": 126956,
+    "images": []
 }

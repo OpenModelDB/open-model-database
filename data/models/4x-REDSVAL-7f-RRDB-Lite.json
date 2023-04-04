@@ -28,5 +28,6 @@
     "trainingIterations": 200000,
     "trainingHRSize": 128,
     "dataset": "REDS validation set (OTF downscaled with various filters, 1/10 JPEG chance)",
-    "datasetSize": 3000
+    "datasetSize": 3000,
+    "images": []
 }

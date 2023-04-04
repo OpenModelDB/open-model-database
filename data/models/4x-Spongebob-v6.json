@@ -28,5 +28,6 @@
         }
     ],
     "trainingIterations": 190000,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

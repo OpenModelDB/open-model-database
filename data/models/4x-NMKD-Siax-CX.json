@@ -30,5 +30,6 @@
     "trainingIterations": 200000,
     "trainingBatchSize": 2,
     "dataset": "DIV2K Train+Valid",
-    "pretrainedModelG": "4x-PSNR"
+    "pretrainedModelG": "4x-PSNR",
+    "images": []
 }

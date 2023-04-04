@@ -31,5 +31,6 @@
     "trainingBatchSize": 12,
     "trainingHRSize": 32,
     "dataset": "Randomly generated images. Custom (9x Supersampling AA)",
-    "datasetSize": 4096
+    "datasetSize": 4096,
+    "images": []
 }

@@ -34,5 +34,6 @@
     "datasetSize": 8200,
     "pretrainedModelG": {
         "description": "1x_UnResize_V3_110000_G.pth"
-    }
+    },
+    "images": []
 }

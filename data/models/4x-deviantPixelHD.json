@@ -35,5 +35,6 @@
     "datasetSize": 2797,
     "pretrainedModelG": {
         "description": "RRDB_PSNR_x4"
-    }
+    },
+    "images": []
 }

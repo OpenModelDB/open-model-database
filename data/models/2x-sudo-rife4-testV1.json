@@ -27,5 +27,6 @@
     "trainingIterations": 269662,
     "pretrainedModelG": {
         "description": "RifeV4"
-    }
+    },
+    "images": []
 }

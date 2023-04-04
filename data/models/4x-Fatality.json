@@ -30,5 +30,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "4x-Faces-04-N"
+    "pretrainedModelG": "4x-Faces-04-N",
+    "images": []
 }

@@ -36,5 +36,6 @@
     "dataset": "made with full images of anime blu ray.",
     "pretrainedModelG": {
         "description": "RRDB_PSNR_x4.pth"
-    }
+    },
+    "images": []
 }

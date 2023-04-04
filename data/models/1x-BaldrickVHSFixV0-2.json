@@ -32,5 +32,6 @@
     "trainingOTF": false,
     "dataset": "Old vhs film recording for LR and cropped and downscaled Blu-ray rip of same film for HR",
     "datasetSize": 663,
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

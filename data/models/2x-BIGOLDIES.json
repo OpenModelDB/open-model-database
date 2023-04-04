@@ -37,5 +37,6 @@
     "trainingOTF": true,
     "dataset": "LR from severals dvd anime and HR from bluray anime",
     "datasetSize": 2300,
-    "pretrainedModelG": "2x-PSNR"
+    "pretrainedModelG": "2x-PSNR",
+    "images": []
 }

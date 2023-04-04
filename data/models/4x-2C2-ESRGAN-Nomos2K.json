@@ -34,5 +34,6 @@
     "dataset": "Nomos2K",
     "pretrainedModelG": {
         "description": "Technically my previous experiment was the pretrained model, but for all intents and purposes this was trained from scratch."
-    }
+    },
+    "images": []
 }

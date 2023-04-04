@@ -33,5 +33,6 @@
     "trainingHRSize": 64,
     "trainingOTF": false,
     "dataset": "Realistic images",
-    "pretrainedModelG": "1x-ESRGAN"
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": []
 }

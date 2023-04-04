@@ -31,5 +31,6 @@
     "trainingOTF": false,
     "dataset": "Mostly TF2 textures with some misc stuff in, artificially expanded.",
     "datasetSize": 473,
-    "pretrainedModelG": "1x-SaiyaJin-DeJpeg"
+    "pretrainedModelG": "1x-SaiyaJin-DeJpeg",
+    "images": []
 }

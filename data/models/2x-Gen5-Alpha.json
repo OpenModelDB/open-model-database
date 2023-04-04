@@ -32,5 +32,6 @@
     "trainingHRSize": 96,
     "dataset": "Gen 5 Pokemon sprites",
     "datasetSize": 3376,
-    "pretrainedModelG": "4x-FireAlpha"
+    "pretrainedModelG": "4x-FireAlpha",
+    "images": []
 }

@@ -29,5 +29,6 @@
     "dataset": "Self curated custom manga dataset",
     "pretrainedModelG": {
         "description": "MangaScaleV2(not released)"
-    }
+    },
+    "images": []
 }

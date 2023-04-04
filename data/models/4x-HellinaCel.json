@@ -29,5 +29,6 @@
     "trainingHRSize": 128,
     "dataset": "Trained on upscaling downscaled cel photographs run through DetoriationFrames",
     "datasetSize": 69,
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }

@@ -33,5 +33,6 @@
     "trainingHRSize": 48,
     "trainingOTF": false,
     "dataset": "CC0 Textures",
-    "pretrainedModelG": "1x-BC1-smooth2"
+    "pretrainedModelG": "1x-BC1-smooth2",
+    "images": []
 }

@@ -24,5 +24,6 @@
     "trainingIterations": 80000,
     "trainingBatchSize": 6,
     "trainingHRSize": 192,
-    "dataset": "LR: The Spongebob Squarepants Movie (DVD) | HR: The Spongebob Squarepants Movie (Blu-ray). Randomly exported scenes."
+    "dataset": "LR: The Spongebob Squarepants Movie (DVD) | HR: The Spongebob Squarepants Movie (Blu-ray). Randomly exported scenes.",
+    "images": []
 }

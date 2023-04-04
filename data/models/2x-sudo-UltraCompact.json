@@ -33,5 +33,6 @@
     "trainingIterations": 1121175,
     "pretrainedModelG": {
         "description": "RealESRGANv2-animevideo-xsx2.pth"
-    }
+    },
+    "images": []
 }

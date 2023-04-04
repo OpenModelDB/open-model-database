@@ -32,5 +32,6 @@
     "trainingBatchSize": 4,
     "trainingHRSize": 128,
     "dataset": "Images from pokemon episodes",
-    "datasetSize": 268
+    "datasetSize": 268,
+    "images": []
 }

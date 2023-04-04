@@ -33,5 +33,6 @@
     "dataset": "Yandere4800",
     "pretrainedModelG": {
         "description": "4x_DIV2K-Lite"
-    }
+    },
+    "images": []
 }

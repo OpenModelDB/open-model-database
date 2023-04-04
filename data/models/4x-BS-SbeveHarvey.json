@@ -32,5 +32,6 @@
     "trainingBatchSize": 2,
     "trainingHRSize": 64,
     "dataset": "Steve Harvey",
-    "pretrainedModelG": "4x-ESRGAN"
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": []
 }
