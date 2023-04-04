@@ -5,11 +5,14 @@ import { FaDiscord, FaGithub } from 'react-icons/fa';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import Logo from '../../public/logo.svg';
 import { toggleColorScheme } from '../lib/color-scheme';
+import { useEditModeToggle } from '../lib/hooks/use-web-api';
 import { joinClasses } from '../lib/util';
 import { Link } from './components/link';
 import style from './header.module.scss';
 
 export function Header() {
+    const { editModeAvailable, editMode, toggleEditMode } = useEditModeToggle();
+
     return (
         <>
             <div className={style.headerSpacer} />
@@ -25,14 +28,26 @@ export function Header() {
                     <Link
                         className={joinClasses(
                             style.docLink,
-                            'transform rounded-lg px-4 py-2 font-medium capitalize tracking-wide text-accent transition-colors duration-300 hover:bg-fade-100 focus:outline-none focus:ring focus:ring-accent-300 focus:ring-opacity-80 dark:text-accent-400 dark:hover:bg-fade-800'
+                            'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800'
                         )}
                         href="/docs/faq"
                     >
-                        How to upscale
+                        How To Upscale
                     </Link>
 
-                    <span className={style.spacer}></span>
+                    <span className={style.spacer} />
+
+                    {editModeAvailable && (
+                        <button
+                            className={joinClasses(
+                                style.docLink,
+                                'bg-transparent font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800'
+                            )}
+                            onClick={toggleEditMode}
+                        >
+                            Edit Mode: {editMode ? 'On' : 'Off'}
+                        </button>
+                    )}
 
                     <Link
                         external
