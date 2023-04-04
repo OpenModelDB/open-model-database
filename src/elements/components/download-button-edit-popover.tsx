@@ -80,13 +80,11 @@ function ResourceMenu({ resource, onChange }: EditResourceProps) {
                     ))}
                 </select>
             </div>
-            <button
+            <Popover.Button
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
+                disabled={!urls.length || !sha256 || !size}
                 type="submit"
                 onClick={() => {
-                    if (!urls.length || !sha256 || !size) {
-                        return alert('Please fill in all required fields');
-                    }
                     if (onChange) {
                         if (platform === 'pytorch') {
                             onChange({
@@ -110,7 +108,7 @@ function ResourceMenu({ resource, onChange }: EditResourceProps) {
                 }}
             >
                 Save
-            </button>
+            </Popover.Button>
         </div>
     );
 }
@@ -124,39 +122,37 @@ export function EditResourceButton({ resource, onChange, children }: React.Props
     };
 
     return (
-        <>
-            <Popover
-                as="div"
-                className="relative inline-block text-left"
+        <Popover
+            as="div"
+            className="relative inline-block text-left"
+        >
+            <Popover.Button
+                className="h-full cursor-pointer"
+                onClick={(e: React.MouseEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
+                onFocus={(e: React.FocusEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
             >
-                <Popover.Button
-                    className="h-full cursor-pointer"
-                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
-                    onFocus={(e: React.FocusEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
+                {children}
+            </Popover.Button>
+            <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+            >
+                <Popover.Panel
+                    className={`absolute z-50 mt-2 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 p-2 text-sm shadow-lg focus:outline-none dark:bg-black ${
+                        position === 'left' ? 'left-0' : 'right-0'
+                    }`}
                 >
-                    {children}
-                </Popover.Button>
-                <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                >
-                    <Popover.Panel
-                        className={`absolute z-50 mt-2 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 p-2 text-sm shadow-lg focus:outline-none dark:bg-black ${
-                            position === 'left' ? 'left-0' : 'right-0'
-                        }`}
-                    >
-                        <ResourceMenu
-                            resource={resource}
-                            onChange={onChange}
-                        />
-                    </Popover.Panel>
-                </Transition>
-            </Popover>
-        </>
+                    <ResourceMenu
+                        resource={resource}
+                        onChange={onChange}
+                    />
+                </Popover.Panel>
+            </Transition>
+        </Popover>
     );
 }
