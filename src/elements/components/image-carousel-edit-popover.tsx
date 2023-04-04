@@ -49,14 +49,9 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
             </div>
             <button
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
+                disabled={!lr || !sr}
                 type="button"
                 onClick={() => {
-                    if (!lr) {
-                        return alert('LR is required');
-                    }
-                    if (!sr) {
-                        return alert('SR is required');
-                    }
                     if (onChange) {
                         onChange({
                             type: 'paired',
@@ -108,11 +103,9 @@ function StandaloneImageMenu({
             </div>
             <button
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
+                disabled={!url}
                 type="button"
                 onClick={() => {
-                    if (!url) {
-                        return alert('URL is required');
-                    }
                     if (onChange) {
                         onChange({
                             type: 'standalone',
