@@ -131,6 +131,7 @@
         "editOnly": true,
         "tags": [
             "helper:needs-date",
+            "helper:invalid-date",
             "helper:needs-description",
             "helper:invalid-scale",
             "helper:invalid-channels"

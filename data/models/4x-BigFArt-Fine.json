@@ -6,7 +6,7 @@
         "pixel-art"
     ],
     "description": "Category: Art/Pixel Art\n\nLarger-scaled pixels to digital painting",
-    "date": "2020-15-31",
+    "date": "2020-05-31",
     "architecture": "esrgan",
     "size": [
         "64nf",
