@@ -15,7 +15,9 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
     return (
         <div className="flex flex-col">
             <div className="flex flex-col">
-                <label htmlFor="image-lr">LR</label>
+                <label htmlFor="image-lr">
+                    LR <a className="text-red-500">*</a>
+                </label>
                 <input
                     required
                     id="image-lr"
@@ -25,7 +27,9 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
                 />
             </div>
             <div className="flex flex-col">
-                <label htmlFor="image-sr">SR</label>
+                <label htmlFor="image-sr">
+                    SR <a className="text-red-500">*</a>
+                </label>
                 <input
                     required
                     id="image-lr"
@@ -47,6 +51,12 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange?: 
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
                 type="button"
                 onClick={() => {
+                    if (!lr) {
+                        alert('LR is required');
+                    }
+                    if (!sr) {
+                        alert('SR is required');
+                    }
                     if (onChange) {
                         onChange({
                             type: 'paired',
@@ -76,7 +86,9 @@ function StandaloneImageMenu({
     return (
         <div className="flex flex-col">
             <div className="flex flex-col">
-                <label htmlFor="image-url">URL</label>
+                <label htmlFor="image-url">
+                    URL <a className="text-red-500">*</a>
+                </label>
                 <input
                     required
                     id="image-lr"
@@ -98,6 +110,9 @@ function StandaloneImageMenu({
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
                 type="button"
                 onClick={() => {
+                    if (!url) {
+                        alert('URL is required');
+                    }
                     if (onChange) {
                         onChange({
                             type: 'standalone',
