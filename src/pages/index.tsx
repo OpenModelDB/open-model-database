@@ -54,7 +54,6 @@ export default function Page({ modelData: staticModelData }: Props) {
             })
         );
     }, [modelData]);
-    const modelCount = searchIndex.entries.size;
 
     const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -64,7 +63,7 @@ export default function Page({ modelData: staticModelData }: Props) {
         [tagSelection, tagCategoryData]
     );
 
-    const availableModels = useMemoDelay(
+    const selectedModels = useMemoDelay(
         useCallback(() => {
             const queryTokens = tokenize(searchQuery);
 
@@ -117,10 +116,6 @@ export default function Page({ modelData: staticModelData }: Props) {
                         way to find and compare models than existing sources.
                     </p>
 
-                    <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                        Currently listing <span className="font-bold text-accent-500">{modelCount}</span> models.
-                    </p>
-
                     {/* Search */}
                     <SearchBar
                         value={searchQuery}
@@ -128,7 +123,7 @@ export default function Page({ modelData: staticModelData }: Props) {
                     />
 
                     {/* Tags */}
-                    <div className="mb-8 mt-4">
+                    <div className="my-4">
                         <TagSelector
                             selection={tagSelection}
                             onChange={setTagSelection}
@@ -136,19 +131,25 @@ export default function Page({ modelData: staticModelData }: Props) {
                     </div>
 
                     {/* Model Cards */}
-                    {availableModels.length > 0 ? (
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                            {availableModels.map((id) => {
-                                return (
-                                    <ModelCard
-                                        id={id}
-                                        key={id}
-                                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                                        model={modelData.get(id)!}
-                                    />
-                                );
-                            })}
-                        </div>
+                    {selectedModels.length > 0 ? (
+                        <>
+                            <div className="mb-3 ml-3">
+                                Found <span className="font-medium">{selectedModels.length}</span> model
+                                {selectedModels.length === 1 ? '' : 's'}
+                            </div>
+                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                {selectedModels.map((id) => {
+                                    return (
+                                        <ModelCard
+                                            id={id}
+                                            key={id}
+                                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                            model={modelData.get(id)!}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </>
                     ) : (
                         <div className="flex flex-col items-center justify-center p-6">
                             <div className="text-2xl font-bold text-accent-500 dark:text-gray-100">No models found</div>
