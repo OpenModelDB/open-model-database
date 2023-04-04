@@ -66,6 +66,7 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                                         <AiFillEdit />
                                     </EditImageButton>
                                     <button
+                                        className="block"
                                         onClick={() => {
                                             const newImages = [...images];
                                             // Remove image

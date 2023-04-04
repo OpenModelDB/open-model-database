@@ -145,6 +145,7 @@ export function EditImageButton({ image, onChange, children }: React.PropsWithCh
                 className="relative inline-block text-left"
             >
                 <Popover.Button
+                    className="block"
                     onClick={(e: React.MouseEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
                     onFocus={(e: React.FocusEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
                 >
