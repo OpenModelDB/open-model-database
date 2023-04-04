@@ -4,7 +4,7 @@ import { Resource } from '../../lib/schema';
 
 export interface EditResourceProps {
     resource?: Resource;
-    onChange?: (value: Resource) => void;
+    onChange: (value: Resource) => void;
 }
 
 function ResourceMenu({ resource, onChange }: EditResourceProps) {
@@ -85,25 +85,23 @@ function ResourceMenu({ resource, onChange }: EditResourceProps) {
                 disabled={!urls.length || !sha256 || !size}
                 type="submit"
                 onClick={() => {
-                    if (onChange) {
-                        if (platform === 'pytorch') {
-                            onChange({
-                                urls,
-                                sha256,
-                                size,
-                                platform,
-                                type: 'pth',
-                            });
-                            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-                        } else if (platform === 'onnx') {
-                            onChange({
-                                urls,
-                                sha256,
-                                size,
-                                platform,
-                                type: 'onnx',
-                            });
-                        }
+                    if (platform === 'pytorch') {
+                        onChange({
+                            urls,
+                            sha256,
+                            size,
+                            platform,
+                            type: 'pth',
+                        });
+                        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+                    } else if (platform === 'onnx') {
+                        onChange({
+                            urls,
+                            sha256,
+                            size,
+                            platform,
+                            type: 'onnx',
+                        });
                     }
                 }}
             >
