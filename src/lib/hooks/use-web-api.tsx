@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { DBApi } from '../data-api';
 import { noop } from '../util';
 import { getWebApi } from '../web-api';
 
-const WebApiContext = createContext<DBApi | undefined>(undefined);
+interface WebApiState {
+    webApi: DBApi | undefined;
+    enabled: boolean;
+    toggleEnabled: () => void;
+}
+
+const WebApiContext = createContext<WebApiState>({ webApi: undefined, enabled: false, toggleEnabled: noop });
 
 export function WebApiProvider({ children }: React.PropsWithChildren<unknown>) {
     const [webApi, setWebApi] = useState<DBApi>();
@@ -12,13 +18,32 @@ export function WebApiProvider({ children }: React.PropsWithChildren<unknown>) {
         getWebApi().then(setWebApi, noop);
     }, []);
 
-    return <WebApiContext.Provider value={webApi}>{children}</WebApiContext.Provider>;
+    const [enabled, setEnabled] = useState(true);
+    const toggleEnabled = useCallback(() => setEnabled((p) => !p), []);
+
+    return <WebApiContext.Provider value={{ webApi, enabled, toggleEnabled }}>{children}</WebApiContext.Provider>;
 }
 
 export type UseWebApi = { webApi: DBApi; editMode: true } | { webApi: undefined; editMode: false };
 
 export function useWebApi(): UseWebApi {
-    const webApi = useContext(WebApiContext);
+    const { webApi, enabled } = useContext(WebApiContext);
 
-    return webApi ? { webApi, editMode: true } : { webApi, editMode: false };
+    return webApi && enabled ? { webApi, editMode: true } : { webApi: undefined, editMode: false };
+}
+
+export interface UseEditModeToggle {
+    editMode: boolean;
+    editModeAvailable: boolean;
+    toggleEditMode: () => void;
+}
+
+export function useEditModeToggle(): UseEditModeToggle {
+    const { webApi, enabled, toggleEnabled } = useContext(WebApiContext);
+
+    return {
+        editModeAvailable: webApi !== undefined,
+        editMode: enabled,
+        toggleEditMode: toggleEnabled,
+    };
 }
