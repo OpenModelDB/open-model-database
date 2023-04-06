@@ -21,15 +21,16 @@
         display: flex;
         flex-flow: row wrap;
         column-gap: 0.5rem;
+        z-index: 1;
     }
 
     .thumbnail {
         height: 100%;
         width: 100%;
-        background: url('https://picsum.photos/512/312');
         background-size: cover;
         background-position: center;
         border-radius: 0.5rem 0.5rem 0 0;
+        z-index: 0;
     }
 
     .details {

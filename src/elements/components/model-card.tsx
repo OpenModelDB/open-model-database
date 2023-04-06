@@ -5,7 +5,7 @@ import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
 import { Model, ModelId } from '../../lib/schema';
-import { asArray } from '../../lib/util';
+import { asArray, getPreviewImage, joinClasses } from '../../lib/util';
 import { EditableTags } from './editable-tags';
 import { Link } from './link';
 import style from './model-card.module.scss';
@@ -37,10 +37,25 @@ export const ModelCard = memo(({ id, model }: ModelCardProps) => {
                 </div>
 
                 <Link
-                    className={style.thumbnail}
+                    className={joinClasses(
+                        style.thumbnail,
+                        'relative flex h-full w-full items-center justify-items-center overflow-hidden bg-fade-300 align-middle dark:bg-fade-700 '
+                    )}
                     href={`/models/${id}`}
                     tabIndex={-1}
-                />
+                >
+                    {model.images[0] ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                            alt={model.name}
+                            className="margin-auto z-0 h-full w-full object-cover"
+                            loading="lazy"
+                            src={getPreviewImage(model.images[0])}
+                        />
+                    ) : (
+                        <div className="margin-auto z-0 w-full text-center">No Image</div>
+                    )}
+                </Link>
 
                 <div className={style.details}>
                     <Link
