@@ -11,7 +11,9 @@
     "lint:ci": "eslint . --ext \".js,.jsx,.ts,.tsx\" --max-warnings 0 && stylelint src/**/*.scss",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate-api": "node scripts/generate-api.js",
+    "build-full": "npm run build && npx next export && npm run generate-api"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.9",
