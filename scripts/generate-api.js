@@ -1,6 +1,10 @@
 // Generates a fake JSON api
 
 const fs = require('fs');
+const path = require('path');
+
+const API_DIR = 'out/api/v1';
+fs.mkdirSync(API_DIR, { recursive: true });
 
 const models = fs.readdirSync('data/models');
 
@@ -13,6 +17,4 @@ models.forEach((model) => {
     data[name] = JSON.parse(modelData);
 });
 
-fs.mkdirSync('out/api', { recursive: true });
-
-fs.writeFileSync('out/api/models', JSON.stringify(data, null, 2));
+fs.writeFileSync(path.join(API_DIR, 'models'), JSON.stringify(data, null, 2));
