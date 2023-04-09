@@ -17,4 +17,4 @@ models.forEach((model) => {
     data[name] = JSON.parse(modelData);
 });
 
-fs.writeFileSync(path.join(API_DIR, 'models'), JSON.stringify(data, null, 2));
+fs.writeFileSync(path.join(API_DIR, 'models.json'), JSON.stringify(data, null, 2));
