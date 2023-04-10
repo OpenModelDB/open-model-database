@@ -60,6 +60,8 @@ jobs:
         run: npm run build
       - name: Static HTML export with Next.js
         run: npx next export
+      - name: Generate api
+        run: npm run generate-api
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
