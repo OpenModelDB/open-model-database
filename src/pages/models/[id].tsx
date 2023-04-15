@@ -379,7 +379,8 @@ export default function Page({ modelId, modelData }: Props) {
                                                     'inputChannels',
                                                     'outputChannels',
                                                     // This is just messed up in the data
-                                                    // 'pretrainedModelG',
+                                                    'pretrainedModelG',
+                                                    'pretrainedModelD',
                                                     // Definitely don't want to show this
                                                     'images',
                                                 ].includes(key)
