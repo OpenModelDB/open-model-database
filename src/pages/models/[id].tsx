@@ -30,6 +30,18 @@ interface Props {
     modelData: Model;
 }
 
+const extraModelProperties = [
+    'trainingIterations',
+    'trainingEpochs',
+    'trainingBatchSize',
+    'trainingHRSize',
+    'trainingOTF',
+    'dataset',
+    'datasetSize',
+    'pretrainedModelG',
+    'pretrainedModelD',
+];
+
 const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
     <div className="flex flex-row flex-wrap gap-2">
         {tags.map((tag, index) => {
@@ -113,6 +125,12 @@ export default function Page({ modelId, modelData }: Props) {
 
     const firstImageValue = model.images[0] as Image | undefined;
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
+
+    let missingMetadataEntries: [string, string][] = [];
+    if (editMode) {
+        const missingMetadataKeys = extraModelProperties.filter((key) => model[key as keyof Model] === undefined);
+        missingMetadataEntries = missingMetadataKeys.map((key) => [key, ''] as [string, string]);
+    }
 
     return (
         <>
@@ -344,6 +362,7 @@ export default function Page({ modelId, modelData }: Props) {
                                         </td>
                                     </tr>
                                     {Object.entries(model)
+                                        .concat(missingMetadataEntries)
                                         .filter(
                                             ([key, _value]) =>
                                                 ![
@@ -360,12 +379,12 @@ export default function Page({ modelId, modelData }: Props) {
                                                     'inputChannels',
                                                     'outputChannels',
                                                     // This is just messed up in the data
-                                                    'pretrainedModelG',
+                                                    // 'pretrainedModelG',
                                                     // Definitely don't want to show this
                                                     'images',
                                                 ].includes(key)
                                         )
-                                        .filter(([_key, value]) => !!value)
+                                        .filter(([_key, value]) => (editMode ? true : !!value))
                                         .sort()
                                         .map(([key, value]) => {
                                             return (
