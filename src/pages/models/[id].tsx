@@ -45,6 +45,29 @@ const renderTags = (tags: string[]) => (
     </div>
 );
 
+const editableMetadata = (editMode: boolean, value: string | number, onChange: (newValue: string | number) => void) => {
+    switch (typeof value) {
+        case 'string':
+            return (
+                <EditableLabel
+                    readonly={!editMode}
+                    text={value}
+                    onChange={onChange}
+                />
+            );
+        case 'number':
+            return (
+                <EditableIntegerLabel
+                    readonly={!editMode}
+                    value={value}
+                    onChange={onChange}
+                />
+            );
+        default:
+            return <span>{value}</span>;
+    }
+};
+
 export default function Page({ modelId, modelData }: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
@@ -323,7 +346,13 @@ export default function Page({ modelId, modelData }: Props) {
                                                     <td className="px-6 py-4">
                                                         {Array.isArray(value)
                                                             ? renderTags(value.map((v) => String(v)))
-                                                            : value}
+                                                            : editableMetadata(
+                                                                  editMode,
+                                                                  value as string | number,
+                                                                  (newValue) => {
+                                                                      updateModelProperty(key as keyof Model, newValue);
+                                                                  }
+                                                              )}
                                                     </td>
                                                 </tr>
                                             );
