@@ -32,8 +32,6 @@
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "CC0 Textures",
-    "pretrainedModelG": {
-        "description": "RRDB_ESRGAN_x4"
-    },
+    "pretrainedModelG": "4x-ESRGAN",
     "images": []
 }

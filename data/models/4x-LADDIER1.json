@@ -31,8 +31,6 @@
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "dataset": "Mostly images of Nirvana some of other images",
-    "pretrainedModelG": {
-        "description": "RRDB_ESRGAN_x4.pth"
-    },
+    "pretrainedModelG": "4x-ESRGAN",
     "images": []
 }
