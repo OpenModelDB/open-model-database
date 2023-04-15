@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
 import { AiFillEdit } from 'react-icons/ai';
-import { BsFillTrashFill } from 'react-icons/bs';
+import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
 import { EditResourceButton } from '../../elements/components/download-button-edit-popover';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
@@ -30,18 +30,47 @@ interface Props {
     modelData: Model;
 }
 
-const renderTags = (tags: string[]) => (
+const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
     <div className="flex flex-row flex-wrap gap-2">
-        {tags.map((tag) => {
+        {tags.map((tag, index) => {
             return (
                 <span
                     className="inline-flex items-center rounded-full bg-fade-100 px-2.5 py-0.5 text-xs font-medium text-fade-800 dark:bg-fade-800 dark:text-fade-200"
                     key={tag}
                 >
-                    {tag}
+                    <EditableLabel
+                        readonly={!editMode}
+                        text={tag}
+                        onChange={(text) => {
+                            const newTags = [...tags];
+                            newTags[index] = text;
+                            onChange(newTags);
+                        }}
+                    />
+                    {editMode && (
+                        <button
+                            className="ml-1.5"
+                            onClick={() => {
+                                const newTags = [...tags];
+                                newTags.splice(index, 1);
+                                onChange(newTags);
+                            }}
+                        >
+                            <BsFillTrashFill />
+                        </button>
+                    )}
                 </span>
             );
         })}
+        {editMode && (
+            <button
+                onClick={() => {
+                    onChange([...tags, '']);
+                }}
+            >
+                <BsPlusLg />
+            </button>
+        )}
     </div>
 );
 
@@ -265,7 +294,11 @@ export default function Page({ modelId, modelData }: Props) {
                                             >
                                                 Size
                                             </th>
-                                            <td className="px-6 py-4">{renderTags(model.size)}</td>
+                                            <td className="px-6 py-4">
+                                                {renderTags(model.size, editMode, (newTags: string[]) => {
+                                                    updateModelProperty('size', newTags);
+                                                })}
+                                            </td>
                                         </tr>
                                     )}
                                     <tr>
