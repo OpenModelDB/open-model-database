@@ -378,7 +378,13 @@ export default function Page({ modelId, modelData }: Props) {
                                                     </th>
                                                     <td className="px-6 py-4">
                                                         {Array.isArray(value)
-                                                            ? renderTags(value.map((v) => String(v)))
+                                                            ? renderTags(
+                                                                  value.map((v) => String(v)),
+                                                                  editMode,
+                                                                  (newTags) => {
+                                                                      updateModelProperty(key as keyof Model, newTags);
+                                                                  }
+                                                              )
                                                             : editableMetadata(
                                                                   editMode,
                                                                   value as string | number,
