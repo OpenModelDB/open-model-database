@@ -95,7 +95,7 @@ const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: strin
 
 const editableMetadata = (
     editMode: boolean,
-    value: string | number,
+    value: string | number | boolean,
     onChange: (newValue: string | number | boolean) => void
 ) => {
     switch (typeof value) {
@@ -116,11 +116,13 @@ const editableMetadata = (
                 />
             );
         case 'boolean':
-            return (
+            return editMode ? (
                 <Switch
                     value={value}
                     onChange={onChange}
                 />
+            ) : (
+                <span>{value ? 'Yes' : 'No'}</span>
             );
 
         default:
@@ -407,7 +409,9 @@ export default function Page({ modelId, modelData }: Props) {
                                                     'images',
                                                 ].includes(key)
                                         )
-                                        .filter(([_key, value]) => (editMode ? true : !!value))
+                                        .filter(([_key, value]) =>
+                                            editMode ? true : value !== undefined && value !== null
+                                        )
                                         .sort()
                                         .map(([key, value]) => {
                                             return (
