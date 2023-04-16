@@ -1,0 +1,42 @@
+{
+    "name": "RealSR DF2K",
+    "author": "jixiaozhong",
+    "license": "Apache-2.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "Real-World Super-Resolution via Kernel Estimation and Noise Injection\n\nOur solution is the winner of CVPR NTIRE 2020 Challenge on Real-World Super-Resolution in both tracks.\n\nRecent state-of-the-art super-resolution methods have achieved impressive performance on ideal datasets regardless of blur and noise. However, these methods always fail in real-world image super-resolution, since most of them adopt simple bicubic downsampling from high-quality images to construct Low-Resolution (LR) and High-Resolution (HR) pairs for training which may lose track of frequency-related details. To address this issue, we focus on designing a novel degradation framework for real-world images by estimating various blur kernels as well as real noise distributions. Based on our novel degradation framework, we can acquire LR images sharing a common domain with real-world images. Then, we propose a real-world super-resolution model aiming at better perception. Extensive experiments on synthetic noise data and real-world images demonstrate that our method outperforms the state-of-the-art methods, resulting in lower noise and better visual quality. In addition, our method is the winner of NTIRE 2020 Challenge on both tracks of Real-World Super-Resolution, which significantly outperforms other competitors by large margins.\n\nfor corrupted images with processing noise.",
+    "date": "2020-05-26",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66921375,
+            "sha256": "a3df4ebdb3ff9fba08133b69fcfdd7965793957036c2b1a648d8440e737c39ac",
+            "urls": [
+                "https://drive.google.com/open?id=1pWGfSw-UxOkrtbh14GeLQgYnMLdLguOF"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0913.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "standalone",
+            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0935.png",
+            "thumbnail": ""
+        }
+    ]
+}
