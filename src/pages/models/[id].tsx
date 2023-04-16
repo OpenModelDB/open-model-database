@@ -31,15 +31,15 @@ interface Props {
 }
 
 const extraModelProperties = [
-    'trainingIterations',
-    'trainingEpochs',
-    'trainingBatchSize',
-    'trainingHRSize',
-    'trainingOTF',
-    'dataset',
-    'datasetSize',
-    'pretrainedModelG',
-    'pretrainedModelD',
+    { key: 'trainingIterations', type: 'number' },
+    { key: 'trainingEpochs', type: 'number' },
+    { key: 'trainingBatchSize', type: 'number' },
+    { key: 'trainingHRSize', type: 'number' },
+    { key: 'trainingOTF', type: 'string' },
+    { key: 'dataset', type: 'string' },
+    { key: 'datasetSize', type: 'number' },
+    { key: 'pretrainedModelG', type: 'string' },
+    { key: 'pretrainedModelD', type: 'string' },
 ];
 
 const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
@@ -126,10 +126,10 @@ export default function Page({ modelId, modelData }: Props) {
     const firstImageValue = model.images[0] as Image | undefined;
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
 
-    let missingMetadataEntries: [string, string][] = [];
+    let missingMetadataEntries: [string, string | number][] = [];
     if (editMode) {
-        const missingMetadataKeys = extraModelProperties.filter((key) => model[key as keyof Model] === undefined);
-        missingMetadataEntries = missingMetadataKeys.map((key) => [key, ''] as [string, string]);
+        const missingMetadataKeys = extraModelProperties.filter(({ key }) => model[key as keyof Model] === undefined);
+        missingMetadataEntries = missingMetadataKeys.map(({ key, type }) => [key, type === 'number' ? 0 : '']);
     }
 
     return (
