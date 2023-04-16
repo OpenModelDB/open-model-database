@@ -11,6 +11,7 @@ import { EditableMarkdownContainer } from '../../elements/components/editable-ma
 import { EditableTags } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
+import { Switch } from '../../elements/components/switch';
 import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
@@ -92,7 +93,11 @@ const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: strin
     </div>
 );
 
-const editableMetadata = (editMode: boolean, value: string | number, onChange: (newValue: string | number) => void) => {
+const editableMetadata = (
+    editMode: boolean,
+    value: string | number,
+    onChange: (newValue: string | number | boolean) => void
+) => {
     switch (typeof value) {
         case 'string':
             return (
@@ -110,6 +115,14 @@ const editableMetadata = (editMode: boolean, value: string | number, onChange: (
                     onChange={onChange}
                 />
             );
+        case 'boolean':
+            return (
+                <Switch
+                    value={value}
+                    onChange={onChange}
+                />
+            );
+
         default:
             return <span>{value}</span>;
     }
