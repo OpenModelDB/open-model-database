@@ -35,12 +35,18 @@ const extraModelProperties = [
     { key: 'trainingEpochs', type: 'number' },
     { key: 'trainingBatchSize', type: 'number' },
     { key: 'trainingHRSize', type: 'number' },
-    { key: 'trainingOTF', type: 'string' },
+    { key: 'trainingOTF', type: 'boolean' },
     { key: 'dataset', type: 'string' },
     { key: 'datasetSize', type: 'number' },
     { key: 'pretrainedModelG', type: 'string' },
     { key: 'pretrainedModelD', type: 'string' },
 ];
+
+const defaultVals = {
+    number: 0,
+    string: '',
+    boolean: false,
+} as const;
 
 const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
     <div className="flex flex-row flex-wrap gap-2">
@@ -126,10 +132,13 @@ export default function Page({ modelId, modelData }: Props) {
     const firstImageValue = model.images[0] as Image | undefined;
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
 
-    let missingMetadataEntries: [string, string | number][] = [];
+    let missingMetadataEntries: [string, string | number | boolean][] = [];
     if (editMode) {
         const missingMetadataKeys = extraModelProperties.filter(({ key }) => model[key as keyof Model] === undefined);
-        missingMetadataEntries = missingMetadataKeys.map(({ key, type }) => [key, type === 'number' ? 0 : '']);
+        missingMetadataEntries = missingMetadataKeys.map(({ key, type }) => [
+            key,
+            defaultVals[type as keyof typeof defaultVals],
+        ]);
     }
 
     return (
