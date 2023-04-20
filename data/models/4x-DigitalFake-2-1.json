@@ -30,8 +30,6 @@
     "trainingHRSize": 128,
     "dataset": "DIV2K and spongebob frames, downscaled with box and upscaled with Digitalframes 2.1",
     "datasetSize": 946,
-    "pretrainedModelG": {
-        "description": "RRDB_ESRGAN_x4_old_arch.pth"
-    },
+    "pretrainedModelG": "4x-ESRGAN",
     "images": []
 }
