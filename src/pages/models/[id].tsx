@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
 import { AiFillEdit } from 'react-icons/ai';
-import { BsFillTrashFill } from 'react-icons/bs';
+import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
 import { EditResourceButton } from '../../elements/components/download-button-edit-popover';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
@@ -11,6 +11,7 @@ import { EditableMarkdownContainer } from '../../elements/components/editable-ma
 import { EditableTags } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
+import { Switch } from '../../elements/components/switch';
 import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
@@ -30,20 +31,104 @@ interface Props {
     modelData: Model;
 }
 
-const renderTags = (tags: string[]) => (
+const extraModelProperties = [
+    { key: 'trainingIterations', type: 'number' },
+    { key: 'trainingEpochs', type: 'number' },
+    { key: 'trainingBatchSize', type: 'number' },
+    { key: 'trainingHRSize', type: 'number' },
+    { key: 'trainingOTF', type: 'boolean' },
+    { key: 'dataset', type: 'string' },
+    { key: 'datasetSize', type: 'number' },
+    { key: 'pretrainedModelG', type: 'string' },
+    { key: 'pretrainedModelD', type: 'string' },
+];
+
+const defaultVals = {
+    number: 0,
+    string: '',
+    boolean: false,
+} as const;
+
+const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
     <div className="flex flex-row flex-wrap gap-2">
-        {tags.map((tag) => {
+        {tags.map((tag, index) => {
             return (
                 <span
                     className="inline-flex items-center rounded-full bg-fade-100 px-2.5 py-0.5 text-xs font-medium text-fade-800 dark:bg-fade-800 dark:text-fade-200"
                     key={tag}
                 >
-                    {tag}
+                    <EditableLabel
+                        readonly={!editMode}
+                        text={tag}
+                        onChange={(text) => {
+                            const newTags = [...tags];
+                            newTags[index] = text;
+                            onChange(newTags);
+                        }}
+                    />
+                    {editMode && (
+                        <button
+                            className="ml-1.5"
+                            onClick={() => {
+                                const newTags = [...tags];
+                                newTags.splice(index, 1);
+                                onChange(newTags);
+                            }}
+                        >
+                            <BsFillTrashFill />
+                        </button>
+                    )}
                 </span>
             );
         })}
+        {editMode && (
+            <button
+                onClick={() => {
+                    onChange([...tags, '']);
+                }}
+            >
+                <BsPlusLg />
+            </button>
+        )}
     </div>
 );
+
+const editableMetadata = (
+    editMode: boolean,
+    value: string | number | boolean,
+    onChange: (newValue: string | number | boolean) => void
+) => {
+    switch (typeof value) {
+        case 'string':
+            return (
+                <EditableLabel
+                    readonly={!editMode}
+                    text={value}
+                    onChange={onChange}
+                />
+            );
+        case 'number':
+            return (
+                <EditableIntegerLabel
+                    readonly={!editMode}
+                    value={value}
+                    onChange={onChange}
+                />
+            );
+        case 'boolean':
+            return editMode ? (
+                <Switch
+                    value={value}
+                    onChange={onChange}
+                />
+            ) : (
+                <span>{value ? 'Yes' : 'No'}</span>
+            );
+
+        default:
+            return <span>{value}</span>;
+    }
+};
 
 export default function Page({ modelId, modelData }: Props) {
     const { archData } = useArchitectures();
@@ -61,6 +146,15 @@ export default function Page({ modelId, modelData }: Props) {
 
     const firstImageValue = model.images[0] as Image | undefined;
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
+
+    let missingMetadataEntries: [string, string | number | boolean][] = [];
+    if (editMode) {
+        const missingMetadataKeys = extraModelProperties.filter(({ key }) => model[key as keyof Model] === undefined);
+        missingMetadataEntries = missingMetadataKeys.map(({ key, type }) => [
+            key,
+            defaultVals[type as keyof typeof defaultVals],
+        ]);
+    }
 
     return (
         <>
@@ -242,7 +336,11 @@ export default function Page({ modelId, modelData }: Props) {
                                             >
                                                 Size
                                             </th>
-                                            <td className="px-6 py-4">{renderTags(model.size)}</td>
+                                            <td className="px-6 py-4">
+                                                {renderTags(model.size, editMode, (newTags: string[]) => {
+                                                    updateModelProperty('size', newTags);
+                                                })}
+                                            </td>
                                         </tr>
                                     )}
                                     <tr>
@@ -288,6 +386,7 @@ export default function Page({ modelId, modelData }: Props) {
                                         </td>
                                     </tr>
                                     {Object.entries(model)
+                                        .concat(missingMetadataEntries)
                                         .filter(
                                             ([key, _value]) =>
                                                 ![
@@ -305,11 +404,14 @@ export default function Page({ modelId, modelData }: Props) {
                                                     'outputChannels',
                                                     // This is just messed up in the data
                                                     'pretrainedModelG',
+                                                    'pretrainedModelD',
                                                     // Definitely don't want to show this
                                                     'images',
                                                 ].includes(key)
                                         )
-                                        .filter(([_key, value]) => !!value)
+                                        .filter(([_key, value]) =>
+                                            editMode ? true : value !== undefined && value !== null
+                                        )
                                         .sort()
                                         .map(([key, value]) => {
                                             return (
@@ -322,8 +424,20 @@ export default function Page({ modelId, modelData }: Props) {
                                                     </th>
                                                     <td className="px-6 py-4">
                                                         {Array.isArray(value)
-                                                            ? renderTags(value.map((v) => String(v)))
-                                                            : value}
+                                                            ? renderTags(
+                                                                  value.map((v) => String(v)),
+                                                                  editMode,
+                                                                  (newTags) => {
+                                                                      updateModelProperty(key as keyof Model, newTags);
+                                                                  }
+                                                              )
+                                                            : editableMetadata(
+                                                                  editMode,
+                                                                  value as string | number,
+                                                                  (newValue) => {
+                                                                      updateModelProperty(key as keyof Model, newValue);
+                                                                  }
+                                                              )}
                                                     </td>
                                                 </tr>
                                             );

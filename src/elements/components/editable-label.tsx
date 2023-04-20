@@ -59,8 +59,8 @@ export function EditableLabel({ className, text, onChange, readonly }: EditableL
 
 export interface EditableIntegerLabelProps {
     value: number;
-    min: number;
-    max: number;
+    min?: number;
+    max?: number;
     className?: string;
     readonly?: boolean;
     onChange?: (value: number) => void;
@@ -91,7 +91,7 @@ export function EditableIntegerLabel({ className, value, min, max, onChange, rea
 
     const submit = () => {
         const n = parseInt(temp);
-        if (!Number.isNaN(n) && min <= n && n <= max) {
+        if (!Number.isNaN(n) && (min === undefined || min <= n) && (max === undefined || n <= max)) {
             onChange(n);
         } else {
             setTemp(String(value));
