@@ -36,8 +36,6 @@
     "trainingHRSize": 128,
     "dataset": "Manga109 copied 14 times with different dithering and scaling",
     "datasetSize": 1526,
-    "pretrainedModelG": {
-        "description": "RRDB_ESRGAN_x4.pth"
-    },
+    "pretrainedModelG": "4x-ESRGAN",
     "images": []
 }

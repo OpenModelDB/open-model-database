@@ -31,8 +31,6 @@
     "trainingHRSize": 128,
     "dataset": "Div2K+Flickr2K, linearly downscaled and dithered (half Floyd-Steinberg, half ordered) using GIMP",
     "datasetSize": 3450,
-    "pretrainedModelG": {
-        "description": "RRDB_ESRGAN_x4"
-    },
+    "pretrainedModelG": "4x-ESRGAN",
     "images": []
 }

@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Purpose: Animation\n\nImprovement of low-quality cartoons from broadcast sources.",
+    "description": "Purpose: Animation\n\nImprovement of low-quality cartoons from broadcast sources.\nWill greatly increase the visual quality of bad broadcast tape sources of '80s and '90s cartoons (e.g. Garfield and Friends, Heathcliff, DuckTales, etc). Directly addresses chroma blur, dot crawl, and rainbowing. You're highly advised to take care of haloing beforehand in your favorite video editor as the model will not fix it and may make existing halos more noticeable.",
     "date": "2022-03-05",
     "architecture": "esrgan",
     "size": [
@@ -33,8 +33,5 @@
     "trainingHRSize": 128,
     "dataset": "DVD",
     "datasetSize": 3418,
-    "pretrainedModelG": {
-        "description": "Will greatly increase the visual quality of bad broadcast tape sources of '80s and '90s cartoons (e.g. Garfield and Friends, Heathcliff, DuckTales, etc). Directly addresses chroma blur, dot crawl, and rainbowing. You're highly advised to take care of haloing beforehand in your favorite video editor as the model will not fix it and may make existing halos more noticeable."
-    },
     "images": []
 }

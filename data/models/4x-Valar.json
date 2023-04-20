@@ -28,8 +28,6 @@
     ],
     "trainingIterations": 400000,
     "dataset": "Hand selected 1471 Raw images from the Adobe-MIT 5k dataset, processed using Rawtherapee.",
-    "pretrainedModelG": {
-        "description": "4x_RRDB_ESRGAN"
-    },
+    "pretrainedModelG": "4x-ESRGAN",
     "images": []
 }

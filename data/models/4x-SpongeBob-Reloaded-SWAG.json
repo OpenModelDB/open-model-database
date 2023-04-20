@@ -34,8 +34,6 @@
     "trainingHRSize": 128,
     "dataset": "SpongeBob Season 11, downscaled with linear. Random OTF JPEG, dither, and indexing.",
     "datasetSize": 24123,
-    "pretrainedModelG": {
-        "description": "4xSpongeBob"
-    },
+    "pretrainedModelG": "4x-SpongeBob",
     "images": []
 }

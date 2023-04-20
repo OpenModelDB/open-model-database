@@ -5,7 +5,7 @@
     "tags": [
         "anime"
     ],
-    "description": "Category: Images\nPurpose: Realistic Ghibli Grain\n\nText or Anime",
+    "description": "Category: Images\nPurpose: Realistic Ghibli Grain\n\nText or Anime\nAttempt to get the nostalgic grain feel of classically animated Ghibli movies. Got the idea from researching the making of Ronin's :PKT_blue: 1x_AnimeFilmGrain28k. This was made running Nate video denoising with the preset \"more denoising\" on kiki's delivery service then overlaying it 66.65 percent over the original with DaVinci. On digital drawn anime it gives a slightly [10%] more organic/sharp feel to black lines. Matches well with content that already has a light digital grain. Run Twice for heavy grain. Eternal Thanks to all that indulge all my :psyduck: Wonderings :element_fire_neon:",
     "date": "2022-11-16",
     "architecture": "esrgan",
     "size": [
@@ -31,8 +31,5 @@
     "trainingHRSize": 1280,
     "dataset": "Images from Kiki's Delivery Service Hayao Miyazaki collectors edition",
     "datasetSize": 10000,
-    "pretrainedModelG": {
-        "description": "Attempt to get the nostalgic grain feel of classically animated Ghibli movies. Got the idea from researching the making of Ronin's :PKT_blue: 1x_AnimeFilmGrain28k. This was made running Nate video denoising with the preset \"more denoising\" on kiki's delivery service then overlaying it 66.65 percent over the original with DaVinci. On digital drawn anime it gives a slightly [10%] more organic/sharp feel to black lines. Matches well with content that already has a light digital grain. Run Twice for heavy grain. Eternal Thanks to all that indulge all my :psyduck: Wonderings :element_fire_neon:"
-    },
     "images": []
 }

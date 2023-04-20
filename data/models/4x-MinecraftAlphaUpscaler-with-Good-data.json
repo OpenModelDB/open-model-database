@@ -29,8 +29,6 @@
     "trainingBatchSize": 132,
     "dataset": "https://drive.google.com/open?id=1udZWK-NQVHyzm7wpjcw0JwB2z9s7plmu",
     "datasetSize": 90000,
-    "pretrainedModelG": {
-        "description": "RRDB_PNSR_x4.pth"
-    },
+    "pretrainedModelG": "4x-ESRGAN",
     "images": []
 }
