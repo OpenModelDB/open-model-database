@@ -24,10 +24,10 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 66974517,
-            "sha256": "f397408977a3e07eb06afb7238d453a12ef35ebab7328a54241f307860dbe342",
+            "size": 67129861,
+            "sha256": "b9afb61e65e04eb7f8aba5095d070bbe9af28df76acd0c9405aeb33b814bcfc6",
             "urls": [
-                "https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x2_GAN.pth"
+                "https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth"
             ]
         }
     ],
