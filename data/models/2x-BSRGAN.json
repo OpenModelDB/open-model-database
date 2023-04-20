@@ -10,7 +10,7 @@
         "photo",
         "restoration"
     ],
-    "description": "Designing a Practical Degradation Model for Deep Blind Image Super-Resolution (ICCV, 2021)",
+    "description": "[Designing a Practical Degradation Model for Deep Blind Image Super-Resolution (ICCV, 2021)](https://github.com/cszn/BSRGAN)",
     "date": "2021-08-24",
     "architecture": "esrgan",
     "size": [

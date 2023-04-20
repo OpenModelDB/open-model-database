@@ -7,7 +7,7 @@
         "jpeg",
         "photo"
     ],
-    "description": "Real-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.\n\nReal-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.\nWe extend the powerful ESRGAN to a practical restoration application (namely, Real-ESRGAN), which is trained with pure synthetic data.",
+    "description": "[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) aims at developing Practical Algorithms for General Image/Video Restoration.\n\nReal-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.\nWe extend the powerful ESRGAN to a practical restoration application (namely, Real-ESRGAN), which is trained with pure synthetic data.",
     "date": "2021-07-22",
     "architecture": "esrgan",
     "size": [
