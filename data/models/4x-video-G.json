@@ -6,7 +6,7 @@
         "pretrained"
     ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: \n\nTrained on REDS' size dataset",
-    "date": null,
+    "date": "2020-11-24",
     "architecture": "sofvsr",
     "size": null,
     "scale": 4,

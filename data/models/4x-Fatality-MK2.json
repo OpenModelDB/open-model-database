@@ -6,7 +6,7 @@
         "pixel-art"
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\nPretrained: A previously attempted MK2",
-    "date": null,
+    "date": "2020-11-07",
     "architecture": "esrgan",
     "size": [
         "64nf",
