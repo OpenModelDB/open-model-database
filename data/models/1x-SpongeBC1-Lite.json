@@ -6,7 +6,7 @@
         "cartoon",
         "dds"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: BC1/DXT1 compression\n\nFirst ever lite BC1/DXT1 model. Probably only useful for cartoony textures like those in spongebob games or other cartoon licensed games.",
+    "description": "Category: Anime and Cartoons\nPurpose: BC1/DXT1 compression\n\nFirst ever lite BC1/DXT1 model. Probably only useful for cartoony textures like those in spongebob games or other cartoon licensed games.\n\nPretrained model: 1x_DIV2K-Lite_80k",
     "date": "2020-11-01",
     "architecture": "esrgan",
     "size": [
@@ -34,8 +34,5 @@
     "trainingHRSize": 64,
     "dataset": "Spongebob season 11 frames downscaled 8x with box and compressed using Wand (imagemagick)'s BC1/DXT1 compression.",
     "datasetSize": 24123,
-    "pretrainedModelG": {
-        "description": "1x_DIV2K-Lite_80k"
-    },
     "images": []
 }

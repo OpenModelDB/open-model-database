@@ -5,7 +5,7 @@
     "tags": [
         "jpeg"
     ],
-    "description": "Category: Images\nPurpose: Stylization\n\nPhoto stylization from JPEGs. Trained on images upscaled by ISO Denoise v2 -> DeJPEG Fatality PlusULTRA -> NMKD Yan2. Essentially a combination of that model chain into one. Use if you're looking for a stylized output, not photo quality.",
+    "description": "Category: Images\nPurpose: Stylization\n\nPhoto stylization from JPEGs. Trained on images upscaled by ISO Denoise v2 -> DeJPEG Fatality PlusULTRA -> NMKD Yan2. Essentially a combination of that model chain into one. Use if you're looking for a stylized output, not photo quality.\n\nPretrained model: NMKD Yandere2",
     "date": "2020-10-17",
     "architecture": "esrgan",
     "size": [
@@ -31,8 +31,5 @@
     "trainingHRSize": 128,
     "dataset": "Frames extracted and upscaled from Hausu (1977)",
     "datasetSize": 3074,
-    "pretrainedModelG": {
-        "description": "NMKD Yandere2"
-    },
     "images": []
 }

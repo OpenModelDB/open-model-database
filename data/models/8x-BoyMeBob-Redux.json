@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscaling cartoons",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscaling cartoons\n\nPretrained model: 8xBoyMeBob (unreleased) which used 8xESRGAN",
     "date": "2021-08-19",
     "architecture": "esrgan+",
     "size": [
@@ -32,8 +32,5 @@
     "trainingHRSize": 256,
     "dataset": "SpongeBob Season 11",
     "datasetSize": 24123,
-    "pretrainedModelG": {
-        "description": "8xBoyMeBob (unreleased) which used 8xESRGAN"
-    },
     "images": []
 }

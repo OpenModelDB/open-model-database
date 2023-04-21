@@ -3,13 +3,13 @@
     "author": "sazoji",
     "license": "CC-BY-SA-4.0",
     "tags": [],
-    "description": "Category: Pretrained Discriminators\nPurpose: Upscaling IRL video content\n\nThis model is one of the longest I have trained and tuned, includes some noise training but this is not intended for deblocking/decompression. Combined with https://github.com/JoeyBallentine/Video-Inference 's fp16 mode, this should handle most SD and 720p content at or faster than ESRGAN, with a significant bump in quality.",
+    "description": "Category: Pretrained Discriminators\nPurpose: Upscaling IRL video content\n\nThis model is one of the longest I have trained and tuned, includes some noise training but this is not intended for deblocking/decompression. Combined with https://github.com/JoeyBallentine/Video-Inference 's fp16 mode, this should handle most SD and 720p content at or faster than ESRGAN, with a significant bump in quality.\n\nPretrained model: Self-Trained Base for the Unet finalisation with vgg_fea discrim",
     "date": "2021-10-08",
     "architecture": "sofvsr",
     "size": null,
     "scale": 4,
-    "inputChannels": null,
-    "outputChannels": null,
+    "inputChannels": 3,
+    "outputChannels": 3,
     "resources": [
         {
             "platform": "pytorch",
@@ -25,8 +25,5 @@
     "trainingBatchSize": 13,
     "trainingHRSize": 128,
     "dataset": "200gb+ Combination of Collected Vimeo scenes (CG, realistic/video, movie trailers, and motion graphics) at original quality and Vimeo90k",
-    "pretrainedModelG": {
-        "description": "Self-Trained Base for the Unet finalisation with vgg_fea discrim"
-    },
     "images": []
 }

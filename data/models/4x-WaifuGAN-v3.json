@@ -5,7 +5,7 @@
     "tags": [
         "anime"
     ],
-    "description": "Category: CGI\nPurpose: CGI\n\nUpscaling CG-painted anime with variable outlines.",
+    "description": "Category: CGI\nPurpose: CGI\n\nUpscaling CG-painted anime with variable outlines.\n\nPretrained model: Manga109v2.pth",
     "date": "2019-07-12",
     "architecture": "esrgan",
     "size": [
@@ -30,8 +30,5 @@
     "trainingBatchSize": 2,
     "trainingHRSize": 128,
     "datasetSize": 73,
-    "pretrainedModelG": {
-        "description": "Manga109v2.pth"
-    },
     "images": []
 }

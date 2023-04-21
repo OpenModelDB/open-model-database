@@ -4,12 +4,12 @@
     "license": null,
     "tags": [],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: \n\nTrained on REDS' size dataset",
-    "date": null,
+    "date": "2020-11-24",
     "architecture": "sofvsr",
     "size": null,
     "scale": 4,
-    "inputChannels": null,
-    "outputChannels": null,
+    "inputChannels": 3,
+    "outputChannels": 3,
     "resources": [
         {
             "platform": "pytorch",

@@ -12,8 +12,8 @@
     "architecture": "edsr",
     "size": null,
     "scale": 2,
-    "inputChannels": null,
-    "outputChannels": null,
+    "inputChannels": 3,
+    "outputChannels": 3,
     "resources": [
         {
             "platform": "pytorch",

@@ -7,7 +7,7 @@
         "cartoon",
         "dedither"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures\n\nPretrained model: 1x_1xDEDITHER_32_512_126900_G",
     "date": "2019-11-02",
     "architecture": "esrgan",
     "size": [
@@ -34,8 +34,5 @@
     "trainingHRSize": 128,
     "dataset": "1 frame from every scene of every episode of season 11 of Spongebob, downscaled 50% with nearest neighbor, then downscaled by 25% with box for the HR, then color quantized with 256 colors for the LR",
     "datasetSize": 4803,
-    "pretrainedModelG": {
-        "description": "1x_1xDEDITHER_32_512_126900_G"
-    },
     "images": []
 }

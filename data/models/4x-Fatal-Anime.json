@@ -7,7 +7,7 @@
         "cartoon"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\nPretrained: none (no interpolation)\n\nTrained on Anime and Manga images",
-    "date": null,
+    "date": "2020-06-17",
     "architecture": "esrgan",
     "size": [
         "64nf",

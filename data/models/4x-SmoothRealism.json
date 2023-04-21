@@ -5,7 +5,7 @@
     "tags": [
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\n\nPixel art, rocky/grainy textures? Quantization smoothing, adding detail.",
+    "description": "Category: Art/Pixel Art\n\nPixel art, rocky/grainy textures? Quantization smoothing, adding detail.\n\nPretrained model: 4x_RRDB_PSNR_old_arch.pth",
     "date": "2020-03-04",
     "architecture": "esrgan",
     "size": [
@@ -31,8 +31,5 @@
     "trainingHRSize": 64,
     "dataset": "LR: Default minecraft. HR: R3DCraft Smooth Realism Texture Pack (64x resolution)",
     "datasetSize": 679,
-    "pretrainedModelG": {
-        "description": "4x_RRDB_PSNR_old_arch.pth"
-    },
     "images": []
 }

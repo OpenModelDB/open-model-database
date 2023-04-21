@@ -3,7 +3,7 @@
     "author": "boxdrop",
     "license": null,
     "tags": [],
-    "description": "Category: Drawings\nPurpose: Art\n\nClean up model for scanned illustrations. - Made to remove moire patterns, reduce small imperfections, and correct mild compression artifacts in scanned Kingdom Death: Monster illustrations. CMYK printing often shifts colors, so this is intended to reverse that color shifting as well.",
+    "description": "Category: Drawings\nPurpose: Art\n\nClean up model for scanned illustrations. - Made to remove moire patterns, reduce small imperfections, and correct mild compression artifacts in scanned Kingdom Death: Monster illustrations. CMYK printing often shifts colors, so this is intended to reverse that color shifting as well.\n\nPretrained model: Failed attempts based on ESRGAN_1x_JPEG_80to100",
     "date": "2019-07-29",
     "architecture": "esrgan",
     "size": [
@@ -30,8 +30,5 @@
     "trainingBatchSize": 2,
     "trainingHRSize": 128,
     "datasetSize": 11120,
-    "pretrainedModelG": {
-        "description": "Failed attempts based on ESRGAN_1x_JPEG_80to100"
-    },
     "images": []
 }

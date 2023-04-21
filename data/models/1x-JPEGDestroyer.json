@@ -6,7 +6,7 @@
         "jpeg",
         "restoration"
     ],
-    "description": "This model is meant to reduce or eliminate JPEG Compression without making the original images too smooth or killing detail. It manages to do a fairly good job but don't expect overly compressed images to work with this.",
+    "description": "This model is meant to reduce or eliminate JPEG Compression without making the original images too smooth or killing detail. It manages to do a fairly good job but don't expect overly compressed images to work with this.\n\nPretrained model: 1xESRGAN + previous attempts",
     "date": "2020-02-19",
     "architecture": "esrgan",
     "size": [
@@ -33,8 +33,5 @@
     "trainingHRSize": 128,
     "dataset": "LR: 40-60% quality 4:2:0/4:4:4 randomly compressed images",
     "datasetSize": 10100,
-    "pretrainedModelG": {
-        "description": "1xESRGAN + previous attempts"
-    },
     "images": []
 }

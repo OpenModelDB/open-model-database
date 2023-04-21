@@ -27,7 +27,6 @@
         }
     ],
     "trainingIterations": 790000,
-    "trainingEpochs": 0,
     "trainingBatchSize": 16,
     "trainingHRSize": 128,
     "dataset": "ADE20K(https://groups.csail.mit.edu/vision/datasets/ADE20K/), DIV2K(https://data.vision.ee.ethz.ch/cvl/DIV2K/), Library of Congress Scans (http://www.loc.gov/pictures/). I hand picked few thousand images here.",
