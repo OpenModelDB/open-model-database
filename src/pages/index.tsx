@@ -5,18 +5,16 @@ import { SearchBar } from '../elements/components/searchbar';
 import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
 import { TagSelector } from '../elements/tag-selector';
-import { deriveTags } from '../lib/derive-tags';
-import { useMemoDelay } from '../lib/hooks/use-memo-delay';
 import { useModels } from '../lib/hooks/use-models';
+import { useSearch } from '../lib/hooks/use-search';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { Model, ModelId, TagId } from '../lib/schema';
+import { Model, ModelId } from '../lib/schema';
+import { createModelSearchIndex } from '../lib/search/create';
 import { compileCondition } from '../lib/search/logical-condition';
-import { CorpusEntry, SearchIndex } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
 import { TagSelection, getTagCondition } from '../lib/tag-condition';
-import { EMPTY_MAP, asArray } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
@@ -24,57 +22,25 @@ interface Props {
 
 export default function Page({ modelData: staticModelData }: Props) {
     const { modelData } = useModels(staticModelData);
-    const { tagCategoryData } = useTags();
+    const { tagData, tagCategoryData } = useTags();
 
-    const searchIndex = useMemo(() => {
-        return new SearchIndex(
-            [...modelData].map(([id, model]): CorpusEntry<ModelId, TagId> => {
-                return {
-                    id,
-                    tags: new Set(deriveTags(model)),
-                    texts: [
-                        {
-                            text: [id, model.name].filter(Boolean).join('\n').toLowerCase(),
-                            weight: 8,
-                        },
-                        {
-                            text: asArray(model.author).filter(Boolean).join('\n').toLowerCase(),
-                            weight: 4,
-                        },
-                        {
-                            text: [model.architecture, `${model.scale}x`, model.dataset]
-                                .filter(Boolean)
-                                .join('\n')
-                                .toLowerCase(),
-                            weight: 1,
-                        },
-                        { text: model.description.toLowerCase(), weight: 1 },
-                    ],
-                };
-            })
-        );
-    }, [modelData]);
+    const searchIndex = useMemo(() => createModelSearchIndex(modelData), [modelData]);
 
-    const [searchQuery, setSearchQuery] = useState<string>('');
-
-    const [tagSelection, setTagSelection] = useState<TagSelection>(EMPTY_MAP);
-    const tagCondition = useMemo(
-        () => compileCondition(getTagCondition(tagSelection, tagCategoryData.values())),
-        [tagSelection, tagCategoryData]
-    );
-
-    const selectedModels = useMemoDelay(
-        useCallback(() => {
+    const [selectedModels, setSelectedModels] = useState<ModelId[]>(() => [...modelData.keys()]);
+    const updatedSelectedModels = useCallback(
+        (searchQuery: string, tags: TagSelection): void => {
             const queryTokens = tokenize(searchQuery);
+            const tagCondition = compileCondition(getTagCondition(tags, tagCategoryData.values()));
 
             const searchResults = searchIndex
                 .retrieve(tagCondition, queryTokens)
                 .sort((a, b) => a.id.localeCompare(b.id))
                 .sort((a, b) => b.score - a.score);
-            return searchResults.map((r) => r.id);
-        }, [tagCondition, searchQuery, searchIndex]),
-        500
+            setSelectedModels(searchResults.map((r) => r.id));
+        },
+        [searchIndex, tagCategoryData]
     );
+    const { searchQuery, tagSelection, setSearchQuery, setTagSelection } = useSearch(tagData, updatedSelectedModels);
 
     const { webApi, editMode } = useWebApi();
     const clickFunction = async () => {
@@ -119,14 +85,14 @@ export default function Page({ modelData: staticModelData }: Props) {
                     {/* Search */}
                     <SearchBar
                         value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
+                        onChange={(e) => setSearchQuery(e.target.value, 400)}
                     />
 
                     {/* Tags */}
                     <div className="my-4">
                         <TagSelector
                             selection={tagSelection}
-                            onChange={setTagSelection}
+                            onChange={(value) => setTagSelection(value, 800)}
                         />
                     </div>
 
