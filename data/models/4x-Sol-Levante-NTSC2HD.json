@@ -33,8 +33,6 @@
     "trainingHRSize": 128,
     "dataset": "```HR: http://download.opencontent.netflix.com.s3.amazonaws.com/SolLevante/hdr10/SolLevante_HDR10_r2020_ST2084_UHD_24fps_1000nit.mov downscaled to 2880x1920 (720*4x480*4)",
     "datasetSize": 6309,
-    "pretrainedModelG": {
-        "description": "RRDB_PSNR_x4"
-    },
+    "pretrainedModelG": "4x-PSNR",
     "images": []
 }

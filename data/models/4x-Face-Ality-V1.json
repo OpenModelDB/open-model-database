@@ -6,8 +6,8 @@
         "face-upscaling",
         "faces"
     ],
-    "description": "",
-    "date": null,
+    "description": "Upscales small faces to big faces.",
+    "date": "2019-11-09",
     "architecture": "esrgan",
     "size": [
         "64nf",

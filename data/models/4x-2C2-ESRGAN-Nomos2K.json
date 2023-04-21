@@ -5,7 +5,7 @@
     "tags": [
         "pretrained"
     ],
-    "description": "Technically my previous experiment was the pretrained model, but for all intents and purposes this was trained from scratch. Description: Pretrained model for the new architecture modification I made. You can read more about it in the [GitHub README](https://github.com/joeyballentine/2C2-ESRGAN). Basically it makes smaller ESRGAN models that theoretically can produce the same level of quality.\n\n**NOTE:** THIS WILL NOT WORK IN CUPSCALE or IEU! You have to use chaiNNer or my fork to use it for now.",
+    "description": "Technically my previous experiment was the pretrained model, but for all intents and purposes this was trained from scratch. Description: Pretrained model for the new architecture modification I made. You can read more about it in the [GitHub README](https://github.com/joeyballentine/2C2-ESRGAN). Basically it makes smaller ESRGAN models that theoretically can produce the same level of quality.\n\n**NOTE:** THIS WILL NOT WORK IN CUPSCALE or IEU! You have to use chaiNNer or my fork to use it for now.\n\nPretrained model: Technically my previous experiment was the pretrained model, but for all intents and purposes this was trained from scratch.",
     "date": "2022-04-20",
     "architecture": "2c2-esrgan",
     "size": [
@@ -32,8 +32,5 @@
     "trainingBatchSize": 6,
     "trainingHRSize": 128,
     "dataset": "Nomos2K",
-    "pretrainedModelG": {
-        "description": "Technically my previous experiment was the pretrained model, but for all intents and purposes this was trained from scratch."
-    },
     "images": []
 }

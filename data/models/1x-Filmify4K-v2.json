@@ -32,8 +32,6 @@
     "trainingHRSize": 128,
     "dataset": "Still frames from the 4K Blu-Ray of Lawrence of Arabia, downscaled to 1080p and upscaled with Gaia-HQ for the LRs",
     "datasetSize": 8200,
-    "pretrainedModelG": {
-        "description": "1x_UnResize_V3_110000_G.pth"
-    },
+    "pretrainedModelG": "1x-UnResize-V3",
     "images": []
 }

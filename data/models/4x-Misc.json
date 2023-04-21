@@ -27,7 +27,6 @@
         }
     ],
     "trainingIterations": 100000,
-    "trainingEpochs": 0,
     "trainingBatchSize": 12,
     "trainingHRSize": 128,
     "dataset": "Various eroge dumps",

@@ -5,7 +5,7 @@
     "tags": [
         "manga"
     ],
-    "description": "To upscale manga including halftones, instead of trying to smooth them out.",
+    "description": "To upscale manga including halftones, instead of trying to smooth them out.\n\nPretrained model: MangaScaleV2(not released)",
     "date": "2021-05-24",
     "architecture": "esrgan+",
     "size": [
@@ -27,8 +27,5 @@
         }
     ],
     "dataset": "Self curated custom manga dataset",
-    "pretrainedModelG": {
-        "description": "MangaScaleV2(not released)"
-    },
     "images": []
 }

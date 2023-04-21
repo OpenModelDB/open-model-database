@@ -34,8 +34,6 @@
     "trainingOTF": true,
     "dataset": "DIV2K, Flick2R, AmbientCG, Poly Haven, nomos2k",
     "datasetSize": 861,
-    "pretrainedModelG": {
-        "description": "RealESRGAN_x4plus"
-    },
+    "pretrainedModelG": "4x-realesrgan-x4plus",
     "images": []
 }

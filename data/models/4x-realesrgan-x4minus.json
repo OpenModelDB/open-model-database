@@ -33,8 +33,6 @@
     "trainingOTF": true,
     "dataset": "Same as realesrgan-x4plus, but later modified to crop some shallow focus images.",
     "datasetSize": 58000,
-    "pretrainedModelG": {
-        "description": "realesrgan-x4plus"
-    },
+    "pretrainedModelG": "4x-realesrgan-x4plus",
     "images": []
 }

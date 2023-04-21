@@ -1,7 +1,7 @@
 import { KNOWN_LICENSES, LicenseProperties, parseLicense } from './license';
 import { Model, Platform, SPDXLicense, TagId } from './schema';
 import { STATIC_ARCH_DATA } from './static-data';
-import { EMPTY_ARRAY, asArray, lazyWithKey, lazyWithWeakKey } from './util';
+import { DATE_REGEX, EMPTY_ARRAY, asArray, lazyWithKey, lazyWithWeakKey } from './util';
 
 function intersect<T>(arrays: (readonly T[])[]): Iterable<T> {
     if (arrays.length === 0) {
@@ -101,7 +101,7 @@ export const deriveTags = lazyWithWeakKey((model: Model): readonly TagId[] => {
     // helpers
     if (!model.date) {
         tags.push('helper:needs-date');
-    } else if (!/^\d{4}-(?:0[1-9]|1[012])-(?:0[1-9]|[12][0-9]|3[01])$/.test(model.date)) {
+    } else if (!DATE_REGEX.test(model.date)) {
         tags.push('helper:invalid-date');
     }
     if (!model.description) {

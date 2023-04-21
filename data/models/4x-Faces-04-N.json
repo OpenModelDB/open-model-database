@@ -6,7 +6,7 @@
         "face-upscaling",
         "faces"
     ],
-    "description": "Upscale faces both pixelized and real",
+    "description": "Upscale faces both pixelized and real\n\nPretrained model: 4x_Faces_N_250000.pth",
     "date": "2019-07-23",
     "architecture": "esrgan",
     "size": [
@@ -33,8 +33,5 @@
     "trainingBatchSize": 10,
     "trainingHRSize": 128,
     "datasetSize": 7510,
-    "pretrainedModelG": {
-        "description": "4x_Faces_N_250000.pth"
-    },
     "images": []
 }

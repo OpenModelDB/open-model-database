@@ -5,13 +5,13 @@
     "tags": [
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\n\nSmooth general pixel art, Minecraft textures",
+    "description": "Category: Art/Pixel Art\n\nSmooth general pixel art, Minecraft textures\n\nPretrained model: Interpolated from nmkd's pixel art upscaling models with different interpolation settings and de-dithered versions",
     "date": "2021-02-10",
     "architecture": "esrgan",
     "size": null,
     "scale": 8,
-    "inputChannels": null,
-    "outputChannels": null,
+    "inputChannels": 3,
+    "outputChannels": 3,
     "resources": [
         {
             "platform": "pytorch",
@@ -23,8 +23,5 @@
             ]
         }
     ],
-    "pretrainedModelG": {
-        "description": "Interpolated from nmkd's pixel art upscaling models with different interpolation settings and de-dithered versions"
-    },
     "images": []
 }
