@@ -3,7 +3,7 @@
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [],
-    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.",
+    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.\n\nPretrained model: 4xESRGAN originally, but I used each previous version as a pretrained until I got to v4.",
     "date": "2020-09-05",
     "architecture": "esrgan",
     "size": [
@@ -28,8 +28,5 @@
     "trainingHRSize": 512,
     "dataset": "Random screenshots from Alpha Minecraft taken at the correct angle, screen region, block placement, and cloud position (with slight random variance). LR images were OTF downscaled with box/area.",
     "datasetSize": 60000,
-    "pretrainedModelG": {
-        "description": "4xESRGAN originally, but I used each previous version as a pretrained until I got to v4."
-    },
     "images": []
 }

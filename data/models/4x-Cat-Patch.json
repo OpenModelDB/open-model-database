@@ -3,7 +3,7 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [],
-    "description": "Category: Cats\nPurpose: Cats",
+    "description": "Category: Cats\nPurpose: Cats\n\nPretrained model: Previous attempt",
     "date": "2020-11-28",
     "architecture": "esrgan",
     "size": [
@@ -25,8 +25,5 @@
             ]
         }
     ],
-    "pretrainedModelG": {
-        "description": "Previous attempt"
-    },
     "images": []
 }

@@ -3,7 +3,7 @@
     "author": "sazoji",
     "license": "CC-BY-SA-4.0",
     "tags": [],
-    "description": "Category: Pretrained Discriminators\nPurpose: Upscaling video content\n\nThis model is meant to surpass VEAI 2x while being efficient to run quickly with fp16. The real-esrgan/BSRGAN augmentation and Unet should help with videos where the resolution is not ideal and can reconstruct details without effecting blurs in most cases. This model SHOULD run faster than real-esrgan while matching the resolving and enabling some multiframe feature extraction. No major denoising/compression/blurring effects (or artifacts) should be found.",
+    "description": "Category: Pretrained Discriminators\nPurpose: Upscaling video content\n\nThis model is meant to surpass VEAI 2x while being efficient to run quickly with fp16. The real-esrgan/BSRGAN augmentation and Unet should help with videos where the resolution is not ideal and can reconstruct details without effecting blurs in most cases. This model SHOULD run faster than real-esrgan while matching the resolving and enabling some multiframe feature extraction. No major denoising/compression/blurring effects (or artifacts) should be found.\n\nPretrained model: Self-Trained Base for the Unet finalisation with vgg_fea discrim",
     "date": "2021-09-09",
     "architecture": "sofvsr",
     "size": [
@@ -28,8 +28,5 @@
     "trainingBatchSize": 13,
     "trainingHRSize": 128,
     "dataset": "Combination of Collected Vimeo scenes (CG, realistic/video, movie trailers, and motion graphics) at original quality and REDS_sharp",
-    "pretrainedModelG": {
-        "description": "Self-Trained Base for the Unet finalisation with vgg_fea discrim"
-    },
     "images": []
 }

@@ -32,8 +32,6 @@
     "trainingBatchSize": 16,
     "trainingHRSize": 128,
     "datasetSize": 4012,
-    "pretrainedModelG": {
-        "description": "RRDB_PSNR_x4.pth"
-    },
+    "pretrainedModelG": "4x-PSNR",
     "images": []
 }

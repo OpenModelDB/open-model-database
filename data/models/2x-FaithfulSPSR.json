@@ -6,7 +6,7 @@
         "game-textures",
         "pixel-art"
     ],
-    "description": "Category: Video Game Textures\n\nMainly just a test for SPSR. Seems to work better than the original 2xFaithful32_1316 that I used as a pretrained, even though it uses the same dataset.",
+    "description": "Category: Video Game Textures\n\nMainly just a test for SPSR. Seems to work better than the original 2xFaithful32_1316 that I used as a pretrained, even though it uses the same dataset.\n\nPretrained model: 2xFaithful32_1316",
     "date": "2020-07-19",
     "architecture": "spsr",
     "size": [
@@ -33,8 +33,5 @@
     "trainingHRSize": 32,
     "dataset": "The 1.13 and 1.16 versions of the Faithful32x Minecraft texture pack",
     "datasetSize": 2928,
-    "pretrainedModelG": {
-        "description": "2xFaithful32_1316"
-    },
     "images": []
 }

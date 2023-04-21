@@ -5,7 +5,7 @@
     "tags": [
         "game-texture-maps"
     ],
-    "description": "Category: Normal Map/Bump Map Generation\nPurpose: Map Generation - roughness and displacement maps\n\nThis model generates \"Franken Maps\" (named after Frankenstein), which is a custom material map combination I made. Basically, the Red channel of RGB is just the texture converted to grayscale, the Green channel is the roughness map, and the Blue channel is the displacement map. I had to do this to get around the current limitation of CX loss where it requires a 3 channel output (otherwise I would have just made a 2 channel model, or separate single channel models). As of right now the channels need to be manually split from each other but I will be making a tool for doing this automatically in the coming days.",
+    "description": "Category: Normal Map/Bump Map Generation\nPurpose: Map Generation - roughness and displacement maps\n\nThis model generates \"Franken Maps\" (named after Frankenstein), which is a custom material map combination I made. Basically, the Red channel of RGB is just the texture converted to grayscale, the Green channel is the roughness map, and the Blue channel is the displacement map. I had to do this to get around the current limitation of CX loss where it requires a 3 channel output (otherwise I would have just made a 2 channel model, or separate single channel models). As of right now the channels need to be manually split from each other but I will be making a tool for doing this automatically in the coming days.\n\nPretrained model: 1x_DIV2K-Lite_450k.pth",
     "date": "2020-11-07",
     "architecture": "esrgan",
     "size": [
@@ -32,8 +32,5 @@
     "trainingHRSize": 64,
     "dataset": "CC0 textures/displacement maps/roughness maps, 2K size, randomly downscaled OTF (by 1, 2, and 4) to get more variation",
     "datasetSize": 14784,
-    "pretrainedModelG": {
-        "description": "1x_DIV2K-Lite_450k.pth"
-    },
     "images": []
 }

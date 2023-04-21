@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nPretrained model: 4x_DIV2K-Lite_1M (`4x_NMKD-YandereNeo-Lite_320k` for the 2x conversion)",
     "date": "2021-01-26",
     "architecture": "esrgan",
     "size": [
@@ -31,8 +31,5 @@
     "trainingIterations": 320000,
     "trainingBatchSize": 4,
     "dataset": "Yandere1200 (yande.re artworks)",
-    "pretrainedModelG": {
-        "description": "4x_DIV2K-Lite_1M (`4x_NMKD-YandereNeo-Lite_320k` for the 2x conversion)"
-    },
     "images": []
 }

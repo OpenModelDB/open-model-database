@@ -33,8 +33,6 @@
     "trainingHRSize": 128,
     "dataset": "different frames from different anime blu-ray",
     "datasetSize": 1250,
-    "pretrainedModelG": {
-        "description": "RRDB_PSNR_x4.pth"
-    },
+    "pretrainedModelG": "4x-PSNR",
     "images": []
 }

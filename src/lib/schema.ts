@@ -39,11 +39,9 @@ interface ExtraModelProperties {
     trainingOTF: boolean;
     dataset: MarkDownString;
     datasetSize: number;
-    pretrainedModelG: ModelReference;
-    pretrainedModelD: ModelReference;
+    pretrainedModelG: ModelId;
+    pretrainedModelD: ModelId;
 }
-/** A reference to a model. The model might be in the database or not. */
-export type ModelReference = ModelId | { description: MarkDownString };
 
 export type Resource = PthFile | OnnxFile;
 

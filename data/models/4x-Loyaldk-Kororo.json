@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale Anime while keeping as much of the original detail as possible. Isn't among the sharpest models and if the anime is somewhat blurry it will retain that detail but add more pixels to give a smoother edge. Doesn't change the color very much and may make some scene's very slightly darker.",
+    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale Anime while keeping as much of the original detail as possible. Isn't among the sharpest models and if the anime is somewhat blurry it will retain that detail but add more pixels to give a smoother edge. Doesn't change the color very much and may make some scene's very slightly darker.\n\nPretrained model: Pony Models",
     "date": "2021-06-07",
     "architecture": "esrgan",
     "size": [
@@ -32,8 +32,5 @@
     "trainingOTF": false,
     "dataset": "Saga of Tanya The Evil, Gravity Falls, Lucky Star, One Punch Man, Redline, Soul Eater, Spirited Away, Your Lie in April and Your Name. Converted Episodes and Movies to 4:4:4 Chroma Subsampling using custom 1x model included. LR's Include H264 Compression, H265 Compression, 1x_DotCrawl_125000_G, 1x_DeteriorationFrames V1_102000_G, Gaussian Blur, Poisson Noise, Uniform Noise, JPEG Compression, 4:2:0 Chroma Subsampling, Dithering.",
     "datasetSize": 70263,
-    "pretrainedModelG": {
-        "description": "Pony Models"
-    },
     "images": []
 }

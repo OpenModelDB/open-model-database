@@ -32,8 +32,5 @@
     "trainingBatchSize": 7,
     "trainingHRSize": 128,
     "dataset": "For LR, two decade old VHS recording of a movie from TV, captured with enabled TBC on the VCR. For HR, Blu-ray rip of that movie.",
-    "pretrainedModelG": {
-        "description": "Training was done from scratch"
-    },
     "images": []
 }

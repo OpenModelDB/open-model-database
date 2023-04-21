@@ -33,8 +33,6 @@
     "trainingOTF": false,
     "dataset": "High Resolution Digital Art from Deviant Art",
     "datasetSize": 2797,
-    "pretrainedModelG": {
-        "description": "RRDB_PSNR_x4"
-    },
+    "pretrainedModelG": "4x-PSNR",
     "images": []
 }

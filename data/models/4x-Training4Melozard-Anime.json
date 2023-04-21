@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nPretrained model: RRDB_ESRGAN_x4_old_arch.pth",
     "date": "2021-03-17",
     "architecture": "esrgan",
     "size": [
@@ -33,8 +33,5 @@
     "trainingHRSize": 128,
     "dataset": "<@!716378030121156669>'s Anime dataset",
     "datasetSize": 202,
-    "pretrainedModelG": {
-        "description": "RRDB_ESRGAN_x4_old_arch.pth"
-    },
     "images": []
 }

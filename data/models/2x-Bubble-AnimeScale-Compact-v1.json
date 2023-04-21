@@ -7,7 +7,7 @@
         "cartoon",
         "text"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\nPretrained: 4x_muy4_035_1.pth\n\nThis is my first model, so it's not perfect, but I wanted to see if I could train an upscaling model that didn't result in a lot of detail loss and deblurring like the current Compact upscaling models. I believe I accomplished this, but I was unable to reduce contrast shifting. The contrast shifting may cause skin tones to appear incorrect on bright frames, but it's not too bad overall! I'll list a few examples below; more can be found by clicking the Overview link on the Github release page.",
+    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\nPretrained: 4x_muy4_035_1.pth\n\nThis is my first model, so it's not perfect, but I wanted to see if I could train an upscaling model that didn't result in a lot of detail loss and deblurring like the current Compact upscaling models. I believe I accomplished this, but I was unable to reduce contrast shifting. The contrast shifting may cause skin tones to appear incorrect on bright frames, but it's not too bad overall! I'll list a few examples below; more can be found by clicking the Overview link on the Github release page.\n\nPretrained model: Kim2091_CrappyCompactV2.pth",
     "date": "2022-11-13",
     "architecture": "compact",
     "size": [
@@ -35,8 +35,5 @@
     "trainingOTF": false,
     "dataset": "SFW and NSFW anime frames that were sourced from Blu Ray discs and high bitrate Web releases. These were then degraded with various different methods.",
     "datasetSize": 1845,
-    "pretrainedModelG": {
-        "description": "Kim2091_CrappyCompactV2.pth"
-    },
     "images": []
 }

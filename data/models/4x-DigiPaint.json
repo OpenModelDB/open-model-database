@@ -3,7 +3,7 @@
     "author": "rastrum",
     "license": "CC0-1.0",
     "tags": [],
-    "description": "Category: Drawings\nPurpose: Art\n\nDigital Art Upscaler",
+    "description": "Category: Drawings\nPurpose: Art\n\nDigital Art Upscaler\n\nPretrained model: 4xfalcoon300(manga).pth",
     "date": "2019-09-07",
     "architecture": "esrgan",
     "size": [
@@ -30,8 +30,5 @@
     "trainingHRSize": 128,
     "dataset": "Random digital art scraped from the internet. Mostly material studies but other stuff as well.",
     "datasetSize": 48493,
-    "pretrainedModelG": {
-        "description": "4xfalcoon300(manga).pth"
-    },
     "images": []
 }

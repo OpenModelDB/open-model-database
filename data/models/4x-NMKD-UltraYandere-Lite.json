@@ -5,7 +5,7 @@
     "tags": [
         "anime"
     ],
-    "description": "Fast Anime/Art upscaling",
+    "description": "Fast Anime/Art upscaling\n\nPretrained model: 4x_DIV2K-Lite",
     "date": "2020-10-15",
     "architecture": "esrgan",
     "size": [
@@ -31,8 +31,5 @@
     "trainingBatchSize": 3,
     "trainingHRSize": 256,
     "dataset": "Yandere4800",
-    "pretrainedModelG": {
-        "description": "4x_DIV2K-Lite"
-    },
     "images": []
 }
