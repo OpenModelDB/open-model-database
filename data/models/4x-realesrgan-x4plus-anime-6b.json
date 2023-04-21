@@ -1,0 +1,40 @@
+{
+    "name": "RealESRGAN_x4Plus Anime 6B",
+    "author": "xinntao",
+    "license": "BSD-3-Clause",
+    "tags": [
+        "anime",
+        "cartoon",
+        "general-upscaler",
+        "jpeg",
+        "photo"
+    ],
+    "description": "[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) aims at developing Practical Algorithms for General Image/Video Restoration.\n\nReal-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.\nWe extend the powerful ESRGAN to a practical restoration application (namely, Real-ESRGAN), which is trained with pure synthetic data.\n\nThis model is optimized for anime images with much smaller model size.",
+    "date": "2021-12-12",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "6nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 17938799,
+            "sha256": "f872d837d3c90ed2e05227bed711af5671a6fd1c9f7d7e91c911a61f155e99da",
+            "urls": [
+                "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://raw.githubusercontent.com/xinntao/public-figures/master/Real-ESRGAN/cmp_realesrgan_anime_1.png",
+            "thumbnail": ""
+        }
+    ]
+}

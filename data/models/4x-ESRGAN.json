@@ -5,7 +5,7 @@
     "tags": [
         "pretrained"
     ],
-    "description": "Pretrained: RRDB_ESRGAN_x4.pth",
+    "description": "[ESRGAN](https://github.com/xinntao/ESRGAN)\n\nPretrained: RRDB_ESRGAN_x4.pth",
     "date": "2019-07-06",
     "architecture": "esrgan",
     "size": [

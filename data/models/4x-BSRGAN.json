@@ -1,0 +1,108 @@
+{
+    "name": "BSRGAN",
+    "author": "cszn",
+    "license": "Apache-2.0",
+    "tags": [
+        "face-upscaling",
+        "faces",
+        "general-upscaler",
+        "jpeg",
+        "photo",
+        "restoration"
+    ],
+    "description": "[Designing a Practical Degradation Model for Deep Blind Image Super-Resolution (ICCV, 2021)](https://github.com/cszn/BSRGAN)",
+    "date": "2021-08-24",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67046751,
+            "sha256": "5d505a0766160921e0388d76e1ddf08cb114303990f9080432bf2b1c988b1c54",
+            "urls": [
+                "https://github.com/cszn/KAIR/releases/download/v1.0/BSRGAN.pth"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/butterfly.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/butterfly_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/oldphoto2.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto2_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/oldphoto3.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto3_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/oldphoto6.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto6_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/dog.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/dog_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/dped_crop00061.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/dped_crop00061_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/chip.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/chip_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/comic1.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/comic1_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/comic3.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/comic3_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/figs/00003.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00003_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/figs/00080.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00080_BSRGAN.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/cszn/BSRGAN/raw/main/figs/00081.png",
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00081_BSRGAN.png",
+            "thumbnail": ""
+        }
+    ]
+}
