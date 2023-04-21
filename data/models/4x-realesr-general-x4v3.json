@@ -1,0 +1,32 @@
+{
+    "name": "RealESR General x4 v3",
+    "author": "xinntao",
+    "license": "BSD-3-Clause",
+    "tags": [
+        "general-upscaler",
+        "jpeg",
+        "photo"
+    ],
+    "description": "[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) aims at developing Practical Algorithms for General Image/Video Restoration.\n\nReal-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.\nWe extend the powerful ESRGAN to a practical restoration application (namely, Real-ESRGAN), which is trained with pure synthetic data.\n\nA tiny small model for general scenes.",
+    "date": "2022-09-30",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "32nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4885111,
+            "sha256": "8dc7edb9ac80ccdc30c3a5dca6616509367f05fbc184ad95b731f05bece96292",
+            "urls": [
+                "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-general-x4v3.pth"
+            ]
+        }
+    ],
+    "images": []
+}

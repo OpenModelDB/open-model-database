@@ -1,0 +1,107 @@
+{
+    "name": "RealESR AnimeVideo v3",
+    "author": "xinntao",
+    "license": "BSD-3-Clause",
+    "tags": [
+        "anime",
+        "cartoon",
+        "general-upscaler",
+        "jpeg",
+        "photo"
+    ],
+    "description": "[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) aims at developing Practical Algorithms for General Image/Video Restoration.\n\nReal-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.\nWe extend the powerful ESRGAN to a practical restoration application (namely, Real-ESRGAN), which is trained with pure synthetic data.\n\nWe add small models that are optimized for anime videos :-)\n\nWe have made the following improvements:\n- better naturalness\n- Fewer artifacts\n- more faithful to the original colors\n- better texture restoration\n- better background restoration",
+    "date": "2022-04-24",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2504012,
+            "sha256": "b8a8376811077954d82ca3fcf476f1ac3da3e8a68a4f4d71363008000a18b75d",
+            "urls": [
+                "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-animevideov3.pth"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164452769-5d8cb4f8-1708-42d2-b941-f44a6f136feb.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164452771-be300656-379a-4323-a755-df8025a8c451.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164454047-22eeb493-3fa9-4142-9fc2-6f2a1c074cd5.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164454055-73dc9f02-286e-4d5c-8f70-c13742e08f42.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164451232-bacf64fc-e55a-44db-afbb-6b31ab0f8973.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164451361-9b7d376e-6f75-4648-b752-542b44845d1c.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164448411-148a7e5c-cfcd-4504-8bc7-e318eb883bb6.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164448848-1a4ff99e-075b-4458-9db7-2c89e8160aa0.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164451898-83311cdf-bd3e-450f-b9f6-34d7fea3ab79.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164451901-31ca4dd4-9847-4baa-8cde-ad50f4053dcf.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164454578-73c77392-77de-49c5-b03c-c36631723192.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164454583-7f243f20-eca3-4500-ac43-eb058a4a101a.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164453482-0726c842-337e-40ec-bf6c-f902ee956a8b.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164453486-3091887c-587c-450e-b6fe-905cb518d57e.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164454933-67697f7c-b6ef-47dc-bfca-822a78af8acf.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164454936-8abdf0f0-fb30-40eb-8281-3b46c0bcb9ae.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164456948-807c1476-90b6-4507-81da-cb986d01600c.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164456957-640f910c-3b04-407c-ac20-044d72e19735.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164456044-e9a6b3fa-b24e-4eb7-acf9-1f7746551b1e.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164456035-12e270be-fd52-46d4-b18a-3d3b680731fe.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164455312-6411b6e1-5823-4131-a4b0-a6be8a9ae89f.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164455305-fa4c9758-564a-4081-8b4e-f11057a0404d.png",
+            "thumbnail": ""
+        },
+        {
+            "type": "paired",
+            "LR": "https://user-images.githubusercontent.com/11482921/164455672-447353c9-2da2-4fcb-ba4a-7dd6b94c19c1.png",
+            "SR": "https://user-images.githubusercontent.com/11482921/164455664-0342b93e-a62a-4b36-a90e-7118f3f1e45d.png",
+            "thumbnail": ""
+        }
+    ]
+}
