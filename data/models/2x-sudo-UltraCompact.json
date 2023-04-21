@@ -31,6 +31,6 @@
         }
     ],
     "trainingIterations": 1121175,
-    "pretrainedModelG": "4x-realesrganv2-animevideo-xsx2",
+    "pretrainedModelG": "2x-realesrganv2-animevideo-xsx2",
     "images": []
 }
