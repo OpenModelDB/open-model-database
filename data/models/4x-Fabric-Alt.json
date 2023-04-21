@@ -26,7 +26,7 @@
             ]
         }
     ],
-    "trainingIterations": 115000,
+    "trainingIterations": 53600,
     "trainingEpochs": 3350,
     "trainingBatchSize": 4,
     "trainingHRSize": 64,
