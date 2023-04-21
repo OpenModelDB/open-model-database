@@ -6,7 +6,7 @@
         "deblur"
     ],
     "description": "Strong deblurring model",
-    "date": null,
+    "date": "2019-08-29",
     "architecture": "esrgan",
     "size": [
         "64nf",

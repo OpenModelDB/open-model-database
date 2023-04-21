@@ -6,7 +6,7 @@
         "video-frame"
     ],
     "description": "Category: Video Compression\nPurpose: Indeo Compression Artifacts",
-    "date": null,
+    "date": "2020-08-15",
     "architecture": "esrgan",
     "size": [
         "64nf",

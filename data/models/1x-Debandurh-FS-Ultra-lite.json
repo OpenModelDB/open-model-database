@@ -6,7 +6,7 @@
         "debanding"
     ],
     "description": "Purpose: Debanding images",
-    "date": null,
+    "date": "2020-12-21",
     "architecture": "esrgan",
     "size": [
         "8nf",
