@@ -66,13 +66,13 @@ export interface PairedImage {
     type: 'paired';
     LR: string;
     SR: string;
-    thumbnail: string | null;
+    thumbnail?: string | null;
 }
 
 export interface StandaloneImage {
     type: 'standalone';
     url: string;
-    thumbnail: string | null;
+    thumbnail?: string | null;
 }
 
 export interface User {
