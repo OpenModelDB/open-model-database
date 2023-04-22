@@ -40,6 +40,11 @@
         right: 0;
         padding: 0.75rem;
         padding-top: 0.5rem;
+
+        a.name {
+            word-break: normal;
+            overflow-wrap: anywhere;
+        }
     }
 
     .tagBase {
