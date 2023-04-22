@@ -5,7 +5,7 @@
     "tags": [
         "general-upscaler"
     ],
-    "description": "General Upscaler",
+    "description": "General Upscaler\n\nComparison with v1: https://imgsli.com/NDc3ODA/1/2",
     "date": "2021-04-01",
     "architecture": "esrgan",
     "size": [
@@ -32,5 +32,11 @@
     "trainingOTF": false,
     "dataset": "Realistic images",
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6f584a00-9207-452a-818b-6c5cad94ef7a.jpg",
+            "SR": "https://imgsli.com/i/e75cfdeb-f4a2-4796-9cae-3f51757d4f2e.jpg"
+        }
+    ]
 }

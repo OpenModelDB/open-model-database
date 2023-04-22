@@ -32,5 +32,11 @@
     "dataset": "Div2K+Flickr2K, linearly downscaled and dithered (half Floyd-Steinberg, half ordered) using GIMP",
     "datasetSize": 3450,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6522fb49-d20c-44e0-b8eb-e9e50b5d1cad.jpg",
+            "SR": "https://imgsli.com/i/a5d6613e-5021-41aa-9fe8-69e0cd9516dd.jpg"
+        }
+    ]
 }

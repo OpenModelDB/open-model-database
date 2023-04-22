@@ -31,5 +31,51 @@
     "trainingHRSize": 1280,
     "dataset": "Images from Kiki's Delivery Service Hayao Miyazaki collectors edition",
     "datasetSize": 10000,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/32RHqjLT.png",
+            "SR": "https://i.slow.pics/RF2QHsCs.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3e4d7198-3a4a-4358-945e-ed1e75e55242.jpg",
+            "SR": "https://imgsli.com/i/6f8fd9bd-03e6-4b68-bdfd-dc2ecc719d88.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/61e87558-0ecd-4fb8-87fc-d80d4274417b.jpg",
+            "SR": "https://imgsli.com/i/65ff421d-3af6-439b-bdc9-1d8006aabeb1.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/0e527fd3-79f1-4c42-b4fe-e49cb671b7e7.jpg",
+            "SR": "https://imgsli.com/i/2c8a2c3a-e2e2-4e91-9b24-7ca1b55167eb.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/7a0b06d7-f15a-4381-80cc-db65c2cf63e0.jpg",
+            "SR": "https://imgsli.com/i/b5fa2ea2-d8c9-4a0e-a526-9dfafc7cf05d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/04176360-50b4-4dd3-849e-ac69f210bd69.jpg",
+            "SR": "https://imgsli.com/i/3e8fbfb9-785e-495e-8b87-af5ad56bd01b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a3cde42a-e05b-463d-a001-47c67d09f73e.jpg",
+            "SR": "https://imgsli.com/i/a44b71a1-16b5-42c4-b3ef-68a7700e95cc.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/7d35ef1b-1eaf-414a-b838-5f2982ebbeb8.jpg",
+            "SR": "https://imgsli.com/i/44647a99-5ce3-459d-9783-ed213e7f8c4a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/aa060aeb-0b53-492f-bb8f-e77cc0fad3ea.jpg",
+            "SR": "https://imgsli.com/i/c9828750-af38-435a-bd8e-ba257a2d1838.jpg"
+        }
+    ]
 }

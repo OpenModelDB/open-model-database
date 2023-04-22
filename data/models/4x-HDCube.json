@@ -34,5 +34,71 @@
     "trainingHRSize": 128,
     "dataset": "artifact free textures and photos (stone, wood, metal, clothes, plants, characters, FX)",
     "datasetSize": 2000,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/74d2ac37-96de-4f77-b7a9-8821aac62656.jpg",
+            "SR": "https://imgsli.com/i/a86ca862-a303-42c3-9449-4b7618cc940f.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/rEBbmuTB.png",
+            "SR": "https://i.slow.pics/lJttZXhP.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/2JHLei12.png",
+            "SR": "https://i.slow.pics/4gTu6pCy.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/HWgCanJf.png",
+            "SR": "https://i.slow.pics/aq7zOznB.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/3gZfpSoR.png",
+            "SR": "https://i.slow.pics/0Vuh9G84.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/dJaFEYCn.png",
+            "SR": "https://i.slow.pics/ENj4PGb3.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/N9ldl5RA.png",
+            "SR": "https://i.slow.pics/ILGjgzDf.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/cdnPaeWD.png",
+            "SR": "https://i.slow.pics/i0woQOn4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/YeUFM9SM.png",
+            "SR": "https://i.slow.pics/xraOWdNY.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/O8l7bna6.png",
+            "SR": "https://i.slow.pics/YER8Ow7h.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/dHiYtJaS.png",
+            "SR": "https://i.slow.pics/cOgoV31t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/UQDiziqK.png",
+            "SR": "https://i.slow.pics/u8bEQ0QC.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/SUen7VG2.png",
+            "SR": "https://i.slow.pics/NrRj0TPo.png"
+        }
+    ]
 }

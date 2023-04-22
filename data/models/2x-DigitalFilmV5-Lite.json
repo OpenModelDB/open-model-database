@@ -31,5 +31,36 @@
     "trainingHRSize": 256,
     "dataset": "DB/DBZ/DBGT Dragon Box DVD frames, upscaled with various models such as DigitalFrames2.0, FilmFrames677k, SharpAnimeV2, and manually edited to only show the best parts of each model. I call it image stacking.",
     "datasetSize": 561,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/258944e0-10a4-466f-b2ca-5bb346d58790.jpg",
+            "SR": "https://imgsli.com/i/6ac27b55-8061-4b15-8963-67d56f614734.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/4329b941-3027-499d-889b-421efa1a1219.jpg",
+            "SR": "https://imgsli.com/i/b3367a75-1884-4262-9cf8-c8bc22bb8b9e.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/7af49732-87da-46c1-bf62-1ce8f8fb2a9d.jpg",
+            "SR": "https://imgsli.com/i/221ba007-13a1-4360-bab9-95febb2055c4.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/895d7378-e1f4-4316-80a1-a9ad5247047f.jpg",
+            "SR": "https://imgsli.com/i/052f599e-15a3-40db-85c2-c53defa5d3c8.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/45b4d537-607d-4e68-aae4-43c007bdb1e5.jpg",
+            "SR": "https://imgsli.com/i/c1b952a5-6fa8-4116-a665-ea5444af8017.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/28c220e1-0d09-40ae-8e3b-6c4d75184544.jpg",
+            "SR": "https://imgsli.com/i/1f1c0280-26ba-4e9a-b42e-acad6a28e2b7.jpg"
+        }
+    ]
 }

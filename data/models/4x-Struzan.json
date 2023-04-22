@@ -5,7 +5,7 @@
     "tags": [
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Art\n\nUpscaling airbrush/pencil-based artwork",
+    "description": "Category: Art/Pixel Art\nPurpose: Art\n\nUpscaling airbrush/pencil-based artwork\n\nSample images: https://drive.google.com/drive/folders/1fyeIWInDrM6r-xxrCW4U09oafWw08u9S?usp=sharing",
     "date": "2020-10-12",
     "architecture": "esrgan",
     "size": [

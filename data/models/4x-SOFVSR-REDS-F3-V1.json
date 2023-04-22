@@ -5,7 +5,7 @@
     "tags": [
         "pretrained"
     ],
-    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nupscale IRL videos. Use not recommended by creator",
+    "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nupscale IRL videos. Use not recommended by creator.\n\nSample video: https://cdn.discordapp.com/attachments/547949806761410560/813134983236419664/100k_iter.mp4",
     "date": "2021-02-26",
     "architecture": "sofvsr",
     "size": null,

@@ -35,5 +35,14 @@
     "dataset": "Custom Dataset consisting of lossless 4k frames from Metal Arms: Glitch in the System, Just Cause 3, Dirt 3, Forza Horizon 3, Sleeping Dogs, and self-edited photos from SignatureEdits",
     "datasetSize": 18909,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/880826637543964712/880934732748169226/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/880826637543964712/880932754102026290/unknown.png"
+        }
+    ]
 }

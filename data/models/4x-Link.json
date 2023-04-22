@@ -33,5 +33,18 @@
     "dataset": "pexels.com, ambientcg.com, Wikimedia Commons. photos of chainmail from DeviantArt, game textures with chainmail, diffuse maps of chainmail from DAZ items. All items downscaled by factors of 2 to add capacity for LOD texture upscaling and increase generative effect of model.",
     "datasetSize": 561,
     "pretrainedModelG": "4x-Nickelfront",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1027685415756509265/4x_Link_500000_G-TestImage-0x9F6EFFE0.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1027685416180121722/4x_Link_500000_G-TestImage-CMMM_Knight_Templar_ID2_DiffuseMap.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1027685416528261203/4x_Link_500000_G-TestImage-Crest_Venetian_DiffuseMap.png"
+        }
+    ]
 }

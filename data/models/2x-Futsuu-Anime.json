@@ -33,5 +33,56 @@
     "dataset": "Frames from a wide variety of animated sources",
     "datasetSize": 2661,
     "pretrainedModelG": "2x-Compact-Pretrain",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c3ace82d-2dc8-4e43-923e-724f63fd27ac.jpg",
+            "SR": "https://imgsli.com/i/1744d07b-d2fe-4268-8db0-611953078454.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a7a2f578-2dc7-4993-b483-3b8e69511ae8.jpg",
+            "SR": "https://imgsli.com/i/c9f114b3-a6fe-42c5-a5f5-90f79a75eadc.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/9c73da28-fdd4-494b-8456-d4d7824b2e47.jpg",
+            "SR": "https://imgsli.com/i/4ed6877f-07b8-4f96-9c3b-24b83dabaeac.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/7a477716-1932-4faf-8d3a-e65c8ba7fca5.jpg",
+            "SR": "https://imgsli.com/i/63d179b4-9d88-4455-a284-acc27e3831a9.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/dc6c7907-a3ae-4a86-b974-edf9dda9087d.jpg",
+            "SR": "https://imgsli.com/i/e1f21824-c045-4480-b636-d6753ffb2bd5.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ebed6316-7598-434b-91b7-d5e8f4c3306c.jpg",
+            "SR": "https://imgsli.com/i/94a0716c-060a-49d3-b9fe-1596898c6077.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/54997675-66e2-4f40-8421-8f705e87d25c.jpg",
+            "SR": "https://imgsli.com/i/7c8326d3-0512-4d62-a035-ecdee71ab3c2.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a2524dee-a607-411f-97e7-9e78202bf1f2.jpg",
+            "SR": "https://imgsli.com/i/b49b4373-5637-450c-9063-a563a6460620.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1d7f0612-b21a-4e5c-9df6-ae17c23b0187.jpg",
+            "SR": "https://imgsli.com/i/8bedb358-6f12-4a8a-8bd4-32fabc77e962.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/2e4947d8-7f4f-4a02-acef-6f5ba98fa98d.jpg",
+            "SR": "https://imgsli.com/i/b4a3a844-fd66-4f1a-926f-8ef70dc2124f.jpg"
+        }
+    ]
 }

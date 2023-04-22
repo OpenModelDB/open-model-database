@@ -36,5 +36,26 @@
     "dataset": "Blu-ray Remaster HRs/Generated LRs, and DVD Sources",
     "datasetSize": 4222,
     "pretrainedModelG": "2x-DigitalFilmV5-Lite",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/67ffbc84-2cda-413e-a8b2-0f63575f0568.jpg",
+            "SR": "https://imgsli.com/i/1d6dc4c6-c9bf-4c72-8384-e8ca83805783.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ed82e35f-dfa3-46d5-93f6-5185287f8424.jpg",
+            "SR": "https://imgsli.com/i/bbdc7811-caf4-4a3f-95e0-1444d9133f24.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a188099f-203a-4744-9726-d2fe7bf1fa9c.jpg",
+            "SR": "https://imgsli.com/i/1241a4ae-2186-431e-ac8d-f4d83fcdeff9.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/059bf992-daf7-4ec5-902e-c56812d28976.jpg",
+            "SR": "https://imgsli.com/i/c19f75b9-322c-445b-a917-08c75476ed5b.jpg"
+        }
+    ]
 }

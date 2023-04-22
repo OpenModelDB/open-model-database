@@ -25,5 +25,10 @@
         }
     ],
     "trainingIterations": 269662,
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/990345004260151296/ngnl_sudorife.mp4"
+        }
+    ]
 }

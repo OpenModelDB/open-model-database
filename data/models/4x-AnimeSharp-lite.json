@@ -33,5 +33,18 @@
     "dataset": "Used only thisanimedoesnotexist, upscaled with 4x-AnimeSharp",
     "datasetSize": 2700,
     "pretrainedModelG": "2x-UniScale-CartoonRestore-lite",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/547949405949657100/941776512049360986/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/547949405949657100/941770824543797268/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/941779970013925506/unknown.png"
+        }
+    ]
 }

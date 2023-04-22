@@ -34,5 +34,16 @@
     "dataset": "Dragon Ball Level Sets",
     "datasetSize": 51000,
     "pretrainedModelG": "4x-PSNR",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/KuiPMFTe.png",
+            "SR": "https://i.slow.pics/PGTgPxwM.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/kdTxFcOt.png",
+            "SR": "https://i.slow.pics/TBarB9KG.png"
+        }
+    ]
 }

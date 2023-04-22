@@ -27,5 +27,11 @@
             ]
         }
     ],
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1946141d-8bcd-4072-afe7-2518a000dd0f.jpg",
+            "SR": "https://imgsli.com/i/5778bbd8-0f65-4d3c-bcee-8102df97cfd8.jpg"
+        }
+    ]
 }

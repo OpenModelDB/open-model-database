@@ -32,5 +32,22 @@
     "trainingHRSize": 96,
     "dataset": "Sheeep release frames and production frames from tenpence in Animation Upscale",
     "datasetSize": 4,
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999820017652740176/1658446060.8526323.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999821036583391292/1658446301.0955725.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999821212718993478/1658446346.8536465.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999820756043169803/1658446237.0734627.png"
+        }
+    ]
 }

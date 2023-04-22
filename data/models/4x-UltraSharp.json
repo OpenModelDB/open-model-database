@@ -33,5 +33,22 @@
     "trainingHRSize": 128,
     "dataset": "So many. I used: RAW images shot by myself, SignatureEdits, AdobeMIT-5K, DIV2K, TLOK from brucethemoose, some rock/stone images from ALSA, and many images provided by <@724494344270381097> (thanks!)",
     "pretrainedModelG": "4x-UniScale-Balanced",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/902853011913732097/902855337705611294/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/902853011913732097/902853340600360990/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/902853011913732097/902855036768489512/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/900506271566938122/902867618086670356/unknown.png"
+        }
+    ]
 }

@@ -33,5 +33,22 @@
     "dataset": "Textures from A Hat in Time, Kingdom Hearts 3 and World of Final Fantasy. 21.9k to 70k textures, up to 1024x1024 per texture.",
     "datasetSize": 21900,
     "pretrainedModelG": "4x-GameAI-1-0",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/947610558981632040/2ea384c8dc05593e-55207ec648ad52a4-00006213_2-comparison.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/947610559497510922/65aac3d41ce0297c-5ff21b7095173a35-00006213_2-comparison.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/947610560005033984/a6518186b4e88a86-ddbb8bd9666cd975-00006213_2-comparison.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/947610560369950740/ae6ae340a472b13d-2ade3b7d0cf4a09f-00005dd3_2-comparison.png"
+        }
+    ]
 }

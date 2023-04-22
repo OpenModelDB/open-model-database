@@ -28,5 +28,10 @@
     "trainingHRSize": 512,
     "dataset": "Random screenshots from Alpha Minecraft taken at the correct angle, screen region, block placement, and cloud position (with slight random variance). LR images were OTF downscaled with box/area.",
     "datasetSize": 60000,
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/436411385673547787/750481717307113543/pack.png"
+        }
+    ]
 }

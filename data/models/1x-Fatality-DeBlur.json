@@ -33,5 +33,26 @@
     "trainingHRSize": 128,
     "dataset": "Mix of anime, manga, and photos",
     "datasetSize": 41000,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a306d854-f2f7-4cc6-9bd4-7c63974bdc20.jpg",
+            "SR": "https://imgsli.com/i/459c5ad5-1124-4719-a887-35c312965ffa.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/f5bd5da4-fd08-415d-ae93-0095624a1dd5.jpg",
+            "SR": "https://imgsli.com/i/fa05c379-22a1-41df-84e5-6734495a0d20.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3d2847a6-94fd-4c75-824a-2a834411e61b.jpg",
+            "SR": "https://imgsli.com/i/3ba125e6-cd91-46f3-8528-471bbb95c26a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/fa25ba2f-2de5-492c-8275-6ad12c1dd781.jpg",
+            "SR": "https://imgsli.com/i/0a2b72b8-07a2-4f0d-baa3-deedba74e955.jpg"
+        }
+    ]
 }

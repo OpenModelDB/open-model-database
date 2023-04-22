@@ -31,5 +31,21 @@
     "dataset": "plant.zip from OutdoorSceneTrain_v2 upscaled 200% with Preserve Details 2.0",
     "datasetSize": 1036,
     "pretrainedModelG": "1x-NMKD-h264Texturize",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/fe2bacc5-2204-42bc-b3a0-efb8ff1244c9.jpg",
+            "SR": "https://imgsli.com/i/9606ac90-201f-423c-813f-f8fcf0dd93ad.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/05ebf10a-5e01-4b90-80ea-18b624a65bbf.jpg",
+            "SR": "https://imgsli.com/i/afebc5b0-f86a-4c46-b552-29457de4b95a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/878daac4-a0fe-4c0e-9a82-0d62106f0027.jpg",
+            "SR": "https://imgsli.com/i/2ed9bee1-0822-454f-a824-acf627a05523.jpg"
+        }
+    ]
 }

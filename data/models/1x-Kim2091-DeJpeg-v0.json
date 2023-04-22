@@ -30,5 +30,14 @@
     ],
     "trainingIterations": 230000,
     "dataset": "Custom JPEG dataset",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/1041539960672632832/1668392853.8196685.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/1041540021175463956/1668392885.0326388.png"
+        }
+    ]
 }

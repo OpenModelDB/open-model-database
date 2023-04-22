@@ -30,5 +30,11 @@
     "dataset": "Trained on upscaling downscaled cel photographs run through DetoriationFrames",
     "datasetSize": 69,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/15ec20ac-f1e7-4486-8e8e-5b8bf2cad048.jpg",
+            "SR": "https://imgsli.com/i/188fe0e0-b6ac-4c91-a242-973592b63781.jpg"
+        }
+    ]
 }

@@ -31,5 +31,10 @@
     "trainingIterations": 320000,
     "trainingBatchSize": 4,
     "dataset": "Yandere1200 (yande.re artworks)",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/oxs71v5.png"
+        }
+    ]
 }

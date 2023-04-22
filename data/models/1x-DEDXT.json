@@ -35,5 +35,10 @@
     "dataset": "Textures from paladins",
     "datasetSize": 150,
     "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/947116367205793882/cmp.png"
+        }
+    ]
 }

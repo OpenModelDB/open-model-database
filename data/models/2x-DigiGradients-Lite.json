@@ -31,5 +31,16 @@
     "trainingBatchSize": 4,
     "trainingHRSize": 128,
     "dataset": "Images from The Batman (series) HD WEB-DL.",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/2c12ce46-c1a5-4f01-a0f9-83b738d5f4da.jpg",
+            "SR": "https://imgsli.com/i/76b634ab-fce6-4e07-a1f4-92ccfdad9527.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5bc77ea7-20d7-4d03-bf0f-c29187e8f58c.jpg",
+            "SR": "https://imgsli.com/i/a52394da-ec58-4a1c-8061-523310645505.jpg"
+        }
+    ]
 }

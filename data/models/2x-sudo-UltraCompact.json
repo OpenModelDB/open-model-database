@@ -32,5 +32,18 @@
     ],
     "trainingIterations": 1121175,
     "pretrainedModelG": "2x-realesrganv2-animevideo-xsx2",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/980550564725260358/compare.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/980550565354410066/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/980550565723529226/compare2.webp"
+        }
+    ]
 }

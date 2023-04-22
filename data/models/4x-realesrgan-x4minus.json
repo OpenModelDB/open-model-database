@@ -34,5 +34,21 @@
     "dataset": "Same as realesrgan-x4plus, but later modified to crop some shallow focus images.",
     "datasetSize": 58000,
     "pretrainedModelG": "4x-realesrgan-x4plus",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b5e46848-4465-4d59-afe9-dce4d6fbe2cd.jpg",
+            "SR": "https://imgsli.com/i/99a4248c-27bd-4008-b952-3b2b0f0644a3.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/19d677c6-dba9-454f-8faf-a7fdd7394bc3.jpg",
+            "SR": "https://imgsli.com/i/b9f336bb-af24-4a85-ab4d-ab80a5fe5f8a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/afd3ef66-637f-44a9-a04c-9b630f65e741.jpg",
+            "SR": "https://imgsli.com/i/ba941c5c-d846-478b-8d7d-a0f34739b80a.jpg"
+        }
+    ]
 }
