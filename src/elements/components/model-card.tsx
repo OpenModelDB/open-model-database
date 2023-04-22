@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { memo } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
@@ -11,14 +12,16 @@ import { EditableTags } from './editable-tags';
 import { Link } from './link';
 import style from './model-card.module.scss';
 
-interface ModelCardProps {
+interface BaseModelCardProps {
     id: ModelId;
     model: Model;
+}
+interface ModelCardProps extends BaseModelCardProps {
     lazy?: boolean;
 }
 
 // eslint-disable-next-line react/display-name
-export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
+export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
     const { userData } = useUsers();
     const { archData } = useArchitectures();
 
@@ -27,7 +30,7 @@ export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
 
     const description = fixDescription(model.description, model.scale);
 
-    const inner = (
+    return (
         <div className={style.inner}>
             {/* Arch tag on image */}
             <div className={style.topTags}>
@@ -91,6 +94,15 @@ export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
                 </div>
             </div>
         </div>
+    );
+});
+
+export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
+    const inner = (
+        <ModelCardContent
+            id={id}
+            model={model}
+        />
     );
 
     return (
