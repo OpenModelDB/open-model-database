@@ -108,7 +108,7 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                                     <img
                                         alt="Thumbnail"
                                         className="m-auto h-auto max-h-full w-auto max-w-full"
-                                        src={image.type === 'paired' ? image.SR : image.url}
+                                        src={image.thumbnail || (image.type === 'paired' ? image.SR : image.url)}
                                     />
                                 </div>
                                 {!readonly && (
