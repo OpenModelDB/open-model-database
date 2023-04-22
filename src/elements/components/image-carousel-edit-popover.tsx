@@ -56,7 +56,7 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                         type: 'paired',
                         LR: lr,
                         SR: sr,
-                        thumbnail: thumbnail,
+                        thumbnail: thumbnail || undefined,
                     });
                 }}
             >
@@ -107,7 +107,7 @@ function StandaloneImageMenu({
                     onChange({
                         type: 'standalone',
                         url: url,
-                        thumbnail: thumbnail,
+                        thumbnail: thumbnail || undefined,
                     });
                 }}
             >
