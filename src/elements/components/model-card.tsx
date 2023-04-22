@@ -59,7 +59,7 @@ export const ModelCard = memo(({ id, model }: ModelCardProps) => {
 
                 <div className={style.details}>
                     <Link
-                        className="block text-xl font-bold text-gray-800 dark:text-gray-100"
+                        className={`${style.name} block text-xl font-bold text-gray-800 dark:text-gray-100`}
                         href={`/models/${id}`}
                     >
                         {model.name}
