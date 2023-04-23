@@ -102,7 +102,6 @@ export const useSearch = (
             const newState: SearchState = { ...stateRef.current, ...newStatePartial };
             if (isEqualState(newState, stateRef.current)) return;
 
-            console.log('update state');
             setState(newState);
             stateRef.current = newState;
 
@@ -142,7 +141,6 @@ export const useSearch = (
 
             if (deepEqual(newQuery, router.query)) return;
 
-            console.log('update route to ', router.query, newQuery);
             router.push({ query: newQuery }, undefined, { shallow: true }).catch((e) => console.error(e));
         }, 1000);
         return () => clearTimeout(timerId);
@@ -153,7 +151,6 @@ export const useSearch = (
         const { q, t } = router.query;
         const searchQuery = typeof q === 'string' ? q : '';
         const tagSelection = typeof t === 'string' ? parseTagSelection(t, tagData) : EMPTY_TAGS;
-        console.log('request update state based on route');
         update({ searchQuery, tagSelection });
     }, [router.query, tagData, update]);
 
