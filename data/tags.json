@@ -5,7 +5,7 @@
     },
     "anti-aliasing": {
         "name": "Anti-aliasing",
-        "description": ""
+        "description": "The model smooths aliasing artifacts (also called jaggies)."
     },
     "cartoon": {
         "name": "Cartoon",
@@ -13,31 +13,31 @@
     },
     "colorization": {
         "name": "Colorization",
-        "description": ""
+        "description": "The model colorizes grayscale and/or black-and-white images."
     },
     "dds": {
         "name": "DDS",
-        "description": ""
+        "description": "The model is able to remove DDS block compression artifacts. \n\nModels with this tag may only support specific compression methods and/or settings (e.g. BC1/DTX1, BC7)."
     },
     "debanding": {
         "name": "Debanding",
-        "description": ""
+        "description": "The removes banding artifacts caused by color quantization. Such artifacts and frequently be observed in GIF images."
     },
     "deblur": {
         "name": "Deblur",
-        "description": ""
+        "description": "The model tries to remove blur from the input."
     },
     "dedither": {
         "name": "Dedither",
-        "description": ""
+        "description": "The model removes dithering artifacts from the input."
     },
     "dehalo": {
         "name": "Dehalo",
-        "description": ""
+        "description": "The model removes haloing and color bleeding from the input."
     },
     "denoise": {
         "name": "Denoise",
-        "description": ""
+        "description": "The model removes noise from the input.\n\nModels with this tag may only work with specific kinds of noise."
     },
     "face-upscaling": {
         "name": "Face Upscaling",
@@ -57,15 +57,15 @@
     },
     "general-upscaler": {
         "name": "General Upscaler",
-        "description": ""
+        "description": "The model can upscale any subject.\n\nGeneral purpose models achieve good results across a wide range of inputs. However, models that specialize in the subject of a specific image (e.g. anime, faces, text, etc.) will typically achieve better results than general purpose models."
     },
     "inpainting": {
         "name": "Inpainting",
-        "description": ""
+        "description": "The model fills in selected parts of an image."
     },
     "jpeg": {
         "name": "JPEG",
-        "description": ""
+        "description": "The model is able to remove JPEG compression artifacts.\n\nModels with this tag may only support specific JPEG compression settings (e.g. quality between 80% and 100%)."
     },
     "manga": {
         "name": "Manga",
@@ -81,11 +81,11 @@
     },
     "pretrained": {
         "name": "Pretrained",
-        "description": ""
+        "description": "The model is intended to be used to train new models."
     },
     "restoration": {
         "name": "Restoration",
-        "description": ""
+        "description": "The model removes compression artifacts."
     },
     "text": {
         "name": "Text",
