@@ -34,5 +34,11 @@
     "dataset": "different frames from different anime blu-ray",
     "datasetSize": 1250,
     "pretrainedModelG": "4x-PSNR",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/8ea6b7fc-045c-4c9d-ac63-6da63c134262.jpg",
+            "SR": "https://imgsli.com/i/dffaf86c-2aa3-4ff4-844e-6384378f9d62.jpg"
+        }
+    ]
 }

@@ -35,5 +35,11 @@
     "dataset": "Flickr Cropped Faces",
     "datasetSize": 70000,
     "pretrainedModelG": "8x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/577940f0-435d-4951-825c-2e17cc447aa2.jpg",
+            "SR": "https://imgsli.com/i/ffcd7bc1-ad2d-4294-8380-f37b0a6cdb95.jpg"
+        }
+    ]
 }

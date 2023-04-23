@@ -37,5 +37,11 @@
     "dataset": "Manga109 copied 14 times with different dithering and scaling",
     "datasetSize": 1526,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/831f293b-5d83-42d9-b5df-3c9f758ca80d.jpg",
+            "SR": "https://imgsli.com/i/9a40272b-c0c0-41d8-b52a-b70cb3516d12.jpg"
+        }
+    ]
 }

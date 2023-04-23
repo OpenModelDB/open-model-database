@@ -37,5 +37,96 @@
     "trainingOTF": false,
     "dataset": "frames from remastered 80s-90s anime",
     "pretrainedModelG": "1x-Compact-Pretrain",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/9337b6f0-51d7-4d34-aaf7-1c2d8c35a41c.jpg",
+            "SR": "https://imgsli.com/i/cd2c69b1-db99-491f-8265-55f594e65a3a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/f15d8203-d5f9-49d3-a5ea-d53700474707.jpg",
+            "SR": "https://imgsli.com/i/188ba776-3d6e-480c-babb-e47be6592973.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/78be3129-513c-4bb4-bbd4-58daa4ad7452.jpg",
+            "SR": "https://imgsli.com/i/96db5c18-c733-45fc-855c-1d60cc880ed0.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c6bdf99c-20eb-44b9-b16e-c6a32daabf43.jpg",
+            "SR": "https://imgsli.com/i/e93a06c7-893d-4e2e-b2cc-a427482f2aac.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/bbe220f7-24bb-4ff8-84eb-ac0d1bf6ee16.jpg",
+            "SR": "https://imgsli.com/i/bdc19e31-5a4a-4d53-9475-dc50d396644b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3dd62a30-50b0-41c9-a29b-8382eae3dacc.jpg",
+            "SR": "https://imgsli.com/i/41744eb2-93ae-4b01-868d-b781752764d9.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/604319be-ea24-4a3c-97b3-f576324bb9b2.jpg",
+            "SR": "https://imgsli.com/i/3517cd13-58b0-41ab-83fb-56feb1d25421.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/dfb19e12-f42a-4bec-9836-9700aa8906e3.jpg",
+            "SR": "https://imgsli.com/i/062c2a1b-d069-47f0-a95a-62ca0f6f31b7.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/70c4ed4c-295e-4710-888d-0014b0f83c12.jpg",
+            "SR": "https://imgsli.com/i/085a349f-2568-48fb-a1c6-33adead3f13f.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/61ccdab9-f978-4577-8a7f-939400a08e7a.jpg",
+            "SR": "https://imgsli.com/i/c899724b-bb87-4025-bf3f-24c4aca27c32.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/7e9ee335-b74c-4672-babf-371b24a59155.jpg",
+            "SR": "https://imgsli.com/i/1a9b5c4b-8597-4948-b7da-dd8422f56d86.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/185b3f53-b39d-4fa2-b61e-f2fe19ec8362.jpg",
+            "SR": "https://imgsli.com/i/13651893-2ecb-4a93-8390-a346aba5657b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/15e0ff90-27dc-46c8-aedf-c20ff8bd530e.jpg",
+            "SR": "https://imgsli.com/i/7095fa7a-cd3e-45de-bf5d-c41f760e01d9.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/7ee23dd8-a6cb-40a9-a6c7-78557da8e87b.jpg",
+            "SR": "https://imgsli.com/i/7eb8a1a0-1395-4dde-9802-f2e9f27dd002.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/4f6e06c0-579b-4584-8c6d-53c4f8f6af41.jpg",
+            "SR": "https://imgsli.com/i/2859ef09-9b53-45cb-89ee-722803190c45.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b610e4ee-e5bb-4812-a3ad-dbac8f05d0e0.jpg",
+            "SR": "https://imgsli.com/i/4ed1e48d-16d8-4305-b72d-98bcc42430bc.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ebcf0f2b-ffd8-45d6-9be2-ffe0bc564df6.jpg",
+            "SR": "https://imgsli.com/i/ca4761da-8d3a-4b98-89a8-18ec04575428.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/999e397d-2cff-4aca-a414-d1b1a342bf6b.jpg",
+            "SR": "https://imgsli.com/i/2115a313-71f0-4f28-8fe0-deebf5290eaa.jpg"
+        }
+    ]
 }

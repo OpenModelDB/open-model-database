@@ -27,5 +27,10 @@
             ]
         }
     ],
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/904129653374078976/XB_Demo_Mov-85600_G.mp4"
+        }
+    ]
 }

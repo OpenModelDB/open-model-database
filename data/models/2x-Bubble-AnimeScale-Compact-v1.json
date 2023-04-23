@@ -35,5 +35,21 @@
     "trainingOTF": false,
     "dataset": "SFW and NSFW anime frames that were sourced from Blu Ray discs and high bitrate Web releases. These were then degraded with various different methods.",
     "datasetSize": 1845,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/9ee71bd5-6dc3-42fc-8415-2265b2fd02ca.jpg",
+            "SR": "https://imgsli.com/i/ac8e804a-3833-4d4b-8db1-8877c0ce3ae5.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/149fe145-36fe-4df0-81ab-20fd6c33a922.jpg",
+            "SR": "https://imgsli.com/i/8958fab1-38e5-46ad-aee5-4f8715948e32.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b3133b2f-1896-45b4-9149-f5dfd4ab1d34.jpg",
+            "SR": "https://imgsli.com/i/4000a5da-18d4-4f1a-bfff-1170dccd1ce1.jpg"
+        }
+    ]
 }

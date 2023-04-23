@@ -31,5 +31,11 @@
     "trainingHRSize": 128,
     "dataset": "Thief Gold & Thief II community made textures",
     "pretrainedModelG": "4x-Manga109Attempt",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/14fb5fb4-f3f4-416b-bcd3-379e60b2ac7e.jpg",
+            "SR": "https://imgsli.com/i/1fcb69ff-9d4a-4c8c-b022-61425cfcb0d0.jpg"
+        }
+    ]
 }

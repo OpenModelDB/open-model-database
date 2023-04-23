@@ -5,7 +5,7 @@
     "tags": [
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\n\nSprite Upscaler",
+    "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\n\nSprite Upscaler\n\nComparison with v3: https://imgsli.com/MzgxMTc/2/1",
     "date": "2020-11-16",
     "architecture": "esrgan",
     "size": [
@@ -34,5 +34,11 @@
     "dataset": "Random anime images",
     "datasetSize": 300,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a5d3948d-c3cd-49f7-ba1c-205e77601aad.jpg",
+            "SR": "https://imgsli.com/i/d0cb98d9-4445-46a7-b0aa-57f1600e1bf5.jpg"
+        }
+    ]
 }

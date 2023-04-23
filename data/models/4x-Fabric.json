@@ -33,5 +33,18 @@
     "dataset": "Custom Dataset consisting of edited RAW images taken by myself. Macro shots of fabrics and various other materials.",
     "datasetSize": 346,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/887850596214902835/887852703873638410/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/887850596214902835/887852170156847124/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/887850596214902835/887853344545194084/unknown.png"
+        }
+    ]
 }

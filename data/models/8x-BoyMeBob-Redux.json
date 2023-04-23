@@ -32,5 +32,58 @@
     "trainingHRSize": 256,
     "dataset": "SpongeBob Season 11",
     "datasetSize": 24123,
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://p-lux3.pcloud.com/D4ZFqLCfeZXFC3CCZZZcUH1o7Z3VZZnl0ZXZ52H0ZHzZZZy6TKXZFl67UPA7QtF7Wa0Eh3h390u1WWVy/th-32633200259-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux1.pcloud.com/D4ZIMLCfeZMoP3CCZZZoUH1o7Z3VZZnl0ZXZqvT0ZrkZZZy6TKXZiJM29YazhIFHESCfRjHuBhwDBeuk/th-32633199741-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux4.pcloud.com/D4ZlUSpsTZngP3CCZZZoUH1o7Z3VZZnl0ZXZKIuXZMzZZZy6TKXZIyiG3Lj5iCL1RMsdzO7M3kJw8Ogk/th-32633198275-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux3.pcloud.com/D4Z4CLCfeZtqP3CCZZZpIH1o7Z3VZZnl0ZXZjuB0ZFRZZZy6TKXZLHGnpx1lUcuq8aL4owC6hSwD5Puy/th-32633198776-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux3.pcloud.com/D4ZX6LCfeZHYP3CCZZZ7aH1o7Z3VZZnl0ZXZt4V5ZHzZZZy6TKXZMR0iF3UO78zLlSpi5HoVimGxUngk/th-32633197094-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux2.pcloud.com/D4ZEJ4CfeZEYP3CCZZZ7aH1o7Z3VZZnl0ZXZNtH5ZS0ZZZy6TKXZ6wSpKtGTnUkGsWdRXxoPkyIsqOok/th-32633197131-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux2.pcloud.com/D4Zay8CfeZsdg3CCZZZkaH1o7Z3VZZnl0ZXZP405Z9VZZZy6TKXZFVpqoBBtlSzejBGjdHeXMHGP0hMV/th-32633194977-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux4.pcloud.com/D4Zh4mCfeZzdg3CCZZZHaH1o7Z3VZZnl0ZXZbCzJZXJZZZy6TKXZv3S9bMS7rYylE3I33DAJfkCeUTdy/th-32633194960-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux1.pcloud.com/D4ZrgbCfeZHpx3CCZZZYaH1o7Z3VZZnl0ZXZ7MK5ZO0ZZZy6TKXZJdAwt0u29lzaHQUv5AFe78es2YvX/th-32633204048-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux4.pcloud.com/D4Z04QCfeZdOC3CCZZZfaH1o7Z3VZZnl0ZXZXQvXZ8VZZZy6TKXZ5prO8Tg6nghyGHb1BFpJdu0j9DPX/th-32633202739-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux3.pcloud.com/D4Zrl8CfeZjIC3CCZZZeaH1o7Z3VZZnl0ZXZN93VZFRZZZy6TKXZbu0PYE5JHF8UGmzs740YkbASVPBV/th-32633202840-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux4.pcloud.com/D4Z2S4CfeZfeC3CCZZZwaH1o7Z3VZZnl0ZXZcPKVZVXZZZy6TKXZE7GULIwmg4f7WURzxwAy3miQCwkV/th-32633201683-2048x576.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://p-lux1.pcloud.com/D4ZFCuStMZkWC3CCZZZEaH1o7Z3VZZnl0ZXZ3Nv0ZvkZZZy6TKXZXfEh3yW78N5wjnvRu3146Vt05FQX/th-32633201417-2048x576.png"
+        }
+    ]
 }

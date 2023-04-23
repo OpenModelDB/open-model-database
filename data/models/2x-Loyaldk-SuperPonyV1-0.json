@@ -33,5 +33,31 @@
     "trainingOTF": false,
     "dataset": "All MLP: FiM Episodes using scene detection frame grabbing as well as selected Prores4444 content https://shimmermare.com/4k-pony-project. Ran 2 separate datasets. LR's Include H264 Compression, Halo, Sharpening Halo/Fringe, Gaussian Blur, Dot crawl, Uniform Noise, Rainbow",
     "pretrainedModelG": "2x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/fe8ccca1-3469-478f-b1a2-607580cacb56.jpg",
+            "SR": "https://imgsli.com/i/47b72c28-691c-4c88-a5f7-0e4bad3d921f.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/fd84cb99-9d1c-49ed-a26a-27ece79859bf.jpg",
+            "SR": "https://imgsli.com/i/1bd3637b-21b9-4e31-9366-c7df4dafc44a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b8426234-205e-4b4e-9e58-fa73eb2f183f.jpg",
+            "SR": "https://imgsli.com/i/691d59b6-d384-4013-9bcc-8d9abb1d42c9.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/8d575f56-81a7-4b0c-980c-2b977abae16d.jpg",
+            "SR": "https://imgsli.com/i/c0740307-d8b5-4c7c-8e46-862a52496b39.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5a85e782-6a93-45bc-9d41-d7652f6362fd.jpg",
+            "SR": "https://imgsli.com/i/08f8e3e4-f132-417a-b565-bcfe2c480a93.jpg"
+        }
+    ]
 }

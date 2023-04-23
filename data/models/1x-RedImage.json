@@ -25,5 +25,10 @@
         }
     ],
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/5O74rRL.png"
+        }
+    ]
 }

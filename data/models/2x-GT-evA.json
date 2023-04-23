@@ -36,5 +36,22 @@
     "dataset": "German blu ray of detective Conan and other shows",
     "datasetSize": 2710,
     "pretrainedModelG": "2x-Compact-Pretrain",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1051753650051088384/test_6.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1051753650428588092/test_2.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1051753651011600444/test3.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1051753651376504842/test_3.png"
+        }
+    ]
 }

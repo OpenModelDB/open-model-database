@@ -33,5 +33,16 @@
     "trainingHRSize": 128,
     "dataset": "Made with images from the first episode of pokemon released on blu ray for the HRs and 112.5% upscaled images for the LRs to match 1/2x the HRs.",
     "pretrainedModelG": "2x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/377d317d-43ad-4314-9d7a-1280bc527fb0.jpg",
+            "SR": "https://imgsli.com/i/499b1f31-4df3-4f75-b20f-b0175881e85c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/377d317d-43ad-4314-9d7a-1280bc527fb0.jpg",
+            "SR": "https://imgsli.com/i/02dba0ed-bce9-4d8c-9597-a0503d9e55b4.jpg"
+        }
+    ]
 }

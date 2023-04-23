@@ -34,5 +34,36 @@
     "dataset": "Blue Submarine No. 6 Toonami version aligned to the 2016 Discotek DVD release made up about half of the dataset. The remainder was hand selected frames from a variety of animated series cleaned up with Avisynth.",
     "datasetSize": 177,
     "pretrainedModelG": "1x-Compact-Pretrain",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/792a20d2-8dff-4317-ab37-16ace592b1fd.jpg",
+            "SR": "https://imgsli.com/i/9b1c7e9f-f4a9-4e60-a05f-e85a6829ba8d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/e001c5d1-721d-465e-8992-88a668ebe510.jpg",
+            "SR": "https://imgsli.com/i/06bb46ed-fc4a-4495-812b-bb3aa00e0778.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/35471bf8-b8a3-4de4-ace3-fceccdc8590b.jpg",
+            "SR": "https://imgsli.com/i/7d3b0287-4aab-422c-9e27-097db995794b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/733e689a-e62f-4390-8547-f01098123676.jpg",
+            "SR": "https://imgsli.com/i/b0035811-d9f5-4727-8258-d1d93b208471.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/2c0b5582-6d4a-4bbc-a13b-57e1f974971e.jpg",
+            "SR": "https://imgsli.com/i/97ffd3af-3626-4159-8f0c-2ec6714d0f68.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/261549c2-c5a3-40fb-88c8-2a561c45454e.jpg",
+            "SR": "https://imgsli.com/i/d3d7ccc5-b440-499e-8450-8715957e96b7.jpg"
+        }
+    ]
 }

@@ -32,5 +32,10 @@
     "trainingHRSize": 256,
     "dataset": "DIV2K Clean + JPEG",
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/PzFkmAg.png"
+        }
+    ]
 }

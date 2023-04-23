@@ -32,5 +32,20 @@
     "dataset": "Dragon Ball Z Movies",
     "datasetSize": 2836,
     "pretrainedModelG": "4x-Compact-Pretrain",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/1004158991544365097/1659480539.543144.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/10422c4b-91a6-472a-b36d-9ee202bf87b3.jpg",
+            "SR": "https://imgsli.com/i/e8bebd92-0530-41ee-b078-deaabff1189d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/dc896eea-6629-4bb4-a359-0e33555503d1.jpg",
+            "SR": "https://imgsli.com/i/257605f4-6dd4-4e4a-8baa-6a76eebf837a.jpg"
+        }
+    ]
 }

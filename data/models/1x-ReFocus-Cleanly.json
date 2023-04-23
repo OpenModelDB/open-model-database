@@ -29,5 +29,26 @@
     ],
     "dataset": "Anime, manga, and photos",
     "pretrainedModelG": "1x-ReFocus-V3",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a306d854-f2f7-4cc6-9bd4-7c63974bdc20.jpg",
+            "SR": "https://imgsli.com/i/b97a3468-6546-476f-94a9-56bd00c4a329.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/f5bd5da4-fd08-415d-ae93-0095624a1dd5.jpg",
+            "SR": "https://imgsli.com/i/d1a498b2-481b-45b2-af4e-7d642d3f2493.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3d2847a6-94fd-4c75-824a-2a834411e61b.jpg",
+            "SR": "https://imgsli.com/i/b200abd6-802d-42bf-be59-302a3556560d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/fa25ba2f-2de5-492c-8275-6ad12c1dd781.jpg",
+            "SR": "https://imgsli.com/i/30fe6ca6-4fc0-4c1c-a1a8-5b9c2a63f0e7.jpg"
+        }
+    ]
 }

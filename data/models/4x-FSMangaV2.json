@@ -36,5 +36,10 @@
     "dataset": "Manga109 copied a bunch of times with different dithering methods, and both linear and nearest-neighbor scaling.",
     "datasetSize": 1526,
     "pretrainedModelG": "4x-PSNR",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/oVBVthF.png"
+        }
+    ]
 }

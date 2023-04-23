@@ -35,5 +35,21 @@
     "dataset": "PixelJoint pixel art",
     "datasetSize": 186,
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ee304a7e-3c3f-47ba-807b-1deb6efe1559.jpg",
+            "SR": "https://imgsli.com/i/fabc6321-fd2b-4df3-89f9-b0488d3cbe89.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/66b0307c-3da1-4948-9bfc-9900d36b08af.jpg",
+            "SR": "https://imgsli.com/i/9e069afb-a7fd-41a4-8c8e-8f6b3d43337c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a8a4448c-ecba-47d3-987c-3c0829e99815.jpg",
+            "SR": "https://imgsli.com/i/7a2bbca6-74f9-4f7f-aafd-b237ae42d9b6.jpg"
+        }
+    ]
 }

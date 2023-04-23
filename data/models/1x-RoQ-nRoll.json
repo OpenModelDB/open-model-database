@@ -31,5 +31,23 @@
     "trainingHRSize": 32,
     "dataset": "Custom Dataset compressed with RoQ through ffmpeg. Consists of: Just Cause 3, Fallout 76, and Forza Horizon 3",
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/911838608879677440/912086092755374200/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/911838608879677440/912084886792314880/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/911838608879677440/912085213859954788/unknown.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/256e40e5-7f93-42b3-9307-f3cf6e769874.jpg",
+            "SR": "https://imgsli.com/i/15daa99a-860d-4f03-9a08-bd36717bd7c1.jpg"
+        }
+    ]
 }

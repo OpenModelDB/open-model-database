@@ -32,5 +32,21 @@
     "trainingHRSize": 128,
     "dataset": "Various eroge dumps",
     "pretrainedModelG": "4x-muy4-035-1",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/XUUndUn1.png",
+            "SR": "https://i.slow.pics/KkruuRke.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/CJuXeTEQ.png",
+            "SR": "https://i.slow.pics/fdfj8Dm7.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/r6fcuFOi.png",
+            "SR": "https://i.slow.pics/1EMrKCXs.png"
+        }
+    ]
 }

@@ -5,7 +5,7 @@
     "tags": [
         "pixel-art"
     ],
-    "description": "Category: Art/Pixel Art\n\nBasic pixel art upscaling, for people who want a more simpler style and lightweight pixel art upscaling model.",
+    "description": "Category: Art/Pixel Art\n\nBasic pixel art upscaling, for people who want a more simpler style and lightweight pixel art upscaling model.\n\nSample images: https://drive.google.com/drive/folders/1mYTMpwDlKQulBmjgKpcxL3-T6xAGXVxl?usp=sharing",
     "date": "2021-06-09",
     "architecture": "esrgan",
     "size": [

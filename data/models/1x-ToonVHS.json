@@ -7,7 +7,7 @@
         "cartoon",
         "video-frame"
     ],
-    "description": "Category: VHS Tapes\nPurpose: VHS\n\nBest when used on cartoons, it can work on anime. Due to the dataset it does struggle a bit with orange colors and grainy dark spots. This model is meant to be used to clean up the image before using it on a 2x or 4x model.",
+    "description": "Category: VHS Tapes\nPurpose: VHS\n\nBest when used on cartoons, it can work on anime. Due to the dataset it does struggle a bit with orange colors and grainy dark spots. This model is meant to be used to clean up the image before using it on a 2x or 4x model. Example with 2x-BIGOLDIES https://imgsli.com/OTQ0NjM/1/0.",
     "date": "2022-02-06",
     "architecture": "esrgan",
     "size": [
@@ -35,5 +35,26 @@
     "dataset": "An old Cartoon Network VHS Tape upload.",
     "datasetSize": 44,
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6ff6089f-83d5-44cc-802b-88322a7c347b.jpg",
+            "SR": "https://imgsli.com/i/8e1e77e6-1407-4d4e-b9cf-b34e89c31884.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3eab369a-22ef-4c8b-b609-bdcf5fd54292.jpg",
+            "SR": "https://imgsli.com/i/4051fb52-7a4f-4d1c-9c35-eda3240cf668.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ec520de0-7402-4c45-a440-50bb181ddec0.jpg",
+            "SR": "https://imgsli.com/i/1c3d0a30-a17f-4503-b88d-c40c6d09bf36.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/2202e52d-b038-4277-8164-0848fbcd6c13.jpg",
+            "SR": "https://imgsli.com/i/b127fc5d-31dc-411d-a54c-3e9694ebf773.jpg"
+        }
+    ]
 }

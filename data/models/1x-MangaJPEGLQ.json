@@ -33,5 +33,10 @@
     "trainingBatchSize": 5,
     "trainingHRSize": 64,
     "dataset": "Expanded self curated custom manga dataset",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/855269193762865152/Example_LQ_Input-comparison.png"
+        }
+    ]
 }

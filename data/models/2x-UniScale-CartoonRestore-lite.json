@@ -35,5 +35,34 @@
     "trainingBatchSize": 4,
     "trainingHRSize": 64,
     "dataset": "Custom Dataset consisting of lossless 4k frames from Metal Arms: Glitch in the System, Just Cause 3, Dirt 3, Forza Horizon 3, Sleeping Dogs, ATLA DVD, and self-edited photos from SignatureEdits",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882136618461458462/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882136455999262750/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882136979410673684/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/649861104645701637/882121519973666886/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/649861104645701637/882124248368427078/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882110147676221480/Spongebob_UniScale_CartoonRestore.mp4"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/547949806761410560/881971445813633044/Spongebob_Original.mp4"
+        }
+    ]
 }

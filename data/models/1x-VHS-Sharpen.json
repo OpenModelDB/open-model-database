@@ -33,5 +33,26 @@
     "dataset": "4K Blu-Ray movie stills, de-grained and downscaled, and ran through a VCR onto a VHS.",
     "datasetSize": 9384,
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/794bbcf3-ad79-48fc-9dda-79bcde6cbadf.jpg",
+            "SR": "https://imgsli.com/i/d842fa32-49de-4d29-81d0-c956b28b087d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/547f1212-d4a1-4c5f-9844-63d861da6d77.jpg",
+            "SR": "https://imgsli.com/i/7d29ea73-fa59-4e13-8a2d-2a6c51723914.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/98020a65-72b6-4659-b624-f77d64afe189.jpg",
+            "SR": "https://imgsli.com/i/8a6ee8b1-b81e-4514-965e-719b0fc78bb6.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/01d783c0-3141-4a06-ab2c-33e11e1f1498.jpg",
+            "SR": "https://imgsli.com/i/876844ad-356e-46bf-aecf-391fd9c9f03c.jpg"
+        }
+    ]
 }

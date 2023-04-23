@@ -34,5 +34,10 @@
     "trainingOTF": false,
     "dataset": "Flickr2K+Div2K, JPEG compressed with random quality from 85-95 and scaled with either cubic or NN scaling.",
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/n09m2Rt.png"
+        }
+    ]
 }
