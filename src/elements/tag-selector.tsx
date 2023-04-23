@@ -52,9 +52,11 @@ function TagButton({ state, name, onClick, noIcon = false, tooltipId, tooltipCon
 
 const TOOLTIP_ID = 'tag-selector-tooltip';
 
+export type TagSelectorStyle = 'simple' | 'advanced';
+
 export interface TagSelectorProps {
     selection: TagSelection;
-    onChange: (selection: TagSelection) => void;
+    onChange: (selection: TagSelection, style: TagSelectorStyle) => void;
 }
 
 export function TagSelector({ selection, onChange }: TagSelectorProps) {
@@ -131,7 +133,7 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
                                         tooltipContent={tag?.description ? tagId : undefined}
                                         tooltipId={tag?.description ? TOOLTIP_ID : undefined}
                                         onClick={() => {
-                                            onChange(setState(tagId, NEXT_STATE[state], selection));
+                                            onChange(setState(tagId, NEXT_STATE[state], selection), 'advanced');
                                         }}
                                     />
                                 );
@@ -190,7 +192,7 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
                     copy.set(tag, change);
                 }
             }
-            onChange(copy);
+            onChange(copy, 'simple');
         }
     }, [selected, selection, tags, onChange]);
 
@@ -203,7 +205,7 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
                     state={selected === undefined ? 'required' : 'any'}
                     onClick={() => {
                         if (selected !== undefined) {
-                            onChange(setState(selected, 'any', selection));
+                            onChange(setState(selected, 'any', selection), 'simple');
                         }
                     }}
                 />
@@ -221,7 +223,7 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
                                 if (selected !== undefined) {
                                     s = setState(selected, 'any', s);
                                 }
-                                onChange(s);
+                                onChange(s, 'simple');
                             }
                         }}
                     />
