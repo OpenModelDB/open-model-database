@@ -122,6 +122,11 @@ export const useSearch = (
     const router = useRouter();
 
     // set URL query string based on current state
+    interface Query {
+        q?: string;
+        t?: string;
+    }
+    const lastQueryUpdateRef = useRef<Query>();
     useEffect(() => {
         const timerId = setTimeout(() => {
             const q = state.searchQuery;
@@ -141,6 +146,7 @@ export const useSearch = (
 
             if (deepEqual(newQuery, router.query)) return;
 
+            lastQueryUpdateRef.current = { q: q || undefined, t: t || undefined };
             router.push({ query: newQuery }, undefined, { shallow: true }).catch((e) => console.error(e));
         }, 1000);
         return () => clearTimeout(timerId);
@@ -149,6 +155,14 @@ export const useSearch = (
     // update state based on URL query string
     useEffect(() => {
         const { q, t } = router.query;
+        if (lastQueryUpdateRef.current) {
+            const old = lastQueryUpdateRef.current;
+            lastQueryUpdateRef.current = undefined;
+            if (q === old.q && t === old.t) {
+                return;
+            }
+        }
+
         const searchQuery = typeof q === 'string' ? q : '';
         const tagSelection = typeof t === 'string' ? parseTagSelection(t, tagData) : EMPTY_TAGS;
         update({ searchQuery, tagSelection });
