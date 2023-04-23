@@ -1,4 +1,5 @@
 import { Popover, Transition } from '@headlessui/react';
+import Link from 'next/link';
 import { Fragment, useEffect, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 import { useTags } from '../../lib/hooks/use-tags';
@@ -22,14 +23,19 @@ export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
                     onChange={onChange}
                 />
             )}
-            {tags.map((tagId) => (
-                <div
-                    className={`${style.tag} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
-                    key={tagId}
-                >
-                    {tagData.get(tagId)?.name ?? `unknown tag:${tagId}`}
-                </div>
-            ))}
+            {tags.map((tagId) => {
+                const name = tagData.get(tagId)?.name ?? `unknown tag:${tagId}`;
+                return (
+                    <Link
+                        className={`${style.tag} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
+                        href={`/?t=${tagId}`}
+                        key={tagId}
+                        title={`Show all models with the ${name} tag`}
+                    >
+                        {name}
+                    </Link>
+                );
+            })}
         </div>
     );
 }
