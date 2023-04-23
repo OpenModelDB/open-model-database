@@ -23,6 +23,7 @@ export function Header() {
             <header className={style.header}>
                 <div>
                     <Link
+                        aria-label="Open Model Database"
                         className={style.logo}
                         href="/"
                     >
@@ -111,6 +112,7 @@ export function Header() {
 
                     <Link
                         external
+                        aria-label="GitHub"
                         className={style.iconLink}
                         href="https://github.com/OpenModelDB/open-model-database"
                     >
@@ -118,12 +120,14 @@ export function Header() {
                     </Link>
                     <Link
                         external
+                        aria-label="Discord"
                         className={style.iconLink}
                         href="https://discord.gg/enhance-everything-547949405949657098"
                     >
                         <FaDiscord />
                     </Link>
                     <button
+                        aria-label="Toggle color scheme"
                         className={style.themeButton}
                         onClick={toggleColorScheme}
                     >

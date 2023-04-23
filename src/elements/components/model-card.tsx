@@ -99,18 +99,28 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
 
 export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
     const inner = (
-        <ModelCardContent
-            id={id}
-            model={model}
-        />
-    );
-
-    return (
         <div
             className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900`}
         >
-            {lazy ? <LazyLoadComponent threshold={400}>{inner}</LazyLoadComponent> : inner}
+            <ModelCardContent
+                id={id}
+                model={model}
+            />
         </div>
+    );
+
+    if (!lazy) return inner;
+
+    return (
+        <LazyLoadComponent
+            placeholder={
+                <div
+                    className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900`}
+                />
+            }
+        >
+            {inner}
+        </LazyLoadComponent>
     );
 });
 

@@ -60,64 +60,65 @@ export default function Page({ modelData: staticModelData }: Props) {
                 description="OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better way to find and compare models than existing sources."
                 title="OpenModelDB"
             />
-            <PageContainer scrollToTop>
-                <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
-                    {editMode && (
-                        <button
-                            className="text-l absolute opacity-0 hover:opacity-100"
-                            onClick={() => {
-                                clickFunction().catch((e) => console.error(e));
-                            }}
-                        >
-                            Click me!
-                        </button>
-                    )}
+            <PageContainer
+                scrollToTop
+                wrapper
+            >
+                {editMode && (
+                    <button
+                        className="text-l absolute opacity-0 hover:opacity-100"
+                        onClick={() => {
+                            clickFunction().catch((e) => console.error(e));
+                        }}
+                    >
+                        Click me!
+                    </button>
+                )}
 
-                    <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
-                        The best place to find AI Upscaling models
-                    </h1>
+                <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
+                    The best place to find AI Upscaling models
+                </h1>
 
-                    <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                        OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better
-                        way to find and compare models than existing sources.
-                    </p>
+                <p className="mx-auto max-w-screen-md text-center text-gray-600 dark:text-gray-400 md:text-lg">
+                    OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better way to
+                    find and compare models than existing sources.
+                </p>
 
-                    {/* Search */}
-                    <SearchBar
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value, 400)}
+                {/* Search */}
+                <SearchBar
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value, 400)}
+                />
+
+                {/* Tags */}
+                <div className="my-4">
+                    <TagSelector
+                        selection={tagSelection}
+                        onChange={(value, style) => {
+                            setTagSelection(value, style === 'advanced' ? 800 : 0);
+                        }}
                     />
-
-                    {/* Tags */}
-                    <div className="my-4">
-                        <TagSelector
-                            selection={tagSelection}
-                            onChange={(value, style) => {
-                                setTagSelection(value, style === 'advanced' ? 800 : 0);
-                            }}
-                        />
-                    </div>
-
-                    {/* Model Cards */}
-                    {selectedModels.length > 0 ? (
-                        <>
-                            <div className="mb-3 ml-3">
-                                Found <span className="font-medium">{selectedModels.length}</span> model
-                                {selectedModels.length === 1 ? '' : 's'}
-                            </div>
-                            <ModelCardGrid
-                                lazyOffset={12}
-                                modelData={modelData}
-                                models={selectedModels}
-                            />
-                        </>
-                    ) : (
-                        <div className="flex flex-col items-center justify-center p-6">
-                            <div className="text-2xl font-bold text-accent-500 dark:text-gray-100">No models found</div>
-                            <div className="text-gray-500 dark:text-gray-400">Try changing your search filters</div>
-                        </div>
-                    )}
                 </div>
+
+                {/* Model Cards */}
+                {selectedModels.length > 0 ? (
+                    <>
+                        <div className="mb-3 ml-3">
+                            Found <span className="font-medium">{selectedModels.length}</span> model
+                            {selectedModels.length === 1 ? '' : 's'}
+                        </div>
+                        <ModelCardGrid
+                            lazyOffset={12}
+                            modelData={modelData}
+                            models={selectedModels}
+                        />
+                    </>
+                ) : (
+                    <div className="flex flex-col items-center justify-center p-6">
+                        <div className="text-2xl font-bold text-accent-500 dark:text-gray-100">No models found</div>
+                        <div className="text-gray-500 dark:text-gray-400">Try changing your search filters</div>
+                    </div>
+                )}
             </PageContainer>
         </>
     );
