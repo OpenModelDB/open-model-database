@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 import React, { useCallback, useMemo, useState } from 'react';
-import { ModelCard } from '../elements/components/model-card';
+import { ModelCardGrid } from '../elements/components/model-card-grid';
 import { SearchBar } from '../elements/components/searchbar';
 import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
@@ -103,18 +103,11 @@ export default function Page({ modelData: staticModelData }: Props) {
                                 Found <span className="font-medium">{selectedModels.length}</span> model
                                 {selectedModels.length === 1 ? '' : 's'}
                             </div>
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                                {selectedModels.map((id) => {
-                                    return (
-                                        <ModelCard
-                                            id={id}
-                                            key={id}
-                                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                                            model={modelData.get(id)!}
-                                        />
-                                    );
-                                })}
-                            </div>
+                            <ModelCardGrid
+                                lazyOffset={12}
+                                modelData={modelData}
+                                models={selectedModels}
+                            />
                         </>
                     ) : (
                         <div className="flex flex-col items-center justify-center p-6">

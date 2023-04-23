@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react';
-import { ModelCard } from '../../elements/components/model-card';
+import React, { useMemo } from 'react';
+import { ModelCardGrid } from '../../elements/components/model-card-grid';
 import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useModels } from '../../lib/hooks/use-models';
@@ -20,6 +20,10 @@ interface Props {
 export default function Page({ userId, user, models }: Props) {
     const { modelData } = useModels(models);
 
+    const userModels = useMemo(() => {
+        return [...modelData].filter(([, model]) => hasAuthor(model, userId)).map(([id]) => id);
+    }, [modelData, userId]);
+
     return (
         <>
             <HeadCommon
@@ -33,19 +37,10 @@ export default function Page({ userId, user, models }: Props) {
                     </h1>
 
                     {/* Model Cards */}
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {[...modelData]
-                            .filter(([, model]) => hasAuthor(model, userId))
-                            .map(([id, model]) => {
-                                return (
-                                    <ModelCard
-                                        id={id}
-                                        key={id}
-                                        model={model}
-                                    />
-                                );
-                            })}
-                    </div>
+                    <ModelCardGrid
+                        modelData={modelData}
+                        models={userModels}
+                    />
                 </div>
             </PageContainer>
         </>
