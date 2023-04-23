@@ -5,7 +5,7 @@
     "tags": [
         "pretrained"
     ],
-    "description": "Category: Pretrained SOFVSR Models\nPurpose: Animation interpolation\n\nI never really mentioned it in model-releases prior since I think not too many care about interpolation here, but I trained a rife4 model for animation a some months ago, which is better than rife4 and rife4.2 imo. Thought I should also mention it here as well. I also converted it into ncnn. (Nihuis rife ncnn models are only exported with the fastest mode and not the best quality. I exported ncnn models for the most important quality settings. Due to different export/quality settings, there are multiple models. For that reason alone, my ncnn models are much better too, since nihui only exported the fastest one.) My https://github.com/styler00dollar/VSGAN-tensorrt-docker also has the rife ncnn extention, which can use VMAF, dedup, scene detection and so on, which I would recommend. My models are in that extention as well, just select model 10, 11 or 12 and use the dev docker. That test video is done with 2x framerate, enbemble True and FastMode False, combined with scene detection and dedup stuff, tta False. Towards the best quality rife can do. Plz don't steal without credits, k thx.\n\nPretrained model: RifeV4",
+    "description": "Category: Pretrained SOFVSR Models\nPurpose: Animation interpolation\n\nI never really mentioned it in model-releases prior since I think not too many care about interpolation here, but I trained a rife4 model for animation a some months ago, which is better than rife4 and rife4.2 imo. Thought I should also mention it here as well. I also converted it into ncnn. (Nihuis rife ncnn models are only exported with the fastest mode and not the best quality. I exported ncnn models for the most important quality settings. Due to different export/quality settings, there are multiple models. For that reason alone, my ncnn models are much better too, since nihui only exported the fastest one.) My https://github.com/styler00dollar/VSGAN-tensorrt-docker also has the rife ncnn extention, which can use VMAF, dedup, scene detection and so on, which I would recommend. My models are in that extention as well, just select model 10, 11 or 12 and use the dev docker. That test video is done with 2x framerate, enbemble True and FastMode False, combined with scene detection and dedup stuff, tta False. Towards the best quality rife can do. Plz don't steal without credits, k thx.\n\nPretrained model: RifeV4\n\nSample video: https://cdn.discordapp.com/attachments/579685650824036387/990345004260151296/ngnl_sudorife.mp4",
     "date": "2022-06-25",
     "architecture": "rife",
     "size": null,
@@ -25,10 +25,5 @@
         }
     ],
     "trainingIterations": 269662,
-    "images": [
-        {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/990345004260151296/ngnl_sudorife.mp4"
-        }
-    ]
+    "images": []
 }
