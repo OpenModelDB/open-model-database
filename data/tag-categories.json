@@ -31,7 +31,6 @@
             "dedither",
             "dehalo",
             "denoise",
-            "face-upscaling",
             "general-upscaler",
             "inpainting",
             "jpeg",
