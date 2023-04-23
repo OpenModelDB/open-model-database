@@ -30,7 +30,7 @@ export default function Page({ userId, user, models }: Props) {
                 description={`The OpenModelDB user profile of ${user.name}.`}
                 title={user.name}
             />
-            <PageContainer>
+            <PageContainer scrollToTop>
                 <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
                     <h1 className="mb-4 text-center text-2xl font-bold text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
                         {`${user.name}'s Models`}

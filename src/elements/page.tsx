@@ -5,14 +5,15 @@ import style from './page.module.scss';
 
 interface PageContainerProps {
     children?: ReactNode;
+    scrollToTop?: boolean;
 }
 
-export function PageContainer({ children }: PageContainerProps) {
+export function PageContainer({ children, scrollToTop }: PageContainerProps) {
     return (
         <div className={style.container}>
             <Header />
             <main className={style.main}>{children}</main>
-            <ScrollToTop />
+            {scrollToTop && <ScrollToTop />}
         </div>
     );
 }
