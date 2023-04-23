@@ -39,10 +39,6 @@
         "name": "Denoise",
         "description": "The model removes noise from the input.\n\nModels with this tag may only work with specific kinds of noise."
     },
-    "face-upscaling": {
-        "name": "Face Upscaling",
-        "description": ""
-    },
     "faces": {
         "name": "Faces",
         "description": ""
