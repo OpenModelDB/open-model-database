@@ -1,7 +1,7 @@
-/* eslint-disable react/display-name */
 import { memo } from 'react';
 import { Model, ModelId } from '../../lib/schema';
 import { ModelCard } from './model-card';
+import style from './model-card-grid.module.scss';
 
 interface ModelCardGridProps {
     models: ModelId[];
@@ -15,9 +15,10 @@ interface ModelCardGridProps {
      */
     lazyOffset?: number;
 }
+// eslint-disable-next-line react/display-name
 export const ModelCardGrid = memo(({ models, modelData, lazyOffset = 0 }: ModelCardGridProps) => {
     return (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className={style.grid}>
             {models.map((id, index) => {
                 const model = modelData.get(id);
                 if (!model) return null;
