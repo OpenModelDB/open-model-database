@@ -43,14 +43,16 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                 )}
             </div>
             <div className="space-between flex w-full py-2">
-                <button
-                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
-                    onClick={() => {
-                        setImageIndex((imageIndex + images.length - 1) % images.length);
-                    }}
-                >
-                    <BsCaretLeftFill />
-                </button>
+                {images.length >= 2 && (
+                    <button
+                        className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                        onClick={() => {
+                            setImageIndex((imageIndex + images.length - 1) % images.length);
+                        }}
+                    >
+                        <BsCaretLeftFill />
+                    </button>
+                )}
                 <div className="flex grow items-center justify-center justify-items-center gap-2 align-middle">
                     {sliceStartIndex > 0 && (
                         <div>
@@ -164,14 +166,16 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                         </EditImageButton>
                     )}
                 </div>
-                <button
-                    className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
-                    onClick={() => {
-                        setImageIndex((imageIndex + 1) % images.length);
-                    }}
-                >
-                    <BsCaretRightFill />
-                </button>
+                {images.length >= 2 && (
+                    <button
+                        className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                        onClick={() => {
+                            setImageIndex((imageIndex + 1) % images.length);
+                        }}
+                    >
+                        <BsCaretRightFill />
+                    </button>
+                )}
             </div>
         </div>
     );
