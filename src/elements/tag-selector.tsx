@@ -88,7 +88,6 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
 
             {isClient && (
                 <Tooltip
-                    clickable
                     closeOnEsc
                     className={style.tooltip}
                     id={TOOLTIP_ID}
