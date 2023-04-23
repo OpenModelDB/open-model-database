@@ -77,7 +77,7 @@ export default function Page({ modelData: staticModelData }: Props) {
                         The best place to find AI Upscaling models
                     </h1>
 
-                    <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+                    <p className="mx-auto max-w-screen-md text-center text-gray-600 dark:text-gray-400 md:text-lg">
                         OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better
                         way to find and compare models than existing sources.
                     </p>
