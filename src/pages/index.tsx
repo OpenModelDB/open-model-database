@@ -92,7 +92,9 @@ export default function Page({ modelData: staticModelData }: Props) {
                     <div className="my-4">
                         <TagSelector
                             selection={tagSelection}
-                            onChange={(value) => setTagSelection(value, 800)}
+                            onChange={(value, style) => {
+                                setTagSelection(value, style === 'advanced' ? 800 : 0);
+                            }}
                         />
                     </div>
 
