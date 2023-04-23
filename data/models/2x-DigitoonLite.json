@@ -37,5 +37,36 @@
     "dataset": "Blu-ray, HDTV, and DVD",
     "datasetSize": 21000,
     "pretrainedModelG": "2x-DigiGradients-Lite",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ea39f354-9268-4991-aa1c-ee43e2357e13.jpg",
+            "SR": "https://imgsli.com/i/32a72e9b-61ed-4b44-913b-baaaae4f8d88.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/13de87e6-8686-4287-a4a8-7ccc4593df8c.jpg",
+            "SR": "https://imgsli.com/i/13e99dbc-db10-4962-9369-44013d68a3f0.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/badd9f62-d419-41bf-ae58-839f043d056c.jpg",
+            "SR": "https://imgsli.com/i/86398576-e707-4718-8c45-90d2de44338b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/945b05e0-57a8-4a41-b6f8-1354b08d0882.jpg",
+            "SR": "https://imgsli.com/i/927d6122-5b78-4ded-8e7a-18a4ab3710e6.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/00315afc-1780-4680-8e46-b50e9cdc7425.jpg",
+            "SR": "https://imgsli.com/i/cb4837b1-2dd9-402b-a1da-265cc6490437.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/062b8c94-2f39-482a-a323-93174c679b30.jpg",
+            "SR": "https://imgsli.com/i/cfa251f3-a3dc-418f-99af-b7b1f1973213.jpg"
+        }
+    ]
 }

@@ -35,5 +35,61 @@
     "dataset": "The Legend of Korra first episode DVD frames and BluRay frames.",
     "datasetSize": 436,
     "pretrainedModelG": "2x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c1b70573-7c10-4fa3-a35e-aa70bd1a3599.jpg",
+            "SR": "https://imgsli.com/i/a36f8683-eed3-41fd-937d-a05f4a632d2b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ca1198f0-2de0-4b80-b879-2d06d74fe6f1.jpg",
+            "SR": "https://imgsli.com/i/fd7d857c-23a3-4ee5-a535-897fc51ef2fb.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/643a791e-8a00-4223-b258-bd8bd97109b1.jpg",
+            "SR": "https://imgsli.com/i/7ff71adb-63c0-4591-b61e-d40d1aa323cd.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/29f1e986-e70d-4402-bad8-1fa987e50297.jpg",
+            "SR": "https://imgsli.com/i/5d9317df-891a-4eb0-b681-69859af18efa.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/505349cb-2ae8-4aef-9237-db70df6318ce.jpg",
+            "SR": "https://imgsli.com/i/c5968bac-0d36-4e6b-a1bf-cd5de8bfd732.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/859cbab3-c85e-497e-8844-c528b30a778d.jpg",
+            "SR": "https://imgsli.com/i/ec2467ab-9147-4232-b3c7-af6e502292d0.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/e902c078-446a-4773-96ef-479dad9d3cee.jpg",
+            "SR": "https://imgsli.com/i/f284edee-b23f-476b-824a-7744f167c9ec.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/cab143a5-4f90-494e-9071-eaaa3de8f684.jpg",
+            "SR": "https://imgsli.com/i/2d0bacdb-de74-4375-8e44-391538385260.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/56c769d1-b750-4c7c-96f0-505cf2b5bcfc.jpg",
+            "SR": "https://imgsli.com/i/50cb4ee5-9110-4721-90e8-9cf3398784bb.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/cb21dc58-d6f2-4ba7-9674-24f967b80502.jpg",
+            "SR": "https://imgsli.com/i/24129fed-4d46-4107-942c-6de1468ab747.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/684ce8ab-c394-49ea-bde6-15f1b66bb487.jpg",
+            "SR": "https://imgsli.com/i/e511df3a-d9f3-4e3b-b953-932c80917579.jpg"
+        }
+    ]
 }

@@ -32,5 +32,22 @@
     "trainingHRSize": 128,
     "dataset": "Very hi-res (up to 2500px) vintage cgi images and prerendered promotional renders for games from the 90s to early 2000s, as well as HD stills from movies made with SGI workstations (early pixar movies and shrek)",
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/lwFRhmc.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/ftvVu3i.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/0uXoAuJ.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/uIkm4hJ.png"
+        }
+    ]
 }

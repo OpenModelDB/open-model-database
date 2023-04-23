@@ -33,5 +33,10 @@
     "trainingOTF": false,
     "dataset": "Full res yande.re images",
     "datasetSize": 9147,
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://edef1.pcloud.com/D4ZhwsKk7ZIA6bT7ZZZ8KH1o7Z3VZZnl0ZXZOyQRZaZZZQOu7ZFhcBkz5jsCBI82KOB0ThAjWd6E4k/th-1333687702-1800x952.png"
+        }
+    ]
 }

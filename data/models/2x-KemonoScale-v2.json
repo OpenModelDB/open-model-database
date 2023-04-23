@@ -31,5 +31,10 @@
     "dataset": "@irodori7 twitter, irodori KF artbook scans, KF guidebook scans, custom renders in similar style",
     "datasetSize": 251,
     "pretrainedModelG": "2x-CGIMaster-v1",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/705815801290293329/850614850735439892/unknown.png"
+        }
+    ]
 }

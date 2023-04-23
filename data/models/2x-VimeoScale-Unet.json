@@ -28,5 +28,21 @@
     "trainingBatchSize": 13,
     "trainingHRSize": 128,
     "dataset": "Combination of Collected Vimeo scenes (CG, realistic/video, movie trailers, and motion graphics) at original quality and REDS_sharp",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b52eb823-92aa-417a-ac5d-87d88e9be5fe.jpg",
+            "SR": "https://imgsli.com/i/a183a56f-c56f-4953-b472-f0f22c584e8f.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/7c095521-766d-4152-b252-7625c4a1952e.jpg",
+            "SR": "https://imgsli.com/i/97c54f00-92a5-4655-bcbb-3a4ed63b84d9.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/dddb002e-3787-4deb-8ae5-62024e86ccde.jpg",
+            "SR": "https://imgsli.com/i/a5f5300f-d5d6-454a-b608-9180061a0c8a.jpg"
+        }
+    ]
 }

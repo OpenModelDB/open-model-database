@@ -38,5 +38,11 @@
     "dataset": "LR from severals dvd anime and HR from bluray anime",
     "datasetSize": 2300,
     "pretrainedModelG": "2x-PSNR",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/efa5b8a8-e6be-4a46-901f-1fc7a27d43f4.jpg",
+            "SR": "https://imgsli.com/i/ac9b067e-b28a-49d2-85b6-7a7219fc4a9b.jpg"
+        }
+    ]
 }

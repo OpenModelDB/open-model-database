@@ -32,5 +32,18 @@
     "trainingHRSize": 128,
     "dataset": "I used highres artworks from gelbooru",
     "pretrainedModelG": "4x-Manga109Attempt",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/913500929012150323/4f012e36d686033b274261295da89b32-comparison.jpg"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/913500929356070912/256x256fdbb-comparison.jpg"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/913500929649688617/franky-super-810x456-comparison.jpg"
+        }
+    ]
 }

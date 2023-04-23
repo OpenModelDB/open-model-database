@@ -34,5 +34,25 @@
     "trainingOTF": false,
     "dataset": "Photos - DIV2K+Flickr2K with different types of dithering applied",
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6ecf42ee-90e8-4c61-89bf-ca6ea02c972f.jpg",
+            "SR": "https://imgsli.com/i/5816213f-c287-4844-a8df-793178b730ed.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/2245c32e-165c-4806-97c4-db1312c1c9e3.jpg",
+            "SR": "https://imgsli.com/i/9a14d380-10bb-428e-904d-29944559f9a8.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/f9d7ea3a-42d8-40c7-9235-8ba4fd04e49d.jpg",
+            "SR": "https://imgsli.com/i/6031126d-6092-40b9-bedc-c146b8b95868.jpg"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/j7Wtn0G.png"
+        }
+    ]
 }

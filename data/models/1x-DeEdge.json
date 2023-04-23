@@ -5,7 +5,7 @@
     "tags": [
         "dehalo"
     ],
-    "description": "Halo Removal",
+    "description": "Halo Removal + edge removal. This model softens edges without blurring other parts of the image.\n\nComparison and use case: https://imgsli.com/MjgxMDU",
     "date": "2020-11-03",
     "architecture": "esrgan",
     "size": [
@@ -33,5 +33,11 @@
     "trainingOTF": false,
     "dataset": "Images from DIV2K and random anime drawings",
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ce7660b4-2324-40a2-8e47-1a671654321e.jpg",
+            "SR": "https://imgsli.com/i/1409bc04-010f-45f2-b652-e7939b0446fc.jpg"
+        }
+    ]
 }

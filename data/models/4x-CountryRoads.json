@@ -32,5 +32,22 @@
     "dataset": "Streetside photos taken on Samsung Galaxy A21 camera with all enhancements disabled using GCam and FreeDCam, downscaled to 1024",
     "datasetSize": 236,
     "pretrainedModelG": "4x-PSNR",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/547949806761410560/880291337373618236/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/880291340301254657/880303552315146340/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://media.discordapp.net/attachments/547949806761410560/880290211026853918/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://media.discordapp.net/attachments/547949806761410560/880299665428447232/unknown.png"
+        }
+    ]
 }

@@ -6,7 +6,7 @@
         "jpeg",
         "restoration"
     ],
-    "description": "Pretrained: Trained on Custom (CC0 Textures)",
+    "description": "Pretrained: Trained on Custom (CC0 Textures)\n\nGallery with sample images: https://drive.google.com/open?id=1HWokMsUwsR_Mw-NOJgc8OdS8mkdIje_C",
     "date": "2019-08-06",
     "architecture": "esrgan",
     "size": [

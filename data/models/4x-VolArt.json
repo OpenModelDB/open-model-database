@@ -32,5 +32,14 @@
     "dataset": "Artwork by Yasushi Nirasawa, provided by <@295426806188736523>",
     "datasetSize": 526,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/888869052867543060/888869070928248852/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/888869052867543060/888869784169619496/unknown.png"
+        }
+    ]
 }

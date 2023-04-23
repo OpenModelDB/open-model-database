@@ -27,5 +27,10 @@
             ]
         }
     ],
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1001671437293207672/1658887461.0522466.png"
+        }
+    ]
 }

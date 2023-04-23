@@ -25,5 +25,26 @@
     "trainingBatchSize": 13,
     "trainingHRSize": 128,
     "dataset": "200gb+ Combination of Collected Vimeo scenes (CG, realistic/video, movie trailers, and motion graphics) at original quality and Vimeo90k",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1e5fd788-2e08-479b-8b3a-65dc9258b8e4.jpg",
+            "SR": "https://imgsli.com/i/df5b78d3-c495-46ba-8aa9-8fa908091c56.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6f87ade4-397e-4488-b3d2-8a357594dfcc.jpg",
+            "SR": "https://imgsli.com/i/d0fbe66e-a42f-4111-b5ea-4ad40a98206f.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/507a2684-8029-48e3-94ee-c44fb5eae10b.jpg",
+            "SR": "https://imgsli.com/i/b5e53de4-25eb-48bb-8b65-95a929cfab06.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/0308cb64-5d23-45f9-9d25-b2fbf012cf9f.jpg",
+            "SR": "https://imgsli.com/i/ca6b240b-8d93-4322-b350-f5a72baf1d8a.jpg"
+        }
+    ]
 }

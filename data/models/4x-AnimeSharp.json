@@ -30,5 +30,22 @@
     ],
     "trainingHRSize": 128,
     "dataset": "Custom",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/549525506585001985/941432207917084743/Clipboard-comparison.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/549525506585001985/941432638206541825/test_pic-comparison.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/903415274521374750/925533775616696340/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://media.discordapp.net/attachments/556604553424928768/925526934555881532/unknown.png"
+        }
+    ]
 }

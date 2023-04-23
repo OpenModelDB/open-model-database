@@ -32,5 +32,11 @@
     "dataset": "Full frames of Dragon Prince as HQ and for LR frames compressed with YouTube compression",
     "datasetSize": 1800,
     "pretrainedModelG": "2x-SHARP-ANIME-V2",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a520a071-c4fa-48dc-8331-ea87d8a46b3c.jpg",
+            "SR": "https://imgsli.com/i/3c24239e-34e3-44b8-8ddf-4a9dbcfe5bce.jpg"
+        }
+    ]
 }

@@ -32,5 +32,18 @@
     "dataset": "The UniScale Dataset + My Fabric dataset",
     "datasetSize": 3067,
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/893483065664483338/893483645803847690/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/893483065664483338/893497416207188028/unknown.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/893483065664483338/893483280895193118/unknown.png"
+        }
+    ]
 }

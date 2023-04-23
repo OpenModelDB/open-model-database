@@ -34,5 +34,11 @@
     "trainingOTF": false,
     "dataset": "Images from DIV2K and random anime drawings",
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/34bdb4fb-522b-4045-bd2a-1a936bec98c5.jpg",
+            "SR": "https://imgsli.com/i/a9428e7e-08f7-4a85-9638-8c532a4a9bc6.jpg"
+        }
+    ]
 }

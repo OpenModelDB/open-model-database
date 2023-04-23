@@ -29,5 +29,26 @@
             ]
         }
     ],
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c9978a74-32ee-478b-b228-10744521fc21.jpg",
+            "SR": "https://imgsli.com/i/c90377d5-287d-4f1c-ab4c-96267bfaa04e.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a611b9a9-422f-44ed-882a-3ada8f478625.jpg",
+            "SR": "https://imgsli.com/i/83e9600a-a8ee-4f2b-96e7-f42dc7e5ab12.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/be1717a7-d70b-4e52-b04c-4b2b04901b4d.jpg",
+            "SR": "https://imgsli.com/i/7c22ba75-01ca-407a-98b9-16e27ad6de55.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/07f02f1c-f082-4d44-bd3b-6a6cbf79c48b.jpg",
+            "SR": "https://imgsli.com/i/12aa0959-36db-49a1-8a0c-e58f99226395.jpg"
+        }
+    ]
 }

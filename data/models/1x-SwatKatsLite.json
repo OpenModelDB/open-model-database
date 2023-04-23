@@ -34,5 +34,11 @@
     "dataset": "WEB-DL",
     "datasetSize": 5000,
     "pretrainedModelG": "2x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "SR": "https://i.slow.pics/LLmkr1DB.png",
+            "LR": "https://i.slow.pics/PE8sMfOS.png"
+        }
+    ]
 }

@@ -32,5 +32,106 @@
     "trainingHRSize": 128,
     "dataset": "600dpi digital manga. LR images repeated with different compression strengths, and gamma adjustments.",
     "pretrainedModelG": "4x-PSNR",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/sLypBoiX.png",
+            "SR": "https://i.slow.pics/SSYcxXig.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/x8bYqlWf.png",
+            "SR": "https://i.slow.pics/caPW2MbP.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/20N7pmXL.png",
+            "SR": "https://i.slow.pics/nDWNPmK6.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pfzrdsIu.png",
+            "SR": "https://i.slow.pics/1yTEujeg.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/MGrm6MqU.png",
+            "SR": "https://i.slow.pics/7xXQpjt0.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/6hk7a6t5.png",
+            "SR": "https://i.slow.pics/1uy2TPwa.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xEnTfTXx.png",
+            "SR": "https://i.slow.pics/2MhrabnO.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/iHlkgFPA.png",
+            "SR": "https://i.slow.pics/9Xqer7rr.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/r05wIUdi.png",
+            "SR": "https://i.slow.pics/JbqUGtsH.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Biq6DDTs.jpg",
+            "SR": "https://i.slow.pics/p6LNfJEP.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/kmXADepE.png",
+            "SR": "https://i.slow.pics/N2TLvfDw.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/GcDfUdOz.png",
+            "SR": "https://i.slow.pics/9EsR9p4Z.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8WeXkefI.png",
+            "SR": "https://i.slow.pics/JycZSVG0.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/dtSt8kr5.png",
+            "SR": "https://i.slow.pics/aNdRz3mY.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/SPRe9Zu0.png",
+            "SR": "https://i.slow.pics/CUK0WaiR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pmM6bCvy.png",
+            "SR": "https://i.slow.pics/ry0587s4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/dXVMAyjv.jpg",
+            "SR": "https://i.slow.pics/qCiIclDy.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/igxFfo1S.png",
+            "SR": "https://i.slow.pics/CNufJk7B.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/DIKVx3z2.png",
+            "SR": "https://i.slow.pics/p60y5sq3.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Je01f7LJ.png",
+            "SR": "https://i.slow.pics/hWUlwQ6P.png"
+        }
+    ]
 }

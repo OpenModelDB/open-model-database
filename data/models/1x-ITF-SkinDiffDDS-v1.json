@@ -39,5 +39,21 @@
     "dataset": "Custom",
     "datasetSize": 870,
     "pretrainedModelG": "1x-BC1-smooth2",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/97c3fb52-1637-463b-b35f-9f0ef20d5c9f.jpg",
+            "SR": "https://imgsli.com/i/30ee14e0-ea74-41d7-add6-6b7e4e6b4fb7.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c78937cd-dccd-4de2-8627-4666e9c9b12f.jpg",
+            "SR": "https://imgsli.com/i/72771a70-e179-4dd3-89a9-6aff7ce915d0.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/4ac876c6-4c74-470e-884c-486e73d12cfe.jpg",
+            "SR": "https://imgsli.com/i/8a767967-d37c-486f-9127-42fafad1c54f.jpg"
+        }
+    ]
 }

@@ -27,5 +27,11 @@
         }
     ],
     "dataset": "Self curated custom manga dataset",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "SR": "https://imgsli.com/i/54b345f3-fcae-4c13-b630-b627efdfa97f.jpg",
+            "LR": "https://imgsli.com/i/ec1411e8-24c1-464f-89af-57c2aadc76d9.jpg"
+        }
+    ]
 }

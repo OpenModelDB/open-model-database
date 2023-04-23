@@ -34,5 +34,11 @@
     "dataset": "Random anime images",
     "datasetSize": 300,
     "pretrainedModelG": "1x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/e4133059-5fc0-45d0-b72c-6a1253fb0986.jpg",
+            "SR": "https://imgsli.com/i/0bf5bb2d-ad6a-4320-b550-ad88c3c60ff3.jpg"
+        }
+    ]
 }

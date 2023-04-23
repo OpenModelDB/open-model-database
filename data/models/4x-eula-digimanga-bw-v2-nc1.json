@@ -33,5 +33,61 @@
     "dataset": "v1's dataset + real-life LRs upscaled with v1",
     "datasetSize": 19019,
     "pretrainedModelG": "4x-eula-digimanga-bw-v1",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Biq6DDTs.jpg",
+            "SR": "https://i.slow.pics/4drvnmEF.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/kmXADepE.png",
+            "SR": "https://i.slow.pics/oc98KrUq.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/GcDfUdOz.png",
+            "SR": "https://i.slow.pics/o4gbFDZ7.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8WeXkefI.png",
+            "SR": "https://i.slow.pics/hQqc4zFl.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/dtSt8kr5.png",
+            "SR": "https://i.slow.pics/N8YdTJfQ.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/SPRe9Zu0.png",
+            "SR": "https://i.slow.pics/mjbHxqYM.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pmM6bCvy.png",
+            "SR": "https://i.slow.pics/CKsO6QUz.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/dXVMAyjv.jpg",
+            "SR": "https://i.slow.pics/RQuRBHLA.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/igxFfo1S.png",
+            "SR": "https://i.slow.pics/vzHwzGha.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/DIKVx3z2.png",
+            "SR": "https://i.slow.pics/EKW1w69a.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Je01f7LJ.png",
+            "SR": "https://i.slow.pics/sXL82LZy.png"
+        }
+    ]
 }
