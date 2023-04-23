@@ -52,6 +52,7 @@
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: ease-in-out;
     transition-duration: 300ms;
+    white-space: nowrap;
 }
 
 .iconLink,
