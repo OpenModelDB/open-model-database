@@ -1,13 +1,14 @@
 import { ReactNode } from 'react';
+import { ScrollToTop } from './components/scroll-to-top';
 import { Header } from './header';
 import style from './page.module.scss';
 
 interface PageContainerProps {
     children?: ReactNode;
+    scrollToTop?: boolean;
     wrapper?: boolean;
 }
-
-export function PageContainer({ children, wrapper }: PageContainerProps) {
+export function PageContainer({ children, scrollToTop, wrapper }: PageContainerProps) {
     return (
         <div className={style.container}>
             <Header />
@@ -18,6 +19,7 @@ export function PageContainer({ children, wrapper }: PageContainerProps) {
             ) : (
                 <main className={`${style.main} p-4`}>{children}</main>
             )}
+            {scrollToTop && <ScrollToTop />}
         </div>
     );
 }

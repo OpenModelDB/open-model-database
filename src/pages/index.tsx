@@ -60,7 +60,10 @@ export default function Page({ modelData: staticModelData }: Props) {
                 description="OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better way to find and compare models than existing sources."
                 title="OpenModelDB"
             />
-            <PageContainer wrapper>
+            <PageContainer
+                scrollToTop
+                wrapper
+            >
                 {editMode && (
                     <button
                         className="text-l absolute opacity-0 hover:opacity-100"
