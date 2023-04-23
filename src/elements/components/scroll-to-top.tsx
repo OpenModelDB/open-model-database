@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from 'react';
-import { FiArrowUpCircle } from 'react-icons/fi';
+import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import style from './scroll-to-top.module.scss';
 
 // eslint-disable-next-line react/display-name
@@ -24,7 +24,7 @@ export const ScrollToTop = memo(() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
         >
-            <FiArrowUpCircle />
+            <BsFillArrowUpCircleFill />
         </button>
     );
 });

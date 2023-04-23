@@ -17,11 +17,11 @@
     background: none;
     border-radius: 100%;
     padding: 0.25rem;
-    opacity: 0.4;
+    opacity: 0.3;
     transition: opacity 0.5s ease-in-out;
 
     @media screen and (max-width: 1500px) {
-        opacity: 0.6;
+        opacity: 0.5;
     }
 
     &:hover {
