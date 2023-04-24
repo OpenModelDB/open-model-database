@@ -38,8 +38,8 @@
     "images": [
         {
             "type": "paired",
-            "SR": "https://imgsli.com/i/95409dc3-0303-4935-8722-edf6d7c331fd.jpg",
-            "LR": "https://imgsli.com/i/e9842609-3720-40c1-91b9-316ae03f5a21.jpg"
+            "LR": "https://imgsli.com/i/e9842609-3720-40c1-91b9-316ae03f5a21.jpg",
+            "SR": "https://imgsli.com/i/95409dc3-0303-4935-8722-edf6d7c331fd.jpg"
         },
         {
             "type": "paired",
@@ -48,8 +48,8 @@
         },
         {
             "type": "paired",
-            "SR": "https://imgsli.com/i/8853d469-316e-4494-9a03-0e903ffa231c.jpg",
-            "LR": "https://imgsli.com/i/7146b542-fd14-4a90-a929-3fbfda4a0f6c.jpg"
+            "LR": "https://imgsli.com/i/7146b542-fd14-4a90-a929-3fbfda4a0f6c.jpg",
+            "SR": "https://imgsli.com/i/8853d469-316e-4494-9a03-0e903ffa231c.jpg"
         },
         {
             "type": "paired",
