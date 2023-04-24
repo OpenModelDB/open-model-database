@@ -104,9 +104,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                         </svg>
                     )}
                     Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
-                    <div className="text-center text-sm font-normal">
-                        {isExternal ? `Hosted offsite by ${host}` : 'Hosted by OpenModelDB'}
-                    </div>
+                    {isExternal && <div className="text-center text-sm font-normal">{`Hosted by ${host}`}</div>}
                 </div>
             </Link>
 
