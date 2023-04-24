@@ -30,13 +30,11 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0913.png",
-            "thumbnail": ""
+            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0913.png"
         },
         {
             "type": "standalone",
-            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0935.png",
-            "thumbnail": ""
+            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0935.png"
         }
     ]
 }
