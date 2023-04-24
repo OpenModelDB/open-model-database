@@ -97,6 +97,9 @@ async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void
     for (const r of model.resources) {
         sortObjectKeys(r, ['platform', 'type', 'size', 'sha256', 'urls']);
     }
+    for (const i of model.images) {
+        sortObjectKeys(i as unknown as Record<string, unknown>, ['type', 'LR', 'SR', 'url', 'thumbnail']);
+    }
     await writeFile(file, JSON.stringify(model, undefined, 4), 'utf-8');
 }
 
