@@ -31,13 +31,11 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/LR/baboon.png",
-            "SR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/results/baboon_ESRGAN.png",
-            "thumbnail": null
+            "SR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/results/baboon_ESRGAN.png"
         },
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/figures/baboon.jpg",
-            "thumbnail": null
+            "url": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/figures/baboon.jpg"
         }
     ]
 }

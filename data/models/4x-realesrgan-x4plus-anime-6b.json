@@ -33,8 +33,7 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/xinntao/public-figures/master/Real-ESRGAN/cmp_realesrgan_anime_1.png",
-            "thumbnail": ""
+            "url": "https://raw.githubusercontent.com/xinntao/public-figures/master/Real-ESRGAN/cmp_realesrgan_anime_1.png"
         }
     ]
 }
