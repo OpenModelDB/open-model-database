@@ -9,6 +9,7 @@ import {
     BsPlusLg,
 } from 'react-icons/bs';
 import { FiMoreHorizontal } from 'react-icons/fi';
+import { useWindowSize } from '../../hooks/useWindowSize';
 import { Image } from '../../lib/schema';
 import { joinClasses } from '../../lib/util';
 import { EditImageButton } from './image-carousel-edit-popover';
@@ -20,19 +21,25 @@ type ImageCarouselProps = {
     onChange?: (images: Image[]) => void;
 };
 
-const NUMBER_OF_SHOWABLE_IMAGES = 12;
+const IMG_THUMB_SIZE = 12 * 4 * 2;
 
 export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps) => {
     const [imageIndex, setImageIndex] = useState(0);
 
     const selectedImage = images[imageIndex] as Image | undefined;
 
-    const page = Math.floor(imageIndex / NUMBER_OF_SHOWABLE_IMAGES);
-    const sliceStartIndex = page * NUMBER_OF_SHOWABLE_IMAGES;
-    const sliceEndIndex = Math.min(sliceStartIndex + NUMBER_OF_SHOWABLE_IMAGES, images.length);
+    const { width } = useWindowSize();
+    console.log('🚀 ~ file: image-carousel.tsx:32 ~ ImageCarousel ~ width:', width);
+
+    const numImages = Math.min(Math.floor((width ?? IMG_THUMB_SIZE) / IMG_THUMB_SIZE), 12);
+    console.log('🚀 ~ file: image-carousel.tsx:35 ~ ImageCarousel ~ numImages:', numImages);
+
+    const page = Math.floor(imageIndex / numImages);
+    const sliceStartIndex = page * numImages;
+    const sliceEndIndex = Math.min(sliceStartIndex + numImages, images.length);
 
     return (
-        <div className="relative rounded-lg">
+        <div className="relative w-full rounded-lg">
             <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
                 {selectedImage ? (
                     <ImageCarouselImage image={selectedImage} />
