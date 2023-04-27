@@ -29,10 +29,8 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
     const selectedImage = images[imageIndex] as Image | undefined;
 
     const { width } = useWindowSize();
-    console.log('🚀 ~ file: image-carousel.tsx:32 ~ ImageCarousel ~ width:', width);
 
     const numImages = Math.min(Math.floor((width ?? IMG_THUMB_SIZE) / IMG_THUMB_SIZE), 12);
-    console.log('🚀 ~ file: image-carousel.tsx:35 ~ ImageCarousel ~ numImages:', numImages);
 
     const page = Math.floor(imageIndex / numImages);
     const sliceStartIndex = page * numImages;
