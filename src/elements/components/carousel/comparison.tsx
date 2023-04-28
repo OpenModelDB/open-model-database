@@ -84,6 +84,10 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
                     }}
                 >
                     <TransformComponent
+                        contentStyle={{
+                            width: 'auto',
+                            height: 'auto',
+                        }}
                         wrapperStyle={{
                             width: '100%',
                             height: '100%',
@@ -116,6 +120,10 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
                     }}
                 >
                     <TransformComponent
+                        contentStyle={{
+                            width: 'auto',
+                            height: 'auto',
+                        }}
                         wrapperStyle={{
                             width: '100%',
                             height: '100%',
