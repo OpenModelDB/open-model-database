@@ -1,0 +1,7 @@
+.imageWrapper {
+    @media screen and (max-width: 1023px) {
+        border-radius: 0;
+        margin: -1rem 0 0 -1rem;
+        width: calc(100% + 2rem);
+    }
+}
