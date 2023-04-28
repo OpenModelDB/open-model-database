@@ -14,6 +14,7 @@ import { Image } from '../../lib/schema';
 import { joinClasses } from '../../lib/util';
 import { EditImageButton } from './image-carousel-edit-popover';
 import { ImageCarouselImage } from './image-carousel-image';
+import style from './image-carousel.module.scss';
 
 type ImageCarouselProps = {
     images: Image[];
@@ -37,8 +38,10 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
     const sliceEndIndex = Math.min(sliceStartIndex + numImages, images.length);
 
     return (
-        <div className="relative w-full rounded-lg">
-            <div className="flex h-96 w-full rounded-lg bg-fade-100 align-middle dark:bg-fade-800">
+        <div className="relative w-full">
+            <div
+                className={`${style.imageWrapper} flex h-96 w-full overflow-hidden rounded-lg bg-fade-100 align-middle dark:bg-fade-800`}
+            >
                 {selectedImage ? (
                     <ImageCarouselImage image={selectedImage} />
                 ) : (
