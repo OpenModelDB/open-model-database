@@ -4,6 +4,7 @@ import { BsCheck } from 'react-icons/bs';
 import { HiChevronDoubleDown, HiChevronDoubleUp, HiOutlinePlusSm } from 'react-icons/hi';
 import { Tooltip } from 'react-tooltip';
 import { useIsClient } from '../lib/hooks/use-is-client';
+import { useIsTouch } from '../lib/hooks/use-is-touch';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { TagId } from '../lib/schema';
@@ -62,6 +63,7 @@ export interface TagSelectorProps {
 export function TagSelector({ selection, onChange }: TagSelectorProps) {
     const [simple, setSimple] = useState(true);
     const isClient = useIsClient();
+    const isTouch = useIsTouch();
 
     const { tagData } = useTags();
 
@@ -86,7 +88,7 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
                 <span>{simple ? 'Advanced tag selector' : 'Simple tag selector'}</span>
             </button>
 
-            {isClient && (
+            {isClient && !isTouch && (
                 <Tooltip
                     closeOnEsc
                     className={style.tooltip}
