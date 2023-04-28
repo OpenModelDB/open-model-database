@@ -171,9 +171,9 @@ export default function Page({ modelId, modelData }: Props) {
             </Head>
             <PageContainer>
                 {/* Two columns */}
-                <div className="grid h-full w-full grid-cols-3 gap-4 py-6">
+                <div className="grid h-full w-full gap-4 py-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
                     {/* Left column */}
-                    <div className="relative col-span-2 flex h-full flex-col gap-4">
+                    <div className="relative flex h-full flex-col gap-4 sm:col-span-1 lg:col-span-2">
                         <ImageCarousel
                             images={model.images}
                             readonly={!editMode}
