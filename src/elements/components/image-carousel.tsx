@@ -21,7 +21,7 @@ type ImageCarouselProps = {
     onChange?: (images: Image[]) => void;
 };
 
-const IMG_THUMB_SIZE = 12 * 4 * 2;
+const IMG_THUMB_SIZE = 96;
 
 export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps) => {
     const [imageIndex, setImageIndex] = useState(0);
