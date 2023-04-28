@@ -68,6 +68,7 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
             itemOne={
                 <TransformWrapper
                     centerOnInit
+                    disablePadding
                     limitToBounds
                     initialPositionX={transformState.positionX}
                     initialPositionY={transformState.positionY}
@@ -104,6 +105,7 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
             itemTwo={
                 <TransformWrapper
                     centerOnInit
+                    disablePadding
                     limitToBounds
                     initialPositionX={transformState.positionX}
                     initialPositionY={transformState.positionY}
