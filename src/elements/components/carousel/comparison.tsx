@@ -76,6 +76,9 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
                         velocityDisabled: true,
                     }}
                     ref={lrRef}
+                    wheel={{
+                        step: 0.2 * transformState.scale,
+                    }}
                     onTransformed={(ref, state) => {
                         setTransformState(state);
                     }}
@@ -105,6 +108,9 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
                         velocityDisabled: true,
                     }}
                     ref={srRef}
+                    wheel={{
+                        step: 0.2 * transformState.scale,
+                    }}
                     onTransformed={(ref, state) => {
                         setTransformState(state);
                     }}
