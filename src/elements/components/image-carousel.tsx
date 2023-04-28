@@ -53,6 +53,7 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
             <div className="space-between flex w-full py-2">
                 {images.length >= 2 && (
                     <button
+                        aria-label="Previous image"
                         className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
                         onClick={() => {
                             setImageIndex((imageIndex + images.length - 1) % images.length);
@@ -176,6 +177,7 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                 </div>
                 {images.length >= 2 && (
                     <button
+                        aria-label="Next image"
                         className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
                         onClick={() => {
                             setImageIndex((imageIndex + 1) % images.length);
