@@ -21,18 +21,21 @@
     transition: all 0.1s linear;
 
     .icon {
+        --extra-size: 0.2em;
+        --icon-size: calc(1.4em + var(--extra-size));
+
         line-height: 1;
-        padding: 0.25em 0.25rem;
+        padding: calc(0.333rem - var(--extra-size) / 2);
         display: inline-block;
-        width: 1.4em;
-        height: 1.5em;
+        width: var(--icon-size);
+        height: var(--icon-size);
         @include themed using ($t) {
             background-color: t($t, rgb(0 0 0/8%), rgb(255 255 255/12%));
         }
 
         svg {
-            width: 1.4em;
-            height: 1.4em;
+            width: var(--icon-size);
+            height: var(--icon-size);
         }
     }
 
@@ -40,7 +43,7 @@
         line-height: 1.4;
         height: 1.4em;
         font-weight: 500;
-        padding: 0.25rem 0.5rem;
+        padding: 0.333rem 0.625rem;
         display: inline-block;
     }
 }
@@ -50,7 +53,7 @@
     border: none;
     font: inherit;
     cursor: pointer;
-    padding: 0;
+    padding: 0.25rem 0;
     display: inline-flex;
     align-items: center;
 
