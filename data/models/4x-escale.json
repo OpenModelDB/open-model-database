@@ -35,11 +35,6 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://i.slow.pics/XUUndUn1.png",
-            "SR": "https://i.slow.pics/KkruuRke.png"
-        },
-        {
-            "type": "paired",
             "LR": "https://i.slow.pics/CJuXeTEQ.png",
             "SR": "https://i.slow.pics/fdfj8Dm7.png"
         },
