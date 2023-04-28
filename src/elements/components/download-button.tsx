@@ -114,7 +114,10 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                     className="relative inline-block text-left"
                 >
                     <div>
-                        <Menu.Button className="inline-flex h-16 w-12 cursor-pointer items-center rounded-r-lg border-0 bg-accent-600 text-center align-middle text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600">
+                        <Menu.Button
+                            aria-label="Available mirrors"
+                            className="inline-flex h-16 w-12 cursor-pointer items-center rounded-r-lg border-0 bg-accent-600 text-center align-middle text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600"
+                        >
                             <BsChevronDown className="w-full" />
                         </Menu.Button>
                     </div>
