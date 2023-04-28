@@ -181,7 +181,7 @@ export default function Page({ modelId, modelData }: Props) {
                         />
                         <div className="relative">
                             <div>
-                                <h1 className="m-0">
+                                <h1 className="mt-0 mb-1 leading-10">
                                     <EditableLabel
                                         readonly={!editMode}
                                         text={modelData.name}
