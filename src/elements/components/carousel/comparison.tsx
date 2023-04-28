@@ -73,6 +73,7 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
                     initialPositionX={transformState.positionX}
                     initialPositionY={transformState.positionY}
                     initialScale={transformState.scale}
+                    minScale={0.1}
                     panning={{
                         velocityDisabled: true,
                     }}
@@ -110,6 +111,7 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
                     initialPositionX={transformState.positionX}
                     initialPositionY={transformState.positionY}
                     initialScale={transformState.scale}
+                    minScale={0.1}
                     panning={{
                         velocityDisabled: true,
                     }}
