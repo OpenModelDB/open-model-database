@@ -12,6 +12,11 @@
     font: inherit;
     font-weight: 500;
     border: none;
+
+    @media screen and (max-width: 1023px) {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.875rem;
+    }
 }
 
 .editButton {
