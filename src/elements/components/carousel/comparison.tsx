@@ -67,12 +67,11 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
             }
             itemOne={
                 <TransformWrapper
-                    centerOnInit={true}
-                    centerZoomedOut={true}
+                    centerOnInit
+                    limitToBounds
                     initialPositionX={transformState.positionX}
                     initialPositionY={transformState.positionY}
                     initialScale={transformState.scale}
-                    limitToBounds={true}
                     panning={{
                         velocityDisabled: true,
                     }}
@@ -97,12 +96,11 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
             }
             itemTwo={
                 <TransformWrapper
-                    centerOnInit={true}
-                    centerZoomedOut={true}
+                    centerOnInit
+                    limitToBounds
                     initialPositionX={transformState.positionX}
                     initialPositionY={transformState.positionY}
                     initialScale={transformState.scale}
-                    limitToBounds={true}
                     panning={{
                         velocityDisabled: true,
                     }}

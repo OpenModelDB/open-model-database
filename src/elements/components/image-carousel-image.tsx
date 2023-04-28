@@ -1,6 +1,6 @@
-import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import { Image } from '../../lib/schema';
 import { ImageComparison } from './carousel/comparison';
+import { ImageStandalone } from './carousel/standalone';
 
 type ImageCarouselImageProps = {
     image: Image;
@@ -11,22 +11,7 @@ export const ImageCarouselImage = ({ image }: ImageCarouselImageProps) => {
         case 'paired':
             return <ImageComparison image={image} />;
         case 'standalone':
-            return (
-                // eslint-disable-next-line @next/next/no-img-element
-                // <img
-                //     alt="image"
-                //     className="h-full w-full object-scale-down"
-                //     src={image.url}
-                // />
-                <TransformWrapper>
-                    <TransformComponent>
-                        <img
-                            alt="image"
-                            src={image.url}
-                        />
-                    </TransformComponent>
-                </TransformWrapper>
-            );
+            return <ImageStandalone image={image} />;
         default:
             return null;
     }
