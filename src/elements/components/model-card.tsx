@@ -1,13 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/display-name */
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
-import { Model, ModelId } from '../../lib/schema';
-import { asArray, getPreviewImage, joinClasses } from '../../lib/util';
+import { Image, Model, ModelId } from '../../lib/schema';
+import { asArray, joinClasses } from '../../lib/util';
 import { EditableTags } from './editable-tags';
 import { Link } from './link';
 import style from './model-card.module.scss';
@@ -19,6 +20,106 @@ interface BaseModelCardProps {
 interface ModelCardProps extends BaseModelCardProps {
     lazy?: boolean;
 }
+
+const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
+    const [lrDimensions, setLrDimensions] = useState({
+        height: 0,
+        width: 0,
+    });
+    const [srDimensions, setSrDimensions] = useState({
+        height: 0,
+        width: 0,
+    });
+
+    const maxHeight = Math.max(lrDimensions.height, srDimensions.height);
+    const maxWidth = Math.max(lrDimensions.width, srDimensions.width);
+
+    if (image.type !== 'paired') {
+        return null;
+    }
+
+    return (
+        <div className="flex h-full w-full">
+            <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
+                <img
+                    alt={model.name}
+                    className="rendering-pixelated absolute top-1/2 left-1/2 z-0 m-auto object-cover object-center"
+                    loading="lazy"
+                    src={image.LR}
+                    style={{
+                        height: `${maxHeight}px`,
+                        width: `${maxWidth}px`,
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                    onLoad={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        setLrDimensions({
+                            height: target.naturalHeight,
+                            width: target.naturalWidth,
+                        });
+                    }}
+                />
+            </div>
+            <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
+                <img
+                    alt={model.name}
+                    className="rendering-pixelated absolute top-1/2 left-1/2 z-0 m-auto object-cover object-center"
+                    loading="lazy"
+                    src={image.SR}
+                    style={{
+                        height: `${maxHeight}px`,
+                        width: `${maxWidth}px`,
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                    onLoad={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        setSrDimensions({
+                            height: target.naturalHeight,
+                            width: target.naturalWidth,
+                        });
+                    }}
+                />
+            </div>
+        </div>
+    );
+};
+
+const getModelCardImageComponent = (model: Model) => {
+    const image = model.images[0] as Image | undefined;
+    switch (image?.type) {
+        case 'paired': {
+            if (image.thumbnail) {
+                return (
+                    <img
+                        alt={model.name}
+                        className="margin-auto z-0 h-full w-full object-cover"
+                        loading="lazy"
+                        src={image.thumbnail}
+                    />
+                );
+            }
+            return (
+                <SideBySideImage
+                    image={image}
+                    model={model}
+                />
+            );
+        }
+        case 'standalone': {
+            const imageSrc = image.thumbnail || image.url;
+            return (
+                <img
+                    alt={model.name}
+                    className="margin-auto z-0 h-full w-full object-cover"
+                    loading="lazy"
+                    src={imageSrc}
+                />
+            );
+        }
+        default:
+            return <div className="margin-auto z-0 w-full text-center">No Image</div>;
+    }
+};
 
 // eslint-disable-next-line react/display-name
 export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
@@ -46,17 +147,7 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
                 href={`/models/${id}`}
                 tabIndex={-1}
             >
-                {model.images[0] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                        alt={model.name}
-                        className="margin-auto z-0 h-full w-full object-cover"
-                        loading="lazy"
-                        src={getPreviewImage(model.images[0])}
-                    />
-                ) : (
-                    <div className="margin-auto z-0 w-full text-center">No Image</div>
-                )}
+                {getModelCardImageComponent(model)}
             </Link>
 
             <div className={style.details}>
