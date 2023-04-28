@@ -12,7 +12,8 @@
 
 .header {
     @include themed using ($t) {
-        background-color: t($t, color.change(white, $alpha: 0.8), color.change($fade-900, $alpha: 0.85));
+        background: linear-gradient(t($t, white, $fade-900), transparent)
+            t($t, color.change(white, $alpha: 0.8), color.change($fade-900, $alpha: 0.85));
     }
 
     transition: background-color linear 0.2s, border-color linear 0.2s;
