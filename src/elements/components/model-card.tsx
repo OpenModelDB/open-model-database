@@ -40,15 +40,16 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
 
     return (
         <div className="flex h-full w-full">
-            <div className="relative flex h-full w-1/2 content-center align-middle">
+            <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
                 <img
                     alt={model.name}
-                    className="rendering-pixelated margin-auto absolute z-0 h-full w-full object-cover object-center"
+                    className="rendering-pixelated absolute top-1/2 left-1/2 z-0 m-auto object-cover object-center"
                     loading="lazy"
                     src={image.LR}
                     style={{
                         height: `${maxHeight}px`,
                         width: `${maxWidth}px`,
+                        transform: 'translate(-50%, -50%)',
                     }}
                     onLoad={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -59,15 +60,16 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
                     }}
                 />
             </div>
-            <div className="relative flex h-full w-1/2 content-center align-middle">
+            <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
                 <img
                     alt={model.name}
-                    className="rendering-pixelated margin-auto absolute z-0 h-full w-full object-cover object-center"
+                    className="rendering-pixelated absolute top-1/2 left-1/2 z-0 m-auto object-cover object-center"
                     loading="lazy"
                     src={image.SR}
                     style={{
                         height: `${maxHeight}px`,
                         width: `${maxWidth}px`,
+                        transform: 'translate(-50%, -50%)',
                     }}
                     onLoad={(e) => {
                         const target = e.target as HTMLImageElement;
