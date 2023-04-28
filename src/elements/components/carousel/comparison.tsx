@@ -50,7 +50,7 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
     return (
         <ReactCompareSlider
             onlyHandleDraggable
-            className="w-full rounded-lg"
+            className="w-full"
             handle={
                 <ReactCompareSliderHandle
                     buttonStyle={{
