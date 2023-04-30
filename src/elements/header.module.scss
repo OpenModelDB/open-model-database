@@ -8,6 +8,10 @@
     height: 65px;
     padding: 0;
     margin: 0;
+
+    @media only screen and (max-width: 600px) {
+        height: 35px;
+    }
 }
 
 .header {
@@ -74,7 +78,8 @@
     }
 }
 
-.themeButton {
+.themeButton,
+.otherThemeButton {
     @include themed using ($t) {
         .light {
             display: t($t, none, block);
@@ -83,5 +88,17 @@
         .dark {
             display: t($t, block, none);
         }
+    }
+}
+
+.hideMobile {
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
+}
+
+.showMobile {
+    @media only screen and (min-width: 600px) {
+        display: none;
     }
 }
