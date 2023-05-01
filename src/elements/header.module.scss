@@ -8,10 +8,6 @@
     height: 65px;
     padding: 0;
     margin: 0;
-
-    @media only screen and (max-width: 600px) {
-        height: 35px;
-    }
 }
 
 .header {
@@ -28,6 +24,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 65px;
 
     & > div {
         @include h-stack;
@@ -36,6 +33,16 @@
         box-sizing: border-box;
         padding: 0.5em 1em;
         margin: auto;
+    }
+
+    .logoContainer {
+        display: flex;
+        height: 48px;
+        width: 100%;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
     }
 
     .logo {

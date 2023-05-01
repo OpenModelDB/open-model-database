@@ -28,7 +28,9 @@ export function Header() {
                         className={style.logo}
                         href="/"
                     >
-                        <Logo />
+                        <div className={style.logoContainer}>
+                            <Logo />
+                        </div>
                     </Link>
 
                     <Link
