@@ -7,6 +7,22 @@ import { TagId } from '../../lib/schema';
 import { compareTagId, isDerivedTags } from '../../lib/util';
 import style from './editable-tags.module.scss';
 
+export interface SmallTagProps {
+    tagId: TagId;
+    name: string;
+}
+export function SmallTag({ tagId, name }: SmallTagProps) {
+    return (
+        <Link
+            className={`${style.tag} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
+            href={`/?t=${tagId}`}
+            title={`Show all models with the ${name} tag`}
+        >
+            {name}
+        </Link>
+    );
+}
+
 export interface EditableTagsProps {
     tags: readonly TagId[];
     onChange?: (value: TagId[]) => void;
@@ -26,14 +42,11 @@ export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
             {tags.map((tagId) => {
                 const name = tagData.get(tagId)?.name ?? `unknown tag:${tagId}`;
                 return (
-                    <Link
-                        className={`${style.tag} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
-                        href={`/?t=${tagId}`}
+                    <SmallTag
                         key={tagId}
-                        title={`Show all models with the ${name} tag`}
-                    >
-                        {name}
-                    </Link>
+                        name={name}
+                        tagId={tagId}
+                    />
                 );
             })}
         </div>

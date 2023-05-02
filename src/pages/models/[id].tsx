@@ -8,7 +8,7 @@ import { DownloadButton } from '../../elements/components/download-button';
 import { EditResourceButton } from '../../elements/components/download-button-edit-popover';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
-import { EditableTags } from '../../elements/components/editable-tags';
+import { EditableTags, SmallTag } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
 import { Switch } from '../../elements/components/switch';
@@ -16,10 +16,10 @@ import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useCurrent } from '../../lib/hooks/use-current';
-import { useUpdateModel } from '../../lib/hooks/use-update-model';
+import { UpdateModelPropertyFn, useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
-import { ArchId, Image, Model, ModelId, Resource } from '../../lib/schema';
+import { ArchId, Image, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
 import { asArray, getColorMode, getPreviewImage, joinListString } from '../../lib/util';
 
@@ -129,6 +129,101 @@ const editableMetadata = (
             return <span>{value}</span>;
     }
 };
+
+interface PropertyProps {
+    model: Model;
+    updateModelProperty: UpdateModelPropertyFn;
+    editMode: boolean;
+}
+function ArchitectureProp({ model, updateModelProperty, editMode }: PropertyProps) {
+    const { archData } = useArchitectures();
+    const archName = archData.get(model.architecture)?.name ?? 'unknown';
+
+    return editMode ? (
+        <select
+            value={model.architecture}
+            onChange={(e) => {
+                updateModelProperty('architecture', e.target.value as ArchId);
+            }}
+        >
+            {[...archData].map(([archId, arch]) => (
+                <option
+                    key={archId}
+                    value={archId}
+                >
+                    {arch.name}
+                </option>
+            ))}
+        </select>
+    ) : (
+        <SmallTag
+            name={archName}
+            tagId={`arch:${model.architecture}` as TagId}
+        />
+    );
+}
+function ScaleProp({ model, updateModelProperty, editMode }: PropertyProps) {
+    return editMode ? (
+        <EditableIntegerLabel
+            max={16}
+            min={1}
+            readonly={!editMode}
+            value={model.scale}
+            onChange={(value) => updateModelProperty('scale', value)}
+        />
+    ) : (
+        <SmallTag
+            name={`${model.scale}x`}
+            tagId={`scale:${model.scale}` as TagId}
+        />
+    );
+}
+function ColorModeProp({ model, updateModelProperty, editMode }: PropertyProps) {
+    const name =
+        model.inputChannels === model.outputChannels
+            ? String(getColorMode(model.inputChannels))
+            : `${getColorMode(model.inputChannels)} → ${getColorMode(model.outputChannels)}`;
+
+    const tagId =
+        model.inputChannels === model.outputChannels
+            ? `color:${model.inputChannels}`
+            : `color:${model.inputChannels}-${model.outputChannels}`;
+
+    return (
+        <>
+            <div>
+                <SmallTag
+                    name={name}
+                    tagId={tagId as TagId}
+                />
+            </div>
+            {editMode && (
+                <>
+                    <div>
+                        Input:{' '}
+                        <EditableIntegerLabel
+                            max={4}
+                            min={0}
+                            readonly={!editMode}
+                            value={model.inputChannels}
+                            onChange={(value) => updateModelProperty('inputChannels', value)}
+                        />
+                    </div>
+                    <div>
+                        Output:{' '}
+                        <EditableIntegerLabel
+                            max={4}
+                            min={0}
+                            readonly={!editMode}
+                            value={model.outputChannels}
+                            onChange={(value) => updateModelProperty('outputChannels', value)}
+                        />
+                    </div>
+                </>
+            )}
+        </>
+    );
+}
 
 export default function Page({ modelId, modelData }: Props) {
     const { archData } = useArchitectures();
@@ -290,25 +385,11 @@ export default function Page({ modelId, modelData }: Props) {
                                             Architecture
                                         </th>
                                         <td className="px-6 py-4">
-                                            {editMode ? (
-                                                <select
-                                                    value={model.architecture}
-                                                    onChange={(e) => {
-                                                        updateModelProperty('architecture', e.target.value as ArchId);
-                                                    }}
-                                                >
-                                                    {[...archData].map(([archId, arch]) => (
-                                                        <option
-                                                            key={archId}
-                                                            value={archId}
-                                                        >
-                                                            {arch.name}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                            ) : (
-                                                archName
-                                            )}
+                                            <ArchitectureProp
+                                                editMode={editMode}
+                                                model={model}
+                                                updateModelProperty={updateModelProperty}
+                                            />
                                         </td>
                                     </tr>
                                     <tr>
@@ -319,12 +400,10 @@ export default function Page({ modelId, modelData }: Props) {
                                             Scale
                                         </th>
                                         <td className="px-6 py-4 ">
-                                            <EditableIntegerLabel
-                                                max={16}
-                                                min={1}
-                                                readonly={!editMode}
-                                                value={model.scale}
-                                                onChange={(value) => updateModelProperty('scale', value)}
+                                            <ScaleProp
+                                                editMode={editMode}
+                                                model={model}
+                                                updateModelProperty={updateModelProperty}
                                             />
                                         </td>
                                     </tr>
@@ -351,38 +430,11 @@ export default function Page({ modelId, modelData }: Props) {
                                             Color Mode
                                         </th>
                                         <td className="px-6 py-4">
-                                            <div className="uppercase">
-                                                {getColorMode(model.inputChannels)} →{' '}
-                                                {getColorMode(model.outputChannels)}
-                                            </div>
-                                            {editMode && (
-                                                <>
-                                                    <div>
-                                                        Input:{' '}
-                                                        <EditableIntegerLabel
-                                                            max={4}
-                                                            min={0}
-                                                            readonly={!editMode}
-                                                            value={model.inputChannels}
-                                                            onChange={(value) =>
-                                                                updateModelProperty('inputChannels', value)
-                                                            }
-                                                        />
-                                                    </div>
-                                                    <div>
-                                                        Output:{' '}
-                                                        <EditableIntegerLabel
-                                                            max={4}
-                                                            min={0}
-                                                            readonly={!editMode}
-                                                            value={model.outputChannels}
-                                                            onChange={(value) =>
-                                                                updateModelProperty('outputChannels', value)
-                                                            }
-                                                        />
-                                                    </div>
-                                                </>
-                                            )}
+                                            <ColorModeProp
+                                                editMode={editMode}
+                                                model={model}
+                                                updateModelProperty={updateModelProperty}
+                                            />
                                         </td>
                                     </tr>
                                     {Object.entries(model)
