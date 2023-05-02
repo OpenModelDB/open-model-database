@@ -142,11 +142,11 @@ export function isDerivedTags(id: TagId): boolean {
 export function getColorMode(numberOfChannels: number) {
     switch (numberOfChannels) {
         case 1:
-            return 'grayscale';
+            return 'Grayscale';
         case 3:
-            return 'rgb';
+            return 'RGB';
         case 4:
-            return 'rgba';
+            return 'RGBA';
         default:
             return numberOfChannels;
     }
