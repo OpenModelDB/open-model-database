@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import React, { useCallback, useMemo, useState } from 'react';
+import { Link } from '../elements/components/link';
 import { ModelCardGrid } from '../elements/components/model-card-grid';
 import { SearchBar } from '../elements/components/searchbar';
 import { HeadCommon } from '../elements/head-common';
@@ -74,6 +75,29 @@ export default function Page({ modelData: staticModelData }: Props) {
                         Click me!
                     </button>
                 )}
+
+                <div className="rounded-lg bg-yellow-300 px-4 py-2 dark:bg-yellow-900">
+                    <h4 className="m-0">Notice</h4>
+                    <p className="m-0">
+                        OpenModelDB is still in alpha and actively being worked on. Please feel free to{' '}
+                        <Link
+                            external
+                            className="font-medium hover:underline"
+                            href="https://github.com/OpenModelDB/open-model-database/discussions/new?category=general"
+                        >
+                            share your feedback
+                        </Link>{' '}
+                        and{' '}
+                        <Link
+                            external
+                            className="font-medium hover:underline"
+                            href="https://github.com/OpenModelDB/open-model-database/issues"
+                        >
+                            report any bugs
+                        </Link>{' '}
+                        you find.
+                    </p>
+                </div>
 
                 <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
                     The best place to find AI Upscaling models
