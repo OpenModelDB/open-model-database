@@ -7,9 +7,9 @@ import { useIsClient } from '../lib/hooks/use-is-client';
 import { useIsTouch } from '../lib/hooks/use-is-touch';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { TagId } from '../lib/schema';
+import { TagCategory, TagId } from '../lib/schema';
 import { SelectionState, TagSelection } from '../lib/tag-condition';
-import { assertNever, isNonNull, joinClasses } from '../lib/util';
+import { EMPTY_MAP, assertNever, isNonNull, joinClasses } from '../lib/util';
 import { MarkdownContainer } from './markdown';
 import style from './tag-selector.module.scss';
 
@@ -65,7 +65,16 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
     const isClient = useIsClient();
     const isTouch = useIsTouch();
 
-    const { tagData } = useTags();
+    const { tagData, tagCategoryData } = useTags();
+
+    useEffect(() => {
+        if (simple) {
+            const reduced = reduceToSimple(tagCategoryData.values(), selection);
+            if (reduced !== selection) {
+                setSimple(false);
+            }
+        }
+    }, [simple, tagData, tagCategoryData, selection]);
 
     return (
         <div>
@@ -82,7 +91,13 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
             )}
             <button
                 className={`${style.modeButton} mt-1 text-neutral-700 hover:text-black dark:text-neutral-300 hover:dark:text-white`}
-                onClick={() => setSimple(!simple)}
+                onClick={() => {
+                    setSimple(!simple);
+                    if (!simple) {
+                        const reduced = reduceToSimple(tagCategoryData.values(), selection);
+                        if (reduced !== selection) onChange(reduced, 'simple');
+                    }
+                }}
             >
                 {simple ? <HiChevronDoubleDown /> : <HiChevronDoubleUp />}
                 <span>{simple ? 'Advanced tag selector' : 'Simple tag selector'}</span>
@@ -171,32 +186,6 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
         return undefined;
     }, [selection, tags]);
 
-    useEffect(() => {
-        const changes: [TagId, SelectionState | undefined][] = [];
-
-        if (selected !== undefined && selection.get(selected) !== SelectionState.Required) {
-            changes.push([selected, SelectionState.Required]);
-        }
-
-        for (const [tag] of tags) {
-            if (tag !== selected && selection.has(tag)) {
-                changes.push([tag, undefined]);
-            }
-        }
-
-        if (changes.length > 0) {
-            const copy = new Map(selection);
-            for (const [tag, change] of changes) {
-                if (change === undefined) {
-                    copy.delete(tag);
-                } else {
-                    copy.set(tag, change);
-                }
-            }
-            onChange(copy, 'simple');
-        }
-    }, [selected, selection, tags, onChange]);
-
     return (
         <div className={style.tagSelector}>
             <div>
@@ -269,4 +258,30 @@ function setState(tag: TagId, state: State, selection: TagSelection): TagSelecti
         copy.set(tag, target);
     }
     return copy;
+}
+
+function reduceToSimple(categories: Iterable<TagCategory>, selection: TagSelection): TagSelection {
+    if (selection.size === 0) return selection;
+
+    const simpleTags = new Set<TagId>([...categories].filter((c) => c.simple).flatMap((c) => c.tags));
+
+    const selectedMainTags: TagId[] = [];
+    for (const [tagId, state] of selection) {
+        // ignore forbidden tags
+        if (state === SelectionState.Required && simpleTags.has(tagId)) {
+            selectedMainTags.push(tagId);
+        }
+    }
+
+    if (selectedMainTags.length === 0) {
+        return EMPTY_MAP;
+    } else if (selectedMainTags.length === 1) {
+        if (selection.size === 1) return selection;
+        return new Map([[selectedMainTags[0], SelectionState.Required]]);
+    } else {
+        // we can only select 1 tag
+        // it's quite hard to find a strategy that makes sense here
+        // so we just give up
+        return EMPTY_MAP;
+    }
 }
