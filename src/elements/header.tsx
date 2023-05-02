@@ -9,6 +9,7 @@ import { toggleColorScheme } from '../lib/color-scheme';
 import { useEditModeToggle, useWebApi } from '../lib/hooks/use-web-api';
 import { ModelId } from '../lib/schema';
 import { joinClasses } from '../lib/util';
+import { HeaderDrawer } from './components/header-drawer';
 import { Link } from './components/link';
 import style from './header.module.scss';
 
@@ -27,13 +28,16 @@ export function Header() {
                         className={style.logo}
                         href="/"
                     >
-                        <Logo />
+                        <div className={style.logoContainer}>
+                            <Logo />
+                        </div>
                     </Link>
 
                     <Link
                         className={joinClasses(
                             style.docLink,
-                            'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800'
+                            'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                            style.hideMobile
                         )}
                         href="/docs/faq"
                     >
@@ -43,7 +47,8 @@ export function Header() {
                         <button
                             className={joinClasses(
                                 style.docLink,
-                                'bg-transparent font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800'
+                                'bg-transparent font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                                style.hideMobile
                             )}
                             onClick={() => {
                                 (async () => {
@@ -102,7 +107,8 @@ export function Header() {
                         <button
                             className={joinClasses(
                                 style.docLink,
-                                'bg-transparent font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800'
+                                'bg-transparent font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                                style.hideMobile
                             )}
                             onClick={toggleEditMode}
                         >
@@ -113,7 +119,7 @@ export function Header() {
                     <Link
                         external
                         aria-label="GitHub"
-                        className={style.iconLink}
+                        className={joinClasses(style.iconLink, style.hideMobile)}
                         href="https://github.com/OpenModelDB/open-model-database"
                     >
                         <FaGithub />
@@ -121,19 +127,20 @@ export function Header() {
                     <Link
                         external
                         aria-label="Discord"
-                        className={style.iconLink}
+                        className={joinClasses(style.iconLink, style.hideMobile)}
                         href="https://discord.gg/enhance-everything-547949405949657098"
                     >
                         <FaDiscord />
                     </Link>
                     <button
                         aria-label="Toggle color scheme"
-                        className={style.themeButton}
+                        className={joinClasses(style.themeButton, style.hideMobile)}
                         onClick={toggleColorScheme}
                     >
                         <MdLightMode className={style.light} />
                         <MdDarkMode className={style.dark} />
                     </button>
+                    <HeaderDrawer />
                 </div>
             </header>
         </>
