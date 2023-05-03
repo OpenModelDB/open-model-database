@@ -13,6 +13,7 @@ import { useWebApi } from '../lib/hooks/use-web-api';
 import { Model, ModelId, TagId } from '../lib/schema';
 import { createModelSearchIndex } from '../lib/search/create';
 import { compileCondition } from '../lib/search/logical-condition';
+import { SearchResult } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
 import { TagSelection, getTagCondition } from '../lib/tag-condition';
@@ -25,17 +26,10 @@ export default function Page({ modelData: staticModelData }: Props) {
     const { modelData } = useModels(staticModelData);
     const { tagData, tagCategoryData } = useTags();
 
-    const searchIndex = useMemo(() => createModelSearchIndex(modelData), [modelData]);
-
-    const [selectedModels, setSelectedModels] = useState<ModelId[]>(() => [...modelData.keys()]);
-    const updatedSelectedModels = useCallback(
-        (searchQuery: string, tags: TagSelection): void => {
-            const queryTokens = tokenize(searchQuery);
-            const tagCondition = compileCondition(getTagCondition(tags, tagCategoryData.values()));
-
-            const searchResults = searchIndex
-                .retrieve(tagCondition, queryTokens)
-                .sort((a, b) => a.id.localeCompare(b.id));
+    const sortSearchResults = useCallback(
+        (searchResults: SearchResult<ModelId>[]): void => {
+            // sort by id to get a stable order
+            searchResults.sort((a, b) => a.id.localeCompare(b.id));
 
             // de-buff pretrained models
             for (const result of searchResults) {
@@ -47,10 +41,27 @@ export default function Page({ modelData: staticModelData }: Props) {
 
             // sort by score
             searchResults.sort((a, b) => b.score - a.score);
+        },
+        [modelData]
+    );
 
+    const searchIndex = useMemo(() => createModelSearchIndex(modelData), [modelData]);
+
+    const [selectedModels, setSelectedModels] = useState<ModelId[]>(() => {
+        const results: SearchResult<ModelId>[] = [...modelData.keys()].map((id) => ({ id, score: 0 }));
+        sortSearchResults(results);
+        return results.map((r) => r.id);
+    });
+    const updatedSelectedModels = useCallback(
+        (searchQuery: string, tags: TagSelection): void => {
+            const queryTokens = tokenize(searchQuery);
+            const tagCondition = compileCondition(getTagCondition(tags, tagCategoryData.values()));
+
+            const searchResults = searchIndex.retrieve(tagCondition, queryTokens);
+            sortSearchResults(searchResults);
             setSelectedModels(searchResults.map((r) => r.id));
         },
-        [searchIndex, tagCategoryData, modelData]
+        [searchIndex, tagCategoryData, sortSearchResults]
     );
     const { searchQuery, tagSelection, setSearchQuery, setTagSelection } = useSearch(tagData, updatedSelectedModels);
 
