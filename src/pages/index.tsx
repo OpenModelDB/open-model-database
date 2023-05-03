@@ -10,7 +10,7 @@ import { useModels } from '../lib/hooks/use-models';
 import { useSearch } from '../lib/hooks/use-search';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { Model, ModelId } from '../lib/schema';
+import { Model, ModelId, TagId } from '../lib/schema';
 import { createModelSearchIndex } from '../lib/search/create';
 import { compileCondition } from '../lib/search/logical-condition';
 import { tokenize } from '../lib/search/token';
@@ -35,11 +35,22 @@ export default function Page({ modelData: staticModelData }: Props) {
 
             const searchResults = searchIndex
                 .retrieve(tagCondition, queryTokens)
-                .sort((a, b) => a.id.localeCompare(b.id))
-                .sort((a, b) => b.score - a.score);
+                .sort((a, b) => a.id.localeCompare(b.id));
+
+            // de-buff pretrained models
+            for (const result of searchResults) {
+                const model = modelData.get(result.id);
+                if (model?.tags.includes('pretrained' as TagId)) {
+                    result.score -= 0.01;
+                }
+            }
+
+            // sort by score
+            searchResults.sort((a, b) => b.score - a.score);
+
             setSelectedModels(searchResults.map((r) => r.id));
         },
-        [searchIndex, tagCategoryData]
+        [searchIndex, tagCategoryData, modelData]
     );
     const { searchQuery, tagSelection, setSearchQuery, setTagSelection } = useSearch(tagData, updatedSelectedModels);
 
