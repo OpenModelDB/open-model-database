@@ -12,9 +12,9 @@ export interface CorpusEntry<Id, Tag> {
     readonly texts: readonly WeightedText[];
 }
 export interface SearchResult<Id> {
-    readonly id: Id;
+    id: Id;
     /** A score greater than zero. */
-    readonly score: number;
+    score: number;
 }
 
 export class SearchIndex<Id, Tag> {
