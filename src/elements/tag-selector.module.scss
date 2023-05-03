@@ -4,7 +4,25 @@
     color: inherit;
 
     h4 {
-        margin: 0.5em 0;
+        margin: 0.5rem 0;
+    }
+
+    &.advanced {
+        @media only screen and (min-width: 640px) {
+            display: grid;
+            grid-template-columns: 1fr 1000fr;
+
+            h4 {
+                margin: 0.1rem 1rem 0 0;
+                text-align: right;
+            }
+
+            & > div:not(:last-child) {
+                margin-bottom: 0.75rem;
+
+                // border-bottom: 1px solid #444;
+            }
+        }
     }
 }
 

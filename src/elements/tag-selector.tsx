@@ -128,13 +128,13 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
     const { editMode } = useWebApi();
 
     return (
-        <div className={style.tagSelector}>
+        <div className={`${style.tagSelector} ${style.advanced}`}>
             {categoryOrder.map(([categoryId, category]) => {
                 if (category.tags.length === 0 || (category.editOnly && !editMode))
                     return <React.Fragment key={categoryId} />;
 
                 return (
-                    <div key={categoryId}>
+                    <React.Fragment key={categoryId}>
                         <h4>{category.name}</h4>
                         <div>
                             {category.tags.map((tagId) => {
@@ -155,7 +155,7 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
                                 );
                             })}
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
             })}
         </div>
