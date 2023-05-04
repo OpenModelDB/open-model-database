@@ -4,7 +4,8 @@
     "license": "WTFPL",
     "tags": [
         "dds",
-        "game-textures"
+        "game-textures",
+        "restoration"
     ],
     "description": "Category: Video Game Textures\n\nThis model is made for Source Engine textures. It tries to remove compression artifacts such as blockyness, discoloration, green tint. It does pretty well on a lot of things, realistic stuff as well, but it was mostly made to work on TF2 textures. It's made to keep as much detail as possible, without any unnecessary denoising/sharpening. Huge thanks to Twittman for assisting me along this journey.",
     "date": "2021-04-10",

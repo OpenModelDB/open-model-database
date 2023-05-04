@@ -59,7 +59,7 @@ export function delay(ms: number): Promise<void> {
 }
 
 export function sortObjectKeys<K extends string>(
-    obj: Record<K, unknown>,
+    obj: Partial<Record<K, unknown>>,
     order?: readonly K[] | ((a: K, b: K) => number)
 ): void {
     const old = { ...obj };
@@ -117,7 +117,7 @@ export function withoutHash(urlFragment: string, removeTrailingSlash = true): st
 export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][] {
     return Object.entries(o) as [K, V][];
 }
-export function typedKeys<K extends string>(o: Record<K, unknown>): K[] {
+export function typedKeys<K extends string>(o: Partial<Record<K, unknown>>): K[] {
     return Object.keys(o) as K[];
 }
 

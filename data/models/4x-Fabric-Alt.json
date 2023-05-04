@@ -3,7 +3,8 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "dds"
+        "dds",
+        "restoration"
     ],
     "description": "Category: Fabric/Cloth\nPurpose: Fabric\n\nThis model set upscales fabric or cloth textures (works on cats too!). The Alt model is just an earlier iteration version. It may work better on some images.The images need to be minimally compressed or passed through a decompression model first. It works with DDS compression though.",
     "date": "2021-09-15",

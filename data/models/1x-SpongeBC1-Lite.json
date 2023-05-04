@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "cartoon",
-        "dds"
+        "dds",
+        "restoration"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: BC1/DXT1 compression\n\nFirst ever lite BC1/DXT1 model. Probably only useful for cartoony textures like those in spongebob games or other cartoon licensed games.\n\nPretrained model: 1x_DIV2K-Lite_80k",
     "date": "2020-11-01",

@@ -4,7 +4,8 @@
     "license": "WTFPL",
     "tags": [
         "general-upscaler",
-        "jpeg"
+        "jpeg",
+        "restoration"
     ],
     "description": "Universal upscaler for clean and slightly compressed images (JPEG quality 75 or better)",
     "date": "2020-11-06",

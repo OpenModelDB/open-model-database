@@ -23,6 +23,10 @@ const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON, {
 const tagsFile = new JsonFile<Record<TagId, Tag>>(TAGS_JSON, {
     beforeWrite(data) {
         sortObjectKeys(data, compareTagId);
+        for (const tag of Object.values(data)) {
+            sortObjectKeys(tag, ['name', 'description', 'implies']);
+            tag.implies?.sort(compareTagId);
+        }
         return data;
     },
 });
@@ -92,14 +96,15 @@ type MissingKeys = Exclude<keyof Model, (typeof modelKeyOrder)[number]>;
 type _valid = IsNever<MissingKeys>;
 
 async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void> {
-    const file = getModelDataPath(id);
     sortObjectKeys<string | _valid>(model, modelKeyOrder);
     for (const r of model.resources) {
         sortObjectKeys(r, ['platform', 'type', 'size', 'sha256', 'urls']);
     }
     for (const i of model.images) {
-        sortObjectKeys(i as unknown as Record<string, unknown>, ['type', 'LR', 'SR', 'url', 'thumbnail']);
+        sortObjectKeys(i, ['type', 'LR', 'SR', 'url', 'thumbnail']);
     }
+    model.tags.sort(compareTagId);
+    const file = getModelDataPath(id);
     await writeFile(file, JSON.stringify(model, undefined, 4), 'utf-8');
 }
 
