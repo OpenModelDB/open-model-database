@@ -1,14 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Model, ModelId } from '../schema';
-import { typedEntries } from '../util';
+import { EMPTY_MAP, typedEntries } from '../util';
 import { addUpdateListener, getWebApi, startListeningForUpdates } from '../web-api';
 
 export interface UseModels {
     readonly modelData: ReadonlyMap<ModelId, Model>;
 }
 
-export function useModels(models: Readonly<Record<ModelId, Model>>): UseModels {
-    const staticData: ReadonlyMap<ModelId, Model> = useMemo(() => new Map(typedEntries(models)), [models]);
+export function useModels(models?: Readonly<Record<ModelId, Model>>): UseModels {
+    const staticData: ReadonlyMap<ModelId, Model> = useMemo(
+        () => (models ? new Map(typedEntries(models)) : EMPTY_MAP),
+        [models]
+    );
     const [data, setData] = useState(staticData);
 
     const update = useCallback((value: ReadonlyMap<ModelId, Model>): void => {
