@@ -5,7 +5,8 @@
     "tags": [
         "general-upscaler",
         "jpeg",
-        "photo"
+        "photo",
+        "restoration"
     ],
     "description": "[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) aims at developing Practical Algorithms for General Image/Video Restoration.\n\nReal-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.\nWe extend the powerful ESRGAN to a practical restoration application (namely, Real-ESRGAN), which is trained with pure synthetic data.\n\nA tiny small model for general scenes. De-noising version, meant to be interpolated with the normal one.",
     "date": "2022-09-30",

@@ -5,7 +5,8 @@
     "tags": [
         "dds",
         "game-textures",
-        "pixel-art"
+        "pixel-art",
+        "restoration"
     ],
     "description": "Category: Video Game Textures\nPurpose: Gamecube and Wii textures.\n\nGamecube and Wii textures (mainly DXT and 8bit color compression). Is good for preserving fine details without affecting the original style too much, it is not suitable for pixel art, small icons and text under 16 pixel.\n\nPretrained model: 4x_NMKD Siax",
     "date": "2022-05-10",

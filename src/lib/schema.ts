@@ -82,6 +82,7 @@ export interface User {
 export interface Tag {
     name: string;
     description: MarkDownString;
+    implies?: TagId[];
 }
 
 export interface TagCategory {

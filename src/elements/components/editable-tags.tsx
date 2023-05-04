@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Fragment, useEffect, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 import { useTags } from '../../lib/hooks/use-tags';
+import { addImpliedTags, removeImplyingTags } from '../../lib/implied-tags';
 import { TagId } from '../../lib/schema';
 import { compareTagId, isDerivedTags } from '../../lib/util';
 import style from './editable-tags.module.scss';
@@ -127,13 +128,15 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
                                                     data-selected={selected ? '' : undefined}
                                                     key={tagId}
                                                     onClick={() => {
-                                                        let newTags;
+                                                        const newTags = new Set(currentTags);
                                                         if (selected) {
-                                                            newTags = currentTags.filter((t) => t !== tagId);
+                                                            newTags.delete(tagId);
+                                                            removeImplyingTags(newTags, tagData);
                                                         } else {
-                                                            newTags = [...currentTags, tagId].sort(compareTagId);
+                                                            newTags.add(tagId);
+                                                            addImpliedTags(newTags, tagData);
                                                         }
-                                                        setCurrentTags(newTags);
+                                                        setCurrentTags([...newTags].sort(compareTagId));
                                                     }}
                                                 >
                                                     {tag?.name ?? `unknown tag: ${tagId}`}
