@@ -12,7 +12,7 @@ import { compareTagId } from '../lib/util';
 
 export default function Page() {
     const { tagData, tagCategoryData, categoryOrder } = useTags();
-    const { modelData } = useModels({});
+    const { modelData } = useModels();
 
     const { webApi, editMode } = useWebApi();
 
