@@ -1,5 +1,5 @@
 import { Model } from './schema';
-import { DATE_REGEX } from './util';
+import { DATE_REGEX, assertNever } from './util';
 
 export interface PropBase {
     name: string;
@@ -15,6 +15,7 @@ export interface StringProp {
     type: 'string';
     format?: RegExp;
     kind?: 'model-id' | 'user-id' | 'tag-id' | 'arch-id';
+    enum?: string[];
 }
 export interface BooleanProp {
     type: 'boolean';
@@ -25,10 +26,14 @@ export interface ArrayProp {
     allowEmpty?: boolean;
     allowSingleItem?: boolean;
 }
+export interface ObjectProp {
+    type: 'object';
+    properties: Record<string, ModelProp>;
+}
 export interface UnknownTypeProp {
     type: 'unknown';
 }
-export type PropType = NumberProp | StringProp | BooleanProp | ArrayProp | UnknownTypeProp;
+export type PropType = NumberProp | StringProp | BooleanProp | ArrayProp | ObjectProp | UnknownTypeProp;
 export type ModelProp = PropBase & PropType;
 
 export interface ExternalValidator {
@@ -64,6 +69,9 @@ export function validateType(
             }
             if (prop.format && !prop.format.test(value)) {
                 return `Expected ${name} to match ${prop.format.toString()}`;
+            }
+            if (prop.enum && !prop.enum.includes(value)) {
+                return `Expected ${name} to be one of ${prop.enum.join(', ')}`;
             }
             if (prop.kind) {
                 switch (prop.kind) {
@@ -115,7 +123,29 @@ export function validateType(
                 const itemError = validateType(item, prop.of, `${name}[${i}]`);
                 if (itemError) return itemError;
             }
+            break;
         }
+        case 'object':
+            if (typeof value !== 'object' || value === null || Array.isArray(value)) {
+                return `Expected ${name} to be an object`;
+            }
+            for (const [key, subProp] of Object.entries(prop.properties)) {
+                const subValue = (value as Record<string, unknown>)[key];
+                if (subValue == null) {
+                    if (!subProp.optional) {
+                        return `Expected ${name}.${key} to be present`;
+                    }
+                    continue;
+                }
+
+                const subError = validateType(subValue, subProp, `${name}.${key}`);
+                if (subError) return subError;
+            }
+            break;
+        case 'unknown':
+            break;
+        default:
+            return assertNever(prop);
     }
 }
 
@@ -185,7 +215,39 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
     resources: {
         name: 'Resources',
         type: 'array',
-        of: { type: 'unknown' },
+        of: {
+            type: 'object',
+            properties: {
+                type: {
+                    name: 'Type',
+                    type: 'string',
+                    enum: ['pth', 'onnx'],
+                },
+                size: {
+                    name: 'Size',
+                    optional: true,
+                    type: 'number',
+                    isInteger: true,
+                    min: 1,
+                },
+                sha256: {
+                    name: 'SHA256',
+                    optional: true,
+                    type: 'string',
+                    format: /^[0-9a-f]{64}$/i,
+                },
+                urls: {
+                    name: 'URLs',
+                    type: 'array',
+                    of: { type: 'string' },
+                },
+                platform: {
+                    name: 'Platform',
+                    type: 'string',
+                    enum: ['pytorch', 'onnx', 'ncnn'],
+                },
+            },
+        },
     },
     images: {
         name: 'Images',

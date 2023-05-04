@@ -3,7 +3,7 @@ import { ArchId, ModelId, TagId, UserId } from '../src/lib/schema';
 import { fileApi } from '../src/lib/server/file-data';
 import { typedEntries } from '../src/lib/util';
 
-const generateAPI = async () => {
+const run = async () => {
     const modelData = await fileApi.models.getAll();
     const architectureData = await fileApi.architectures.getAll();
     const tagData = await fileApi.tags.getAll();
@@ -39,7 +39,7 @@ const generateAPI = async () => {
     process.exit(errors.length);
 };
 
-generateAPI().catch((err) => {
+run().catch((err) => {
     console.error(err);
     process.exit(1);
 });
