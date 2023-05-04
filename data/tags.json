@@ -157,19 +157,19 @@
     },
     "helper:invalid-date": {
         "name": "Invalid date",
-        "description": "The model has a date, but it's invalid."
+        "description": "The model has no date or its date is invalid."
     },
     "helper:invalid-scale": {
         "name": "Invalid scale",
         "description": "The scale of the model is not valid."
     },
-    "helper:needs-date": {
-        "name": "Needs date",
-        "description": "The model has no publish date."
-    },
     "helper:needs-description": {
         "name": "Needs description",
         "description": "The model has no description."
+    },
+    "helper:needs-tags": {
+        "name": "Needs tags",
+        "description": "The model has no tags."
     },
     "input:audio": {
         "name": "Audio",
