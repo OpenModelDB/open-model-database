@@ -99,13 +99,14 @@ export const deriveTags = lazyWithWeakKey((model: Model): readonly TagId[] => {
     tags.push(...getPlatformTags(model));
 
     // helpers
-    if (!model.date) {
-        tags.push('helper:needs-date');
-    } else if (!DATE_REGEX.test(model.date)) {
+    if (!model.date || !DATE_REGEX.test(model.date)) {
         tags.push('helper:invalid-date');
     }
     if (!model.description) {
         tags.push('helper:needs-description');
+    }
+    if (model.tags.length === 0) {
+        tags.push('helper:needs-tags');
     }
     if (typeof model.scale !== 'number') {
         tags.push('helper:invalid-scale');

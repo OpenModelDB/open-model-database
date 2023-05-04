@@ -129,9 +129,9 @@
         "simple": false,
         "editOnly": true,
         "tags": [
-            "helper:needs-date",
-            "helper:invalid-date",
             "helper:needs-description",
+            "helper:needs-tags",
+            "helper:invalid-date",
             "helper:invalid-scale",
             "helper:invalid-channels"
         ]
