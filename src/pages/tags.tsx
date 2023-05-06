@@ -7,7 +7,7 @@ import { deriveTags } from '../lib/derive-tags';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
+import { Tag, TagCategory, TagCategoryId, TagId, TagIdPattern } from '../lib/schema';
 import { compareTagId } from '../lib/util';
 
 export default function Page() {
@@ -73,6 +73,30 @@ export default function Page() {
                                         text={category.name}
                                         onChange={(name) => updateCategory(categoryId, { name })}
                                     />
+                                    <button
+                                        onClick={() => {
+                                            if (!webApi) return;
+                                            const id = prompt('Tag ID');
+                                            if (!id) return;
+                                            const tagId = id.trim().toLowerCase() as TagId;
+                                            if (!TagIdPattern.test(tagId)) return;
+
+                                            Promise.all([
+                                                webApi.tags.update([[tagId, { name: tagId, description: '' }]]),
+                                                webApi.tagCategories.update([
+                                                    [
+                                                        categoryId,
+                                                        {
+                                                            ...category,
+                                                            tags: [tagId, ...category.tags],
+                                                        },
+                                                    ],
+                                                ]),
+                                            ]).catch((e) => console.error(e));
+                                        }}
+                                    >
+                                        +
+                                    </button>
                                 </h2>
 
                                 <div>
@@ -82,10 +106,23 @@ export default function Page() {
                                         return (
                                             <TagView
                                                 key={tagId}
+                                                readonly={!editMode}
                                                 tag={tag}
                                                 usage={tagUsage.get(tagId) ?? 0}
                                                 onDelete={() => deleteTag(tagId)}
                                                 onDescriptionChange={(description) => updateTag(tagId, { description })}
+                                                onMove={(difference) => {
+                                                    const index = category.tags.indexOf(tagId);
+                                                    if (index === -1) return;
+                                                    const newIndex = Math.max(
+                                                        0,
+                                                        Math.min(index + difference, category.tags.length - 1)
+                                                    );
+                                                    const newTags = [...category.tags];
+                                                    newTags.splice(index, 1);
+                                                    newTags.splice(newIndex, 0, tagId);
+                                                    updateCategory(categoryId, { tags: newTags });
+                                                }}
                                                 onRename={(name) => updateTag(tagId, { name })}
                                             />
                                         );
@@ -107,6 +144,7 @@ export default function Page() {
                                 return (
                                     <TagView
                                         key={tagId}
+                                        readonly={!editMode}
                                         tag={tag}
                                         usage={tagUsage.get(tagId) ?? 0}
                                         onDelete={() => deleteTag(tagId)}

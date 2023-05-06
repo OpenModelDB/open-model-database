@@ -2,7 +2,7 @@
     margin: 0.5em 0;
 }
 
-.delete {
+.iconButton {
     color: inherit;
     font: inherit;
     line-height: inherit;
@@ -10,8 +10,14 @@
     padding: 0;
     margin: 0;
     background: none;
+    cursor: pointer;
+    opacity: 0.5;
 
     svg {
         vertical-align: middle;
+    }
+
+    &:hover {
+        opacity: 1;
     }
 }
