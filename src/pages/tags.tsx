@@ -73,30 +73,31 @@ export default function Page() {
                                         text={category.name}
                                         onChange={(name) => updateCategory(categoryId, { name })}
                                     />
-                                    <button
-                                        onClick={() => {
-                                            if (!webApi) return;
-                                            const id = prompt('Tag ID');
-                                            if (!id) return;
-                                            const tagId = id.trim().toLowerCase() as TagId;
-                                            if (!TagIdPattern.test(tagId)) return;
+                                    {editMode && (
+                                        <button
+                                            onClick={() => {
+                                                const id = prompt('Tag ID');
+                                                if (!id) return;
+                                                const tagId = id.trim().toLowerCase() as TagId;
+                                                if (!TagIdPattern.test(tagId)) return;
 
-                                            Promise.all([
-                                                webApi.tags.update([[tagId, { name: tagId, description: '' }]]),
-                                                webApi.tagCategories.update([
-                                                    [
-                                                        categoryId,
-                                                        {
-                                                            ...category,
-                                                            tags: [tagId, ...category.tags],
-                                                        },
-                                                    ],
-                                                ]),
-                                            ]).catch((e) => console.error(e));
-                                        }}
-                                    >
-                                        +
-                                    </button>
+                                                Promise.all([
+                                                    webApi.tags.update([[tagId, { name: tagId, description: '' }]]),
+                                                    webApi.tagCategories.update([
+                                                        [
+                                                            categoryId,
+                                                            {
+                                                                ...category,
+                                                                tags: [tagId, ...category.tags],
+                                                            },
+                                                        ],
+                                                    ]),
+                                                ]).catch((e) => console.error(e));
+                                            }}
+                                        >
+                                            +
+                                        </button>
+                                    )}
                                 </h2>
 
                                 <div>
