@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "restoration"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscale Anime while keeping as much of the original detail as possible. Isn't among the sharpest models and if the anime is somewhat blurry it will retain that detail but add more pixels to give a smoother edge. Doesn't change the color very much and may make some scene's very slightly darker.\n\nPretrained model: Pony Models",
     "date": "2021-06-07",

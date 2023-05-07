@@ -5,7 +5,7 @@
     "tags": [
         "video-frame"
     ],
-    "description": "Category: VHS Tapes\nPurpose: VHS\n\nMake old VHS footage crispy. This model will not work on video and images with noticeable JPEG/Video compression artifacts, noticeable interlacing or haloing, heavy tape distortion/artifacts and scenes with tons of detail. For best results, use a downscaled HD capture of the VHS tape you intend to use it on.",
+    "description": "Category: VHS Tapes\nPurpose: VHS\n\nMake old VHS footage crispy. This model will **not** work on video and images with noticeable JPEG/Video compression artifacts, noticeable interlacing or haloing, heavy tape distortion/artifacts and scenes with tons of detail. For best results, use a downscaled HD capture of the VHS tape you intend to use it on.",
     "date": "2021-03-19",
     "architecture": "esrgan",
     "size": [
