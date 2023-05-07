@@ -216,32 +216,27 @@ export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
 });
 
 function fixDescription(description: string, scale: number): string {
-    const lines = description.split('\n');
+    const lines = description.trim().split('\n');
     const descLines: string[] = [];
-    let category = '',
-        purpose = '',
-        pretrained = '',
-        dataset = '';
+    let purpose = '',
+        pretrained = '';
     lines.forEach((line) => {
         if (line.startsWith('Category: ')) {
-            category = String(line).replace('Category: ', '');
+            // ignore category
         } else if (line.startsWith('Purpose: ')) {
-            purpose = String(line).replace('Purpose: ', '');
+            purpose = line.replace('Purpose: ', '');
         } else if (line.startsWith('Pretrained: ')) {
-            pretrained = String(line).replace('Pretrained: ', '');
-        } else if (line.startsWith('Dataset: ')) {
-            dataset = String(line).replace('Dataset: ', '');
+            pretrained = line.replace(/Pretrained: (?:Trained on )?/i, '');
         } else if (line !== '') {
             descLines.push(line.trim());
         }
     });
-    const purposeSentence = category ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
-    const datasetSentence = dataset ? `Trained on ${dataset}.` : 'Unknown training dataset.';
-    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : 'Unknown pretrained model.';
-    const actualDescription =
-        descLines.length > 0
-            ? descLines.join('\n').trim()
-            : `${purposeSentence} ${datasetSentence} ${pretrainedSentence}`;
+    if (!purpose && !pretrained && descLines.length > 0) {
+        return descLines.join('\n');
+    }
+    const purposeSentence = purpose ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
+    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : '';
+    const actualDescription = `${purposeSentence} ${pretrainedSentence}\n${descLines.join('\n')}`.trim();
     return actualDescription;
 }
 
