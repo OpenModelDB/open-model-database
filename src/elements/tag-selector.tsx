@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { AiFillEdit } from 'react-icons/ai';
 import { BiRadioCircle } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
-import { HiChevronDoubleDown, HiChevronDoubleUp, HiOutlinePlusSm } from 'react-icons/hi';
+import { HiChevronDoubleDown, HiChevronDoubleUp, HiOutlinePlus, HiOutlinePlusSm } from 'react-icons/hi';
 import { Tooltip } from 'react-tooltip';
 import { useIsClient } from '../lib/hooks/use-is-client';
 import { useIsTouch } from '../lib/hooks/use-is-touch';
@@ -10,6 +11,7 @@ import { useWebApi } from '../lib/hooks/use-web-api';
 import { TagCategory, TagId } from '../lib/schema';
 import { SelectionState, TagSelection } from '../lib/tag-condition';
 import { EMPTY_MAP, assertNever, isNonNull, joinClasses } from '../lib/util';
+import { Link } from './components/link';
 import { MarkdownContainer } from './markdown';
 import style from './tag-selector.module.scss';
 
@@ -64,6 +66,7 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
     const [simple, setSimple] = useState(true);
     const isClient = useIsClient();
     const isTouch = useIsTouch();
+    const { editMode } = useWebApi();
 
     const { tagData, tagCategoryData } = useTags();
 
@@ -89,19 +92,44 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
                     onChange={onChange}
                 />
             )}
-            <button
-                className={`${style.modeButton} mt-1 text-neutral-700 hover:text-black dark:text-neutral-300 hover:dark:text-white`}
-                onClick={() => {
-                    setSimple(!simple);
-                    if (!simple) {
-                        const reduced = reduceToSimple(tagCategoryData.values(), selection);
-                        if (reduced !== selection) onChange(reduced, 'simple');
-                    }
-                }}
-            >
-                {simple ? <HiChevronDoubleDown /> : <HiChevronDoubleUp />}
-                <span>{simple ? 'Advanced tag selector' : 'Simple tag selector'}</span>
-            </button>
+            <div className={style.controls}>
+                <button
+                    className={`${style.modeButton} text-neutral-700 hover:text-black dark:text-neutral-300 hover:dark:text-white`}
+                    onClick={() => {
+                        setSimple(!simple);
+                        if (!simple) {
+                            const reduced = reduceToSimple(tagCategoryData.values(), selection);
+                            if (reduced !== selection) onChange(reduced, 'simple');
+                        }
+                    }}
+                >
+                    {simple ? <HiChevronDoubleDown /> : <HiChevronDoubleUp />}
+                    <span>{simple ? 'Advanced tag selector' : 'Simple tag selector'}</span>
+                </button>
+
+                {!simple && (
+                    <button
+                        className={`${style.modeButton} text-neutral-700 hover:text-black disabled:text-neutral-500 dark:text-neutral-300 hover:dark:text-white disabled:dark:text-neutral-500`}
+                        disabled={selection.size === 0}
+                        onClick={() => {
+                            onChange(EMPTY_MAP, 'simple');
+                        }}
+                    >
+                        <HiOutlinePlus style={{ transform: 'rotate(45deg)' }} />
+                        <span>Clear all tags</span>
+                    </button>
+                )}
+
+                {editMode && (
+                    <Link
+                        className={`${style.modeButton} text-neutral-700 hover:text-black dark:text-neutral-300 hover:dark:text-white`}
+                        href="/tags"
+                    >
+                        <AiFillEdit />
+                        <span>Edit tags</span>
+                    </Link>
+                )}
+            </div>
 
             {isClient && !isTouch && (
                 <Tooltip
