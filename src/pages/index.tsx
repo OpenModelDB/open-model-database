@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import React, { useCallback, useMemo, useState } from 'react';
 import { Link } from '../elements/components/link';
-import { ModelCardGrid } from '../elements/components/model-card-grid';
+import { ModelResults } from '../elements/components/model-results';
 import { SearchBar } from '../elements/components/searchbar';
 import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
@@ -148,17 +148,10 @@ export default function Page({ modelData: staticModelData }: Props) {
 
                 {/* Model Cards */}
                 {selectedModels.length > 0 ? (
-                    <>
-                        <div className="mb-3 ml-3">
-                            Found <span className="font-medium">{selectedModels.length}</span> model
-                            {selectedModels.length === 1 ? '' : 's'}
-                        </div>
-                        <ModelCardGrid
-                            lazyOffset={12}
-                            modelData={modelData}
-                            models={selectedModels}
-                        />
-                    </>
+                    <ModelResults
+                        modelData={modelData}
+                        models={selectedModels}
+                    />
                 ) : (
                     <div className="flex flex-col items-center justify-center p-6">
                         <div className="text-2xl font-bold text-accent-500 dark:text-gray-100">No models found</div>

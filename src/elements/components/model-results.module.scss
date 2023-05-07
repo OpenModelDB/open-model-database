@@ -1,0 +1,23 @@
+.sortSelector {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    .button {
+        border: none;
+        font-family: inherit;
+        color: inherit;
+        position: relative;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .options {
+        position: absolute;
+        padding-left: 0;
+        z-index: 40;
+        list-style-type: none;
+        overflow: hidden;
+        min-width: 100%;
+    }
+}

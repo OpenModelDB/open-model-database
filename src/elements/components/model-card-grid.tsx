@@ -4,7 +4,7 @@ import { ModelCard } from './model-card';
 import style from './model-card-grid.module.scss';
 
 interface ModelCardGridProps {
-    models: ModelId[];
+    models: readonly ModelId[];
     modelData: ReadonlyMap<ModelId, Model>;
     /**
      * The number models that will be eagerly displayed before lazy loading starts.
