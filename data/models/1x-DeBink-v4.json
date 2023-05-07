@@ -3,6 +3,7 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "restoration",
         "video-frame"
     ],
     "description": "Category: Video Compression\nPurpose: Compression\n\nThis model removes early 2000s Bink and other compression artifacts. Works well on almost any image or video compression type.",

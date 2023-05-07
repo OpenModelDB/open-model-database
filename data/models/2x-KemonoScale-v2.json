@@ -3,7 +3,9 @@
     "author": "ezogaming",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "anime"
+        "anime",
+        "jpeg",
+        "restoration"
     ],
     "description": "Upscaling frames from Irodori anime (namely kemono friends) from 540p (the source render resolution) to 1080p, low resolution flat shaded art, de-JPEG of the aforementioned",
     "date": "2021-06-05",
