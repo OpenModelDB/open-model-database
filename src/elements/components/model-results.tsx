@@ -1,8 +1,8 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { Fragment, memo, useMemo, useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
+import { MdSort } from 'react-icons/md';
 import { Model, ModelId } from '../../lib/schema';
-import { Sort, sortModels } from '../../lib/sort-models';
+import { Sort, parseSort, sortModels } from '../../lib/sort-models';
 import { typedEntries } from '../../lib/util';
 import { ModelCardGrid } from './model-card-grid';
 import style from './model-results.module.scss';
@@ -22,7 +22,7 @@ export const ModelResults = memo(({ models, modelData }: ModelResultsProps) => {
 
     return (
         <>
-            <div className="mb-3 flex flex-col sm:flex-row sm:items-center">
+            <div className={`${style.controls} mb-3`}>
                 <span className="mx-3">
                     Found <span className="font-medium">{sortedModels.length}</span> model
                     {sortedModels.length === 1 ? '' : 's'}
@@ -54,6 +54,8 @@ const SORT_OPTIONS: Readonly<Record<Sort, { label: string; hide?: boolean }>> = 
 };
 
 export function SortSelector({ sort, setSort }: { sort: Sort; setSort: (sort: Sort) => void }) {
+    const [, order] = parseSort(sort);
+
     return (
         <div className={style.sortSelector}>
             <Listbox
@@ -62,11 +64,11 @@ export function SortSelector({ sort, setSort }: { sort: Sort; setSort: (sort: So
             >
                 <div className="relative">
                     <Listbox.Button
-                        className={`${style.button} w-full rounded-lg bg-transparent py-1 pl-3 pr-9 text-base hover:bg-gray-200 ui-open:bg-gray-200 dark:hover:bg-gray-700 dark:ui-open:bg-gray-700`}
+                        className={`${style.button} w-full rounded-lg bg-transparent py-1 pl-9 pr-3 text-base hover:bg-gray-200 ui-open:bg-gray-200 dark:hover:bg-gray-700 dark:ui-open:bg-gray-700`}
                     >
                         <span className="block truncate">{SORT_OPTIONS[sort].label}</span>
-                        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                            <FiChevronDown />
+                        <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                            <MdSort className={`${style.sortIcon} ${style[order]}`} />
                         </span>
                     </Listbox.Button>
                     <Transition
