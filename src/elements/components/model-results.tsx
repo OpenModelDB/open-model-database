@@ -78,7 +78,7 @@ export function SortSelector({ sort, setSort }: { sort: Sort; setSort: (sort: So
                         leaveTo="opacity-0"
                     >
                         <Listbox.Options
-                            className={`${style.options} mt-1 rounded-md border border-solid border-gray-300 bg-white text-base shadow-lg dark:border-gray-700 dark:bg-fade-800 sm:right-0 sm:text-sm`}
+                            className={`${style.options} mt-1 rounded-md border border-solid border-gray-300 bg-white text-base shadow-lg dark:border-gray-700 dark:bg-fade-800 sm:text-sm`}
                         >
                             {typedEntries(SORT_OPTIONS).map(([value, { label, hide }]) => {
                                 if (hide) return null;

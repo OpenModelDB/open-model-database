@@ -29,6 +29,10 @@
         list-style-type: none;
         overflow: hidden;
         min-width: 100%;
+        right: 0;
+        @media screen and (max-width: 380px) {
+            right: auto;
+        }
     }
 
     .sortIcon {
