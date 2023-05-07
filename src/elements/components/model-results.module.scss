@@ -1,0 +1,45 @@
+.controls {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 380px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.sortSelector {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    .button {
+        border: none;
+        font-family: inherit;
+        color: inherit;
+        position: relative;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .options {
+        position: absolute;
+        padding-left: 0;
+        z-index: 40;
+        list-style-type: none;
+        overflow: hidden;
+        min-width: 100%;
+    }
+
+    .sortIcon {
+        margin-right: 0.25rem;
+
+        &.asc {
+            transform: scaleY(-1);
+        }
+
+        &.desc {
+            transform: scaleY(1);
+        }
+    }
+}
