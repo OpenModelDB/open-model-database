@@ -114,6 +114,8 @@ export function withoutHash(urlFragment: string, removeTrailingSlash = true): st
     return fragment;
 }
 
+export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][];
+export function typedEntries<K extends string, V>(o: Partial<Record<K, V>>): [K, V | undefined][];
 export function typedEntries<K extends string, V>(o: Record<K, V>): [K, V][] {
     return Object.entries(o) as [K, V][];
 }

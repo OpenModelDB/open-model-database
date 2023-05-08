@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
@@ -11,27 +11,33 @@ import { EditableMarkdownContainer } from '../../elements/components/editable-ma
 import { EditableTags, SmallTag } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
+import { ModelCardGrid } from '../../elements/components/model-card-grid';
 import { Switch } from '../../elements/components/switch';
 import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
-import { useCurrent } from '../../lib/hooks/use-current';
+import { useModels } from '../../lib/hooks/use-models';
 import { UpdateModelPropertyFn, useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
+import { MODEL_PROPS } from '../../lib/model-props';
 import { ArchId, Image, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { fileApi } from '../../lib/server/file-data';
-import { asArray, getColorMode, getPreviewImage, joinListString } from '../../lib/util';
+import { getSimilarModels } from '../../lib/similar';
+import { asArray, getColorMode, getPreviewImage, joinListString, typedEntries } from '../../lib/util';
+
+const MAX_SIMILAR_MODELS = 36;
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
 }
 interface Props {
     modelId: ModelId;
-    modelData: Model;
+    similar: ModelId[];
+    modelData: Record<ModelId, Model>;
 }
 
-const extraModelProperties = [
+const extraModelProperties: { key: keyof Model; type: 'number' | 'string' | 'boolean' }[] = [
     { key: 'trainingIterations', type: 'number' },
     { key: 'trainingEpochs', type: 'number' },
     { key: 'trainingBatchSize', type: 'number' },
@@ -225,12 +231,37 @@ function ColorModeProp({ model, updateModelProperty, editMode }: PropertyProps) 
     );
 }
 
-export default function Page({ modelId, modelData }: Props) {
+function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [string, ReactNode])[] }) {
+    return (
+        <table className="w-full border-collapse text-left text-sm text-gray-500 dark:text-gray-400 ">
+            <tbody>
+                {rows.map((row, i) => {
+                    if (!row) return null;
+
+                    const [label, value] = row;
+                    return (
+                        <tr key={i}>
+                            <th
+                                className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
+                                scope="row"
+                            >
+                                {label}
+                            </th>
+                            <td className="px-6 py-4">{value}</td>
+                        </tr>
+                    );
+                })}
+            </tbody>
+        </table>
+    );
+}
+export default function Page({ modelId, similar: staticSimilar, modelData: staticModelData }: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
+    const { modelData } = useModels(staticModelData);
 
     const { webApi, editMode } = useWebApi();
-    const model = useCurrent(webApi, 'model', modelId, modelData);
+    const model = modelData.get(modelId) || staticModelData[modelId];
 
     const authors = asArray(model.author);
     const authorsJoined = joinListString(authors.map((userId) => userData.get(userId)?.name ?? 'unknown'));
@@ -242,14 +273,20 @@ export default function Page({ modelId, modelData }: Props) {
     const firstImageValue = model.images[0] as Image | undefined;
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
 
-    let missingMetadataEntries: [string, string | number | boolean][] = [];
+    let missingMetadataEntries: [keyof Model, string | number | boolean][] = [];
     if (editMode) {
-        const missingMetadataKeys = extraModelProperties.filter(({ key }) => model[key as keyof Model] === undefined);
-        missingMetadataEntries = missingMetadataKeys.map(({ key, type }) => [
-            key,
-            defaultVals[type as keyof typeof defaultVals],
-        ]);
+        const missingMetadataKeys = extraModelProperties.filter(({ key }) => model[key] === undefined);
+        missingMetadataEntries = missingMetadataKeys.map(({ key, type }) => [key, defaultVals[type]]);
     }
+
+    const [similar, similarWithScores] = useMemo(() => {
+        if (editMode && modelData.size > Object.keys(staticModelData).length) {
+            const withScores = getSimilarModels(modelId, modelData, archData).slice(0, MAX_SIMILAR_MODELS);
+            return [withScores.map(({ id }) => id), withScores];
+        } else {
+            return [staticSimilar, []];
+        }
+    }, [editMode, staticSimilar, staticModelData, modelData, modelId, archData]);
 
     return (
         <>
@@ -279,7 +316,7 @@ export default function Page({ modelId, modelData }: Props) {
                                 <h1 className="mt-0 mb-1 leading-10">
                                     <EditableLabel
                                         readonly={!editMode}
-                                        text={modelData.name}
+                                        text={model.name}
                                         onChange={(value) => updateModelProperty('name', value)}
                                     />
                                 </h1>
@@ -302,7 +339,7 @@ export default function Page({ modelId, modelData }: Props) {
                             </div>
                             <div className="py-4">
                                 <EditableMarkdownContainer
-                                    markdown={modelData.description}
+                                    markdown={model.description}
                                     readonly={!editMode}
                                     onChange={(value) => updateModelProperty('description', value)}
                                 />
@@ -374,70 +411,41 @@ export default function Page({ modelId, modelData }: Props) {
                             )}
                         </div>
 
-                        <div className="relative table-auto rounded-lg border-fade-700">
-                            <table className="w-full border-collapse rounded-lg border-fade-700 text-left text-sm text-gray-500 dark:text-gray-400 ">
-                                <tbody className="rounded-lg">
-                                    <tr>
-                                        <th
-                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
-                                            scope="row"
-                                        >
-                                            Architecture
-                                        </th>
-                                        <td className="px-6 py-4">
-                                            <ArchitectureProp
-                                                editMode={editMode}
-                                                model={model}
-                                                updateModelProperty={updateModelProperty}
-                                            />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th
-                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
-                                            scope="row"
-                                        >
-                                            Scale
-                                        </th>
-                                        <td className="px-6 py-4 ">
-                                            <ScaleProp
-                                                editMode={editMode}
-                                                model={model}
-                                                updateModelProperty={updateModelProperty}
-                                            />
-                                        </td>
-                                    </tr>
-                                    {model.size && (
-                                        <tr>
-                                            <th
-                                                className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
-                                                scope="row"
-                                            >
-                                                Size
-                                            </th>
-                                            <td className="px-6 py-4">
-                                                {renderTags(model.size, editMode, (newTags: string[]) => {
-                                                    updateModelProperty('size', newTags);
-                                                })}
-                                            </td>
-                                        </tr>
-                                    )}
-                                    <tr>
-                                        <th
-                                            className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-gray-900 dark:bg-fade-800 dark:text-white"
-                                            scope="row"
-                                        >
-                                            Color Mode
-                                        </th>
-                                        <td className="px-6 py-4">
-                                            <ColorModeProp
-                                                editMode={editMode}
-                                                model={model}
-                                                updateModelProperty={updateModelProperty}
-                                            />
-                                        </td>
-                                    </tr>
-                                    {Object.entries(model)
+                        <div className="relative">
+                            <MetadataTable
+                                rows={[
+                                    /* eslint-disable react/jsx-key */
+                                    [
+                                        'Architecture',
+                                        <ArchitectureProp
+                                            editMode={editMode}
+                                            model={model}
+                                            updateModelProperty={updateModelProperty}
+                                        />,
+                                    ],
+                                    [
+                                        'Scale',
+                                        <ScaleProp
+                                            editMode={editMode}
+                                            model={model}
+                                            updateModelProperty={updateModelProperty}
+                                        />,
+                                    ],
+                                    model.size && [
+                                        'Size',
+                                        renderTags(model.size, editMode, (newTags: string[]) => {
+                                            updateModelProperty('size', newTags);
+                                        }),
+                                    ],
+                                    [
+                                        'Color Mode',
+                                        <ColorModeProp
+                                            editMode={editMode}
+                                            model={model}
+                                            updateModelProperty={updateModelProperty}
+                                        />,
+                                    ],
+                                    ...typedEntries(model)
                                         .concat(missingMetadataEntries)
                                         .filter(
                                             ([key, _value]) =>
@@ -461,43 +469,51 @@ export default function Page({ modelId, modelData }: Props) {
                                                     'images',
                                                 ].includes(key)
                                         )
-                                        .filter(([_key, value]) =>
-                                            editMode ? true : value !== undefined && value !== null
-                                        )
+                                        .filter(([_key, value]) => (editMode ? true : value != null))
                                         .sort()
                                         .map(([key, value]) => {
-                                            return (
-                                                <tr key={key}>
-                                                    <th
-                                                        className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium capitalize text-fade-900 dark:bg-fade-800 dark:text-white"
-                                                        scope="row"
-                                                    >
-                                                        {key}
-                                                    </th>
-                                                    <td className="px-6 py-4">
-                                                        {Array.isArray(value)
-                                                            ? renderTags(
-                                                                  value.map((v) => String(v)),
-                                                                  editMode,
-                                                                  (newTags) => {
-                                                                      updateModelProperty(key as keyof Model, newTags);
-                                                                  }
-                                                              )
-                                                            : editableMetadata(
-                                                                  editMode,
-                                                                  value as string | number,
-                                                                  (newValue) => {
-                                                                      updateModelProperty(key as keyof Model, newValue);
-                                                                  }
-                                                              )}
-                                                    </td>
-                                                </tr>
-                                            );
-                                        })}
-                                </tbody>
-                            </table>
+                                            const prop = MODEL_PROPS[key];
+                                            return [
+                                                prop.name,
+                                                Array.isArray(value)
+                                                    ? renderTags(
+                                                          value.map((v) => String(v)),
+                                                          editMode,
+                                                          (newTags) => {
+                                                              updateModelProperty(key, newTags);
+                                                          }
+                                                      )
+                                                    : editableMetadata(
+                                                          editMode,
+                                                          value as string | number,
+                                                          (newValue) => {
+                                                              updateModelProperty(key, newValue);
+                                                          }
+                                                      ),
+                                            ] as const;
+                                        }),
+                                    /* eslint-enable react/jsx-key */
+                                ]}
+                            />
                         </div>
                     </div>
+                </div>
+                <div>
+                    <h2 className="text-lg font-bold">Similar Models</h2>
+                    {editMode && similarWithScores.length > 0 && (
+                        <details>
+                            <summary>Show scores</summary>{' '}
+                            <pre className="overflow-auto">
+                                {similarWithScores
+                                    .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
+                                    .join('\n')}
+                            </pre>
+                        </details>
+                    )}
+                    <ModelCardGrid
+                        modelData={modelData}
+                        models={similar}
+                    />
                 </div>
             </PageContainer>
         </>
@@ -517,9 +533,18 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const modelId = context.params?.id;
     if (!modelId) throw new Error("Missing path param 'id'");
 
-    const modelData = await fileApi.models.get(modelId);
+    const modelData = await fileApi.models.getAll();
+    const archData = await fileApi.architectures.getAll();
+
+    const similar = getSimilarModels(modelId, modelData, archData)
+        .slice(0, MAX_SIMILAR_MODELS)
+        .map(({ id }) => id);
+
+    const relevantIds = [...new Set([modelId, ...similar])].sort();
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const relevantModelData = Object.fromEntries(relevantIds.map((id) => [id, modelData.get(id)!]));
 
     return {
-        props: { modelId, modelData },
+        props: { modelId, similar, modelData: relevantModelData },
     };
 };

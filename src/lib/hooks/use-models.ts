@@ -33,18 +33,21 @@ export function useModels(models?: Readonly<Record<ModelId, Model>>): UseModels 
 
     useEffect(() => update(staticData), [update, staticData]);
 
-    useEffect(() => {
-        startListeningForUpdates();
-        return addUpdateListener(() => {
-            getWebApi()
-                .then(async (webApi) => {
-                    if (!webApi) return;
-                    const models = await webApi.models.getAll();
-                    update(models);
-                })
-                .catch((e) => console.error(e));
-        });
+    const updateWithWebApi = useCallback((): void => {
+        getWebApi()
+            .then(async (webApi) => {
+                if (!webApi) return;
+                const models = await webApi.models.getAll();
+                update(models);
+            })
+            .catch((e) => console.error(e));
     }, [update]);
+
+    useEffect(() => {
+        updateWithWebApi();
+        startListeningForUpdates();
+        return addUpdateListener(updateWithWebApi);
+    }, [updateWithWebApi]);
 
     return { modelData: data };
 }
