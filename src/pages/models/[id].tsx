@@ -22,8 +22,10 @@ import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { MODEL_PROPS } from '../../lib/model-props';
 import { ArchId, Image, Model, ModelId, Resource, TagId } from '../../lib/schema';
+import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
+import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { asArray, getColorMode, getPreviewImage, joinListString, typedEntries } from '../../lib/util';
 
 const MAX_SIMILAR_MODELS = 36;
@@ -533,8 +535,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     const modelId = context.params?.id;
     if (!modelId) throw new Error("Missing path param 'id'");
 
-    const modelData = await fileApi.models.getAll();
-    const archData = await fileApi.architectures.getAll();
+    const modelData = await getCachedModels();
+    const archData = STATIC_ARCH_DATA;
 
     const similar = getSimilarModels(modelId, modelData, archData)
         .slice(0, MAX_SIMILAR_MODELS)

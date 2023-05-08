@@ -327,7 +327,7 @@ const addMutation = () => {
 };
 const wrapCollection = <Id, Value>(collection: CollectionApi<Id, Value>): CollectionApi<Id, Value> => {
     collection = new SynchronizedCollection(collection, fileLock);
-    collection = notifyOnWrite(collection, { after: addMutation });
+    collection = notifyOnWrite(collection, { before: addMutation, after: addMutation });
     return collection;
 };
 
@@ -341,6 +341,9 @@ export const fileApi: DBApi = {
 
 export function getFileApiMutationCounter(): Promise<number> {
     return fileLock.read(() => Promise.resolve(mutationCounter));
+}
+export function getFileApiMutationCounterUnsynchronized(): number {
+    return mutationCounter;
 }
 
 const watcher = new FSWatcher({ persistent: false, ignorePermissionErrors: true, usePolling: true });
