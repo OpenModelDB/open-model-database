@@ -28,7 +28,7 @@ import { getSimilarModels } from '../../lib/similar';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { asArray, getColorMode, getPreviewImage, joinListString, typedEntries } from '../../lib/util';
 
-const MAX_SIMILAR_MODELS = 36;
+const MAX_SIMILAR_MODELS = 12 * 2;
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
@@ -244,7 +244,7 @@ function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [s
                     return (
                         <tr key={i}>
                             <th
-                                className="whitespace-nowrap bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white"
+                                className="bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white sm:whitespace-nowrap"
                                 scope="row"
                             >
                                 {label}
@@ -282,13 +282,13 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
     }
 
     const [similar, similarWithScores] = useMemo(() => {
-        if (editMode && modelData.size > Object.keys(staticModelData).length) {
+        if (modelData.size > Object.keys(staticModelData).length) {
             const withScores = getSimilarModels(modelId, modelData, archData).slice(0, MAX_SIMILAR_MODELS);
             return [withScores.map(({ id }) => id), withScores];
         } else {
             return [staticSimilar, []];
         }
-    }, [editMode, staticSimilar, staticModelData, modelData, modelId, archData]);
+    }, [staticSimilar, staticModelData, modelData, modelId, archData]);
 
     return (
         <>
@@ -305,7 +305,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
             </Head>
             <PageContainer>
                 {/* Two columns */}
-                <div className="grid h-full w-full gap-4 pb-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
+                <div className="grid h-full w-full gap-4 pb-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
                     {/* Left column */}
                     <div className="relative flex h-full flex-col gap-4 sm:col-span-1 lg:col-span-2">
                         <ImageCarousel
@@ -500,23 +500,26 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h2 className="text-lg font-bold">Similar Models</h2>
-                    {editMode && similarWithScores.length > 0 && (
-                        <details>
-                            <summary>Show scores</summary>{' '}
-                            <pre className="overflow-auto">
-                                {similarWithScores
-                                    .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
-                                    .join('\n')}
-                            </pre>
-                        </details>
-                    )}
-                    <ModelCardGrid
-                        modelData={modelData}
-                        models={similar}
-                    />
-                </div>
+                {similar.length > 0 && (
+                    <div>
+                        <h2 className="text-lg font-bold">Similar Models</h2>
+                        {editMode && similarWithScores.length > 0 && (
+                            <details>
+                                <summary>Show scores</summary>{' '}
+                                <pre className="overflow-auto">
+                                    {similarWithScores
+                                        .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
+                                        .join('\n')}
+                                </pre>
+                            </details>
+                        )}
+                        <ModelCardGrid
+                            modelData={modelData}
+                            models={similar}
+                        />
+                    </div>
+                )}
+                <div className="h-6" />
             </PageContainer>
         </>
     );
