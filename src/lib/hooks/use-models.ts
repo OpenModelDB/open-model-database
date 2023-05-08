@@ -31,8 +31,6 @@ export function useModels(models?: Readonly<Record<ModelId, Model>>): UseModels 
         });
     }, []);
 
-    useEffect(() => update(staticData), [update, staticData]);
-
     const updateWithWebApi = useCallback((): void => {
         getWebApi()
             .then(async (webApi) => {
@@ -44,7 +42,11 @@ export function useModels(models?: Readonly<Record<ModelId, Model>>): UseModels 
     }, [update]);
 
     useEffect(() => {
+        update(staticData);
         updateWithWebApi();
+    }, [update, updateWithWebApi, staticData]);
+
+    useEffect(() => {
         startListeningForUpdates();
         return addUpdateListener(updateWithWebApi);
     }, [updateWithWebApi]);
