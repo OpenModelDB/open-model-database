@@ -31,20 +31,25 @@ export function useModels(models?: Readonly<Record<ModelId, Model>>): UseModels 
         });
     }, []);
 
-    useEffect(() => update(staticData), [update, staticData]);
+    const updateWithWebApi = useCallback((): void => {
+        getWebApi()
+            .then(async (webApi) => {
+                if (!webApi) return;
+                const models = await webApi.models.getAll();
+                update(models);
+            })
+            .catch((e) => console.error(e));
+    }, [update]);
+
+    useEffect(() => {
+        update(staticData);
+        updateWithWebApi();
+    }, [update, updateWithWebApi, staticData]);
 
     useEffect(() => {
         startListeningForUpdates();
-        return addUpdateListener(() => {
-            getWebApi()
-                .then(async (webApi) => {
-                    if (!webApi) return;
-                    const models = await webApi.models.getAll();
-                    update(models);
-                })
-                .catch((e) => console.error(e));
-        });
-    }, [update]);
+        return addUpdateListener(updateWithWebApi);
+    }, [updateWithWebApi]);
 
     return { modelData: data };
 }

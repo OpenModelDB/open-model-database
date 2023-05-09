@@ -6,6 +6,7 @@ import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useModels } from '../../lib/hooks/use-models';
 import { Model, ModelId, User, UserId } from '../../lib/schema';
+import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 
 interface Params extends ParsedUrlQuery {
@@ -62,7 +63,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     if (!userId) throw new Error("Missing path param 'id'");
 
     const user = await fileApi.users.get(userId);
-    const models = await fileApi.models.getAll();
+    const models = await getCachedModels();
 
     return {
         props: {
