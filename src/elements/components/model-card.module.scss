@@ -1,9 +1,12 @@
+@import '../../styles/theme';
+
 .modelCard {
     position: relative;
     height: 350px;
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
+    overflow: hidden;
 
     .inner {
         position: relative;
@@ -35,7 +38,6 @@
     }
 
     .details {
-        position: relative;
         left: 0;
         bottom: 0;
         right: 0;
@@ -45,6 +47,16 @@
         a.name {
             word-break: normal;
             overflow-wrap: anywhere;
+        }
+    }
+
+    .paired {
+        position: absolute;
+
+        backdrop-filter: blur(2rem);
+
+        @include themed using($t) {
+            background-color: t($t, rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.75));
         }
     }
 
