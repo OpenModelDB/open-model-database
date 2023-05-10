@@ -4,6 +4,7 @@
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
+    transition: transform 0.2s ease-in-out;
 
     .inner {
         position: relative;
@@ -52,5 +53,17 @@
         border-radius: 0.5rem;
         padding: 0.25rem 0.5rem;
         font-weight: 500;
+    }
+
+    &:hover {
+        transform: scale(1.025);
+
+        .modelCardImage {
+            transform: scale(1.05);
+        }
+    }
+
+    &.selected {
+        transform: scale(1.025);
     }
 }
