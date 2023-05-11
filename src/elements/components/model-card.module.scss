@@ -52,6 +52,7 @@
 
             .pairedImg {
                 $scale: 1.5;
+
                 transform: scale($scale) translate(-50% * 1 / $scale, -50% * 1 / $scale);
                 transition: transform ease-in-out 0.05s;
             }
@@ -73,12 +74,11 @@
 
     .paired {
         position: absolute;
-
-        backdrop-filter: blur(2rem) saturate(1.5) opacity(0.95);
+        backdrop-filter: blur(2rem) saturate(2);
 
         @include themed using($t) {
             background: linear-gradient(transparent, t($t, white, $fade-900))
-                t($t, color.change(white, $alpha: 0.7), color.change($fade-900, $alpha: 0.7));
+                t($t, color.change(white, $alpha: 0.7), color.change($fade-900, $alpha: 0.8));
         }
     }
 
