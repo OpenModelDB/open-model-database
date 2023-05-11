@@ -9,7 +9,6 @@
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
-    transition: transform ease-in-out 0.05s;
     overflow: hidden;
 
     .inner {
@@ -45,6 +44,18 @@
             transform: translate(-50%, -50%);
             transition: transform ease-in-out 0.1s;
         }
+
+        &:hover {
+            overflow: hidden;
+
+            // transform: translate(-1px, -1px);
+
+            .pairedImg {
+                $scale: 1.5;
+                transform: scale($scale) translate(-50% * 1 / $scale, -50% * 1 / $scale);
+                transition: transform ease-in-out 0.05s;
+            }
+        }
     }
 
     .details {
@@ -79,12 +90,13 @@
 
     &:hover {
         overflow: hidden;
-        transition: ease-in-out 0.2s;
 
-        .pairedImg {
-            $scale: 1.5;
-            transform: scale($scale) translate(-50% * 1 / $scale, -50% * 1 / $scale);
-            transition: transform ease-in-out 0.05s;
-        }
+        // transform: translate(-1px, -1px);
+
+        // .pairedImg {
+        //     $scale: 1.5;
+        //     transform: scale($scale) translate(-50% * 1 / $scale, -50% * 1 / $scale);
+        //     transition: transform ease-in-out 0.05s;
+        // }
     }
 }
