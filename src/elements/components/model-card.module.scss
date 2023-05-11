@@ -4,7 +4,8 @@
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
-    transition: transform 0.2s ease-in-out;
+    transition: transform ease-in-out 0.1s;
+    overflow: hidden;
 
     .inner {
         position: relative;
@@ -33,6 +34,7 @@
         background-position: center;
         border-radius: 0.5rem 0.5rem 0 0;
         z-index: 0;
+        transition: transform ease-in-out 0.1s;
     }
 
     .details {
@@ -56,14 +58,12 @@
     }
 
     &:hover {
-        transform: scale(1.025);
+        overflow: hidden;
+        transition: ease-in-out 0.2s;
 
-        .modelCardImage {
+        .thumbnail {
             transform: scale(1.05);
+            transition: transform ease-in-out 0.1s;
         }
-    }
-
-    &.selected {
-        transform: scale(1.025);
     }
 }
