@@ -173,7 +173,7 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
                 </div>
 
                 {/* Description */}
-                <div className="mb-1 py-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">{description}</div>
+                <div className="mb-2 mt-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">{description}</div>
 
                 {/* Tags */}
                 <div className="flex flex-row flex-wrap gap-1 text-xs">
