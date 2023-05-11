@@ -43,13 +43,16 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
             <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
                 <img
                     alt={model.name}
-                    className="rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center"
+                    className={joinClasses(
+                        style.pairedImg,
+                        'rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center'
+                    )}
                     loading="lazy"
                     src={image.LR}
                     style={{
                         height: `${maxHeight}px`,
                         width: `${maxWidth}px`,
-                        transform: 'translate(-50%, -50%)',
+                        // transform: 'translate(-50%, -50%)',
                     }}
                     onLoad={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -63,13 +66,16 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
             <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
                 <img
                     alt={model.name}
-                    className="rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center"
+                    className={joinClasses(
+                        style.pairedImg,
+                        'paired-img rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center'
+                    )}
                     loading="lazy"
                     src={image.SR}
                     style={{
                         height: `${maxHeight}px`,
                         width: `${maxWidth}px`,
-                        transform: 'translate(-50%, -50%)',
+                        // transform: 'translate(-50%, -50%)',
                     }}
                     onLoad={(e) => {
                         const target = e.target as HTMLImageElement;

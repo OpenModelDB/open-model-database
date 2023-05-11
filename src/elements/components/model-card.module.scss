@@ -9,10 +9,7 @@
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
-<<<<<<< HEAD
-    transition: transform ease-in-out 0.1s;
-=======
->>>>>>> card-effect
+    transition: transform ease-in-out 0.05s;
     overflow: hidden;
 
     .inner {
@@ -43,6 +40,11 @@
         border-radius: 0.5rem 0.5rem 0 0;
         z-index: 0;
         transition: transform ease-in-out 0.1s;
+
+        .pairedImg {
+            transform: translate(-50%, -50%);
+            transition: transform ease-in-out 0.1s;
+        }
     }
 
     .details {
@@ -79,9 +81,10 @@
         overflow: hidden;
         transition: ease-in-out 0.2s;
 
-        .thumbnail {
-            transform: scale(1.05);
-            transition: transform ease-in-out 0.1s;
+        .pairedImg {
+            $scale: 1.5;
+            transform: scale($scale) translate(-50% * 1 / $scale, -50% * 1 / $scale);
+            transition: transform ease-in-out 0.05s;
         }
     }
 }
