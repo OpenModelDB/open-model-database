@@ -60,7 +60,7 @@
 
         @include themed using($t) {
             background: linear-gradient(transparent, t($t, white, $fade-900))
-                t($t, color.change(white, $alpha: 0.7), color.change($fade-900, $alpha: 0.7));
+                t($t, color.change(white, $alpha: 0.7), color.change($fade-900, $alpha: 0.8));
         }
     }
 
