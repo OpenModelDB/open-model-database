@@ -68,7 +68,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
                     alt={model.name}
                     className={joinClasses(
                         style.pairedImg,
-                        'paired-img rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center'
+                        'rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center'
                     )}
                     loading="lazy"
                     src={image.SR}
