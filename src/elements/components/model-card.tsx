@@ -43,7 +43,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
             <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
                 <img
                     alt={model.name}
-                    className="rendering-pixelated absolute top-1/2 left-1/2 z-0 m-auto object-cover object-center"
+                    className="rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center"
                     loading="lazy"
                     src={image.LR}
                     style={{
@@ -63,7 +63,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
             <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
                 <img
                     alt={model.name}
-                    className="rendering-pixelated absolute top-1/2 left-1/2 z-0 m-auto object-cover object-center"
+                    className="rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center"
                     loading="lazy"
                     src={image.SR}
                     style={{
@@ -150,7 +150,7 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
                 {getModelCardImageComponent(model)}
             </Link>
 
-            <div className={style.details}>
+            <div className={joinClasses(style.details, model.images[0]?.type === 'paired' && style.paired)}>
                 <Link
                     className={`${style.name} block text-xl font-bold text-gray-800 dark:text-gray-100`}
                     href={`/models/${id}`}

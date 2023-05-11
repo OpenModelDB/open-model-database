@@ -1,10 +1,18 @@
+@use 'sass:color';
+
+@import '../util.module';
+@import '../../styles/theme';
+
 .modelCard {
     position: relative;
     height: 350px;
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
+<<<<<<< HEAD
     transition: transform ease-in-out 0.1s;
+=======
+>>>>>>> card-effect
     overflow: hidden;
 
     .inner {
@@ -38,7 +46,6 @@
     }
 
     .details {
-        position: relative;
         left: 0;
         bottom: 0;
         right: 0;
@@ -48,6 +55,17 @@
         a.name {
             word-break: normal;
             overflow-wrap: anywhere;
+        }
+    }
+
+    .paired {
+        position: absolute;
+
+        backdrop-filter: blur(2rem) saturate(1.5) opacity(0.95);
+
+        @include themed using($t) {
+            background: linear-gradient(transparent, t($t, white, $fade-900))
+                t($t, color.change(white, $alpha: 0.7), color.change($fade-900, $alpha: 0.7));
         }
     }
 
