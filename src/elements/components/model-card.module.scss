@@ -56,7 +56,7 @@
     .paired {
         position: absolute;
 
-        backdrop-filter: blur(2rem) saturate(1.5) opacity(0.95);
+        backdrop-filter: blur(2rem) saturate(2);
 
         @include themed using($t) {
             background: linear-gradient(transparent, t($t, white, $fade-900))
