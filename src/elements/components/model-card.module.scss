@@ -9,7 +9,6 @@
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
-    overflow: hidden;
 
     .inner {
         position: relative;
@@ -41,6 +40,7 @@
     }
 
     .details {
+        position: relative;
         left: 0;
         bottom: 0;
         right: 0;
@@ -55,7 +55,6 @@
 
     .paired {
         position: absolute;
-
         backdrop-filter: blur(2rem) saturate(2);
 
         @include themed using($t) {
