@@ -28,6 +28,7 @@
             ]
         }
     ],
+    "pretrainedModelG": "4x-HDCube2",
     "images": [
         {
             "type": "paired",

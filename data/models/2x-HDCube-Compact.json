@@ -1,0 +1,60 @@
+{
+    "name": "HDCube Compact",
+    "author": "venomalia",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "dds",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "Gamecube and Wii textures Dumps.\n\nIt is designed as a faster alternative to the full size model, it requires much less Vram and is significantly faster.",
+    "date": "2023-02-09",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4837293,
+            "sha256": "67f296d868de757b4f3daca3e35f16b61ab1ae88703776727dab212004203e57",
+            "urls": [
+                "https://github.com/Venomalia/HDcube/tree/main/Compact#hdcube-compact"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingEpochs": 459,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "Artifact free textures and photos (stone, wood, metal, clothes, plants, characters, FX)",
+    "datasetSize": 20000,
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.imgur.com/476bdeZ.png",
+            "SR": "https://i.imgur.com/LV4UmEv.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.imgur.com/7GGgStJ.png",
+            "SR": "https://i.imgur.com/6lPu1HK.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.imgur.com/Bz39avz.png",
+            "SR": "https://i.imgur.com/pMCqCP4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.imgur.com/kn2ey2d.png",
+            "SR": "https://i.imgur.com/JMQRv0a.png"
+        }
+    ]
+}
