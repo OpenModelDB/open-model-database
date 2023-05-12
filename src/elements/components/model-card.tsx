@@ -130,6 +130,7 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
     const { updateModelProperty } = useUpdateModel(webApi, id);
 
     const description = fixDescription(model.description, model.scale);
+    const isPaired = model.images[0]?.type === 'paired' && !editMode;
 
     return (
         <div className={style.inner}>
@@ -140,17 +141,14 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
             </div>
 
             <Link
-                className={joinClasses(
-                    style.thumbnail,
-                    'relative flex h-full w-full items-center justify-items-center overflow-hidden bg-fade-300 align-middle dark:bg-fade-700 '
-                )}
+                className={joinClasses(style.thumbnail, isPaired && style.paired, 'bg-fade-300 dark:bg-fade-700 ')}
                 href={`/models/${id}`}
                 tabIndex={-1}
             >
                 {getModelCardImageComponent(model)}
             </Link>
 
-            <div className={joinClasses(style.details, model.images[0]?.type === 'paired' && style.paired)}>
+            <div className={joinClasses(style.details, isPaired && style.paired)}>
                 <Link
                     className={`${style.name} block text-xl font-bold text-gray-800 dark:text-gray-100`}
                     href={`/models/${id}`}
@@ -189,9 +187,15 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
 });
 
 export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
+    const { editMode } = useWebApi();
+
     const inner = (
         <div
-            className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900`}
+            className={joinClasses(
+                style.modelCard,
+                !editMode && style.overflowHidden,
+                'border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900'
+            )}
         >
             <ModelCardContent
                 id={id}
