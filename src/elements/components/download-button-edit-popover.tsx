@@ -58,7 +58,7 @@ function ResourceMenu({ resource, onChange }: EditResourceProps) {
                     id="resource-sha256"
                     type="string"
                     value={sha256}
-                    onChange={(e) => setSHA256(e.target.value)}
+                    onChange={(e) => setSHA256(e.target.value.toLowerCase())}
                 />
             </div>
             <div className="flex flex-col">
