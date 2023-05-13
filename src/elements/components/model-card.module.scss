@@ -59,7 +59,7 @@
 
     .details {
         padding: 0.75rem;
-        padding-top: 0.5rem;
+        padding-top: 0;
 
         &.paired {
             position: absolute;
@@ -79,6 +79,7 @@
         a.name {
             word-break: normal;
             overflow-wrap: anywhere;
+            padding-top: 0.5rem;
         }
     }
 
