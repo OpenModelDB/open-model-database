@@ -74,29 +74,50 @@ export default function Page() {
                                         onChange={(name) => updateCategory(categoryId, { name })}
                                     />
                                     {editMode && (
-                                        <button
-                                            onClick={() => {
-                                                const id = prompt('Tag ID');
-                                                if (!id) return;
-                                                const tagId = id.trim().toLowerCase() as TagId;
-                                                if (!TagIdPattern.test(tagId)) return;
+                                        <>
+                                            <button
+                                                className="ml-1"
+                                                title="Add tag to category (enter tag ID in prompt)"
+                                                onClick={() => {
+                                                    const id = prompt('Tag ID');
+                                                    if (!id) return;
+                                                    const tagId = id.trim().toLowerCase() as TagId;
+                                                    if (!TagIdPattern.test(tagId)) return;
 
-                                                Promise.all([
-                                                    webApi.tags.update([[tagId, { name: tagId, description: '' }]]),
-                                                    webApi.tagCategories.update([
-                                                        [
-                                                            categoryId,
-                                                            {
-                                                                ...category,
-                                                                tags: [tagId, ...category.tags],
-                                                            },
-                                                        ],
-                                                    ]),
-                                                ]).catch((e) => console.error(e));
-                                            }}
-                                        >
-                                            +
-                                        </button>
+                                                    Promise.all([
+                                                        webApi.tags.update([[tagId, { name: tagId, description: '' }]]),
+                                                        webApi.tagCategories.update([
+                                                            [
+                                                                categoryId,
+                                                                {
+                                                                    ...category,
+                                                                    tags: [tagId, ...category.tags],
+                                                                },
+                                                            ],
+                                                        ]),
+                                                    ]).catch((e) => console.error(e));
+                                                }}
+                                            >
+                                                +
+                                            </button>
+                                            <button
+                                                className="ml-1"
+                                                title="Sort tags in category by name"
+                                                onClick={() => {
+                                                    category.tags.sort((a, b) => {
+                                                        const aTag = tagData.get(a);
+                                                        const bTag = tagData.get(b);
+                                                        if (!aTag || !bTag) return 0;
+                                                        return aTag.name.localeCompare(bTag.name);
+                                                    });
+                                                    webApi.tagCategories
+                                                        .update([[categoryId, category]])
+                                                        .catch((e) => console.error(e));
+                                                }}
+                                            >
+                                                Sort
+                                            </button>
+                                        </>
                                     )}
                                 </h2>
 
