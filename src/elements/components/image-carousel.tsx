@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import {
     BsCaretLeftFill,
@@ -17,7 +17,7 @@ import { ImageCarouselImage } from './image-carousel-image';
 import style from './image-carousel.module.scss';
 
 type ImageCarouselProps = {
-    images: Image[];
+    images: readonly Image[];
     readonly: boolean;
     onChange?: (images: Image[]) => void;
 };
@@ -26,6 +26,9 @@ const IMG_THUMB_SIZE = 96;
 
 export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps) => {
     const [imageIndex, setImageIndex] = useState(0);
+    useEffect(() => {
+        setImageIndex((index) => (images.length === 0 ? 0 : Math.min(index, images.length - 1)));
+    }, [images]);
 
     const selectedImage = images[imageIndex] as Image | undefined;
 
