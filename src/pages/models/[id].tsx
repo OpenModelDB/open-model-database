@@ -310,6 +310,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                     <div className="relative flex h-full flex-col gap-4 sm:col-span-1 lg:col-span-2">
                         <ImageCarousel
                             images={model.images}
+                            indexId={modelId}
                             readonly={!editMode}
                             onChange={(images) => updateModelProperty('images', images)}
                         />
