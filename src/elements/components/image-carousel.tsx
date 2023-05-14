@@ -106,7 +106,7 @@ export const ImageCarousel = ({ images, readonly, onChange }: ImageCarouselProps
                                 )}
                                 <div
                                     className={joinClasses(
-                                        'border-3 m-0 flex h-12 w-12 cursor-pointer rounded-lg border-solid p-0 transition duration-100 ease-in-out',
+                                        'border-3 m-0 flex h-12 w-12 cursor-pointer overflow-hidden rounded-lg border-solid p-0 transition duration-100 ease-in-out',
                                         index === imageIndex
                                             ? 'border-accent-500'
                                             : 'border-fade-200 hover:border-fade-300 dark:border-fade-700 dark:hover:border-fade-600'
