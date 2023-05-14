@@ -18,21 +18,21 @@ import style from './image-carousel.module.scss';
 
 type ImageCarouselProps = {
     images: readonly Image[];
-    indexId?: unknown;
+    indexKey?: unknown;
     readonly: boolean;
     onChange?: (images: Image[]) => void;
 };
 
 const IMG_THUMB_SIZE = 96;
 
-export const ImageCarousel = ({ images, readonly, indexId, onChange }: ImageCarouselProps) => {
+export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCarouselProps) => {
     const [imageIndex, setImageIndex] = useState(0);
     useEffect(() => {
         setImageIndex((index) => (images.length === 0 ? 0 : Math.min(index, images.length - 1)));
     }, [images]);
     useEffect(() => {
         setImageIndex(0);
-    }, [indexId]);
+    }, [indexKey]);
 
     const selectedImage = images[imageIndex] as Image | undefined;
 
