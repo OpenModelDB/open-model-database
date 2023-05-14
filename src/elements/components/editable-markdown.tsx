@@ -54,7 +54,7 @@ export function EditableMarkdownContainer({
     return (
         <textarea
             autoFocus
-            className={style.textarea}
+            className={`${style.textarea} text-black dark:text-white`}
             value={value}
             onBlur={submit}
             onChange={(e) => setValue(e.target.value)}

@@ -66,7 +66,7 @@ export function TagView({ tag, usage, readonly, onRename, onDelete, onDescriptio
                 )}
                 {usage !== undefined && <span className="opacity-50"> ({usage})</span>}
             </div>
-            <div>
+            <div className="text-neutral-600 dark:text-neutral-400">
                 <EditableMarkdownContainer
                     markdown={tag.description}
                     readonly={readonly}
