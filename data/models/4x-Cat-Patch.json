@@ -20,7 +20,7 @@
             "size": 66961958,
             "sha256": "9260fac8bee3794ba2b9081d317ddbdee82e2ab99338741bf00cd33020dd757a",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-Cat-Patch.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-Cat-Patch.pth",
                 "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/4x_cat_patch_325000_G.pth"
             ]
         }

@@ -23,7 +23,7 @@
             "size": 20096393,
             "sha256": "bbd1b6e9002ad9cbb4c5049850a361e110b8ed0ae22f5ed0fb49ddf5a6951f53",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-NMKD-Jaywreck3-Soft-Lite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-NMKD-Jaywreck3-Soft-Lite.pth",
                 "https://icedrive.net/1/43GNBihZyi"
             ]
         }

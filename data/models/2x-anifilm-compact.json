@@ -23,7 +23,7 @@
             "size": 2419014,
             "sha256": "13b85e0d310976c4b3db5d00d2cd2c4bcae7a0ad17d3793f6746c78330c57d07",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-anifilm-compact.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-anifilm-compact.pth",
                 "https://mega.nz/folder/XZgSmAoa#KNKbXZVBDq4UD1NJLHm1oQ"
             ]
         }

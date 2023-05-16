@@ -22,7 +22,7 @@
             "size": 66961958,
             "sha256": "4dad22166896c14cf04f222cf1a69c46f7a6c6e6358ade157f7107a243225fde",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-MeguUp.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-MeguUp.pth",
                 "https://s.katou.pw/4x_MeguUp_150000_G.pth"
             ]
         }

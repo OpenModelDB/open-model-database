@@ -22,7 +22,7 @@
             "size": 20096297,
             "sha256": "60bb61bffe5b2260670f7530173770f35a856a6919eec5962985ac97150bdeec",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-SpongeColor-Lite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-SpongeColor-Lite.pth",
                 "https://u.pcloud.link/publink/show?code=kZpAGFXZARxWIu9Pp4YDLUSIN8I8aFuJ5TKV"
             ]
         }

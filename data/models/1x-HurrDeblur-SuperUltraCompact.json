@@ -25,7 +25,7 @@
             "size": 362039,
             "sha256": "d91fa17c4392918af37e3b9b3a4ebbf2affe591f39046a34f0c67543a35f401e",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-HurrDeblur-SuperUltraCompact.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-HurrDeblur-SuperUltraCompact.pth",
                 "https://mega.nz/file/MZdEja6I#ao8L6INGvzns4IlDpyzjpuzR-kIqm_VrC3Q8pUTZncM"
             ]
         }

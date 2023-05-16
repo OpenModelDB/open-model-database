@@ -19,7 +19,7 @@
             "size": 105106008,
             "sha256": "44a8fb7c8b56b1669bc1e692dae51b3dd96cf6f49db142194480e50645db8618",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-cvpv6.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-cvpv6.pth",
                 "https://files.catbox.moe/nxh1cv.pth"
             ]
         }

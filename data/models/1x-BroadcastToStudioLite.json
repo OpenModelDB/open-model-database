@@ -23,7 +23,7 @@
             "size": 20098601,
             "sha256": "912ff494e454a135ba2341d522c38089736654daf32bd6c7bb81549bb9512d38",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-BroadcastToStudioLite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-BroadcastToStudioLite.pth",
                 "https://mega.nz/file/TO4S3KoT#eOiYCKWp0-O0rgBC0xgUl87DrPTbZ2or-NDgf22kPGA"
             ]
         }

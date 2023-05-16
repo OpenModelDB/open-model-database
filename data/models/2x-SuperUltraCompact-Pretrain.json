@@ -22,7 +22,7 @@
             "size": 377655,
             "sha256": "c34cae569319688f1fa10aa75c5734040896790e41bb23f128cd633923d850e5",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-SuperUltraCompact-Pretrain.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-SuperUltraCompact-Pretrain.pth",
                 "https://mega.nz/file/Bc0SmIyK#ThTyculaFvrLGMIY8FicUUWBem8O_ZF8LgpPXCn7aVQ"
             ]
         }

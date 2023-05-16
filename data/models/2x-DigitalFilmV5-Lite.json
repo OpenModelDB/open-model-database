@@ -20,7 +20,7 @@
             "size": 8199999,
             "sha256": "ed75272d5c55318c7307bcb4faaba63a69f0cfa1576dd1068b9737ecdfd3e734",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-DigitalFilmV5-Lite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-DigitalFilmV5-Lite.pth",
                 "https://cdn.discordapp.com/attachments/579685650824036387/812414843939455036/2X_DigitalFilmV5_Lite.pth"
             ]
         }

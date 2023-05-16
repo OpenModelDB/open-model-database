@@ -23,7 +23,7 @@
             "size": 66946549,
             "sha256": "fa4ef999435d9dda0e68c855bbddf1fa54dcc8fe207b05c5867193446f59ac4c",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-Manga109Attempt.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-Manga109Attempt.pth",
                 "http://www.mediafire.com/file/w3jujtm752hvdj1/Manga109Attempt.pth.zip/file"
             ]
         }

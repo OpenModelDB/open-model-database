@@ -22,7 +22,7 @@
             "size": 66665765,
             "sha256": "94d8f38726c7abaa83a3fad27c01863ba961f76a995d8541c173eb3195062547",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-ReFocus-V3.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-ReFocus-V3.pth",
                 "https://de-next.owncube.com/index.php/s/HyygDgXEB45JqBH"
             ]
         }

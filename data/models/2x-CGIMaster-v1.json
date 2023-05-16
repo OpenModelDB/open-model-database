@@ -22,7 +22,7 @@
             "size": 66870739,
             "sha256": "1cd831c35f1ac3a74d054e96362c145ac9d2a3abd0651fbb9802f42cc302b013",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-CGIMaster-v1.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-CGIMaster-v1.pth",
                 "https://lbry.tv/@Madiator2011:e/x2_CGIMaster_v1:6"
             ]
         }

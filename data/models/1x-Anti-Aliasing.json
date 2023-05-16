@@ -22,7 +22,7 @@
             "size": 66662414,
             "sha256": "7a4cb10276899d6d93ba35f174653a11ebdcea5c6ca93aee226c108d177f311f",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-Anti-Aliasing.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-Anti-Aliasing.pth",
                 "https://de-next.owncube.com/index.php/s/mmYCcK4H3rQQR5Y"
             ]
         }

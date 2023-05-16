@@ -26,7 +26,7 @@
             "size": 4795821,
             "sha256": "1326bd9e45a198be6ca84919ade3fec458a07d078894a644711ed72cef66d096",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-Epsilon-one-compact.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-Epsilon-one-compact.pth",
                 "https://drive.google.com/drive/folders/13PhLXD3Pvo1A7LwHGIeY_ekObva_333e?usp=share_link"
             ]
         }

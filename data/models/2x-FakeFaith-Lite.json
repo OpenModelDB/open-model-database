@@ -23,7 +23,7 @@
             "size": 20135976,
             "sha256": "51ee3b4b05422f1e48aee115c05dc6dca8fd5ff7b8341e7f6b84be820696c9db",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-FakeFaith-Lite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-FakeFaith-Lite.pth",
                 "https://u.pcloud.link/publink/show?code=kZUMKFXZUG6BpzHR6wFGack19pvWgbQQ9OA7"
             ]
         }

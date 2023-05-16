@@ -22,7 +22,7 @@
             "size": 67010885,
             "sha256": "0c3ff9f7b4fc11b21e1262bca06efada0b0723436623db5e2af37fa2291cb750",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-eula-digimanga-bw-v2-nc1.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-eula-digimanga-bw-v2-nc1.pth",
                 "https://cdn.discordapp.com/attachments/894310505622155264/1008498310597857290/4x_eula_digimanga_bw_v2_nc1_307k.pth"
             ]
         }

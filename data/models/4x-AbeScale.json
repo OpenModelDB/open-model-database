@@ -23,7 +23,7 @@
             "size": 67025055,
             "sha256": "ceb79b179c05bab71a8de3900f173de3a10cf17d0422e0e62e4e5b395db3ccaa",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F4x-AbeScale.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-AbeScale.pth",
                 "http://cloud.mitch.best/index.php/s/iio9SL9BdgWiCoi"
             ]
         }

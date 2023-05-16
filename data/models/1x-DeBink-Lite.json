@@ -23,7 +23,7 @@
             "size": 20098601,
             "sha256": "4c2e3a7cde1fd73d9df41f5152aa5888c6e512ea5788ab87de486d1f97848a9f",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-DeBink-Lite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-DeBink-Lite.pth",
                 "https://mega.nz/folder/6cxHzIxB#IN6ZgG-S0j3LjM0x5DEqew"
             ]
         }

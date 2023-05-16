@@ -20,7 +20,7 @@
             "size": 66658226,
             "sha256": "42c5ca0f9f2e7915e0b05af5efea6e4d6cff8c97a0c7903f460d52981ced8168",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-KDM003-scans.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-KDM003-scans.pth",
                 "https://www.dropbox.com/s/52hsqa7ymt5pgga/KDM003_scans_1x.pth"
             ]
         }

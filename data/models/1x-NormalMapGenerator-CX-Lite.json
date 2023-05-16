@@ -22,7 +22,7 @@
             "size": 20098601,
             "sha256": "dce313777fac7b2f98101538f15a153acfa92cbf4bb62a8cd4a89edc0eb313dc",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F1x-NormalMapGenerator-CX-Lite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-NormalMapGenerator-CX-Lite.pth",
                 "https://u.pcloud.link/publink/show?code=kZEdNHXZ3bpVwUoge94d9igFWxbjQQrcbpny"
             ]
         }

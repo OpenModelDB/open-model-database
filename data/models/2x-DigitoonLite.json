@@ -25,7 +25,7 @@
             "size": 20135976,
             "sha256": "3b08cbf2e9adb3121dd5c010812485f43a6e0403cdfd5f3c02fef44aefdd99d2",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-DigitoonLite.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-DigitoonLite.pth",
                 "https://mega.nz/file/XWpFzRID#398qZx763bMSBsPB2MfgZqROGxdB0VldrIgH_prwa7U"
             ]
         }

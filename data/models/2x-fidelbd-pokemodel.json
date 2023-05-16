@@ -22,7 +22,7 @@
             "size": 66810509,
             "sha256": "79ad512557eaf052f1d540c117b4408a7fa24999c75abbf1c2f52a5b1d2353b2",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F2x-fidelbd-pokemodel.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-fidelbd-pokemodel.pth",
                 "https://www23.zippyshare.com/v/lhOStpVa/file.html"
             ]
         }

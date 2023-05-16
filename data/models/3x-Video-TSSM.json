@@ -17,7 +17,7 @@
             "size": 4730412,
             "sha256": "3ed58c98012ee903fcda6c26fd28f27bd2e3560a10d4904fb384b3de6f7c52fb",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/models%2F3x-Video-TSSM.pth",
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/3x-Video-TSSM.pth",
                 "https://u.pcloud.link/publink/show?code=XZMmozXZjW4hHqJu7ikbQpyeqUItTh7QJO6k"
             ]
         }
