@@ -8,12 +8,22 @@ export interface EditImageProps {
 }
 
 function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (value: PairedImage) => void }) {
+    const [caption, setCaption] = useState(image?.caption ?? '');
     const [lr, setLR] = useState(image?.LR ?? '');
     const [sr, setSR] = useState(image?.SR ?? '');
     const [thumbnail, setThumbnail] = useState(image?.thumbnail ?? '');
 
     return (
         <div className="flex flex-col">
+            <div className="flex flex-col">
+                <label htmlFor="image-caption">Caption</label>
+                <input
+                    id="image-caption"
+                    type="text"
+                    value={caption}
+                    onChange={(e) => setCaption(e.target.value)}
+                />
+            </div>
             <div className="flex flex-col">
                 <label htmlFor="image-lr">
                     LR <a className="text-red-500">*</a>
@@ -32,16 +42,16 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                 </label>
                 <input
                     required
-                    id="image-lr"
+                    id="image-sr"
                     type="text"
                     value={sr}
                     onChange={(e) => setSR(e.target.value)}
                 />
             </div>
             <div className="flex flex-col">
-                <label htmlFor="image-sr">Thumbnail</label>
+                <label htmlFor="image-thumbnail">Thumbnail</label>
                 <input
-                    id="image-lr"
+                    id="image-thumbnail"
                     type="text"
                     value={thumbnail}
                     onChange={(e) => setThumbnail(e.target.value)}
@@ -57,6 +67,7 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                         LR: lr,
                         SR: sr,
                         thumbnail: thumbnail || undefined,
+                        caption: caption || undefined,
                     });
                 }}
             >
@@ -73,27 +84,37 @@ function StandaloneImageMenu({
     image?: StandaloneImage;
     onChange: (value: StandaloneImage) => void;
 }) {
+    const [caption, setCaption] = useState(image?.caption ?? '');
     const [url, setURL] = useState(image?.url ?? '');
     const [thumbnail, setThumbnail] = useState(image?.thumbnail ?? '');
 
     return (
         <div className="flex flex-col">
             <div className="flex flex-col">
+                <div className="flex flex-col">
+                    <label htmlFor="image-caption">Caption</label>
+                    <input
+                        id="image-caption"
+                        type="text"
+                        value={caption}
+                        onChange={(e) => setCaption(e.target.value)}
+                    />
+                </div>
                 <label htmlFor="image-url">
                     URL <a className="text-red-500">*</a>
                 </label>
                 <input
                     required
-                    id="image-lr"
+                    id="image-url"
                     type="text"
                     value={url}
                     onChange={(e) => setURL(e.target.value)}
                 />
             </div>
             <div className="flex flex-col">
-                <label htmlFor="image-sr">Thumbnail</label>
+                <label htmlFor="image-thumbnail">Thumbnail</label>
                 <input
-                    id="image-lr"
+                    id="image-thumbnail"
                     type="text"
                     value={thumbnail}
                     onChange={(e) => setThumbnail(e.target.value)}
@@ -108,6 +129,7 @@ function StandaloneImageMenu({
                         type: 'standalone',
                         url: url,
                         thumbnail: thumbnail || undefined,
+                        caption: caption || undefined,
                     });
                 }}
             >

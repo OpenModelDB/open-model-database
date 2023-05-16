@@ -64,6 +64,7 @@ export type Image = PairedImage | StandaloneImage;
 
 export interface PairedImage {
     type: 'paired';
+    caption?: string;
     LR: string;
     SR: string;
     thumbnail?: string;
@@ -71,6 +72,7 @@ export interface PairedImage {
 
 export interface StandaloneImage {
     type: 'standalone';
+    caption?: string;
     url: string;
     thumbnail?: string;
 }
