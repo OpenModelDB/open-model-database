@@ -1,4 +1,7 @@
 .markdown {
+    word-break: normal;
+    overflow-wrap: anywhere;
+
     h2 {
         margin-top: 1.5em;
         margin-bottom: 1em;
@@ -7,12 +10,6 @@
     h3 {
         margin-top: 1.75em;
         margin-bottom: 1em;
-    }
-
-    @media screen and (max-width: 900px) {
-        & {
-            overflow-wrap: break-word;
-        }
     }
 }
 
