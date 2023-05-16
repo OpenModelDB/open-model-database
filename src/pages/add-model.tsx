@@ -6,12 +6,13 @@ import { PageContainer } from '../elements/page';
 import { useModels } from '../lib/hooks/use-models';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { ArchId, Model, ModelId } from '../lib/schema';
-import { delay } from '../lib/util';
 
 function PageContent() {
     const { modelData } = useModels();
     const router = useRouter();
     const { webApi, editMode } = useWebApi();
+
+    const [processing, setProcessing] = useState(false);
 
     const [pretrained, setPretrained] = useState<ModelId | ''>('');
     const [idName, setIdName] = useState('Unknown');
@@ -51,9 +52,12 @@ function PageContent() {
             model.pretrainedModelG = pretrained;
         }
 
+        setProcessing(true);
         await webApi.models.update([[fullId, model]]);
 
-        await delay(1000);
+        // fetch before navigating to ensure the model page is available
+        const page = `/models/${fullId}`;
+        await fetch(page);
         await router.push(`/models/${fullId}`);
     };
 
@@ -92,7 +96,7 @@ function PageContent() {
                 <div>Id:</div>
                 <div className="col-span-3">
                     <input
-                        className="w-full"
+                        className="box-border w-full"
                         type="text"
                         value={idName}
                         onChange={(e) => setIdName(e.target.value)}
@@ -113,11 +117,13 @@ function PageContent() {
             </p>
             <p>
                 <button
+                    className={processing ? 'cursor-not-allowed' : 'cursor-pointer'}
+                    disabled={processing}
                     onClick={() => {
                         addModel().catch((e) => console.error(e));
                     }}
                 >
-                    Add Model
+                    {processing ? 'Currently adding model' : 'Add Model'}
                 </button>
             </p>
         </>
