@@ -20,6 +20,7 @@ import { useModels } from '../../lib/hooks/use-models';
 import { UpdateModelPropertyFn, useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
+import { KNOWN_LICENSES } from '../../lib/license';
 import { MODEL_PROPS } from '../../lib/model-props';
 import { ArchId, Image, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { getCachedModels } from '../../lib/server/cached-models';
@@ -230,6 +231,30 @@ function ColorModeProp({ model, updateModelProperty, editMode }: PropertyProps) 
                 </>
             )}
         </>
+    );
+}
+function LicenseProp({ model, updateModelProperty, editMode }: PropertyProps) {
+    if (!editMode) {
+        return <>{model.license || 'None'}</>;
+    }
+
+    return (
+        <select
+            value={model.license || ''}
+            onChange={(e) => {
+                updateModelProperty('license', (e.target.value || null) as never);
+            }}
+        >
+            <option value="">None</option>
+            {Object.entries(KNOWN_LICENSES).map(([key]) => (
+                <option
+                    key={key}
+                    value={key}
+                >
+                    {key}
+                </option>
+            ))}
+        </select>
     );
 }
 
@@ -448,6 +473,14 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                             updateModelProperty={updateModelProperty}
                                         />,
                                     ],
+                                    [
+                                        'License',
+                                        <LicenseProp
+                                            editMode={editMode}
+                                            model={model}
+                                            updateModelProperty={updateModelProperty}
+                                        />,
+                                    ],
                                     ...typedEntries(model)
                                         .concat(missingMetadataEntries)
                                         .filter(
@@ -465,6 +498,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                                     'tags',
                                                     'inputChannels',
                                                     'outputChannels',
+                                                    'license',
                                                     // This is just messed up in the data
                                                     'pretrainedModelG',
                                                     'pretrainedModelD',
