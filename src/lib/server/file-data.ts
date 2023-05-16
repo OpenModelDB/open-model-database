@@ -101,7 +101,7 @@ async function writeModelData(id: ModelId, model: Readonly<Model>): Promise<void
         sortObjectKeys(r, ['platform', 'type', 'size', 'sha256', 'urls']);
     }
     for (const i of model.images) {
-        sortObjectKeys(i, ['type', 'LR', 'SR', 'url', 'thumbnail']);
+        sortObjectKeys(i, ['type', 'caption', 'LR', 'SR', 'url', 'thumbnail']);
     }
     model.tags.sort(compareTagId);
     const file = getModelDataPath(id);
