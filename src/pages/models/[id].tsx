@@ -235,7 +235,7 @@ function ColorModeProp({ model, updateModelProperty, editMode }: PropertyProps) 
 }
 function LicenseProp({ model, updateModelProperty, editMode }: PropertyProps) {
     if (!editMode) {
-        return model.license || 'None';
+        return <>{model.license || 'None'}</>;
     }
 
     return (
