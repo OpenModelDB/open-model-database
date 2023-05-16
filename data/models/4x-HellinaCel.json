@@ -2,7 +2,10 @@
     "name": "HellinaCel",
     "author": "vgdckeroro",
     "license": "WTFPL",
-    "tags": [],
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
     "description": "Category: Cel Animation\nPurpose: Traditional Animation\n\nA rougher alternative to 4xCelFrames with a focus on realistic looking cels over nice looking cels. It's trained on DetoriationFrames LRs, so if you give it an image straight from the source it will go twice as hard on it. This can be used to your advantage, though. I recommend cleaning it up before running DetoriationFrames, or else it will come out rough.",
     "date": "2021-03-21",
     "architecture": "esrgan",

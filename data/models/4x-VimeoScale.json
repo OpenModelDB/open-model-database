@@ -2,7 +2,9 @@
     "name": "VimeoScale",
     "author": "sazoji",
     "license": "CC-BY-SA-4.0",
-    "tags": [],
+    "tags": [
+        "photo"
+    ],
     "description": "Category: Pretrained Discriminators\nPurpose: Upscaling IRL video content\n\nThis model is one of the longest I have trained and tuned, includes some noise training but this is not intended for deblocking/decompression. Combined with https://github.com/JoeyBallentine/Video-Inference 's fp16 mode, this should handle most SD and 720p content at or faster than ESRGAN, with a significant bump in quality.\n\nPretrained model: Self-Trained Base for the Unet finalisation with vgg_fea discrim",
     "date": "2021-10-08",
     "architecture": "sofvsr",
