@@ -30,8 +30,9 @@
     ],
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1001671437293207672/1658887461.0522466.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108219533715582986/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108219534076289106/SR.png"
         }
     ]
 }

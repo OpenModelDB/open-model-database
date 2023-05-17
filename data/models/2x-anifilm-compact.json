@@ -1,5 +1,5 @@
 {
-    "name": "anifilm Compact",
+    "name": "Anifilm Compact (2x)",
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
@@ -33,10 +33,6 @@
     "datasetSize": 2836,
     "pretrainedModelG": "2x-Compact-Pretrain",
     "images": [
-        {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/1004152057739087972/1659478894.4425747.png"
-        },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/52e34ef6-6794-43de-a888-3998f7cf1f26.jpg",

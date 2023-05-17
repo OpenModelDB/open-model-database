@@ -1,5 +1,5 @@
 {
-    "name": "Anifilm Compact",
+    "name": "Anifilm Compact (4x)",
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
@@ -34,8 +34,9 @@
     "pretrainedModelG": "4x-Compact-Pretrain",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/1004158991544365097/1659480539.543144.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108222216279167016/LR.png?width=960&height=840",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222217071898676/SR.png?width=960&height=840"
         },
         {
             "type": "paired",

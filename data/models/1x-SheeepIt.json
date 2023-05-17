@@ -34,20 +34,24 @@
     "datasetSize": 4,
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999820017652740176/1658446060.8526323.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108221482007527444/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108221482355662868/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999821036583391292/1658446301.0955725.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108221557463068702/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108221557895069808/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999821212718993478/1658446346.8536465.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108221624064417842/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108221624475467940/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/999820756043169803/1658446237.0734627.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108221685594865765/LR.png?width=960&height=702",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108221686182060093/SR.png?width=960&height=702"
         }
     ]
 }
