@@ -36,8 +36,9 @@
     "pretrainedModelG": "4x-GameAI-1-0",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/947610558981632040/2ea384c8dc05593e-55207ec648ad52a4-00006213_2-comparison.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108225587526500373/LR.png?width=905&height=905",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108225587908198521/SR.png?width=905&height=905"
         },
         {
             "type": "standalone",

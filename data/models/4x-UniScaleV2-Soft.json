@@ -34,8 +34,9 @@
     "pretrainedModelG": "4x-ESRGAN",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/884239326471393331/884302370136289323/unknown.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108227389940564078/LR.png?width=960&height=715",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108227390309666836/SR.png?width=960&height=715"
         }
     ]
 }
