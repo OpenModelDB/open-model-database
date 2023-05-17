@@ -34,16 +34,19 @@
     "pretrainedModelG": "4x-Manga109Attempt",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/913500929012150323/4f012e36d686033b274261295da89b32-comparison.jpg"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108223832285786203/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108223832948473997/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/913500929356070912/256x256fdbb-comparison.jpg"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108223906088767619/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108223906478817280/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/913500929649688617/franky-super-810x456-comparison.jpg"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108223986510331935/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108223987189817384/SR.png"
         }
     ]
 }

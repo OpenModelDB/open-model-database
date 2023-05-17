@@ -50,8 +50,8 @@
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108221685594865765/LR.png?width=960&height=702",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108221686182060093/SR.png?width=960&height=702"
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108221685594865765/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108221686182060093/SR.png"
         }
     ]
 }
