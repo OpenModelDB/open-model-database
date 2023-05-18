@@ -36,13 +36,13 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108226605396004994/LR.png",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108634043681079326/LR.png",
             "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226605794467850/SR.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108226661431906445/LR.png?width=960&height=679",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226661830373416/SR.png?width=960&height=679"
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108226661431906445/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226661830373416/SR.png"
         },
         {
             "type": "standalone",
