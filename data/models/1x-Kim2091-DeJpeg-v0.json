@@ -32,12 +32,14 @@
     "dataset": "Custom JPEG dataset",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/1041539960672632832/1668392853.8196685.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108220692580814959/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108220692912148481/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/1041540021175463956/1668392885.0326388.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108220773098864730/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108220773451169862/SR.png"
         }
     ]
 }

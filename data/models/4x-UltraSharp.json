@@ -35,12 +35,14 @@
     "pretrainedModelG": "4x-UniScale-Balanced",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/902853011913732097/902855337705611294/unknown.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108634043681079326/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226605794467850/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/902853011913732097/902853340600360990/unknown.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108226661431906445/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226661830373416/SR.png"
         },
         {
             "type": "standalone",

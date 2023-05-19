@@ -35,8 +35,9 @@
     "dataset": "Expanded self curated custom manga dataset",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/855269193762865152/Example_LQ_Input-comparison.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108220899737473035/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108220900060438610/SR.png"
         }
     ]
 }

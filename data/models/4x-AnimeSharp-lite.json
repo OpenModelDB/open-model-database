@@ -35,16 +35,19 @@
     "pretrainedModelG": "2x-UniScale-CartoonRestore-lite",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/547949405949657100/941776512049360986/unknown.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631845144367155/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108223183166906368/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/547949405949657100/941770824543797268/unknown.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631893760561162/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108223346975440958/SR.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/941779970013925506/unknown.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631952854106152/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108223426885337211/SR.png"
         }
     ]
 }

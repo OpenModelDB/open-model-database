@@ -35,16 +35,18 @@
     "pretrainedModelG": "4x-Nickelfront",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1027685415756509265/4x_Link_500000_G-TestImage-0x9F6EFFE0.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108225797493366865/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108225798000873512/SR.png"
         },
         {
             "type": "standalone",
             "url": "https://cdn.discordapp.com/attachments/579685650824036387/1027685416180121722/4x_Link_500000_G-TestImage-CMMM_Knight_Templar_ID2_DiffuseMap.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1027685416528261203/4x_Link_500000_G-TestImage-Crest_Venetian_DiffuseMap.png"
+            "type": "paired",
+            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108225880704176168/LR.png",
+            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108225880997765160/SR.png"
         }
     ]
 }
