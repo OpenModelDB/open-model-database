@@ -27,7 +27,7 @@ import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
-import { asArray, getColorMode, getPreviewImage, joinListString, typedEntries } from '../../lib/util';
+import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedEntries } from '../../lib/util';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
 
@@ -58,7 +58,7 @@ const defaultVals = {
     boolean: false,
 } as const;
 
-const renderTags = (tags: string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
+const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
     <div className="flex flex-row flex-wrap gap-2">
         {tags.map((tag, index) => {
             return (
@@ -413,6 +413,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                                     <BsFillTrashFill />
                                                 </button>
                                                 <EditResourceButton
+                                                    modelId={modelId}
                                                     resource={resource}
                                                     onChange={(newResource) => {
                                                         const newResources = model.resources;
@@ -429,6 +430,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                             })}
                             {editMode && (
                                 <EditResourceButton
+                                    modelId={modelId}
                                     onChange={(newResource) => {
                                         const newResources = [...model.resources, newResource];
                                         updateModelProperty('resources', newResources);
@@ -459,9 +461,9 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                             updateModelProperty={updateModelProperty}
                                         />,
                                     ],
-                                    model.size && [
+                                    (model.size || editMode) && [
                                         'Size',
-                                        renderTags(model.size, editMode, (newTags: string[]) => {
+                                        renderTags(model.size ?? EMPTY_ARRAY, editMode, (newTags: string[]) => {
                                             updateModelProperty('size', newTags);
                                         }),
                                     ],

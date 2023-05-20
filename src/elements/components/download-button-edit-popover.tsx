@@ -1,13 +1,14 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
-import { Resource } from '../../lib/schema';
+import { ModelId, Resource } from '../../lib/schema';
 
 export interface EditResourceProps {
     resource?: Resource;
+    modelId: ModelId;
     onChange: (value: Resource) => void;
 }
 
-function ResourceMenu({ resource, onChange }: EditResourceProps) {
+function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
     const [size, setSize] = useState(resource?.size ?? 0);
     const [sha256, setSHA256] = useState(resource?.sha256 ?? '');
     const [urls, setURLs] = useState(resource?.urls ?? ['']);
@@ -17,6 +18,48 @@ function ResourceMenu({ resource, onChange }: EditResourceProps) {
         { label: 'PyTorch', value: 'pytorch' },
         { label: 'ONNX', value: 'onnx' },
     ];
+
+    function getInfoFromFile(): void {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.pth,.onnx';
+        input.onchange = () => {
+            const file = input.files?.[0];
+            if (file) {
+                setSize(file.size);
+
+                const ext = file.name.split('.').pop()?.toLowerCase();
+                if (ext === 'pth') {
+                    setPlatform('pytorch');
+                } else if (ext === 'onnx') {
+                    setPlatform('onnx');
+                }
+
+                file.arrayBuffer()
+                    .then((arrayBuffer) => {
+                        const bytes = new Uint8Array(arrayBuffer);
+
+                        // send model bytes
+                        fetch(`/api/save-model?name=${encodeURIComponent(`${modelId}.${ext || ''}`)}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/octet-stream',
+                            },
+                            body: bytes,
+                        }).catch((error) => console.error(error));
+
+                        return crypto.subtle.digest('SHA-256', bytes);
+                    })
+                    .then((sha256) => {
+                        const hashArray = Array.from(new Uint8Array(sha256));
+                        const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+                        setSHA256(hashHex.toLowerCase());
+                    })
+                    .catch((error) => console.error(error));
+            }
+        };
+        input.click();
+    }
 
     return (
         <div className="flex flex-col">
@@ -80,6 +123,9 @@ function ResourceMenu({ resource, onChange }: EditResourceProps) {
                     ))}
                 </select>
             </div>
+            <div className="mt-2 flex flex-col">
+                <button onClick={getInfoFromFile}>Get info from file...</button>
+            </div>
             <Popover.Button
                 className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
                 disabled={!urls.length || !sha256 || !size}
@@ -111,7 +157,12 @@ function ResourceMenu({ resource, onChange }: EditResourceProps) {
     );
 }
 
-export function EditResourceButton({ resource, onChange, children }: React.PropsWithChildren<EditResourceProps>) {
+export function EditResourceButton({
+    resource,
+    onChange,
+    modelId,
+    children,
+}: React.PropsWithChildren<EditResourceProps>) {
     const [position, setPosition] = useState<'left' | 'right'>('left');
     const updatePosition = (element: HTMLElement): void => {
         const buttonX = element.getBoundingClientRect().x;
@@ -146,6 +197,7 @@ export function EditResourceButton({ resource, onChange, children }: React.Props
                     }`}
                 >
                     <ResourceMenu
+                        modelId={modelId}
                         resource={resource}
                         onChange={onChange}
                     />

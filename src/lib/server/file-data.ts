@@ -7,7 +7,7 @@ import { Arch, ArchId, Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, U
 import { compareTagId, getTagCategoryOrder, hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
 import { JsonFile, fileExists } from './fs-util';
 
-const DATA_DIR = './data/';
+export const DATA_DIR = './data/';
 const MODEL_DIR = join(DATA_DIR, 'models');
 const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
