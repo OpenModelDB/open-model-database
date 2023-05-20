@@ -1,0 +1,48 @@
+{
+    "name": "LSDIR Compact C3",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "Upscale compressed photos to x4 their size.\n\nAble to handle JPG compression (30-100).",
+    "date": "2023-04-11",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5004681,
+            "sha256": "a330cac38d956c7c3d98cd477f51b9f69df0f92f6c04d6f22998370718f846b9",
+            "urls": [
+                "https://drive.google.com/file/d/1LMSeS5jZ0RDyXvXYBeip36xbKoaLLvJZ"
+            ]
+        }
+    ],
+    "trainingIterations": 23000,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "LSDIR",
+    "datasetSize": 84991,
+    "pretrainedModelG": "4x-LSDIRCompact",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/dc1bb947-a4b6-430a-b95c-a889418139b7.jpg",
+            "SR": "https://imgsli.com/i/4abc5d6d-2ee1-4514-8193-d279b2ddf60f.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/74d7ffda-0ad0-4732-8795-d30e01ef76d8.jpg",
+            "SR": "https://imgsli.com/i/4c8636ed-e959-4971-b79f-03769f8a6be2.jpg"
+        }
+    ]
+}

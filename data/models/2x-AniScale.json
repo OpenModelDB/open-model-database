@@ -1,0 +1,77 @@
+{
+    "name": "AniScale",
+    "author": "sirosky",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "anime",
+        "dehalo",
+        "restoration"
+    ],
+    "description": "2x general purpose anime upscaler, with a focus on cleaning up scuffed sources while enhancing texture detail. While the model was trained on DVDs, it still works well on modern anime. The model is trained to deal with noise, compression artifacts, blur, bleeding, haloing and scuffed line art. Apparently, it also learned to deal with some dotcrawl.",
+    "date": "2023-04-16",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4838301,
+            "sha256": "8036d8e4da1c1f16db79a4aefbda86f7c9a07c6a7fa03d5d2d9e2f0012909671",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/579685650824036387/1097231218333974668/2x_AniScale_30000.pth",
+                "https://icedrive.net/s/5fiR884Qh2ggGitujhgzxW19VZjj"
+            ]
+        }
+    ],
+    "trainingIterations": 30000,
+    "trainingEpochs": 24,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "Anime DVDRip",
+    "datasetSize": 7200,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "House",
+            "LR": "https://imgsli.com/i/0f974ab0-43b3-4150-9812-02f04c8dedc7.jpg",
+            "SR": "https://imgsli.com/i/133f3370-241e-4b1b-9aa1-4fccd7191f4e.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Bleeding",
+            "LR": "https://imgsli.com/i/4f89a226-f009-4a05-a7ba-52d6d0e74c94.jpg",
+            "SR": "https://imgsli.com/i/786af27f-5ad0-4da1-a120-6a43b4c0fce7.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Strawhat",
+            "LR": "https://imgsli.com/i/e9b51e51-5300-494d-a9b3-a9cae485eeb2.jpg",
+            "SR": "https://imgsli.com/i/977c44f1-29a0-420a-b42d-9b5917ae5c31.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Dotcrawl",
+            "LR": "https://imgsli.com/i/39f8705c-de3e-4446-a42c-cbbebe74d5c2.jpg",
+            "SR": "https://imgsli.com/i/0ea78a0b-a4be-46f2-9693-2efbad7f85b1.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Roofs",
+            "LR": "https://imgsli.com/i/991defcc-59dc-43e8-aefb-867c9acbe782.jpg",
+            "SR": "https://imgsli.com/i/b1d4daf8-ac83-4eb7-af6e-9c08db1a1146.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Haloooo",
+            "LR": "https://imgsli.com/i/fb1e808b-c0ab-4d55-bfa8-069abb965f9b.jpg",
+            "SR": "https://imgsli.com/i/e1e0c900-715b-439f-ab0b-ac72809cef47.jpg"
+        }
+    ]
+}

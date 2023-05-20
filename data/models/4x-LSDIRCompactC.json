@@ -1,0 +1,68 @@
+{
+    "name": "LSDIR Compact C",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "Upscale small photos with compression to 4x their size.\n\nTrying to extend my previous model to be able to handle compression (JPG 100-30) by manually altering the training dataset, since 4xLSDIRCompact can't handle compression. Use this instead of 4xLSDIRCompact if your photo has compression (like an image from the web).",
+    "date": "2023-03-17",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5005799,
+            "sha256": "194476a7a8821c18c2928a15a05878f07105ee71802a061f018c36fb47259ae5",
+            "urls": [
+                "https://drive.google.com/file/d/1uoU8Q6L2F0LL_pgfbbTROJxtI_OOj47B"
+            ]
+        }
+    ],
+    "trainingIterations": 190000,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "LSDIR",
+    "datasetSize": 84991,
+    "pretrainedModelG": "4x-LSDIRCompact",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "JPEG 30",
+            "LR": "https://imgsli.com/i/91087439-c866-4438-a74d-7d068bc991df.jpg",
+            "SR": "https://imgsli.com/i/278a1397-f28a-47d5-89eb-5f558978eeb6.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "JPEG 40",
+            "LR": "https://imgsli.com/i/9a77ffa4-af8d-48db-b306-1713b4e56a48.jpg",
+            "SR": "https://imgsli.com/i/996484c9-25cd-4022-92b6-add0942f414e.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "JPEG 45",
+            "LR": "https://imgsli.com/i/80c70b77-a8ab-4a9d-8aa1-426d9da8bfb1.jpg",
+            "SR": "https://imgsli.com/i/4026406f-5a32-4e7e-becf-7e5243a261e3.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "JPEG 60",
+            "LR": "https://imgsli.com/i/c2df4625-083d-4505-9dbc-904d95dd5f5a.jpg",
+            "SR": "https://imgsli.com/i/cd41e1c9-c1d8-4d11-a07d-345638fc3041.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Uncompressed",
+            "LR": "https://imgsli.com/i/ce7ff38e-476a-49c3-b410-5aa8bd5481f6.jpg",
+            "SR": "https://imgsli.com/i/36243516-b37e-4964-94e1-f224f2a678fa.jpg"
+        }
+    ]
+}

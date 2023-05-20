@@ -33,5 +33,16 @@
     "dataset": "5K resolution shots from paladins rendered by 200% for hr and 37.5%(1080p) for lr then downscaled to 1080",
     "datasetSize": 150,
     "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6c5367ab-092f-4db7-8e67-7dd26b429bfb.jpg",
+            "SR": "https://imgsli.com/i/643ca3a7-8488-4a3f-808a-4b7c9f8df874.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/79fddc79-26b8-4c48-9799-71dc43884323.jpg",
+            "SR": "https://imgsli.com/i/ee47f4e6-6aba-479e-b8cb-b5ac8bb9cb2b.jpg"
+        }
+    ]
 }

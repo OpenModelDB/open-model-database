@@ -1,0 +1,48 @@
+{
+    "name": "LSDIR Compact R3",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "Upscale (degraded) photos to x4 their size. \n\nTrained on synthetic data, meant to handle more degradations",
+    "date": "2023-04-11",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5004681,
+            "sha256": "5b7d8bccfee8897fb72126f05de83e1bdf36e7dc2b17023b074fc1c97580e568",
+            "urls": [
+                "https://drive.google.com/file/d/1_UrO5UwADJyfOpKWp5y81USFCAgG-z3-"
+            ]
+        }
+    ],
+    "trainingIterations": 192500,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "LSDIR",
+    "datasetSize": 84991,
+    "pretrainedModelG": "4x-LSDIRCompact",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/dc1bb947-a4b6-430a-b95c-a889418139b7.jpg",
+            "SR": "https://imgsli.com/i/8db7fe78-f289-4499-a241-cc81c31348b2.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/74d7ffda-0ad0-4732-8795-d30e01ef76d8.jpg",
+            "SR": "https://imgsli.com/i/9c5c5c3d-649f-4402-8a00-618a9841f0aa.jpg"
+        }
+    ]
+}

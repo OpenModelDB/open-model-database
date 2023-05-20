@@ -1,0 +1,49 @@
+{
+    "name": "DEPVR",
+    "author": "cf2lter",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "game-textures",
+        "restoration"
+    ],
+    "description": "Attempts to remove PVRTC compression artifacts. If 1x_DEPVR is unable to remove some artifacts you should use the other version but it can't remove color artifacts properly so you should overlay color of normal version to it.",
+    "date": "2023-03-26",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "fc1e6ad8c397f4b6503ea2497734743199ac7cf2c463663521b86a13ffe77c99",
+            "urls": [
+                "https://mega.nz/folder/O58BHDLL#q9clb4tfbh4_Jd2M6lA6ZA"
+            ]
+        }
+    ],
+    "trainingIterations": 24000,
+    "trainingEpochs": 4000,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 32,
+    "trainingOTF": false,
+    "dataset": "Custom",
+    "datasetSize": 128,
+    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://cdn.discordapp.com/attachments/579685650824036387/1089380930935849000/Orig.png",
+            "SR": "https://cdn.discordapp.com/attachments/579685650824036387/1089380931615338568/DEPVR.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1089380932382896299/depvrcomp2.png"
+        }
+    ]
+}

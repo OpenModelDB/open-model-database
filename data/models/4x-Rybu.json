@@ -1,0 +1,46 @@
+{
+    "name": "Rybu",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [
+        "general-upscaler",
+        "photo",
+        "restoration"
+    ],
+    "description": "General realistic super-resolution.",
+    "date": "2023-04-01",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5004789,
+            "sha256": "39e7430d727a8369b5580a7bfa42bcc7a2104095fdc4b5ac1c29727a7d452a0d",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/579685650824036387/1091487963738808430/4x_rybu.pth",
+                "https://mega.nz/file/JYFHAYZR#z5dIrKTnQaUcfucT_6unESfZoicGFDQTW3LpDExILtY",
+                "https://www.mediafire.com/file/hx2z0aivcmvx2a2/4x_rybu.7z/file",
+                "https://m2.afileditch.ch/hnneaxSKLYDrJEGzm.7z"
+            ]
+        }
+    ],
+    "trainingIterations": 5000000,
+    "dataset": "Nomos8k",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1091487964070170704/cmp_0.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1091487964296642620/cmp_1.png"
+        }
+    ]
+}

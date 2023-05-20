@@ -1,0 +1,68 @@
+{
+    "name": "LSDIR Compact R",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "Upscale small photos with compression, noise and slight blur to 4x their size.\n\nExtending my last 4xLSDIRCompact model to Real-ESRGAN, meaning trained on synthetic data instead to handle more kinds of degradations, it should be able to handle compression, noise, and slight blur.\n\nHere is a comparison to show that 4xLSDIRCompact cannot handle compression artifacts, and that these two models will produce better output for that specific scenario. These models are not ‘better’ than the previous one, they are just meant to handle a different use case.",
+    "date": "2023-03-17",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5005885,
+            "sha256": "ee765b15a398d7a0810d9c6936ba7420be2862c32b19fb213d76450306bf3ad1",
+            "urls": [
+                "https://drive.google.com/file/d/1t4-CQc9jfJqt75r7xXI2vQxXOs-zDJt8"
+            ]
+        }
+    ],
+    "trainingIterations": 130000,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "LSDIR",
+    "datasetSize": 84991,
+    "pretrainedModelG": "4x-LSDIRCompact",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "JPEG 30",
+            "LR": "https://imgsli.com/i/91087439-c866-4438-a74d-7d068bc991df.jpg",
+            "SR": "https://imgsli.com/i/7ee9e8ae-ce53-48f5-a06c-435115700d73.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "JPEG 40",
+            "LR": "https://imgsli.com/i/9a77ffa4-af8d-48db-b306-1713b4e56a48.jpg",
+            "SR": "https://imgsli.com/i/762a254f-6e93-4fd1-8973-aa54edb41752.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "JPEG 45",
+            "LR": "https://imgsli.com/i/80c70b77-a8ab-4a9d-8aa1-426d9da8bfb1.jpg",
+            "SR": "https://imgsli.com/i/e93aee18-fd5b-4828-ab8e-d913c376a402.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "JPEG 60",
+            "LR": "https://imgsli.com/i/c2df4625-083d-4505-9dbc-904d95dd5f5a.jpg",
+            "SR": "https://imgsli.com/i/9cfcfc95-6dae-4d72-b686-5a150727486b.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Uncompressed",
+            "LR": "https://imgsli.com/i/ce7ff38e-476a-49c3-b410-5aa8bd5481f6.jpg",
+            "SR": "https://imgsli.com/i/3997926b-0057-4fb7-a5a3-0742459a064e.jpg"
+        }
+    ]
+}
