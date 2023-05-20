@@ -1,0 +1,64 @@
+{
+    "name": "AnimeJaNai Strong v1 UltraCompact",
+    "author": "the-database",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Realtime 2x model intended for high or medium quality 1080p anime with an emphasis on correcting the inherit blurriness of anime while preserving details and colors. Not suitable for artifact-heavy or highly compressed content as it will just sharpen artifacts. Also works with SD anime by running the model twice. Can be set up to run with mpv on Windows using https://github.com/the-database/mpv-upscale-2x_animejanai\n\nMinimum of RTX 3080 is recommended for running UltraCompact model on 1080p in realtime; RTX 4090 is required to run Compact on 1080p in realtime. SuperUltraCompact should run in realtime on 1080p on some lower cards. The compact model is recommended on SD content. \n\nSamples: https://imgsli.com/MTUxMDYx \\\nComparisons to Anime4K + other compact models and upscalers: https://imgsli.com/MTUxMjY4",
+    "date": "2023-01-29",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "8nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1222447,
+            "sha256": "60eaa3b9426fe06c5282091cde5613fcf4024a30055a5b612f9d32d0c3ce57ae",
+            "urls": [
+                "https://github.com/the-database/mpv-upscale-2x_animejanai/releases/download/1.0.0/mpv-upscale-2x_animejanai_v1.zip"
+            ]
+        }
+    ],
+    "trainingIterations": 10000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "frames from 1080p anime",
+    "datasetSize": 2416,
+    "pretrainedModelG": "2x-UltraCompact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1a0d1ffe-2f90-416d-8038-f0625b321c52.jpg",
+            "SR": "https://imgsli.com/i/71b70e79-a529-47d5-b2f7-3aad8e1c5ab5.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/cd32d835-778c-4d01-b665-8098da623e62.jpg",
+            "SR": "https://imgsli.com/i/c910b883-76b3-42fa-8170-d8a847296384.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/4af7e16f-87f0-4dc1-9ceb-3e3bf7224baf.jpg",
+            "SR": "https://imgsli.com/i/a1a1166b-231b-4237-896a-dfe22eca150c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/074652f5-54c0-4403-8926-5bdbc355d9eb.jpg",
+            "SR": "https://imgsli.com/i/c589caf6-7225-4536-88fc-eebfc65b6251.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/736fb35f-5082-4a03-ac6a-34f7cdab8214.jpg",
+            "SR": "https://imgsli.com/i/7c57ebf5-f1c2-437b-909d-f40bd1ad5999.jpg"
+        }
+    ]
+}

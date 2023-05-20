@@ -1,0 +1,55 @@
+{
+    "name": "Nomos8kSC",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "4x photo upscaler with otf jpg compression and blur, trained on musl's Nomos8k_sfw dataset for realisic sr",
+    "date": "2023-05-10",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67010245,
+            "sha256": "07a7ccd6443d012d528999cd77e40c7d265aaf1f656c499b37936e49603a0b1d",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xNomos8kSC/4xNomos8kSC.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 85000,
+    "trainingEpochs": 137,
+    "trainingBatchSize": 10,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "dataset": "Nomos8k_sfw",
+    "datasetSize": 6118,
+    "pretrainedModelG": "4x-realesrgan-x4plus",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b944f78f-9a23-44ba-a54c-f4d10c2481d3.jpg",
+            "SR": "https://imgsli.com/i/83a8b85c-bcab-46e3-8114-5e6e64d3c8e5.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/40806c9e-ba2a-4bc9-8e3a-42679457edf6.jpg",
+            "SR": "https://imgsli.com/i/bf9a0e75-4326-477e-91d3-5f1432f78198.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/e66be126-df62-4b1d-b6be-bd06ecab0e1b.jpg",
+            "SR": "https://imgsli.com/i/dbd2f2d0-b211-4e68-a5af-9bf09eb437a0.jpg"
+        }
+    ]
+}

@@ -80,6 +80,9 @@
     "foolhardy": {
         "name": "FoolhardyVEVO"
     },
+    "helaman": {
+        "name": "Helaman"
+    },
     "hubert": {
         "name": "hubert"
     },
@@ -188,6 +191,9 @@
     "sazoji": {
         "name": "Sazoji"
     },
+    "sirosky": {
+        "name": "Sirosky"
+    },
     "skr": {
         "name": "Skr"
     },
@@ -205,6 +211,9 @@
     },
     "tg": {
         "name": "tg"
+    },
+    "the-database": {
+        "name": "the database"
     },
     "thepi7on": {
         "name": "ThePi7on"

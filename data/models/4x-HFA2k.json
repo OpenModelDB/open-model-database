@@ -1,0 +1,70 @@
+{
+    "name": "HFA2k",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "4x anime image upscaler with a bit of otf jpg compression and blur. Trained on musl's hfa2k dataset release for Anime SISR, which has been extracted from modern anime films, where the selection criteria was high SNR, no DOF and high frequency information.\n\nExamples: https://imgsli.com/MTc2NDgx (PS Example input images are small, each around 500x280 px) \\\nExample input files: https://drive.google.com/drive/folders/1RI6gGqRy-KxDujbaIrpEMdvFkIWHvfPt \\\nExample output files: https://drive.google.com/drive/folders/1GqHwPlFp6bIQl4R1AxmrmJ6vUUD8FUxH \\\nAll my model files can be found on my github repo https://github.com/Phhofm/models",
+    "date": "2023-05-07",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67020037,
+            "sha256": "35dfd9f6e9d2d264f0e79c6a054798a5e71b1c752bd8b668786c01ebd62fe2b0",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xHFA2k/4xHFA2k.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 91000,
+    "trainingEpochs": 318,
+    "trainingBatchSize": 9,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "dataset": "HFA2k",
+    "datasetSize": 2568,
+    "pretrainedModelG": "4x-realesrgan-x4plus",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3c6c3f96-4d36-45bb-b0c2-d205750bc93c.jpg",
+            "SR": "https://imgsli.com/i/e2948695-e3f7-47af-8750-3430c1395654.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/4bd3e07b-c6e6-460c-840a-8788b16df508.jpg",
+            "SR": "https://imgsli.com/i/cb88ab06-7440-4bab-917c-cef02f987a34.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/13a85c0d-f50e-4dac-940a-a3053b919d82.jpg",
+            "SR": "https://imgsli.com/i/bbe2e58d-243e-4bc0-8bc6-1d56a70fe014.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ce0c2369-459d-462e-800e-4d3004accea1.jpg",
+            "SR": "https://imgsli.com/i/c135278b-9a8d-4909-8dac-8d6be5a4fb26.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c8bd5d32-d89d-4491-9883-b003045cd1d4.jpg",
+            "SR": "https://imgsli.com/i/f82c5f71-fd62-4205-8ddc-d249e6a97a48.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ab97c9b2-2eb6-4d54-b754-74c92eb7e066.jpg",
+            "SR": "https://imgsli.com/i/f0907656-069d-4ba4-8a93-4b2625f6fb5a.jpg"
+        }
+    ]
+}

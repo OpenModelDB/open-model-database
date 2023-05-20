@@ -1,0 +1,49 @@
+{
+    "name": "GainRESV4",
+    "author": "cf2lter",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anti-aliasing"
+    ],
+    "description": "Eliminate aliasing and general artifacts caused by not enough resolution. Model knows to add clarity and soften oversharpened areas. Gives image a supersampled look. Had a better version thats more faithful to details but i lost it.",
+    "date": "2023-03-05",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66665765,
+            "sha256": "bb604d9aa66c3b012e1543bef1f325b622a7625b43e94d2d06c8c98d84a3c773",
+            "urls": [
+                "https://mega.nz/file/r8k1FDYT#6jKY6d4UH0txdqU-3JpsFvKcEEeMTSnhrqmzjbgp1zE"
+            ]
+        }
+    ],
+    "trainingIterations": 170000,
+    "trainingEpochs": 900,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Game renderings native 1080p as lr and 4320p downscaled with mitchell as hr",
+    "datasetSize": 360,
+    "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6c5367ab-092f-4db7-8e67-7dd26b429bfb.jpg",
+            "SR": "https://imgsli.com/i/4c09163e-d7c2-495a-8815-36430775062f.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/79fddc79-26b8-4c48-9799-71dc43884323.jpg",
+            "SR": "https://imgsli.com/i/59da9723-2ea1-4643-8963-3217469dced2.jpg"
+        }
+    ]
+}

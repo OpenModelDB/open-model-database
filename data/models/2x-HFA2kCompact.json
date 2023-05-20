@@ -1,0 +1,164 @@
+{
+    "name": "HFA2kCompact",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "A compact anime 2x upscaling model based on musl's HFA2k dataset.\n\nCompact 2x anime upscaler with otf compression and blur. The '2xHFA2kCompact.pth' (4.6 MB) is the original trained model file, the other model files are conversions using chaiNNer. Trained on musl's latest dataset release for Anime SISR, which has been extracted from modern anime films, where the selection criteria was high SNR, no DOF and high frequency information.\n\nExamples: https://imgsli.com/MTcxNjA4\nExample input files: https://drive.google.com/drive/folders/1VSPw8m7VbZO6roM9syE7Nf2QYwwn7GUz \nExample output files: https://drive.google.com/drive/folders/1NFfomnv6d5RtWy_GwOsKO3uZ_HNOo-2i\n\nFuture work: Started training a 4xRRDBNet version of this, bigger model so maybe better results but slower, for still/ single anime images. Will release in the future or drop, based on achieved results.",
+    "date": "2023-04-18",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4838301,
+            "sha256": "78da2d5c636f868f7741d5c736b34cdfc9fae3f2f104bc9dc655b963def784dc",
+            "urls": [
+                "https://drive.google.com/drive/folders/1iW4EHokEsrcIZ7He5g485kvmPKXGk1EV"
+            ]
+        }
+    ],
+    "trainingIterations": 93000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 384,
+    "trainingOTF": true,
+    "dataset": "HFA2k",
+    "datasetSize": 2568,
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/65be5ab9-10b5-4e9c-a696-cb4f2065a7b6.jpg",
+            "SR": "https://imgsli.com/i/bc24aa4c-106c-48a1-8bd7-bf7edfe4b14d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/2caaa97d-f856-42dc-a6f7-eb7fbb1df3aa.jpg",
+            "SR": "https://imgsli.com/i/d4579ac3-42de-4a50-9679-7f60adc1e81e.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/122592dd-0061-4bd5-a810-6d24c2d93608.jpg",
+            "SR": "https://imgsli.com/i/68527283-8f15-41f5-ba96-9d7858716c01.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/4d2281ad-f447-4a88-a5cc-4301089a3d58.jpg",
+            "SR": "https://imgsli.com/i/8f58d789-a250-4787-a142-460a6a87f975.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c2753a39-7224-467d-88b5-c6a740fd4ac7.jpg",
+            "SR": "https://imgsli.com/i/310d747a-0adb-4fd2-8ecd-fbb15bae96b2.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/413ac188-3980-4e74-980d-a2cc546f6236.jpg",
+            "SR": "https://imgsli.com/i/cb701611-f9eb-45bf-910b-1d15a433b20c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1aa896f8-bec4-41cb-a06a-a679a48b3212.jpg",
+            "SR": "https://imgsli.com/i/73788ea5-4ecc-4c9f-99d1-92a9ffcd0f01.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/f71c83ee-1f00-4221-9beb-c9e0d0a2d81c.jpg",
+            "SR": "https://imgsli.com/i/75f7be5b-04cf-4584-a154-98fcef07ebc5.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/802ee306-df5c-4f1b-b0e6-333ef2d0a4b6.jpg",
+            "SR": "https://imgsli.com/i/7d212628-9ac8-4192-97e3-434c5b2b24e6.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b493b386-f1d3-4574-939c-e82fee727ef8.jpg",
+            "SR": "https://imgsli.com/i/aabbbe29-3b65-4b9c-b05f-96efad1fa983.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/528ce193-92b2-4f8e-8d59-b828780e784d.jpg",
+            "SR": "https://imgsli.com/i/2e13ddb6-7ec8-47b3-a9e1-adbe547ebf2d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/63673e13-9d83-4ab6-984c-cbad80012a61.jpg",
+            "SR": "https://imgsli.com/i/9e1723ea-e4de-4c14-855a-24356d9644e2.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/d6ce2e83-2a46-4754-83cb-3af96be06b74.jpg",
+            "SR": "https://imgsli.com/i/7edc88fa-d2aa-49c1-9be0-6dd48d8ff624.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/8b8079fb-3456-4309-9a77-6149620d66b4.jpg",
+            "SR": "https://imgsli.com/i/f734bc29-d588-4347-bc4a-e48c0dbf0cb4.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ccd0ef27-e31c-429b-b052-d43de4a77439.jpg",
+            "SR": "https://imgsli.com/i/248e6181-64e0-44b2-81d1-dd187835251c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1f3c66f8-89bf-4449-99ce-6701c12faaaf.jpg",
+            "SR": "https://imgsli.com/i/ebbe2c8e-9f21-4479-8795-bdf520ebd51d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/47c627cc-3630-4e51-a810-8dc8e04522c1.jpg",
+            "SR": "https://imgsli.com/i/d32a92c4-3239-4646-874d-a04219b4cbd6.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6f3dc814-2c83-4781-9013-96968fbbf0ab.jpg",
+            "SR": "https://imgsli.com/i/7453235d-5c6f-4ca6-b7c4-4acce9305d87.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b3798fa5-67e1-4e9e-b0b0-b10abd0f6c74.jpg",
+            "SR": "https://imgsli.com/i/9482de93-f6e7-42e3-bfd6-29d42b01c6bd.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/cfb2da11-be5c-4bbe-a630-06edd2269dde.jpg",
+            "SR": "https://imgsli.com/i/333eb034-f9ec-45ef-a7ce-56e9fc74fa50.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3cc5e2b6-c095-4371-b5de-095f051a117c.jpg",
+            "SR": "https://imgsli.com/i/7e6214dd-25cc-46c5-9889-a24931f5488e.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/0837d146-49a7-4492-a353-9c19bbd4d08e.jpg",
+            "SR": "https://imgsli.com/i/072cdb58-488a-43cc-86f3-509c943e9616.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/49a0dcea-aac3-4133-bd2a-324601a1b03c.jpg",
+            "SR": "https://imgsli.com/i/8e798366-541e-4512-b325-51746222aef3.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b7d5f0e3-7b21-4b3a-849f-414157cb9636.jpg",
+            "SR": "https://imgsli.com/i/73193181-f54c-4799-a6f6-952b7edd8575.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/d07ad37c-5527-457a-b7fb-439d854873e6.jpg",
+            "SR": "https://imgsli.com/i/81e952af-b5f3-42fe-9c26-f5baef7c4048.jpg"
+        }
+    ]
+}

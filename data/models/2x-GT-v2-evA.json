@@ -1,0 +1,76 @@
+{
+    "name": "GT-v2-evA",
+    "author": "eva-01",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon"
+    ],
+    "description": "This is the v2 of my 2xGT model, the main purpose of it is to improve upon the v1 model and make more it generalized.\nfor upscaling videos that have grain I would recommend denoising and de-haloing it before passing it through  the model.",
+    "date": "2023-03-10",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2417798,
+            "sha256": "0d431d6e33a23ceb5099ec0fa997bfd4edb1bdd9b5587916c08accae6fa303fe",
+            "urls": [
+                "https://drive.google.com/drive/folders/1EXxiZtQfWWLeemiEhH0WyrBpGoxVbGNZ"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2407679,
+            "sha256": "3753f4e9a92e367e35dd002391c237e01bf991e3852aaf7158dbd0318e252e42",
+            "urls": [
+                "https://drive.google.com/drive/folders/1ETbjGNUO2zwtpelNs2nbWhVrjsC39hQX"
+            ]
+        }
+    ],
+    "trainingIterations": 160000,
+    "trainingBatchSize": 20,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "German blu ray of detective Conan and other shows and some cels",
+    "datasetSize": 2910,
+    "pretrainedModelG": "2x-anifilm-compact",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1083748850222772224/1.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1083748850822545448/2.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1083748851472674876/3.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1083748852059865150/4.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1083748852642889818/5.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1083748853154590750/6.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1083748853729198170/7.png"
+        }
+    ]
+}

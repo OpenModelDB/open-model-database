@@ -1,0 +1,44 @@
+{
+    "name": "AnimeJaNai Strong v1 Compact",
+    "author": "the-database",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Realtime 2x model intended for high or medium quality 1080p anime with an emphasis on correcting the inherit blurriness of anime while preserving details and colors. Not suitable for artifact-heavy or highly compressed content as it will just sharpen artifacts. Also works with SD anime by running the model twice. Can be set up to run with mpv on Windows using https://github.com/the-database/mpv-upscale-2x_animejanai\n\nMinimum of RTX 3080 is recommended for running UltraCompact model on 1080p in realtime; RTX 4090 is required to run Compact on 1080p in realtime. SuperUltraCompact should run in realtime on 1080p on some lower cards. The compact model is recommended on SD content. \n\nSamples: https://imgsli.com/MTUxMDYx \\\nComparisons to Anime4K + other compact models and upscalers: https://imgsli.com/MTUxMjY4",
+    "date": "2023-01-29",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2408780,
+            "sha256": "35456a2bedbe9607279b1d48a6fa388e8ba2e3b7b3628b0ee6b52ddb8b0a4e77",
+            "urls": [
+                "https://github.com/the-database/mpv-upscale-2x_animejanai/releases/download/1.0.0/mpv-upscale-2x_animejanai_v1.zip"
+            ]
+        }
+    ],
+    "trainingIterations": 120000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "frames from 1080p anime",
+    "datasetSize": 2416,
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1a0d1ffe-2f90-416d-8038-f0625b321c52.jpg",
+            "SR": "https://imgsli.com/i/aca5e614-b821-4d11-ae6d-c6c689995f36.jpg"
+        }
+    ]
+}

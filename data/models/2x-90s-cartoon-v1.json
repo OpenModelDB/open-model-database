@@ -1,0 +1,76 @@
+{
+    "name": "90s Cartoon v1",
+    "author": "eva-01",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon"
+    ],
+    "description": "Upscale 90s and early 2000 American cartoons",
+    "date": "2023-03-10",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2417798,
+            "sha256": "be1a04a1d921f7588870f874f9d01759b1ea59ede7aa8f266eb52d9bc1d0313e",
+            "urls": [
+                "https://drive.google.com/drive/folders/1EXxiZtQfWWLeemiEhH0WyrBpGoxVbGNZ"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2407679,
+            "sha256": "911a7cc9a95919f01fdb45ca3ea4d41a96093f3ebc1a0732cc015ac817ef3b63",
+            "urls": [
+                "https://drive.google.com/drive/folders/1ETbjGNUO2zwtpelNs2nbWhVrjsC39hQX"
+            ]
+        }
+    ],
+    "trainingIterations": 75000,
+    "trainingBatchSize": 20,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "HD rescans of some 90s cartoons and some cels, i also used 4xfilmfream V1 as teacher for some of the images in the dataset",
+    "datasetSize": 1250,
+    "pretrainedModelG": "2x-GT-v2-evA",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/QgqxmUE.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/W1B9yQ6.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/3s6DC1G.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/3tSak7q.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/kZmQvGg.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/o9AixpW.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.imgur.com/0GyusQj.png"
+        }
+    ]
+}
