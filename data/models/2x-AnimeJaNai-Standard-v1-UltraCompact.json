@@ -1,0 +1,44 @@
+{
+    "name": "AnimeJaNai Standard v1 UltraCompact",
+    "author": "the-database",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Realtime 2x model intended for high or medium quality 1080p anime with an emphasis on correcting the inherit blurriness of anime while preserving details and colors. Not suitable for artifact-heavy or highly compressed content as it will just sharpen artifacts. Also works with SD anime by running the model twice. Can be set up to run with mpv on Windows using https://github.com/the-database/mpv-upscale-2x_animejanai\n\nMinimum of RTX 3080 is recommended for running UltraCompact model on 1080p in realtime; RTX 4090 is required to run Compact on 1080p in realtime. SuperUltraCompact should run in realtime on 1080p on some lower cards. The compact model is recommended on SD content. \n\nSamples: https://imgsli.com/MTUxMDYx \\\nComparisons to Anime4K + other compact models and upscalers: https://imgsli.com/MTUxMjY4",
+    "date": "2023-01-29",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "8nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1223042,
+            "sha256": "980e6f0320a1b4427935656bba75ad23c7acebd406ae17cdd87c2491b73ee51c",
+            "urls": [
+                "https://github.com/the-database/mpv-upscale-2x_animejanai/releases/download/1.0.0/mpv-upscale-2x_animejanai_v1.zip"
+            ]
+        }
+    ],
+    "trainingIterations": 10000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "frames from 1080p anime",
+    "datasetSize": 2416,
+    "pretrainedModelG": "2x-UltraCompact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1a0d1ffe-2f90-416d-8038-f0625b321c52.jpg",
+            "SR": "https://imgsli.com/i/6197a53f-18fa-4c3b-b52c-6f99cfd3be0a.jpg"
+        }
+    ]
+}
