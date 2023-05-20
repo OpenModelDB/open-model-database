@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { extractImage } from '../../lib/image-util';
 import { Image, PairedImage, StandaloneImage } from '../../lib/schema';
 
 export interface EditImageProps {
@@ -29,11 +30,28 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                     LR <a className="text-red-500">*</a>
                 </label>
                 <input
+                    autoFocus
                     required
                     id="image-lr"
                     type="text"
                     value={lr}
-                    onChange={(e) => setLR(e.target.value)}
+                    onChange={(e) => {
+                        const url = e.target.value;
+                        extractImage(url).then(
+                            (value) => {
+                                if (value.type === 'paired') {
+                                    setLR(value.LR);
+                                    setSR(value.SR);
+                                    setThumbnail(value.thumbnail ?? '');
+                                } else {
+                                    setLR(value.url);
+                                }
+                            },
+                            () => {
+                                setLR(url);
+                            }
+                        );
+                    }}
                 />
             </div>
             <div className="flex flex-col">
@@ -45,7 +63,24 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                     id="image-sr"
                     type="text"
                     value={sr}
-                    onChange={(e) => setSR(e.target.value)}
+                    onChange={(e) => {
+                        const url = e.target.value;
+                        extractImage(url).then(
+                            (value) => {
+                                if (value.type === 'paired') {
+                                    setLR(value.LR);
+                                    setSR(value.SR);
+                                    setThumbnail(value.thumbnail ?? '');
+                                } else {
+                                    setSR(value.url);
+                                    setThumbnail(value.thumbnail ?? '');
+                                }
+                            },
+                            () => {
+                                setSR(url);
+                            }
+                        );
+                    }}
                 />
             </div>
             <div className="flex flex-col">
@@ -88,6 +123,14 @@ function StandaloneImageMenu({
     const [url, setURL] = useState(image?.url ?? '');
     const [thumbnail, setThumbnail] = useState(image?.thumbnail ?? '');
 
+    async function parseSingle(url: string): Promise<StandaloneImage> {
+        const value = await extractImage(url);
+        if (value.type === 'standalone') {
+            return value;
+        }
+        throw new Error('Not a standalone image');
+    }
+
     return (
         <div className="flex flex-col">
             <div className="flex flex-col">
@@ -104,11 +147,24 @@ function StandaloneImageMenu({
                     URL <a className="text-red-500">*</a>
                 </label>
                 <input
+                    autoFocus
                     required
                     id="image-url"
                     type="text"
                     value={url}
-                    onChange={(e) => setURL(e.target.value)}
+                    onChange={(e) => {
+                        const url = e.target.value.trim();
+
+                        parseSingle(url).then(
+                            (value) => {
+                                setURL(value.url);
+                                setThumbnail(value.thumbnail ?? '');
+                            },
+                            () => {
+                                setURL(url);
+                            }
+                        );
+                    }}
                 />
             </div>
             <div className="flex flex-col">
