@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/display-name */
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
-import { Image, Model, ModelId } from '../../lib/schema';
+import { Image, Model, ModelId, PairedImage } from '../../lib/schema';
 import { asArray, joinClasses } from '../../lib/util';
 import { EditableTags } from './editable-tags';
 import { Link } from './link';
@@ -21,22 +21,39 @@ interface ModelCardProps extends BaseModelCardProps {
     lazy?: boolean;
 }
 
-const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
-    const [lrDimensions, setLrDimensions] = useState({
-        height: 0,
-        width: 0,
-    });
-    const [srDimensions, setSrDimensions] = useState({
-        height: 0,
-        width: 0,
-    });
+interface Size {
+    readonly height: number;
+    readonly width: number;
+}
+const EMPTY_SIZE: Size = {
+    height: 0,
+    width: 0,
+};
+function getNaturalSize(image: HTMLImageElement): Size {
+    return {
+        height: image.naturalHeight,
+        width: image.naturalWidth,
+    };
+}
+
+const SideBySideImage = ({ model, image }: { model: Model; image: PairedImage }) => {
+    const [lrDimensions, setLrDimensions] = useState(EMPTY_SIZE);
+    const [srDimensions, setSrDimensions] = useState(EMPTY_SIZE);
 
     const maxHeight = Math.max(lrDimensions.height, srDimensions.height);
     const maxWidth = Math.max(lrDimensions.width, srDimensions.width);
 
-    if (image.type !== 'paired') {
-        return null;
-    }
+    const lrRef = useRef<HTMLImageElement>(null);
+    const srRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        if (lrRef.current) {
+            setLrDimensions(getNaturalSize(lrRef.current));
+        }
+        if (srRef.current) {
+            setSrDimensions(getNaturalSize(srRef.current));
+        }
+    }, []);
 
     return (
         <div className="flex h-full w-full">
@@ -45,6 +62,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
                     alt={model.name}
                     className="rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center"
                     loading="lazy"
+                    ref={lrRef}
                     src={image.LR}
                     style={{
                         height: `${maxHeight}px`,
@@ -52,11 +70,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
                         transform: 'translate(-50%, -50%)',
                     }}
                     onLoad={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        setLrDimensions({
-                            height: target.naturalHeight,
-                            width: target.naturalWidth,
-                        });
+                        setLrDimensions(getNaturalSize(e.target as HTMLImageElement));
                     }}
                 />
             </div>
@@ -65,6 +79,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
                     alt={model.name}
                     className="rendering-pixelated absolute top-1/3 left-1/2 z-0 m-auto object-cover object-center"
                     loading="lazy"
+                    ref={srRef}
                     src={image.SR}
                     style={{
                         height: `${maxHeight}px`,
@@ -72,11 +87,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: Image }) => {
                         transform: 'translate(-50%, -50%)',
                     }}
                     onLoad={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        setSrDimensions({
-                            height: target.naturalHeight,
-                            width: target.naturalWidth,
-                        });
+                        setSrDimensions(getNaturalSize(e.target as HTMLImageElement));
                     }}
                 />
             </div>
