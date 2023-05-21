@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiFillEdit } from 'react-icons/ai';
 import { BsPersonFillAdd } from 'react-icons/bs';
 import { MdRemoveCircle } from 'react-icons/md';
 import { useUsers } from '../../lib/hooks/use-users';
@@ -79,6 +80,14 @@ export function EditableUsers({ users, onChange, readonly }: EditableUsersProps)
             <button onClick={() => onChange([...users, randomUser])}>
                 <BsPersonFillAdd />
             </button>
+
+            <Link
+                className="text-sm opacity-80 hover:opacity-100"
+                href="/users"
+            >
+                <AiFillEdit />
+                Edit Users
+            </Link>
         </div>
     );
 }
