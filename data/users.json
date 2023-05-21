@@ -86,7 +86,7 @@
     "hubert": {
         "name": "hubert"
     },
-    "intheflesh-3116": {
+    "intheflesh": {
         "name": "intheflesh#3116"
     },
     "itewreed": {
@@ -118,9 +118,6 @@
     },
     "kingdomakrillic": {
         "name": "Kingdomakrillic"
-    },
-    "laeris": {
-        "name": "Laeris"
     },
     "laserschwert": {
         "name": "Laserschwert"
@@ -210,7 +207,7 @@
         "name": "Tal"
     },
     "tg": {
-        "name": "tg"
+        "name": "TorrentGuy"
     },
     "the-database": {
         "name": "the database"
@@ -223,9 +220,6 @@
     },
     "tldr-coder": {
         "name": "tldr_coder"
-    },
-    "torrentguy": {
-        "name": "Torrentguy"
     },
     "twittman": {
         "name": "Twittman"
