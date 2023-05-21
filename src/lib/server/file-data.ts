@@ -254,7 +254,23 @@ function ofJsonFile<Id extends string, Value>(
 }
 
 const userApi = ofJsonFile(usersFile, {
-    // TODO: remove author from models
+    async onDelete(ids) {
+        // remove from authors
+        await mutateModels((model) => {
+            if (Array.isArray(model.author)) {
+                const newAuthors = model.author.filter((t) => !ids.has(t));
+                if (newAuthors.length !== model.author.length) {
+                    model.author = newAuthors;
+                    return true;
+                }
+            } else {
+                if (ids.has(model.author)) {
+                    model.author = [];
+                    return true;
+                }
+            }
+        });
+    },
     async onChangeId(from, to) {
         await mutateModels((model) => {
             if (Array.isArray(model.author)) {
