@@ -9,7 +9,7 @@ import {
     BsPlusLg,
 } from 'react-icons/bs';
 import { FiMoreHorizontal } from 'react-icons/fi';
-import { useWindowSize } from '../../hooks/useWindowSize';
+import { useWindowSize } from '../../lib/hooks/use-window-size';
 import { Image } from '../../lib/schema';
 import { joinClasses } from '../../lib/util';
 import { EditImageButton } from './image-carousel-edit-popover';
