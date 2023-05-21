@@ -105,3 +105,9 @@ a {
 .rendering-pixelated {
     image-rendering: pixelated;
 }
+
+// a small hack for ReactCompareSlider to make the handle bigger
+.react-compare-slider > [data-rcs='handle-container'] > * {
+    padding: 0 1rem;
+    cursor: ew-resize;
+}
