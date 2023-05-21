@@ -3,6 +3,7 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
+import { useDevicePixelRatio } from '../../lib/hooks/use-device-pixel-ratio';
 import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
@@ -55,6 +56,15 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedImage })
         }
     }, []);
 
+    const dpr = useDevicePixelRatio();
+    // The goal of this scale is to ensure that the image is rendered as an integer scale (e.g. 100%, 200%, 300%).
+    // This is necessary to prevent scaling artifacts. Such artifacts are especially noticeable for 1x models.
+    // Here is how the scale is calculated:
+    // 1. `1/dpr` scales the image such that 1px in the image is 1px on the screen.
+    // 2. `Math.round(dpr - 0.01)` rounds the dpr to the nearest integer. Importantly, it rounds .5 down.
+    // 3. `Math.max(1, ...)` ensures that the scale is at least 1. A scale of 0 would cause the image to disappear.
+    const scale = (1 / dpr) * Math.max(1, Math.round(dpr - 0.01));
+
     return (
         <div className="flex h-full w-full">
             <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
@@ -67,7 +77,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedImage })
                     style={{
                         height: `${maxHeight}px`,
                         width: `${maxWidth}px`,
-                        transform: 'translate(-50%, -50%)',
+                        transform: `translate(-50%, -50%) scale(${scale})`,
                     }}
                     onLoad={(e) => {
                         setLrDimensions(getNaturalSize(e.target as HTMLImageElement));
@@ -84,7 +94,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedImage })
                     style={{
                         height: `${maxHeight}px`,
                         width: `${maxWidth}px`,
-                        transform: 'translate(-50%, -50%)',
+                        transform: `translate(-50%, -50%) scale(${scale})`,
                     }}
                     onLoad={(e) => {
                         setSrDimensions(getNaturalSize(e.target as HTMLImageElement));
