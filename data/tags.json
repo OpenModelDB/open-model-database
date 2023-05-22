@@ -97,10 +97,6 @@
         "name": "Video Frame",
         "description": ""
     },
-    "arch:2c2-esrgan": {
-        "name": "2C2-ESRGAN",
-        "description": ""
-    },
     "arch:cain": {
         "name": "CAIN",
         "description": ""
@@ -123,6 +119,10 @@
     },
     "arch:esrgan+": {
         "name": "ESRGAN+",
+        "description": ""
+    },
+    "arch:esrgan-2c2": {
+        "name": "ESRGAN 2C2",
         "description": ""
     },
     "arch:omnisr": {
