@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
+import { AiFillEdit } from 'react-icons/ai';
 import { EditableLabel } from '../elements/components/editable-label';
+import { Link } from '../elements/components/link';
 import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
 import { TagView } from '../elements/tag-view';
@@ -65,6 +67,9 @@ export default function Page() {
 
                 <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
                     {categoryOrder.map(([categoryId, category]) => {
+                        const isArch = categoryId === 'architecture' || undefined;
+                        const isFree = !isArch || undefined;
+
                         return (
                             <div key={categoryId}>
                                 <h2>
@@ -119,6 +124,15 @@ export default function Page() {
                                             </button>
                                         </>
                                     )}
+                                    {isArch && (
+                                        <Link
+                                            className="ml-2 text-sm opacity-80 hover:opacity-100"
+                                            href="/architectures"
+                                        >
+                                            <AiFillEdit />
+                                            Edit Architectures
+                                        </Link>
+                                    )}
                                 </h2>
 
                                 <div>
@@ -131,7 +145,7 @@ export default function Page() {
                                                 readonly={!editMode}
                                                 tag={tag}
                                                 usage={tagUsage.get(tagId) ?? 0}
-                                                onDelete={() => deleteTag(tagId)}
+                                                onDelete={isFree && (() => deleteTag(tagId))}
                                                 onDescriptionChange={(description) => updateTag(tagId, { description })}
                                                 onMove={(difference) => {
                                                     const index = category.tags.indexOf(tagId);
@@ -145,7 +159,7 @@ export default function Page() {
                                                     newTags.splice(newIndex, 0, tagId);
                                                     updateCategory(categoryId, { tags: newTags });
                                                 }}
-                                                onRename={(name) => updateTag(tagId, { name })}
+                                                onRename={isFree && ((name) => updateTag(tagId, { name }))}
                                             />
                                         );
                                     })}

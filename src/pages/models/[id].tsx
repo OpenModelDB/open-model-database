@@ -11,6 +11,7 @@ import { EditableMarkdownContainer } from '../../elements/components/editable-ma
 import { EditableTags, SmallTag } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
+import { Link } from '../../elements/components/link';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
 import { Switch } from '../../elements/components/switch';
 import { HeadCommon } from '../../elements/head-common';
@@ -149,21 +150,33 @@ function ArchitectureProp({ model, updateModelProperty, editMode }: PropertyProp
     const archName = archData.get(model.architecture)?.name ?? 'unknown';
 
     return editMode ? (
-        <select
-            value={model.architecture}
-            onChange={(e) => {
-                updateModelProperty('architecture', e.target.value as ArchId);
-            }}
-        >
-            {[...archData].map(([archId, arch]) => (
-                <option
-                    key={archId}
-                    value={archId}
+        <>
+            <select
+                value={model.architecture}
+                onChange={(e) => {
+                    updateModelProperty('architecture', e.target.value as ArchId);
+                }}
+            >
+                {[...archData].map(([archId, arch]) => (
+                    <option
+                        key={archId}
+                        value={archId}
+                    >
+                        {arch.name}
+                    </option>
+                ))}
+            </select>
+
+            <div className="my-1">
+                <Link
+                    className="text-sm opacity-80 hover:opacity-100"
+                    href="/architectures"
                 >
-                    {arch.name}
-                </option>
-            ))}
-        </select>
+                    <AiFillEdit />
+                    Edit Architectures
+                </Link>
+            </div>
+        </>
     ) : (
         <SmallTag
             name={archName}

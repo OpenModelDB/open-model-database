@@ -206,3 +206,8 @@ export function getPreviewImage(image: Image) {
 }
 
 export const DATE_REGEX = /^\d{4}-(?:0[1-9]|1[012])-(?:0[1-9]|[12][0-9]|3[01])$/;
+
+export function capitalize(str: string): string {
+    if (str.length === 0) return '';
+    return str[0].toUpperCase() + str.slice(1);
+}
