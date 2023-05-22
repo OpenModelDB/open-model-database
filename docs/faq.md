@@ -24,7 +24,7 @@ There are many programs that can perform AI upscaling, though not all are able t
 
 - chaiNNer (open-source | free)
   - [Wiki]() | [GitHub](https://github.com/chaiNNer-org/chaiNNer) | [Website](https://chainner.app/)
-  - chaiNNer is a node-based image processing GUI that can also be used for image upscaling. It sthe most support for models listed on OpenModelDB and can be run with PyTorch (CUDA), ONNX (CUDA), and NCNN (AMD/Intel). Being node based, it allows you to process your images with a lot more control, at the cost of being a bit more complex. Besides upscaling, chaiNNer also has a variety of other use cases and is a very versatile program.
+  - chaiNNer is a node-based image processing GUI that can also be used for image upscaling. It has the most support for models listed on OpenModelDB and can be run with PyTorch (CUDA), ONNX (CUDA), and NCNN (AMD/Intel). Being node based, it allows you to process your images with a lot more control, at the cost of being a bit more complex. Besides upscaling, chaiNNer also has a variety of other use cases and is a very versatile program.
 
 - enhancr (open-source | paid)
   - [Wiki]() | [GitHub](https://github.com/mafiosnik777/enhancr)
@@ -59,3 +59,5 @@ There are many programs that can perform AI upscaling, though not all are able t
 - IEU (open-source | free)
   - [Wiki]() | [GitHub](https://github.com/ptrsuder/IEU.Winforms)
   - IEU was the first GUI meant to make running ESRGAN models easier. It paved the way for a lot of features such as transparency splitting and VRAM-safe tiling. However, it is no longer actively maintained.
+
+Know of more upscaling software? Let us know by posting an issue on our [GitHub Issue Tracker](https://github.com/OpenModelDB/open-model-database/issues)
