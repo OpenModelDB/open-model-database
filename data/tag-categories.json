@@ -49,6 +49,7 @@
             "arch:swinir",
             "arch:2c2-esrgan",
             "arch:esrgan+",
+            "arch:omnisr",
             "arch:cain",
             "arch:cain-yuv",
             "arch:edsr",

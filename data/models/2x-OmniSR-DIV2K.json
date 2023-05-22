@@ -1,0 +1,34 @@
+{
+    "name": "OmniSR DIV2K",
+    "author": "hang-wang",
+    "license": "Apache-2.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "[Omni Aggregation Networks for Lightweight Image Super-Resolution (OmniSR)](https://github.com/Francis0625/Omni-SR)\n\nWhile lightweight ViT framework has made tremendous progress in image super-resolution, its uni-dimensional\nself-attention modeling, as well as homogeneous aggregation scheme, limit its effective receptive field (ERF) to\ninclude more comprehensive interactions from both spatial and channel dimensions. To tackle these drawbacks,\nthis work proposes two enhanced components under a new Omni-SR architecture. First, an Omni Self-Attention (OSA) block is proposed based on dense interaction principle, which can simultaneously model pixel-interaction from both spatial and channel dimensions, mining the potential correlations across omni-axis (i.e., spatial and channel). Coupling with mainstream window partitioning strategies, OSA can achieve superior performance with compelling computational budgets. Second, a multi-scale interaction scheme is proposed to mitigate sub-optimal ERF (i.e., premature saturation) in shallow models, which facilitates local propagation and meso-/global-scale interactions, rendering an omni-scale aggregation building block. Extensive experiments demonstrate that Omni-SR achieves recordhigh performance on lightweight super-resolution benchmarks (e.g., 26.95dB@Urban100 ×4 with only 792K parameters). Our code is available at https://github.com/Francis0625/Omni-SR",
+    "date": "2023-04-19",
+    "architecture": "omnisr",
+    "size": [
+        "64nf",
+        "5nr"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3413009,
+            "sha256": "70fa7a51d37fabeae3620b1ba436842651b47cc786da444f261e0b02f7bb689c",
+            "urls": [
+                "https://drive.google.com/file/d/18lSvJq9CGCwDomkas2gh8K6UOq8qRLIw/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingEpochs": 896,
+    "trainingBatchSize": 64,
+    "dataset": "DIV2K",
+    "images": []
+}

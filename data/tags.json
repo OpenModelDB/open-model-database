@@ -125,6 +125,10 @@
         "name": "ESRGAN+",
         "description": ""
     },
+    "arch:omnisr": {
+        "name": "OmniSR",
+        "description": ""
+    },
     "arch:rife": {
         "name": "RIFE",
         "description": ""
