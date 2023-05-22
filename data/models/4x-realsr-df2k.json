@@ -27,6 +27,7 @@
             ]
         }
     ],
+    "dataset": "DF2K",
     "images": [
         {
             "type": "standalone",
