@@ -335,12 +335,15 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                 image={previewImage}
                 title={model.name}
             />
-            <Head>
-                <meta
-                    content="summary_large_image"
-                    name="twitter:card"
-                />
-            </Head>
+            {/* Only use a large card when we have an image to show */}
+            {previewImage && (
+                <Head>
+                    <meta
+                        content="summary_large_image"
+                        name="twitter:card"
+                    />
+                </Head>
+            )}
             <PageContainer>
                 {/* Two columns */}
                 <div className="grid h-full w-full gap-4 pb-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
