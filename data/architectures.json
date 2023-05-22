@@ -52,6 +52,13 @@
             "pytorch"
         ]
     },
+    "omnisr": {
+        "name": "OmniSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "rife": {
         "name": "RIFE",
         "input": "image",
