@@ -1,11 +1,4 @@
 {
-    "2c2-esrgan": {
-        "name": "2C2-ESRGAN",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch"
-        ]
-    },
     "cain": {
         "name": "CAIN",
         "input": "video",
@@ -49,7 +42,18 @@
         "name": "ESRGAN+",
         "input": "image",
         "compatiblePlatforms": [
-            "pytorch"
+            "pytorch",
+            "onnx",
+            "ncnn"
+        ]
+    },
+    "esrgan-2c2": {
+        "name": "ESRGAN 2C2",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx",
+            "ncnn"
         ]
     },
     "omnisr": {
@@ -61,7 +65,7 @@
     },
     "rife": {
         "name": "RIFE",
-        "input": "image",
+        "input": "video",
         "compatiblePlatforms": [
             "pytorch"
         ]
@@ -77,7 +81,8 @@
         "name": "SPSR",
         "input": "image",
         "compatiblePlatforms": [
-            "pytorch"
+            "pytorch",
+            "onnx"
         ]
     },
     "swinir": {
