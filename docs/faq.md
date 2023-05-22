@@ -2,7 +2,11 @@
 
 ## What is a model?
 
-"Model" is a generic term referring to a Machine Learning Model. On this site, it refers to the file you would download and use inside a supported program. Elsewhere, it can refer to the model's architecture, the weights, or all of the above.
+"Model" is a generic term referring to a Machine Learning Model. On this site, it refers to the file you would download and use in a supported program (refer to the "Maintained Programs" section below for examples). Elsewhere, it can refer to the model's architecture, the weights, or all of the above.
+
+You may have also heard models been called "checkpoints" before, as that is both a term used to describe checkpoints of a model's training process as well as the file type used by software that uses pytorch-lightning internally. Another term you may have come across is "pretrained model" which simply refers to a model that has already been trained, rather than giving you just the architecture and having you train it yourself.
+
+On OpenModelDB, we distribute `.pth` (PyTorch), `.onnx` (ONNX), and `.bin`/`.param` (NCNN) pretrained model files.
 
 ## What is upscaling?
 
