@@ -32,7 +32,7 @@ There are many programs that can perform AI upscaling, though not all are able t
 
 - **VSGAN-TensorRT-docker** (open-source | free)
   - [Wiki]() | [GitHub](https://github.com/styler00dollar/VSGAN-tensorrt-docker)
-  - A more complicated but free alternative for fast video upscaling with TensorRT. Supports ann insane amount of models, but requires manual parameter selection.
+  - A more complicated but free alternative for fast video upscaling with TensorRT. Supports an insane amount of models, but requires manual parameter selection.
 
 - **Upscayl** (open-source | free)
   - [Wiki]() | [GitHub](https://github.com/upscayl/upscayl) | [Website](https://www.upscayl.org/)
