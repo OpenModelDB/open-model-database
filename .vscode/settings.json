@@ -5,7 +5,8 @@
 		"ESRGAN",
 		"Luma",
 		"Pretrained",
-		"pth"
+		"pth",
+		"upscaling"
 	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.stylelint": true
