@@ -9,7 +9,7 @@
     ],
     "description": "2x general purpose anime upscaler, with a focus on cleaning up scuffed sources while enhancing texture detail. While the model was trained on DVDs, it still works well on modern anime. The model is trained to deal with noise, compression artifacts, blur, bleeding, haloing and scuffed line art. Apparently, it also learned to deal with some dotcrawl.",
     "date": "2023-04-16",
-    "architecture": "esrgan",
+    "architecture": "compact",
     "size": [
         "64nf",
         "16nc"
