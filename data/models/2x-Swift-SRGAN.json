@@ -3,7 +3,8 @@
     "author": "koushik0901",
     "license": "CC0-1.0",
     "tags": [
-        "general-upscaler"
+        "general-upscaler",
+        "pretrained"
     ],
     "description": "[Swift-SRGAN - Rethinking Super-Resolution for real-time inference](https://github.com/Koushik0901/Swift-SRGAN)\n\nIn recent years, there have been several advancements in the task of image super-resolution using the state of the art Deep Learning-based architectures. Many super-resolution-based techniques previously published, require high-end and top-of-the-line Graphics Processing Unit (GPUs) to perform image super-resolution. With the increasing advancements in Deep Learning approaches, neural networks have become more and more compute hungry. We took a step back and, focused on creating a real-time efficient solution. We present an architecture that is faster and smaller in terms of its memory footprint. The proposed architecture uses Depth-wise Separable Convolutions to extract features and, it performs on-par with other super-resolution GANs (Generative Adversarial Networks) while maintaining real-time inference and a low memory footprint. A real-time super-resolution enables streaming high resolution media content even under poor bandwidth conditions. While maintaining an efficient trade-off between the accuracy and latency, we are able to produce a comparable performance model which is one-eighth (1/8) the size of super-resolution GANs and computes 74 times faster than super-resolution GANs.\n\nNOTE: The author used the wrong file extensions for the models *on GitHub*. You will download a `.pth.tar` file. This is not actually a TAR file. Change the file extension to just `.pth` and the model will work.",
     "date": "2021-12-31",
