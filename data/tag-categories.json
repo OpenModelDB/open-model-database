@@ -55,7 +55,8 @@
             "arch:edsr",
             "arch:rife",
             "arch:sofvsr",
-            "arch:spsr"
+            "arch:spsr",
+            "arch:swift-srgan"
         ]
     },
     "platform": {

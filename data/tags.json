@@ -141,6 +141,10 @@
         "name": "SPSR",
         "description": ""
     },
+    "arch:swift-srgan": {
+        "name": "Swift-SRGAN",
+        "description": ""
+    },
     "arch:swinir": {
         "name": "SwinIR",
         "description": ""
