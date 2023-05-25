@@ -85,6 +85,14 @@
             "onnx"
         ]
     },
+    "swift-srgan": {
+        "name": "Swift-SRGAN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "swinir": {
         "name": "SwinIR",
         "input": "image",
