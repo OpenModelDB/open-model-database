@@ -41,9 +41,11 @@ export interface UseEditModeToggle {
 export function useEditModeToggle(): UseEditModeToggle {
     const { webApi, enabled, toggleEnabled } = useContext(WebApiContext);
 
+    const editModeAvailable = webApi !== undefined;
+
     return {
-        editModeAvailable: webApi !== undefined,
-        editMode: enabled,
+        editModeAvailable,
+        editMode: editModeAvailable && enabled,
         toggleEditMode: toggleEnabled,
     };
 }
