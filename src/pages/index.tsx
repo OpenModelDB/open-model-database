@@ -63,7 +63,10 @@ export default function Page({ modelData: staticModelData }: Props) {
         },
         [searchIndex, tagCategoryData, sortSearchResults]
     );
-    const { searchQuery, tagSelection, setSearchQuery, setTagSelection } = useSearch(tagData, updatedSelectedModels);
+    const { searchQuery, tagSelection, sort, setSearchQuery, setTagSelection, setSort } = useSearch(
+        tagData,
+        updatedSelectedModels
+    );
 
     const { webApi, editMode } = useWebApi();
     const clickFunction = async () => {
@@ -151,6 +154,8 @@ export default function Page({ modelData: staticModelData }: Props) {
                     <ModelResults
                         modelData={modelData}
                         models={selectedModels}
+                        setSort={(sort) => setSort(sort, 0)}
+                        sort={sort}
                     />
                 ) : (
                     <div className="flex flex-col items-center justify-center p-6">

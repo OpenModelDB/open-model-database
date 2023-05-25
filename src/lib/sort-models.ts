@@ -5,6 +5,10 @@ export type Sort = `${SortBy}-${SortOrder}`;
 export type SortBy = 'relevance' | 'date' | 'scale' | 'size';
 export type SortOrder = 'asc' | 'desc';
 
+export function validateSort(sort: string): sort is Sort {
+    return /^(relevance|date|scale|size)-(asc|desc)$/.test(sort);
+}
+
 export type ParsedSort = [SortBy, SortOrder];
 export type ParsedSortOf<T extends Sort> = T extends `${infer By extends SortBy}-${infer Order extends SortOrder}`
     ? [By, Order]

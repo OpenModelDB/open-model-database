@@ -1,5 +1,5 @@
 import { Listbox, Transition } from '@headlessui/react';
-import { Fragment, memo, useMemo, useState } from 'react';
+import { Fragment, memo, useMemo } from 'react';
 import { MdSort } from 'react-icons/md';
 import { Model, ModelId } from '../../lib/schema';
 import { Sort, parseSort, sortModels } from '../../lib/sort-models';
@@ -10,12 +10,12 @@ import style from './model-results.module.scss';
 interface ModelResultsProps {
     modelData: ReadonlyMap<ModelId, Model>;
     models: readonly ModelId[];
+    sort: Sort;
+    setSort: (sort: Sort) => void;
 }
 
 // eslint-disable-next-line react/display-name
-export const ModelResults = memo(({ models, modelData }: ModelResultsProps) => {
-    const [sort, setSort] = useState<Sort>('relevance-desc');
-
+export const ModelResults = memo(({ models, modelData, sort, setSort }: ModelResultsProps) => {
     const sortedModels = useMemo(() => {
         return sortModels(models, sort, modelData);
     }, [models, sort, modelData]);
