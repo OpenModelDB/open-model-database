@@ -2,6 +2,7 @@ import deepEqual from 'fast-deep-equal';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Tag, TagId } from '../schema';
+import { Sort, validateSort } from '../sort-models';
 import { SelectionState, TagSelection } from '../tag-condition';
 import { EMPTY_MAP, compareTagId } from '../util';
 
@@ -60,23 +61,27 @@ function isEqualTags(a: TagSelection, b: TagSelection) {
     return true;
 }
 function isEqualState(a: SearchState, b: SearchState) {
-    return a.searchQuery === b.searchQuery && isEqualTags(a.tagSelection, b.tagSelection);
+    return a.searchQuery === b.searchQuery && isEqualTags(a.tagSelection, b.tagSelection) && a.sort === b.sort;
 }
 
 interface SearchState {
     searchQuery: string;
     tagSelection: CanonicalTagSelection;
+    sort: Sort;
 }
 const DEFAULT_STATE: SearchState = {
     searchQuery: '',
     tagSelection: EMPTY_TAGS,
+    sort: 'relevance-desc',
 };
 
 interface UseSearch {
     searchQuery: string;
     tagSelection: TagSelection;
+    sort: Sort;
     setSearchQuery: (searchQuery: string, updateDelay: number) => void;
     setTagSelection: (tagSelection: TagSelection, updateDelay: number) => void;
+    setSort: (sort: Sort, updateDelay: number) => void;
 }
 
 export const useSearch = (
@@ -125,12 +130,14 @@ export const useSearch = (
     interface Query {
         q?: string;
         t?: string;
+        sort?: string;
     }
     const lastQueryUpdateRef = useRef<Query>();
     useEffect(() => {
         const timerId = setTimeout(() => {
             const q = state.searchQuery;
             const t = stringifyTagSelection(state.tagSelection);
+            const sort = state.sort;
 
             const newQuery = { ...router.query };
             if (q) {
@@ -143,10 +150,15 @@ export const useSearch = (
             } else {
                 delete newQuery.t;
             }
+            if (sort !== DEFAULT_STATE.sort) {
+                newQuery.sort = sort;
+            } else {
+                delete newQuery.sort;
+            }
 
             if (deepEqual(newQuery, router.query)) return;
 
-            lastQueryUpdateRef.current = { q: q || undefined, t: t || undefined };
+            lastQueryUpdateRef.current = { q: q || undefined, t: t || undefined, sort };
             router.push({ query: newQuery }, undefined, { shallow: true }).catch((e) => console.error(e));
         }, 1000);
         return () => clearTimeout(timerId);
@@ -154,23 +166,25 @@ export const useSearch = (
 
     // update state based on URL query string
     useEffect(() => {
-        const { q, t } = router.query;
+        const { q, t, sort: sortString } = router.query;
         if (lastQueryUpdateRef.current) {
             const old = lastQueryUpdateRef.current;
             lastQueryUpdateRef.current = undefined;
-            if (q === old.q && t === old.t) {
+            if (q === old.q && t === old.t && sortString === old.sort) {
                 return;
             }
         }
 
         const searchQuery = typeof q === 'string' ? q : '';
         const tagSelection = typeof t === 'string' ? parseTagSelection(t, tagData) : EMPTY_TAGS;
-        update({ searchQuery, tagSelection });
+        const sort = typeof sortString === 'string' && validateSort(sortString) ? sortString : DEFAULT_STATE.sort;
+        update({ searchQuery, tagSelection, sort });
     }, [router.query, tagData, update]);
 
     return {
         searchQuery: state.searchQuery,
         tagSelection: state.tagSelection,
+        sort: state.sort,
         setSearchQuery: useCallback(
             (searchQuery, updateDelay) => {
                 update({ searchQuery }, updateDelay);
@@ -180,6 +194,12 @@ export const useSearch = (
         setTagSelection: useCallback(
             (tagSelection, updateDelay) => {
                 update({ tagSelection: toCanonical(tagSelection) }, updateDelay);
+            },
+            [update]
+        ),
+        setSort: useCallback(
+            (sort, updateDelay) => {
+                update({ sort }, updateDelay);
             },
             [update]
         ),
