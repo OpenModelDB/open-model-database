@@ -112,6 +112,7 @@ const editableMetadata = (
         case 'string':
             return (
                 <EditableLabel
+                    className="break-words"
                     readonly={!editMode}
                     text={value}
                     onChange={onChange}
