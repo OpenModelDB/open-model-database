@@ -1,0 +1,43 @@
+{
+    "name": "2xHFA2kAVCOmniSR",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime"
+    ],
+    "description": "The second released community trained model on the OmniSR network. Trained with multiscale discriminator to fix decreased output brightness occuring with OmniSR. 2x anime upscale that handles AVC (h264) compression since h264 crf 20-28 degradation together with bicubic, bilinear, box and lanczos downsampling has been applied on musl's HFA2k dataset with Kim's dataset destroyer.",
+    "date": "2023-06-18",
+    "architecture": "omnisr",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 6551545,
+            "sha256": "8cf209b73e3b8bd16e6e0267cff0ca01db01e755041b1da94ca61c359e7a6772",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/2xHFA2kAVCOmniSR/2xHFA2kAVCOmniSR.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 175000,
+    "trainingBatchSize": 5,
+    "trainingHRSize": 192,
+    "dataset": "HFA2k_h264",
+    "datasetSize": 2568,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/input/Input_0.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/outputs_HFA2kOmniSR/2xHFA2kAVCOmniSR_0.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/input/Input_1.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/outputs_HFA2kOmniSR/2xHFA2kOmniSR_1.png"
+        }
+    ]
+}
