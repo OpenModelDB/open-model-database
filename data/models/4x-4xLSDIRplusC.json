@@ -3,8 +3,9 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
-        "general-upscaler",
-        "photo"
+        "jpeg",
+        "photo",
+        "restoration"
     ],
     "description": "The RealESRGAN_x4plus finetuned with the big LSDIR dataset (84,991 images / 165 GB), with manually added jpg compression.",
     "date": "2023-07-06",

@@ -2,7 +2,9 @@
     "name": "4xLSDIR",
     "author": "helaman",
     "license": "CC-BY-4.0",
-    "tags": [],
+    "tags": [
+        "photo"
+    ],
     "description": "A normal ESRGAN model without degradations and without any pretrain, simply an RRDBNet model trained on paired dataset (4x downsampled) on the full LSDIR dataset (84,991 images / 165 GB)",
     "date": "2023-07-06",
     "architecture": "esrgan",
