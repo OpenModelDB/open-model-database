@@ -1,0 +1,57 @@
+{
+    "name": "2xLexicaRRDBNet_Sharp",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [],
+    "description": "Its like 2xLexicaRRDBNet model, but trained for some more with l1_gt_usm and percep_gt_usm set to true, resulting in sharper outputs. I provide both so they can be chosen based on preferrence of the user.",
+    "date": "2023-06-01",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67040773,
+            "sha256": "11e7bec714d8d15e686e336fe7095bd952e21ee8308551a00ea4df2caa374ac7",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/2xLexicaRRDBNet/2xLexicaRRDBNet_Sharp.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 220000,
+    "trainingEpochs": 18,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "lexica-aperture-v3-small",
+    "datasetSize": 43856,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_1.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet_Sharp/2xLexicaRRDBNet_Sharp_1.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_6.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet_Sharp/2xLexicaRRDBNet_Sharp_6.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_10.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet_Sharp/2xLexicaRRDBNet_Sharp_10.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_11.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet_Sharp/2xLexicaRRDBNet_Sharp_11.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_15.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet_Sharp/2xLexicaRRDBNet_Sharp_15.png"
+        }
+    ]
+}
