@@ -28,7 +28,7 @@
     "trainingHRSize": 256,
     "dataset": "LSDIR",
     "datasetSize": 84991,
-    "pretrainedModelG": "4x-RealESRGAN_x4plus",
+    "pretrainedModelG": "4x-realesrgan-x4plus",
     "images": [
         {
             "type": "paired",
