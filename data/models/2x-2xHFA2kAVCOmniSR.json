@@ -3,7 +3,8 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
-        "anime"
+        "anime",
+        "video-frame"
     ],
     "description": "The second released community trained model on the OmniSR network. Trained with multiscale discriminator to fix decreased output brightness occuring with OmniSR. 2x anime upscale that handles AVC (h264) compression since h264 crf 20-28 degradation together with bicubic, bilinear, box and lanczos downsampling has been applied on musl's HFA2k dataset with Kim's dataset destroyer.",
     "date": "2023-06-18",

@@ -3,7 +3,8 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
-        "anime"
+        "anime",
+        "video-frame"
     ],
     "description": "4x anime super-resolution with real degradation.",
     "date": "2023-06-14",

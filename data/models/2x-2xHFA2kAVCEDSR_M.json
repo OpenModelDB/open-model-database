@@ -3,7 +3,8 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
-        "anime"
+        "anime",
+        "video-frame"
     ],
     "description": "A 2x EDSR M anime upscale model that handles AVC (h264) degradation. Applied h264 crf 20-28 degradation and bicubic, bilinear, box and lanczos downsampling on musl's HFA2k dataset with Kim's dataset destroyer.",
     "date": "2023-06-18",
