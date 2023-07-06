@@ -1,4 +1,36 @@
 {
+    "EDSR": {
+        "name": "EDSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "GRL": {
+        "name": "GRL",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "HAT": {
+        "name": "HAT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "SRFormer": {
+        "name": "SRFormer",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "cain": {
         "name": "CAIN",
         "input": "video",

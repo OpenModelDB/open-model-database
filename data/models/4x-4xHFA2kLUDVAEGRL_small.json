@@ -1,0 +1,57 @@
+{
+    "name": "4xHFA2kLUDVAEGRL_small",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "video-frame"
+    ],
+    "description": "4x anime super-resolution with real degradation.",
+    "date": "2023-06-14",
+    "architecture": "GRL",
+    "size": [
+        "GRL-small",
+        "img_size: 64"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 31569449,
+            "sha256": "7c26193ced52e4814c447a75ad6c40d4bdb123185151a6fd03037c97661f9d3b",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xHFA2kLUDVAEGRL_small/4xHFA2kLUDVAEGRL_small.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 265,
+    "dataset": "HFA2kLUDVAE",
+    "datasetSize": 10270,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0550.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAEGRL_small/visualization/LUDVAE_TEST/0550_4xHFA2kLUDVAEGRL_small.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0045.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAEGRL_small/visualization/LUDVAE_TEST/0045_4xHFA2kLUDVAEGRL_small.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0140.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAEGRL_small/visualization/LUDVAE_TEST/0140_4xHFA2kLUDVAEGRL_small.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0238.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAEGRL_small/visualization/LUDVAE_TEST/0238_4xHFA2kLUDVAEGRL_small.png"
+        }
+    ]
+}

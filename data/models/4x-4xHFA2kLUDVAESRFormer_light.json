@@ -1,0 +1,57 @@
+{
+    "name": "4xHFA2kLUDVAESRFormer_light",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "video-frame"
+    ],
+    "description": "4x lightweight anime upscaler with realistic degradations (compression, noise, blur).",
+    "date": "2023-06-10",
+    "architecture": "SRFormer",
+    "size": [
+        "SRFormer-light"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 31569449,
+            "sha256": "7c26193ced52e4814c447a75ad6c40d4bdb123185151a6fd03037c97661f9d3b",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xHFA2kLUDVAESRFormer_light/4xHFA2kLUDVAESRFormer_light.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 350000,
+    "trainingEpochs": 97,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 256,
+    "dataset": "HFA2kLUDVAE",
+    "datasetSize": 10270,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0550.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0550_4xHFA2kLUDVAESRFormer_light.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0045.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0045_4xHFA2kLUDVAESRFormer_light.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0140.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0140_4xHFA2kLUDVAESRFormer_light.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0238.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0238_4xHFA2kLUDVAESRFormer_light.png"
+        }
+    ]
+}

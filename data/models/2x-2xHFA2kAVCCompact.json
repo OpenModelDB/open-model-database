@@ -1,0 +1,44 @@
+{
+    "name": "2xHFA2kAVCCompact",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "video-frame"
+    ],
+    "description": "A 2x Compact anime upscale model that handles AVC (h264) degradation. Applied h264 crf 20-28 degradation together with bicubic, bilinear, box and lanczos downsampling on musl's HFA2k dataset with Kim's dataset destroyer.",
+    "date": "2023-06-18",
+    "architecture": "compact",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4838301,
+            "sha256": "ceaf8d6b5db4bf1ddbc9bc757eb08e67b3409472d9373c5342ea3711ed28365e",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/2xHFA2kAVCCompact/2xHFA2kAVCCompact.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 111000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "dataset": "HFA2k_h264",
+    "datasetSize": 2568,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/input/Input_0.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/output_HFA2kAVCCompact/2xHFA2kAVCCompact_0.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/input/Input_1.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/output_HFA2kAVCCompact/2xHFA2kAVCCompact_1.png"
+        }
+    ]
+}

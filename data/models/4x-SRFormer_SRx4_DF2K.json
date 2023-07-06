@@ -1,0 +1,34 @@
+{
+    "name": "SRFormer_SRx4_DF2K",
+    "author": "HVision-NKU",
+    "license": "Apache-2.0",
+    "tags": [],
+    "description": "Official paper pretrain model\n\nSRFormer: Permuted Self-Attention for Single Image Super-Resolution\n\nYupeng Zhou 1, Zhen Li 1, Chun-Le Guo 1, Song Bai 2, Ming-Ming Cheng 1, Qibin Hou 1\n\n1TMCC, School of Computer Science, Nankai University\n\n2ByteDance, Singapore\n\narXiv\n\nThe official PyTorch implementation of SRFormer: Permuted Self-Attention for Single Image Super-Resolution (arxiv). SRFormer achieves state-of-the-art performance in\n\n    classical image SR\n    lightweight image SR\n    real-world image SR\n\nThe results can be found here.\n\n    Abstract: In this paper, we introduce SRFormer, a simple yet effective Transformer-based model for single image super-resolution. We rethink the design of the popular shifted window self-attention, expose and analyze several characteristic issues of it, and present permuted self-attention (PSA). PSA strikes an appropriate balance between the channel and spatial information for self-attention, allowing each Transformer block to build pairwise correlations within large windows with even less computational burden. Our permuted self-attention is simple and can be easily applied to existing super-resolution networks based on Transformers. Without any bells and whistles, we show that our SRFormer achieves a 33.86dB PSNR score on the Urban100 dataset, which is 0.46dB higher than that of SwinIR but uses fewer parameters and computations. We hope our simple and effective approach can serve as a useful tool for future research in super-resolution model design. Our code is publicly available at https://github.com/HVision-NKU/SRFormer.\n\nContents\n\n    Installation & Dataset\n    Training\n    Testing\n    Results\n    Pretrain Models\n    Citations\n    License and Acknowledgement\n\nInstallation & Dataset\n\n    python 3.8\n    pyTorch >= 1.7.0\n\ncd SRFormer\npip install -r requirements.txt\npython setup.py develop\n\nDataset\n\nWe use the same training and testing sets as SwinIR, the following datasets need to be downloaded for training.\nTask \tTraining Set \tTesting Set\nclassical image SR \tDIV2K (800 training images) or DIV2K +Flickr2K (2650 images) \tSet5 + Set14 + BSD100 + Urban100 + Manga109\nlightweight image SR \tDIV2K (800 training images) \tSet5 + Set14 + BSD100 + Urban100 + Manga109\nreal-world image SR \tDIV2K (800 training images) +Flickr2K (2650 images) + OST (10324 images for sky,water,grass,mountain,building,plant,animal) \tRealSRSet+5images\nTraining\n\n    Please download the dataset corresponding to the task and place them in the folder specified by the training option in folder /options/train/SRFormer\n    Follow the instructions below to train our SRFormer.\n\n# train SRFormer for classical SR task\n./scripts/dist_train.sh 4 options/train/SRFormer/train_SRFormer_SRx2_scratch.yml\n./scripts/dist_train.sh 4 options/train/SRFormer/train_SRFormer_SRx3_scratch.yml\n./scripts/dist_train.sh 4 options/train/SRFormer/train_SRFormer_SRx4_scratch.yml\n# train SRFormer for lightweight SR task\n./scripts/dist_train.sh 4 options/train/SRFormer/train_SRFormer_light_SRx2_scratch.yml\n./scripts/dist_train.sh 4 options/train/SRFormer/train_SRFormer_light_SRx3_scratch.yml\n./scripts/dist_train.sh 4 options/train/SRFormer/train_SRFormer_light_SRx4_scratch.yml\n\nTesting\n\n# test SRFormer for classical SR task\npython basicsr/test.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx2.yml\npython basicsr/test.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx3.yml\npython basicsr/test.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx4.yml\n# test SRFormer for lightweight SR task\npython basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx2.yml\npython basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.yml\npython basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml\n\nResults\n\nWe provide the results on classical image SR, lightweight image SR, realworld image SR. More results can be found in the paper. The visual results of SRFormer will upload to google drive soon.\n\nClassical image SR\n\n    Results of Table 4 in the paper\n\n    Results of Figure 4 in the paper\n\nLightweight image SR\n\n    Results of Table 5 in the paper\n\n    Results of Figure 5 in the paper\n\nModel size comparison\n\n    Results of Table 1 and Table 2 in the Supplementary Material\n\nRealworld image SR\n\n    Results of Figure 8 in the paper\n\nPretrain Models\n\nPretrain Models can be download from google drive. To reproduce the results in the article, you can download them and put them in the /PretrainModel folder.\nCitations\n\nYou may want to cite:\n\n@article{zhou2023srformer,\n  title={SRFormer: Permuted Self-Attention for Single Image Super-Resolution},\n  author={Zhou, Yupeng and Li, Zhen and Guo, Chun-Le and Bai, Song and Cheng, Ming-Ming and Hou, Qibin},\n  journal={arXiv preprint arXiv:2303.09735},\n  year={2023}\n}\n\nLicense and Acknowledgement\n\nThis project is released under the Apache 2.0 license. The codes are based on BasicSR, Swin Transformer, and SwinIR. Please also follow their licenses. Thanks for their awesome works.",
+    "date": "2022-11-24",
+    "architecture": "SRFormer",
+    "size": [
+        "base",
+        "img_size: 48",
+        "window_size: 22"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 97200893,
+            "sha256": "aa7883cbbd4493530eeb0e101c9be00d5d8112b392fec1eed61b60176737be6a",
+            "urls": [
+                "https://drive.google.com/file/d/13_fpD4aDE1wbEYX8yGWA3mVLZOCRWkWv/view?usp=drive_link"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://raw.githubusercontent.com/HVision-NKU/SRFormer/main/figs/classicalSR_2.png"
+        }
+    ]
+}

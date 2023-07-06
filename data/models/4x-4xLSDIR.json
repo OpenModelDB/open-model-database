@@ -1,0 +1,53 @@
+{
+    "name": "4xLSDIR",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo"
+    ],
+    "description": "A normal ESRGAN model without degradations and without any pretrain, simply an RRDBNet model trained on paired dataset (4x downsampled) on the full LSDIR dataset (84,991 images / 165 GB)",
+    "date": "2023-07-06",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67020037,
+            "sha256": "2a743089e6395091b0073c15b4392c3c658ee32841ba770c15c27d92426e5901",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xLSDIR/4xLSDIR.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 225000,
+    "trainingBatchSize": 5,
+    "trainingHRSize": 192,
+    "dataset": "LSDIR",
+    "datasetSize": 84991,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_5.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_5_4xLSDIR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_14.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_14_4xLSDIR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_13.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_13_4xLSDIR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_6.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_6_4xLSDIR.png"
+        }
+    ]
+}

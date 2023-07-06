@@ -1,0 +1,47 @@
+{
+    "name": "2xHFA2kAVCEDSR_M",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "video-frame"
+    ],
+    "description": "A 2x EDSR M anime upscale model that handles AVC (h264) degradation. Applied h264 crf 20-28 degradation and bicubic, bilinear, box and lanczos downsampling on musl's HFA2k dataset with Kim's dataset destroyer.",
+    "date": "2023-06-18",
+    "architecture": "EDSR",
+    "size": [
+        "EDSR-M"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 11007163,
+            "sha256": "d3cf3c2ad3f7d15f05c6c44b12b3519582db43210c11c294f5837542d4ee6f34",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/2xHFA2kAVCEDSR_M/2xHFA2kAVCEDSR_M.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 186000,
+    "trainingEpochs": 317,
+    "trainingBatchSize": 5,
+    "trainingHRSize": 384,
+    "dataset": "HFA2k_h264",
+    "datasetSize": 2568,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/input/Input_0.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/output_HFA2kAVCEDSR_M/2xHFAkAVCEDSR_M_0.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/input/Input_1.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xHFA2kAVC_results/output_HFA2kAVCEDSR_M/2xHFAkAVCEDSR_M_1.png"
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "name": "4xLSDIRplusR",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "The RealESRGAN_x4plus finetuned with the big LSDIR dataset (84,991 images / 165 GB), with jpg compression and noise and blur",
+    "date": "2023-07-06",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67020037,
+            "sha256": "c6e3aa62c56952b4c9478c4556f48eba0f3a3017e6c99abc7cf002b44a487ab2",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xLSDIRplus/4xLSDIRplusR.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 256,
+    "dataset": "LSDIR",
+    "datasetSize": 84991,
+    "pretrainedModelG": "4x-realesrgan-x4plus",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_JPG_1.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_JPG_1_4xLSDIRplusR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_JPG_4.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_JPG_4_4xLSDIRplusR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_5.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_5_4xLSDIRplusR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_14.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_14_4xLSDIRplusR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_13.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_13_4xLSDIRplusR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_6.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_6_4xLSDIRplusR.png"
+        }
+    ]
+}
