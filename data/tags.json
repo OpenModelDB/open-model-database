@@ -101,6 +101,10 @@
         "name": "HAT",
         "description": ""
     },
+    "arch:SRFormer": {
+        "name": "SRFormer",
+        "description": ""
+    },
     "arch:cain": {
         "name": "CAIN",
         "description": ""

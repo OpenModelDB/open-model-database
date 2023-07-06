@@ -7,6 +7,14 @@
             "onnx"
         ]
     },
+    "SRFormer": {
+        "name": "SRFormer",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "cain": {
         "name": "CAIN",
         "input": "video",

@@ -57,7 +57,8 @@
             "arch:sofvsr",
             "arch:spsr",
             "arch:swift-srgan",
-            "arch:HAT"
+            "arch:HAT",
+            "arch:SRFormer"
         ]
     },
     "platform": {
