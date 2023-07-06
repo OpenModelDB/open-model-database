@@ -1,4 +1,12 @@
 {
+    "EDSR": {
+        "name": "EDSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "HAT": {
         "name": "HAT",
         "input": "image",

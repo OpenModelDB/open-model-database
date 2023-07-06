@@ -97,6 +97,10 @@
         "name": "Video Frame",
         "description": ""
     },
+    "arch:EDSR": {
+        "name": "EDSR",
+        "description": ""
+    },
     "arch:HAT": {
         "name": "HAT",
         "description": ""
