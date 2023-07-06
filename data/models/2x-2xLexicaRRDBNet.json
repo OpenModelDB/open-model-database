@@ -1,0 +1,57 @@
+{
+    "name": "2xLexicaRRDBNet",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [],
+    "description": "2x upscaler for the AI generated image output. Trained on 43856 images from lexica.art, so its trained specifically on that model but should work in general on ai generated images.",
+    "date": "2023-06-01",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67040773,
+            "sha256": "47c4ecdb06717b13e16da3000485cce72e378e18b7b7ee2e1020562283f7ac31",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/2xLexicaRRDBNet/2xLexicaRRDBNet.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 185000,
+    "trainingEpochs": 17,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "lexica-aperture-v3-small",
+    "datasetSize": 43856,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_1.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_1.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_6.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_6.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_10.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_10.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_11.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_11.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_15.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_15.png"
+        }
+    ]
+}
