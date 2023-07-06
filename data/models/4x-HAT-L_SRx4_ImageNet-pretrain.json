@@ -4,14 +4,24 @@
     "license": null,
     "tags": [],
     "description": "Official Paper pretrain model",
-    "date": "2023-07-06",
-    "architecture": "esrgan",
+    "date": "2023-03-02",
+    "architecture": "HAT",
     "size": [
         "HAT-L"
     ],
     "scale": 4,
     "inputChannels": 3,
     "outputChannels": 3,
-    "resources": [],
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 165774123,
+            "sha256": "5992bd38522f2b8faf11ea4bd8ee08de92465bb66892166576999afc36d60043",
+            "urls": [
+                "https://drive.google.com/file/d/1uefIctjoNE3Tg6GTzelesTTshVogQdUf/view?usp=drive_link"
+            ]
+        }
+    ],
     "images": []
 }
