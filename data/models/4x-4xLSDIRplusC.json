@@ -1,8 +1,11 @@
 {
     "name": "4xLSDIRplusC",
-    "author": [],
+    "author": "helaman",
     "license": "CC-BY-4.0",
-    "tags": [],
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
     "description": "The RealESRGAN_x4plus finetuned with the LSDIR dataset, with manually added jpg compression.",
     "date": "2023-07-06",
     "architecture": "esrgan",
