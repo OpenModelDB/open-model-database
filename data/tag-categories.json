@@ -56,7 +56,8 @@
             "arch:rife",
             "arch:sofvsr",
             "arch:spsr",
-            "arch:swift-srgan"
+            "arch:swift-srgan",
+            "arch:HAT"
         ]
     },
     "platform": {

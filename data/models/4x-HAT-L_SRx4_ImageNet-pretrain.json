@@ -1,0 +1,17 @@
+{
+    "name": "HAT-L_SRx4_ImageNet-pretrain",
+    "author": [],
+    "license": null,
+    "tags": [],
+    "description": "Official Paper pretrain model",
+    "date": "2023-07-06",
+    "architecture": "esrgan",
+    "size": [
+        "HAT-L"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [],
+    "images": []
+}
