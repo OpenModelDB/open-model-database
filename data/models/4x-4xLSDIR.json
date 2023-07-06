@@ -26,5 +26,26 @@
     "trainingHRSize": 192,
     "dataset": "LSDIR",
     "datasetSize": 84991,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_5.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_5_4xLSDIR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_14.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_14_4xLSDIR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_13.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_13_4xLSDIR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_6.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_6_4xLSDIR.png"
+        }
+    ]
 }
