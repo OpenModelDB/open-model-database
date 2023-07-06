@@ -110,7 +110,3 @@ export interface Arch {
     input: InputType;
     compatiblePlatforms: Platform[];
 }
-
-export const ModelIdPattern = /^\d+x-[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/;
-export const UserIdPattern = /^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/;
-export const TagIdPattern = /^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/;

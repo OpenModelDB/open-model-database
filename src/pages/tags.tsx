@@ -9,7 +9,8 @@ import { deriveTags } from '../lib/derive-tags';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { Tag, TagCategory, TagCategoryId, TagId, TagIdPattern } from '../lib/schema';
+import { Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
+import { TagIdPattern } from '../lib/schema-util';
 import { compareTagId } from '../lib/util';
 
 export default function Page() {
