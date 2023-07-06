@@ -24,8 +24,8 @@
             ]
         }
     ],
-    "trainingBatchSize": 0,
-    "trainingHRSize": 0,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 1,
     "dataset": "LSDIR",
     "datasetSize": 84991,
     "images": [

@@ -26,7 +26,7 @@
         }
     ],
     "trainingIterations": 85000,
-    "trainingEpochs": 0,
+    "trainingEpochs": 1,
     "trainingBatchSize": 1,
     "trainingHRSize": 256,
     "dataset": "LSDIR",
