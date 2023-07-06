@@ -249,11 +249,17 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
             },
         },
     },
-    images: {
-        name: 'Images',
-        type: 'array',
-        of: { type: 'unknown' },
-        allowEmpty: true,
+    dataset: {
+        name: 'Dataset',
+        optional: true,
+        type: 'string',
+    },
+    datasetSize: {
+        name: 'Dataset size',
+        optional: true,
+        type: 'number',
+        isInteger: true,
+        min: 1,
     },
     trainingIterations: {
         name: 'Training iterations',
@@ -288,18 +294,6 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         optional: true,
         type: 'boolean',
     },
-    dataset: {
-        name: 'Dataset',
-        optional: true,
-        type: 'string',
-    },
-    datasetSize: {
-        name: 'Dataset size',
-        optional: true,
-        type: 'number',
-        isInteger: true,
-        min: 1,
-    },
     pretrainedModelG: {
         name: 'Pretrained Model (G)',
         optional: true,
@@ -311,5 +305,11 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         optional: true,
         type: 'string',
         kind: 'model-id',
+    },
+    images: {
+        name: 'Images',
+        type: 'array',
+        of: { type: 'unknown' },
+        allowEmpty: true,
     },
 };
