@@ -8,6 +8,7 @@ import { useModels } from '../lib/hooks/use-models';
 import { useUsers } from '../lib/hooks/use-users';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { ModelId, User, UserId } from '../lib/schema';
+import { UserIdPattern, canonicalizeUserId } from '../lib/schema-util';
 import { EMPTY_ARRAY, asArray, delay, joinClasses } from '../lib/util';
 
 export default function Page() {
@@ -83,10 +84,13 @@ export default function Page() {
                         disabled={!editMode}
                         onClick={() => {
                             if (!webApi) return;
-                            const id = prompt('User ID');
-                            if (!id) return;
+                            const name = prompt('User name')?.trim();
+                            if (!name) return;
+
+                            const id = canonicalizeUserId(name);
+
                             webApi.users
-                                .update([[id as UserId, { name: id }]])
+                                .update([[id, { name }]])
                                 .then(async () => {
                                     const elementId = `user-${id}`;
                                     await replace(`${asPath.replace(/#.*$/, '')}#${elementId}`, undefined, {
@@ -129,10 +133,15 @@ export default function Page() {
                                     text={userId}
                                     onChange={(newId) => {
                                         if (!webApi) return;
-                                        webApi.users.changeId(userId, newId as UserId).catch((e) => console.error(e));
+                                        webApi.users
+                                            .changeId(userId, canonicalizeUserId(newId))
+                                            .catch((e) => console.error(e));
                                     }}
                                 />
                             </span>
+                            {!UserIdPattern.test(userId) && (
+                                <span className="mr-2 text-red-500 dark:text-red-400">Invalid User ID</span>
+                            )}
                             <EditableLabel
                                 readonly={!editMode}
                                 text={user.name}
