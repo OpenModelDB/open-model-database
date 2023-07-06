@@ -1,0 +1,86 @@
+{
+    "name": "4xNomos8kSCSRFormer",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "4x photo upscaler with otf jpg compression and blur, trained on musl's Nomos8k_sfw dataset for realisic sr. SRFormer base model/version. Provided are onnx fp16 (45.8MB) and pth (185.4MB) downloads.",
+    "date": "2023-06-26",
+    "architecture": "SRFormer",
+    "size": [
+        "base model",
+        "img_size: 48",
+        "window_size: 22"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 47984088,
+            "sha256": "268c6a33c9c2941d754320d18bf8083e2242d9c0cf1aef7f7b5c0c26a69cc365",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xNomos8kSCSRFormer/4xNomos8kSCSRFormer.onnx"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 194403301,
+            "sha256": "f0730b12f88fd628313f0c77315ed592adb4cd883d5fd8b7211446c622811c9b",
+            "urls": [
+                "https://drive.google.com/file/d/1VpMity5vqrEN7YFaPwawhVTdWYdJK8DG/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 115000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "dataset": "Nomos8k_sfw",
+    "datasetSize": 6118,
+    "pretrainedModelG": "4x-SRFormer_SRx4_DF2K",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Seeufer",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/seeufer.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCSRFormer/seeufer_4xNomos8kSCSRFormer.png"
+        },
+        {
+            "type": "paired",
+            "caption": "Dearalice",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/dearalice.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCSRFormer/dearalice_4xNomos8kSCSRFormer.png"
+        },
+        {
+            "type": "paired",
+            "caption": "Bibli",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/bibli.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCSRFormer/bibli_4xNomos8kSCSRFormer.png"
+        },
+        {
+            "type": "paired",
+            "caption": "Dearalice2",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/dearalice2.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCSRFormer/dearalice2_4xNomos8kSCSRFormer.png"
+        },
+        {
+            "type": "paired",
+            "caption": "Palme",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/palme.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCSRFormer/palme_4xNomos8kSCSRFormer.png"
+        },
+        {
+            "type": "paired",
+            "caption": "Jujustukaisen",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/jujutsukaisen.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCSRFormer/jujutsukaisen_4xNomos8kSCSRFormer.png"
+        }
+    ]
+}
