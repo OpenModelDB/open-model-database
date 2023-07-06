@@ -101,6 +101,10 @@
         "name": "EDSR",
         "description": ""
     },
+    "arch:GRL": {
+        "name": "GRL",
+        "description": ""
+    },
     "arch:HAT": {
         "name": "HAT",
         "description": ""

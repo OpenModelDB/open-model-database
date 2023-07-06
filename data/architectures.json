@@ -7,6 +7,14 @@
             "onnx"
         ]
     },
+    "GRL": {
+        "name": "GRL",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "HAT": {
         "name": "HAT",
         "input": "image",

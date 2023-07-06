@@ -59,7 +59,8 @@
             "arch:swift-srgan",
             "arch:HAT",
             "arch:SRFormer",
-            "arch:EDSR"
+            "arch:EDSR",
+            "arch:GRL"
         ]
     },
     "platform": {
