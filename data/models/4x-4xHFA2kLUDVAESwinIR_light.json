@@ -1,0 +1,56 @@
+{
+    "name": "4xHFA2kLUDVAESwinIR_light",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime"
+    ],
+    "description": "4x lightweight anime upscaler with realistic degradations (compression, noise, blur).",
+    "date": "2023-06-10",
+    "architecture": "swinir",
+    "size": [
+        "SwinIR-light"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 17225509,
+            "sha256": "6563dd659ef2bf15cd594de243d4eee6cb41e66c43ab3df58c5be8fd2e3b5735",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xHFA2kLUDVAESwinIR_light/4xHFA2kLUDVAESwinIR_light.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 350000,
+    "trainingEpochs": 99,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 256,
+    "dataset": "HFA2kLUDVAE",
+    "datasetSize": 10270,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0550.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESwinIR_light/visualization/LUDVAE_TEST/0550_4xHFA2kLUDVAESwinIR_light.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0045.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESwinIR_light/visualization/LUDVAE_TEST/0045_4xHFA2kLUDVAESwinIR_light.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0140.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESwinIR_light/visualization/LUDVAE_TEST/0140_4xHFA2kLUDVAESwinIR_light.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0238.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESwinIR_light/visualization/LUDVAE_TEST/0238_4xHFA2kLUDVAESwinIR_light.png"
+        }
+    ]
+}
