@@ -1,0 +1,29 @@
+{
+    "name": "SRFormer_SRx4_DF2K",
+    "author": [],
+    "license": null,
+    "tags": [],
+    "description": "Official paper pretrain model",
+    "date": "2022-11-24",
+    "architecture": "SRFormer",
+    "size": [
+        "base",
+        "img_size: 48",
+        "window_size: 22"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 97200893,
+            "sha256": "aa7883cbbd4493530eeb0e101c9be00d5d8112b392fec1eed61b60176737be6a",
+            "urls": [
+                "https://drive.google.com/file/d/13_fpD4aDE1wbEYX8yGWA3mVLZOCRWkWv/view?usp=drive_link"
+            ]
+        }
+    ],
+    "images": []
+}
