@@ -1,0 +1,27 @@
+{
+    "name": "HAT-S_SRx4",
+    "author": [],
+    "license": null,
+    "tags": [],
+    "description": "Official paper pretrain model",
+    "date": "2023-04-05",
+    "architecture": "HAT",
+    "size": [
+        "HAT-S"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 81089561,
+            "sha256": "a92f81bd2c0c1aaa371a6e4d6cac69e749fde2e36196885ee47a4a3667542c9a",
+            "urls": [
+                "https://drive.google.com/file/d/1YvU9PF1XqlP8TVzH7P0bg-YlfP1TKDPC/view?usp=drive_link"
+            ]
+        }
+    ],
+    "images": []
+}
