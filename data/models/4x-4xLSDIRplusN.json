@@ -1,0 +1,54 @@
+{
+    "name": "4xLSDIRplusN",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo"
+    ],
+    "description": "The RealESRGAN_x4plus finetuned with the big LSDIR dataset (84,991 images / 165 GB), no degradation.",
+    "date": "2023-07-06",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67020037,
+            "sha256": "29877475930ad23aec8d16955aac68f5ecf5a9c2230218e09d567eb87a4990c2",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/4xLSDIRplus/4xLSDIRplusN.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 110000,
+    "trainingBatchSize": 1,
+    "trainingHRSize": 256,
+    "dataset": "LSDIR",
+    "datasetSize": 84991,
+    "pretrainedModelG": "4x-RealESRGAN_x4plus",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_5.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_5_4xLSDIRplusN.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_14.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_14_4xLSDIRplusN.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_13.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_13_4xLSDIRplusN.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_6.png",
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_6_4xLSDIRplusN.png"
+        }
+    ]
+}
