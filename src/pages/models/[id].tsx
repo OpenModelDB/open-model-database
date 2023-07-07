@@ -22,13 +22,13 @@ import { UpdateModelPropertyFn, useUpdateModel } from '../../lib/hooks/use-updat
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { KNOWN_LICENSES } from '../../lib/license';
-import { MODEL_PROPS } from '../../lib/model-props';
+import { MODEL_PROPS, ModelProp } from '../../lib/model-props';
 import { ArchId, Image, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
-import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedEntries } from '../../lib/util';
+import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
 
@@ -40,24 +40,6 @@ interface Props {
     similar: ModelId[];
     modelData: Record<ModelId, Model>;
 }
-
-const extraModelProperties: { key: keyof Model; type: 'number' | 'string' | 'boolean' }[] = [
-    { key: 'trainingIterations', type: 'number' },
-    { key: 'trainingEpochs', type: 'number' },
-    { key: 'trainingBatchSize', type: 'number' },
-    { key: 'trainingHRSize', type: 'number' },
-    { key: 'trainingOTF', type: 'boolean' },
-    { key: 'dataset', type: 'string' },
-    { key: 'datasetSize', type: 'number' },
-    { key: 'pretrainedModelG', type: 'string' },
-    { key: 'pretrainedModelD', type: 'string' },
-];
-
-const defaultVals = {
-    number: 0,
-    string: '',
-    boolean: false,
-} as const;
 
 const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
     <div className="flex flex-row flex-wrap gap-2">
@@ -105,39 +87,65 @@ const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTa
 
 const editableMetadata = (
     editMode: boolean,
-    value: string | number | boolean,
-    onChange: (newValue: string | number | boolean) => void
+    value: unknown,
+    prop: ModelProp,
+    onChange: (newValue: Model[keyof Model]) => void
 ) => {
-    switch (typeof value) {
-        case 'string':
+    switch (prop.type) {
+        case 'string': {
             return (
                 <EditableLabel
                     className="break-words"
                     readonly={!editMode}
-                    text={value}
-                    onChange={onChange}
+                    text={String(value ?? '')}
+                    onChange={(newValue) => {
+                        if (!newValue && prop.optional) {
+                            onChange(undefined);
+                        } else {
+                            onChange(newValue);
+                        }
+                    }}
                 />
             );
-        case 'number':
+        }
+        case 'number': {
+            let nullValue: number;
+            if (prop.optional) {
+                nullValue = prop.min !== undefined ? prop.min - 1 : 0;
+            } else {
+                nullValue = prop.min ?? 0;
+            }
+            const min = prop.min === undefined ? undefined : Math.min(prop.min, nullValue);
+
             return (
                 <EditableIntegerLabel
+                    max={prop.max}
+                    min={min}
                     readonly={!editMode}
-                    value={value}
-                    onChange={onChange}
+                    value={Number(value ?? nullValue)}
+                    onChange={(newValue) => {
+                        if (newValue === nullValue && prop.optional) {
+                            onChange(undefined);
+                        } else {
+                            onChange(newValue);
+                        }
+                    }}
                 />
             );
-        case 'boolean':
-            return editMode ? (
+        }
+        case 'boolean': {
+            if (!editMode) {
+                return <span>{value ? 'Yes' : 'No'}</span>;
+            }
+            return (
                 <Switch
-                    value={value}
+                    value={Boolean(value ?? false)}
                     onChange={onChange}
                 />
-            ) : (
-                <span>{value ? 'Yes' : 'No'}</span>
             );
-
+        }
         default:
-            return <span>{value}</span>;
+            return <span>{String(value)}</span>;
     }
 };
 
@@ -313,12 +321,6 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
 
     const firstImageValue = model.images[0] as Image | undefined;
     const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
-
-    let missingMetadataEntries: [keyof Model, string | number | boolean][] = [];
-    if (editMode) {
-        const missingMetadataKeys = extraModelProperties.filter(({ key }) => model[key] === undefined);
-        missingMetadataEntries = missingMetadataKeys.map(({ key, type }) => [key, defaultVals[type]]);
-    }
 
     const [similar, similarWithScores] = useMemo(() => {
         if (modelData.size > Object.keys(staticModelData).length) {
@@ -500,10 +502,9 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                             updateModelProperty={updateModelProperty}
                                         />,
                                     ],
-                                    ...typedEntries(model)
-                                        .concat(missingMetadataEntries)
+                                    ...typedKeys(MODEL_PROPS)
                                         .filter(
-                                            ([key, _value]) =>
+                                            (key) =>
                                                 ![
                                                     // Handled by other parts of page
                                                     'name',
@@ -525,8 +526,8 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                                     'images',
                                                 ].includes(key)
                                         )
-                                        .filter(([_key, value]) => (editMode ? true : value != null))
-                                        .sort()
+                                        .map((key) => [key, model[key]] as const)
+                                        .filter(([, value]) => editMode || value != null)
                                         .map(([key, value]) => {
                                             const prop = MODEL_PROPS[key];
                                             return [
@@ -539,13 +540,9 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                                               updateModelProperty(key, newTags);
                                                           }
                                                       )
-                                                    : editableMetadata(
-                                                          editMode,
-                                                          value as string | number,
-                                                          (newValue) => {
-                                                              updateModelProperty(key, newValue);
-                                                          }
-                                                      ),
+                                                    : editableMetadata(editMode, value, prop, (newValue) => {
+                                                          updateModelProperty(key, newValue);
+                                                      }),
                                             ] as const;
                                         }),
                                     /* eslint-enable react/jsx-key */
