@@ -7,6 +7,7 @@
         "general-upscaler",
         "jpeg",
         "photo",
+        "research",
         "restoration"
     ],
     "description": "[Designing a Practical Degradation Model for Deep Blind Image Super-Resolution (ICCV, 2021)](https://github.com/cszn/BSRGAN)",

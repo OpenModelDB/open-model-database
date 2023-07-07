@@ -35,6 +35,7 @@
             "inpainting",
             "jpeg",
             "pretrained",
+            "research",
             "restoration"
         ]
     },
