@@ -131,11 +131,13 @@ export default function Page() {
                                 <EditableLabel
                                     readonly={!editMode}
                                     text={userId}
-                                    onChange={(newId) => {
+                                    onChange={(newIdString) => {
                                         if (!webApi) return;
-                                        webApi.users
-                                            .changeId(userId, canonicalizeUserId(newId))
-                                            .catch((e) => console.error(e));
+                                        const newId = canonicalizeUserId(newIdString);
+                                        if (newId !== userId) {
+                                            webApi.users.changeId(userId, newId).catch((e) => console.error(e));
+                                        }
+                                        return newId;
                                     }}
                                 />
                             </span>
