@@ -85,6 +85,10 @@
         "name": "Pretrained",
         "description": "The model is intended to be used to train new models."
     },
+    "research": {
+        "name": "Research",
+        "description": "The model is the result of a research paper. The paper or GitHub repo is typically linked in the description."
+    },
     "restoration": {
         "name": "Restoration",
         "description": "The model removes compression artifacts."
