@@ -7,7 +7,7 @@ export interface EditableLabelProps {
     text: string;
     className?: string;
     readonly?: boolean;
-    onChange?: (newText: string) => void;
+    onChange?: (newText: string) => void | string;
 }
 
 export function EditableLabel({ className, text, onChange, readonly }: EditableLabelProps) {
@@ -35,7 +35,10 @@ export function EditableLabel({ className, text, onChange, readonly }: EditableL
 
     const submit = () => {
         if (value !== text) {
-            onChange(value);
+            const newValue = onChange(value);
+            if (newValue !== undefined) {
+                setValue(newValue);
+            }
         }
         setEdit(false);
     };
