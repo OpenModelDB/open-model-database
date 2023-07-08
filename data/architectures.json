@@ -1,36 +1,4 @@
 {
-    "EDSR": {
-        "name": "EDSR",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch",
-            "onnx"
-        ]
-    },
-    "GRL": {
-        "name": "GRL",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch",
-            "onnx"
-        ]
-    },
-    "HAT": {
-        "name": "HAT",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch",
-            "onnx"
-        ]
-    },
-    "SRFormer": {
-        "name": "SRFormer",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch",
-            "onnx"
-        ]
-    },
     "cain": {
         "name": "CAIN",
         "input": "video",
@@ -52,6 +20,14 @@
             "pytorch",
             "onnx",
             "ncnn"
+        ]
+    },
+    "edsr": {
+        "name": "EDSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
         ]
     },
     "esrgan": {
@@ -79,6 +55,22 @@
             "pytorch",
             "onnx",
             "ncnn"
+        ]
+    },
+    "grl": {
+        "name": "GRL",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "hat": {
+        "name": "HAT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
         ]
     },
     "omnisr": {
@@ -115,6 +107,14 @@
         "input": "image",
         "compatiblePlatforms": [
             "pytorch"
+        ]
+    },
+    "srformer": {
+        "name": "SRFormer",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
         ]
     },
     "swift-srgan": {

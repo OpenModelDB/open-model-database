@@ -9,7 +9,7 @@
     ],
     "description": "4x photo upscaler with otf jpg compression and blur, trained on musl's Nomos8k_sfw dataset for realisic sr. SRFormer base model/version. Provided are onnx fp16 (45.8MB) and pth (185.4MB) downloads.",
     "date": "2023-06-26",
-    "architecture": "SRFormer",
+    "architecture": "srformer",
     "size": [
         "base model",
         "img_size: 48",

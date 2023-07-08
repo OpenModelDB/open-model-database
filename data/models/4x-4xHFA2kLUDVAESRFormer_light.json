@@ -8,7 +8,7 @@
     ],
     "description": "4x lightweight anime upscaler with realistic degradations (compression, noise, blur).",
     "date": "2023-06-10",
-    "architecture": "SRFormer",
+    "architecture": "srformer",
     "size": [
         "SRFormer-light"
     ],

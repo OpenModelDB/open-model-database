@@ -58,10 +58,10 @@
             "arch:sofvsr",
             "arch:spsr",
             "arch:swift-srgan",
-            "arch:HAT",
-            "arch:SRFormer",
-            "arch:EDSR",
-            "arch:GRL"
+            "arch:hat",
+            "arch:srformer",
+            "arch:edsr",
+            "arch:grl"
         ]
     },
     "platform": {
