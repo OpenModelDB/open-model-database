@@ -13,13 +13,12 @@
 		},
 		{
 			"directory": "contributing/",
-			"title": "Contributing",
 			"routes": [
 				{
-					"file": "documentation.md"
+					"file": "models.md"
 				},
 				{
-					"file": "github.md"
+					"file": "documentation.md"
 				}
 			]
 		}
