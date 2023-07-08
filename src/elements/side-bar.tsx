@@ -90,13 +90,17 @@ function isBranch(item: SideBarItem): item is Branch {
 function SideBarBranch({ item, level, isCurrent }: { item: Branch } & RecurseProps) {
     const [collapsed, setCollapsed] = useState(false);
     const toggle = useCallback(() => setCollapsed((prev) => !prev), []);
+
     return (
         <div className={style.branch}>
             <SideBarItem
                 icon={collapsed ? 'branch-collapsed' : 'branch-open'}
                 isCurrent={isCurrent}
                 item={item}
-                onClick={toggle}
+                // Disable this feature for now.
+                // Documentation is not deep enough to warrant this.
+                // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+                onClick={false ? toggle : undefined}
             />
             {!collapsed && (
                 <SideBarItems
