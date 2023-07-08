@@ -1,12 +1,14 @@
 import { BsChevronDoubleDown, BsChevronDoubleUp, BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
-import { MarkDownString, Tag } from '../lib/schema';
+import { MarkDownString, Tag, TagId } from '../lib/schema';
+import { TagIdPattern } from '../lib/schema-util';
 import { EditableLabel } from './components/editable-label';
 import { EditableMarkdownContainer } from './components/editable-markdown';
 import style from './tag-view.module.scss';
 
 interface TagViewProps {
     tag: Tag;
+    tagId: TagId;
     usage?: number;
     onRename?: (name: string) => void;
     onDescriptionChange?: (description: MarkDownString) => void;
@@ -14,7 +16,16 @@ interface TagViewProps {
     onMove?: (difference: number) => void;
     readonly?: boolean;
 }
-export function TagView({ tag, usage, readonly, onRename, onDelete, onDescriptionChange, onMove }: TagViewProps) {
+export function TagView({
+    tag,
+    tagId,
+    usage,
+    readonly,
+    onRename,
+    onDelete,
+    onDescriptionChange,
+    onMove,
+}: TagViewProps) {
     return (
         <div className={style.tagView}>
             <div>
@@ -23,6 +34,9 @@ export function TagView({ tag, usage, readonly, onRename, onDelete, onDescriptio
                     text={tag.name}
                     onChange={onRename}
                 />
+                {!TagIdPattern.test(tagId) && (
+                    <span className="mr-2 text-red-500 dark:text-red-400">Invalid Tag ID</span>
+                )}
                 {!readonly && onDelete && (
                     <button
                         className={style.iconButton}

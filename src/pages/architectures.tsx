@@ -241,9 +241,7 @@ function ArchRender({
                         return newId;
                     }}
                 />
-                {!ArchIdPattern.test(archId) && (
-                    <span className="mr-2 text-red-500 dark:text-red-400">Invalid User ID</span>
-                )}
+                {!ArchIdPattern.test(archId) && <span className="mr-2 text-red-500 dark:text-red-400">Invalid ID</span>}
 
                 {editMode && (
                     <button
