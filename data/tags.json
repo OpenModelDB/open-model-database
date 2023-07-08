@@ -129,10 +129,6 @@
         "name": "Compact",
         "description": ""
     },
-    "arch:edsr": {
-        "name": "EDSR (SRResNet)",
-        "description": ""
-    },
     "arch:esrgan": {
         "name": "ESRGAN",
         "description": ""
@@ -159,6 +155,10 @@
     },
     "arch:spsr": {
         "name": "SPSR",
+        "description": ""
+    },
+    "arch:sr-res-net": {
+        "name": "SRResNet",
         "description": ""
     },
     "arch:swift-srgan": {

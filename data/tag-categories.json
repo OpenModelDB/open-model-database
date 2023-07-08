@@ -53,7 +53,7 @@
             "arch:omnisr",
             "arch:cain",
             "arch:cain-yuv",
-            "arch:edsr",
+            "arch:sr-res-net",
             "arch:rife",
             "arch:sofvsr",
             "arch:spsr",
