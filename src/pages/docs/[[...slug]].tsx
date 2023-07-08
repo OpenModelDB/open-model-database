@@ -45,7 +45,10 @@ export default function Page({ title, markdown, sideBar, docPath, lastModified }
                         <SideBarView sideBar={sideBar} />
                     </div>
                     <div className={style.content}>
-                        <MarkdownContainer markdown={markdown} />
+                        <MarkdownContainer
+                            isIndexPage={docPath.endsWith('index.md')}
+                            markdown={markdown}
+                        />
                         {(prev || next) && (
                             <div className={style.links}>
                                 {prev && (
