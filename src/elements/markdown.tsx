@@ -65,12 +65,13 @@ const LinkableHeading: HeadingComponent = ({ children, level }) => {
 export interface MarkdownProps {
     markdown: string;
     className?: string;
+    isIndexPage?: boolean;
 }
-export function MarkdownContainer(props: MarkdownProps) {
+export function MarkdownContainer({ markdown, className, isIndexPage = false }: MarkdownProps) {
     const baseUrl = useCurrentPath();
 
     return (
-        <div className={joinClasses(style.markdown, props.className)}>
+        <div className={joinClasses(style.markdown, className)}>
             <ReactMarkdown
                 skipHtml
                 components={{
@@ -83,7 +84,7 @@ export function MarkdownContainer(props: MarkdownProps) {
                         }
 
                         const origin = 'https://openmodeldb.info';
-                        const url = new URL(href, origin + baseUrl);
+                        const url = new URL(href, origin + baseUrl + (isIndexPage ? '/index' : ''));
                         if (url.href === origin) {
                             return <TextLink href="/">{children}</TextLink>;
                         }
@@ -92,6 +93,8 @@ export function MarkdownContainer(props: MarkdownProps) {
                             if (relative.startsWith('/docs')) {
                                 // remove .md endings in doc links
                                 relative = relative.replace(/\.md(?=$|#)/, '');
+                                // remove index
+                                relative = relative.replace(/\/index(?=$|#)/, '');
                             }
                             return <TextLink href={relative}>{children}</TextLink>;
                         }
@@ -142,7 +145,7 @@ export function MarkdownContainer(props: MarkdownProps) {
                 }}
                 remarkPlugins={[remarkGfm]}
             >
-                {props.markdown}
+                {markdown}
             </ReactMarkdown>
         </div>
     );
