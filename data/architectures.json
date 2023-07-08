@@ -54,13 +54,6 @@
             "ncnn"
         ]
     },
-    "edsr": {
-        "name": "EDSR (SRResNet)",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch"
-        ]
-    },
     "esrgan": {
         "name": "ESRGAN",
         "input": "image",
@@ -115,6 +108,13 @@
         "compatiblePlatforms": [
             "pytorch",
             "onnx"
+        ]
+    },
+    "sr-res-net": {
+        "name": "SRResNet",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
         ]
     },
     "swift-srgan": {
