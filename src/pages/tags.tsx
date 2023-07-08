@@ -10,7 +10,7 @@ import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
-import { TagIdPattern } from '../lib/schema-util';
+import { canonicalizeTagId } from '../lib/schema-util';
 import { compareTagId } from '../lib/util';
 
 export default function Page() {
@@ -71,6 +71,21 @@ export default function Page() {
                         const isArch = categoryId === 'architecture' || undefined;
                         const isFree = !isArch || undefined;
 
+                        const add = () => {
+                            if (!webApi) return;
+
+                            const name = prompt('Tag name');
+                            if (!name) return;
+                            const tagId = canonicalizeTagId(name);
+
+                            Promise.all([
+                                webApi.tags.update([[tagId, { name, description: '' }]]),
+                                webApi.tagCategories.update([
+                                    [categoryId, { ...category, tags: [tagId, ...category.tags] }],
+                                ]),
+                            ]).catch((e) => console.error(e));
+                        };
+
                         return (
                             <div key={categoryId}>
                                 <h2>
@@ -84,25 +99,7 @@ export default function Page() {
                                             <button
                                                 className="ml-1"
                                                 title="Add tag to category (enter tag ID in prompt)"
-                                                onClick={() => {
-                                                    const id = prompt('Tag ID');
-                                                    if (!id) return;
-                                                    const tagId = id.trim().toLowerCase() as TagId;
-                                                    if (!TagIdPattern.test(tagId)) return;
-
-                                                    Promise.all([
-                                                        webApi.tags.update([[tagId, { name: tagId, description: '' }]]),
-                                                        webApi.tagCategories.update([
-                                                            [
-                                                                categoryId,
-                                                                {
-                                                                    ...category,
-                                                                    tags: [tagId, ...category.tags],
-                                                                },
-                                                            ],
-                                                        ]),
-                                                    ]).catch((e) => console.error(e));
-                                                }}
+                                                onClick={add}
                                             >
                                                 +
                                             </button>
@@ -145,6 +142,7 @@ export default function Page() {
                                                 key={tagId}
                                                 readonly={!editMode}
                                                 tag={tag}
+                                                tagId={tagId}
                                                 usage={tagUsage.get(tagId) ?? 0}
                                                 onDelete={isFree && (() => deleteTag(tagId))}
                                                 onDescriptionChange={(description) => updateTag(tagId, { description })}
@@ -183,6 +181,7 @@ export default function Page() {
                                         key={tagId}
                                         readonly={!editMode}
                                         tag={tag}
+                                        tagId={tagId}
                                         usage={tagUsage.get(tagId) ?? 0}
                                         onDelete={() => deleteTag(tagId)}
                                         onDescriptionChange={(description) => updateTag(tagId, { description })}
