@@ -10,6 +10,7 @@ import { useArchitectures } from '../lib/hooks/use-architectures';
 import { useModels } from '../lib/hooks/use-models';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { Arch, ArchId, InputType, ModelId, Platform, TagCategoryId, TagId } from '../lib/schema';
+import { ArchIdPattern, canonicalizeArchId } from '../lib/schema-util';
 import { EMPTY_ARRAY, capitalize, delay, joinClasses } from '../lib/util';
 
 function getTagId(archId: ArchId): TagId {
@@ -53,17 +54,19 @@ export default function Page() {
 
     const add = (inputType: InputType) => {
         if (!webApi) return;
-        const id = prompt('Architecture ID');
-        if (!id) return;
+        const name = prompt('Architecture Name');
+        if (!name) return;
+
+        const id = canonicalizeArchId(name);
 
         const arch: Arch = {
-            name: capitalize(id),
+            name,
             input: inputType,
             compatiblePlatforms: ['pytorch'],
         };
 
         webApi.architectures
-            .update([[id as ArchId, arch]])
+            .update([[id, arch]])
             .then(async () => {
                 const elementId = `arch-${id}`;
                 await replace(`${asPath.replace(/#.*$/, '')}#${elementId}`, undefined, {
@@ -81,7 +84,7 @@ export default function Page() {
             })
             .catch((e) => console.error(e));
 
-        const tagId = getTagId(id as ArchId);
+        const tagId = getTagId(id);
         webApi.tags
             .update([[tagId, { name: arch.name, description: '' }]])
             .then(async () => {
@@ -216,23 +219,31 @@ function ArchRender({
                 <EditableLabel
                     readonly={!editMode}
                     text={archId}
-                    onChange={(newId) => {
+                    onChange={(newIdString) => {
                         if (!webApi) return;
+                        const newId = canonicalizeArchId(newIdString);
 
-                        // change arch id
-                        webApi.architectures
-                            .changeId(archId, newId as ArchId)
-                            .then(async () => {
-                                // change tag (if any)
-                                const tagId = getTagId(archId);
-                                const allTags = await webApi.tags.getAll();
-                                if (allTags.has(tagId)) {
-                                    await webApi.tags.changeId(tagId, getTagId(newId as ArchId));
-                                }
-                            })
-                            .catch((e) => console.error(e));
+                        if (newId !== archId) {
+                            // change arch id
+                            webApi.architectures
+                                .changeId(archId, newId)
+                                .then(async () => {
+                                    // change tag (if any)
+                                    const tagId = getTagId(archId);
+                                    const allTags = await webApi.tags.getAll();
+                                    if (allTags.has(tagId)) {
+                                        await webApi.tags.changeId(tagId, getTagId(newId));
+                                    }
+                                })
+                                .catch((e) => console.error(e));
+                        }
+
+                        return newId;
                     }}
                 />
+                {!ArchIdPattern.test(archId) && (
+                    <span className="mr-2 text-red-500 dark:text-red-400">Invalid User ID</span>
+                )}
 
                 {editMode && (
                     <button

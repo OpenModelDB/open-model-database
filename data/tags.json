@@ -101,22 +101,6 @@
         "name": "Video Frame",
         "description": ""
     },
-    "arch:EDSR": {
-        "name": "EDSR",
-        "description": ""
-    },
-    "arch:GRL": {
-        "name": "GRL",
-        "description": ""
-    },
-    "arch:HAT": {
-        "name": "HAT",
-        "description": ""
-    },
-    "arch:SRFormer": {
-        "name": "SRFormer",
-        "description": ""
-    },
     "arch:cain": {
         "name": "CAIN",
         "description": ""
@@ -129,6 +113,10 @@
         "name": "Compact",
         "description": ""
     },
+    "arch:edsr": {
+        "name": "EDSR",
+        "description": ""
+    },
     "arch:esrgan": {
         "name": "ESRGAN",
         "description": ""
@@ -139,6 +127,14 @@
     },
     "arch:esrgan-2c2": {
         "name": "ESRGAN 2C2",
+        "description": ""
+    },
+    "arch:grl": {
+        "name": "GRL",
+        "description": ""
+    },
+    "arch:hat": {
+        "name": "HAT",
         "description": ""
     },
     "arch:omnisr": {
@@ -159,6 +155,10 @@
     },
     "arch:sr-res-net": {
         "name": "SRResNet",
+        "description": ""
+    },
+    "arch:srformer": {
+        "name": "SRFormer",
         "description": ""
     },
     "arch:swift-srgan": {
