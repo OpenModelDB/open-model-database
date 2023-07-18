@@ -1,5 +1,13 @@
 # Models
 
+## What is a model on OpenModelDB?
+
+> _This section assumes that you know what AI models are. If not, see the [FAQ](../faq.md)._
+
+On OpenModelDB, a model represents a single checkpoint + optional conversions of it (e.g. NCNN conversions, FP16 variants, or ONNX op-set variants). Each model has its own model page on the website, where its information, download links, and example images are displayed.
+
+A model **does not include** architecture/scale/size/iteration variants. E.g. a 2x and a 4x model trained from the same dataset are still 2 different models. Same for Compact, UltraCompact, SuperUltraCompact, etc. variants. They are all different models.
+
 ## Adding models online
 
 > _This section assumes that you already have a GitHub account and that you are logged in._
