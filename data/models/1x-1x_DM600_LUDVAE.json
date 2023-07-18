@@ -8,7 +8,7 @@
     ],
     "description": "Create realistic noise and compression artifacts on images. This is meant to synthesize paired dataset for SISR training.",
     "date": "2023-04-20",
-    "architecture": "LUDVAE",
+    "architecture": "ludvae",
     "size": [],
     "scale": 1,
     "inputChannels": 3,
@@ -21,7 +21,7 @@
             "sha256": "059a98d1a79fc86ad2dc731e721dbae7ca0db0482b4b40d647afdf64a9da2d29",
             "urls": [
                 "https://www.mediafire.com/file/gd8adc80vhcuoma/DM600_LUDVAE.7z/file",
-		"https://mega.nz/file/JAlimZIJ#Mk7q3vrADHXRaxQHo_84G2_pr_VfgWGXhR6PBaqbp0I"
+                "https://mega.nz/file/JAlimZIJ#Mk7q3vrADHXRaxQHo_84G2_pr_VfgWGXhR6PBaqbp0I"
             ]
         }
     ],

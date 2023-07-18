@@ -4,8 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "restoration",
-        "cartoon"
+        "cartoon",
+        "restoration"
     ],
     "description": "I recommend filtering the source before passing it to the model. Note: if the original trainers of the models i used as teachers for this model are not cool with using them in this way, i will remove this model",
     "date": "2023-06-17",
@@ -32,12 +32,12 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/36d22355-4588-49a9-91ef-a88e853c5d32.jpg",
-	    "HR": "https://imgsli.com/i/53f8b115-a364-4a21-a0b3-ba450fbb9961.jpg"
-	},
+            "SR": "https://imgsli.com/i/53f8b115-a364-4a21-a0b3-ba450fbb9961.jpg"
+        },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/e5c7048b-a21a-472b-b6e4-41fafa6bfba3.jpg",
-	    "HR": "https://imgsli.com/i/4b37f85f-5d4c-4bee-a196-15c269189afe.jpg"
-	}
+            "SR": "https://imgsli.com/i/4b37f85f-5d4c-4bee-a196-15c269189afe.jpg"
+        }
     ]
 }

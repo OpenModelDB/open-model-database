@@ -9,7 +9,7 @@
     ],
     "description": "Using the Kineko 4K scan the hope was to clean up the Funi DVD releases and upscale to something comparable. This model degrains the series pretty damn well, but what's revealed beneath is a lot of moving noise that's probably best dealt with in pre- or post- with a video editor like AVISynth. So while the model is remarkably temporally stable, the DBZ sources certainly aren't. The movies look really nice when upscaled with raw input, though.",
     "date": "2023-05-12",
-    "architecture": "ESRGAN",
+    "architecture": "esrgan",
     "size": [],
     "scale": 2,
     "inputChannels": 3,
@@ -32,12 +32,12 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/049c2bda-e91a-4216-bf91-36a97db1b8f5.jpg",
-	    "HR": "https://imgsli.com/i/9566f786-3ebd-4029-b5b9-01d7dd7d2aa3.jpg"
-	},
+            "SR": "https://imgsli.com/i/9566f786-3ebd-4029-b5b9-01d7dd7d2aa3.jpg"
+        },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/8c0f6bdc-864d-461f-8b67-af3534e21a0d.jpg",
-	    "HR": "https://imgsli.com/i/e1be55e9-d852-41e2-b973-3419197cfdb0.jpg"
+            "SR": "https://imgsli.com/i/e1be55e9-d852-41e2-b973-3419197cfdb0.jpg"
         }
     ]
 }
