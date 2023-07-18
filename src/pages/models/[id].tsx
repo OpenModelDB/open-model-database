@@ -483,7 +483,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                     (model.size || editMode) && [
                                         'Size',
                                         renderTags(model.size ?? EMPTY_ARRAY, editMode, (newTags: string[]) => {
-                                            updateModelProperty('size', newTags);
+                                            updateModelProperty('size', newTags.length === 0 ? null : newTags);
                                         }),
                                     ],
                                     [
