@@ -22,6 +22,15 @@
             "ncnn"
         ]
     },
+    "cugan": {
+        "name": "cugan",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx",
+            "ncnn"
+        ]
+    },
     "edsr": {
         "name": "EDSR",
         "input": "image",
