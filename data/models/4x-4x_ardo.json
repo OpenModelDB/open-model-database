@@ -1,0 +1,53 @@
+{
+    "name": "4x_ardo",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "This is the first community model using the OmniSR network. I trained it mostly to test this network.\nNote: the model output decreases brightness. This is a well known issue we had with OmniSR.",
+    "date": "2023-06-12",
+    "architecture": "omnisr",
+    "size": [],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 22403103,
+            "sha256": "28b4ffdb02b13d0d91c9cc640be2769c02e8a6027ad9155f7fb7703425d60fcf",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/579685650824036387/1117894518642069514/4x_ardo.zip"
+            ]
+        }
+    ],
+    "trainingIterations": 908000,
+    "dataset": "HFA2K_LUDVAE",
+    "datasetSize": 2568,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897320521011321/4x_ardo_cmp_4.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897320206454886/4x_ardo_cmp_3.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897319711522846/4x_ardo_cmp_2.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897319409537175/4x_ardo_cmp_1.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897318771986543/4x_ardo_cmp_0.png"
+        }
+    ]
+}

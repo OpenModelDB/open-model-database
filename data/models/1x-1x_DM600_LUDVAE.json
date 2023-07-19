@@ -1,0 +1,36 @@
+{
+    "name": "DM600_LUDVAE",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [
+        "anime",
+        "cartoon"
+    ],
+    "description": "Create realistic noise and compression artifacts on images. This is meant to synthesize paired dataset for SISR training.",
+    "date": "2023-04-20",
+    "architecture": "ludvae",
+    "size": [],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20743811,
+            "sha256": "059a98d1a79fc86ad2dc731e721dbae7ca0db0482b4b40d647afdf64a9da2d29",
+            "urls": [
+                "https://www.mediafire.com/file/gd8adc80vhcuoma/DM600_LUDVAE.7z/file",
+                "https://mega.nz/file/JAlimZIJ#Mk7q3vrADHXRaxQHo_84G2_pr_VfgWGXhR6PBaqbp0I"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "dataset": "DM600",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1098688572686618754/dm600_ludvae_cmp1.png"
+        }
+    ]
+}
