@@ -73,9 +73,9 @@ Let's take a look at the project structure. This will help you find your way aro
 
 -   `npm run dev` - Starts the [local dev server](#local-dev-server).
 -   `npm run build` - Builds the project.
--   `npm run lint` - Runs the linter.
+-   `npm run lint` - Runs the linter on the source code of the website.
 -   `npm run lint:fix` - Runs the linter and fixes any fixable errors.
--   `npm run test` - Runs the tests.
+-   `npm run test` - Runs the tests of the source code of the website.
 -   `npm run validate-db` - Runs checks on the database to ensure everything is valid.
 
 ## How to make a Pull Request
