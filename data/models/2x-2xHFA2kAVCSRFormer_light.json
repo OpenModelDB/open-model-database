@@ -1,0 +1,54 @@
+{
+    "name": "2xHFA2kAVCSRFormer_light",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "video-frame"
+    ],
+    "description": "2x SRFormer_light anime upscale model that handles AVC (h264) compression since h264 crf 20-28 degradation together with bicubic, bilinear, box and lanczos downsampling has been applied on musl's HFA2k dataset with Kim's dataset destroyer for training.\n\n\nIf you want to run this model with chaiNNer (or another application) you need to use the onnx files with an onnx upscale node. All onnx conversions can be found in the [onnx folder on my repo](https://github.com/Phhofm/models/tree/main/2xHFA2kAVCSRFormer_light/onnx).\n\nExample 1: https://imgsli.com/MTkxMTQz\n\nExample 2: https://imgsli.com/MTkxMTQ0",
+    "date": "2023-07-11",
+    "architecture": "srformer",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 38654307,
+            "sha256": "4dfd1f533efd0e84a4ab0290d55217220cf677238ee59afdc19f065fa9baa435",
+            "urls": [
+                "https://github.com/Phhofm/models/raw/main/2xHFA2kAVCSRFormer_light/2xHFA2kAVCSRFormer_light.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 14062720,
+            "sha256": "74865a019f66014231f9c479713f3d00488967cfa08b6d4a4eab92b843a46a59",
+            "urls": [
+                "https://github.com/Phhofm/models/blob/main/2xHFA2kAVCSRFormer_light/onnx/2xHFA2kAVCSRFormer_light_16_onnxsim_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 140000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 192,
+    "dataset": "HFA2k",
+    "datasetSize": 2568,
+    "pretrainedModelG": "2x-SRFormerLight_SRx2_DIV2K",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/251fa09f-0980-4118-93be-f4501b812a35.jpg",
+            "SR": "https://imgsli.com/i/4d532d39-85fb-44c2-bfcc-172106b22af2.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6e7e760a-c303-4183-a89b-65f6a2581c62.jpg",
+            "SR": "https://imgsli.com/i/e0f5d1dc-93ab-45b0-97dc-ee81e264eb1f.jpg"
+        }
+    ]
+}
