@@ -1,0 +1,62 @@
+{
+    "name": "4xNomos8kDAT",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "A 4x photo upscaler with otf jpg compression, blur and resize, trained on musl's Nomos8k_sfw dataset for realisic sr, this time based on the [DAT arch](https://github.com/zhengchen1999/DAT), as a finetune on the official 4x DAT model.\n\n\nThe 295 MB file is the pth file which can be run with the [dat reo github code](https://github.com/zhengchen1999/DAT). The 85.8 MB file is an onnx conversion.\n\n\nAll Files can be found in [this google drive folder](https://drive.google.com/drive/folders/1b2vQHxlFQrVW22osIhQbDk98sdXzzFkx). If above onnx file is not working, you can try the other conversions in the onnx subfolder.\n\n\nExamples:\n\n[Imgsli1](https://imgsli.com/MTk4Mjg1) (generated with onnx file)\n\n[Imgsli2](https://imgsli.com/MTk4Mjg2) (generated with onnx file)\n\n[Imgsli](https://imgsli.com/MTk4Mjk5) (generated with testscript of dat repo on the three test images in dataset/single with pth file)",
+    "date": "2023-08-13",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 309317507,
+            "sha256": "c1c87b04c261251264cd83e2bc90f49c9d5280bf18309e7b9919f1a8b27f53c6",
+            "urls": [
+                "https://drive.google.com/file/d/1JRwXYeuMBIsyeNfsTfeSs7gsHqCZD7xn"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 89983270,
+            "sha256": "e5c10de92a14544764ca4e4dc0269f7de3cd2e4975b1d149ad687fd195eb9de1",
+            "urls": [
+                "https://drive.google.com/file/d/1PyugI5imMP__vLrYYJKvUC_OUO6RcFYG"
+            ]
+        }
+    ],
+    "trainingIterations": 110000,
+    "trainingEpochs": 71,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "Nomos8k_sfw",
+    "datasetSize": 6118,
+    "pretrainedModelG": "4x-DAT_x4",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/95627391-b402-4545-bc1d-0c3d5203ce6b.jpg",
+            "SR": "https://imgsli.com/i/1158f548-ec02-43ec-933d-47ca2762f751.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/743ed6d4-068c-49dd-afc4-b3ce6d2bd9c8.jpg",
+            "SR": "https://imgsli.com/i/178bbe96-1f16-4d7b-bb2d-5f72badcda24.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5324a7d4-12fa-4d5e-aab0-f308b40be6a8.jpg",
+            "SR": "https://imgsli.com/i/f2540a86-07a9-4faa-82d0-3953b9f58419.jpg"
+        }
+    ]
+}
