@@ -113,6 +113,10 @@
         "name": "Compact",
         "description": ""
     },
+    "arch:dat": {
+        "name": "DAT",
+        "description": ""
+    },
     "arch:edsr": {
         "name": "EDSR",
         "description": ""

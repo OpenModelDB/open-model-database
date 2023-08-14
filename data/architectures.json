@@ -22,6 +22,14 @@
             "ncnn"
         ]
     },
+    "dat": {
+        "name": "DAT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "edsr": {
         "name": "EDSR",
         "input": "image",
