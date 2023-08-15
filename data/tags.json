@@ -113,6 +113,10 @@
         "name": "Compact",
         "description": ""
     },
+    "arch:cugan": {
+        "name": "Cugan",
+        "description": ""
+    },
     "arch:dat": {
         "name": "DAT",
         "description": ""

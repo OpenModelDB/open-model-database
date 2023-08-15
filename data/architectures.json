@@ -22,6 +22,14 @@
             "ncnn"
         ]
     },
+    "cugan": {
+        "name": "Cugan",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "dat": {
         "name": "DAT",
         "input": "image",

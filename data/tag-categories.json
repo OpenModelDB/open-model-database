@@ -63,7 +63,8 @@
             "arch:edsr",
             "arch:grl",
             "arch:dat",
-            "arch:ludvae"
+            "arch:ludvae",
+            "arch:cugan"
         ]
     },
     "platform": {
