@@ -1,0 +1,49 @@
+{
+    "name": "sudo_shuffle_cugan_9.584.969",
+    "author": "sudo",
+    "license": null,
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "This is my attempt at making cugan more efficient and also training it with better loss functions than official training code. Took me months to train on a 4090. It is pure pain to train this network. Nobody will probably beat my iter record any time soon. I tried to balance speed/vram and quality. The image quality is very close to cugan architecture while having ultracompact speed. It usually looks way better than compact, but has different kinds of artefacts. If you have high contrast lines which are a few or one pixel or thin lines with movement, then the model will struggle a bit. That is quite rare though. Exported as onnx for mlrt or vsgan. https://github.com/styler00dollar/VSGAN-tensorrt-docker. I also included old l1 for pretrain purposes, but be warned, it is hard to train.",
+    "date": "2023-04-07",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5657003,
+            "sha256": "88a6d89f04eaf27a9f7b60937857768a6bc04fb360670bd9951ef533acab0616",
+            "urls": [
+                "https://e.pcloud.link/publink/show?code=kZYVTSZwycXga7RuRVu8O94iGrqxYCFvsOy#returl=https%3A//e.pcloud.link/publink/show%3Fcode%3DkZYVTSZwycXga7RuRVu8O94iGrqxYCFvsOy&page=login"
+            ]
+        }
+    ],
+    "trainingIterations": 9584969,
+    "trainingBatchSize": 95,
+    "trainingHRSize": 128,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1093929045588201543/COMPARE1.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1093929046305423380/COMPARE2.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1093929047240757288/COMPARE3.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1093929047744069802/COMPARE4.png"
+        }
+    ]
+}
