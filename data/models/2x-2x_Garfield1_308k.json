@@ -1,0 +1,54 @@
+{
+    "name": "2x_Garfield1_308k",
+    "author": "saurusx",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Meant to preserve original 4:3 framing of G&F while upscaling. Trained to handle all seven seasons, which drastically differ in quality. Fixes include rainbowing, dot-crawl, halos, general noise, and of course MPEG-2 artifacts. It should be generally flexible in dealing with different degrees of those artifacts, but as always the cleaner the source the better. The model could be useful with other shows from the '80s and '90s with ugly video sources. Maybe.",
+    "date": "2023-05-23",
+    "architecture": "esrgan",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "93b65f482b90a7f82692bb921248c2a84847ac87ce40705a4efda39463e6aa30",
+            "urls": [
+                "https://mega.nz/file/nWIXFD7K#EipZnSIKc6PLf6UWNkG88BybAHX_bCs5qwvu13wiW90"
+            ]
+        }
+    ],
+    "trainingIterations": 308000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 192,
+    "dataset": "Upscaled DVD frames using filtered and raw DVD source with hundreds of manual fixes",
+    "datasetSize": 3237,
+    "pretrainedModelG": "2x-DigiGradients-Lite",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c79682b7-1100-43e2-8a5b-d05350d186e8.jpg",
+            "SR": "https://imgsli.com/i/35d4634c-e99a-4a93-b5ad-cfc828d03b63.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/37291faa-3122-44cb-88d8-0e2f4fdf1fcf.jpg",
+            "SR": "https://imgsli.com/i/668348b8-b9eb-4295-9505-343f2a533188.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/81c8bce2-6166-4738-98c2-285f374b5259.jpg",
+            "SR": "https://imgsli.com/i/21e7b5af-cde1-4f45-a5ab-0f90fb117aa4.jpg"
+        }
+    ]
+}
