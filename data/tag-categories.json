@@ -62,7 +62,8 @@
             "arch:srformer",
             "arch:edsr",
             "arch:grl",
-            "arch:dat"
+            "arch:dat",
+            "arch:ludvae"
         ]
     },
     "platform": {

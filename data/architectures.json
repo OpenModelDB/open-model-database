@@ -81,6 +81,13 @@
             "onnx"
         ]
     },
+    "ludvae": {
+        "name": "LUDVAE",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "omnisr": {
         "name": "OmniSR",
         "input": "image",

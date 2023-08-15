@@ -141,6 +141,10 @@
         "name": "HAT",
         "description": ""
     },
+    "arch:ludvae": {
+        "name": "LUDVAE",
+        "description": ""
+    },
     "arch:omnisr": {
         "name": "OmniSR",
         "description": ""
