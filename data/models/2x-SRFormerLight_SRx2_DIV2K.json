@@ -10,7 +10,17 @@
     "scale": 2,
     "inputChannels": 3,
     "outputChannels": 3,
-    "resources": [],
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 19343157,
+            "sha256": "5b851903c54c0813cbb8af06ea0259b847e21aeffd0c2adeed8c533d74f4d7f0",
+            "urls": [
+                "https://drive.google.com/file/d/1e3So4kYb0JFQAUZ-sYzlGx_KZsa9rSpG/view?usp=drive_link"
+            ]
+        }
+    ],
     "images": [
         {
             "type": "standalone",
