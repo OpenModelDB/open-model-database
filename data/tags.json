@@ -113,6 +113,14 @@
         "name": "Compact",
         "description": ""
     },
+    "arch:cugan": {
+        "name": "Cugan",
+        "description": ""
+    },
+    "arch:dat": {
+        "name": "DAT",
+        "description": ""
+    },
     "arch:edsr": {
         "name": "EDSR",
         "description": ""
@@ -135,6 +143,10 @@
     },
     "arch:hat": {
         "name": "HAT",
+        "description": ""
+    },
+    "arch:ludvae": {
+        "name": "LUDVAE",
         "description": ""
     },
     "arch:omnisr": {

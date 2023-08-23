@@ -1,0 +1,43 @@
+{
+    "name": "2x_DBZScanLite",
+    "author": "saurusx",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Using the Kineko 4K scan the hope was to clean up the Funi DVD releases and upscale to something comparable. This model degrains the series pretty damn well, but what's revealed beneath is a lot of moving noise that's probably best dealt with in pre- or post- with a video editor like AVISynth. So while the model is remarkably temporally stable, the DBZ sources certainly aren't. The movies look really nice when upscaled with raw input, though.",
+    "date": "2023-05-12",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "84515d6c70edffc5ddfd40fe7cd98e0a0782a2435cb8a99f55f404ec081daf20",
+            "urls": [
+                "https://mega.nz/file/UvhmyBYB#6bbS15awWHgoRe6clUvOVHoA2UidpM2eXCYBReBRKrU"
+            ]
+        }
+    ],
+    "trainingIterations": 252000,
+    "dataset": "The Kineko 4K scan of reel 3 of movie 9 aligned to the Funi DVD release of the same movie.",
+    "datasetSize": 1150,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/049c2bda-e91a-4216-bf91-36a97db1b8f5.jpg",
+            "SR": "https://imgsli.com/i/9566f786-3ebd-4029-b5b9-01d7dd7d2aa3.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/8c0f6bdc-864d-461f-8b67-af3534e21a0d.jpg",
+            "SR": "https://imgsli.com/i/e1be55e9-d852-41e2-b973-3419197cfdb0.jpg"
+        }
+    ]
+}

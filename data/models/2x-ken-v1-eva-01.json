@@ -1,0 +1,54 @@
+{
+    "name": "2xken-v1-eva-01",
+    "author": "eva-01",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "I recommend filtering the source before passing it to the model. \n\nNote: if the original trainers of the models i used as teachers for this model are not cool with using them in this way, i will remove this model",
+    "date": "2023-06-17",
+    "architecture": "compact",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2417798,
+            "sha256": "b674ec71672d725b34d46a1527504ac772c880e197c98629481ab083504317a3",
+            "urls": [
+                "https://drive.google.com/file/d/1Zgipk4owMx8EoYNeYYDaOc5eeTaXNb0Z/view?usp=drive_link"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2407679,
+            "sha256": "ef97199e1fa19b512d7d29dd2573eed61eb65bd207b445d34cc497c096982ca3",
+            "urls": [
+                "https://drive.google.com/file/d/1qQ5a4p9NGUMuzatcD7MQteUvehqd5p74/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 220000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "HD rescans of 90s cartoons/anime/cels (i did use other models like LD anime &FF in the datasets)",
+    "datasetSize": 7000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/36d22355-4588-49a9-91ef-a88e853c5d32.jpg",
+            "SR": "https://imgsli.com/i/53f8b115-a364-4a21-a0b3-ba450fbb9961.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/e5c7048b-a21a-472b-b6e4-41fafa6bfba3.jpg",
+            "SR": "https://imgsli.com/i/4b37f85f-5d4c-4bee-a196-15c269189afe.jpg"
+        }
+    ]
+}

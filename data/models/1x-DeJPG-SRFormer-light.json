@@ -1,0 +1,39 @@
+{
+    "name": "DeJPG_SRFormer_light",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "jpeg",
+        "restoration"
+    ],
+    "description": "1xDeJPG SRFormer light model\n\nMeant to remove jpg artifacts. First compression round on the training dataset was 40-95, second round was 80-100.\n\nonnx conversions in this folder which contains all files: https://drive.google.com/drive/folders/1RRXZCRVqlqU_iaeF-RGUM9UBWtI0HseY\n\nExample: https://slow.pics/c/70nGEvPR\n\nPS these are non-otf models. otf experiments have not quite done it for me (probably would need more adjusting), but they can be found in the experiments folder and their outputs in the outputs folder: https://drive.google.com/drive/folders/1RRXZCRVqlqU_iaeF-RGUM9UBWtI0HseY?usp=drive_link",
+    "date": "2023-08-02",
+    "architecture": "srformer",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 38616321,
+            "sha256": "288189f6f907dadee641bcda4b162ffa9266a00771f135052fc3334641c4711a",
+            "urls": [
+                "https://drive.google.com/file/d/1qeoE-AymPBcuzItnjNsRrPLOw0chJN0F"
+            ]
+        }
+    ],
+    "trainingIterations": 88000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 32,
+    "dataset": "Nomos8k_sfw",
+    "datasetSize": 6118,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/60nothQ6.png",
+            "SR": "https://i.slow.pics/Kqzsq526.png"
+        }
+    ]
+}

@@ -61,7 +61,10 @@
             "arch:hat",
             "arch:srformer",
             "arch:edsr",
-            "arch:grl"
+            "arch:grl",
+            "arch:dat",
+            "arch:ludvae",
+            "arch:cugan"
         ]
     },
     "platform": {

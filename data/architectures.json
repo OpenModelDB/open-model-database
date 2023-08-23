@@ -22,6 +22,22 @@
             "ncnn"
         ]
     },
+    "cugan": {
+        "name": "Cugan",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "dat": {
+        "name": "DAT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "edsr": {
         "name": "EDSR",
         "input": "image",
@@ -71,6 +87,13 @@
         "compatiblePlatforms": [
             "pytorch",
             "onnx"
+        ]
+    },
+    "ludvae": {
+        "name": "LUDVAE",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
         ]
     },
     "omnisr": {

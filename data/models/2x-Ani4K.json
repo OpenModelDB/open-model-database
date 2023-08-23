@@ -1,0 +1,50 @@
+{
+    "name": "Ani4K",
+    "author": "sirosky",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Ani4K is a 2x model for creating natural-looking 2K and 4K upscales of modern anime. The model places emphasis on depth of field and blur effect retention, which are extremely common in modern anime and something that many anime models struggle with. In addition, Ani4K is trained for strong detail retention, WEB/BD compression clean-up, and producing pleasing lineart. \n\nMore info on the Github page: https://github.com/Sirosky/Sirosky-Upscaling-Models.\n\nBlur Retention Comparisons (including vs. xinntao's 2x paper model): https://imgsli.com/MTg2NTg5/4/5\n\nGeneral Comparisons: https://imgsli.com/MTg2ODI2",
+    "date": "2023-06-18",
+    "architecture": "compact",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4838301,
+            "sha256": "75072688da672b419f9496f820b1d3026b64446597cb9a3ccd5024f50ca6d42e",
+            "urls": [
+                "https://github.com/Sirosky/Sirosky-Upscaling-Models/releases/download/compact/2x_Ani4K_Compact_35000.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 35000,
+    "trainingEpochs": 24,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "dataset": "BD/Web and DVD image pairs + degraded image pairs",
+    "datasetSize": 7000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5e87a756-0c15-4762-88b6-66e04a438fc7.jpg",
+            "SR": "https://imgsli.com/i/d74a09db-0f53-409c-b1d9-31a382e739fa.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/d68912ee-7c26-4fd4-b721-ebea0b0384f9.jpg",
+            "SR": "https://imgsli.com/i/4ed1c547-1e23-4fb8-8079-6090b1b8e191.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/52e3c515-82d8-4bf8-99c7-ae281334c7e4.jpg",
+            "SR": "https://imgsli.com/i/2ab75839-72f9-4518-9f32-9b77bb5696c6.jpg"
+        }
+    ]
+}
