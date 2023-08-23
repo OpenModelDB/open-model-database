@@ -1,5 +1,5 @@
 {
-    "name": "4xNomos8kSCHAT-L",
+    "name": "4xNomos8kSCHAT-S",
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
@@ -7,11 +7,11 @@
         "general-upscaler",
         "photo"
     ],
-    "description": "4x photo upscaler with otf jpg compression and blur, trained on musl's Nomos8k_sfw dataset for realisic sr. \nProvided is a 16fp onnx (154.1MB) download, and a pth (316.2MB) download.\nSince this is a big model, upscaling might take a while.",
+    "description": "4x photo upscaler with otf jpg compression and blur, trained on musl's Nomos8k_sfw dataset for realisic sr. \nHAT-S version/model. \nFp16 Onnx (56.5MB) and pth (77.3MB) file download provided.",
     "date": "2023-06-30",
     "architecture": "hat",
     "size": [
-        "HAT-L"
+        "HAT-S"
     ],
     "scale": 4,
     "inputChannels": 3,
@@ -20,65 +20,65 @@
         {
             "platform": "onnx",
             "type": "onnx",
-            "size": 161575106,
-            "sha256": "919dff28836ff10fef2d5462e5b82c951211abf24f05196b0a6e2c24f20ed1de",
+            "size": 59211624,
+            "sha256": "62cbce18bc865bb0332b3edac437c75f5f1b6baf1594d8258167431835d124b5",
             "urls": [
-                "https://drive.google.com/file/d/18codpbxYcQecX7FNbYooUskfJR3lDBpr"
+                "https://github.com/Phhofm/models/raw/main/4xNomos8kSCHAT-S/4xNomos8kSCHAT-S.onnx"
             ]
         },
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 331564661,
-            "sha256": "9e7726ba191fdf05b87ea8585d78164b6e96e2ee04fdbb3285c3efa37db4b5b0",
+            "size": 81096929,
+            "sha256": "e1400e16a10bf4dbbe003651bf76f9f9c4e083f0e5c93e1c3effe2fa91b41168",
             "urls": [
-                "https://drive.google.com/file/d/1gh7HDKzf9aZw-rA8WYQy1ZZ8D0MAIHxR"
+                "https://github.com/Phhofm/models/raw/main/4xNomos8kSCHAT-S/4xNomos8kSCHAT-S.pth"
             ]
         }
     ],
-    "trainingIterations": 132000,
+    "trainingIterations": 169000,
     "trainingBatchSize": 4,
     "trainingHRSize": 256,
     "trainingOTF": true,
     "dataset": "Nomos8k_sfw",
     "datasetSize": 6118,
-    "pretrainedModelG": "4x-HAT-L_SRx4_ImageNet-pretrain",
+    "pretrainedModelG": "4x-HAT-S-SRx4",
     "images": [
         {
             "type": "paired",
             "caption": "Seeufer",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/seeufer.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/seeufer_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-S/seeufer_4xNomos8kSCHAT-S.png"
         },
         {
             "type": "paired",
             "caption": "Dearalice",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/dearalice.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/dearalice_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-S/dearalice_4xNomos8kSCHAT-S.png"
         },
         {
             "type": "paired",
             "caption": "Bibli",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/bibli.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/bibli_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-S/bibli_4xNomos8kSCHAT-S.png"
         },
         {
             "type": "paired",
             "caption": "Dearalice2",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/dearalice2.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/dearalice2_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-S/dearalice2_4xNomos8kSCHAT-S.png"
         },
         {
             "type": "paired",
             "caption": "Palme",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/palme.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/palme_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-S/palme_4xNomos8kSCHAT-S.png"
         },
         {
             "type": "paired",
-            "caption": "Jujutsukaisen",
+            "caption": "Jujustukaisen",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/jujutsukaisen.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/jujutsukaisen_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-S/jujutsukaisen_4xNomos8kSCHAT-S.png"
         }
     ]
 }

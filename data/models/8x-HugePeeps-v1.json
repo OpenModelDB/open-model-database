@@ -26,6 +26,6 @@
             ]
         }
     ],
-    "pretrainedModelG": "8x-TGHQFace8x",
+    "pretrainedModelG": "8x-TGHQFace",
     "images": []
 }

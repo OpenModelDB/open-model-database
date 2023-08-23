@@ -6,6 +6,7 @@ import { PageContainer } from '../elements/page';
 import { useModels } from '../lib/hooks/use-models';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { ArchId, Model, ModelId } from '../lib/schema';
+import { canonicalizeModelId } from '../lib/schema-util';
 
 function PageContent() {
     const { modelData } = useModels();
@@ -17,7 +18,7 @@ function PageContent() {
     const [pretrained, setPretrained] = useState<ModelId | ''>('');
     const [idName, setIdName] = useState('Unknown');
     const [scale, setScale] = useState(1);
-    const fullId = `${scale}x-${idName}` as ModelId;
+    const fullId = canonicalizeModelId(`${scale}x-${idName}`);
 
     if (!editMode || !modelData.size) return null;
 
