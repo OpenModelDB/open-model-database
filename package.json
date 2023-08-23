@@ -13,6 +13,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "validate-db": "ts-node --project scripts/tsconfig.json scripts/validate-db.ts",
+    "fix-db": "ts-node --project scripts/tsconfig.json scripts/validate-db.ts -- --fix",
     "generate-api": "ts-node --project scripts/tsconfig.json scripts/generate-api.ts",
     "build-full": "npm run build && npx next export && npm run generate-api"
   },

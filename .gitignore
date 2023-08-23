@@ -39,3 +39,4 @@ yarn-error.log*
 *.onnx
 *.bin
 *.param
+data/model-files/
