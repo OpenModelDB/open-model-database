@@ -39,7 +39,7 @@
     "trainingHRSize": 192,
     "dataset": "HFA2k",
     "datasetSize": 2568,
-    "pretrainedModelG": "2x-SRFormerLight_SRx2_DIV2K",
+    "pretrainedModelG": "2x-SRFormerLight-SRx2-DIV2K",
     "images": [
         {
             "type": "paired",

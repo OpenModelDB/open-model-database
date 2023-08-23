@@ -41,7 +41,7 @@
     "trainingOTF": true,
     "dataset": "Nomos8k_sfw",
     "datasetSize": 6118,
-    "pretrainedModelG": "4x-DAT_x4",
+    "pretrainedModelG": "4x-DAT",
     "images": [
         {
             "type": "paired",
