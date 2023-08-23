@@ -4,6 +4,7 @@
     "license": "CC-BY-4.0",
     "tags": [
         "anime",
+        "restoration",
         "video-frame"
     ],
     "description": "2x SRFormer_light anime upscale model that handles AVC (h264) compression since h264 crf 20-28 degradation together with bicubic, bilinear, box and lanczos downsampling has been applied on musl's HFA2k dataset with Kim's dataset destroyer for training.\n\n\nIf you want to run this model with chaiNNer (or another application) you need to use the onnx files with an onnx upscale node. All onnx conversions can be found in the [onnx folder on my repo](https://github.com/Phhofm/models/tree/main/2xHFA2kAVCSRFormer_light/onnx).\n\nExample 1: https://imgsli.com/MTkxMTQz\n\nExample 2: https://imgsli.com/MTkxMTQ0",

@@ -18,8 +18,8 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 22403103,
-            "sha256": "28b4ffdb02b13d0d91c9cc640be2769c02e8a6027ad9155f7fb7703425d60fcf",
+            "size": 6718451,
+            "sha256": "03a1a017522017c49bdecd2814303f9413b765b715b22f22fc9cdffe697f90ce",
             "urls": [
                 "https://cdn.discordapp.com/attachments/579685650824036387/1117894518642069514/4x_ardo.zip"
             ]

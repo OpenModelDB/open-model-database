@@ -2,7 +2,10 @@
     "name": "AnimeJaNai v2 UltraCompact",
     "author": "the-database",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "anime",
+        "restoration"
+    ],
     "description": "Real-time 2x Real-ESRGAN Compact/UltraCompact/SuperUltraCompact models designed for upscaling 1080p anime to 4K. The models correct the inherent blurriness found in anime while preserving details and colors. Optimized for upscaling from 1080p to 4K, but can still produce worthwhile results when upscaling some lower-resolution anime. Can be set up to run in real-time with mpv on Windows using https://github.com/the-database/mpv-upscale-2x_animejanai\n\nMost HD anime are not produced in native 1080p resolution but rather have a production resolution between 720p and 1080p. When the anime is distributed to consumers, the video is scaled up to 1080p, causing scaling artifacts and blur in the video. The aim is to address these issues while upscaling to deliver a result that appears as if the anime was originally mastered in 4K resolution.\n\nDevelopment of the V2 models spanned over four months, during which over 200 release candidate models were trained and meticulously refined. The V2 models introduce several improvements compared to V1:\n\nMore accurate \"native-res aware\" sharpening, so the model works just as well on blurry native 720p sources, sharper native 1080p sources, and everything in between\nMore accurate colors including line colors\nImproved artifact handling\nBetter preservation and enhancement of background details and grain\n\nOverall, the V2 models yield much more natural and faithful results compared to V1.",
     "date": "2023-07-26",
     "architecture": "compact",
@@ -17,8 +20,8 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 8883126,
-            "sha256": "9cdc5335acd6698204ce5deb761cec59318f4177de7837dd0e4ad21389d1fd6b",
+            "size": 2455655,
+            "sha256": "46ebcc23cb9d0b2981f230be63b6342b28e281aba323e6510a587539235cc0f2",
             "urls": [
                 "https://github.com/the-database/mpv-upscale-2x_animejanai/releases/download/2.0.0/2x_AnimeJaNai_V2_ModelsOnly.zip"
             ]

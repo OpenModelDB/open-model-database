@@ -17,8 +17,8 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 20743811,
-            "sha256": "059a98d1a79fc86ad2dc731e721dbae7ca0db0482b4b40d647afdf64a9da2d29",
+            "size": 22869807,
+            "sha256": "fad74e8986639679f9758af2d26c6e6ba908da904ff4363f446b72d13ea1edb2",
             "urls": [
                 "https://www.mediafire.com/file/gd8adc80vhcuoma/DM600_LUDVAE.7z/file"
             ]
@@ -26,8 +26,8 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 20743811,
-            "sha256": "059a98d1a79fc86ad2dc731e721dbae7ca0db0482b4b40d647afdf64a9da2d29",
+            "size": 22869807,
+            "sha256": "fad74e8986639679f9758af2d26c6e6ba908da904ff4363f446b72d13ea1edb2",
             "urls": [
                 "https://mega.nz/file/JAlimZIJ#Mk7q3vrADHXRaxQHo_84G2_pr_VfgWGXhR6PBaqbp0I"
             ]
