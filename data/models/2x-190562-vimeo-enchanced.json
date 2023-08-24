@@ -19,7 +19,7 @@
             "size": null,
             "sha256": null,
             "urls": [
-                "http://91.232.191.56/models/190581.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-190562-vimeo-enchanced.pth"
             ]
         }
     ],
