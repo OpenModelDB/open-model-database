@@ -22,7 +22,8 @@
             "size": 67020901,
             "sha256": "151c5afa79d54ec766098848a2c1db422041ebf695b35dc5b32c2588a393d980",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-muy4-035-1.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-muy4-035-1.pth",
+                "https://cdn.discordapp.com/attachments/600949890108882944/1144935979849875467/KwcyI7R.pth"
             ]
         }
     ],
