@@ -1,0 +1,49 @@
+{
+    "name": "4xLSDIRDAT",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "jpeg",
+        "photo",
+        "restoration"
+    ],
+    "description": "A 4x photo upscale DAT model trained with otf (resize, jpg, small blur) on the LSDIR dataset.",
+    "date": "2023-09-09",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154682919,
+            "sha256": "d76391730a9126f4a72ddb79a834e264809642d0b9c6fe394d6aadc150d0859e",
+            "urls": [
+                "https://drive.google.com/file/d/1njK_72D2bXV5-t0GYqOItpm_jrPh2ylw/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 95000,
+    "trainingEpochs": 2,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "LSDIR",
+    "datasetSize": 81991,
+    "pretrainedModelG": "4x-DAT",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/bY8i1aIT.png",
+            "SR": "https://i.slow.pics/4LGQpJgu.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8GcpBpqt.png",
+            "SR": "https://i.slow.pics/07cFiDRP.png"
+        }
+    ]
+}
