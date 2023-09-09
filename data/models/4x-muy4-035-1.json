@@ -8,7 +8,10 @@
     "description": "Upscaling of anime art (Specifically visual novel CG art)",
     "date": "2021-07-18",
     "architecture": "esrgan",
-    "size": null,
+    "size": [
+        "64nf",
+        "23nb"
+    ],
     "scale": 4,
     "inputChannels": 3,
     "outputChannels": 3,
@@ -16,10 +19,11 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": null,
-            "sha256": null,
+            "size": 67020901,
+            "sha256": "151c5afa79d54ec766098848a2c1db422041ebf695b35dc5b32c2588a393d980",
             "urls": [
-                "https://s.katou.pw/4x_muy4_035_1.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-muy4-035-1.pth",
+                "https://cdn.discordapp.com/attachments/600949890108882944/1144935979849875467/KwcyI7R.pth"
             ]
         }
     ],
