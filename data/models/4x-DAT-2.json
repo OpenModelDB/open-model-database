@@ -1,0 +1,32 @@
+{
+    "name": "DAT_2_x4",
+    "author": "zheng-chen",
+    "license": "Apache-2.0",
+    "tags": [
+        "research"
+    ],
+    "description": "Official DAT2 4x Pretrain of Dual Aggregation Transformer for Image Super-Resolution DAT\n\nTransformer has recently gained considerable popularity in low-level vision tasks, including image super-resolution (SR). These networks utilize self-attention along different dimensions, spatial or channel, and achieve impressive performance. This inspires us to combine the two dimensions in Transformer for a more powerful representation capability. Based on the above idea, we propose a novel Transformer model, Dual Aggregation Transformer (DAT), for image SR. Our DAT aggregates features across spatial and channel dimensions, in the inter-block and intra-block dual manner. Specifically, we alternately apply spatial and channel self-attention in consecutive Transformer blocks. The alternate strategy enables DAT to capture the global context and realize inter-block feature aggregation. Furthermore, we propose the adaptive interaction module (AIM) and the spatial-gate feed-forward network (SGFN) to achieve intra-block feature aggregation. AIM complements two self-attention mechanisms from corresponding dimensions. Meanwhile, SGFN introduces additional non-linear spatial information in the feed-forward network. Extensive experiments show that our DAT surpasses current methods.",
+    "date": "2023-07-17",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140333139,
+            "sha256": "05b5c17bb5d1939ec0ec6b9368368d82d8c45b80c134e370f798efec0aeec395",
+            "urls": [
+                "https://drive.google.com/file/d/1sfB15jklXRjGiZZWgYXZAYc2Ut4TuKOz/view?usp=drive_link"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://raw.githubusercontent.com/zhengchen1999/DAT/main/figs/DAT.png"
+        }
+    ]
+}
