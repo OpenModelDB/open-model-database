@@ -1,0 +1,72 @@
+{
+    "name": "4xFFHQDAT",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "faces",
+        "general-upscaler"
+    ],
+    "description": "4x photo upscaler for faces with otf jpg compression, blur and resize, trained on FFHQ dataset. This has been trained on and for faces, but i guess can also be used for other photos, might be able to retain skin detail. This is not face restoration, but simply a 4x upscaler trained on faces, therefore input images need to be of good quality if good output quality is desired.",
+    "date": "2023-08-25",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154679777,
+            "sha256": "14de53f9a48b5dbb268a35aa4daba9a9201679724b0bf36e2cd5e64280e066a2",
+            "urls": [
+                "https://drive.google.com/file/d/1N3ysO2IWkouzy4aFONLgYUjaUMrLz8AB/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 122000,
+    "trainingEpochs": 2,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "FFHQ",
+    "datasetSize": 259990,
+    "pretrainedModelG": "4x-DAT",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b55ee3b7-2ad3-4f46-8889-b94faa29baab.jpg",
+            "SR": "https://imgsli.com/i/706013f1-2ba1-44b9-bcbc-11114d17abdd.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1718e6f6-17f0-4c7b-a466-0325e3f48584.jpg",
+            "SR": "https://imgsli.com/i/a89a85aa-c492-4d8d-b72a-0ab1141107ab.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/037b1980-b0e4-40af-bd04-9433f3c20562.jpg",
+            "SR": "https://imgsli.com/i/3d3eeca4-be61-4f6e-831f-151ea0875798.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c05f25a2-a893-41ca-a15d-4c358917e63e.jpg",
+            "SR": "https://imgsli.com/i/e69edb61-cfcd-41e0-bdb5-5206071e5a90.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6b6981c7-ffed-4e2f-9918-f12056e02435.jpg",
+            "SR": "https://imgsli.com/i/725d23b0-36d8-4511-8534-bbad873a543b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/d19d5002-f4ed-4259-98d8-c5ac62f54df5.jpg",
+            "SR": "https://imgsli.com/i/9c07f2fb-f3e9-432a-9dc2-5319b3cad50c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5c3c0bf2-3b80-463c-986d-adff7e859eec.jpg",
+            "SR": "https://imgsli.com/i/568595da-9de3-4542-b394-6f316d9c523c.jpg"
+        }
+    ]
+}
