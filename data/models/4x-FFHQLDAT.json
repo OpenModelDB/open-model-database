@@ -1,0 +1,51 @@
+{
+    "name": "4xFFHQLDAT",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "faces",
+        "general-upscaler"
+    ],
+    "description": "Since the above 4xFFHQDAT model is not able to handle the noise present in low quality input images, i made a small variant/finetune of this, the 4xFFHQLDAT model. This model might come in handy if your input image is of bad quality/not suited for the previous model. I basically made this model in a response to an input image posted in upscaling-results channel as a request to this upscale model (since 4xFFHQDAT would not be able to handle noise), see Imgsli1 example below for result.",
+    "date": "2023-08-25",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154682919,
+            "sha256": "33aaf2c50c4421ffa45ca7355b4e87831ba05154077e57ef8debd50f5c9256ff",
+            "urls": [
+                "https://drive.google.com/file/d/1VlfVgmrygnx7YJnh2lESFdB6oF5WECHM/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 44000,
+    "trainingBatchSize": 128,
+    "trainingHRSize": 4,
+    "trainingOTF": true,
+    "dataset": "FFHQ",
+    "datasetSize": 259990,
+    "pretrainedModelG": "4x-FFHQDAT",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/4c54a227-b7fd-4ca2-a64b-3510718d7c32.jpg",
+            "SR": "https://imgsli.com/i/4cdf7f08-9bff-45a6-b0e1-b56ec1c3a143.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5dbd1682-c0fc-4c07-be45-20a4870eef01.jpg",
+            "SR": "https://imgsli.com/i/dc2b0685-7488-493b-b8c0-9b3bbd0f55c1.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ed105d86-00a6-42b7-a762-970699fc2afa.jpg",
+            "SR": "https://imgsli.com/i/3547041d-265f-4ef0-ba5f-766b39ab7f6e.jpg"
+        }
+    ]
+}
