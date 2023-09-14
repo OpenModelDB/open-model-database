@@ -1,0 +1,84 @@
+{
+    "name": "4xNomosUniDAT_bokeh_jpg",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "general-upscaler",
+        "jpeg",
+        "photo",
+        "restoration"
+    ],
+    "description": "4x Multipurpose DAT upscaler\n\nTrained on DAT with Adan, U-Net SN, huber pixel loss, huber perceptial loss, vanilla gan loss, huber ldl loss and huber focal-frequency loss, on paired nomos_uni (universal dataset containing photographs, anime, text, maps, music sheets, paintings ..) with added jpg compression 40-100 and down_up, bicubic, bilinear, box, nearest and lanczos scales. No blur degradation had been introduced in the training dataset to keep the model from trying to sharpen blurry backgrounds.\n\nThe three strengths of this model (design purpose):\n1. Multipurpose\n2. Handles bokeh effect\n3. Handles jpg compression\n\nThis model will not:\n- Denoise\n- Deblur",
+    "date": "2023-09-14",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154697745,
+            "sha256": "a19a652c01d765537a7899abcee9ba190ca13ca8d1ee6c6d5d81f0503dda965f",
+            "urls": [
+                "https://drive.google.com/file/d/1SBIn0quWcqxq4PAj7UxJ7cqNih-AZwO-/view"
+            ]
+        }
+    ],
+    "trainingIterations": 185000,
+    "trainingEpochs": 9,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "dataset": "nomos_uni",
+    "datasetSize": 2989,
+    "pretrainedModelG": "4x-DAT",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xs5nO3br.webp",
+            "SR": "https://i.slow.pics/rHZ0i8p2.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/X6qPx1SH.webp",
+            "SR": "https://i.slow.pics/G6kHsFpJ.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/o4yhJ7Np.webp",
+            "SR": "https://i.slow.pics/qInEXQJl.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NU0HCNiJ.webp",
+            "SR": "https://i.slow.pics/dDfDw3cc.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oWbcY5bL.webp",
+            "SR": "https://i.slow.pics/DZmp20Ot.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/sRViqWis.webp",
+            "SR": "https://i.slow.pics/fR3V6c2w.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/iGOSCC8S.webp",
+            "SR": "https://i.slow.pics/hDT0Ixv0.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/1SZgTFMu.webp",
+            "SR": "https://i.slow.pics/9G8sa0ud.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/WPqgdHN9.webp",
+            "SR": "https://i.slow.pics/aybsrR4O.webp"
+        }
+    ]
+}
