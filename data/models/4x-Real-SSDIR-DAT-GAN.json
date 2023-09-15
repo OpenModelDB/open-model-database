@@ -1,0 +1,50 @@
+{
+    "name": "4xReal_SSDIR_DAT_GAN",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "denoise",
+        "jpeg",
+        "manga",
+        "photo",
+        "restoration"
+    ],
+    "description": "4x photo upscaler on the SSDIR_Sharp dataset, trained with otf, using the same settings as Real_HAT_GAN.  \nThese otf values are very high in my opinion. This was an experiment if I used the same settings as Real_HAT_GAN (therefore the name).   \nThis model will denoise very strongly and smooth out a lot (so a lot of details will be lost. But maybe this effect might be beneficial to someone)",
+    "date": "2023-09-10",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154704099,
+            "sha256": "bc29669d28ed3fe46a262003d76c26cb11c707942893f8d4c7607a343b741d8d",
+            "urls": [
+                "https://drive.google.com/file/d/1Xri3lusXSwPhalegQmAkVcRvA2cPOGYe/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 105000,
+    "trainingEpochs": 39,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "SSDIR_Sharp",
+    "datasetSize": 10000,
+    "pretrainedModelG": "4x-DAT",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8GcpBpqt.png",
+            "SR": "https://i.slow.pics/Mw5gwVpS.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/vRdLwxBe.webp",
+            "SR": "https://i.slow.pics/KusG3n0F.webp"
+        }
+    ]
+}

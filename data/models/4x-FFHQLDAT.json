@@ -3,8 +3,11 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
+        "denoise",
         "faces",
-        "general-upscaler"
+        "jpeg",
+        "photo",
+        "restoration"
     ],
     "description": "Since the above 4xFFHQDAT model is not able to handle the noise present in low quality input images, i made a small variant/finetune of this, the 4xFFHQLDAT model. This model might come in handy if your input image is of bad quality/not suited for the previous model. I basically made this model in a response to an input image posted in upscaling-results channel as a request to this upscale model (since 4xFFHQDAT would not be able to handle noise), see Imgsli1 example below for result.",
     "date": "2023-08-25",

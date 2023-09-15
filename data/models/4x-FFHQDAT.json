@@ -4,7 +4,7 @@
     "license": "CC-BY-4.0",
     "tags": [
         "faces",
-        "general-upscaler"
+        "photo"
     ],
     "description": "4x photo upscaler for faces with otf jpg compression, blur and resize, trained on FFHQ dataset. This has been trained on and for faces, but i guess can also be used for other photos, might be able to retain skin detail. This is not face restoration, but simply a 4x upscaler trained on faces, therefore input images need to be of good quality if good output quality is desired.",
     "date": "2023-08-25",

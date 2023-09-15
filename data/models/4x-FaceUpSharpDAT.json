@@ -1,5 +1,5 @@
 {
-    "name": "4xFaceUpDAT",
+    "name": "4xFaceUpSharpDAT",
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
@@ -17,36 +17,36 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 154685037,
-            "sha256": "c4f1680c47ec461114fea4ec41516afee9a677ef1514d61ecce7a23062ab6ff5",
+            "size": 154695627,
+            "sha256": "a3219a4fa4a5e61a8f10488dda0082a19f45eb99dfa556591c4647767b82cec2",
             "urls": [
-                "https://drive.google.com/file/d/1d3wPbtjFcgCkWAMVFQalOuQHdiNmfc5i/view?usp=drive_link"
+                "https://drive.google.com/file/d/1aJLyM9xPSJErmpTAeXypXO7XisfSs2vQ/view?usp=drive_link"
             ]
         }
     ],
-    "trainingIterations": 140000,
-    "trainingEpochs": 54,
+    "trainingIterations": 100000,
+    "trainingEpochs": 39,
     "trainingBatchSize": 4,
     "trainingHRSize": 128,
     "trainingOTF": true,
-    "dataset": "FaceUp",
+    "dataset": "FaceUpSharp",
     "datasetSize": 10000,
-    "pretrainedModelG": "4x-DAT",
+    "pretrainedModelG": "4x-FaceUpDAT",
     "images": [
         {
             "type": "paired",
             "LR": "https://i.slow.pics/L7LIpM4b.png",
-            "SR": "https://i.slow.pics/zYcJcbeX.png"
+            "SR": "https://i.slow.pics/u5EG2Pyw.png"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/yBlwljcW.png",
-            "SR": "https://i.slow.pics/EfVdSugb.png"
+            "SR": "https://i.slow.pics/kI2jCzqp.png"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/E2Y0FSPj.png",
-            "SR": "https://i.slow.pics/M5kcJjpr.png"
+            "SR": "https://i.slow.pics/6oOdi6G7.png"
         }
     ]
 }

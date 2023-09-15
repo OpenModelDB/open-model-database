@@ -8,7 +8,7 @@
         "photo"
     ],
     "description": "4x general purpose upscaler for non-degraded content.\n\nHas been trained as paired dataset on box downsamples as a DAT2 model, AdamW with pixel, perceptual, gan, color, ldl and ff loss.",
-    "date": "2023-09-09",
+    "date": "2023-09-10",
     "architecture": "dat",
     "size": null,
     "scale": 4,
