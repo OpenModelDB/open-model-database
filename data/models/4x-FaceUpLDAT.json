@@ -1,0 +1,45 @@
+{
+    "name": "4xFaceUpLDAT",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "denoise",
+        "faces",
+        "jpeg",
+        "photo",
+        "restoration"
+    ],
+    "description": "Description: 4x photo upscaler for faces, trained on the FaceUp dataset. These models are an improvement over the previously released 4xFFHQDAT and are its successors. These models are released together with the FaceUp dataset, plus the accompanying [youtube video](https://www.youtube.com/watch?v=TBiVIzQkptI)\n\nThis model comes in 4 different versions:  \n4xFaceUpDAT (for good quality input)  \n4xFaceUpLDAT (for lower quality input, can additionally denoise)  \n4xFaceUpSharpDAT (for good quality input, produces sharper output, trained without USM but sharpened input images, good quality input)  \n4xFaceUpSharpLDAT (for lower quality input, produces sharper output, trained without USM but sharpened input images, can additionally denoise)  \n\nI recommend trying out 4xFaceUpDAT",
+    "date": "2023-09-02",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154687155,
+            "sha256": "35634a7d02342677856d77f10091fd0b5f8bd0092a0a8673fd8f109f740cd9c3",
+            "urls": [
+                "https://drive.google.com/file/d/1Bc6kw0c-axNL5vCdtLMgz8fRnvJWcgVn/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 80000,
+    "trainingEpochs": 31,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "FaceUp",
+    "datasetSize": 10000,
+    "pretrainedModelG": "4x-FaceUpDAT",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/bdKKMPcc.jpg",
+            "SR": "https://i.slow.pics/EYyhTPAh.png"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "name": "4xSSDIRDAT",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "jpeg",
+        "photo",
+        "restoration"
+    ],
+    "description": "Description: 4x photo upscaler on the SSDIR_Sharp dataset, trained with otf for jpg, resize and small blur. This model sharpens.",
+    "date": "2023-09-10",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154682919,
+            "sha256": "390fcba6c25dc5c0f6e5706a542d00f9a42bceda92c530933c17a33c6994fc4c",
+            "urls": [
+                "https://drive.google.com/file/d/1o-XZGMZwoS1S7YmqNNtiTdf8cennKO1B/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 110000,
+    "trainingEpochs": 40,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "SSDIR_Sharp",
+    "datasetSize": 10000,
+    "pretrainedModelG": "4x-FaceUpSharpDAT",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/bY8i1aIT.png",
+            "SR": "https://i.slow.pics/3mUhoINa.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8GcpBpqt.png",
+            "SR": "https://i.slow.pics/1AWFqPe8.png"
+        }
+    ]
+}
