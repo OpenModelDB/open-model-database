@@ -24,6 +24,7 @@
             "size": 5004681,
             "sha256": "2dbc96a7889ee31e381d3a314a5dd024473426766951a3e99c1175802e658d46",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-animerd-v1.pth",
                 "https://cdn.discordapp.com/attachments/579685650824036387/1098693932768055337/4x_animerd_v1.pth",
                 "https://mega.nz/file/ENV1FChR#0dH71yQpnelJ05NLQdmFNA4QUmYhthdMIGhoFfwVCw8",
                 "https://www.mediafire.com/file/cmgx51hkfh5725c/4x_animerd_v1.7z/file"
