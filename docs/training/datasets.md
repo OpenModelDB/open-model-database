@@ -73,5 +73,9 @@ If you have some time consider adding them to this list here.
 -   https://caffe2.ai/docs/datasets.html
 -   https://pastebin.com/vU7P8Vmi
 
+## Community datasets
+
+Our community regularly creates and shares custom datasets. You can find them in the [dataset-release](https://discord.com/channels/547949405949657098/905446120333930566) channel on our Discord server.
+
 [bible]: https://www.reddit.com/r/DHExchange/comments/ay0w3c/s_highres_scans_of_gustave_dor%C3%A9s_1866_bible/
 [toflow]: http://toflow.csail.mit.edu/
