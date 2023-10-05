@@ -27,6 +27,9 @@ module.exports = {
                 'accent-900': '#000c60',
             },
         },
+        screens: {
+            xl: '1400px',
+        },
     },
     darkMode: ['class', '[data-theme="dark"]'],
     plugins: [require('@tailwindcss/line-clamp'), require('@headlessui/tailwindcss')],
