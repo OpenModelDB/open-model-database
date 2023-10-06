@@ -109,16 +109,6 @@ const getModelCardImageComponent = (model: Model) => {
     const image = model.images[0] as Image | undefined;
     switch (image?.type) {
         case 'paired': {
-            if (image.thumbnail) {
-                return (
-                    <img
-                        alt={model.name}
-                        className="margin-auto z-0 h-full w-full object-cover"
-                        loading="lazy"
-                        src={image.thumbnail}
-                    />
-                );
-            }
             return (
                 <SideBySideImage
                     image={image}
