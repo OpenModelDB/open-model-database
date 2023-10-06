@@ -1,0 +1,48 @@
+{
+    "name": "Normal RG0 BC7",
+    "author": "rundevelopment",
+    "license": "CC0-1.0",
+    "tags": [
+        "dds",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "A 4x upscaler for BC7-compressed normal maps with a zeroed-out B channel and no alpha. The input is required to have no alpha and constant-zero blue channel. BC7-compressed images with an alpha channel should be handled by the BC1 model instead. This is because BC7 achieves very different quality for images with and without an alpha channel. The output normals will also have a constant-zero B channel. The output normals will also have a constant-zero B channel. Use external software or image editing plugins to properly normalize the generated normals and generate the Z component (if necessary). E.g. chaiNNer can do this with Normalize Normal Map node. Do not rely on this network producing unit vectors. \n\n**Dataset transformation:** \\\nThe LR have been compressed using Texconv version 2021.11.8.1. Since the contents of the B channel influence the R and G channels during compression, the LR were given a B channel that was either the Z component of the normal, a random constant color, or a random texture (usually the G channel of the associated albedo) before compression. The LR + B channel was then compressed and the resulting BC7-compressed DDS was converted back into a PNG and had its B channel zeroed out.\n\nMore information: https://github.com/RunDevelopment/ESRGAN-models/blob/main/normals/README.md",
+    "date": "2022-04-02",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "ce39c9e227b672eadd6e924a3b5ea19781207af2cf982b8c70257a64745263cd",
+            "urls": [
+                "https://github.com/RunDevelopment/ESRGAN-models/raw/main/normals/4x-Normal-RG0-BC7.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 89,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Custom. See description",
+    "datasetSize": 577,
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Crystal Lizard from Dark Souls 3",
+            "LR": "https://images2.imgbox.com/cc/e1/i20G62sv_o.png",
+            "SR": "https://images2.imgbox.com/39/c1/IDCLFuJ6_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/39/c1/IDCLFuJ6_t.jpg"
+        }
+    ]
+}
