@@ -2,7 +2,9 @@
     "name": "REDSVAL-7f-RRDB Lite",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "photo"
+    ],
     "description": "Category: Pretrained Discriminators\nPurpose: IRL videos\n\nnone",
     "date": "2020-12-03",
     "architecture": "sofvsr",
