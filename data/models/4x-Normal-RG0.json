@@ -1,0 +1,46 @@
+{
+    "name": "Normal RG0",
+    "author": "rundevelopment",
+    "license": "CC0-1.0",
+    "tags": [
+        "game-textures"
+    ],
+    "description": "A 4x upscaler for uncompressed normal maps with a zeroed-out B channel. The input is required to have no alpha and constant-zero blue channel. The model can handle some light compression artifacts but has trouble with quantization artifacts. The output normals will also have a constant-zero B channel. Use external software or image editing plugins to properly normalize the generated normals and generate the Z component (if necessary). E.g. chaiNNer can do this with Normalize Normal Map node. Do not rely on this network producing unit vectors.\n\n\nMore information: https://github.com/RunDevelopment/ESRGAN-models/blob/main/normals/README.md",
+    "date": "2022-04-02",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "a52f1ddf0be2d5199622e8a3b155655a6c5adf6043669214c72264bec32c0583",
+            "urls": [
+                "https://github.com/RunDevelopment/ESRGAN-models/raw/main/normals/4x-Normal-RG0.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 89,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Custom. See description",
+    "datasetSize": 577,
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Dragonslayer Armour shield from Dark Souls 3",
+            "LR": "https://images2.imgbox.com/0a/c5/h00712oc_o.png",
+            "SR": "https://images2.imgbox.com/14/c8/H3XDEUYS_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/14/c8/H3XDEUYS_t.jpg"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "name": "Normal RG0 BC1",
+    "author": "rundevelopment",
+    "license": "CC0-1.0",
+    "tags": [
+        "dds",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "A 4x upscaler for BC1-compressed normal maps with a zeroed-out B channel. The output normals will also have a constant-zero B channel. Use external software or image editing plugins to properly normalize the generated normals and generate the Z component (if necessary). E.g. chaiNNer can do this with Normalize Normal Map node. Do not rely on this network producing unit vectors. \n\n**Dataset transformation:** \\\nThe LR have been compressed with various BC1 compression settings (dithering, weighting) using Texconv version 2021.11.8.1. Since the contents of the B channel influence the R and G channels during compression, the LR were given a B channel that was either the Z component of the normal, a random constant color, or a random texture (usually the G channel of the associated albedo) before compression. The LR + B channel was then compressed and the resulting BC1-compressed DDS was converted back into a PNG and had its B channel zeroed out.\n\nMore information: https://github.com/RunDevelopment/ESRGAN-models/blob/main/normals/README.md",
+    "date": "2022-04-02",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "769f5b9b51813b5c8f43ece9fb17da9e249e3d667a5be649ba9583cae5e8843f",
+            "urls": [
+                "https://github.com/RunDevelopment/ESRGAN-models/raw/main/normals/4x-Normal-RG0-BC1.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 89,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Custom. See description.",
+    "datasetSize": 577,
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Face of an old man",
+            "LR": "https://images2.imgbox.com/65/bf/AdbeC87A_o.png",
+            "SR": "https://images2.imgbox.com/bd/ae/gU4oQXzh_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/bd/ae/gU4oQXzh_t.jpg"
+        }
+    ]
+}
