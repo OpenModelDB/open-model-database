@@ -5,7 +5,7 @@
     bottom: 0.5rem;
     right: 0.5rem;
 
-    @media screen and (min-width: 1500px) {
+    @media screen and (min-width: 1600px) {
         right: auto;
         left: calc(50vw + var(--max-page-width) / 2);
         bottom: 1rem;
@@ -20,7 +20,7 @@
     opacity: 0.3;
     transition: opacity 0.5s ease-in-out;
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1600px) {
         opacity: 0.5;
     }
 

@@ -13,8 +13,8 @@ export function PageContainer({ children, scrollToTop, wrapper }: PageContainerP
         <div className={style.container}>
             <Header />
             {wrapper ? (
-                <main className={`${style.main} p-0 lg:p-4`}>
-                    <div className={`${style.wrapper} mb-6 bg-fade-100 p-4 dark:bg-fade-800 lg:rounded-lg`}>
+                <main className={`${style.main} p-0 xl:p-4`}>
+                    <div className={`${style.wrapper} mb-6 bg-fade-100 p-4 dark:bg-fade-800 xl:rounded-lg`}>
                         {children}
                     </div>
                 </main>
