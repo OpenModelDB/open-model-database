@@ -231,6 +231,8 @@ export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
 });
 
 function fixDescription(description: string, scale: number): string {
+    // remove markdown links
+    description = description.replace(/\[([^\[\]]+)\]\([^()]*\)/g, '$1');
     const lines = description.trim().split('\n');
     const descLines: string[] = [];
     let purpose = '',
