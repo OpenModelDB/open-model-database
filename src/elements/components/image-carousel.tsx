@@ -124,9 +124,10 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                                 >
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
-                                        alt="Thumbnail"
+                                        alt={image.caption || 'Thumbnail'}
                                         className="m-auto h-auto max-h-full w-auto max-w-full"
                                         src={image.thumbnail || (image.type === 'paired' ? image.SR : image.url)}
+                                        title={image.caption}
                                     />
                                 </div>
                                 {!readonly && (
