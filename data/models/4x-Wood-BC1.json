@@ -1,0 +1,47 @@
+{
+    "name": "Wood BC1",
+    "author": "rundevelopment",
+    "license": "CC0-1.0",
+    "tags": [
+        "dds",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "A 4x upscaler for BC1-compressed wood textures. The model was trained on wood planks, wood stems, and a bit of tree bark. It performs reasonably well on woody textures and produces sharp outputs. However, it also tends to slightly shift the hue of the image, so results might appear slightly more red.\n\nMore information: https://github.com/RunDevelopment/ESRGAN-models/blob/main/wood/README.md",
+    "date": "2022-04-23",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66961958,
+            "sha256": "01ac754fa259a55cb38c18b10efeaf2ca23910202082b25553220a5408e4597b",
+            "urls": [
+                "https://github.com/RunDevelopment/ESRGAN-models/raw/main/wood/4x-Wood-BC1.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingEpochs": 81,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "datasetSize": 180,
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "A wooden shield from Dark Souls 3",
+            "LR": "https://images2.imgbox.com/30/14/ENiJ6x4m_o.png",
+            "SR": "https://images2.imgbox.com/ef/01/H8jd66tX_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/ef/01/H8jd66tX_t.jpg"
+        }
+    ]
+}

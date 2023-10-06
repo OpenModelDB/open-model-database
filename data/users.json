@@ -194,6 +194,9 @@
     "rtx-2080-ti-hoarder": {
         "name": "RTX 2080 ti hoarder"
     },
+    "rundevelopment": {
+        "name": "RunDevelopment"
+    },
     "saurusx": {
         "name": "SaurusX"
     },
