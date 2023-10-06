@@ -1,4 +1,4 @@
-import { Image, PairedImage } from './schema';
+import { Image, PairedImage, StandaloneImage } from './schema';
 
 export type GetDocument = (url: string) => Promise<Document>;
 
@@ -62,6 +62,27 @@ function getSlowPicSimplePair(document: Document): PairedImage {
     };
 }
 
+function getImgBoxImage(document: Document): StandaloneImage {
+    const img = document.querySelector<HTMLImageElement>('img#img');
+
+    if (!img) {
+        throw new Error('Cannot find image');
+    }
+
+    const url = img.src;
+    // The URL format is as follows:
+    // Full:  https://images2.imgbox.com/cc/e1/i20G62sv_o.png
+    // Thumb: https://thumbs2.imgbox.com/cc/e1/i20G62sv_t.png
+    const thumbnail = url.replace('https://images2.imgbox.com', 'https://thumbs2.imgbox.com').replace('_o.', '_t.');
+
+    return {
+        type: 'standalone',
+        url,
+        thumbnail,
+        caption: img.title,
+    };
+}
+
 export async function extractImage(url: string, getDocument: GetDocument = getDocumentBrowser): Promise<Image> {
     if (
         url.startsWith('https://i.imgur.com/') ||
@@ -82,6 +103,9 @@ export async function extractImage(url: string, getDocument: GetDocument = getDo
     }
     if (url.startsWith('https://slow.pics/')) {
         return getSlowPicSimplePair(await getDocument(url));
+    }
+    if (url.startsWith('https://imgbox.com/')) {
+        return getImgBoxImage(await getDocumentBrowser(url));
     }
 
     throw new Error('Unknown url');
