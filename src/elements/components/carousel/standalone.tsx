@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
-import { Image } from '../../../lib/schema';
+import { StandaloneImage } from '../../../lib/schema';
 
 type ImageStandaloneProps = {
-    image: Image;
+    image: StandaloneImage;
 };
 
 export const ImageStandalone = ({ image }: ImageStandaloneProps) => {
@@ -12,10 +12,6 @@ export const ImageStandalone = ({ image }: ImageStandaloneProps) => {
     useEffect(() => {
         imgRef.current?.centerView(1, 0);
     }, [image]);
-
-    if (image.type !== 'standalone') {
-        return null;
-    }
 
     return (
         <TransformWrapper

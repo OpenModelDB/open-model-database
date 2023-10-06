@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
-import { Image } from '../../../lib/schema';
+import { PairedImage } from '../../../lib/schema';
 
 type ImageComparisonProps = {
-    image: Image;
+    image: PairedImage;
 };
 
 export const ImageComparison = ({ image }: ImageComparisonProps) => {
@@ -42,10 +42,6 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
         srRef.current?.centerView(1, 0);
         setHandlePosition(50);
     }, [image]);
-
-    if (image.type !== 'paired') {
-        return null;
-    }
 
     return (
         <ReactCompareSlider
