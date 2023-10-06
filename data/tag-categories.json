@@ -35,7 +35,8 @@
             "jpeg",
             "pretrained",
             "research",
-            "restoration"
+            "restoration",
+            "texture-generation"
         ]
     },
     "architecture": {

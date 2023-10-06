@@ -93,6 +93,10 @@
         "name": "Text",
         "description": "Image or video of text."
     },
+    "texture-generation": {
+        "name": "Texture Generation",
+        "description": "The model generates textures from other textures. E.g. a model could generate a normal map from a diffuse texture."
+    },
     "video-frame": {
         "name": "Video Frame",
         "description": "Image of individual video frames."
