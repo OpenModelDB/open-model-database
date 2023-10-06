@@ -9,17 +9,21 @@ import { ArchId, Model, ModelId, TagId } from '../lib/schema';
 import { canonicalizeModelId } from '../lib/schema-util';
 
 function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] {
+    const isPretrained = (id: ModelId) => {
+        const model = modelData.get(id);
+        if (!model) return false;
+        return model.tags.includes('pretrained' as TagId) || model.tags.includes('research' as TagId);
+    };
+
     const usage = new Map<ModelId, number>();
     const increment = (id: ModelId) => {
         const count = usage.get(id) ?? 0;
         usage.set(id, count + 1);
     };
-    for (const [id, model] of modelData) {
-        if (model.pretrainedModelG) {
+
+    for (const [, model] of modelData) {
+        if (model.pretrainedModelG && isPretrained(model.pretrainedModelG)) {
             increment(model.pretrainedModelG);
-        }
-        if (model.tags.includes('pretrained' as TagId)) {
-            increment(id);
         }
     }
 
