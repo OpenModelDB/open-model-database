@@ -17,12 +17,12 @@ export function EditableLabel({ className, text, onChange, readonly }: EditableL
     useEffect(() => setValue(text), [text]);
 
     if (readonly || !onChange) {
-        return <span className={className}>{value}</span>;
+        return <span className={joinClasses(style.breakable, className)}>{value}</span>;
     }
     if (!edit) {
         return (
             <span
-                className={joinClasses(style.editable, className)}
+                className={joinClasses(style.editable, style.breakable, className)}
                 onClick={() => setEdit(true)}
             >
                 {value}
