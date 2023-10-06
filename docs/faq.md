@@ -23,41 +23,41 @@ There are many programs that can perform AI upscaling, though not all are able t
 ### Maintained Programs
 
 - **chaiNNer** (open-source | free)
-  - [Wiki]() | [GitHub](https://github.com/chaiNNer-org/chaiNNer) | [Website](https://chainner.app/)
+  - [Download](https://chainner.app/download) | [GitHub](https://github.com/chaiNNer-org/chaiNNer) | [Website](https://chainner.app/)
   - chaiNNer is a node-based image processing GUI that can also be used for image upscaling. It has the most support for models listed on OpenModelDB and can be run with PyTorch (CUDA), ONNX (CUDA), and NCNN (AMD/Intel). Being node based, it allows you to process your images with a lot more control, at the cost of being a bit more complex. Besides upscaling, chaiNNer also has a variety of other use cases and is a very versatile program.
 
 - **enhancr** (open-source | paid)
-  - [Wiki]() | [GitHub](https://github.com/mafiosnik777/enhancr)
+  - [GitHub](https://github.com/mafiosnik777/enhancr)
   - Meant for fast video frame upscaling and interpolation, enhancr takes advantage of Nvidia's TensorRT to provide fast processing on video. It supports a variety of models, including many of the custom ESRGAN ones from OpenModelDB.
 
 - **VSGAN-TensorRT-docker** (open-source | free)
-  - [Wiki]() | [GitHub](https://github.com/styler00dollar/VSGAN-tensorrt-docker)
+  - [GitHub](https://github.com/styler00dollar/VSGAN-tensorrt-docker)
   - A more complicated but free alternative for fast video upscaling with TensorRT. Supports an insane amount of models, but requires manual parameter selection.
 
 - **Upscayl** (open-source | free)
-  - [Wiki]() | [GitHub](https://github.com/upscayl/upscayl) | [Website](https://www.upscayl.org/)
+  - [GitHub](https://github.com/upscayl/upscayl) | [Website](https://www.upscayl.org/)
   - Upscayl is an AI upscaling GUI targeted for use on Linux. Unlike other GUIs, Upscayl offers a simple "enhance button" style GUI. As far as I am aware, it only works with the models provided with it, but if you want something really easy to use, this can't be any easier.
 
 - **Topaz Gigapixel** (closed-source | paid)
-  - [Wiki]() | [Website](https://www.topazlabs.com/gigapixel-ai)
+  - [Website](https://www.topazlabs.com/gigapixel-ai)
   - Gigapixel is a paid product from Topaz Labs. It does not support any models from OpenModelDB, however it is very well known in the AI upscaling space for their proprietary models.
 
 - **ComfyUI** (open-source | free)
-  - [Wiki]() | [GitHub](https://github.com/comfyanonymous/ComfyUI)
+  - [GitHub](https://github.com/comfyanonymous/ComfyUI)
   - ComfyUI is a node-based Stable Diffusion UI, but it can also be used for upscaling. Code for upscaling was borrowed from chaiNNer, so it should support many of the models from OpenModelDB. However, since it is more focused on Stable Diffusion, it probably won't be as easy as other GUIs.
 
 ### Unmaintained Programs
 
 - **Joey's ESRGAN fork** (open-source | free)
-  - [Wiki]() | [GitHub](https://github.com/joeyballentine/ESRGAN/)
+  - [GitHub](https://github.com/joeyballentine/ESRGAN/)
   - This is a fork (of a fork) of the original official ESRGAN CLI code by Xinntao. At one point, it was the best way to upscale as it was the only way to automatically run ESRGAN models of any configuration, and improving on vram-tiling and transparency splitting features from IEU. However, it is no longer actively maintained, and is only recommended if you just need to run ESRGAN models via CLI.
 
 - **CupScale** (open-source | free)
-  - [Wiki]() | [Original GitHub](https://github.com/n00mkrad/cupscale) | [Recommended Fork](https://github.com/DrPleaseRespect/cupscale) | [Alternative Fork](https://github.com/RaaynML/cupscale_continued)
+  - [Original GitHub](https://github.com/n00mkrad/cupscale) | [Recommended Fork](https://github.com/DrPleaseRespect/cupscale) | [Alternative Fork](https://github.com/RaaynML/cupscale_continued)
   - CupScale is a winforms GUI that wraps Joey's ESRGAN CLI fork as well as the realsr-ncnn-vulkan binaries to give a lot of extra features but with the simplicity of a GUI. However, it is no longer actively maintained, and due to the amount of issues it has, we recommend using the more stable fork linked above which swaps out the backend for one based on chaiNNer, or the alternate one that just has some bug fixes. Plenty of people still use CupScale, and especially if using one of the forks is a perfectly viable option.
 
 - **IEU** (open-source | free)
-  - [Wiki]() | [GitHub](https://github.com/ptrsuder/IEU.Winforms)
+  - [GitHub](https://github.com/ptrsuder/IEU.Winforms)
   - IEU was the first GUI meant to make running ESRGAN models easier. It paved the way for a lot of features such as transparency splitting and VRAM-safe tiling. However, it is no longer actively maintained.
 
 Know of more upscaling software? Let us know by posting an issue on our [GitHub Issue Tracker](https://github.com/OpenModelDB/open-model-database/issues)
