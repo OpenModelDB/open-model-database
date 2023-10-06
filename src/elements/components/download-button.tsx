@@ -27,11 +27,17 @@ const hostFromUrl = (url: string): string => {
         if (parsedUrl.hostname === 'drive.google.com') {
             return 'Google Drive';
         }
+        if (parsedUrl.hostname === 'cdn.discordapp.com') {
+            return 'Discord';
+        }
         if (domainAndTld === '1drv.ms') {
             return 'OneDrive';
         }
         if (domainAndTld === 'mega.nz') {
             return 'Mega';
+        }
+        if (domainAndTld === 'mediafire.com') {
+            return 'MediaFire';
         }
         if (domainAndTld === 'pcloud.link') {
             return 'pCloud';
@@ -70,12 +76,24 @@ const isMirrorExternal = (url: string) => {
     return !url.startsWith('https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/');
 };
 
-const fileTypeName: Record<Resource['type'], string> = {
-    onnx: 'ONNX',
-    pth: 'PyTorch',
+const fileType: Record<Resource['type'], () => JSX.Element> = {
+    onnx() {
+        return (
+            <>
+                ONNX <code>.onnx</code> file
+            </>
+        );
+    },
+    pth() {
+        return (
+            <>
+                PyTorch <code>.pth</code> file
+            </>
+        );
+    },
 };
 
-export const DownloadButton = ({ resource, showType, readonly, onChange }: DownloadButtonProps) => {
+export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
     const [selectedMirror, setSelectedMirror] = useState(resource.urls[0]);
 
     const isExternal = isMirrorExternal(selectedMirror);
@@ -88,7 +106,7 @@ export const DownloadButton = ({ resource, showType, readonly, onChange }: Downl
             <Link
                 external
                 className={joinClasses(
-                    'inline-flex h-16 w-full cursor-pointer items-center rounded-l-lg border-0 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600',
+                    'inline-flex h-20 w-full cursor-pointer items-center rounded-l-lg border-0 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600',
                     !showMenu && 'rounded-r-lg'
                 )}
                 href={selectedMirror}
@@ -109,9 +127,16 @@ export const DownloadButton = ({ resource, showType, readonly, onChange }: Downl
                             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
                         </svg>
                     )}
-                    Download {showType ? fileTypeName[resource.type] : ''}{' '}
-                    {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
-                    {isExternal && <div className="text-center text-sm font-normal">{`Hosted by ${host}`}</div>}
+                    Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
+                    <div className="text-center text-sm font-normal">
+                        <span className="whitespace-nowrap px-1">{fileType[resource.type]()}</span>
+                        {isExternal && (
+                            <>
+                                {' / '}
+                                <span className="whitespace-nowrap px-1">Hosted by {host}</span>
+                            </>
+                        )}
+                    </div>
                 </div>
             </Link>
 
@@ -123,7 +148,7 @@ export const DownloadButton = ({ resource, showType, readonly, onChange }: Downl
                     <div>
                         <Menu.Button
                             aria-label="Available mirrors"
-                            className="inline-flex h-16 w-12 cursor-pointer items-center rounded-r-lg border-0 bg-accent-600 text-center align-middle text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600"
+                            className="inline-flex h-20 w-12 cursor-pointer items-center rounded-r-lg border-0 bg-accent-600 text-center align-middle text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600"
                         >
                             <BsChevronDown className="w-full" />
                         </Menu.Button>
