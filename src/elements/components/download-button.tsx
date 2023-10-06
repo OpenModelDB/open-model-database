@@ -10,6 +10,7 @@ import { Link } from './link';
 
 type DownloadButtonProps = {
     resource: Resource;
+    showType?: boolean;
     readonly?: boolean;
     onChange?: (resource: Resource) => void;
 };
@@ -69,7 +70,12 @@ const isMirrorExternal = (url: string) => {
     return !url.startsWith('https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/');
 };
 
-export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
+const fileTypeName: Record<Resource['type'], string> = {
+    onnx: 'ONNX',
+    pth: 'PyTorch',
+};
+
+export const DownloadButton = ({ resource, showType, readonly, onChange }: DownloadButtonProps) => {
     const [selectedMirror, setSelectedMirror] = useState(resource.urls[0]);
 
     const isExternal = isMirrorExternal(selectedMirror);
@@ -103,7 +109,8 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
                         </svg>
                     )}
-                    Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
+                    Download {showType ? fileTypeName[resource.type] : ''}{' '}
+                    {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
                     {isExternal && <div className="text-center text-sm font-normal">{`Hosted by ${host}`}</div>}
                 </div>
             </Link>

@@ -406,6 +406,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         <DownloadButton
                                             readonly={!editMode}
                                             resource={resource}
+                                            showType={model.resources.length >= 2}
                                             onChange={(newResource: Resource) => {
                                                 const newResources = model.resources
                                                     .map((r) => {
