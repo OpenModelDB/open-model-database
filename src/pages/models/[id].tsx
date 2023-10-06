@@ -280,23 +280,26 @@ function LicenseProp({ model, updateModelProperty, editMode }: PropertyProps) {
     );
 }
 
+function isTrue<T>(value: T | null | undefined | false | '' | 0): value is T {
+    return Boolean(value);
+}
+
 function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [string, ReactNode])[] }) {
     return (
         <table className="w-full border-collapse text-left text-sm text-gray-500 dark:text-gray-400 ">
             <tbody>
-                {rows.map((row, i) => {
-                    if (!row) return null;
-
+                {rows.filter(isTrue).map((row, i) => {
                     const [label, value] = row;
+                    const extraPadding = i === 0 ? 'pt-3' : i === rows.length - 1 ? 'pb-3' : '';
                     return (
                         <tr key={i}>
                             <th
-                                className="bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white sm:whitespace-nowrap"
+                                className={`${extraPadding} whitespace-nowrap bg-fade-100 px-4 py-2 text-right align-top font-medium text-fade-900 dark:bg-fade-800 dark:text-white`}
                                 scope="row"
                             >
                                 {label}
                             </th>
-                            <td className="px-6 py-4">{value}</td>
+                            <td className={`${extraPadding} px-4 py-2`}>{value}</td>
                         </tr>
                     );
                 })}
