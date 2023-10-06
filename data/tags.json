@@ -1,7 +1,7 @@
 {
     "anime": {
         "name": "Anime",
-        "description": ""
+        "description": "Image or video of anime or anime-style artwork."
     },
     "anti-aliasing": {
         "name": "Anti-aliasing",
@@ -9,7 +9,7 @@
     },
     "cartoon": {
         "name": "Cartoon",
-        "description": ""
+        "description": "Image or video of western cartoon or artwork in a similar style."
     },
     "colorization": {
         "name": "Colorization",
@@ -44,15 +44,11 @@
     },
     "faces": {
         "name": "Faces",
-        "description": ""
-    },
-    "game-texture-maps": {
-        "name": "Game Texture Maps",
-        "description": ""
+        "description": "Image or video of faces. This can be photograph or artwork."
     },
     "game-textures": {
         "name": "Game Textures",
-        "description": ""
+        "description": "Textures used in video games or other 3D applications. These textures are typically diffuse/albedo maps, but other types of textures (such as normal maps) are also included."
     },
     "general-upscaler": {
         "name": "General Upscaler",
@@ -71,15 +67,15 @@
     },
     "manga": {
         "name": "Manga",
-        "description": ""
+        "description": "Image of manga pages or manga-style artwork."
     },
     "photo": {
         "name": "Photo",
-        "description": ""
+        "description": "Image or video of realistic scenes recorded with a camera."
     },
     "pixel-art": {
         "name": "Pixel Art",
-        "description": ""
+        "description": "Digital art. This includes everything from retro pixel artworks to modern CGI."
     },
     "pretrained": {
         "name": "Pretrained",
@@ -95,11 +91,15 @@
     },
     "text": {
         "name": "Text",
-        "description": ""
+        "description": "Image or video of text."
+    },
+    "texture-generation": {
+        "name": "Texture Generation",
+        "description": "The model generates textures from other textures. E.g. a model could generate a normal map from a diffuse texture."
     },
     "video-frame": {
         "name": "Video Frame",
-        "description": ""
+        "description": "Image of individual video frames."
     },
     "arch:cain": {
         "name": "CAIN",
@@ -255,27 +255,27 @@
     },
     "platform:ncnn": {
         "name": "NCNN",
-        "description": ""
+        "description": "The model has NCNN models (`.bin`+`.param`) to download."
     },
     "platform:ncnn-compatible": {
         "name": "NCNN Compatible",
-        "description": ""
+        "description": "The either has NCNN models to download or can be converted into an NCNN model."
     },
     "platform:onnx": {
         "name": "ONNX",
-        "description": ""
+        "description": "The model has ONNX models (`.onnx`) to download."
     },
     "platform:onnx-compatible": {
         "name": "ONNX Compatible",
-        "description": ""
+        "description": "The either has ONNX models to download or can be converted into an ONNX model."
     },
     "platform:pytorch": {
         "name": "PyTorch",
-        "description": ""
+        "description": "The model has PyTorch models (`.pth`/`.pt`) to download."
     },
     "platform:pytorch-compatible": {
         "name": "PyTorch Compatible",
-        "description": ""
+        "description": "The either has PyTorch models to download or can be converted into a PyTorch model."
     },
     "scale:1": {
         "name": "1x",

@@ -8,7 +8,6 @@
             "anime",
             "cartoon",
             "faces",
-            "game-texture-maps",
             "game-textures",
             "manga",
             "photo",
@@ -36,7 +35,8 @@
             "jpeg",
             "pretrained",
             "research",
-            "restoration"
+            "restoration",
+            "texture-generation"
         ]
     },
     "architecture": {
