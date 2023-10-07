@@ -3,16 +3,13 @@ import { AiFillEdit } from 'react-icons/ai';
 import { BiRadioCircle } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
 import { HiChevronDoubleDown, HiChevronDoubleUp, HiOutlinePlus, HiOutlinePlusSm } from 'react-icons/hi';
-import { Tooltip } from 'react-tooltip';
-import { useIsClient } from '../lib/hooks/use-is-client';
-import { useIsTouch } from '../lib/hooks/use-is-touch';
 import { useTags } from '../lib/hooks/use-tags';
+import { useTooltip } from '../lib/hooks/use-tooltip';
 import { useWebApi } from '../lib/hooks/use-web-api';
 import { TagCategory, TagId } from '../lib/schema';
 import { SelectionState, TagSelection } from '../lib/tag-condition';
 import { EMPTY_MAP, assertNever, isNonNull, joinClasses } from '../lib/util';
 import { Link } from './components/link';
-import { MarkdownContainer } from './markdown';
 import style from './tag-selector.module.scss';
 
 type State = 'required' | 'forbidden' | 'any';
@@ -28,10 +25,11 @@ interface TagButtonProps {
     name: string;
     onClick: () => void;
     noIcon?: boolean;
-    tooltipId?: string;
     tooltipContent?: string;
 }
-function TagButton({ state, name, onClick, noIcon = false, tooltipId, tooltipContent }: TagButtonProps) {
+function TagButton({ state, name, onClick, noIcon = false, tooltipContent }: TagButtonProps) {
+    const tooltipId = useTooltip();
+
     return (
         <button
             className={joinClasses(
@@ -43,7 +41,7 @@ function TagButton({ state, name, onClick, noIcon = false, tooltipId, tooltipCon
                     : 'bg-gray-300 text-red-800 dark:bg-gray-900 dark:text-red-400'
             )}
             data-tooltip-content={tooltipContent}
-            data-tooltip-delay-show={500}
+            data-tooltip-delay-show={300}
             data-tooltip-id={tooltipId}
             onClick={onClick}
         >
@@ -52,8 +50,6 @@ function TagButton({ state, name, onClick, noIcon = false, tooltipId, tooltipCon
         </button>
     );
 }
-
-const TOOLTIP_ID = 'tag-selector-tooltip';
 
 export type TagSelectorStyle = 'simple' | 'advanced';
 
@@ -64,8 +60,6 @@ export interface TagSelectorProps {
 
 export function TagSelector({ selection, onChange }: TagSelectorProps) {
     const [simple, setSimple] = useState(true);
-    const isClient = useIsClient();
-    const isTouch = useIsTouch();
     const { editMode } = useWebApi();
 
     const { tagData, tagCategoryData } = useTags();
@@ -130,23 +124,6 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
                     </Link>
                 )}
             </div>
-
-            {isClient && !isTouch && (
-                <Tooltip
-                    closeOnEsc
-                    className={style.tooltip}
-                    id={TOOLTIP_ID}
-                    render={({ content }) => {
-                        const tag = tagData.get(content as TagId);
-                        return (
-                            <MarkdownContainer
-                                className={style.markdown}
-                                markdown={tag?.description || 'No description.'}
-                            />
-                        );
-                    }}
-                />
-            )}
         </div>
     );
 }
@@ -174,8 +151,7 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
                                         key={tagId}
                                         name={tag?.name ?? tagId}
                                         state={state}
-                                        tooltipContent={tag?.description ? tagId : undefined}
-                                        tooltipId={tag?.description ? TOOLTIP_ID : undefined}
+                                        tooltipContent={tag?.description}
                                         onClick={() => {
                                             onChange(setState(tagId, NEXT_STATE[state], selection), 'advanced');
                                         }}
@@ -233,8 +209,7 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
                         key={tagId}
                         name={tag.name}
                         state={selected === tagId ? 'required' : 'any'}
-                        tooltipContent={tag.description ? tagId : undefined}
-                        tooltipId={tag.description ? TOOLTIP_ID : undefined}
+                        tooltipContent={tag.description}
                         onClick={() => {
                             if (selected !== tagId) {
                                 let s = setState(tagId, 'required', selection);
