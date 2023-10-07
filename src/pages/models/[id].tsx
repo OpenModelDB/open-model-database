@@ -282,7 +282,7 @@ function LicenseProp({ model, updateModelProperty, editMode }: PropertyProps) {
 
 function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [string, ReactNode])[] }) {
     return (
-        <table className="w-full border-collapse text-left text-sm text-gray-500 dark:text-gray-400 ">
+        <table className="w-full border-collapse text-left text-sm text-gray-700 dark:text-gray-400 ">
             <tbody>
                 {rows.map((row, i) => {
                     if (!row) return null;
