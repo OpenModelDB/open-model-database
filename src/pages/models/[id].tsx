@@ -270,22 +270,22 @@ function LicenseProp({ model, updateModelProperty, editMode }: PropertyProps) {
 
     return (
         <>
-        <select
-            value={model.license || ''}
-            onChange={(e) => {
-                updateModelProperty('license', (e.target.value || null) as never);
-            }}
-        >
-            <option value="">None</option>
-            {Object.entries(KNOWN_LICENSES).map(([key]) => (
-                <option
-                    key={key}
-                    value={key}
-                >
-                    {key}
-                </option>
-            ))}
-        </select>
+            <select
+                value={model.license || ''}
+                onChange={(e) => {
+                    updateModelProperty('license', (e.target.value || null) as never);
+                }}
+            >
+                <option value="">None</option>
+                {Object.entries(KNOWN_LICENSES).map(([key]) => (
+                    <option
+                        key={key}
+                        value={key}
+                    >
+                        {key}
+                    </option>
+                ))}
+            </select>
             {model.license && <LicenseAttributes license={model.license} />}
         </>
     );
