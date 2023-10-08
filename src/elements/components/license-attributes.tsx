@@ -10,6 +10,7 @@ import {
 import { SPDXLicense } from '../../lib/schema';
 import { isNonNull } from '../../lib/util';
 import styles from './license-attributes.module.scss';
+import { TextLink } from './link';
 
 interface LicenseAttributesProps {
     license: SPDXLicense;
@@ -193,6 +194,8 @@ function PropertiesView({ properties }: { properties: LicenseProperties }) {
                     );
                 })}
             </div>
+
+            <TextLink href="/docs/licenses#disclaimer">Disclaimer</TextLink>
         </div>
     );
 }
