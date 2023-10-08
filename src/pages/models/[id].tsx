@@ -315,6 +315,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
 
     const authors = asArray(model.author);
     const authorsJoined = joinListString(authors.map((userId) => userData.get(userId)?.name ?? 'unknown'));
+    const title = (model.scale ? `${model.scale}x ` : '') + model.name;
 
     const archName = archData.get(model.architecture)?.name ?? 'unknown';
 
@@ -345,10 +346,10 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                     author: authors.length === 1 ? { '@type': 'Person', name: authorsJoined } : authorsJoined,
                     datePublished: model.date ? new Date(model.date).toISOString() : undefined,
                     image: previewImage,
-                    name: model.name,
+                    name: title,
                     description: getTextDescription(model),
                 }}
-                title={model.name}
+                title={title}
             />
             {/* Only use a large card when we have an image to show */}
             {previewImage && (
