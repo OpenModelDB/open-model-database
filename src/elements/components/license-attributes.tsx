@@ -206,14 +206,15 @@ function Item({ title, description, color }: { title: string; description?: stri
     const tooltipId = useTooltip();
 
     return (
-        <div
-            className="pl-4"
-            data-tooltip-content={description}
-            data-tooltip-delay-show={300}
-            data-tooltip-id={tooltipId}
-        >
+        <div className="pl-4">
             <span className={`${styles.dot} ${ITEM_COLORS[color]}`} />
-            <span>{title}</span>
+            <span
+                data-tooltip-content={description}
+                data-tooltip-delay-show={300}
+                data-tooltip-id={tooltipId}
+            >
+                {title}
+            </span>
         </div>
     );
 }
