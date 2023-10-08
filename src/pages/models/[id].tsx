@@ -28,6 +28,7 @@ import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
+import { getTextDescription } from '../../lib/text-description';
 import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
@@ -336,6 +337,17 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
             <HeadCommon
                 description={`A ${model.scale}x ${archName} model by ${authorsJoined}.`}
                 image={previewImage}
+                structuredData={{
+                    '@context': 'https://schema.org',
+                    '@type': 'SoftwareApplication',
+                    applicationCategory: 'Multimedia',
+                    applicationSubCategory: 'AI Model',
+                    author: authors.length === 1 ? { '@type': 'Person', name: authorsJoined } : authorsJoined,
+                    datePublished: model.date ? new Date(model.date).toISOString() : undefined,
+                    image: previewImage,
+                    name: model.name,
+                    description: getTextDescription(model),
+                }}
                 title={model.name}
             />
             {/* Only use a large card when we have an image to show */}

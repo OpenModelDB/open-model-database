@@ -36,6 +36,7 @@
     "react-tooltip": "^5.10.4",
     "react-zoom-pan-pinch": "^3.0.7",
     "remark-gfm": "^3.0.1",
+    "schema-dts": "^1.1.2",
     "simple-git": "^3.16.0"
   },
   "devDependencies": {
