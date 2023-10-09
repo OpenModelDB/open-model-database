@@ -135,6 +135,7 @@ export default function Page({ modelData: staticModelData }: Props) {
 
                 {/* Search */}
                 <SearchBar
+                    className="mb-4 w-full"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value, 400)}
                     onEnter={(e) => {

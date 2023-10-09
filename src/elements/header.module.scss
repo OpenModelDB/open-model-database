@@ -65,6 +65,11 @@
             }
         }
     }
+
+    .search {
+        width: calc((min(100vw, 1400px) - 4rem) / 3 - 2em * 1.5 * 3 - 1rem);
+        box-sizing: border-box;
+    }
 }
 
 .docLink {

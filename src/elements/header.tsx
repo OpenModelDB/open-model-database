@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from 'next/router';
 import React from 'react';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
@@ -9,10 +10,17 @@ import { useEditModeToggle } from '../lib/hooks/use-web-api';
 import { joinClasses } from '../lib/util';
 import { HeaderDrawer } from './components/header-drawer';
 import { Link } from './components/link';
+import { SearchBar } from './components/searchbar';
 import style from './header.module.scss';
 
-export function Header() {
+interface HeaderProps {
+    searchBar?: boolean;
+}
+export function Header({ searchBar }: HeaderProps) {
     const { editModeAvailable, editMode, toggleEditMode } = useEditModeToggle();
+
+    const [searchQuery, setSearchQuery] = React.useState('');
+    const router = useRouter();
 
     return (
         <>
@@ -65,6 +73,23 @@ export function Header() {
                         >
                             Edit Mode: {editMode ? 'On' : 'Off'}
                         </button>
+                    )}
+
+                    {searchBar && (
+                        <SearchBar
+                            className={`${style.search} mx-4 hidden lg:flex`}
+                            placeholder="Search models"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onEnter={() => {
+                                if (searchQuery !== '') {
+                                    setSearchQuery('');
+                                    router
+                                        .push(`/?q=${encodeURIComponent(searchQuery)}`)
+                                        .catch((e) => console.error(e));
+                                }
+                            }}
+                        />
                     )}
 
                     <Link
