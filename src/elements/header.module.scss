@@ -67,6 +67,15 @@
     }
 
     .search {
+        // The following looks complicated, but is quite simple. The goal is
+        // first determine the width of the download button, and then subtract
+        // the header buttons on the right:
+        //           min(100vw, 1400px)               the width of the page
+        //                              - 4rem        remove the padding on the sides + the 2 1rem gaps in the grid layout of the model page
+        //                                      / 3   the page is divided into a grid with 3 columns.
+        // At this point, we have the width of the download button exactly.
+        //                                          - 2em * 1.5 * 3          the 3 buttons to the right of the search bar
+        //                                                          - 1rem   the right padding of the search bar
         width: calc((min(100vw, 1400px) - 4rem) / 3 - 2em * 1.5 * 3 - 1rem);
         box-sizing: border-box;
     }
