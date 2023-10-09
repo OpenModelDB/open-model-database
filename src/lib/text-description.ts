@@ -4,7 +4,11 @@ import { Model } from './schema';
  * Returns a text description of the model, without any formatting elements.
  */
 export function getTextDescription(model: Model): string {
-    const { scale, description } = model;
+    const { scale } = model;
+    let { description } = model;
+
+    // preprocessing to remove markdown links
+    description = description.replace(/\[([^\[\]]+)\]\([^()]*\)/g, '$1');
 
     const lines = description.trim().split('\n');
     const descLines: string[] = [];

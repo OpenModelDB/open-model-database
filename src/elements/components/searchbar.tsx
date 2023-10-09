@@ -1,11 +1,12 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, KeyboardEvent } from 'react';
 
 type SearchBarProps = {
     value: string;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    onEnter?: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
-export const SearchBar = ({ value, onChange }: SearchBarProps) => (
+export const SearchBar = ({ value, onChange, onEnter }: SearchBarProps) => (
     <div className="relative mb-4 flex h-10 w-full">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <svg
@@ -30,6 +31,11 @@ export const SearchBar = ({ value, onChange }: SearchBarProps) => (
             type="text"
             value={value}
             onChange={onChange}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    onEnter?.(e);
+                }
+            }}
         />
     </div>
 );
