@@ -105,10 +105,10 @@ export const useSearch = (
     const update = useCallback(
         (newStatePartial: Partial<SearchState>, delay = 0): void => {
             const newState: SearchState = { ...stateRef.current, ...newStatePartial };
-            if (isEqualState(newState, stateRef.current)) return;
-
-            setState(newState);
-            stateRef.current = newState;
+            if (!isEqualState(newState, stateRef.current)) {
+                setState(newState);
+                stateRef.current = newState;
+            }
 
             if (lastTimerRef.current !== undefined) {
                 clearTimeout(lastTimerRef.current);
