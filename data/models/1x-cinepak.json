@@ -23,8 +23,7 @@
             "size": 66662414,
             "sha256": "daff496050e7eccd300f011e3abe08cdcb44d100236fe66cc291de86cb7262b5",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-cinepak.pth",
-                "https://de-next.owncube.com/index.php/s/wKjLmYsq7M5JAmx"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-cinepak.pth"
             ]
         }
     ],
