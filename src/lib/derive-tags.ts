@@ -21,7 +21,7 @@ type Tag<T extends string> = `${T}:${string}`;
 const getLicenseTags = lazyWithKey((license: SPDXLicense | null): Iterable<Tag<'license'>> => {
     const ids = parseLicense(license);
     if (ids.length === 0) {
-        return ['license:no-license'];
+        return ['license:unknown'];
     }
 
     const tags = new Set<Tag<'license'>>();
