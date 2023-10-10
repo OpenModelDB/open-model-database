@@ -4,6 +4,9 @@
 			"file": "faq.md"
 		},
 		{
+			"file": "licenses.md"
+		},
+		{
 			"directory": "training/",
 			"routes": [
 				{

@@ -11,6 +11,7 @@ import { EditableMarkdownContainer } from '../../elements/components/editable-ma
 import { EditableTags, SmallTag } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
+import { LicenseAttributes } from '../../elements/components/license-attributes';
 import { Link } from '../../elements/components/link';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
 import { Switch } from '../../elements/components/switch';
@@ -283,26 +284,36 @@ function ColorModeProp({ model, updateModelProperty, editMode }: PropertyProps) 
 }
 function LicenseProp({ model, updateModelProperty, editMode }: PropertyProps) {
     if (!editMode) {
-        return <>{model.license || 'None'}</>;
+        return model.license ? (
+            <>
+                {model.license}
+                <LicenseAttributes license={model.license} />
+            </>
+        ) : (
+            <>None</>
+        );
     }
 
     return (
-        <select
-            value={model.license || ''}
-            onChange={(e) => {
-                updateModelProperty('license', (e.target.value || null) as never);
-            }}
-        >
-            <option value="">None</option>
-            {Object.entries(KNOWN_LICENSES).map(([key]) => (
-                <option
-                    key={key}
-                    value={key}
-                >
-                    {key}
-                </option>
-            ))}
-        </select>
+        <>
+            <select
+                value={model.license || ''}
+                onChange={(e) => {
+                    updateModelProperty('license', (e.target.value || null) as never);
+                }}
+            >
+                <option value="">None</option>
+                {Object.entries(KNOWN_LICENSES).map(([key]) => (
+                    <option
+                        key={key}
+                        value={key}
+                    >
+                        {key}
+                    </option>
+                ))}
+            </select>
+            {model.license && <LicenseAttributes license={model.license} />}
+        </>
     );
 }
 

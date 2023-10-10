@@ -1,0 +1,18 @@
+.tooltip {
+    max-width: calc(min(90vw, 500px));
+    backdrop-filter: saturate(200%) blur(8px);
+    z-index: 1000;
+    padding: 0.5rem 0.75rem;
+    --rt-opacity: 1;
+
+    box-shadow: 0 0.5rem 0.75rem rgb(0 0 0 / 30%);
+    border-radius: 0.5rem;
+
+    .markdown > *:first-child {
+        margin-top: 0;
+    }
+
+    .markdown > *:last-child {
+        margin-bottom: 0;
+    }
+}
