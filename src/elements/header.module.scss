@@ -35,18 +35,7 @@
         margin: auto;
     }
 
-    .logoContainer {
-        display: flex;
-        height: 48px;
-        width: 100%;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        justify-items: center;
-    }
-
     .logo {
-        display: flex;
         flex-shrink: 0;
         width: 250px;
         position: relative;
@@ -64,25 +53,50 @@
                 color: t($t, $accent-600, $accent-500);
             }
         }
+
+        .logoContainer {
+            display: flex;
+            height: 48px;
+            width: 100%;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+        }
+    }
+
+    .logoSmall {
+        flex-shrink: 0;
+        width: calc(250px * 144.79 / 854.67);
+        position: relative;
+
+        .logoContainer {
+            display: flex;
+            height: 48px;
+            width: 100%;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+        }
     }
 
     .search {
         // The following looks complicated, but is quite simple. The goal is
         // first determine the width of the download button, and then subtract
         // the header buttons on the right:
-        //           min(100vw, 1400px)               the width of the page
-        //                              - 4rem        remove the padding on the sides + the 2 1rem gaps in the grid layout of the model page
-        //                                      / 3   the page is divided into a grid with 3 columns.
+        //           100%               the inner width of the header
+        //                - 2rem        remove the 2 1rem gaps in the grid layout of the model page
+        //                        / 3   the page is divided into a grid with 3 columns.
         // At this point, we have the width of the download button exactly.
-        //                                          - 2em * 1.5 * 3          the 3 buttons to the right of the search bar
-        //                                                          - 1rem   the right padding of the search bar
-        width: calc((min(100vw, 1400px) - 4rem) / 3 - 2em * 1.5 * 3 - 1rem);
+        //                            - 2em * 1.5 * 3          the 3 buttons to the right of the search bar
+        //                                            - 1rem   the right padding of the search bar
+        width: calc((100% - 2rem) / 3 - 2em * 1.5 * 3 - 1rem);
         box-sizing: border-box;
     }
 }
 
 .docLink {
-    margin-left: 2rem;
     cursor: pointer;
     font-family: inherit;
     font-size: 100%;
@@ -128,13 +142,13 @@
 }
 
 .hideMobile {
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 675px) {
         display: none;
     }
 }
 
 .showMobile {
-    @media only screen and (min-width: 601px) {
+    @media only screen and (min-width: 676px) {
         display: none;
     }
 }
