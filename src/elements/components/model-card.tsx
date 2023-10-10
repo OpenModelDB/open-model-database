@@ -9,6 +9,7 @@ import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
 import { Image, Model, ModelId, PairedImage } from '../../lib/schema';
+import { getTextDescription } from '../../lib/text-description';
 import { asArray, joinClasses } from '../../lib/util';
 import { EditableTags } from './editable-tags';
 import { Link } from './link';
@@ -140,7 +141,7 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
     const { webApi, editMode } = useWebApi();
     const { updateModelProperty } = useUpdateModel(webApi, id);
 
-    const description = fixDescription(model.description, model.scale);
+    const description = getTextDescription(model);
     const isPaired = model.images[0]?.type === 'paired' && !editMode;
 
     return (
@@ -229,33 +230,6 @@ export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
         </LazyLoadComponent>
     );
 });
-
-function fixDescription(description: string, scale: number): string {
-    // remove markdown links
-    description = description.replace(/\[([^\[\]]+)\]\([^()]*\)/g, '$1');
-    const lines = description.trim().split('\n');
-    const descLines: string[] = [];
-    let purpose = '',
-        pretrained = '';
-    lines.forEach((line) => {
-        if (line.startsWith('Category: ')) {
-            // ignore category
-        } else if (line.startsWith('Purpose: ')) {
-            purpose = line.replace('Purpose: ', '');
-        } else if (line.startsWith('Pretrained: ')) {
-            pretrained = line.replace(/Pretrained: (?:Trained on )?/i, '');
-        } else if (line !== '') {
-            descLines.push(line.trim());
-        }
-    });
-    if (!purpose && !pretrained && descLines.length > 0) {
-        return descLines.join('\n');
-    }
-    const purposeSentence = purpose ? `A ${scale}x model for ${purpose}.` : `A ${scale}x model.`;
-    const pretrainedSentence = pretrained ? `Pretrained using ${pretrained}.` : '';
-    const actualDescription = `${purposeSentence} ${pretrainedSentence}\n${descLines.join('\n')}`.trim();
-    return actualDescription;
-}
 
 function AccentTag({ children }: React.PropsWithChildren<unknown>) {
     return <div className={`${style.tagBase} bg-accent-600 text-sm text-gray-100`}>{children}</div>;
