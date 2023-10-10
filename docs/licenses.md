@@ -10,7 +10,7 @@ Note that **all licensed models** on OpenModelDB allow private use. So you can u
 
 ## Upscaled images
 
-It is important to note that the license of a model typically does not extend to the upscaled images produced by the model. For example, a model under a non-commercial license can be used to upscale images that are then used commercially.
+It is important to note that the license of a model does **not** extend to the upscaled images produced by the model. For example, a model under a non-commercial license can be used to upscale images that are then used commercially.
 
 In general, the license of the upscaled images is determined by the license of the original images, not the model. E.g. if a person X holds the copyright to the original image, then person X will also hold the copyright to any upscaled images of the original.
 
@@ -24,9 +24,9 @@ As a model author, you should strongly consider publishing your model under a pe
 
 If you don't have much time (or don't care about the legal stuff), here's the TLDR:
 
-- `CC0-1.0`: If you just want people to use your model, no strings attached, they don't even need to credit you.
-- `CC-BY-4.0`: If you want people to credit you, but they can do whatever they want with it (even make money off of it).
-- `CC-BY-NC-SA-4.0`: If you want people to credit you and don't like the idea of people making money off of your work.
+-   `CC0-1.0`: If you just want people to use your model, no strings attached, they don't even need to credit you.
+-   `CC-BY-4.0`: If you want people to credit you, but they can do whatever they want with it (even make money off of it).
+-   `CC-BY-NC-SA-4.0`: If you want people to credit you and don't like the idea of people making money off of your work.
 
 It should be noted that all license we recommend having the following properties:
 
