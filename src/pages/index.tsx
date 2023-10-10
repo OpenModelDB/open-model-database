@@ -137,6 +137,25 @@ export default function Page({ modelData: staticModelData }: Props) {
                 <SearchBar
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value, 400)}
+                    onEnter={(e) => {
+                        setSearchQuery(e.currentTarget.value, 0);
+
+                        // scroll to search results on mobile
+                        if (window.innerWidth < 600 || window.navigator.maxTouchPoints > 0) {
+                            e.currentTarget.blur();
+                            const anchor = document.getElementById('scroll-anchor');
+                            if (anchor) {
+                                const headerOffset = 80;
+                                const elementPosition = anchor.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: 'smooth',
+                                });
+                            }
+                        }
+                    }}
                 />
 
                 {/* Tags */}
@@ -148,6 +167,8 @@ export default function Page({ modelData: staticModelData }: Props) {
                         }}
                     />
                 </div>
+
+                <span id="scroll-anchor" />
 
                 {/* Model Cards */}
                 {selectedModels.length > 0 ? (

@@ -10,7 +10,6 @@ export function DevicePixelRatioProvider({ children }: React.PropsWithChildren<u
     }, []);
 
     useEffect(() => {
-        console.log(value);
         const update = () => setValue(window.devicePixelRatio);
         const mediaMatcher = window.matchMedia(`screen and (resolution: ${value}dppx)`);
         mediaMatcher.addEventListener('change', update);
