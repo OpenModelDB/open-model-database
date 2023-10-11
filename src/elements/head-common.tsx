@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useCurrentPath } from '../lib/hooks/use-current-path';
 import { SITE_URL } from '../lib/site-data';
+import type { Thing, WithContext } from 'schema-dts';
 
 export interface SiteMetaProps {
     title: string;
@@ -8,6 +9,7 @@ export interface SiteMetaProps {
     image?: string;
     noTitlePrefix?: boolean;
     noIndex?: boolean;
+    structuredData?: WithContext<Thing>;
 }
 
 export function HeadCommon({
@@ -16,6 +18,7 @@ export function HeadCommon({
     image = `${SITE_URL}/assets/OpenModelDB_Jelly.png`,
     noTitlePrefix = false,
     noIndex = false,
+    structuredData,
 }: SiteMetaProps) {
     const relPath = useCurrentPath();
 
@@ -66,6 +69,12 @@ export function HeadCommon({
                 <meta
                     content="noindex"
                     name="robots"
+                />
+            )}
+            {structuredData && (
+                <script
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                    type="application/ld+json"
                 />
             )}
         </Head>

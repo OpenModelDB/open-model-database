@@ -11,6 +11,7 @@ import { EditableMarkdownContainer } from '../../elements/components/editable-ma
 import { EditableTags, SmallTag } from '../../elements/components/editable-tags';
 import { EditableUsers } from '../../elements/components/editable-users';
 import { ImageCarousel } from '../../elements/components/image-carousel';
+import { LicenseAttributes } from '../../elements/components/license-attributes';
 import { Link } from '../../elements/components/link';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
 import { Switch } from '../../elements/components/switch';
@@ -28,6 +29,7 @@ import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
+import { getTextDescription } from '../../lib/text-description';
 import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
@@ -283,46 +285,59 @@ function ColorModeProp({ model, updateModelProperty, editMode }: PropertyProps) 
 }
 function LicenseProp({ model, updateModelProperty, editMode }: PropertyProps) {
     if (!editMode) {
-        return <>{model.license || 'None'}</>;
+        return model.license ? (
+            <>
+                {model.license}
+                <LicenseAttributes license={model.license} />
+            </>
+        ) : (
+            <>None</>
+        );
     }
 
     return (
-        <select
-            value={model.license || ''}
-            onChange={(e) => {
-                updateModelProperty('license', (e.target.value || null) as never);
-            }}
-        >
-            <option value="">None</option>
-            {Object.entries(KNOWN_LICENSES).map(([key]) => (
-                <option
-                    key={key}
-                    value={key}
-                >
-                    {key}
-                </option>
-            ))}
-        </select>
+        <>
+            <select
+                value={model.license || ''}
+                onChange={(e) => {
+                    updateModelProperty('license', (e.target.value || null) as never);
+                }}
+            >
+                <option value="">None</option>
+                {Object.entries(KNOWN_LICENSES).map(([key]) => (
+                    <option
+                        key={key}
+                        value={key}
+                    >
+                        {key}
+                    </option>
+                ))}
+            </select>
+            {model.license && <LicenseAttributes license={model.license} />}
+        </>
     );
+}
+
+function isTrue<T>(value: T | null | undefined | false | '' | 0): value is T {
+    return Boolean(value);
 }
 
 function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [string, ReactNode])[] }) {
     return (
         <table className="w-full border-collapse text-left text-sm text-gray-700 dark:text-gray-400 ">
             <tbody>
-                {rows.map((row, i) => {
-                    if (!row) return null;
-
+                {rows.filter(isTrue).map((row, i) => {
                     const [label, value] = row;
+                    const extraPadding = i === 0 ? 'pt-3' : i === rows.length - 1 ? 'pb-3' : '';
                     return (
                         <tr key={i}>
                             <th
-                                className="bg-fade-100 px-6 py-4 font-medium text-fade-900 dark:bg-fade-800 dark:text-white sm:whitespace-nowrap"
+                                className={`${extraPadding} whitespace-nowrap bg-fade-100 px-4 py-2 text-right align-top font-medium text-fade-900 dark:bg-fade-800 dark:text-white`}
                                 scope="row"
                             >
                                 {label}
                             </th>
-                            <td className="px-6 py-4">{value}</td>
+                            <td className={`${extraPadding} px-4 py-2`}>{value}</td>
                         </tr>
                     );
                 })}
@@ -340,6 +355,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
 
     const authors = asArray(model.author);
     const authorsJoined = joinListString(authors.map((userId) => userData.get(userId)?.name ?? 'unknown'));
+    const title = (model.scale ? `${model.scale}x ` : '') + model.name;
 
     const archName = archData.get(model.architecture)?.name ?? 'unknown';
 
@@ -362,7 +378,18 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
             <HeadCommon
                 description={`A ${model.scale}x ${archName} model by ${authorsJoined}.`}
                 image={previewImage}
-                title={model.name}
+                structuredData={{
+                    '@context': 'https://schema.org',
+                    '@type': 'SoftwareApplication',
+                    applicationCategory: 'Multimedia',
+                    applicationSubCategory: 'AI Model',
+                    author: authors.length === 1 ? { '@type': 'Person', name: authorsJoined } : authorsJoined,
+                    datePublished: model.date ? new Date(model.date).toISOString() : undefined,
+                    image: previewImage,
+                    name: title,
+                    description: getTextDescription(model),
+                }}
+                title={title}
             />
             {/* Only use a large card when we have an image to show */}
             {previewImage && (

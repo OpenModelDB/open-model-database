@@ -241,17 +241,13 @@
         "name": "Modifications",
         "description": "The author allows that this model may be used to create derivative works (e.g. model interpolations)."
     },
-    "license:no-license": {
-        "name": "No License",
-        "description": "The model is not licensed by the author."
-    },
     "license:sa": {
         "name": "Same license",
         "description": "The author **requires** that derivative works have the same license or a compatible license as the model. Derivative works include model interpolations and using it a pretrained model."
     },
     "license:unknown": {
         "name": "Unknown License",
-        "description": "The model is licensed under a custom or infrequently used license."
+        "description": "The model either has no license or is licensed under a custom or infrequently used license."
     },
     "platform:ncnn": {
         "name": "NCNN",

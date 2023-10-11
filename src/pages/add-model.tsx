@@ -5,8 +5,30 @@ import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
 import { useModels } from '../lib/hooks/use-models';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId } from '../lib/schema';
+import { ArchId, Model, ModelId, TagId } from '../lib/schema';
 import { canonicalizeModelId } from '../lib/schema-util';
+
+function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] {
+    const isPretrained = (id: ModelId) => {
+        const model = modelData.get(id);
+        if (!model) return false;
+        return model.tags.includes('pretrained' as TagId) || model.tags.includes('research' as TagId);
+    };
+
+    const usage = new Map<ModelId, number>();
+    const increment = (id: ModelId) => {
+        const count = usage.get(id) ?? 0;
+        usage.set(id, count + 1);
+    };
+
+    for (const [, model] of modelData) {
+        if (model.pretrainedModelG && isPretrained(model.pretrainedModelG)) {
+            increment(model.pretrainedModelG);
+        }
+    }
+
+    return [...usage.entries()].sort((a, b) => b[1] - a[1]).map((e) => e[0]);
+}
 
 function PageContent() {
     const { modelData } = useModels();
@@ -62,6 +84,16 @@ function PageContent() {
         await router.push(`/models/${fullId}`);
     };
 
+    const changePretrained = (id: ModelId | '') => {
+        setPretrained(id);
+        if (id) {
+            const model = modelData.get(id);
+            if (model) {
+                setScale(model.scale);
+            }
+        }
+    };
+
     return (
         <>
             <h1>Add Model</h1>
@@ -72,14 +104,7 @@ function PageContent() {
                         className="w-full"
                         value={pretrained}
                         onChange={(e) => {
-                            const value = e.target.value as ModelId | '';
-                            setPretrained(value);
-                            if (value) {
-                                const model = modelData.get(value);
-                                if (model) {
-                                    setScale(model.scale);
-                                }
-                            }
+                            changePretrained(e.target.value as ModelId | '');
                         }}
                     >
                         <option value="">None</option>
@@ -92,6 +117,28 @@ function PageContent() {
                             </option>
                         ))}
                     </select>
+                    <div className="pb-2">
+                        Common pretrained models:{' '}
+                        {getCommonPretrained(modelData)
+                            .slice(0, 40)
+                            .map((id) => {
+                                return (
+                                    <>
+                                        <span
+                                            className={`${
+                                                id === pretrained ? 'font-medium ' : ''
+                                            }cursor-pointer whitespace-nowrap pr-1 hover:underline`}
+                                            key={id}
+                                            onClick={() => {
+                                                changePretrained(id);
+                                            }}
+                                        >
+                                            {id}
+                                        </span>{' '}
+                                    </>
+                                );
+                            })}
+                    </div>
                 </div>
 
                 <div>Id:</div>
