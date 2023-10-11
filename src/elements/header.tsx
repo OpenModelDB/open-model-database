@@ -81,7 +81,7 @@ export function Header({ searchBar }: HeaderProps) {
 
                     <span className={style.spacer} />
 
-                    {editModeAvailable && false && (
+                    {editModeAvailable && (
                         <button
                             className={joinClasses(
                                 style.docLink,
