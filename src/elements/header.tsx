@@ -6,7 +6,6 @@ import { BsQuestionLg } from 'react-icons/bs';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import LogoSmall from '../../public/logo-small.svg';
 import Logo from '../../public/logo.svg';
 import { toggleColorScheme } from '../lib/color-scheme';
 import { useEditModeToggle } from '../lib/hooks/use-web-api';
@@ -39,20 +38,11 @@ export function Header({ searchBar }: HeaderProps) {
                 <div>
                     <Link
                         aria-label="Open Model Database"
-                        className={`${style.logo} hidden xs:flex`}
+                        className={style.logo}
                         href="/"
                     >
                         <div className={style.logoContainer}>
                             <Logo />
-                        </div>
-                    </Link>
-                    <Link
-                        aria-label="Open Model Database"
-                        className={`${style.logoSmall} flex xs:hidden`}
-                        href="/"
-                    >
-                        <div className={style.logoContainer}>
-                            <LogoSmall />
                         </div>
                     </Link>
 
