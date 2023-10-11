@@ -42,7 +42,7 @@ function TagButton({ state, name, onClick, noIcon = false, tooltipContent }: Tag
             )}
             data-tooltip-content={tooltipContent}
             data-tooltip-delay-show={300}
-            data-tooltip-id={tooltipId}
+            data-tooltip-id={tooltipContent ? tooltipId : undefined}
             onClick={onClick}
         >
             {!noIcon && <span className={style.icon}>{stateIcon[state]()}</span>}
