@@ -33,6 +33,7 @@ export default function Page({ userId, user, models }: Props) {
             />
             <PageContainer
                 scrollToTop
+                searchBar
                 wrapper
             >
                 <h1 className="mb-6 text-center text-2xl font-bold text-accent-500 dark:text-fade-200 lg:text-3xl">

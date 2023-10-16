@@ -400,7 +400,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                     />
                 </Head>
             )}
-            <PageContainer>
+            <PageContainer searchBar>
                 {/* Two columns */}
                 <div className="grid h-full w-full gap-4 pb-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
                     {/* Left column */}

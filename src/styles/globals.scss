@@ -14,7 +14,7 @@
     --page-bg: #{t($t, white, $fade-900)};
 
     --font-color: #{t($t, black, $fade-100)};
-    --font-color-hover: var(--accent);
+    --font-color-hover: #{t($t, $accent-700, $accent-400)};
     --font-color-light: #{t($t, $fade-700, $fade-400)};
     --font-color-light-hover: #{t($t, black, white)};
 
