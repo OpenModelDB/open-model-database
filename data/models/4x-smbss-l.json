@@ -1,0 +1,49 @@
+{
+    "name": "smbss-2x (large)",
+    "author": "pokepress",
+    "license": "Apache-2.0",
+    "tags": [
+        "cartoon",
+        "general-upscaler"
+    ],
+    "description": "A 2x model designed for hand-drawn animation of the 80's, 90's and early 2000s.\n\nThe Super Mario Bros. Super Show is a hybrid animated and live-action show that debuted in 1989. Each episode featured a cartoon segment sandwiched between live-action segments. The combination of the two formats makes the show very difficult to upscale, and creates the need for multiple model files.\n\nThese models were trained using footage from the show itself (except for some title images that were recreated in Photoshop) by finding cases where the same image was shown at different resolutions. For the animated footage, I also did some retouching to reduce haloing, color bleed, and other issues.\n\nA few notes:\n\n- The opening sequence (in particular, the first shot with the giant talking Mario face) is very difficult to upscale due to the picture being degraded from multiple layers of compositing. Ideally, a professional remaster of the series would have access to the individual elements, upscale those, then recomposite them.\n- Although live-action models are provided, you will likely get better results from commercial upscaling software (I recommend  the Proteus model in Topaz Video AI).\n- Footage must be deinterlaced before processing (I recommend QTGMC for both live-action and animated segments).\n\n[Full Read Me](https://www.mediafire.com/file/brp4c0pvv5s42rw/ReadMe.txt/file)\n\n[Sample Animated Result](https://www.mediafire.com/view/wtieecra7iov35f/Animation_Sample.png/file)\n\n[Sample Live Action Result](https://www.mediafire.com/view/xa7jenxl18xd1y7/Live_Action_Sample.png/file)",
+    "date": "2023-07-31",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66813860,
+            "sha256": "7513472234b48399f8c37a03aea3789b5aa1c09207f1d3e0ee08d81c026cb4f4",
+            "urls": [
+                "https://www.mediafire.com/file/gz74d6swexsntku/smbss_2x_RRDB_Animation.pth/file"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 66813860,
+            "sha256": "40c22bce51a27789a48f4cb7bea67bb6cc32283a53239cb5793550118946ba7e",
+            "urls": [
+                "https://www.mediafire.com/file/c0pdpb87nsv3b7i/smbss_2x_RRDB_Live_Action.pth/file"
+            ]
+        }
+    ],
+    "trainingHRSize": 64,
+    "dataset": "Various images from the 1989 TV show pulled from the 2000's Shout Factory DVD sets",
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/fc952100-dc1e-4d6e-8b96-537ddd40f642.jpg",
+            "SR": "https://imgsli.com/i/b1575650-b8bb-48a4-92d7-2566b98cf152.jpg"
+        }
+    ]
+}
