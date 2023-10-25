@@ -24,10 +24,12 @@
             "sha256": "01b61695d20543009a0c8bf17ee80d31f6d8e4e237134ecded3fd9266dbe3750",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-SaiyaJin-DeJpeg.pth",
-                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Saiyajin_DeJPEG_300000_G.pth"
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Saiyajin_DeJPEG_300000_G.pth",
+                "https://owncube.cloud/index.php/s/FjyMKnLp9f2gqzd/download/1x_Saiyajin_DeJPEG_300000_G.pth"
             ]
         }
     ],
+    "trainingIterations": 300000,
     "dataset": "Anime, real life, manga, generated",
     "pretrainedModelG": "1x-DeJpeg-Fatality-PlusULTRA",
     "images": []

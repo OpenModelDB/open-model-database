@@ -22,7 +22,8 @@
             "size": 66665765,
             "sha256": "41c1fd640c265375b4649f6c41772714081ea77faf07593456c8021638d3e1d3",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-UnResize-V3.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-UnResize-V3.pth",
+                "https://owncube.cloud/index.php/s/LfAT8cyiAzCREGs/download/1x_UnResize_V3_200000_G.pth"
             ]
         }
     ],
