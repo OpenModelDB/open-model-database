@@ -23,10 +23,12 @@
             "sha256": "027dfbf10e0ff3f8347960106f89443241b85e91edbd7329d3ded50829ee98f7",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-Debandurh-FS-Ultra-lite.pth",
-                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Debandurh_FS_lite_140000_G.pth"
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Debandurh_FS_lite_140000_G.pth",
+                "https://owncube.cloud/index.php/s/rHwkB4nKza9PzCk/download/1x_Debandurh_FS_lite_140000_G.pth"
             ]
         }
     ],
+    "trainingIterations": 140000,
     "dataset": "Anime, real life, manga",
     "images": []
 }
