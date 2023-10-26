@@ -34,5 +34,18 @@
     "trainingHRSize": 128,
     "dataset": "Real life, Manga and digital text",
     "datasetSize": 26000,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/09/3f/ZcIq3bwn_o.jpeg",
+            "SR": "https://images2.imgbox.com/c7/dd/lIHpU4PZ_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/c7/dd/lIHpU4PZ_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/d7/75/ABl71IIh_o.jpg",
+            "SR": "https://images2.imgbox.com/35/f9/ylu0nTiz_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/35/f9/ylu0nTiz_t.png"
+        }
+    ]
 }

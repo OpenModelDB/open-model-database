@@ -28,5 +28,24 @@
         }
     ],
     "dataset": "Anime, manga, and photos",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/a2/db/fnkd4keM_o.png",
+            "SR": "https://images2.imgbox.com/50/73/RaW34frI_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/50/73/RaW34frI_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/50/9d/7rMYh4AD_o.png",
+            "SR": "https://images2.imgbox.com/93/34/BYuR1cyD_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/93/34/BYuR1cyD_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/b1/bb/zOQHEYSb_o.png",
+            "SR": "https://images2.imgbox.com/44/c7/bupHmmI8_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/44/c7/bupHmmI8_t.png"
+        }
+    ]
 }

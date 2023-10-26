@@ -30,5 +30,18 @@
     ],
     "trainingIterations": 140000,
     "dataset": "Anime, real life, manga",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/8b/ce/e5ckcFRb_o.png",
+            "SR": "https://images2.imgbox.com/00/89/p0ftmdpc_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/00/89/p0ftmdpc_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/b1/8a/lkEef7yC_o.png",
+            "SR": "https://images2.imgbox.com/42/45/4oGJ6ijH_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/42/45/4oGJ6ijH_t.png"
+        }
+    ]
 }
