@@ -144,7 +144,7 @@ const modelApi: CollectionApi<ModelId, Model> = {
 
     async update(updates: Iterable<readonly [ModelId, Model]>): Promise<void> {
         await Promise.all(
-            [...updates].map(async ([id, value]) => {
+            [...new Map(updates)].map(async ([id, value]) => {
                 await writeModelData(id, value);
                 console.warn(`Updated model data of ${id}`);
             })
@@ -220,6 +220,7 @@ function ofJsonFile<Id extends string, Value>(
         },
 
         async update(updates: Iterable<readonly [Id, Value]>): Promise<void> {
+            updates = new Map(updates);
             await file.update((old) => {
                 for (const [id, value] of updates) {
                     old[id] = value;
