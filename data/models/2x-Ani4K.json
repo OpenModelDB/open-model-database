@@ -20,7 +20,7 @@
             "size": 4838301,
             "sha256": "75072688da672b419f9496f820b1d3026b64446597cb9a3ccd5024f50ca6d42e",
             "urls": [
-                "https://github.com/Sirosky/Sirosky-Upscaling-Models/releases/download/compact/2x_Ani4K_Compact_35000.pth"
+                "https://github.com/Sirosky/Upscale-Hub/releases/download/Ani4K/2x_Ani4K_Compact_35000.pth"
             ]
         }
     ],
