@@ -16,6 +16,7 @@
     "fix-db": "ts-node --project scripts/tsconfig.json scripts/validate-db.ts -- --fix",
     "detect-broken": "ts-node --project scripts/tsconfig.json scripts/broken.ts",
     "generate-api": "ts-node --project scripts/tsconfig.json scripts/generate-api.ts",
+    "download-images": "ts-node --project scripts/tsconfig.json scripts/download-images.ts",
     "build-full": "npm run build && npx next export && npm run generate-api"
   },
   "dependencies": {
