@@ -26,6 +26,10 @@ There are many programs that can perform AI upscaling, though not all are able t
   - [Download](https://chainner.app/download) | [GitHub](https://github.com/chaiNNer-org/chaiNNer) | [Website](https://chainner.app/)
   - chaiNNer is a node-based image processing GUI that can also be used for image upscaling. It has the most support for models listed on OpenModelDB and can be run with PyTorch (CUDA), ONNX (CUDA), and NCNN (AMD/Intel). Being node based, it allows you to process your images with a lot more control, at the cost of being a bit more complex. Besides upscaling, chaiNNer also has a variety of other use cases and is a very versatile program.
 
+- **AnimeJaNaiConverterGui** (open-source | paid)
+  - [GitHub](https://github.com/the-database/AnimeJaNaiConverterGui)
+  - Allows for fast video upscaling utilizing TensorRT (On Nvidia cards), DirectML, or NCNN within a clean GUI. Only supports ONNX. Use chaiNNer to convert PyTorch models to ONNX for usage.
+
 - **enhancr** (open-source | paid)
   - [GitHub](https://github.com/mafiosnik777/enhancr)
   - Meant for fast video frame upscaling and interpolation, enhancr takes advantage of Nvidia's TensorRT to provide fast processing on video. It supports a variety of models, including many of the custom ESRGAN ones from OpenModelDB.
