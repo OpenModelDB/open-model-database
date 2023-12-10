@@ -1,0 +1,67 @@
+{
+    "name": "2x Manga Ora",
+    "author": [
+        "ora",
+        "null-llun"
+    ],
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "deblur",
+        "jpeg",
+        "manga",
+        "restoration"
+    ],
+    "description": "Made to restore screentones and remove compression artifacts in manga images with widths between 650 and 900 pixels (can be more than 900).",
+    "date": "2023-12-08",
+    "architecture": "dat",
+    "size": [
+        "s64 | 8x32",
+        "60dim",
+        "3conv"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 45723706,
+            "sha256": "27c57d6ce5d3e8934a93279e979a8813dcb5fe749b0f194f7e21d7e086170c6e",
+            "urls": [
+                "https://drive.proton.me/urls/0MXBQ7G1MR#agfybNe1oX8P"
+            ]
+        }
+    ],
+    "trainingIterations": 450000,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "datasetSize": 4000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/52185dfc-c86c-4427-baaf-8abf6e76d47c.jpg",
+            "SR": "https://imgsli.com/i/fff50a70-2cbd-494d-8108-54d9fe2e9784.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/91178113-6168-4a73-8f43-a5bf1735c595.jpg",
+            "SR": "https://imgsli.com/i/40c396b0-629d-4da7-8261-27b35d472b4a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/91178113-6168-4a73-8f43-a5bf1735c595.jpg",
+            "SR": "https://imgsli.com/i/40c396b0-629d-4da7-8261-27b35d472b4a.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/227a60a1-3cdd-4939-b81b-f2f505a11b2e.jpg",
+            "SR": "https://imgsli.com/i/22ea5fbf-3aa4-45e5-aa0c-f51d1b1b1745.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b5eefb1d-b3bd-4f0b-9b23-b632a4ef914f.jpg",
+            "SR": "https://imgsli.com/i/5c93130c-e98c-4aef-a795-4f569a60e3c1.jpg"
+        }
+    ]
+}
