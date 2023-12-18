@@ -25,7 +25,7 @@
     "resources": [
         {
             "platform": "pytorch",
-            "type": "pth",
+ <          "type": "pth",
             "size": 45723706,
             "sha256": "27c57d6ce5d3e8934a93279e979a8813dcb5fe749b0f194f7e21d7e086170c6e",
             "urls": [
