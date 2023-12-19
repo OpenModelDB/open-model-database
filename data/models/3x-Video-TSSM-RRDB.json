@@ -2,7 +2,11 @@
     "name": "Video TSSM RRDB",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
     "description": "Category: Pretrained Discriminators\nPurpose: Animation\n\nnone",
     "date": "2020-11-25",
     "architecture": "sofvsr",

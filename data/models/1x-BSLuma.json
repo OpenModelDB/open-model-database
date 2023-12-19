@@ -2,7 +2,9 @@
     "name": "BSLuma",
     "author": "blackscout",
     "license": "GPL-3.0-only",
-    "tags": [],
+    "tags": [
+        "restoration"
+    ],
     "description": "Category: Luminance/Chroma\nPurpose: Luma\n\nFix Luminance issues?? LumaSharpen ESRGAN Edition? - This model mostly does what \"Lumasharpen\" algorithms do. It may help fixing images with Luminance images issues? Like old DVD rips? I am not sure, didn't test.",
     "date": "2020-02-28",
     "architecture": "esrgan",
