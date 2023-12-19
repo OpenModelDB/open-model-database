@@ -20,6 +20,9 @@
     "archerpolation": {
         "name": "Archerpolation"
     },
+    "bendel": {
+        "name": "Bendel"
+    },
     "blackscout": {
         "name": "BlackScout"
     },
@@ -59,6 +62,9 @@
     "computerk": {
         "name": "ComputerK"
     },
+    "crustaceous-d": {
+        "name": "Crustaceous D"
+    },
     "cszn": {
         "name": "cszn"
     },
@@ -88,6 +94,9 @@
     },
     "helaman": {
         "name": "Helaman"
+    },
+    "hongyuanyu": {
+        "name": "hongyuanyu"
     },
     "hubert": {
         "name": "hubert"
@@ -247,6 +256,9 @@
     },
     "twittman": {
         "name": "Twittman"
+    },
+    "umzi-x-dead": {
+        "name": "umzi.x.dead"
     },
     "venomalia": {
         "name": "Venomalia"

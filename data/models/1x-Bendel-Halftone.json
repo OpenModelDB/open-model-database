@@ -1,0 +1,57 @@
+{
+    "name": "Bendel_Halftone",
+    "author": "bendel",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "restoration"
+    ],
+    "description": "A model trained with the goal of preserving texture while removing halftones. I do plan on making improved versions down the line, as this one didn't come out as well as I'd like.",
+    "date": "2023-12-19",
+    "architecture": "swinir",
+    "size": [
+        "Small",
+        "s48",
+        "w8"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 23519723,
+            "sha256": "434375d4aa6cdaafd5bbe2255409543f6d93b95d6ae8e2fd7fe68ab09f8addd7",
+            "urls": [
+                "https://drive.google.com/file/d/1vR_tvWNi8jXhXdmgW5xvWsQp0pXN3ge-/view?usp=sharing"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xAixOHF9.png",
+            "SR": "https://i.slow.pics/tEDB1v91.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/JC62GngC.png",
+            "SR": "https://i.slow.pics/L5D9sGVx.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/RVTjrWir.png",
+            "SR": "https://i.slow.pics/HJ0FVVYt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/GMGat8TM.png",
+            "SR": "https://i.slow.pics/f5TakMWt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/tG9ONLcv.png",
+            "SR": "https://i.slow.pics/U6tsO8z2.png"
+        }
+    ]
+}

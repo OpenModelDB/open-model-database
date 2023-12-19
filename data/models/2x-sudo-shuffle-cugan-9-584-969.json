@@ -9,7 +9,7 @@
     ],
     "description": "This is my attempt at making cugan more efficient and also training it with better loss functions than official training code. Took me months to train on a 4090. It is pure pain to train this network. Nobody will probably beat my iter record any time soon. I tried to balance speed/vram and quality. The image quality is very close to cugan architecture while having ultracompact speed. It usually looks way better than compact, but has different kinds of artefacts. If you have high contrast lines which are a few or one pixel or thin lines with movement, then the model will struggle a bit. That is quite rare though. Exported as onnx for mlrt or vsgan. https://github.com/styler00dollar/VSGAN-tensorrt-docker. I also included old l1 for pretrain purposes, but be warned, it is hard to train.",
     "date": "2023-04-07",
-    "architecture": "esrgan",
+    "architecture": "cugan",
     "size": null,
     "scale": 2,
     "inputChannels": 3,

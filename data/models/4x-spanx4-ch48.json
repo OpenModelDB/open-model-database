@@ -1,0 +1,27 @@
+{
+    "name": "spanx4_ch48",
+    "author": "hongyuanyu",
+    "license": "Apache-2.0",
+    "tags": [
+        "pretrained"
+    ],
+    "description": "Official 4x pretrain for SPAN.",
+    "date": "2023-11-17",
+    "architecture": "span",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 18029841,
+            "sha256": "28fef8c6c845a0169afed9f9f566679990ef4c03fef9885298655fb5e4036402",
+            "urls": [
+                "https://drive.google.com/file/d/1iYUA2TzKuxI0vzmA-UXr_nB43XgPOXUg/view?usp=sharing"
+            ]
+        }
+    ],
+    "images": []
+}

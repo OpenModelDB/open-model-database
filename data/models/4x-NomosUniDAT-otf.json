@@ -1,0 +1,40 @@
+{
+    "name": "NomosUniDAT_otf",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "4x universal upscaler trained with otf",
+    "date": "2023-11-01",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 154658030,
+            "sha256": "ad8383661e56aec1a2d3bdcb75eaf9f76c18260b0d0432cc856bc1ad834f5ace",
+            "urls": [
+                "https://drive.google.com/file/d/1Pq5sB7D8T43M0IpKkeBrppBjGzBmNBw4/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 150000,
+    "trainingEpochs": 70,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "dataset": "nomos_uni",
+    "datasetSize": 2989,
+    "pretrainedModelG": "4x-DAT",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/51/10/bht8DYhH_o.png"
+        }
+    ]
+}

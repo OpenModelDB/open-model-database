@@ -1,0 +1,41 @@
+{
+    "name": "Frankendata_FullDegradation_SRFormer",
+    "author": "crustaceous-d",
+    "license": null,
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "Description: 4x realistic upscaler that may also work for general purpose usage. It was trained with OTF random degradation with a very low to very high range of degradations, including blur, noise, and compression. Trained with the same Frankendata dataset that I used for the pretrain model.",
+    "date": "2023-12-19",
+    "architecture": "srformer",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 180479507,
+            "sha256": "9442bb9fe3eaa81f25111b7d0cad440f2ff40127a8cd4e3a69db428c0c7d465f",
+            "urls": [
+                "https://drive.google.com/drive/folders/15oWLBn0RbO8jBRCr_jm4x8Cpb5LcARIE?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 460000,
+    "trainingEpochs": 10,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 192,
+    "dataset": "Custom dataset",
+    "datasetSize": 122065,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/83/1d/tR7NEEws_o.jpg",
+            "SR": "https://images2.imgbox.com/b3/91/4DQlPAey_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/b3/91/4DQlPAey_t.png"
+        }
+    ]
+}

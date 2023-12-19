@@ -1,0 +1,47 @@
+{
+    "name": "2x-NomosUni_span_multijpg",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "2x span fast universal upscaler pair trained with jpg degradation (down to 40) and multiscale (down_up, bicubic, bilinear, box, nearest, lanczos).",
+    "date": "2023-12-13",
+    "architecture": "span",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8953674,
+            "sha256": "e881027d4b6505c4cbbbfdda6405657cf535844aea4b9804526f4a3428363d3a",
+            "urls": [
+                "https://drive.google.com/drive/folders/1fpIcgOFc23CGVCiaiX44Rp9o1kUKxD4N"
+            ]
+        }
+    ],
+    "trainingIterations": 37000,
+    "trainingEpochs": 14,
+    "trainingBatchSize": 9,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "Nomos_Uni",
+    "datasetSize": 2989,
+    "pretrainedModelG": "2x-span-anime-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BEdIBXCy.webp",
+            "SR": "https://i.slow.pics/p0NLDekD.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/6HXSDlNf.webp",
+            "SR": "https://i.slow.pics/SsFYOEpF.png"
+        }
+    ]
+}

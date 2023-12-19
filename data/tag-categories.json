@@ -64,7 +64,11 @@
             "arch:grl",
             "arch:dat",
             "arch:ludvae",
-            "arch:cugan"
+            "arch:cugan",
+            "arch:span",
+            "arch:real-cugan",
+            "arch:dctlsa",
+            "arch:ditn"
         ]
     },
     "platform": {

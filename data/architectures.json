@@ -23,7 +23,7 @@
         ]
     },
     "cugan": {
-        "name": "Cugan",
+        "name": "CUGAN",
         "input": "image",
         "compatiblePlatforms": [
             "pytorch",
@@ -36,6 +36,20 @@
         "compatiblePlatforms": [
             "pytorch",
             "onnx"
+        ]
+    },
+    "dctlsa": {
+        "name": "DCTLSA",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
+    "ditn": {
+        "name": "DITN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
         ]
     },
     "edsr": {
@@ -103,6 +117,14 @@
             "pytorch"
         ]
     },
+    "real-cugan": {
+        "name": "Real-CUGAN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "rife": {
         "name": "RIFE",
         "input": "video",
@@ -115,6 +137,15 @@
         "input": "video",
         "compatiblePlatforms": [
             "pytorch"
+        ]
+    },
+    "span": {
+        "name": "SPAN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx",
+            "ncnn"
         ]
     },
     "spsr": {

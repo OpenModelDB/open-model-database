@@ -114,11 +114,19 @@
         "description": ""
     },
     "arch:cugan": {
-        "name": "Cugan",
+        "name": "CUGAN",
         "description": ""
     },
     "arch:dat": {
         "name": "DAT",
+        "description": ""
+    },
+    "arch:dctlsa": {
+        "name": "DCTLSA",
+        "description": ""
+    },
+    "arch:ditn": {
+        "name": "DITN",
         "description": ""
     },
     "arch:edsr": {
@@ -153,12 +161,20 @@
         "name": "OmniSR",
         "description": ""
     },
+    "arch:real-cugan": {
+        "name": "Real-CUGAN",
+        "description": ""
+    },
     "arch:rife": {
         "name": "RIFE",
         "description": ""
     },
     "arch:sofvsr": {
         "name": "SOFVSR",
+        "description": ""
+    },
+    "arch:span": {
+        "name": "SPAN",
         "description": ""
     },
     "arch:spsr": {
