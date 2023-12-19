@@ -2,7 +2,10 @@
     "name": "DWTP_descreenton_H_esrgan",
     "author": "umzi-x-dead",
     "license": "CC-BY-4.0",
-    "tags": [],
+    "tags": [
+        "manga",
+        "restoration"
+    ],
     "description": "I've been experimenting a lot since the last descripton was released to save even more detail, and to get rid of some of the beginner's soreness. All three models are not yet perfect and I will develop them, but what is the essence of the three models, the models on omni is just a division of VL eats less large screenton, VH is just a re-trained model on a modified dataset and with VL as a prevoritolnoy shadowing that it would demolish more screenton, while not going to demolish all the textures and very large screenton. Esrgan model was trained on a dataset VH for use in the colab, it works in some places worse than Omni, so could not fight with overlapping screenton.",
     "date": "2023-10-04",
     "architecture": "esrgan",

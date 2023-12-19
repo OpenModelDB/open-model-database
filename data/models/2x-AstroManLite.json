@@ -2,7 +2,10 @@
     "name": "AstroManLite",
     "author": "saurusx",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
     "description": "I used frames from 5 episodes from the PAL DVD sets with differing quality levels against the German Blu-rays in order to reverse engineer an AstroRes model. Detail enhancement is very high though it helps to have a good quality source (of course). The model will remove MPEG-2, some halos, and PAL-conversion artifacts like image trails and faded lines to great effect. Temporal stability is quite good.",
     "date": "2023-11-06",
     "architecture": "esrgan",

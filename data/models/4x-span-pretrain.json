@@ -2,7 +2,9 @@
     "name": "span_pretrain",
     "author": "musl",
     "license": "CC0-1.0",
-    "tags": [],
+    "tags": [
+        "pretrained"
+    ],
     "description": "Please load it using `strict_load_g: false`. Model trained only on downscale degradation (bicubic, bilinear, nearest, lanczos and mitchell). Can be used to start new SPAN models.",
     "date": "2023-12-05",
     "architecture": "span",

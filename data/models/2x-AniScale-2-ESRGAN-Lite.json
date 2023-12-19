@@ -2,7 +2,10 @@
     "name": "AniScale-2-ESRGAN-Lite",
     "author": "sirosky",
     "license": "CC-BY-NC-4.0",
-    "tags": [],
+    "tags": [
+        "anime",
+        "restoration"
+    ],
     "description": "AniScale 2 is a versatile and faithful anime model trained for use on a variety of post ~2000 sources. As the name suggests, this is the successor to the original AniScale, and a substantial upgrade in nearly every respect. Superb blur and depth of field handling, thorough WEB and DVD compression repair, and pleasing line art refinement are the hallmarks of AniScale 2. A few notes:\n\n- While AniScale 2 is trained first and foremost as an OmniSR model, AniScale 2 is also intended to be a platform to explore multiple SISR archs. For starters, I've trained OmniSR and Compact versions, but more will come.\n- AniScale 2 also comes with a \"refiner\" model, creatively named AniScale 2 Refiner (AS2R). AS2R is a 1x Compact model (for maximum speed) trained to supplement and increase the versatility of AniScale 2, without making the base model excessively aggressive. The Refiner is focused on providing light sharpening, fixing line art and line thinning, depending on whether you run the model before or after upscaling with AniScale 2. \n- For more information, please visit the [Github wiki page](https://github.com/Sirosky/Upscale-Hub/wiki/%F0%9F%8C%9F-AniScale-2-&--AniScale-2-Refiner).\n\n**Comparisons**\n\n- [General Comparisons](https://imgsli.com/MjEyMjQw/0/1)\n- [Depth of Field/Blur Comparisons](https://imgsli.com/MjEyMjQ1/5/4) (including vs. my favorite model punching bag)",
     "date": "2023-10-08",
     "architecture": "esrgan",

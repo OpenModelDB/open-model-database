@@ -2,7 +2,9 @@
     "name": "ditn_w16_pretrain",
     "author": "musl",
     "license": "CC0-1.0",
-    "tags": [],
+    "tags": [
+        "pretrained"
+    ],
     "description": "Meant to quick start new DITN models trained on `neosr`. Trained only on downscale degradation (bicubic, bilinear, nearest, lanczos and mitchell).\nNote: [Flash Attention](https://github.com/muslll/neosr/blob/master/neosr/archs/ditn_arch.py#L108) breaks inference compatibility with official code.",
     "date": "2023-09-14",
     "architecture": "ditn",

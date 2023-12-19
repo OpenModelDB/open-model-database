@@ -2,7 +2,10 @@
     "name": "wtp_descreentone_compact",
     "author": "umzi-x-dead",
     "license": null,
-    "tags": [],
+    "tags": [
+        "manga",
+        "restoration"
+    ],
     "description": "model was created as a compact analog of popular models that delete a screenton in the process of overlaying a new screenton.\n\nSpeed(image:1441x2048, video card: 3060 12gb)\n\n  1x_wtp_descreentone_compact: 1.2 sec.",
     "date": "2023-08-20",
     "architecture": "compact",

@@ -2,7 +2,9 @@
     "name": "dctlsa_pretrained",
     "author": "musl",
     "license": "CC0-1.0",
-    "tags": [],
+    "tags": [
+        "pretrained"
+    ],
     "description": "Model trained only on downscale degradation (bicubic, bilinear, nearest, lanczos and mitchell). Can be used to start new DCTLSA models.",
     "date": "2023-11-27",
     "architecture": "dctlsa",
