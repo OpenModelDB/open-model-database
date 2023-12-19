@@ -174,16 +174,6 @@ function PageContent() {
         await router.push(`/models/${fullId}`);
     };
 
-    const changePretrained = (id: ModelId | '') => {
-        setPretrained(id);
-        if (id) {
-            const model = modelData.get(id);
-            if (model) {
-                setScale(model.scale);
-            }
-        }
-    };
-
     const onMainPthChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setMainPthSpandrelError(undefined);
 
@@ -250,7 +240,7 @@ function PageContent() {
                         className="w-full text-sm"
                         value={pretrained}
                         onChange={(e) => {
-                            changePretrained(e.target.value as ModelId | '');
+                            setPretrained(e.target.value as ModelId | '');
                         }}
                     >
                         <option value="">None</option>
@@ -276,7 +266,7 @@ function PageContent() {
                                             }cursor-pointer whitespace-nowrap pr-1 hover:underline`}
                                             key={id}
                                             onClick={() => {
-                                                changePretrained(id);
+                                                setPretrained(id);
                                             }}
                                         >
                                             {id}
