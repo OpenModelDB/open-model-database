@@ -56,7 +56,12 @@ const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTa
                         text={tag}
                         onChange={(text) => {
                             const newTags = [...tags];
-                            newTags[index] = text;
+                            if (text) {
+                                newTags[index] = text;
+                            } else {
+                                // remove empty tags
+                                newTags.splice(index, 1);
+                            }
                             onChange(newTags);
                         }}
                     />
