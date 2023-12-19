@@ -1,0 +1,82 @@
+{
+    "name": "Nomos8k_span_otf_medium",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo",
+        "restoration"
+    ],
+    "description": "I release my span otf series:\nThey come in three variations: weak, middle, and strong.\nMainly meant for photos (can be tried on other things of course).\n\n(Also there is a non-otf span model I had been working on simultaneously that I will release shortly, should give better results on less degraded input in comparison to this span otf series)\n\nBasically I trained the otf_strong for 90k iter and then medium and weak based off that, with some more training to de-learn (tone down) the (too?) strong degradations. Used discrim resets to correct occuring colorloss in all of them. gt size was for the most part 512 with batch 9 (since i hoped it would give better results) with 0.55 it/s training speed (first 40k at the beginning were gt size 256 with batch 20 with 0.58 it/s).",
+    "date": "2023-12-09",
+    "architecture": "span",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 9015866,
+            "sha256": "c1a4395b6d34ffa86b1c6e8a443d32ccaba7a53fabf600f7c17d804cc8156b46",
+            "urls": [
+                "https://drive.google.com/drive/folders/1fJIzWN6UicvFNZADVWTchPjJpQFarA4v?usp=drive_link"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 866325,
+            "sha256": "5ea41b6280ff98cee6537c0f41c21bf5417328de3330a04845eaab9ec20e55c3",
+            "urls": [
+                "https://drive.google.com/drive/folders/1fJIzWN6UicvFNZADVWTchPjJpQFarA4v?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 90000,
+    "trainingEpochs": 26,
+    "trainingBatchSize": 9,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "datasetSize": 8507,
+    "pretrainedModelG": "4x-spanx4-ch48",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "face",
+            "LR": "https://i.slow.pics/pFLYQEHA.webp",
+            "SR": "https://i.slow.pics/kEtl601R.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "ani_bokeh",
+            "LR": "https://i.slow.pics/a7EC1d6D.webp",
+            "SR": "https://i.slow.pics/TmpX6Crn.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "real_degraded",
+            "LR": "https://i.slow.pics/gzlsVGMx.webp",
+            "SR": "https://i.slow.pics/psuXPeSD.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "noisy",
+            "LR": "https://i.slow.pics/RWSRoQQl.webp",
+            "SR": "https://i.slow.pics/eTUAjvTS.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "BF4",
+            "LR": "https://i.slow.pics/Im90vdVx.webp",
+            "SR": "https://i.slow.pics/NHex8zaz.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "Control",
+            "LR": "https://i.slow.pics/ELIuNgOd.webp",
+            "SR": "https://i.slow.pics/CqtGEdoH.webp"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "name": "Dehalo_v1_Compact",
+    "author": "zarxrax",
+    "license": "WTFPL",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "This is a 1x model for removing halos in animation. I was training this a while back and considered it a failed project, but I recently found it useful on a few things I was working on, so I decided to release it. I don't remember any details regarding how it was trained.",
+    "date": "2023-11-01",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4796829,
+            "sha256": "938f79b53c3f7665584b32c57f0e9e793a8838c34d17c5fb1ba2b2197b4ae1d4",
+            "urls": [
+                "https://mega.nz/file/lBFnHI7K#OGDMb8foOEDsNhXYoIuQIg5N6-2F9-gS9FA0G6lKcc8"
+            ]
+        }
+    ],
+    "pretrainedModelG": "1x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "GoldenBoy01",
+            "LR": "https://imgsli.com/i/5b7c56fb-3edf-468b-a33c-f53dc10f8603.jpg",
+            "SR": "https://imgsli.com/i/76c4804b-c3ff-4c91-a071-7e858a5cf939.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Kodocha01",
+            "LR": "https://imgsli.com/i/483527f5-3365-488b-8b71-4fab596a9c6c.jpg",
+            "SR": "https://imgsli.com/i/218c298d-f446-44dc-860f-af4785baf11d.jpg"
+        }
+    ]
+}

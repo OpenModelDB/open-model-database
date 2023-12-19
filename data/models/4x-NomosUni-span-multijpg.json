@@ -1,0 +1,53 @@
+{
+    "name": "4x-NomosUni_span_multijpg",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "4x fast universal upscaler pair trained with jpg degradation (down to 40) and multiscale (down_up, bicubic, bilinear, box, nearest, lanczos).",
+    "date": "2023-12-15",
+    "architecture": "span",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 9015866,
+            "sha256": "6951fda486a7e571391c61796ea4b8aac42a8381a53ffb66d8325223d7be4a0c",
+            "urls": [
+                "https://drive.google.com/drive/folders/1v4k3PUqe3wWr16yQWOR53vxkCiKVgsMj?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 57000,
+    "trainingEpochs": 33,
+    "trainingBatchSize": 9,
+    "trainingHRSize": 512,
+    "dataset": "nomos_uni",
+    "datasetSize": 2989,
+    "pretrainedModelG": "4x-spanx4-ch48",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Lz3nmJ5c.webp",
+            "SR": "https://i.slow.pics/2GfYgS0z.png"
+        },
+        {
+            "type": "paired",
+            "caption": "ani_bokeh",
+            "LR": "https://i.slow.pics/FeIsRUYB.webp",
+            "SR": "https://i.slow.pics/c1Prs8y9.png"
+        },
+        {
+            "type": "paired",
+            "caption": "face",
+            "LR": "https://i.slow.pics/f9vUfSfL.webp",
+            "SR": "https://i.slow.pics/3HATRbYp.png"
+        }
+    ]
+}

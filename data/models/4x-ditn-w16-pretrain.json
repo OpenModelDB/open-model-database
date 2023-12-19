@@ -1,0 +1,42 @@
+{
+    "name": "ditn_w16_pretrain",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [],
+    "description": "Meant to quick start new DITN models trained on `neosr`. Trained only on downscale degradation (bicubic, bilinear, nearest, lanczos and mitchell).\nNote: [Flash Attention](https://github.com/muslll/neosr/blob/master/neosr/archs/ditn_arch.py#L108) breaks inference compatibility with official code.",
+    "date": "2023-09-14",
+    "architecture": "ditn",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 1817977,
+            "sha256": "8a4d344a65fc0788b0b36f1f9a383abedc3a2dc14215e9bd97d874f4a56f207b",
+            "urls": [
+                "https://drive.google.com/drive/folders/1Fzmuw2xCChAYgX7WznaPcTFpsYdbXBWG?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 215000,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/cc/a8/6w6BYmOn_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/cc/a8/6w6BYmOn_t.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/9e/c3/3faQxSmT_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/9e/c3/3faQxSmT_t.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/03/a9/PHV25PVS_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/03/a9/PHV25PVS_t.png"
+        }
+    ]
+}

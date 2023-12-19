@@ -1,0 +1,48 @@
+{
+    "name": "wtp_descreentone",
+    "author": "umzi-x-dead",
+    "license": null,
+    "tags": [
+        "manga",
+        "restoration"
+    ],
+    "description": "In general, what was the point? The project was conceived for a manga scale with a screentone using the method of superimposing a new screentone, but for this the old screentone must be removed, but this is not all the same important contour. With the screentone overlay method, the contour should be as close to 1 bit as possible, otherwise we will see full contours, wavy contours, etc. This is the whole idealogy of this model.",
+    "date": "2023-09-14",
+    "architecture": "omnisr",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3359482,
+            "sha256": "ade118b82f853eea313155ff0e0352a92bf3cb853a0849f98e18dfe2a8e2e86d",
+            "urls": [
+                "https://drive.google.com/drive/u/0/folders/1fScU5NKvhkFeSc9cQFi4gDaiHle3AbHchttps://drive.google.com/drive/u/0/folders/1fScU5NKvhkFeSc9cQFi4gDaiHle3AbHc"
+            ]
+        }
+    ],
+    "trainingIterations": 105000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "datasetSize": 122000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/WM5j3RuM.png",
+            "SR": "https://i.slow.pics/GlIb69ah.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/1wwQRUBL.jpg",
+            "SR": "https://i.slow.pics/1UH4Dzfw.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/wnjelJOK.png",
+            "SR": "https://i.slow.pics/466stVPk.png"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "name": "wtp_descreentone_compact",
+    "author": "umzi-x-dead",
+    "license": null,
+    "tags": [],
+    "description": "model was created as a compact analog of popular models that delete a screenton in the process of overlaying a new screenton.\n\nSpeed(image:1441x2048, video card: 3060 12gb)\n\n  1x_wtp_descreentone_compact: 1.2 sec.",
+    "date": "2023-08-20",
+    "architecture": "compact",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4796937,
+            "sha256": "7d71a687f80c665559c1eeb0b3743c2a58579aa51203378cc4ccbe6c904ef20a",
+            "urls": [
+                "https://drive.google.com/drive/u/0/folders/16cjT5TsgbwzDUmMzLx7NK-50gVwbkHTP"
+            ]
+        }
+    ],
+    "trainingIterations": 118000,
+    "trainingEpochs": 2,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 128,
+    "dataset": "Custom Dataset",
+    "datasetSize": 171000,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Raw Comparison",
+            "LR": "https://imgsli.com/i/e05f82d5-fa88-46d6-bf16-3b661826cdad.jpg",
+            "SR": "https://imgsli.com/i/58aa3ab0-9ae1-4316-953b-61e8180f809e.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Overlaid Screentone (color deviation)",
+            "LR": "https://imgsli.com/i/16282bc7-627c-475f-9fbe-9226b229f5ff.jpg",
+            "SR": "https://imgsli.com/i/c4be5206-b757-4f4f-9dc8-29900c5a3d67.jpg"
+        }
+    ]
+}

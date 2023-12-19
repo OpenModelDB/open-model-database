@@ -1,0 +1,108 @@
+{
+    "name": "AstroManLite",
+    "author": "saurusx",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [],
+    "description": "I used frames from 5 episodes from the PAL DVD sets with differing quality levels against the German Blu-rays in order to reverse engineer an AstroRes model. Detail enhancement is very high though it helps to have a good quality source (of course). The model will remove MPEG-2, some halos, and PAL-conversion artifacts like image trails and faded lines to great effect. Temporal stability is quite good.",
+    "date": "2023-11-06",
+    "architecture": "esrgan",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "e217daebd3c274ca1ac7cf7c5c4922931f58ae8f4f7d8308ebea02660f6566f8",
+            "urls": [
+                "https://mega.nz/file/SDhlCYhI#SlNC7qxzAd5I3zo72euwN5JvjDqIlrXdy83yfVlBL8Y"
+            ]
+        }
+    ],
+    "trainingIterations": 266000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "German He-Man Blu-ray (degrained and enhanced)",
+    "datasetSize": 892,
+    "pretrainedModelG": "2x-Garfield1-308k",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "GBFilm 1",
+            "LR": "https://imgsli.com/i/4ce59889-3aae-4666-9cff-6521cd44540c.jpg",
+            "SR": "https://imgsli.com/i/493c52ad-ec83-422c-96fc-89d46cf42313.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "GBFilm 2",
+            "LR": "https://imgsli.com/i/6f9cc789-c3bc-46ee-bcf1-25a4cc7048ea.jpg",
+            "SR": "https://imgsli.com/i/c465c9f9-c705-4e1c-bc8a-a7e11c75a6d8.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "GBFilm 3",
+            "LR": "https://imgsli.com/i/032023d5-1fb6-4ddf-bdd6-82eed2c7acca.jpg",
+            "SR": "https://imgsli.com/i/ab50085d-be19-428d-8649-48fa93db65c4.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "GBFilm 4",
+            "LR": "https://imgsli.com/i/484ec36a-7d67-4da6-9bf9-e80d6800ab1a.jpg",
+            "SR": "https://imgsli.com/i/684a5b21-8909-4243-8962-6fd0360233a4.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "GBFilm 5",
+            "LR": "https://imgsli.com/i/a8d117a5-9fbc-4f5e-95d6-f5e543db2a50.jpg",
+            "SR": "https://imgsli.com/i/56afc5ad-bac3-4379-a9bc-394c044f9dd6.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "HeMan 1",
+            "LR": "https://imgsli.com/i/4d8f1700-a48c-420c-b188-be618e0bce81.jpg",
+            "SR": "https://imgsli.com/i/9a00bd97-5d84-4123-8b10-14a60f93f81a.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "HeMan 2",
+            "LR": "https://imgsli.com/i/aafb8932-b00e-439b-b9a4-222f346758f1.jpg",
+            "SR": "https://imgsli.com/i/ccf5dce1-a424-44e2-91de-7d2eb66fecab.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "HeMan 3",
+            "LR": "https://imgsli.com/i/38a609da-537d-4509-9edd-42e43ac9043f.jpg",
+            "SR": "https://imgsli.com/i/d08c5977-a97b-46f4-be0a-d5636799f6d5.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "HeMan 4",
+            "LR": "https://imgsli.com/i/bc0defcd-7a02-4e4d-a764-cee0674e0874.jpg",
+            "SR": "https://imgsli.com/i/266ec20d-0fed-46a4-bcf5-edbfae98aaf4.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "HeMan 5",
+            "LR": "https://imgsli.com/i/0b2c925d-2567-4761-b848-fcb151c141ce.jpg",
+            "SR": "https://imgsli.com/i/ab1d270d-90dd-46dc-9ac4-4cd74f470f42.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "HeMan 6",
+            "LR": "https://imgsli.com/i/cbb8fbea-2937-4816-858e-0adb9b007e2b.jpg",
+            "SR": "https://imgsli.com/i/79e6b4c7-b125-49b4-b2f9-c72906864b34.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "HeMan 7",
+            "LR": "https://imgsli.com/i/42762036-b000-492e-abd5-fd28d492241a.jpg",
+            "SR": "https://imgsli.com/i/9edd182f-d7f1-4323-9712-304c49bf4ad1.jpg"
+        }
+    ]
+}

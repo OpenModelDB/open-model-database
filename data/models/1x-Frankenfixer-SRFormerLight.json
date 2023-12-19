@@ -1,0 +1,45 @@
+{
+    "name": "Frankenfixer_SRFormerLight",
+    "author": "crustaceous-d",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "A 1x model designed to reduce artifacts and restore detail to images upscaled by 4xFrankendata_FullDegradation_SRFormer. It could possibly work with other upscaling models too.",
+    "date": "2023-09-04",
+    "architecture": "srformer",
+    "size": [
+        "s64",
+        "w16"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 19308848,
+            "sha256": "82a521c238e645d7160fd4d9e89457452a9c2f9a0cbca11e1061ad582fe052a9",
+            "urls": [
+                "https://drive.google.com/drive/folders/1ZAcnZAVkgBitHzzwpGWBREpfm9hPznQJ?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 190000,
+    "trainingEpochs": 28,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "FrankendataV2 (Upscaled LR)",
+    "datasetSize": 78951,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/e6/ea/sEFjFCY4_o.png",
+            "SR": "https://images2.imgbox.com/98/2d/1yUsMccr_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/98/2d/1yUsMccr_t.png"
+        }
+    ]
+}

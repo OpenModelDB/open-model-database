@@ -1,0 +1,40 @@
+{
+    "name": "LexicaDAT2_otf",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo",
+        "restoration"
+    ],
+    "description": "4x ai generated image upscaler trained with otf\n\nThe 4xLexicaDAT2_hb generated some weird lines on some edges. 4xNomosUniDAT is a different checkpoint of 4xNomosUniDAT_otf (145000), I liked the result a bit more in that example.",
+    "date": "2023-11-01",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140299054,
+            "sha256": "178e30c5c3771091c24f275c4ddc4527c74cf0d1a29b233447af2acc4106d1be",
+            "urls": [
+                "https://drive.google.com/file/d/1Vx4kqcpPKfUpYSFpK_0XRZ7h64nosraW/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 175000,
+    "trainingEpochs": 3,
+    "trainingBatchSize": 6,
+    "dataset": "lexica",
+    "datasetSize": 43856,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/51/10/bht8DYhH_o.png"
+        }
+    ]
+}
