@@ -13,6 +13,7 @@ export interface NumberProp {
 }
 export interface StringProp {
     type: 'string';
+    minLength?: number;
     format?: RegExp;
     kind?: 'model-id' | 'user-id' | 'tag-id' | 'arch-id';
     enum?: string[];
@@ -66,6 +67,9 @@ export function validateType(
         case 'string':
             if (typeof value !== 'string') {
                 return `Expected ${name} to be a string`;
+            }
+            if (prop.minLength && value.length < prop.minLength) {
+                return `Expected ${name} to be at least ${prop.minLength} character(s) long, but found ${value.length} character(s).`;
             }
             if (prop.format && !prop.format.test(value)) {
                 return `Expected ${name} to match ${prop.format.toString()}`;
@@ -189,7 +193,7 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         name: 'Size',
         optional: true,
         type: 'array',
-        of: { type: 'string' },
+        of: { type: 'string', minLength: 1 },
     },
     scale: {
         name: 'Scale',
