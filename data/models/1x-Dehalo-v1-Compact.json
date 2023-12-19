@@ -4,6 +4,7 @@
     "license": "WTFPL",
     "tags": [
         "anime",
+        "dehalo",
         "restoration"
     ],
     "description": "This is a 1x model for removing halos in animation. I was training this a while back and considered it a failed project, but I recently found it useful on a few things I was working on, so I decided to release it. I don't remember any details regarding how it was trained.",
