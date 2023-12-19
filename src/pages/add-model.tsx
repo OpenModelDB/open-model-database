@@ -1,12 +1,14 @@
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
-import { EditableIntegerLabel } from '../elements/components/editable-label';
+import React, { useEffect, useState } from 'react';
 import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
+import { useArchitectures } from '../lib/hooks/use-architectures';
 import { useModels } from '../lib/hooks/use-models';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { ArchId, Model, ModelId, TagId } from '../lib/schema';
+import { Arch, ArchId, Model, ModelId, TagId } from '../lib/schema';
 import { canonicalizeModelId } from '../lib/schema-util';
+import { hashSha256 } from '../lib/util';
+import type { ResponseJson } from './api/pth-metadata';
 
 function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] {
     const isPretrained = (id: ModelId) => {
@@ -30,17 +32,90 @@ function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] 
     return [...usage.entries()].sort((a, b) => b[1] - a[1]).map((e) => e[0]);
 }
 
+async function readFile(file: File): Promise<ArrayBuffer> {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const data = reader.result as ArrayBuffer;
+            resolve(data);
+        };
+        reader.onerror = reject;
+        reader.readAsArrayBuffer(file);
+    });
+}
+
+function findArch(architectures: ReadonlyMap<ArchId, Arch>, search: string): ArchId | undefined {
+    const passes: ((archId: ArchId, arch: Arch) => boolean)[] = [
+        // exact match
+        (archId, { name }) =>
+            archId.toLowerCase() === search.toLowerCase() || name.toLowerCase() === search.toLowerCase(),
+        // ignore punctuation
+        (_, { name }) => name.replace(/[\s\-]/g, '').toLowerCase() === search.replace(/[\s\-]/g, '').toLowerCase(),
+    ];
+
+    for (const pass of passes) {
+        for (const [archId, arch] of architectures) {
+            if (pass(archId, arch)) {
+                return archId;
+            }
+        }
+    }
+}
+
+interface PthInfo {
+    arch?: ArchId;
+    size?: string[];
+    scale?: number;
+    inputChannels?: number;
+    outputChannels?: number;
+    fileSize: number;
+    sha256: string;
+}
+
 function PageContent() {
     const { modelData } = useModels();
+    const { archData } = useArchitectures();
     const router = useRouter();
     const { webApi, editMode } = useWebApi();
 
     const [processing, setProcessing] = useState(false);
 
     const [pretrained, setPretrained] = useState<ModelId | ''>('');
-    const [idName, setIdName] = useState('Unknown');
+    const [name, setName] = useState('Unknown');
+    const [partialId, setPartialId] = useState<string>();
     const [scale, setScale] = useState(1);
-    const fullId = canonicalizeModelId(`${scale}x-${idName}`);
+    const [scaleDefinedBy, setScaleDefinedBy] = useState<string>();
+    const fullId = canonicalizeModelId(`${scale}x-${partialId ?? name}`);
+    const partialIdFromFull = fullId.slice(`${scale}x-`.length);
+
+    const [hasMainPth, setHasMainPth] = useState(false);
+    const [mainPthInfo, setMainPthInfo] = useState<PthInfo>();
+    const [mainPthSpandrelError, setMainPthSpandrelError] = useState<string>();
+    const [mainPthUrl, setMainPthUrl] = useState<string>();
+    const [loadingMainPth, setLoadingMainPth] = useState(false);
+
+    useEffect(() => {
+        if (hasMainPth && mainPthInfo?.scale) {
+            setScale(mainPthInfo.scale);
+            setScaleDefinedBy('PTH file');
+            return;
+        }
+        if (pretrained) {
+            const model = modelData.get(pretrained);
+            if (model) {
+                setScale(model.scale);
+                setScaleDefinedBy('pretrained model');
+                return;
+            }
+        }
+        setScaleDefinedBy(undefined);
+    }, [hasMainPth, mainPthInfo, pretrained, modelData]);
+
+    useEffect(() => {
+        if (!hasMainPth) {
+            setMainPthInfo(undefined);
+        }
+    }, [hasMainPth]);
 
     if (!editMode || !modelData.size) return null;
 
@@ -51,7 +126,7 @@ function PageContent() {
         }
 
         const model: Model = {
-            name: idName,
+            name,
             author: [],
             license: null,
             tags: [],
@@ -75,6 +150,21 @@ function PageContent() {
             model.pretrainedModelG = pretrained;
         }
 
+        if (hasMainPth && mainPthInfo && mainPthUrl) {
+            if (mainPthInfo.inputChannels) model.inputChannels = mainPthInfo.inputChannels;
+            if (mainPthInfo.outputChannels) model.outputChannels = mainPthInfo.outputChannels;
+            if (mainPthInfo.size && mainPthInfo.size.length > 0) model.size = mainPthInfo.size;
+            if (mainPthInfo.arch) model.architecture = mainPthInfo.arch;
+
+            model.resources.push({
+                platform: 'pytorch',
+                type: 'pth',
+                size: mainPthInfo.fileSize,
+                sha256: mainPthInfo.sha256,
+                urls: [mainPthUrl],
+            });
+        }
+
         setProcessing(true);
         await webApi.models.update([[fullId, model]]);
 
@@ -94,14 +184,70 @@ function PageContent() {
         }
     };
 
+    const onMainPthChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        setMainPthSpandrelError(undefined);
+
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        setLoadingMainPth(true);
+        readFile(file)
+            .then((data) => {
+                const sha256 = hashSha256(data);
+                const fileSize = data.byteLength;
+                const metadata = fetch(`/api/pth-metadata`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/octet-stream' },
+                    body: data,
+                }).then((res) => res.json() as Promise<ResponseJson>);
+                return Promise.all([fileSize, sha256, metadata]);
+            })
+            .then(([fileSize, sha256, metadata]) => {
+                const info: PthInfo = {
+                    fileSize,
+                    sha256,
+                };
+
+                if (metadata.status === 'ok') {
+                    info.arch = findArch(archData, metadata.data.architecture);
+                    info.size = metadata.data.tags;
+                    info.inputChannels = metadata.data.inputChannels;
+                    info.outputChannels = metadata.data.outputChannels;
+                    info.scale = metadata.data.scale;
+                } else {
+                    setMainPthSpandrelError(metadata.error);
+                }
+
+                setMainPthInfo(info);
+            })
+            .catch((e) => {
+                setMainPthInfo(undefined);
+                alert(`Error: ${String(e)}`);
+            })
+            .finally(() => {
+                setLoadingMainPth(false);
+            });
+    };
+
+    let inputError;
+    if (name.trim() === '') {
+        inputError = 'Name cannot be empty';
+    } else if (hasMainPth && !mainPthInfo) {
+        inputError = 'Main .pth file is invalid';
+    } else if (hasMainPth && !mainPthUrl) {
+        inputError = 'Main .pth file URL is empty';
+    }
+
+    const canAddModel: boolean = !inputError && !processing && (!hasMainPth || !loadingMainPth);
+
     return (
         <>
             <h1>Add Model</h1>
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-4 gap-2">
                 <div>Pretrained model:</div>
                 <div className="col-span-3">
                     <select
-                        className="w-full"
+                        className="w-full text-sm"
                         value={pretrained}
                         onChange={(e) => {
                             changePretrained(e.target.value as ModelId | '');
@@ -141,38 +287,128 @@ function PageContent() {
                     </div>
                 </div>
 
-                <div>Id:</div>
+                <div>Name:</div>
                 <div className="col-span-3">
                     <input
-                        className="box-border w-full"
+                        className="box-border w-full text-sm"
                         type="text"
-                        value={idName}
-                        onChange={(e) => setIdName(e.target.value)}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </div>
 
                 <div>Scale:</div>
                 <div className="col-span-3">
-                    <EditableIntegerLabel
-                        readonly={!!pretrained}
+                    <input
+                        className="text-sm"
+                        max={32}
+                        min={1}
+                        readOnly={!!scaleDefinedBy}
+                        type="number"
                         value={scale}
-                        onChange={setScale}
+                        onChange={(e) =>
+                            setScale((scale) => {
+                                const n = Number(e.target.value) || scale;
+                                return Math.max(1, Math.min(n, 32));
+                            })
+                        }
                     />
+                    {!!scaleDefinedBy && <span className="ml-3 opacity-75">(Defined by {scaleDefinedBy})</span>}
+                </div>
+
+                <div>Id:</div>
+                <div className="col-span-3">
+                    <div className="relative">
+                        <span
+                            className="pointer-events-none absolute select-none font-mono text-sm"
+                            style={{ top: '4.82px', left: '4px' }}
+                        >
+                            {scale}x-
+                        </span>
+                        <input
+                            className="box-border w-full font-mono text-sm"
+                            style={{ paddingLeft: `calc(3px + 0.55 * ${`${scale}x-`.length}em)` }}
+                            type="text"
+                            value={partialId ?? partialIdFromFull}
+                            onBlur={(e) => {
+                                const prefix = `${scale}x-`;
+                                const newPartialId = canonicalizeModelId(prefix + e.target.value).slice(prefix.length);
+                                setPartialId((prev) => {
+                                    if (prev === undefined && newPartialId === partialIdFromFull) {
+                                        return undefined;
+                                    }
+                                    return newPartialId || undefined;
+                                });
+                            }}
+                            onChange={(e) => setPartialId(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    const prefix = `${scale}x-`;
+                                    const target = e.target as HTMLInputElement;
+                                    const newPartialId = canonicalizeModelId(prefix + String(target.value)).slice(
+                                        prefix.length
+                                    );
+                                    setPartialId(newPartialId || undefined);
+                                }
+                            }}
+                        />
+                    </div>
+                </div>
+
+                <div>Pth:</div>
+                <div className="col-span-3">
+                    <div>
+                        <input
+                            checked={hasMainPth}
+                            className="ml-2"
+                            id="main-pth"
+                            type="checkbox"
+                            onChange={(e) => {
+                                setHasMainPth(e.target.checked);
+                            }}
+                        />
+                        <label htmlFor="main-pth">
+                            Has <code>.pth</code> file?
+                        </label>
+                    </div>
+                    {hasMainPth && (
+                        <>
+                            <div>
+                                {/* file input for .pth file */}
+                                <input
+                                    accept=".pth"
+                                    className="box-border w-full text-sm"
+                                    type="file"
+                                    onChange={onMainPthChange}
+                                />
+                                {loadingMainPth && <span className="pl-4">Loading...</span>}
+                                <span className="pl-4 text-red-300">{mainPthSpandrelError}</span>
+                            </div>
+                            <div>
+                                {/* url input */}
+                                <input
+                                    className="box-border w-full text-sm"
+                                    placeholder="Download URL for .pth file"
+                                    type="text"
+                                    value={mainPthUrl}
+                                    onChange={(e) => setMainPthUrl(e.target.value)}
+                                />
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
             <p>
-                Full id: <code>{fullId}</code>
-            </p>
-            <p>
                 <button
-                    className={processing ? 'cursor-not-allowed' : 'cursor-pointer'}
-                    disabled={processing}
+                    className={!canAddModel ? 'cursor-not-allowed' : 'cursor-pointer'}
+                    disabled={!canAddModel}
                     onClick={() => {
                         addModel().catch((e) => console.error(e));
                     }}
                 >
                     {processing ? 'Currently adding model' : 'Add Model'}
                 </button>
+                <span className="pl-4 text-red-300">{inputError}</span>
             </p>
         </>
     );
