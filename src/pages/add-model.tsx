@@ -5,9 +5,9 @@ import { PageContainer } from '../elements/page';
 import { useArchitectures } from '../lib/hooks/use-architectures';
 import { useModels } from '../lib/hooks/use-models';
 import { useWebApi } from '../lib/hooks/use-web-api';
+import { hashSha256 } from '../lib/model-files';
 import { Arch, ArchId, Model, ModelId, TagId } from '../lib/schema';
 import { canonicalizeModelId } from '../lib/schema-util';
-import { hashSha256 } from '../lib/util';
 import type { ResponseJson } from './api/pth-metadata';
 
 function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] {
@@ -30,18 +30,6 @@ function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] 
     }
 
     return [...usage.entries()].sort((a, b) => b[1] - a[1]).map((e) => e[0]);
-}
-
-async function readFile(file: File): Promise<ArrayBuffer> {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => {
-            const data = reader.result as ArrayBuffer;
-            resolve(data);
-        };
-        reader.onerror = reject;
-        reader.readAsArrayBuffer(file);
-    });
 }
 
 function findArch(architectures: ReadonlyMap<ArchId, Arch>, search: string): ArchId | undefined {
@@ -181,7 +169,7 @@ function PageContent() {
         if (!file) return;
 
         setLoadingMainPth(true);
-        readFile(file)
+        file.arrayBuffer()
             .then((data) => {
                 const sha256 = hashSha256(data);
                 const fileSize = data.byteLength;

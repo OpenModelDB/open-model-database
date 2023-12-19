@@ -1,7 +1,7 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { hashSha256 } from '../../lib/model-files';
 import { ModelId, Resource } from '../../lib/schema';
-import { hashSha256 } from '../../lib/util';
 
 export interface EditResourceProps {
     resource?: Resource;
