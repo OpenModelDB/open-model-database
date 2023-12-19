@@ -8,9 +8,7 @@
     "description": "This is SaurusX's original description:\nFix vertical blur / split lines / shadowing. A 1x model of my 2xSwatKats. Resolves the same video problems as before, but 1x and faster and meant for chaining to other 2x models (or whatever). Input MUST be 540 vertical as the blur problem is very resolution sensitive.\n\n-------\n\nThe goal for this retrain was to get the \"magic\" of SwatKatsLite into SPAN for much faster video processing. It's about 80% of the way there. There's some artifacts here and there that aren't present in the original, and it has small amounts of color halos in certain areas. I've retrained this model so many times that I've just decided to release it. This particular release was trained to ~450k.\n\nThe included Family Guy image shows the color ringing issue. Sorry. \n\nUpdate: I've added a second alt model that has less color ringing, but doesn't do quite as good with line repair. I believe I've reached architecture limits",
     "date": "2023-12-15",
     "architecture": "span",
-    "size": [
-        ""
-    ],
+    "size": null,
     "scale": 1,
     "inputChannels": 3,
     "outputChannels": 3,
