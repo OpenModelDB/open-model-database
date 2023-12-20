@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { hashSha256 } from '../../lib/model-files';
 import { ModelId, Resource } from '../../lib/schema';
 
 export interface EditResourceProps {
@@ -48,13 +49,9 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                             body: bytes,
                         }).catch((error) => console.error(error));
 
-                        return crypto.subtle.digest('SHA-256', bytes);
+                        return hashSha256(bytes);
                     })
-                    .then((sha256) => {
-                        const hashArray = Array.from(new Uint8Array(sha256));
-                        const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
-                        setSHA256(hashHex.toLowerCase());
-                    })
+                    .then((sha256) => setSHA256(sha256))
                     .catch((error) => console.error(error));
             }
         };
