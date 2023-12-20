@@ -9,7 +9,7 @@ import { deriveTags } from '../lib/derive-tags';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
+import { Model, ModelId, Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
 import { canonicalizeTagId } from '../lib/schema-util';
 import { compareTagId } from '../lib/util';
 
@@ -55,6 +55,31 @@ export default function Page() {
         return [...tagUsage.keys()].filter((id) => !known.has(id) && !id.startsWith('by:')).sort(compareTagId);
     }, [tagUsage, tagData]);
 
+    const addImplications = async () => {
+        if (!webApi) return;
+
+        const implications: Map<TagId, TagId[]> = new Map();
+        for (const [tagId, tag] of tagData) {
+            if (tag.implies) {
+                implications.set(tagId, tag.implies);
+            }
+        }
+
+        const models = await webApi.models.getAll();
+        const updates: [ModelId, Model][] = [];
+        for (const [modelId, model] of models) {
+            const tagSet = new Set(model.tags);
+            for (const tag of model.tags) {
+                implications.get(tag)?.forEach((implied) => tagSet.add(implied));
+            }
+            if (tagSet.size !== model.tags.length) {
+                updates.push([modelId, { ...model, tags: [...tagSet].sort(compareTagId) }]);
+            }
+        }
+
+        await webApi.models.update(updates);
+    };
+
     return (
         <>
             <HeadCommon
@@ -65,6 +90,20 @@ export default function Page() {
                 <h1>Tags</h1>
 
                 {!editMode && <p className="text-red-700 dark:text-red-300">Not in edit mode!</p>}
+
+                <p>
+                    <button
+                        className="text-sm"
+                        onClick={() => {
+                            addImplications().catch((e) => console.error(e));
+                        }}
+                    >
+                        Add tag implications on models
+                    </button>
+                    <span className="pl-4 opacity-80">
+                        (This will go through all models and add tags if necessary to reflect current tag implications.)
+                    </span>
+                </p>
 
                 <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
                     {categoryOrder.map(([categoryId, category]) => {
