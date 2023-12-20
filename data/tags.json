@@ -110,7 +110,7 @@
     },
     "photo": {
         "name": "Realistic",
-        "description": "Image or video of realistic looking imagery."
+        "description": "Image or video of realistic looking imagery. E.g. images recorded with camera."
     },
     "pixel-art": {
         "name": "Pixel Art",
