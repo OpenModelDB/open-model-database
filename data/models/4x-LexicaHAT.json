@@ -3,10 +3,7 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
-        "anime",
-        "cartoon",
-        "general-upscaler",
-        "photo"
+        "ai-generated"
     ],
     "description": "4x upscaler for AI generated images. Trained on 43856 images from lexica.art, so its trained specifically on that model but should work in general on ai generated images.",
     "date": "2023-07-06",

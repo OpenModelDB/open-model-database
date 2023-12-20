@@ -3,6 +3,7 @@
     "author": "madiator",
     "license": "GPL-3.0-only",
     "tags": [
+        "cgi",
         "restoration"
     ],
     "description": "Category: CGI\nPurpose: CGI Animation\n\nmixed 3D/2D CGI animations on some 2D animations it might sharpen the edges. General usage is to upscale CGI animations compressed by YouTube.",

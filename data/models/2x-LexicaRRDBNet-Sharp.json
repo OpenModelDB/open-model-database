@@ -3,7 +3,7 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
-        "general-upscaler"
+        "ai-generated"
     ],
     "description": "Its like 2xLexicaRRDBNet model, but trained for some more with l1_gt_usm and percep_gt_usm set to true, resulting in sharper outputs. I provide both so they can be chosen based on preferrence of the user.",
     "date": "2023-06-01",

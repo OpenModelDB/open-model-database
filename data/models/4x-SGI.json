@@ -3,6 +3,7 @@
     "author": "chrisnonyminus",
     "license": "GPL-3.0-only",
     "tags": [
+        "cgi",
         "dedither"
     ],
     "description": "Category: CGI\nPurpose: CGI\n\nUpscaling and dedithering pre-rendered sprites, images and textures made in the 90s. Basically vintage CGI.",
