@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-4.0",
     "tags": [
         "debanding",
-        "game-textures"
+        "game-textures",
+        "restoration"
     ],
     "description": "N64 textures use a color depth of 5-bits per channel, this model attempts to clean them, restoring smooth gradients in textures",
     "date": "2020-07-16",

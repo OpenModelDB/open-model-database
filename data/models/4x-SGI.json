@@ -4,7 +4,8 @@
     "license": "GPL-3.0-only",
     "tags": [
         "cgi",
-        "dedither"
+        "dedither",
+        "restoration"
     ],
     "description": "Category: CGI\nPurpose: CGI\n\nUpscaling and dedithering pre-rendered sprites, images and textures made in the 90s. Basically vintage CGI.",
     "date": "2020-12-17",

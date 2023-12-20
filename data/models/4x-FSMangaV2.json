@@ -6,7 +6,8 @@
         "cartoon",
         "dedither",
         "manga",
-        "pixel-art"
+        "pixel-art",
+        "restoration"
     ],
     "description": "Manga-style images with or without dithering - cartoons, maybe pixel art, etc",
     "date": "2020-12-14",

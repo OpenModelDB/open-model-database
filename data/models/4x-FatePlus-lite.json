@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "dedither"
+        "dedither",
+        "restoration"
     ],
     "description": "Category: Game Screenshots\nPurpose: Anime PSP games, Fate Extra\n\nThis model was trained as a favor to Demon and the Fate Extra community. It leaves a nice grain on the images and upscales lines and details accurately without looking odd. This model works on most anime-style PSP games. Enjoy! It works best on content with dithering and quantization. NOTICE: I have included both NCNN and ONNX models to make upscaling easier if you rely on either of these. For NCNN, there's two versions. One is FP16 and the other is FP32. FP16 works best on RTX GPUs. Choose FP32 if in doubt about compatibility, or if FP16 doesn't work for you. To use ONNX, download chaiNNer and upscale through there with the ONNX nodes.",
     "date": "2022-07-03",

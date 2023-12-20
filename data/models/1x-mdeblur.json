@@ -3,7 +3,8 @@
     "author": "lyonhrt",
     "license": null,
     "tags": [
-        "deblur"
+        "deblur",
+        "restoration"
     ],
     "description": "Strong deblurring model",
     "date": "2019-08-29",

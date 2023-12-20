@@ -3,6 +3,7 @@
     "author": "rek",
     "license": "GPL-3.0-only",
     "tags": [
+        "compression-removal",
         "jpeg",
         "restoration"
     ],

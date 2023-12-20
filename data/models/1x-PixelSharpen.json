@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "deblur",
-        "pixel-art"
+        "pixel-art",
+        "restoration"
     ],
     "description": "Restores blurry/upscaled pixel art.",
     "date": "2021-03-19",

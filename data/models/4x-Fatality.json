@@ -6,7 +6,8 @@
         "anime",
         "dedither",
         "manga",
-        "pixel-art"
+        "pixel-art",
+        "restoration"
     ],
     "description": "Category: Art/Pixel Art\nPurpose: Pixel Art/Sprites\n\nUpscales medium resolution Sprites, dithered or undithered, can also upscale manga/anime and gameboy camera images.",
     "date": "2019-07-29",

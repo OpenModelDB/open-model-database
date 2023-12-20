@@ -3,7 +3,8 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
-        "denoise"
+        "denoise",
+        "restoration"
     ],
     "description": "Noise remover",
     "date": "2020-10-14",

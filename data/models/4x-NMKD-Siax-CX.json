@@ -3,6 +3,7 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
+        "compression-removal",
         "general-upscaler",
         "jpeg",
         "restoration"

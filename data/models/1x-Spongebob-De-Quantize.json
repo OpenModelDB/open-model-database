@@ -5,7 +5,8 @@
     "tags": [
         "anime",
         "cartoon",
-        "dedither"
+        "dedither",
+        "restoration"
     ],
     "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nRemoved color quantization/indexing and dithering from cartoon style images and textures\n\nPretrained model: 1x_1xDEDITHER_32_512_126900_G",
     "date": "2019-11-02",
