@@ -168,7 +168,7 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         name: 'Tags',
         type: 'array',
         of: { type: 'string', kind: 'tag-id' },
-        allowEmpty: true,
+        allowEmpty: false,
     },
     description: {
         name: 'Description',
