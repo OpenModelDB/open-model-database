@@ -19,6 +19,9 @@
     "download-images": "ts-node --project scripts/tsconfig.json scripts/download-images.ts",
     "build-full": "npm run build && npx next export && npm run generate-api"
   },
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "dependencies": {
     "@headlessui/react": "^1.7.9",
     "@headlessui/tailwindcss": "^0.1.2",
