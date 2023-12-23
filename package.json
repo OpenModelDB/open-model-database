@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3010",
-    "build": "next build",
+    "build": "next build && npm run generate-api",
     "start": "next start",
     "lint": "eslint . --ext \".js,.jsx,.ts,.tsx\" && stylelint \"src/**/*.{scss,css}\"",
     "lint:fix": "eslint . --ext \".js,.jsx,.ts,.tsx\" --fix && stylelint \"src/**/*.{scss,css}\" --fix",
@@ -16,8 +16,7 @@
     "fix-db": "ts-node --project scripts/tsconfig.json scripts/validate-db.ts -- --fix",
     "detect-broken": "ts-node --project scripts/tsconfig.json scripts/broken.ts",
     "generate-api": "ts-node --project scripts/tsconfig.json scripts/generate-api.ts",
-    "download-images": "ts-node --project scripts/tsconfig.json scripts/download-images.ts",
-    "build-full": "npm run build && npx next export && npm run generate-api"
+    "download-images": "ts-node --project scripts/tsconfig.json scripts/download-images.ts"
   },
   "engines": {
     "node": ">=18.17.0"
