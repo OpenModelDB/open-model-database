@@ -5,7 +5,8 @@
     "tags": [
         "anime",
         "cartoon",
-        "denoise"
+        "denoise",
+        "restoration"
     ],
     "description": "i made this model to upscale old anime and denoise.",
     "date": "2020-08-16",

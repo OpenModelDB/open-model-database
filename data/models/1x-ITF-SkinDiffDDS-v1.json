@@ -3,6 +3,7 @@
     "author": "intheflesh",
     "license": "CC-BY-NC-4.0",
     "tags": [
+        "compression-removal",
         "dds",
         "debanding",
         "dedither",

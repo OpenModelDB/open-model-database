@@ -2,7 +2,9 @@
     "name": "cainREALTIME",
     "author": "hubert",
     "license": "MIT",
-    "tags": [],
+    "tags": [
+        "photo"
+    ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: RL videos - interpolation\nArchitecture: CAIN (CAIN 1 Group)\n\nTrained mostly on abba music videos",
     "date": "2021-07-13",
     "architecture": "cain",

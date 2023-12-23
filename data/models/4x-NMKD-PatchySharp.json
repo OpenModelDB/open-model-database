@@ -3,6 +3,8 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
+        "cgi",
+        "compression-removal",
         "jpeg",
         "restoration"
     ],

@@ -2,7 +2,11 @@
     "name": "ScreenBooster V2",
     "author": "blackscout",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "cgi",
+        "game-screenshots",
+        "restoration"
+    ],
     "description": "Category: Game Screenshots\nPurpose: CGI\n\nGame Screenshots",
     "date": "2020-01-29",
     "architecture": "esrgan",

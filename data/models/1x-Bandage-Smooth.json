@@ -3,7 +3,8 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
-        "debanding"
+        "debanding",
+        "restoration"
     ],
     "description": "Attempts to remove the damages done by color banding. For this model, I downscaled all of the HR images to make their pixel size closer to 1000x1000 using the Box filter and then downscaled them again by 50% using the Point filter. Afterwards, I applied 64-bit color banding to every image in the dataset.\n\nComparisons with other models: https://imgsli.com/NTA1NTk",
     "date": "2021-04-16",

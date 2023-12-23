@@ -3,6 +3,7 @@
     "author": "xinntao",
     "license": "BSD-3-Clause",
     "tags": [
+        "compression-removal",
         "general-upscaler",
         "jpeg",
         "photo",

@@ -3,9 +3,7 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
-        "general-upscaler",
-        "photo",
-        "restoration"
+        "ai-generated"
     ],
     "description": "4x ai generated image upscaler trained with otf\n\nThe 4xLexicaDAT2_hb generated some weird lines on some edges. 4xNomosUniDAT is a different checkpoint of 4xNomosUniDAT_otf (145000), I liked the result a bit more in that example.",
     "date": "2023-11-01",

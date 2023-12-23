@@ -2,7 +2,10 @@
     "name": "DoubleDetoon",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
     "description": "Category: DeToon\nPurpose: Detooning\n\nAn attempt to detoon images/drawings of people",
     "date": "2020-07-31",
     "architecture": "esrgan",

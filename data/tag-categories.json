@@ -5,13 +5,16 @@
         "order": 0,
         "simple": true,
         "tags": [
+            "ai-generated",
             "anime",
             "cartoon",
+            "cgi",
             "faces",
+            "game-screenshots",
             "game-textures",
             "manga",
-            "photo",
             "pixel-art",
+            "photo",
             "text",
             "video-frame"
         ]
@@ -24,10 +27,12 @@
         "tags": [
             "anti-aliasing",
             "colorization",
+            "compression-removal",
             "dds",
             "debanding",
             "deblur",
             "dedither",
+            "dehalftone",
             "dehalo",
             "denoise",
             "general-upscaler",

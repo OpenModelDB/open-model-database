@@ -3,6 +3,7 @@
     "author": "cszn",
     "license": "Apache-2.0",
     "tags": [
+        "compression-removal",
         "faces",
         "general-upscaler",
         "jpeg",

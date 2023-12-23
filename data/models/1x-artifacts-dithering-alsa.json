@@ -3,7 +3,8 @@
     "author": "alsa",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "dedither"
+        "dedither",
+        "restoration"
     ],
     "description": "Dithered Images",
     "date": "2019-04-25",

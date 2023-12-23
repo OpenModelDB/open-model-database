@@ -3,7 +3,8 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
-        "dehalo"
+        "dehalo",
+        "restoration"
     ],
     "description": "Halo Removal + edge removal. This model softens edges without blurring other parts of the image.\n\nComparison and use case: https://imgsli.com/MjgxMDU",
     "date": "2020-11-03",

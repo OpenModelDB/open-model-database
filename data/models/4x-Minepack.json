@@ -2,7 +2,10 @@
     "name": "Minepack",
     "author": "blackscout",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
+    "tags": [
+        "game-screenshots",
+        "restoration"
+    ],
     "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png.pth\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
     "date": "2020-01-26",
     "architecture": "esrgan",
