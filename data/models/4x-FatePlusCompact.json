@@ -4,6 +4,7 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
+        "game-textures",
         "restoration"
     ],
     "description": "Images from the Fate/Extra games. Works better on the newer ones.\n\nJust a model I trained quickly to test traiNNer-redux and see what I could do with OTF. Works well enough",

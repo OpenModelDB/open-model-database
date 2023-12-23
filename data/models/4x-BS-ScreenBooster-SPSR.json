@@ -4,6 +4,7 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "cgi",
+        "game-screenshots",
         "restoration"
     ],
     "description": "Category: Game Screenshots\nPurpose: CGI\n\nThis model is designed to upscale game screenshots (3D Games) by 4 times. The SPSR version is an improvement over the ESRGAN based V2.",

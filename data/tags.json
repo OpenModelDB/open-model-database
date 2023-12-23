@@ -84,6 +84,10 @@
         "name": "Faces",
         "description": "Image or video of faces. This can be photograph or artwork."
     },
+    "game-screenshots": {
+        "name": "Game Screenshots",
+        "description": "Images (screenshots) taken of video games."
+    },
     "game-textures": {
         "name": "Game Textures",
         "description": "Textures used in video games or other 3D applications. These textures are typically diffuse/albedo maps, but other types of textures (such as normal maps) are also included."

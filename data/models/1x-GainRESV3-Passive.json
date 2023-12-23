@@ -3,7 +3,8 @@
     "author": "cf2lter",
     "license": "WTFPL",
     "tags": [
-        "anti-aliasing"
+        "anti-aliasing",
+        "game-screenshots"
     ],
     "description": "Purpose: Anti aliasing / Deblur\n\nTo eliminate aliasing and general artifacts caused by not enough resolution while bringing out details Im stopping its training here because it's getting worse, i think of some aligment issues by game's rendering pipeline + downscaling...",
     "date": "2022-02-26",
