@@ -16,7 +16,7 @@ export function SmallTag({ tagId, name }: SmallTagProps) {
     return (
         <Link
             className={`${style.tag} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
-            href={`/?t=${tagId}`}
+            href={`/?t=${encodeURIComponent(tagId)}`}
             title={`Show all models with the ${name} tag`}
         >
             {name}
