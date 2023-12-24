@@ -184,10 +184,6 @@
         "name": "ESRGAN+",
         "description": ""
     },
-    "arch:esrgan-2c2": {
-        "name": "ESRGAN 2C2",
-        "description": ""
-    },
     "arch:grl": {
         "name": "GRL",
         "description": ""

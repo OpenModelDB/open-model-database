@@ -78,15 +78,6 @@
             "ncnn"
         ]
     },
-    "esrgan-2c2": {
-        "name": "ESRGAN 2C2",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch",
-            "onnx",
-            "ncnn"
-        ]
-    },
     "grl": {
         "name": "GRL",
         "input": "image",

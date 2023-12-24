@@ -53,7 +53,6 @@
             "arch:esrgan",
             "arch:compact",
             "arch:swinir",
-            "arch:esrgan-2c2",
             "arch:esrgan+",
             "arch:omnisr",
             "arch:cain",
