@@ -5,7 +5,7 @@ import { BsChevronDown } from 'react-icons/bs';
 import { useTags } from '../../lib/hooks/use-tags';
 import { addImpliedTags, removeImplyingTags } from '../../lib/implied-tags';
 import { TagId } from '../../lib/schema';
-import { compareTagId, isDerivedTags } from '../../lib/util';
+import { compareTagId, isDerivedTag } from '../../lib/util';
 import style from './editable-tags.module.scss';
 
 export interface SmallTagProps {
@@ -105,7 +105,7 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
                 >
                     <div className={style.editContainer}>
                         {categoryOrder.map(([categoryId, category]) => {
-                            const manual = category.tags.filter((tagId) => !isDerivedTags(tagId));
+                            const manual = category.tags.filter((tagId) => !isDerivedTag(tagId));
                             if (manual.length === 0) {
                                 return <Fragment key={categoryId} />;
                             }

@@ -85,6 +85,7 @@ export interface Tag {
     name: string;
     description: MarkDownString;
     implies?: TagId[];
+    hidden?: true;
 }
 
 export interface TagCategory {

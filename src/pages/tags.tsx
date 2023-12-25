@@ -109,6 +109,7 @@ export default function Page() {
                     {categoryOrder.map(([categoryId, category]) => {
                         const isArch = categoryId === 'architecture' || undefined;
                         const isFree = !isArch || undefined;
+                        const isSimple = category.simple || undefined;
 
                         const add = () => {
                             if (!webApi) return;
@@ -198,6 +199,10 @@ export default function Page() {
                                                     updateCategory(categoryId, { tags: newTags });
                                                 }}
                                                 onRename={isFree && ((name) => updateTag(tagId, { name }))}
+                                                onSetHidden={
+                                                    isSimple &&
+                                                    ((hidden) => updateTag(tagId, { hidden: hidden || undefined }))
+                                                }
                                             />
                                         );
                                     })}
@@ -225,6 +230,7 @@ export default function Page() {
                                         onDelete={() => deleteTag(tagId)}
                                         onDescriptionChange={(description) => updateTag(tagId, { description })}
                                         onRename={(name) => updateTag(tagId, { name })}
+                                        onSetHidden={(hidden) => updateTag(tagId, { hidden: hidden || undefined })}
                                     />
                                 );
                             })}

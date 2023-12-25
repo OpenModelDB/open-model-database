@@ -178,6 +178,7 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
                     .map((tagId) => {
                         const tag = tagData.get(tagId);
                         if (!tag) return undefined;
+                        if (tag.hidden) return undefined;
                         return [tagId, tag] as const;
                     })
                     .filter(isNonNull);

@@ -137,7 +137,7 @@ function getTagCategory(id: TagId): string | undefined {
 export function compareTagId(a: TagId, b: TagId): number {
     return compareString(getTagCategory(a) ?? '', getTagCategory(b) ?? '') || compareString(a, b);
 }
-export function isDerivedTags(id: TagId): boolean {
+export function isDerivedTag(id: TagId): boolean {
     return id.includes(':');
 }
 
