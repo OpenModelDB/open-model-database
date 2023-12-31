@@ -34,5 +34,13 @@
     "dataset": "Custom -> `https://drive.google.com/file/d/1N5BQgLJ59zNRwiPbf4nRsLLBT2WoVwaN/view` + `https://mega.nz/#!lpMHRAqS!bHN9Ioj7l2Gfvm1HOxTR8rqcGNrrx3Ai-1-bj7YejuU` (crowdsourced, posted in #post-your-screenshot-zips-here in SalC1's Discord Server)",
     "datasetSize": 53390,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "caption": "pack.png",
+            "LR": "https://images2.imgbox.com/4e/cd/as8bIO38_o.png",
+            "SR": "https://images2.imgbox.com/f7/09/WmmhhmS0_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/f7/09/WmmhhmS0_t.png"
+        }
+    ]
 }
