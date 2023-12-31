@@ -3,6 +3,7 @@
     "author": "bendel",
     "license": "CC-BY-4.0",
     "tags": [
+        "dehalftone",
         "restoration"
     ],
     "description": "A model trained with the goal of preserving texture while removing halftones. I do plan on making improved versions down the line, as this one didn't come out as well as I'd like.",
