@@ -25,7 +25,7 @@ export const ImageCarouselImage = ({ image }: ImageCarouselImageProps) => {
     const caption = image.caption;
     if (caption) {
         return (
-            <div className="relative">
+            <div className="relative h-full w-full">
                 <div className="flex h-full w-full">{inner}</div>
                 <span
                     className={`${styles.caption} pointer-events-none absolute select-none px-3 py-1 text-lg font-medium`}
