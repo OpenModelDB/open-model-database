@@ -38,31 +38,28 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882136618461458462/unknown.png"
+            "url": "https://images2.imgbox.com/48/92/MHmxEqw5_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/48/92/MHmxEqw5_t.png"
         },
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882136455999262750/unknown.png"
+            "url": "https://images2.imgbox.com/22/c9/WdC46jec_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/22/c9/WdC46jec_t.png"
         },
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882136979410673684/unknown.png"
+            "url": "https://images2.imgbox.com/3b/72/fuEXjznn_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/3b/72/fuEXjznn_t.png"
         },
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/649861104645701637/882121519973666886/unknown.png"
+            "url": "https://images2.imgbox.com/b1/e0/u7Z0QANc_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/b1/e0/u7Z0QANc_t.png"
         },
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/649861104645701637/882124248368427078/unknown.png"
-        },
-        {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/880826637543964712/882110147676221480/Spongebob_UniScale_CartoonRestore.mp4"
-        },
-        {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/547949806761410560/881971445813633044/Spongebob_Original.mp4"
+            "url": "https://images2.imgbox.com/89/ae/A9mWAieR_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/89/ae/A9mWAieR_t.png"
         }
     ]
 }

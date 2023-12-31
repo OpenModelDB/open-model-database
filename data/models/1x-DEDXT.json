@@ -38,8 +38,10 @@
     "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/947116367205793882/cmp.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/16/6a/EDBwIivu_o.png",
+            "SR": "https://images2.imgbox.com/e3/ce/AAvgzJ7K_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/e3/ce/AAvgzJ7K_t.png"
         }
     ]
 }

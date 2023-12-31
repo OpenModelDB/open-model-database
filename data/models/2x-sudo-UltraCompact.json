@@ -35,15 +35,19 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/980550564725260358/compare.png"
+            "url": "https://images2.imgbox.com/b0/e4/y9YfLj2v_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/b0/e4/y9YfLj2v_t.png"
         },
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/980550565354410066/unknown.png"
+            "url": "https://images2.imgbox.com/75/d2/rkPyWK0z_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/75/d2/rkPyWK0z_t.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/980550565723529226/compare2.webp"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/9c/a6/Cce0e4nl_o.png",
+            "SR": "https://images2.imgbox.com/09/bd/MzfTMS5C_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/09/bd/MzfTMS5C_t.jpg"
         }
     ]
 }

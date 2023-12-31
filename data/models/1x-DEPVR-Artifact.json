@@ -37,8 +37,10 @@
     "pretrainedModelG": "1x-BCGone-DetailedV2-40-60",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1089380932382896299/depvrcomp2.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/5a/39/x9iljepb_o.png",
+            "SR": "https://images2.imgbox.com/b6/76/TYIrxF1Y_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/b6/76/TYIrxF1Y_t.png"
         }
     ]
 }

@@ -31,8 +31,9 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108219533715582986/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108219534076289106/SR.png"
+            "LR": "https://images2.imgbox.com/4c/e8/1KqdlfLe_o.png",
+            "SR": "https://images2.imgbox.com/2d/65/yJMH7jdQ_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/2d/65/yJMH7jdQ_t.png"
         }
     ]
 }
