@@ -93,6 +93,18 @@ const fileType: Record<Resource['type'], () => JSX.Element> = {
     },
 };
 
+const toDirectDownloadLink = (url: string): string => {
+    // convert google drive file links
+    // https://drive.google.com/file/d/1DbbM4saRpJu0dmgvccQFwfF4zI2rjiQ_
+    const googleDriveFileId = /^https:\/\/drive.google.com\/file\/d\/([a-zA-Z0-9_\-]+)(?:\/view(?:\?.*)?)?$/.exec(url);
+    if (googleDriveFileId) {
+        const fileId = googleDriveFileId[1];
+        return `https://drive.google.com/uc?export=download&confirm=1&id=${fileId}`;
+    }
+
+    return url;
+};
+
 export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
     const [selectedMirror, setSelectedMirror] = useState(resource.urls[0]);
 
@@ -109,7 +121,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                     'inline-flex h-20 w-full cursor-pointer items-center rounded-l-lg border-0 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600',
                     !showMenu && 'rounded-r-lg'
                 )}
-                href={selectedMirror}
+                href={toDirectDownloadLink(selectedMirror)}
                 type="button"
             >
                 <div className="w-full">
