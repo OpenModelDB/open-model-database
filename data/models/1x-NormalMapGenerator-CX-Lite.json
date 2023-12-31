@@ -33,5 +33,54 @@
     "trainingHRSize": 64,
     "dataset": "CC0 textures/normals, 2K size, randomly downscaled OTF (by 1, 2, and 4) to get more variation",
     "datasetSize": 14848,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/11/e3/MpVVEkio_o.png",
+            "SR": "https://images2.imgbox.com/84/6d/YBkgDO9z_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/84/6d/YBkgDO9z_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ed/f7/rqHJfbIW_o.png",
+            "SR": "https://images2.imgbox.com/74/e7/VACcc1Yn_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/74/e7/VACcc1Yn_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/55/ce/vy9dbNTy_o.png",
+            "SR": "https://images2.imgbox.com/33/f1/7xNgDAiU_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/33/f1/7xNgDAiU_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/24/63/G7aopVh5_o.png",
+            "SR": "https://images2.imgbox.com/c9/43/TvcyqC0S_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/c9/43/TvcyqC0S_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/af/39/MLsJj5fj_o.png",
+            "SR": "https://images2.imgbox.com/7d/6d/iayJnYrx_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/7d/6d/iayJnYrx_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/68/fa/iFA1xxvZ_o.png",
+            "SR": "https://images2.imgbox.com/43/99/hwp0HIf6_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/43/99/hwp0HIf6_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/87/e8/pECIhJha_o.png",
+            "SR": "https://images2.imgbox.com/cf/a5/Uu95O4PI_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/cf/a5/Uu95O4PI_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/c2/12/RJrqamt5_o.png",
+            "SR": "https://images2.imgbox.com/8f/5e/ZTURvET3_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/8f/5e/ZTURvET3_t.png"
+        }
+    ]
 }
