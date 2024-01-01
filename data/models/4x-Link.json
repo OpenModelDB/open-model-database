@@ -36,17 +36,20 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108225797493366865/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108225798000873512/SR.png"
+            "LR": "https://images2.imgbox.com/4d/36/bQ08XmBk_o.png",
+            "SR": "https://images2.imgbox.com/be/fc/PWLyEKAM_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/be/fc/PWLyEKAM_t.png"
         },
         {
             "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1027685416180121722/4x_Link_500000_G-TestImage-CMMM_Knight_Templar_ID2_DiffuseMap.png"
+            "url": "https://images2.imgbox.com/a2/ec/0bmX2K8R_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/a2/ec/0bmX2K8R_t.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108225880704176168/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108225880997765160/SR.png"
+            "LR": "https://images2.imgbox.com/3a/e2/NGfTEOPJ_o.png",
+            "SR": "https://images2.imgbox.com/01/17/rPypvDBZ_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/01/17/rPypvDBZ_t.png"
         }
     ]
 }

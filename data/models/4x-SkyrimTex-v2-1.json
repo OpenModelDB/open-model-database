@@ -34,12 +34,16 @@
     "pretrainedModelG": "4x-ESRGAN",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/891300021453070387/891395469387890738/unknown.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/d8/df/PmFJRyEG_o.png",
+            "SR": "https://images2.imgbox.com/7b/b1/BpAYspuO_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/7b/b1/BpAYspuO_t.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/891393393849147423/891398051325960202/unknown.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/fb/cb/KSu4dLrV_o.png",
+            "SR": "https://images2.imgbox.com/90/21/UnBsBgD6_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/90/21/UnBsBgD6_t.png"
         }
     ]
 }

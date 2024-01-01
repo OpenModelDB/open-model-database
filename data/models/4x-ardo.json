@@ -31,24 +31,34 @@
     "datasetSize": 2568,
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897320521011321/4x_ardo_cmp_4.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/03/26/jOLy208n_o.png",
+            "SR": "https://images2.imgbox.com/5e/6d/Nu6aLe2F_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/5e/6d/Nu6aLe2F_t.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897320206454886/4x_ardo_cmp_3.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/e7/70/zxOYBQI7_o.png",
+            "SR": "https://images2.imgbox.com/5c/d6/WRXkyB2z_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/5c/d6/WRXkyB2z_t.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897319711522846/4x_ardo_cmp_2.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ee/96/qjVt4cH5_o.png",
+            "SR": "https://images2.imgbox.com/7c/0b/UGFTMaoX_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/7c/0b/UGFTMaoX_t.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897319409537175/4x_ardo_cmp_1.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/d7/00/n8eCZ0B4_o.png",
+            "SR": "https://images2.imgbox.com/0f/fb/Pz24zlwL_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/0f/fb/Pz24zlwL_t.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897318771986543/4x_ardo_cmp_0.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ba/5b/n8LhTqf6_o.png",
+            "SR": "https://images2.imgbox.com/b2/db/QxSXB9Ie_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/b2/db/QxSXB9Ie_t.png"
         }
     ]
 }

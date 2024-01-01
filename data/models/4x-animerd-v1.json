@@ -36,8 +36,10 @@
     "pretrainedModelG": "4x-Rybu",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1098691128288620665/animerd_cmp2.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/2c/60/n2I29Hkp_o.png",
+            "SR": "https://images2.imgbox.com/bf/9b/goo0uJ6e_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/bf/9b/goo0uJ6e_t.png"
         }
     ]
 }
