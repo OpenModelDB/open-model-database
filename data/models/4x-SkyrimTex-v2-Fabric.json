@@ -34,12 +34,18 @@
     "pretrainedModelG": "4x-ESRGAN",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/891300021453070387/891392169926098974/unknown.png"
+            "type": "paired",
+            "caption": "noblefurnbed01.dds",
+            "LR": "https://images2.imgbox.com/18/97/CTCaOWsU_o.png",
+            "SR": "https://images2.imgbox.com/d2/70/zScUVy1Q_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/d2/70/zScUVy1Q_t.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/891393393849147423/891397870266224731/unknown.png"
+            "type": "paired",
+            "caption": "cuirasslight.dds",
+            "LR": "https://images2.imgbox.com/de/c5/63Ya3Ky2_o.png",
+            "SR": "https://images2.imgbox.com/59/7e/cTxJaqoY_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/59/7e/cTxJaqoY_t.png"
         }
     ]
 }

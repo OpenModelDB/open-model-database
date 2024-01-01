@@ -33,22 +33,27 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631664269201488/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222599089094696/SR.png"
+            "LR": "https://images2.imgbox.com/cf/49/3SC5Wv9c_o.png",
+            "SR": "https://images2.imgbox.com/31/c7/ZKOomXJz_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/31/c7/ZKOomXJz_t.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631715297112084/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222834192416778/SR.png"
-        },
-        {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/925533775616696340/unknown.png"
+            "LR": "https://images2.imgbox.com/8f/10/pduoMuMg_o.png",
+            "SR": "https://images2.imgbox.com/15/81/4F2Z2JBQ_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/15/81/4F2Z2JBQ_t.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631757827346473/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222984424001616/SR.png"
+            "LR": "https://images2.imgbox.com/e9/a9/pgiOy0oU_o.png",
+            "SR": "https://images2.imgbox.com/6f/ca/SQhvn7vO_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/6f/ca/SQhvn7vO_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/bd/74/0ff4YgCh_o.png",
+            "SR": "https://images2.imgbox.com/17/f7/QqYKNI6m_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/17/f7/QqYKNI6m_t.png"
         }
     ]
 }

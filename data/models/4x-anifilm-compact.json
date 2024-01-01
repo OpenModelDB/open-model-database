@@ -35,13 +35,14 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631223124885625/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222217071898676/SR.png"
+            "LR": "https://imgsli.com/i/10422c4b-91a6-472a-b36d-9ee202bf87b3.jpg",
+            "SR": "https://imgsli.com/i/e8bebd92-0530-41ee-b078-deaabff1189d.jpg"
         },
         {
             "type": "paired",
-            "LR": "https://imgsli.com/i/10422c4b-91a6-472a-b36d-9ee202bf87b3.jpg",
-            "SR": "https://imgsli.com/i/e8bebd92-0530-41ee-b078-deaabff1189d.jpg"
+            "LR": "https://images2.imgbox.com/7b/69/fB3pO2YT_o.png",
+            "SR": "https://images2.imgbox.com/30/ee/lFjWxvDF_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/30/ee/lFjWxvDF_t.png"
         },
         {
             "type": "paired",
