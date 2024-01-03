@@ -62,9 +62,10 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedImage })
     // This is necessary to prevent scaling artifacts. Such artifacts are especially noticeable for 1x models.
     // Here is how the scale is calculated:
     // 1. `1/dpr` scales the image such that 1px in the image is 1px on the screen.
-    // 2. `Math.round(dpr - 0.01)` rounds the dpr to the nearest integer. Importantly, it rounds .5 down.
+    // 2. `Math.round(dpr + 0.16)` rounds the dpr to the nearest integer. Importantly, it rounds .35 up.
+    //    This guarantees that we show at most 1.35x the original image size.
     // 3. `Math.max(1, ...)` ensures that the scale is at least 1. A scale of 0 would cause the image to disappear.
-    const scale = (1 / dpr) * Math.max(1, Math.round(dpr - 0.01));
+    const scale = (1 / dpr) * Math.max(1, Math.round(dpr + 0.16));
 
     return (
         <div className="flex h-full w-full">
