@@ -16,7 +16,7 @@ def is_installed(*packages: str) -> bool:
 
 
 if not is_installed("typing_extensions", "cv2", "numpy", "requests"):
-    pip_command = "pip install typing_extensions cv2 numpy requests"
+    pip_command = "pip install typing-extensions opencv-python numpy requests"
     print(pip_command)
     os.system(sys.executable + " -m " + pip_command)
 
