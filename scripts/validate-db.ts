@@ -31,6 +31,14 @@ const getReports = async (): Promise<Report[]> => {
             );
         }
 
+        if (model.thumbnail) {
+            report(`Thumbnails are automatically generated and should not appear in the database`, async () => {
+                const model = await fileApi.models.get(modelId);
+                delete model.thumbnail;
+                await fileApi.models.update([[modelId, model]]);
+            });
+        }
+
         for (const [key, prop] of typedEntries(MODEL_PROPS)) {
             const value = model[key];
 
