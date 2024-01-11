@@ -90,6 +90,7 @@ const modelKeyOrder = [
     'pretrainedModelG',
     'pretrainedModelD',
     'images',
+    'thumbnail',
 ] as const satisfies readonly (keyof Model)[];
 type IsNever<T extends never> = T;
 type MissingKeys = Exclude<keyof Model, (typeof modelKeyOrder)[number]>;

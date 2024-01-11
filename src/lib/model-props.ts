@@ -316,4 +316,9 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         of: { type: 'unknown' },
         allowEmpty: true,
     },
+    thumbnail: {
+        optional: true,
+        name: 'Thumbnail',
+        type: 'unknown',
+    },
 };

@@ -30,6 +30,7 @@ export interface Model extends Partial<ExtraModelProperties> {
     outputChannels: number;
     resources: Resource[];
     images: Image[];
+    thumbnail?: Thumbnail;
 }
 interface ExtraModelProperties {
     trainingIterations: number;
@@ -75,6 +76,17 @@ export interface StandaloneImage {
     caption?: string;
     url: string;
     thumbnail?: string;
+}
+
+export type Thumbnail = PairedThumbnail | StandaloneThumbnail;
+export interface PairedThumbnail {
+    type: 'paired';
+    LR: string;
+    SR: string;
+}
+export interface StandaloneThumbnail {
+    type: 'standalone';
+    url: string;
 }
 
 export interface User {

@@ -8,7 +8,7 @@ import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
-import { Image, Model, ModelId, PairedImage } from '../../lib/schema';
+import { Model, ModelId, PairedThumbnail, Thumbnail } from '../../lib/schema';
 import { getTextDescription } from '../../lib/text-description';
 import { asArray, joinClasses } from '../../lib/util';
 import { EditableTags } from './editable-tags';
@@ -38,7 +38,7 @@ function getNaturalSize(image: HTMLImageElement): Size {
     };
 }
 
-const SideBySideImage = ({ model, image }: { model: Model; image: PairedImage }) => {
+const SideBySideImage = ({ model, image }: { model: Model; image: PairedThumbnail }) => {
     const [lrDimensions, setLrDimensions] = useState(EMPTY_SIZE);
     const [srDimensions, setSrDimensions] = useState(EMPTY_SIZE);
 
@@ -108,7 +108,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedImage })
 };
 
 const getModelCardImageComponent = (model: Model) => {
-    const image = model.images[0] as Image | undefined;
+    const image = model.thumbnail ?? (model.images[0] as Thumbnail | undefined);
     switch (image?.type) {
         case 'paired': {
             return (
@@ -119,7 +119,7 @@ const getModelCardImageComponent = (model: Model) => {
             );
         }
         case 'standalone': {
-            const imageSrc = image.thumbnail || image.url;
+            const imageSrc = image.url;
             return (
                 <img
                     alt={model.name}

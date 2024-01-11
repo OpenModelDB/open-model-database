@@ -40,3 +40,7 @@ yarn-error.log*
 *.bin
 *.param
 data/model-files/
+
+# thumbnail
+.thumb-cache/
+public/thumbs/

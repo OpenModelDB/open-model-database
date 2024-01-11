@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3010",
-    "build": "next build && next export && npm run generate-api",
+    "build": "npm run generate-thumbnails && next build && next export && npm run generate-api && npm run fix-db",
     "start": "next start",
     "lint": "eslint . --ext \".js,.jsx,.ts,.tsx\" && stylelint \"src/**/*.{scss,css}\"",
     "lint:fix": "eslint . --ext \".js,.jsx,.ts,.tsx\" --fix && stylelint \"src/**/*.{scss,css}\" --fix",
@@ -16,6 +16,7 @@
     "fix-db": "ts-node --project scripts/tsconfig.json scripts/validate-db.ts -- --fix",
     "detect-broken": "ts-node --project scripts/tsconfig.json scripts/broken.ts",
     "generate-api": "ts-node --project scripts/tsconfig.json scripts/generate-api.ts",
+    "generate-thumbnails": "ts-node --project scripts/tsconfig.json scripts/generate-thumbnails.ts",
     "download-images": "ts-node --project scripts/tsconfig.json scripts/download-images.ts"
   },
   "engines": {
