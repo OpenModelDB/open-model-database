@@ -8,6 +8,8 @@ import importlib.util
 from hashlib import sha256
 import sys
 import os
+import time
+from multiprocessing.pool import ThreadPool
 
 
 # install dependencies
@@ -70,10 +72,11 @@ class StandaloneImage(TypedDict):
 Image = Union[PairedImage, StandaloneImage]
 
 
-def download_file(url: str, file: Path) -> None:
+def download_file(url: str, file: Path, log: bool = True) -> None:
     """Download from url and save to file"""
 
-    print(f"Downloading {url}")
+    if log:
+        print(f"Downloading {url}", flush=True)
     response = requests.get(url)
     response.raise_for_status()
     file.parent.mkdir(parents=True, exist_ok=True)
@@ -225,7 +228,9 @@ def reuse_thumbnail(thumbnail_name: str) -> bool:
 
     try:
         # file exists on server
-        download_file(f"https://openmodeldb.info/thumbs/{thumbnail_name}", file)
+        download_file(
+            f"https://openmodeldb.info/thumbs/{thumbnail_name}", file, log=False
+        )
         return True
     except:  # noqa: E722
         pass
@@ -384,6 +389,8 @@ def process_model(model_id: ModelId, model: Model, images: dict[str, ImageMetada
     if len(model["images"]) == 0:
         return
 
+    print(f"Processing {model_id}", flush=True)
+
     image = model["images"][0]
     if image["type"] == "paired":
         lr_url = image["LR"]
@@ -409,16 +416,24 @@ def process_model(model_id: ModelId, model: Model, images: dict[str, ImageMetada
 
     model_file = MODEL_FILES_DIR / f"{model_id}.json"
     model_file.write_text(json.dumps(model, indent=4), encoding="utf-8")
-    print(f"Processed {model_id}")
 
 
 def process():
+    start = time.time()
+
     models = get_current_models()
     images = get_images(models)
     save_cached_image_metadata(images)
 
-    for model_id, model in models.items():
+    def apply(item: tuple[ModelId, Model]):
+        model_id, model = item
         process_model(model_id, model, images)
+
+    with ThreadPool(16) as pool:
+        pool.map(apply, models.items())
+
+    duration = time.time() - start
+    print(f"Finished thumbnails in {duration:.2f} seconds")
 
 
 process()

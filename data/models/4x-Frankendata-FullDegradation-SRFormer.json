@@ -10,7 +10,7 @@
     "date": "2023-12-19",
     "architecture": "srformer",
     "size": null,
-    "scale": 1,
+    "scale": 4,
     "inputChannels": 3,
     "outputChannels": 3,
     "resources": [
