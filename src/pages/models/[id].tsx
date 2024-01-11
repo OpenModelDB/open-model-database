@@ -561,29 +561,18 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         />,
                                     ],
                                     ...typedKeys(MODEL_PROPS)
-                                        .filter(
-                                            (key) =>
-                                                ![
-                                                    // Handled by other parts of page
-                                                    'name',
-                                                    'author',
-                                                    'description',
-                                                    'resources',
-                                                    // Already handled manually
-                                                    'architecture',
-                                                    'scale',
-                                                    'size',
-                                                    'tags',
-                                                    'inputChannels',
-                                                    'outputChannels',
-                                                    'license',
-                                                    // This is just messed up in the data
-                                                    'pretrainedModelG',
-                                                    'pretrainedModelD',
-                                                    // Definitely don't want to show this
-                                                    'images',
-                                                ].includes(key)
-                                        )
+                                        .filter((key) => {
+                                            return [
+                                                'date',
+                                                'dataset',
+                                                'datasetSize',
+                                                'trainingIterations',
+                                                'trainingEpochs',
+                                                'trainingBatchSize',
+                                                'trainingHRSize',
+                                                'trainingOTF',
+                                            ].includes(key);
+                                        })
                                         .map((key) => [key, model[key]] as const)
                                         .filter(([, value]) => editMode || value != null)
                                         .map(([key, value]) => {
