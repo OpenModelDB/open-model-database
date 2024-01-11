@@ -102,6 +102,18 @@ const toDirectDownloadLink = (url: string): string => {
         return `https://drive.google.com/uc?export=download&confirm=1&id=${fileId}`;
     }
 
+    try {
+        // https://drive.google.com/u/1/uc?id=10h8YXKKOQ61ANnwLjjHqXJdn4SbBuUku&export=download
+        // https://drive.google.com/open?id=1geNLDAnQzLadMvvoRLhVy4MXhQf5t8JP
+        if (/^https:\/\/drive.google.com\/(?:u\/1\/uc|open)(?=\?)(?=.*?[?&]id=)/.test(url)) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            const fileId = new URL(url).searchParams.get('id')!;
+            return `https://drive.google.com/uc?export=download&confirm=1&id=${fileId}`;
+        }
+    } catch {
+        // ignore
+    }
+
     return url;
 };
 
