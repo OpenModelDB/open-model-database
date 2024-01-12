@@ -229,7 +229,6 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
                 },
                 size: {
                     name: 'Size',
-                    optional: true,
                     type: 'number',
                     isInteger: true,
                     min: 1,

@@ -151,7 +151,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
                         </svg>
                     )}
-                    Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
+                    Download ({(resource.size / 1024 / 1024).toFixed(1)} MB)
                     <div className="text-center text-sm font-normal">
                         <span className="whitespace-nowrap px-1">{fileType[resource.type]()}</span>
                         {isExternal && (

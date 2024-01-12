@@ -47,7 +47,7 @@ interface ExtraModelProperties {
 export type Resource = PthFile | OnnxFile;
 
 interface SingleFile {
-    size: number | null;
+    size: number;
     sha256: string | null;
     urls: string[];
     platform: Platform;
