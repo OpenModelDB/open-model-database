@@ -17,11 +17,13 @@
             "platform": "pytorch",
             "type": "pth",
             "size": 67173423,
-            "sha256": null,
+            "sha256": "2166b4c42fb9cea14fc61f55711c3f4d2cfe9c922d902a1a0f0b416dfc2cab35",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/8x-Arzenal-v1-1.pth",
                 "https://u.pcloud.link/publink/show?code=kZ4WthXZDDnqbo4Hye8zBgCkhgbbQf3WXT27"
             ]
         }
     ],
+    "trainingIterations": 175000,
     "images": []
 }
