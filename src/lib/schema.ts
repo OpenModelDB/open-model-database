@@ -48,7 +48,7 @@ export type Resource = PthFile | OnnxFile;
 
 interface SingleFile {
     size: number;
-    sha256: string | null;
+    sha256: string;
     urls: string[];
     platform: Platform;
 }

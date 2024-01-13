@@ -235,7 +235,6 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
                 },
                 sha256: {
                     name: 'SHA256',
-                    optional: true,
                     type: 'string',
                     format: /^[0-9a-f]{64}$/i,
                 },
