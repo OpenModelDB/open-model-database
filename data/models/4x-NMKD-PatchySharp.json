@@ -36,8 +36,34 @@
     "pretrainedModelG": "4x-ESRGAN",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://i.imgur.com/PzFkmAg.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/0a/4c/svdGWMY6_o.png",
+            "SR": "https://images2.imgbox.com/59/b4/VSRYQ7xA_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/59/b4/VSRYQ7xA_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/33/32/nC38beaq_o.png",
+            "SR": "https://images2.imgbox.com/d2/68/XaXV2jdp_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/d2/68/XaXV2jdp_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/40/23/a3zPXZCG_o.png",
+            "SR": "https://images2.imgbox.com/cd/1b/GoH2hhcj_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/cd/1b/GoH2hhcj_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/68/b9/QDkSA0qa_o.png",
+            "SR": "https://images2.imgbox.com/4a/5e/h7iskODx_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/4a/5e/h7iskODx_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/b7/69/Il9pdwcu_o.png",
+            "SR": "https://images2.imgbox.com/ba/8e/788vcwIB_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/ba/8e/788vcwIB_t.jpg"
         }
     ]
 }

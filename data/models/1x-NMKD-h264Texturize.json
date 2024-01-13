@@ -3,6 +3,7 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
+        "compression-removal",
         "restoration",
         "video-frame"
     ],
@@ -32,5 +33,18 @@
     "trainingHRSize": 128,
     "dataset": "DIV2K Train + Valid",
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/25/1d/IbxFVtwl_o.png",
+            "SR": "https://images2.imgbox.com/81/41/SSIus3Ji_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/81/41/SSIus3Ji_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/e5/36/TJf6I0yh_o.png",
+            "SR": "https://images2.imgbox.com/e6/ea/GkS52b6r_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/e6/ea/GkS52b6r_t.png"
+        }
+    ]
 }
