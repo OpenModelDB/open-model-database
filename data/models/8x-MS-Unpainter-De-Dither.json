@@ -19,8 +19,9 @@
             "platform": "pytorch",
             "type": "pth",
             "size": 67173423,
-            "sha256": null,
+            "sha256": "bb80a29de89fac810f67e248f5312608d4a37fdcb539b7e580a4668bb9165946",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/8x-MS-Unpainter-De-Dither.pth",
                 "https://u.pcloud.link/publink/show?code=kZPTiBXZPnCIVsFUmrpu4NY1sKfKw8Pyw6rk"
             ]
         }
