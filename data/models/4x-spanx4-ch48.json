@@ -3,9 +3,10 @@
     "author": "hongyuanyu",
     "license": "Apache-2.0",
     "tags": [
-        "pretrained"
+        "pretrained",
+        "research"
     ],
-    "description": "Official 4x pretrain for SPAN.",
+    "description": "Official 4x pretrain for [SPAN](https://github.com/hongyuanyu/span).",
     "date": "2023-11-17",
     "architecture": "span",
     "size": null,
@@ -16,9 +17,10 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 18029841,
-            "sha256": "28fef8c6c845a0169afed9f9f566679990ef4c03fef9885298655fb5e4036402",
+            "size": 9004922,
+            "sha256": "c79e716b8eb24182c1d7fcc74fa10ae074bdb34fee7c6e67c73053ff5498c667",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-spanx4-ch48.pth",
                 "https://drive.google.com/file/d/1iYUA2TzKuxI0vzmA-UXr_nB43XgPOXUg/view?usp=sharing"
             ]
         }

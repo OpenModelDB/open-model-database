@@ -3,9 +3,10 @@
     "author": "hongyuanyu",
     "license": "Apache-2.0",
     "tags": [
-        "pretrained"
+        "pretrained",
+        "research"
     ],
-    "description": "Official 2x pretrain for SPAN.",
+    "description": "Official 2x pretrain for [SPAN](https://github.com/hongyuanyu/span).",
     "date": "2023-11-17",
     "architecture": "span",
     "size": null,
@@ -16,9 +17,10 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 17905041,
-            "sha256": "561fd5cf419a23d4de1231ce258180f61aee4aa8caa1aaaa783769c7301847bc",
+            "size": 8942586,
+            "sha256": "0b20caeea7af5507ec3bdc63ff5a141a28506279d2cfec909c417ecb308d3f93",
             "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-spanx2-ch48.pth",
                 "https://drive.google.com/file/d/1iYUA2TzKuxI0vzmA-UXr_nB43XgPOXUg/view?usp=sharing"
             ]
         }
