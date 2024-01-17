@@ -19,7 +19,7 @@
             "platform": "pytorch",
             "type": "pth",
             "size": 9015866,
-            "sha256": "c1a4395b6d34ffa86b1c6e8a443d32ccaba7a53fabf600f7c17d804cc8156b46",
+            "sha256": "b63dfd3f18da07b46c978f9fb480e6f43f9ece7550ef462c86d5151b93fa6040",
             "urls": [
                 "https://drive.google.com/file/d/1K_OUt9lwvDXn280OTfURm0tD3E0lVZ5b/view?usp=drive_link",
                 "https://drive.google.com/drive/folders/1zqkuh-RBx7CDUxqmRU2IYyL371re0vwU"
