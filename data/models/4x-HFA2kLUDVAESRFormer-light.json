@@ -19,8 +19,8 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 31569449,
-            "sha256": "7c26193ced52e4814c447a75ad6c40d4bdb123185151a6fd03037c97661f9d3b",
+            "size": 38812063,
+            "sha256": "b60d4d3b9e7df7c580a54cfcfc69ef32bc547cc5cec8441896c89de86c5f950c",
             "urls": [
                 "https://github.com/Phhofm/models/raw/main/4xHFA2kLUDVAESRFormer_light/4xHFA2kLUDVAESRFormer_light.pth"
             ]
