@@ -3,6 +3,8 @@
     "author": "nmkd",
     "license": "WTFPL",
     "tags": [
+        "compression-removal",
+        "dedither",
         "restoration"
     ],
     "description": "Category: GIF\nPurpose: GIF Restoration\n\nGIF Restoration",
@@ -28,5 +30,18 @@
     ],
     "trainingIterations": 210000,
     "pretrainedModelG": "2x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/d6/82/MoHmVWrR_o.png",
+            "SR": "https://images2.imgbox.com/37/e7/FO1qlrJM_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/37/e7/FO1qlrJM_t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/3b/e0/opNUfwEG_o.png",
+            "SR": "https://images2.imgbox.com/72/aa/PicQjfoA_o.png",
+            "thumbnail": "https://thumbs2.imgbox.com/72/aa/PicQjfoA_t.png"
+        }
+    ]
 }

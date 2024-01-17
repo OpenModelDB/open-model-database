@@ -33,5 +33,42 @@
     "trainingBatchSize": 2,
     "dataset": "DIV2K Train+Valid",
     "pretrainedModelG": "4x-PSNR",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/68/c8/xiW4NyF4_o.png",
+            "SR": "https://images2.imgbox.com/25/6d/VtUHXPQb_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/25/6d/VtUHXPQb_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/40/9d/NqEblJP7_o.png",
+            "SR": "https://images2.imgbox.com/f1/23/GKJYCVE1_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/f1/23/GKJYCVE1_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/20/36/Hmikmpvt_o.png",
+            "SR": "https://images2.imgbox.com/a7/e2/ShnR3eoZ_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/a7/e2/ShnR3eoZ_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/f7/f2/0xZNI3ia_o.png",
+            "SR": "https://images2.imgbox.com/d6/7a/3I6RMVAk_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/d6/7a/3I6RMVAk_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/29/74/Ot2RmCRS_o.png",
+            "SR": "https://images2.imgbox.com/aa/3b/om58rE22_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/aa/3b/om58rE22_t.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/48/b6/1vm5SUwt_o.png",
+            "SR": "https://images2.imgbox.com/46/56/kEP0WjwU_o.jpg",
+            "thumbnail": "https://thumbs2.imgbox.com/46/56/kEP0WjwU_t.jpg"
+        }
+    ]
 }
