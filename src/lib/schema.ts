@@ -52,11 +52,11 @@ interface SingleFile {
     urls: string[];
     platform: Platform;
 }
-interface PthFile extends SingleFile {
+export interface PthFile extends SingleFile {
     type: 'pth';
     platform: 'pytorch';
 }
-interface OnnxFile extends SingleFile {
+export interface OnnxFile extends SingleFile {
     type: 'onnx';
     platform: 'onnx';
 }
