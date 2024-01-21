@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/display-name */
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useDevicePixelRatio } from '../../lib/hooks/use-device-pixel-ratio';
@@ -8,7 +8,7 @@ import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
-import { Model, ModelId, PairedThumbnail, Thumbnail } from '../../lib/schema';
+import { ImageSize, Model, ModelId, PairedThumbnail } from '../../lib/schema';
 import { getTextDescription } from '../../lib/text-description';
 import { asArray, joinClasses } from '../../lib/util';
 import { EditableTags } from './editable-tags';
@@ -23,15 +23,11 @@ interface ModelCardProps extends BaseModelCardProps {
     lazy?: boolean;
 }
 
-interface Size {
-    readonly height: number;
-    readonly width: number;
-}
-const EMPTY_SIZE: Size = {
+const EMPTY_SIZE: ImageSize = {
     height: 0,
     width: 0,
 };
-function getNaturalSize(image: HTMLImageElement): Size {
+function getNaturalSize(image: HTMLImageElement): ImageSize {
     return {
         height: image.naturalHeight,
         width: image.naturalWidth,
@@ -39,23 +35,14 @@ function getNaturalSize(image: HTMLImageElement): Size {
 }
 
 const SideBySideImage = ({ model, image }: { model: Model; image: PairedThumbnail }) => {
-    const [lrDimensions, setLrDimensions] = useState(EMPTY_SIZE);
-    const [srDimensions, setSrDimensions] = useState(EMPTY_SIZE);
+    const [lrDimensions, setLrDimensions] = useState(image.LRSize ?? EMPTY_SIZE);
+    const [srDimensions, setSrDimensions] = useState(image.SRSize ?? EMPTY_SIZE);
 
     const maxHeight = Math.max(lrDimensions.height, srDimensions.height);
     const maxWidth = Math.max(lrDimensions.width, srDimensions.width);
 
     const lrRef = useRef<HTMLImageElement>(null);
     const srRef = useRef<HTMLImageElement>(null);
-
-    useEffect(() => {
-        if (lrRef.current) {
-            setLrDimensions(getNaturalSize(lrRef.current));
-        }
-        if (srRef.current) {
-            setSrDimensions(getNaturalSize(srRef.current));
-        }
-    }, []);
 
     const dpr = useDevicePixelRatio();
     // The goal of this scale is to ensure that the image is rendered as an integer scale (e.g. 100%, 200%, 300%).
@@ -108,7 +95,7 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedThumbnai
 };
 
 const getModelCardImageComponent = (model: Model) => {
-    const image = model.thumbnail ?? (model.images[0] as Thumbnail | undefined);
+    const image = model.thumbnail ?? (model.images.length === 0 ? undefined : model.images[0]);
     switch (image?.type) {
         case 'paired': {
             return (

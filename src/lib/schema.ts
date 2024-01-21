@@ -83,10 +83,17 @@ export interface PairedThumbnail {
     type: 'paired';
     LR: string;
     SR: string;
+    LRSize?: ImageSize;
+    SRSize?: ImageSize;
 }
 export interface StandaloneThumbnail {
     type: 'standalone';
     url: string;
+}
+
+export interface ImageSize {
+    readonly width: number;
+    readonly height: number;
 }
 
 export interface User {

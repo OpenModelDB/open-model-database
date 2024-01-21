@@ -55,7 +55,7 @@ class Model(TypedDict):
     name: str
     scale: int
     images: list[Image]
-    thumbnail: NotRequired[Image]
+    thumbnail: NotRequired[Thumbnail]
 
 
 class PairedImage(TypedDict):
@@ -70,6 +70,22 @@ class StandaloneImage(TypedDict):
 
 
 Image = Union[PairedImage, StandaloneImage]
+
+
+class PairedThumbnail(TypedDict):
+    type: Literal["paired"]
+    LR: str
+    SR: str
+    LRSize: NotRequired[ImageSize]
+    SRSize: NotRequired[ImageSize]
+
+
+Thumbnail = Union[PairedThumbnail, StandaloneImage]
+
+
+class ImageSize(TypedDict):
+    width: int
+    height: int
 
 
 def download_file(url: str, file: Path, log: bool = True) -> None:
@@ -261,6 +277,13 @@ class Region:
         return f"Region(x={self.x}, y={self.y}, w={self.w}, h={self.h})"
 
 
+@dataclass
+class ThumbnailResult:
+    name: str
+    width: int
+    height: int
+
+
 def encode_image(img: np.ndarray, name: str):
     params = []
 
@@ -303,11 +326,12 @@ def save_thumbnail(thumbnail_name: str, data: bytes):
 
 def save_thumbnail_crop(
     image: ImageMetadata, crop: Region, ext: Literal[".jpg", ".png"]
-) -> str:
+) -> ThumbnailResult:
     thumbnail_name = sha256_str(f"crop:{crop}:{image.url}")[:24] + ext
+    result = ThumbnailResult(thumbnail_name, width=crop.w, height=crop.h)
 
     if reuse_thumbnail(thumbnail_name):
-        return thumbnail_name
+        return result
 
     img = image.load()
     img = img[crop.y : crop.y + crop.h, crop.x : crop.x + crop.w]
@@ -323,18 +347,21 @@ def save_thumbnail_crop(
         buffer = image.file.read_bytes()
 
     save_thumbnail(thumbnail_name, buffer)
-    return thumbnail_name
+    return result
 
 
 def save_thumbnail_resize(
     image: ImageMetadata, crop_size: tuple[int, int], resize_size: tuple[int, int]
-) -> str:
+) -> ThumbnailResult:
     thumbnail_name = (
         sha256_str(f"resize:{crop_size}:{resize_size}:{image.url}")[:24] + ".jpg"
     )
+    result = ThumbnailResult(
+        thumbnail_name, width=resize_size[0], height=resize_size[1]
+    )
 
     if reuse_thumbnail(thumbnail_name):
-        return thumbnail_name
+        return result
 
     img = image.load()
     if crop_size != image.size:
@@ -353,23 +380,23 @@ def save_thumbnail_resize(
         buffer = image.file.read_bytes()
 
     save_thumbnail(thumbnail_name, buffer)
-    return thumbnail_name
+    return result
 
 
-def save_thumbnail_lr(image: ImageMetadata, scale: int) -> str:
+def save_thumbnail_lr(image: ImageMetadata, scale: int) -> ThumbnailResult:
     crop = get_lr_crop(image.size, scale)
     ext = ".jpg" if scale == 1 else ".png"
     return save_thumbnail_crop(image, crop, ext)
 
 
-def save_thumbnail_sr(image: ImageMetadata, scale: int) -> str:
+def save_thumbnail_sr(image: ImageMetadata, scale: int) -> ThumbnailResult:
     crop = get_lr_crop((image.width // scale, image.height // scale), scale).scale(
         scale
     )
     return save_thumbnail_crop(image, crop, ".jpg")
 
 
-def save_thumbnail_standalone(image: ImageMetadata) -> str:
+def save_thumbnail_standalone(image: ImageMetadata) -> ThumbnailResult:
     crop_size = image.size
 
     ratio = image.width / image.height
@@ -395,22 +422,30 @@ def process_model(model_id: ModelId, model: Model, images: dict[str, ImageMetada
     if image["type"] == "paired":
         lr_url = image["LR"]
         sr_url = image["SR"]
+
+        thumb: PairedThumbnail = {"type": "paired", "LR": lr_url, "SR": sr_url}
+        model["thumbnail"] = thumb
+
         if lr_url in images and sr_url in images:
             lr, sr = images[lr_url], images[sr_url]
             # LR-SR pairs sometimes don't follow the scale factor, so it's better to calculate a scale for the pair instead of using the model scale.
             scale = round(sr.width / lr.width)
-            if lr.size == sr.size:
-                lr_url = "/thumbs/" + save_thumbnail_sr(images[lr_url], scale)
-                sr_url = "/thumbs/" + save_thumbnail_sr(images[sr_url], scale)
-            else:
-                lr_url = "/thumbs/" + save_thumbnail_lr(images[lr_url], scale)
-                sr_url = "/thumbs/" + save_thumbnail_sr(images[sr_url], scale)
 
-        model["thumbnail"] = {"type": "paired", "LR": lr_url, "SR": sr_url}
+            if lr.size == sr.size:
+                lr_result = save_thumbnail_sr(lr, scale)
+                sr_result = save_thumbnail_sr(sr, scale)
+            else:
+                lr_result = save_thumbnail_lr(lr, scale)
+                sr_result = save_thumbnail_sr(sr, scale)
+
+            thumb["LR"] = "/thumbs/" + lr_result.name
+            thumb["SR"] = "/thumbs/" + sr_result.name
+            thumb["LRSize"] = {"width": lr_result.width, "height": lr_result.height}
+            thumb["SRSize"] = {"width": sr_result.width, "height": sr_result.height}
     elif image["type"] == "standalone":
         url = image["url"]
         if url in images:
-            url = "/thumbs/" + save_thumbnail_standalone(images[url])
+            url = "/thumbs/" + save_thumbnail_standalone(images[url]).name
 
         model["thumbnail"] = {"type": "standalone", "url": url}
 
