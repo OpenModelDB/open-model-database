@@ -1,6 +1,7 @@
 // Generates a fake JSON api
 
 import fs from 'fs';
+import { writeFile } from 'fs/promises';
 import path from 'path';
 import { fileApi } from '../src/lib/server/file-data';
 
@@ -8,22 +9,12 @@ const generateAPI = async () => {
     const API_DIR = 'out/api/v1';
     fs.mkdirSync(API_DIR, { recursive: true });
 
-    const modelData = await fileApi.models.getAll();
-    const models = Object.fromEntries(modelData.entries());
-
-    const architectureData = await fileApi.architectures.getAll();
-    const architectures = Object.fromEntries(architectureData.entries());
-
-    const tagData = await fileApi.tags.getAll();
-    const tags = Object.fromEntries(tagData.entries());
-
-    const userData = await fileApi.users.getAll();
-    const users = Object.fromEntries(userData.entries());
-
-    fs.writeFileSync(path.join(API_DIR, 'models.json'), JSON.stringify(models, null, 2));
-    fs.writeFileSync(path.join(API_DIR, 'architectures.json'), JSON.stringify(architectures, null, 2));
-    fs.writeFileSync(path.join(API_DIR, 'tags.json'), JSON.stringify(tags, null, 2));
-    fs.writeFileSync(path.join(API_DIR, 'users.json'), JSON.stringify(users, null, 2));
+    const promises = Object.keys(fileApi).map(async (dataName) => {
+        const data = await fileApi[dataName as keyof typeof fileApi].getAll();
+        const json = Object.fromEntries(data.entries());
+        await writeFile(path.join(API_DIR, `${dataName}.json`), JSON.stringify(json, null, 2));
+    });
+    await Promise.all(promises);
 };
 
 generateAPI().catch((err) => {
