@@ -1,0 +1,59 @@
+{
+    "name": "AnimeJaNai_HD_V3_SuperUltraCompact",
+    "author": "the-database",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Real-time 2x Real-ESRGAN Compact/UltraCompact/SuperUltraCompact models designed for upscaling 1080p anime to 4K.\n\nThe aim of these models is to address scaling, blur, oversharpening, and compression artifacts while upscaling to deliver a result that appears as if the anime was originally mastered in 4K resolution. Can be set up to run in real-time with mpv on Windows using https://github.com/the-database/mpv-upscale-2x_animejanai\n\nThe development of the V3 models spanned over seven months, during which over 100 release candidate models were trained and meticulously refined. The V3 models introduce several improvements compared to V2, including:\n\nMore faithful appearance to original source Improved handling of oversharpening artifacts, ringing, aliasing Better at preserving intentional blur in scenes using depth of field More accurate line colors, darkness, and thickness Better preservation of soft shadow edges\n\nOverall, the V3 models yield significantly more natural and faithful results compared to the V2 models.",
+    "date": "2024-01-17",
+    "architecture": "compact",
+    "size": [
+        "24nf",
+        "8nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 378338,
+            "sha256": "402f81e5b3202dfead0e6d2e092c9fc0372b687bff4bf2b5da68735bdc8206c8",
+            "urls": [
+                "https://github.com/the-database/mpv-upscale-2x_animejanai/releases/download/3.0.0/2x_AnimeJaNai_HD_V3_ModelsOnly.zip"
+            ]
+        }
+    ],
+    "trainingIterations": 5000,
+    "trainingBatchSize": 9,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "1080p anime",
+    "datasetSize": 727,
+    "pretrainedModelG": "2x-SuperUltraCompact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xttdFobW.png",
+            "SR": "https://i.slow.pics/j5b2Ryls.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/m8ld0h5o.png",
+            "SR": "https://i.slow.pics/OKmGQ7p3.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Ux67Hgot.png",
+            "SR": "https://i.slow.pics/BmxIOc3t.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Gu5oDhzV.png",
+            "SR": "https://i.slow.pics/fJfabxXt.png"
+        }
+    ]
+}

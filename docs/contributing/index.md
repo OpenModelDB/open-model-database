@@ -83,7 +83,7 @@ Let's take a look at the project structure. This will help you find your way aro
 
 > _This section assumes that you have [checked out the project locally](#checking-out-the-project-locally)._
 
-GitHub has great [documentation](https://docs.github.com/en/get-started/quickstart/contributing-to-projectss) on making pull requests. We will not repeat that here. Instead, we will focus on the specifics of this project.
+GitHub has great [documentation](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) on making pull requests. We will not repeat that here. Instead, we will focus on the specifics of this project.
 
 A few things you should know about making pull requests to this project:
 
