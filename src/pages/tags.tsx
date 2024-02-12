@@ -9,6 +9,7 @@ import { deriveTags } from '../lib/derive-tags';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
+import { withImpliedTags } from '../lib/implied-tags';
 import { Model, ModelId, Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
 import { canonicalizeTagId } from '../lib/schema-util';
 import { compareTagId } from '../lib/util';
@@ -58,22 +59,12 @@ export default function Page() {
     const addImplications = async () => {
         if (!webApi) return;
 
-        const implications: Map<TagId, TagId[]> = new Map();
-        for (const [tagId, tag] of tagData) {
-            if (tag.implies) {
-                implications.set(tagId, tag.implies);
-            }
-        }
-
         const models = await webApi.models.getAll();
         const updates: [ModelId, Model][] = [];
         for (const [modelId, model] of models) {
-            const tagSet = new Set(model.tags);
-            for (const tag of model.tags) {
-                implications.get(tag)?.forEach((implied) => tagSet.add(implied));
-            }
-            if (tagSet.size !== model.tags.length) {
-                updates.push([modelId, { ...model, tags: [...tagSet].sort(compareTagId) }]);
+            const fullTags = withImpliedTags(model.tags, tagData);
+            if (fullTags.length !== model.tags.length) {
+                updates.push([modelId, { ...model, tags: fullTags }]);
             }
         }
 
