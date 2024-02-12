@@ -9,7 +9,7 @@ export type SPDXLicense = string & { readonly SPDXLicense: never };
  * A SPDX license id (short).
  * @see https://spdx.org/licenses/
  */
-export type SPDXLicenseId = string & { readonly SPDXLicenseId: never };
+export type SPDXLicenseId = SPDXLicense & { readonly SPDXLicenseId: never };
 export type TagId = string & { readonly TagId: never };
 export type TagCategoryId = string & { readonly TagCategoryId: never };
 export type ArchId = string & { readonly ArchId: never };
