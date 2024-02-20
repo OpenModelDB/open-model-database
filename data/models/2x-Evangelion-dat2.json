@@ -1,0 +1,64 @@
+{
+    "name": "Evangelion dat2",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Purpose: 2x upscaler for evangelion episodes\n\nFor the evangelion upscale project still, this time a dat2 model. A 2x upscaler for evangelion episodes on the evangelion dataset provided by pwnsweet, which called for model trainers to train models on it.\n\nSlowpoke Pics 4 Examples",
+    "date": "2024-02-12",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 139674138,
+            "sha256": "77b48e4952c3f400ccb97ae1fbe99a133fff9bb04466c8ce1860129e6a17e1b2",
+            "urls": [
+                "https://drive.google.com/drive/folders/1SzyvuIUVHDjNMtapvtDdE3RkDGJsrHd3?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 196000,
+    "trainingEpochs": 47,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "\"Upscale Archive Evangelion DVD's\" by pwnsweet",
+    "datasetSize": 3174,
+    "pretrainedModelG": "2x-DAT-2",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/gTjTMYwx.png",
+            "SR": "https://i.slow.pics/UAjj2coV.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/rGG67QUi.png",
+            "SR": "https://i.slow.pics/7PGmIBM5.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NHxPXqCS.png",
+            "SR": "https://i.slow.pics/dqQvxW26.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/sDb9THKB.png",
+            "SR": "https://i.slow.pics/148yOE10.png"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "name": "OverExposureCorrection compact",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "restoration"
+    ],
+    "description": "Purpose: 1x exposure correction of overexposed photos\n\nThis model is meant as an experiment to see if compact can be used to train on overexposed images to exposure correct those using the pixel, perceptual, color, color and ldl losses. There is no brightness loss. Still it seems to kinda work.\n\n2 Examples: https://slow.pics/s/KG4ELfGD",
+    "date": "2024-01-27",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2398747,
+            "sha256": "e91d373d98ffc24072de0b48ffa257ec0f6e2042b372790da0de7028ad3495db",
+            "urls": [
+                "https://drive.google.com/file/d/1SW24wf2QO55LetWqIAQUXJ5GoUtvoi7u/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 134000,
+    "trainingEpochs": 84,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "exposure_correction",
+    "datasetSize": 3534,
+    "pretrainedModelG": "1x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NAYb54aw.jpg",
+            "SR": "https://i.slow.pics/DpfmPGmf.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/37MYOb7R.jpg",
+            "SR": "https://i.slow.pics/xNIMY9j6.png"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "name": "DWTP DS dat2 v3 2",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "restoration"
+    ],
+    "description": "Purpose: remove screentone\n\nin some places an improved version 4x_DWTP_DS_dat2_v3 one of my friends likes it less than 3 and another more so here is v3_2\n\n[raw](https://media.discordapp.net/attachments/771403403372527656/1201288063666634842/raw.png?ex=65d28031&is=65c00b31&hm=3400b1731a8907aec6315da5513e4e3b02ac162c160f990ec780d54451e39ea1&=&format=webp&quality=lossless&width=323&height=459) - [v3](https://cdn.discordapp.com/attachments/771403403372527656/1201288064077660271/dat3.png?ex=65d28031&is=65c00b31&hm=6211a2344c4b6e53cafe6f4618aecd4c48c6c48babba4ca2c9fa5c980ab1e665&) - [v3.2](https://cdn.discordapp.com/attachments/771403403372527656/1201288064492904528/dat4.png?ex=65d28031&is=65c00b31&hm=294a2145d28e31d3f9b9dbbf92cbc15ea90694e2ab18a49d386e2c8ce6969aa0&)\n\np.s. Sorry for the size of all this and examples with links, it was just easier with real examples, and I don’t have the opportunity to try something with all of them now",
+    "date": "2024-02-06",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140296998,
+            "sha256": "a0b9162b2c5271d338337b95bf7ff37d3654a2109ad6a804a5abb6f111267660",
+            "urls": [
+                "https://drive.google.com/file/d/1r8uTdQ1kaMnKAZr6XSStB10JPTzOOFov/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingOTF": false,
+    "pretrainedModelG": "4x-DWTP-DS-dat2-v3",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/fe/89/8DrUOV4o_o.png",
+            "SR": "https://images2.imgbox.com/b7/a9/3qw3r33z_o.png"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "name": "WTP UDS Esrgan",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "manga"
+    ],
+    "description": "Purpose: descreenton\n\nI just decided to finish off the previous one, made the manga design more clear and corrected the deviation in color temperature by adding a more diverse set of colors",
+    "date": "2024-02-19",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67029568,
+            "sha256": "6b5823794353594d2b3b35930692a25687b2f707e0246dc5c47cad4dfddf4ca9",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/579685650824036387/1208802302576693258/4x_WTP_UDS_Esrgan.pth?ex=65e49bdf&is=65d226df&hm=90e6156d97c34316f856b230cb7ddc2a3882f7f75609e0168ecba7800abe6983&"
+            ]
+        }
+    ],
+    "trainingIterations": 219000,
+    "trainingEpochs": 9,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 240,
+    "trainingOTF": false,
+    "dataset": "my manga dataset + my color dataset + ModernAnimation1080",
+    "datasetSize": 86000,
+    "pretrainedModelG": "4x-WTP-ColorDS",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/ab/ac/FSeGGH04_o.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/e3/7e/L4XY11Hq_o.png"
+        }
+    ]
+}

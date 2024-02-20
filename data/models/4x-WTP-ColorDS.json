@@ -1,0 +1,49 @@
+{
+    "name": "WTP ColorDS",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "restoration"
+    ],
+    "description": "Purpose: descreenton\n\nThe model was trained for some tests, but maybe someone will need to remove a screentone with a color image; in addition to the screentone, it can handle small halftones quite well",
+    "date": "2024-02-19",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67029568,
+            "sha256": "5eb544a0826a923602cc8dc358dd00b3232288a35c76db9537622220a57bec9f",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/579685650824036387/1208066675136528456/4x_WTP_ColorDS.pth?ex=65e1eec4&is=65cf79c4&hm=a28e4d5fba8e4e92b496b98f34e4ab5a1aded359715a94953b862fad03585c01&"
+            ]
+        }
+    ],
+    "trainingIterations": 173000,
+    "trainingEpochs": 9,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 240,
+    "trainingOTF": false,
+    "dataset": "custom",
+    "datasetSize": 50000,
+    "pretrainedModelG": "4x-realesrgan-x4plus",
+    "images": [
+        {
+            "type": "standalone",
+            "caption": "1",
+            "url": "https://images2.imgbox.com/7a/22/v632pcXO_o.png"
+        },
+        {
+            "type": "standalone",
+            "caption": "2",
+            "url": "https://images2.imgbox.com/39/02/jVbABf9O_o.png"
+        }
+    ]
+}

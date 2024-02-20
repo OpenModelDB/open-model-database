@@ -1,0 +1,40 @@
+{
+    "name": "SPANkendata",
+    "author": "crustaceous-d",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "Purpose: Intended as a pretrain model, can be used to upscale undegraded photos.\n\nOriginal Link: https://github.com/terrainer/AI-Upscaling-Models/tree/main/4xSPANkendata\n\n4x realistic upscaler that may also work for general purpose usage. Trained on Bicubic downscaled tiles from very high quality images.\n\nIterations: 500k, fine-tuned with 120k, then 110k, then 75k\n\nbatch_size: 32, 16, 12, 10\n\nHR_size: 192, 256, 320, 192\n\nEpoch: Unknown, 32, 20, 12\n\nDataset_size: 58,420 512x512 tiles, downscaled with a variety of traditional algorithms and CAR",
+    "date": "2024-01-29",
+    "architecture": "span",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1718947,
+            "sha256": "7478c40953a5902efd785ef1fe8e07a8bb7e7ee9b1977273550813ceefae6348",
+            "urls": [
+                "https://raw.githubusercontent.com/terrainer/AI-Upscaling-Models/main/4xSPANkendata/4xSPANkendata_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingBatchSize": 32,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "My own custom dataset, made from an amalgamation of other datasets, as well as images I sourced myself.",
+    "datasetSize": 58420,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/4f/d5/PccEfYCU_o.png",
+            "SR": "https://images2.imgbox.com/9a/22/fqoZlo0Y_o.png"
+        }
+    ]
+}

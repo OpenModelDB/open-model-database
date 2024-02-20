@@ -1,0 +1,74 @@
+{
+    "name": "Eva16Lite 64k",
+    "author": "saurusx",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Purpose: Upscale Evangelion episode 16\n\nAn earlier iteration of my other ESRGAN lite model. After some closer examination at the video output of the other model I think this one is also worth considering. For being at such an early stage, this model is extremely stable, which makes me think the other model may be exhibiting some overfitting issues. Definitely worth a look.",
+    "date": "2024-02-12",
+    "architecture": "esrgan",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "73a73a0751b404e04277239b8a3be3c62b06b9a3367a5ef437c8473b322af6bf",
+            "urls": [
+                "https://mega.nz/file/4SVz3TzR#10NJ-ryMuaXeCxy-FGX1ocIsn2bTg9_jXHq_XUGWxIQ"
+            ]
+        }
+    ],
+    "trainingIterations": 64000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "\"Upscale Archive Evangelion DVDs\"",
+    "datasetSize": 3180,
+    "pretrainedModelG": "2x-AstroManPlus-262k",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5d8a6c8d-7792-4ab8-a9fc-7672a1d16d14.jpg",
+            "SR": "https://imgsli.com/i/a650bc52-0bf5-4ba4-b56c-6377547cef81.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/dd5843d9-30d6-45c7-81bf-f93a5430cddc.jpg",
+            "SR": "https://imgsli.com/i/5369444e-376e-4c7d-b989-0d5f86e42827.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/03f3c380-8b17-46c7-a6ea-f754a5554ee3.jpg",
+            "SR": "https://imgsli.com/i/4a05c862-1c12-4158-921f-ac343a7db59c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3ec1f829-7d75-4062-ba44-8044ba6f00cb.jpg",
+            "SR": "https://imgsli.com/i/3d034011-a515-4148-9a20-cac1066c5dfb.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/a4861c2a-4e7d-4f14-b1b7-e811489f1348.jpg",
+            "SR": "https://imgsli.com/i/1137c353-6bfd-4b58-a7e7-9a815f0f1fdd.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1115846c-cdb1-4d1c-b2be-cb881fdce3a0.jpg",
+            "SR": "https://imgsli.com/i/09d84655-dd2d-4ff5-9c49-0d4b24f5f2cc.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/3e2b04bf-397a-4476-af66-be55baa03c1e.jpg",
+            "SR": "https://imgsli.com/i/5831a171-4882-42ae-bc15-e3f69dc5fc41.jpg"
+        }
+    ]
+}

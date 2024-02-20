@@ -1,0 +1,54 @@
+{
+    "name": "UnderExposureCorrection compact",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "restoration"
+    ],
+    "description": "Purpose: 1x exposure correction of underexposed photos\n\nThis model is meant as an experiment to see if compact can be used to train on underexposed images to exposure correct those using the pixel, perceptual, color, color and ldl losses. There is no brightness loss. Still it seems to kinda work.\n\n3 Examples: https://slow.pics/s/Lnh2zcuK",
+    "date": "2024-01-27",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2398804,
+            "sha256": "82c66e1e24f4627722d5a6ebcde38beb16f7c134ce6740454839b8030125e6be",
+            "urls": [
+                "https://drive.google.com/file/d/1J8cFqs27IGxiLcQdVoU92J284o-3cK2J/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 134000,
+    "trainingEpochs": 84,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "exposure_correction",
+    "datasetSize": 3534,
+    "pretrainedModelG": "1x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/N2qxO2f5.jpg",
+            "SR": "https://i.slow.pics/kKygJdO8.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/q3eNiqBH.jpg",
+            "SR": "https://i.slow.pics/0WaHUYYl.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/q3eNiqBH.jpg",
+            "SR": "https://i.slow.pics/LC0XFxFt.png"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "name": "HFA2k VCISR GRLGAN ep200",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Purpose: 4x anime upscaler handling video compression artifacts, trained for 200 epochs\n\n4x anime upscaler handling video compression artifacts since trained with otf degradations for \"mpeg2video\", \"libxvid\", \"libx264\", \"libx265\" with crf 20-32, mpeg bitrate 3800-5800 (together with the standard Real-ESRGAN otf pipeline). A faster arch using this otf degradation pipeline would be great for handling video compression artifacts. Since this one is a GRL model and therefore slow, [as noted by the dev](https://github.com/Kiteretsu77/VCISR-official/issues/3) maybe more for research purposes (or more for single images/screenshots). Trained using [VCISR](https://github.com/Kiteretsu77/VCISR-official) for 200 epochs.  \n\n\"This is epoch 200 and the start iteration is 85959 with learning rate 2.5e-05\"  \n\nSlow Pics examples:  \n[h264_crf28](https://slow.pics/c/fqOnxXep)  \n[ludvae1](https://slow.pics/c/OcukRy7d)  \n[ludvae2](https://slow.pics/c/FI33mX4F)",
+    "date": "2024-01-04",
+    "architecture": "grl",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 53125413,
+            "sha256": "28a7e4dc6acfefaa132abd43145226848ba91c1f14cfc0d448b18b2e0ebd36c5",
+            "urls": [
+                "https://drive.google.com/file/d/1h_btpw-rWh482iGZQQgtRkiEbKZibOdo/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 85959,
+    "trainingEpochs": 200,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "hfa2k",
+    "datasetSize": 2568,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/IV3P0o7h.png",
+            "SR": "https://i.slow.pics/MvlQBy9p.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ZTqKlXz1.png",
+            "SR": "https://i.slow.pics/sCbeV1B1.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/SAnZ2Pna.png",
+            "SR": "https://i.slow.pics/qjILk4Bn.png"
+        }
+    ]
+}

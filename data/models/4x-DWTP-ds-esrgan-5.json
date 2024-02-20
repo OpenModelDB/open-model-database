@@ -1,0 +1,53 @@
+{
+    "name": "DWTP ds esrgan 5",
+    "author": "umzi-x-dead",
+    "license": null,
+    "tags": [
+        "manga"
+    ],
+    "description": "Purpose: manga screentone removal\n\nI haven’t shared models for a long time, I think one of these days I’ll upload a dat version and a less accurate esrgan. This version of the model was meant to be an attempt to get as much detail out of the scans as possible while removing the screentone, so some things had to be sacrificed, but overall it is better than all my previous models combined in terms of accuracy and tone.\n\n[**examples**](https://slow.pics/c/zbOGXoDv)\n[colab which contains the rest of my models](https://colab.research.google.com/drive/1w8fgsmh9fcHDtpQnYy77aKgpHEWlKpj-?usp=sharing#scrollTo=aYbqM1pWkPTT)\n||In general, this is a collab for convenient scaling of manga in the ru segment of translators and there are other people’s models there, if I suddenly added someone else’s model that has a license, please let me know, I’ll correct it||",
+    "date": "2023-12-24",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67029568,
+            "sha256": "1a98d50b9e71c575012f7f03d97fcc04c268d8b977fb4a3e08d0ae9dc151e773",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/1170374027144089762/1188611470825619516/4x_DWTP_ds_esrgan_5.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 119000,
+    "dataset": "custom dataset",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/1AYwEBYM.png",
+            "SR": "https://i.slow.pics/DH4EmgHP.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NcVYzhzq.png",
+            "SR": "https://i.slow.pics/YqPPVbWQ.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/WBmSe12N.png",
+            "SR": "https://i.slow.pics/7hk647lt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/cy0pnfJH.png",
+            "SR": "https://i.slow.pics/47oCvFOG.png"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "name": "DAT_2_X2",
+    "author": "zheng-chen",
+    "license": null,
+    "tags": [
+        "pretrained",
+        "research"
+    ],
+    "description": "\n\n",
+    "date": "2023-07-16",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 139741569,
+            "sha256": "aea2c76996c2b3e7cb034380e07738608bd59cc34c667331df7269e4b670ac18",
+            "urls": [
+                "https://drive.google.com/drive/folders/1yV9LMhr2tYM_eHEIVY4Jw9X3bWGgorbD?usp=drive_link"
+            ]
+        }
+    ],
+    "images": []
+}

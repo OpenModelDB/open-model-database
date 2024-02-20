@@ -1,0 +1,60 @@
+{
+    "name": "HFA2kShallowESRGAN",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Purpose: 2x anime upscaler\n\n2x shallow esrgan version of the HFA2kCompact model.  \nThis model should be usable with [FAST_Anime_VSR ](https://github.com/Kiteretsu77/FAST_Anime_VSR) using TensorRT for fast inference, as should my [2xHFA2kReal-CUGAN](https://drive.google.com/file/d/1wqlK-rQjPGKJ5pNoVgnK9gcNF1tA8EjV/view?usp=drive_link) model.  \n\nOriginal Link: https://drive.google.com/drive/folders/1_gtYqZGQgrpq55gsGf17MG_QUP4XeFJD\n\nSlow Pics examples:  \n[Example 1](https://slow.pics/c/RZj6GMwS)  \n[Example 2](https://slow.pics/c/Q3DHaU45)  \n[Ludvae1](https://slow.pics/c/fJi4IphY)  \n[Ludvae2](https://slow.pics/c/iIhgHokD)",
+    "date": "2024-01-04",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "6nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 17954051,
+            "sha256": "f21f87d559e20391a01eb946da779c7c3620bc20463389839f5dbc38c9897aad",
+            "urls": [
+                "https://drive.google.com/file/d/1SPXeNADiXK64bWEggHp4LZDbblEx6Wbd/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 180000,
+    "trainingEpochs": 167,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "hfa2k",
+    "datasetSize": 2568,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/OxkixzFl.webp",
+            "SR": "https://i.slow.pics/R1n06RBW.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/fEFQN68D.webp",
+            "SR": "https://i.slow.pics/mzXiArnU.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oTfqcs8a.png",
+            "SR": "https://i.slow.pics/qT4uYKSt.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/zdAaMhpR.png",
+            "SR": "https://i.slow.pics/An8o16Jh.webp"
+        }
+    ]
+}

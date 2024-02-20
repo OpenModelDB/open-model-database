@@ -1,0 +1,55 @@
+{
+    "name": "NomosUni span multijpg ldl",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "Purpose: 2x fast universal DoF preserving upscaler\n\n2x span fast universal DoF preserving upscaler, pair trained with jpg degradation (down to 40) and multiscale (down_up, bicubic, bilinear, box, nearest, lanczos).\n\nOriginal Link: https://drive.google.com/drive/folders/1_P56B3k1XrBsa-f698zPHAuLaqQ8sSWF\n\nExamples:\n[dofwheat](https://slow.pics/c/k0U59uJC)\n[digitalart](https://slow.pics/c/yyY0xMAn)  \n[face](https://slow.pics/c/MdV3Lr7N)",
+    "date": "2024-01-11",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8951347,
+            "sha256": "bc5fa00b9ee304301a616163275e34421bb507586176db4387239fa3a87e6bb6",
+            "urls": [
+                "https://drive.google.com/file/d/1TpqLUsHvqgbnpGr8hOE47BYIH3zqBDpu/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 120000,
+    "trainingEpochs": 95,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "nomosuni",
+    "datasetSize": 2989,
+    "pretrainedModelG": "2x-NomosUni-span-multijpg",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/OkXGM7rw.png",
+            "SR": "https://i.slow.pics/6Krn4xYp.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/fj51WeqR.png",
+            "SR": "https://i.slow.pics/lK1aqXoV.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/X2sdVVnP.png",
+            "SR": "https://i.slow.pics/dAnxx3kR.png"
+        }
+    ]
+}

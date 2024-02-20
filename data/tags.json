@@ -156,6 +156,10 @@
         "name": "Compact",
         "description": ""
     },
+    "arch:craft": {
+        "name": "CRAFT",
+        "description": ""
+    },
     "arch:cugan": {
         "name": "CUGAN",
         "description": ""

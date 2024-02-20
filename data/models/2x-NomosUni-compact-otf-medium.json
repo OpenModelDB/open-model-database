@@ -1,0 +1,50 @@
+{
+    "name": "NomosUni compact otf medium",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "Purpose: 2x fast universal upscaler with medium degradation handling (jpg compression, noise, blur)\n\n2x compact fast universal upscaler with medium degradation handling using the Real-ESRGAN training pipeline, based off 2xNomosUni_compact_otf_strong. Handles jpg compression, some noise, and some blur (so dejpgs, denoises and deblurs).\n\nOriginal Link: https://drive.google.com/drive/folders/1YdOPyb0Ht9YjoRZILf87hSocyAx43CLc\n\nExamples:\n[RealPhoto](https://imgsli.com/MjMyNTUy)\n[Noisy](https://imgsli.com/MjMyNTUz)",
+    "date": "2024-01-11",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2419158,
+            "sha256": "d9f767194d5163e5b1604ccd87f24f12f23562ed66245bba058eea1f4686ca5a",
+            "urls": [
+                "https://drive.google.com/file/d/1lUDklqGCq3fiGO0EBN8P5W-bSsldX1st/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 276000,
+    "trainingEpochs": 218,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "nomosuni",
+    "datasetSize": 2989,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/cb63c443-c66f-42e2-8f70-46132e8ceb8d.jpg",
+            "SR": "https://imgsli.com/i/c5a6d189-1948-4377-b61a-f74e1302ca73.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/c280c457-b6a3-4900-8dcf-b26b51209003.jpg",
+            "SR": "https://imgsli.com/i/4d4bed15-2b25-4e26-b9e0-54eb4090b948.jpg"
+        }
+    ]
+}

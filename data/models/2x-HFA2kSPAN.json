@@ -1,0 +1,50 @@
+{
+    "name": "HFA2kSPAN",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Purpose: 2x anime upscaler\n\n2x span version of the hfa2k model.\n\nOriginal Link: https://drive.google.com/drive/folders/1Fe1Uu3-L5YWaVSwPGBTIPG4xU7kK9rZK?usp=drive_link",
+    "date": "2023-12-26",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8950898,
+            "sha256": "59f41331bf32f122b73aaa9938b8baee7cb3e86125bdb55983d26074ac0d7285",
+            "urls": [
+                "https://drive.google.com/file/d/1stZzfcjWEMUO1qcVC1pZ88Tsn_goTDGG/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 27000,
+    "trainingEpochs": 24,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "hfa2k",
+    "datasetSize": 2568,
+    "pretrainedModelG": "2x-span-anime-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/CZYzvs54.png",
+            "SR": "https://i.slow.pics/wAqPeuG4.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pN6CdBMN.png",
+            "SR": "https://i.slow.pics/FAuWeh5Q.webp"
+        }
+    ]
+}

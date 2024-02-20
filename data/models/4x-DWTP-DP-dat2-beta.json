@@ -1,0 +1,40 @@
+{
+    "name": "DWTP DP dat2 beta",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "manga"
+    ],
+    "description": "Purpose: remove paper texture and screentone from independent manga scans\n\nWell, I don’t even know how to describe it, a small breakthrough in my war with self-scans, I’m still not very happy with it, but maybe the lump will come in handy one day https://discord.com/channels/547949405949657098/547949806761410560/1204387665798103050",
+    "date": "2024-02-06",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140296998,
+            "sha256": "f9a7ff16d9da7c0b6bbf1f97972673fc86118710ae1be6e5c326715c0385b34c",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/1170374027144089762/1204508016511025203/4x_DWTP_DP_dat2_beta.pth?ex=65de3701&is=65cbc201&hm=33a241a26eb3cd7fb7f06aaad21e7e1e19f0d50fb65914cb46059fb02a2d6741&"
+            ]
+        }
+    ],
+    "trainingIterations": 62000,
+    "trainingEpochs": 7,
+    "trainingBatchSize": 5,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "pretrainedModelG": "4x-DWTP-DS-dat2-v1",
+    "images": []
+}
