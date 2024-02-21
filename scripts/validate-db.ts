@@ -54,7 +54,21 @@ const getReports = async (): Promise<Report[]> => {
                 isValidArchitectureId: (id) => architectureData.has(id as ArchId),
             });
             if (error) {
-                report(error);
+                const { message, fix } = error;
+                report(
+                    message,
+                    fix &&
+                        (async () => {
+                            const model = await fileApi.models.get(modelId);
+                            const newValue = fix();
+                            if (newValue === undefined) {
+                                delete model[key];
+                            } else {
+                                model[key] = newValue as never;
+                            }
+                            await fileApi.models.update([[modelId, model]]);
+                        })
+                );
             }
         }
     }
