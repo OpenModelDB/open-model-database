@@ -200,7 +200,9 @@ function PageContent() {
         const description = [
             parsedMessage.parsed.purpose ? `Purpose: ${parsedMessage.parsed.purpose}` : '',
             parsedMessage.parsed.description ?? '',
-        ].join('\n\n');
+        ]
+            .join('\n\n')
+            .trim();
 
         const model: Model = {
             name,
