@@ -123,6 +123,13 @@
             "onnx"
         ]
     },
+    "rgt": {
+        "name": "RGT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "rife": {
         "name": "RIFE",
         "input": "video",

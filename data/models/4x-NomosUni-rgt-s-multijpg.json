@@ -1,0 +1,62 @@
+{
+    "name": "NomosUni rgt s multijpg",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "Purpose: 4x universal DoF preserving upscaler\n\n4x universal DoF preserving upscaler, pair trained with jpg degradation (down to 40) and multiscale (down_up, bicubic, bilinear, box, nearest, lanczos) in neosr with adamw, unet and pixel, perceptual, gan, color and ldl losses.\n\nExamples:\n[Imgsli](https://imgsli.com/MjQwNDk5)\n[Slowpics](https://slow.pics/s/sIRl3w7J)",
+    "date": "2024-02-16",
+    "architecture": "rgt",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 135972144,
+            "sha256": "c21ab2e41af946426b5f74a77a4bfe55cc86ff41584fec21c0ad8274d2032145",
+            "urls": [
+                "https://drive.google.com/file/d/1pNKygFbAXXtEyvp5-PtkrAe34TUfTNtx/view?usp=sharing"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 46660046,
+            "sha256": "5a27a9f4800d4f08b3fa5d17258b59cce75ce82255d5136c8a6c391a116280a1",
+            "urls": [
+                "https://drive.google.com/file/d/1Daw-E_P8s1btG0E-QuU0TvlntuVTtNhj/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 87000,
+    "trainingEpochs": 68,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "nomosuni",
+    "datasetSize": 2989,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/hXShntD7.png",
+            "SR": "https://i.slow.pics/D5HBuJfj.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/IdOU41IQ.png",
+            "SR": "https://i.slow.pics/ufJPzbTe.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/s16GAJAO.png",
+            "SR": "https://i.slow.pics/DcsexqU1.webp"
+        }
+    ]
+}
