@@ -44,7 +44,7 @@ interface ExtraModelProperties {
     pretrainedModelD: ModelId;
 }
 
-export type Resource = PthFile | OnnxFile;
+export type Resource = PthFile | SafetensorsFile | OnnxFile;
 
 interface SingleFile {
     size: number;
@@ -54,6 +54,10 @@ interface SingleFile {
 }
 export interface PthFile extends SingleFile {
     type: 'pth';
+    platform: 'pytorch';
+}
+export interface SafetensorsFile extends SingleFile {
+    type: 'safetensors';
     platform: 'pytorch';
 }
 export interface OnnxFile extends SingleFile {
