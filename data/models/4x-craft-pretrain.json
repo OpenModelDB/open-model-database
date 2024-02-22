@@ -5,7 +5,7 @@
     "tags": [
         "pretrained"
     ],
-    "description": "Purpose: Pretrain to quick start new models.\n\n",
+    "description": "Purpose: Pretrain to quick start new models.",
     "date": "2023-12-25",
     "architecture": "craft",
     "size": [
