@@ -90,6 +90,13 @@ const fileType: Record<Resource['type'], () => JSX.Element> = {
             </>
         );
     },
+    safetensors() {
+        return (
+            <>
+                PyTorch <code>.safetensors</code> file
+            </>
+        );
+    },
 };
 
 export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonProps) => {
