@@ -1,0 +1,60 @@
+{
+    "name": "SwatKats Compact",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Purpose: Upscaling older cartoons\n\nThis is yet another retrain of SaurusX's SwatKats_Lite model. The dataset was reprocessed with my [Find Misaligned Images](<https://github.com/Kim2091/helpful-scripts/tree/main/Find%20Misaligned%20Images>) script, along with the new [ImgAlign](<https://github.com/sonic41592/ImgAlign>) update, which drastically reduced artifacts and increased the model's capabilities. This particular model is roughly on par with or slightly behind the original, doing better in some spots and worse in others. Refer to the attached examples to see this.\n\nThe advantage of this over the original is the speed improvement of Compact over ESRGAN-lite. In a 480p test on an RTX 4090, the original ESRGAN-lite model took 0.28 seconds to process a frame vs Compact's 0.13 seconds.\n\nhttps://slow.pics/s/dF3Icjpv\n\nOR\n\n<https://imgsli.com/MjQxMzc1/0/1>",
+    "date": "2024-02-22",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2398804,
+            "sha256": "da86d2389671f4a2304b1e1d3f2f8e344b902911e49eb305a04d6b94a1ed50ed",
+            "urls": [
+                "https://mega.nz/folder/KIIk1SyT#covN6PtqOEPcAnCz1E4BkA"
+            ]
+        }
+    ],
+    "trainingIterations": 400000,
+    "trainingEpochs": 190,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "@saurusx's SwatKats Dataset",
+    "datasetSize": 5022,
+    "pretrainedModelG": "4x-anifilm-compact",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/l7omummb.png",
+            "SR": "https://i.slow.pics/hJNjG3Qx.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/XTewvxOp.png",
+            "SR": "https://i.slow.pics/U3lenHf7.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/EaNqxpwH.png",
+            "SR": "https://i.slow.pics/c9fr21EI.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/LAVGTzZq.png",
+            "SR": "https://i.slow.pics/UM1CHw99.png"
+        }
+    ]
+}
