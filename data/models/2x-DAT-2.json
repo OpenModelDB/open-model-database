@@ -1,7 +1,7 @@
 {
     "name": "DAT_2_X2",
     "author": "zheng-chen",
-    "license": null,
+    "license": "Apache-2.0",
     "tags": [
         "pretrained",
         "research"
