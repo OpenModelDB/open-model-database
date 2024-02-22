@@ -36,8 +36,39 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://i.slow.pics/xttdFobW.png",
-            "SR": "https://i.slow.pics/vRsU6flj.png"
+            "caption": "Lanczos vs Upscale",
+            "LR": "https://i.slow.pics/0r3azeT4.png",
+            "SR": "https://i.slow.pics/8OyeOUqx.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oCxHxIUA.png",
+            "SR": "https://i.slow.pics/4PtcA9wR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/4l0JJEfj.png",
+            "SR": "https://i.slow.pics/nlWhxsH1.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/zqHgUJpm.png",
+            "SR": "https://i.slow.pics/9BB8RTqV.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/yw2gadF4.png",
+            "SR": "https://i.slow.pics/7xegCIxn.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/aGQOOK8D.png",
+            "SR": "https://i.slow.pics/arukHnYs.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/4n06AbjO.png",
+            "SR": "https://i.slow.pics/Y9j9Tdx4.png"
         },
         {
             "type": "paired",
@@ -53,6 +84,66 @@
             "type": "paired",
             "LR": "https://i.slow.pics/Gu5oDhzV.png",
             "SR": "https://i.slow.pics/QVkSxUjC.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/QX0FqOwm.png",
+            "SR": "https://i.slow.pics/bC001Cqm.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BKuBSW0C.png",
+            "SR": "https://i.slow.pics/rwAvqaMr.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/YJL912IH.png",
+            "SR": "https://i.slow.pics/S9Imv2Zh.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/mhsxx8RT.png",
+            "SR": "https://i.slow.pics/rLAii0Cj.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0Gd3nmPO.png",
+            "SR": "https://i.slow.pics/PSZMwdag.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/tuK4JcEh.png",
+            "SR": "https://i.slow.pics/8w4zLErk.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/DyZhKgXT.png",
+            "SR": "https://i.slow.pics/iaX3BCyR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/MXp7u1yO.png",
+            "SR": "https://i.slow.pics/q8rVss6B.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xTSKm4pf.png",
+            "SR": "https://i.slow.pics/yD2GdifB.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xttdFobW.png",
+            "SR": "https://i.slow.pics/vRsU6flj.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oJnDS8O3.png",
+            "SR": "https://i.slow.pics/exdsBXxf.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BIdeMtbu.png",
+            "SR": "https://i.slow.pics/XtFUQTVQ.png"
         }
     ]
 }
