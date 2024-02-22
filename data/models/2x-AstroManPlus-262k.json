@@ -1,0 +1,94 @@
+{
+    "name": "AstroManPlus 262k",
+    "author": "saurusx",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Purpose: To recreate the upscale process used in the He-Man German Blu-ray release.\n\nA followup to my previous AstroManLite model. The primary focus is on detail preservation and enhancement of decent DVD material instead of artifact repair. I eliminated the attempt to remove temporal artifacts from the He-Man DVDs as it proved detrimental to the final results. It will, however, remove MPEG-2 artifacts to great effect.",
+    "date": "2024-02-05",
+    "architecture": "esrgan",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20135976,
+            "sha256": "5e10fd91acf95db1a8b06870c9c8340f36641d1c47b8b9eab908cfccd6fbc6e6",
+            "urls": [
+                "https://mega.nz/file/NOUXER7B#YltZZW58l4vrjYrRYDRwozIPiVLS1H0QpAWnXdkrs-0"
+            ]
+        }
+    ],
+    "trainingIterations": 262000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "He-Man Blu-rays and DVDs and The Road to El Dorado Blu-ray and DVD",
+    "datasetSize": 1500,
+    "pretrainedModelG": "2x-AstroManLite",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/e89b726d-6291-4702-a3cc-20f4df0cc92c.jpg",
+            "SR": "https://imgsli.com/i/5e33c569-6776-4f3b-8079-1c830c7dc171.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ac4e6075-f755-4190-9167-87541871f714.jpg",
+            "SR": "https://imgsli.com/i/775ac404-001c-459e-ae9a-f12c38d02eca.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/f0345262-b16f-4660-9d25-7739a4e817f0.jpg",
+            "SR": "https://imgsli.com/i/6136af21-bc33-463c-917d-49b569f0c219.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5e24d176-4105-45e5-9874-43398ee05bc7.jpg",
+            "SR": "https://imgsli.com/i/62453a82-114e-449f-aa1f-e1d4781602c8.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6bc50cd4-3568-4955-a448-007842094df4.jpg",
+            "SR": "https://imgsli.com/i/d462b34e-5dce-4029-b340-49562ba1c97d.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/2b022e7d-8130-4c83-9922-305ec451a2bd.jpg",
+            "SR": "https://imgsli.com/i/da47a623-10db-48c1-862e-e100eaebbc96.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/9c47fb2b-fa7c-4043-9510-c6c407e61fa5.jpg",
+            "SR": "https://imgsli.com/i/316134cf-6a50-492a-8776-84fe78554d55.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/740020bb-7fb6-4438-a226-039763e22482.jpg",
+            "SR": "https://imgsli.com/i/c6129745-8762-49cc-ac08-0606bce94fe2.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1fef1956-99a2-4401-8406-4681c6b754ac.jpg",
+            "SR": "https://imgsli.com/i/a7d5cb1d-128e-40d0-acf2-d2358c6079b0.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/436883fb-96d6-44ee-8c65-c11979a6f88d.jpg",
+            "SR": "https://imgsli.com/i/32e6cfe1-c69b-4fcd-8fd0-0e609a290df7.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/5d03a883-23f6-4b3e-9a52-bb66b77cdc13.jpg",
+            "SR": "https://imgsli.com/i/fa3b9e6a-b73f-4f37-b35c-f8381cd754c1.jpg"
+        }
+    ]
+}

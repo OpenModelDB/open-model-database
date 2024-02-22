@@ -1,0 +1,43 @@
+{
+    "name": "SPANGELION SHARP",
+    "author": "crustaceous-d",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Purpose: For restoring the non blu-ray Evangelion episodes.\n\nRestoration model for de-cruddifying Evangelion episodes from their non blu-ray source. Has issues with eyes in some cases, where it thinks the whites are haloing. Comparison images are of the interpolated model.",
+    "date": "2024-02-08",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8938861,
+            "sha256": "1fe9b52df243cb18a202264bed9bf5cfe3890525fa1480402318154cb3a4a13f",
+            "urls": [
+                "https://github.com/terrainer/AI-Upscaling-Models/raw/main/1xSPANGELION/1xSPANGELION.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 90000,
+    "trainingEpochs": 10,
+    "trainingBatchSize": 10,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "EVA16 by pwnsweet, available on the Enhance Everything! Discord server.",
+    "datasetSize": 177280,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/88/42/ykEUTfpq_o.png",
+            "SR": "https://images2.imgbox.com/eb/b1/Ii9wNqOU_o.png"
+        }
+    ]
+}

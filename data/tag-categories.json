@@ -72,7 +72,8 @@
             "arch:srformer",
             "arch:sr-res-net",
             "arch:swift-srgan",
-            "arch:swinir"
+            "arch:swinir",
+            "arch:craft"
         ]
     },
     "platform": {

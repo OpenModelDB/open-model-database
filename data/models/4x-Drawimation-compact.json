@@ -1,0 +1,42 @@
+{
+    "name": "Drawimation compact",
+    "author": "asterixcool",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon"
+    ],
+    "description": "Purpose: upscale anime from dvd\n\nAnime upscale from dvd with x4, a little softer lines and look but keeps the colors.\n\nhttps://imgsli.com/MjM3ODEy",
+    "date": "2024-02-04",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2502676,
+            "sha256": "e8458cc2aa62ee057417d4d18e0acfd5e8792456b796e111e848575f2f74e5f4",
+            "urls": [
+                "https://github.com/starinspace/StarinspaceUpscale/releases/download/Models/4xDrawimation-compact.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 328000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "6358 handpicked images",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/0b525726-c25b-49bb-8c0e-8bda73e9dfee.jpg",
+            "SR": "https://imgsli.com/i/d73f61f6-1fad-4ec2-9b50-da5be669da74.jpg"
+        }
+    ]
+}

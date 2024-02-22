@@ -1,0 +1,48 @@
+{
+    "name": "HFA2k LUDVAE SPAN",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "cartoon"
+    ],
+    "description": "Purpose: A lightweight anime 2x upscaling model with realistic degradations, based on musl's HFA2k_LUDVAE dataset\n\n2x lightweight anime upscaler with realistic degradations (compression, noise, blur) based on musl's HFA2k_LUDVAE dataset.\n\nOriginal Link: https://drive.google.com/drive/folders/1Fe1Uu3-L5YWaVSwPGBTIPG4xU7kK9rZK?usp=drive_link",
+    "date": "2023-12-26",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8953882,
+            "sha256": "1efe96d6729e82883618a01eca77a23eae873dd4f8a374aa5fe2e2f15f64d104",
+            "urls": [
+                "https://drive.google.com/file/d/1_0X8xXtrtGOv0WAVlIxT_29GQOnmxBJF/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 38900,
+    "trainingEpochs": 54,
+    "trainingBatchSize": 90,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "HFA2kLUDVAE",
+    "datasetSize": 10270,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/CZYzvs54.png",
+            "SR": "https://i.slow.pics/SAqA1zRY.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pN6CdBMN.png",
+            "SR": "https://i.slow.pics/kw3SomVt.webp"
+        }
+    ]
+}

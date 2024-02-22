@@ -1,0 +1,53 @@
+{
+    "name": "HFA2SwinIR S",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Purpose: 2x anime upscaler\n\n2x SwinIR-Small version of the 2xHFA2kCompact model.\n\nOriginal Link: https://drive.google.com/drive/folders/1yM2_BkktUXS2-i1sTCYZuHRyfx-ak2o8",
+    "date": "2023-12-26",
+    "architecture": "swinir",
+    "size": [
+        "small",
+        "s64w8",
+        "64nf",
+        "60dim",
+        "1conv"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 17139019,
+            "sha256": "f5803b59877274b28f18a12374bc01ca7c6185436bb03ea528dad24997a3ebe3",
+            "urls": [
+                "https://drive.google.com/file/d/1PeqL1ikJbBJbVzvlqvtb4d7QdSW7BzrQ/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 22000,
+    "trainingEpochs": 10,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "dataset": "hfa2k",
+    "datasetSize": 2568,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/CZYzvs54.png",
+            "SR": "https://i.slow.pics/9OP1p6fx.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pN6CdBMN.png",
+            "SR": "https://i.slow.pics/Omo5StNY.webp"
+        }
+    ]
+}

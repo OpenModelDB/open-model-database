@@ -1,0 +1,40 @@
+{
+    "name": "wtp manga cover pretrained",
+    "author": "umzi-x-dead",
+    "license": null,
+    "tags": [
+        "manga"
+    ],
+    "description": "Purpose: pre-workout to speed up your workouts\n\nWhile experimenting with color models for cugan, I just ran into problems that the official models are not imported correctly and have additional processing in addition to resizing. As a result, for my project I trained 2 x cugans for neosr; only resizing losses were applied to the dataset `(“lanczos”, “bicubic”, “bilenear”, “HAMMING”, “NEAREST”)`",
+    "date": "2024-02-19",
+    "architecture": "real-cugan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5159522,
+            "sha256": "59c9493e6911be8a1760eba9828d5e7588606ef7834afdf04e512c5378481ecb",
+            "urls": [
+                "https://drive.google.com/file/d/1uQ29jLL_zaUnY4aIjjIR2GvBz3uRbxJe/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 312000,
+    "trainingEpochs": 14,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "custom dataset of manga covers and color manga in equal quality with pixiv",
+    "datasetSize": 110730,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/a5/7a/BG0z0XJL_o.png",
+            "SR": "https://images2.imgbox.com/14/ac/jbeZitdN_o.png"
+        }
+    ]
+}

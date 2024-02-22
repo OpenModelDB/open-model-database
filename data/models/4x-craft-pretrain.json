@@ -1,0 +1,38 @@
+{
+    "name": "craft pretrain",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [
+        "pretrained"
+    ],
+    "description": "Purpose: Pretrain to quick start new models.",
+    "date": "2023-12-25",
+    "architecture": "craft",
+    "size": [
+        "4x16",
+        "48dim",
+        "1conv"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3427754,
+            "sha256": "d0ba99f90d67c199c97938d018f04ed5a585571863848594fb626e76ba50f11d",
+            "urls": [
+                "https://drive.google.com/file/d/1mlnr3FB5amgZIOC5bxTpDGIrRgoihfDM/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 400000,
+    "dataset": "nomos_uni",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/bf/67/EgqmZrtq_o.png"
+        }
+    ]
+}

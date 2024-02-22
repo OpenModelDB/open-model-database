@@ -1,0 +1,42 @@
+{
+    "name": "DWTP DS dat2 v3",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "restoration"
+    ],
+    "description": "Purpose: remove screentone\n\ndat descreenton model, designed to reduce discrepancies on tiles due to too much loss of the first version, while getting rid of the removal of paper texture https://discord.com/channels/547949405949657098/944307589284495410/1192058535257854042",
+    "date": "2024-02-06",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140299118,
+            "sha256": "7ce4d37f9b9ef951086e721d79a371342e092904e841ef8cc38484abd8f73050",
+            "urls": [
+                "https://cdn.discordapp.com/attachments/1170374027144089762/1186368034651246672/4x_DWTP_DS_DAT2_V3.pth?ex=65dcd255&is=65ca5d55&hm=07e68a86ba321daf67344818f0f300190a5e851854ec85a312a5557a1d039efc&"
+            ]
+        }
+    ],
+    "trainingOTF": false,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/fe/89/8DrUOV4o_o.png",
+            "SR": "https://images2.imgbox.com/c0/97/0UnFFSDs_o.png"
+        }
+    ]
+}

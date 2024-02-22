@@ -66,7 +66,6 @@ exports[`parse discord messages 2xEvangelion_dat2 1`] = `
     "Release Date: 12.02.2024 (dd/mm/yy)",
     "Author: Philip Hofmann",
     "Network: SRVGGNetCompact",
-    "Pretrained_Model_G: DAT_2_x2",
   ],
   "parsed": {
     "batchSize": 4,
@@ -81,6 +80,7 @@ exports[`parse discord messages 2xEvangelion_dat2 1`] = `
     "link": "https://drive.google.com/drive/folders/1SzyvuIUVHDjNMtapvtDdE3RkDGJsrHd3?usp=drive_link",
     "name": "Evangelion_dat2",
     "otf": false,
+    "pretrained": "2x-DAT-2",
     "purpose": "2x upscaler for evangelion episodes",
     "scale": 2,
     "trainingIterations": 196000,
