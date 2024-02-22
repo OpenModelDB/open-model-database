@@ -53,6 +53,7 @@
             "arch:cain",
             "arch:cain-yuv",
             "arch:compact",
+            "arch:craft",
             "arch:cugan",
             "arch:dat",
             "arch:dctlsa",
@@ -65,6 +66,7 @@
             "arch:ludvae",
             "arch:omnisr",
             "arch:real-cugan",
+            "arch:rgt",
             "arch:rife",
             "arch:sofvsr",
             "arch:span",
@@ -72,9 +74,7 @@
             "arch:srformer",
             "arch:sr-res-net",
             "arch:swift-srgan",
-            "arch:swinir",
-            "arch:rgt",
-            "arch:craft"
+            "arch:swinir"
         ]
     },
     "platform": {
