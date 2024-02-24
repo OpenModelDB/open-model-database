@@ -1,0 +1,100 @@
+{
+    "name": "IllustrationJaNai_V1_ESRGAN",
+    "author": "the-database",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "compression-removal",
+        "dehalftone",
+        "general-upscaler",
+        "jpeg",
+        "manga",
+        "restoration"
+    ],
+    "description": "Purpose: Illustrations, digital art, manga covers\n\nModel for color images including manga covers and color illustrations, digital art, visual novel art, artbooks, and more. The ESRGAN version is high quality with balanced performance. See the DAT2 version for maximum quality. \n\nhttps://slow.pics/c/GfArurPG",
+    "date": "2024-02-23",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 33682500,
+            "sha256": "c67e76c4b5f0474d5116e5f3885202d1bee68187e1389f82bb90baace24152f8",
+            "urls": [
+                "https://drive.google.com/file/d/1qpioSqBkB_IkSBhEAewSSNFt6qgkBimP/view"
+            ]
+        }
+    ],
+    "trainingIterations": 135000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 384,
+    "trainingOTF": false,
+    "dataset": "digital art, anime",
+    "datasetSize": 199936,
+    "pretrainedModelG": "4x-realesrgan-x4plus",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0O4vdI7C.png",
+            "SR": "https://i.slow.pics/qvWBSn4n.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/lHotTXax.png",
+            "SR": "https://i.slow.pics/DhcatmiX.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/GelM134s.png",
+            "SR": "https://i.slow.pics/UbSUh3Vq.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/MQr34muG.png",
+            "SR": "https://i.slow.pics/DpR79j65.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/yF6LBUXB.png",
+            "SR": "https://i.slow.pics/jXTEyoYY.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ip4sKpvR.png",
+            "SR": "https://i.slow.pics/5OtF6LI5.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/lLCzhdim.png",
+            "SR": "https://i.slow.pics/a9ewSoUT.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NK4yYDZx.png",
+            "SR": "https://i.slow.pics/ClBGJyf7.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/vmle5Bnm.png",
+            "SR": "https://i.slow.pics/QwwHbgU2.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/h676SXio.png",
+            "SR": "https://i.slow.pics/Nawo9Wbe.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/5ci4Wrfk.png",
+            "SR": "https://i.slow.pics/8jPjxbcP.png"
+        }
+    ]
+}

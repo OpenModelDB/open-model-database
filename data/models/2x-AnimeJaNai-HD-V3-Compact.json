@@ -36,6 +36,11 @@
     "images": [
         {
             "type": "paired",
+            "LR": "https://i.slow.pics/xttdFobW.png",
+            "SR": "https://i.slow.pics/1rp2lkNh.png"
+        },
+        {
+            "type": "paired",
             "caption": "Lanczos vs Upscale",
             "LR": "https://i.slow.pics/0r3azeT4.png",
             "SR": "https://i.slow.pics/EBbp3lJq.png"
@@ -129,11 +134,6 @@
             "type": "paired",
             "LR": "https://i.slow.pics/xTSKm4pf.png",
             "SR": "https://i.slow.pics/kJaIkCrt.png"
-        },
-        {
-            "type": "paired",
-            "LR": "https://i.slow.pics/xttdFobW.png",
-            "SR": "https://i.slow.pics/1rp2lkNh.png"
         },
         {
             "type": "paired",
