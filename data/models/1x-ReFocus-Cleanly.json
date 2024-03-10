@@ -24,7 +24,8 @@
             "sha256": "f38e8be5524126e9923849cc37e1c9ca308d2d72f26e89147c95d6fde8b18a13",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-ReFocus-Cleanly.pth",
-                "https://owncube.cloud/index.php/s/3JnWknDGMEfGz8r/download/1x_ReFocus_Cleanly_100000_G.pth"
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_ReFocus_Cleanly_100000_G.pth",
+                "https://drive.proton.me/urls/T0KQN0XC7G#ovVPAGcoaVL1"
             ]
         }
     ],
