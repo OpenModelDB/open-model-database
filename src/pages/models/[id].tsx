@@ -24,7 +24,7 @@ import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { KNOWN_LICENSES } from '../../lib/license';
 import { MODEL_PROPS, ModelProp } from '../../lib/model-props';
-import { ArchId, Image, Model, ModelId, Resource, TagId } from '../../lib/schema';
+import { ArchId, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
@@ -366,8 +366,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
 
     const { updateModelProperty } = useUpdateModel(webApi, modelId);
 
-    const firstImageValue = model.images[0] as Image | undefined;
-    const previewImage = firstImageValue ? getPreviewImage(firstImageValue) : undefined;
+    const previewImage = getPreviewImage(model);
 
     const [similar, similarWithScores] = useMemo(() => {
         if (modelData.size > Object.keys(staticModelData).length) {
