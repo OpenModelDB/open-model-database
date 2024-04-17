@@ -38,6 +38,7 @@ const formatJSONFile = async (file: string) => {
             errors++;
             console.error(`Would format file: ${path.basename(file)}`);
         } else {
+            console.log(`Format file: ${path.basename(file)}`);
             await fs.writeFile(file, newText, 'utf-8');
         }
     }
