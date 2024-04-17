@@ -37,15 +37,13 @@
             "type": "paired",
             "caption": "noblefurnbed01.dds",
             "LR": "https://images2.imgbox.com/18/97/CTCaOWsU_o.png",
-            "SR": "https://images2.imgbox.com/d2/70/zScUVy1Q_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/d2/70/zScUVy1Q_t.png"
+            "SR": "https://images2.imgbox.com/d2/70/zScUVy1Q_o.png"
         },
         {
             "type": "paired",
             "caption": "cuirasslight.dds",
             "LR": "https://images2.imgbox.com/de/c5/63Ya3Ky2_o.png",
-            "SR": "https://images2.imgbox.com/59/7e/cTxJaqoY_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/59/7e/cTxJaqoY_t.png"
+            "SR": "https://images2.imgbox.com/59/7e/cTxJaqoY_o.png"
         }
     ]
 }

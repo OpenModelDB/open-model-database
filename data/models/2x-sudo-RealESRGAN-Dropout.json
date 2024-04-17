@@ -34,28 +34,23 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/10/b2/yeCnKkeK_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/10/b2/yeCnKkeK_t.png"
+            "url": "https://images2.imgbox.com/10/b2/yeCnKkeK_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/0e/9b/rwwDo786_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/0e/9b/rwwDo786_t.png"
+            "url": "https://images2.imgbox.com/0e/9b/rwwDo786_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/15/47/WcGMqdUw_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/15/47/WcGMqdUw_t.png"
+            "url": "https://images2.imgbox.com/15/47/WcGMqdUw_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/bb/65/2bT1XZ0n_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/bb/65/2bT1XZ0n_t.png"
+            "url": "https://images2.imgbox.com/bb/65/2bT1XZ0n_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/b8/36/Bfx3VRdS_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/b8/36/Bfx3VRdS_t.png"
+            "url": "https://images2.imgbox.com/b8/36/Bfx3VRdS_o.png"
         }
     ]
 }
