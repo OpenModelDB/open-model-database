@@ -41,6 +41,12 @@ jobs:
             - uses: actions/setup-python@v4
               with:
                   python-version: '3.11'
+            - name: Cache thumbnails
+              id: cache-thumbnails
+              uses: actions/cache@v4
+              with:
+                  path: .thumb-cache/thumbs
+                  key: thumbnails
             - name: Setup Pages
               uses: actions/configure-pages@v3
               with:

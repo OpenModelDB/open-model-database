@@ -51,10 +51,13 @@ const getReports = async (): Promise<Report[]> => {
             );
         }
 
-        if (model.thumbnail) {
+        if (model.thumbnail || model.images.some((image) => image.thumbnail)) {
             report(`Thumbnails are automatically generated and should not appear in the database`, async () => {
                 const model = await fileApi.models.get(modelId);
                 delete model.thumbnail;
+                for (const image of model.images) {
+                    delete image.thumbnail;
+                }
                 await fileApi.models.update([[modelId, model]]);
             });
         }

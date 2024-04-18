@@ -39,8 +39,7 @@
             "type": "paired",
             "caption": "pack.png (50500_G.pth)",
             "LR": "https://images2.imgbox.com/4e/cd/as8bIO38_o.png",
-            "SR": "https://images2.imgbox.com/3b/d7/7Kh9F6WQ_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/3b/d7/7Kh9F6WQ_t.png"
+            "SR": "https://images2.imgbox.com/3b/d7/7Kh9F6WQ_o.png"
         }
     ]
 }

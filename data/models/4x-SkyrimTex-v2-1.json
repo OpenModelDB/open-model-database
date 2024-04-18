@@ -36,14 +36,12 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/d8/df/PmFJRyEG_o.png",
-            "SR": "https://images2.imgbox.com/7b/b1/BpAYspuO_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/7b/b1/BpAYspuO_t.png"
+            "SR": "https://images2.imgbox.com/7b/b1/BpAYspuO_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/fb/cb/KSu4dLrV_o.png",
-            "SR": "https://images2.imgbox.com/90/21/UnBsBgD6_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/90/21/UnBsBgD6_t.png"
+            "SR": "https://images2.imgbox.com/90/21/UnBsBgD6_o.png"
         }
     ]
 }

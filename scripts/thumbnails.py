@@ -1,5 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
+from functools import lru_cache
 import math
 from pathlib import Path
 from typing import Any, Literal, NewType, TypedDict, Union
@@ -9,6 +10,7 @@ from hashlib import sha256
 import sys
 import os
 import time
+import zipfile
 from multiprocessing.pool import ThreadPool
 
 
@@ -29,7 +31,12 @@ import requests  # noqa: E402
 
 # config
 MODEL_FILES_DIR = Path("data/models/")
-IMAGE_DOWNLOAD_DIR = Path(".thumb-cache/images/")
+
+CACHE_DIR = Path(".thumb-cache/")
+IMAGE_DOWNLOAD_DIR = CACHE_DIR / "images/"
+CACHE_THUMBNAIL_DIR = CACHE_DIR / "thumbs/"
+CACHE_IMAGE_METADATA_JSON = CACHE_THUMBNAIL_DIR / "_image-metadata.json"
+
 THUMBNAIL_DIR = Path("public/thumbs/")
 IMAGE_METADATA_JSON = THUMBNAIL_DIR / "_image-metadata.json"
 
@@ -62,11 +69,13 @@ class PairedImage(TypedDict):
     type: Literal["paired"]
     LR: str
     SR: str
+    thumbnail: NotRequired[str]
 
 
 class StandaloneImage(TypedDict):
     type: Literal["standalone"]
     url: str
+    thumbnail: NotRequired[str]
 
 
 Image = Union[PairedImage, StandaloneImage]
@@ -108,19 +117,78 @@ def download_json(url: str) -> Any:
     return response.json()
 
 
+def restore_cache():
+    if CACHE_THUMBNAIL_DIR.exists():
+        return
+
+    print("Restoring cache", flush=True)
+
+    zip_path = CACHE_DIR / "thumbs.zip"
+    try:
+        download_file(
+            "https://github.com/OpenModelDB/auxiliary/releases/download/thumbnails/thumbs.zip",
+            zip_path,
+        )
+    except Exception as e:
+        print(f"Failed to download cache: {e}")
+        return
+
+    try:
+        with zipfile.ZipFile(zip_path, "r") as zip_ref:
+            zip_ref.extractall(CACHE_DIR)
+    finally:
+        zip_path.unlink(missing_ok=True)
+
+
+def update_cache():
+    print("Updating cache", flush=True)
+
+    # Copy all images from THUMBNAIL_DIR to CACHE_THUMBNAIL_DIR
+    CACHE_THUMBNAIL_DIR.mkdir(parents=True, exist_ok=True)
+    for file in THUMBNAIL_DIR.glob("**/*"):
+        target = CACHE_THUMBNAIL_DIR / file.relative_to(THUMBNAIL_DIR)
+        if (
+            file.is_file()
+            and not target.exists()
+            and file.suffix in (".jpg", ".jpeg", ".png")
+        ):
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(file.read_bytes())
+
+    # merge _image-metadata.json
+    old_data = get_cached_image_metadata()
+    current_data = json.loads(IMAGE_METADATA_JSON.read_text(encoding="utf-8"))
+    old_data.update(current_data)
+    CACHE_IMAGE_METADATA_JSON.write_text(
+        json.dumps(old_data, indent=2), encoding="utf-8"
+    )
+
+
 class CachedImageMetadata(TypedDict):
     width: int
     height: int
 
 
+@lru_cache()
 def get_cached_image_metadata() -> dict[str, CachedImageMetadata]:
-    try:
-        if IMAGE_METADATA_JSON.exists():
-            return json.loads(IMAGE_METADATA_JSON.read_text(encoding="utf-8"))
-
-        return download_json("https://openmodeldb.info/thumbs/_image-metadata.json")
-    except:  # noqa: E722
+    def from_file(file: Path) -> dict[str, CachedImageMetadata]:
+        if file.exists():
+            return json.loads(file.read_text(encoding="utf-8"))
         return {}
+
+    def from_url(url: str) -> dict[str, CachedImageMetadata]:
+        try:
+            return download_json(url)
+        except:  # noqa: E722
+            return {}
+
+    result: dict[str, CachedImageMetadata] = {}
+
+    result.update(from_url("https://openmodeldb.info/thumbs/_image-metadata.json"))
+    result.update(from_file(CACHE_IMAGE_METADATA_JSON))
+    result.update(from_file(IMAGE_METADATA_JSON))
+
+    return result
 
 
 def save_cached_image_metadata(images: dict[str, ImageMetadata]):
@@ -211,6 +279,15 @@ def get_images(models: dict[ModelId, Model]) -> dict[str, ImageMetadata]:
         if len(model["images"]) == 0:
             continue
 
+        # small thumbnails
+        for image in model["images"]:
+            if image["type"] == "paired":
+                # we only use the LR image for small thumbnails
+                images[image["LR"]] = ImageMetadata(image["LR"], 0, 0)
+            elif image["type"] == "standalone":
+                images[image["url"]] = ImageMetadata(image["url"], 0, 0)
+
+        # thumbnail
         image = model["images"][0]
         if image["type"] == "paired":
             images[image["LR"]] = ImageMetadata(image["LR"], 0, 0)
@@ -235,11 +312,16 @@ def get_images(models: dict[ModelId, Model]) -> dict[str, ImageMetadata]:
 
 
 def reuse_thumbnail(thumbnail_name: str) -> bool:
-    THUMBNAIL_DIR.mkdir(parents=True, exist_ok=True)
     file = THUMBNAIL_DIR / thumbnail_name
-
     if file.exists():
         # file exists locally
+        return True
+
+    cached_file = CACHE_THUMBNAIL_DIR / thumbnail_name
+    if cached_file.exists():
+        # copy from cache
+        file.parent.mkdir(parents=True, exist_ok=True)
+        file.write_bytes(cached_file.read_bytes())
         return True
 
     try:
@@ -284,25 +366,29 @@ class ThumbnailResult:
     height: int
 
 
+def encode_png(img: np.ndarray) -> bytes:
+    params = [cv2.IMWRITE_PNG_COMPRESSION, 9]
+    return cv2.imencode("foo.png", img, params)[1].tobytes()
+
+
+def encode_jpeg(img: np.ndarray, *, quality: int) -> bytes:
+    params = [
+        cv2.IMWRITE_JPEG_QUALITY,
+        quality,
+        cv2.IMWRITE_JPEG_PROGRESSIVE,
+        1,
+        cv2.IMWRITE_JPEG_OPTIMIZE,
+        1,
+    ]
+    return cv2.imencode("foo.jpg", img, params)[1].tobytes()
+
+
 def encode_image(img: np.ndarray, name: str):
-    params = []
-
     if name.endswith(".png"):
-        params = [
-            cv2.IMWRITE_PNG_COMPRESSION,
-            9,
-        ]
-
-    if name.endswith(".jpg"):
-        params = [
-            cv2.IMWRITE_JPEG_QUALITY,
-            90,
-            cv2.IMWRITE_JPEG_PROGRESSIVE,
-            1,
-            cv2.IMWRITE_JPEG_OPTIMIZE,
-            1,
-        ]
-    return cv2.imencode(name, img, params)[1].tobytes()
+        return encode_png(img)
+    if name.endswith(".jpg") or name.endswith(".jpeg"):
+        return encode_jpeg(img, quality=90)
+    raise ValueError("Unsupported image format")
 
 
 def get_lr_crop(size: tuple[int, int], scale: int) -> Region:
@@ -319,8 +405,8 @@ def get_lr_crop(size: tuple[int, int], scale: int) -> Region:
 
 
 def save_thumbnail(thumbnail_name: str, data: bytes):
-    THUMBNAIL_DIR.mkdir(parents=True, exist_ok=True)
     file = THUMBNAIL_DIR / thumbnail_name
+    file.parent.mkdir(parents=True, exist_ok=True)
     file.write_bytes(data)
 
 
@@ -412,12 +498,54 @@ def save_thumbnail_standalone(image: ImageMetadata) -> ThumbnailResult:
     return save_thumbnail_resize(image, crop_size, resize_size)
 
 
+def save_small_thumbnail(image: ImageMetadata) -> ThumbnailResult:
+    TARGET_SIZE = 72
+
+    def resize_to_target_size() -> tuple[int, int]:
+        w, h = image.size
+        if w <= TARGET_SIZE and h <= TARGET_SIZE:
+            return w, h
+        if w == h:
+            return TARGET_SIZE, TARGET_SIZE
+        if w > h:
+            return TARGET_SIZE, max(1, round(h * TARGET_SIZE / w))
+        return max(1, round(w * TARGET_SIZE / h)), TARGET_SIZE
+
+    resize_size = resize_to_target_size()
+
+    thumbnail_name = "small/" + (
+        sha256_str(f"small:{resize_size}:{image.url}")[:24] + ".jpg"
+    )
+    result = ThumbnailResult(
+        thumbnail_name, width=resize_size[0], height=resize_size[1]
+    )
+
+    if reuse_thumbnail(thumbnail_name):
+        return result
+
+    img = image.load()
+    img = cv2.resize(img, resize_size, interpolation=cv2.INTER_AREA)
+    buffer = encode_jpeg(img, quality=60)
+
+    if (
+        image.size == resize_size
+        and image.ext == "jpg"
+        and image.file.stat().st_size < len(buffer)
+    ):
+        # just use the original
+        buffer = image.file.read_bytes()
+
+    save_thumbnail(thumbnail_name, buffer)
+    return result
+
+
 def process_model(model_id: ModelId, model: Model, images: dict[str, ImageMetadata]):
     if len(model["images"]) == 0:
         return
 
     print(f"Processing {model_id}", flush=True)
 
+    # thumbnail
     image = model["images"][0]
     if image["type"] == "paired":
         lr_url = image["LR"]
@@ -449,12 +577,26 @@ def process_model(model_id: ModelId, model: Model, images: dict[str, ImageMetada
 
         model["thumbnail"] = {"type": "standalone", "url": url}
 
+    # small thumbnails
+    for image in model["images"]:
+        if image["type"] == "paired":
+            lr_url = image["LR"]
+            if lr_url in images:
+                lr = images[lr_url]
+                image["thumbnail"] = "/thumbs/" + save_small_thumbnail(lr).name
+        elif image["type"] == "standalone":
+            url = image["url"]
+            if url in images:
+                image["thumbnail"] = "/thumbs/" + save_small_thumbnail(images[url]).name
+
     model_file = MODEL_FILES_DIR / f"{model_id}.json"
     model_file.write_text(json.dumps(model, indent=4), encoding="utf-8")
 
 
 def process():
     start = time.time()
+
+    restore_cache()
 
     models = get_current_models()
     images = get_images(models)
@@ -469,6 +611,8 @@ def process():
 
     duration = time.time() - start
     print(f"Finished thumbnails in {duration:.2f} seconds")
+
+    update_cache()
 
 
 process()
