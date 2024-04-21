@@ -3,9 +3,10 @@
     "author": "umzi-x-dead",
     "license": "CC-BY-4.0",
     "tags": [
+        "dehalftone",
         "restoration"
     ],
-    "description": "Purpose: descreenton\n\nThe model was trained for some tests, but maybe someone will need to remove a screentone with a color image; in addition to the screentone, it can handle small halftones quite well",
+    "description": "The model was trained for some tests, but maybe someone will need to remove a screentone with a color image; in addition to the screentone, it can handle small halftones quite well",
     "date": "2024-02-19",
     "architecture": "esrgan",
     "size": [

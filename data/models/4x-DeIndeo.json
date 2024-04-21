@@ -3,10 +3,11 @@
     "author": "wild-west-quest",
     "license": "WTFPL",
     "tags": [
+        "compression-removal",
         "restoration",
         "video-frame"
     ],
-    "description": "Category: Video Compression\nPurpose: Indeo Compression Artifacts",
+    "description": "Purpose: Indeo Compression Artifacts",
     "date": "2020-08-15",
     "architecture": "esrgan",
     "size": [

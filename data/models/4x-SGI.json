@@ -7,7 +7,7 @@
         "dedither",
         "restoration"
     ],
-    "description": "Category: CGI\nPurpose: CGI\n\nUpscaling and dedithering pre-rendered sprites, images and textures made in the 90s. Basically vintage CGI.",
+    "description": "Upscaling and dedithering pre-rendered sprites, images and textures made in the 90s. Basically vintage CGI.",
     "date": "2020-12-17",
     "architecture": "esrgan",
     "size": [

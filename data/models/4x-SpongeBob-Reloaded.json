@@ -5,9 +5,11 @@
     "tags": [
         "anime",
         "cartoon",
-        "pixel-art"
+        "compression-removal",
+        "pixel-art",
+        "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art",
+    "description": "Purpose: Animation, Pixel Art",
     "date": "2020-12-11",
     "architecture": "esrgan",
     "size": [
@@ -32,6 +34,7 @@
     "trainingEpochs": 122,
     "trainingBatchSize": 20,
     "trainingHRSize": 128,
+    "trainingOTF": true,
     "dataset": "SpongeBob Season 11, downscaled with linear. Random OTF JPEG, dither, and indexing.",
     "datasetSize": 24123,
     "pretrainedModelG": "4x-SpongeBob",

@@ -7,7 +7,7 @@
         "restoration",
         "video-frame"
     ],
-    "description": "Category: Video Compression\nPurpose: Texturizing\n\nTries to reverse heavy h264 compression. Fails. Can be used to texturize images though.",
+    "description": "Purpose: Texturizing\n\nTries to reverse heavy h264 compression. Fails. Can be used to texturize images though.",
     "date": "2020-10-20",
     "architecture": "esrgan",
     "size": [

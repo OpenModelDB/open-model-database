@@ -3,6 +3,8 @@
     "author": "crustaceous-d",
     "license": null,
     "tags": [
+        "compression-removal",
+        "denoise",
         "photo",
         "restoration"
     ],

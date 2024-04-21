@@ -7,7 +7,7 @@
         "game-screenshots",
         "restoration"
     ],
-    "description": "Category: Game Screenshots\nPurpose: CGI\n\nGame Screenshots",
+    "description": "",
     "date": "2020-01-29",
     "architecture": "esrgan",
     "size": [

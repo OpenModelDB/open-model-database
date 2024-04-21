@@ -6,7 +6,7 @@
         "game-screenshots",
         "restoration"
     ],
-    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.\n\nPretrained model: 4xESRGAN originally, but I used each previous version as a pretrained until I got to v4.",
+    "description": "Purpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.\n\nPretrained model: 4xESRGAN originally, but I used each previous version as a pretrained until I got to v4.",
     "date": "2020-09-05",
     "architecture": "esrgan",
     "size": [

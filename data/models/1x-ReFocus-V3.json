@@ -6,7 +6,7 @@
         "deblur",
         "restoration"
     ],
-    "description": "Purpose: Deblur / ReFocus\n\nPurpose: DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",
+    "description": "DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",
     "date": "2022-03-12",
     "architecture": "esrgan",
     "size": [

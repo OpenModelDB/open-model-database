@@ -7,7 +7,7 @@
         "cartoon",
         "restoration"
     ],
-    "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nReplica of DigitalFrames 2.1 but interpolatable",
+    "description": "Purpose: Digital Animation\n\nReplica of DigitalFrames 2.1 but interpolatable",
     "date": "2021-02-18",
     "architecture": "esrgan",
     "size": [

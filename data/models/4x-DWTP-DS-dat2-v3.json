@@ -3,9 +3,10 @@
     "author": "umzi-x-dead",
     "license": "CC-BY-4.0",
     "tags": [
+        "dehalftone",
         "restoration"
     ],
-    "description": "Purpose: remove screentone\n\ndat descreenton model, designed to reduce discrepancies on tiles due to too much loss of the first version, while getting rid of the removal of paper texture https://discord.com/channels/547949405949657098/944307589284495410/1192058535257854042",
+    "description": "DAT descreenton model, designed to reduce discrepancies on tiles due to too much loss of the first version, while getting rid of the removal of paper texture https://discord.com/channels/547949405949657098/944307589284495410/1192058535257854042",
     "date": "2024-02-06",
     "architecture": "dat",
     "size": [

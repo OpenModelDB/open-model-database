@@ -4,7 +4,10 @@
     "license": "CC-BY-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "compression-removal",
+        "jpeg",
+        "restoration"
     ],
     "description": "Purpose: 2x anime upscaler which tries to preserve dof\n\n2x anime upscaler, a non-otf version of the HFA2kCompact model which tries to preserve dof by not deblurring.\n\nOriginal Link: https://drive.google.com/drive/folders/1RZbALUTCf4DYDTVMBR74b8Nt-7m6TEyk?usp=drive_link",
     "date": "2023-12-26",

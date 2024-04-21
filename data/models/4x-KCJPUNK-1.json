@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nUp-scaling Digital Animation",
+    "description": "Purpose: Digital Animation\n\nUp-scaling Digital Animation",
     "date": "2021-03-23",
     "architecture": "esrgan",
     "size": [

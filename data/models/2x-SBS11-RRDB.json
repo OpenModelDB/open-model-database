@@ -4,9 +4,10 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "pretrained"
     ],
-    "description": "Category: Pretrained Discriminators\nPurpose: Animation\n\nnone",
+    "description": "Pretrained Discriminators",
     "date": "2020-12-03",
     "architecture": "sofvsr",
     "size": null,

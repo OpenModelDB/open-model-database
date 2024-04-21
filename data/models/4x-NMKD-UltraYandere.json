@@ -10,7 +10,7 @@
         "jpeg",
         "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Art/Anime\n\nHighly flexible 2D Art upscaling",
+    "description": "Purpose: Art/Anime\n\nHighly flexible 2D Art upscaling",
     "date": "2020-10-08",
     "architecture": "esrgan",
     "size": [

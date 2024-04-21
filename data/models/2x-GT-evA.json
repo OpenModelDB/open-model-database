@@ -7,7 +7,7 @@
         "cartoon",
         "text"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nThis is my first 2xcompact model, the main purpose of it is to upscale Dragon ball GT. for upscaling videos that have grain I would recommend denoising and dehaloing it before passing it to the model for temporal stability.",
+    "description": "This is my first 2xcompact model, the main purpose of it is to upscale Dragon ball GT. for upscaling videos that have grain I would recommend denoising and dehaloing it before passing it to the model for temporal stability.",
     "date": "2022-12-14",
     "architecture": "compact",
     "size": [

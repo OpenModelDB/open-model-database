@@ -6,7 +6,7 @@
         "photo",
         "restoration"
     ],
-    "description": "Category: Cats\nPurpose: Cats\n\nPretrained model: Previous attempt",
+    "description": "Purpose: Cats\n\nPretrained model: Previous attempt",
     "date": "2020-11-28",
     "architecture": "esrgan",
     "size": [

@@ -6,7 +6,7 @@
         "debanding",
         "restoration"
     ],
-    "description": "Purpose: Debanding images",
+    "description": "",
     "date": "2020-12-21",
     "architecture": "esrgan",
     "size": [

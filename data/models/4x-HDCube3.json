@@ -8,7 +8,7 @@
         "game-textures",
         "restoration"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Gamecube and Wii textures.\nPretrained: 4x_HDcube2\n\nIt can be used for all image formats supported by Gamecube and Wii hardware and can remove its typical artifacts like CMPR Block Compression (DXT1 algorithm, also known as BC1), color palette errors, color reduction up to 8bit color depth and 1bit alpha depth.",
+    "description": "Purpose: Gamecube and Wii textures.\nPretrained: 4x_HDcube2\n\nIt can be used for all image formats supported by Gamecube and Wii hardware and can remove its typical artifacts like CMPR Block Compression (DXT1 algorithm, also known as BC1), color palette errors, color reduction up to 8bit color depth and 1bit alpha depth.",
     "date": "2022-12-13",
     "architecture": "esrgan",
     "size": [
