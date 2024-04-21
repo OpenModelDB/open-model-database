@@ -7,7 +7,7 @@
         "dedither",
         "restoration"
     ],
-    "description": "Category: GIF\nPurpose: GIF Restoration\n\nGIF Restoration",
+    "description": "GIF Restoration",
     "date": "2020-08-31",
     "architecture": "esrgan",
     "size": [

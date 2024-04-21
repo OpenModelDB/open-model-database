@@ -8,7 +8,7 @@
         "deblur",
         "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nIn addition to removing the vertical blur, the model upscales, sharpens and will remove MPEG-2 artifacting and a small amount of rainbowing and dot crawl. Another series afflicted with the vertical blur is Avatar the Last Airbender, which can be repaired by this model. The video fed into the model MUST be 540 vertical for the deblur to work properly.",
+    "description": "In addition to removing the vertical blur, the model upscales, sharpens and will remove MPEG-2 artifacting and a small amount of rainbowing and dot crawl. Another series afflicted with the vertical blur is Avatar the Last Airbender, which can be repaired by this model. The video fed into the model MUST be 540 vertical for the deblur to work properly.",
     "date": "2021-11-17",
     "architecture": "esrgan",
     "size": [

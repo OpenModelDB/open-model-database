@@ -3,9 +3,10 @@
     "author": "fielran",
     "license": "GPL-3.0-only",
     "tags": [
+        "game-screenshots",
         "game-textures"
     ],
-    "description": "Category: Game Screenshots\nPurpose: Chainmail game textures. Alternatively, it can be used to turn plain images into chainmail.\n\nA highly generative model for chainmail game textures. Works fairly well on items without visible chainmail texture (ie just a grey area) or items with clear chainmail texture, less well on items with present but poorly defined chainmail texture. I'm not 100% happy with it but it is still an improvement over existing models in enough situations to be worth releasing.",
+    "description": "Purpose: Chainmail game textures. Alternatively, it can be used to turn plain images into chainmail.\n\nA highly generative model for chainmail game textures. Works fairly well on items without visible chainmail texture (ie just a grey area) or items with clear chainmail texture, less well on items with present but poorly defined chainmail texture. I'm not 100% happy with it but it is still an improvement over existing models in enough situations to be worth releasing.",
     "date": "2022-10-06",
     "architecture": "esrgan",
     "size": [

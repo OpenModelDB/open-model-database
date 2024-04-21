@@ -6,7 +6,7 @@
         "game-screenshots",
         "restoration"
     ],
-    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png.pth\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
+    "description": "Purpose: Upscaling pack.png\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
     "date": "2020-01-26",
     "architecture": "esrgan",
     "size": [

@@ -3,9 +3,10 @@
     "author": "rastrum",
     "license": "CC0-1.0",
     "tags": [
-        "colorization"
+        "colorization",
+        "photo"
     ],
-    "description": "Purpose: Photos\n\nOld black and white photo restoration.",
+    "description": "Old black and white photo restoration.",
     "date": "2019-08-29",
     "architecture": "esrgan",
     "size": [

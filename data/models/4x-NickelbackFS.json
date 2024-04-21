@@ -5,7 +5,7 @@
     "tags": [
         "photo"
     ],
-    "description": "Category: Realistic Photos\nPurpose: Realistic Photos\n\nThis model aims to improve further on what has been achieved by the old Nickelback which was an improvement attempt over 4xESRGAN and also 4xBox. It can upscale most pictures/photos (granted they are clean enough) without destroying as much detail as Box and basic ESRGAN.",
+    "description": "This model aims to improve further on what has been achieved by the old Nickelback which was an improvement attempt over 4xESRGAN and also 4xBox. It can upscale most pictures/photos (granted they are clean enough) without destroying as much detail as Box and basic ESRGAN.",
     "date": "2020-07-10",
     "architecture": "esrgan",
     "size": [

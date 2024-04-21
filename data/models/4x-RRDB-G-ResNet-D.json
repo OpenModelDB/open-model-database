@@ -4,9 +4,10 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "photo",
+        "pretrained",
         "restoration"
     ],
-    "description": "Category: Pretrained Discriminators\nPurpose: Pretrained\n\nClean bicubic downscales / Pretrained models (G/D)",
+    "description": "Pretrained Discriminators\n\nClean bicubic downscales / Pretrained models (G/D)",
     "date": "2021-01-17",
     "architecture": "esrgan",
     "size": [

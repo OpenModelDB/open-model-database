@@ -7,7 +7,7 @@
         "cartoon",
         "pretrained"
     ],
-    "description": "Category: Pretrained Discriminators\nPurpose: Animation\n\nnone",
+    "description": "Pretrained Discriminators",
     "date": "2020-11-25",
     "architecture": "sofvsr",
     "size": null,

@@ -6,7 +6,7 @@
         "denoise",
         "restoration"
     ],
-    "description": "Purpose: Noise remover\n\nAttempts to remove the damages done from noise. Successor of sorts to Noisetoner_Poisson_150000_G",
+    "description": "Attempts to remove the damages done from noise. Successor of sorts to Noisetoner_Poisson_150000_G",
     "date": "2021-10-08",
     "architecture": "esrgan",
     "size": [

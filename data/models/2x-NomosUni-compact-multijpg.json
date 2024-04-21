@@ -4,6 +4,8 @@
     "license": "CC-BY-4.0",
     "tags": [
         "anime",
+        "compression-removal",
+        "jpeg",
         "restoration"
     ],
     "description": "2x compact fast universal upscaler pair trained with jpg degradation (down to 40) and multiscale (down_up, bicubic, bilinear, box, nearest, lanczos).",

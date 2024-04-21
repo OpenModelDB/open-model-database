@@ -3,10 +3,13 @@
     "author": "madiator",
     "license": "GPL-3.0-only",
     "tags": [
+        "anime",
+        "cartoon",
         "cgi",
+        "compression-removal",
         "restoration"
     ],
-    "description": "Category: CGI\nPurpose: CGI Animation\n\nmixed 3D/2D CGI animations on some 2D animations it might sharpen the edges. General usage is to upscale CGI animations compressed by YouTube.",
+    "description": "Mixed 3D/2D CGI animations on some 2D animations it might sharpen the edges. General usage is to upscale CGI animations compressed by YouTube.",
     "date": "2021-01-14",
     "architecture": "esrgan",
     "size": [

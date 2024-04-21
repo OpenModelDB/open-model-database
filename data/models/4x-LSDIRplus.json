@@ -3,8 +3,11 @@
     "author": "helaman",
     "license": "CC-BY-4.0",
     "tags": [
+        "compression-removal",
         "general-upscaler",
-        "photo"
+        "jpeg",
+        "photo",
+        "restoration"
     ],
     "description": "Interpolation of 4xLSDIRplusC and 4xLSDIRplusR to handle jpg compression and a little bit of noise/blur",
     "date": "2023-07-06",

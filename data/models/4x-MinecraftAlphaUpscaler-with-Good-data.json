@@ -6,7 +6,7 @@
         "game-screenshots",
         "restoration"
     ],
-    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.",
+    "description": "Purpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.",
     "date": "2020-01-29",
     "architecture": "esrgan",
     "size": [

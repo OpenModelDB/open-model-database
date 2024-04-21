@@ -3,9 +3,11 @@
     "author": "umzi-x-dead",
     "license": "CC-BY-4.0",
     "tags": [
-        "manga"
+        "dehalftone",
+        "manga",
+        "restoration"
     ],
-    "description": "Purpose: descreenton\n\nI just decided to finish off the previous one, made the manga design more clear and corrected the deviation in color temperature by adding a more diverse set of colors",
+    "description": "I just decided to finish off the previous one, made the manga design more clear and corrected the deviation in color temperature by adding a more diverse set of colors",
     "date": "2024-02-19",
     "architecture": "esrgan",
     "size": [
