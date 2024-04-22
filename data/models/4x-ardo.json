@@ -21,8 +21,7 @@
             "size": 6718451,
             "sha256": "03a1a017522017c49bdecd2814303f9413b765b715b22f22fc9cdffe697f90ce",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-ardo.pth",
-                "https://cdn.discordapp.com/attachments/579685650824036387/1117894518642069514/4x_ardo.zip"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-ardo.pth"
             ]
         }
     ],

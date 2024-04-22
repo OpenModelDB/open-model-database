@@ -3,7 +3,8 @@
     "author": "umzi-x-dead",
     "license": null,
     "tags": [
-        "manga"
+        "manga",
+        "pretrained"
     ],
     "description": "Purpose: pre-workout to speed up your workouts\n\nWhile experimenting with color models for cugan, I just ran into problems that the official models are not imported correctly and have additional processing in addition to resizing. As a result, for my project I trained 2 x cugans for neosr; only resizing losses were applied to the dataset `(“lanczos”, “bicubic”, “bilenear”, “HAMMING”, “NEAREST”)`",
     "date": "2024-02-19",
