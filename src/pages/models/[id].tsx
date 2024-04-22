@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import React, { ReactNode, useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
@@ -377,6 +378,8 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
         }
     }, [staticSimilar, staticModelData, modelData, modelId, archData]);
 
+    const router = useRouter();
+
     return (
         <>
             <HeadCommon
@@ -417,6 +420,27 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         />
                         <div className="relative">
                             <div>
+                                {editMode && (
+                                    <div className="text-right">
+                                        <button
+                                            onClick={() => {
+                                                if (confirm('Are you sure you want to delete this model?')) {
+                                                    webApi.models.delete([modelId]).then(
+                                                        () => {
+                                                            router.push('/').catch(console.error);
+                                                        },
+                                                        (e) => {
+                                                            console.error(e);
+                                                            alert(`Error deleting model: ${String(e)}`);
+                                                        }
+                                                    );
+                                                }
+                                            }}
+                                        >
+                                            Delete Model
+                                        </button>
+                                    </div>
+                                )}
                                 <h1 className="mt-0 mb-1 leading-10">
                                     <EditableLabel
                                         readonly={!editMode}
