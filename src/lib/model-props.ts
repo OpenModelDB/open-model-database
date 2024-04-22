@@ -306,7 +306,7 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
                         customValidate(url) {
                             if (url.startsWith('https://cdn.discordapp.com/')) {
                                 // For later. They seem to still work.
-                                // return 'Discord CDN links are not allowed, because they expire after 24h.';
+                                return 'Discord CDN links are not allowed, because they expire after 24h. Please host your models somewhere else. We suggest Google Drive or GitHub Releases.';
                             }
                         },
                     },
