@@ -19,7 +19,7 @@
             "size": 8938330,
             "sha256": "b9d33d62e4cf67a4033b4332c9d742b5b23192836289ec8b1af1dbcb7d00098c",
             "urls": [
-                "https://cdn.discordapp.com/attachments/579685650824036387/1184886476274684014/1x_span_anime_pretrain.pth?ex=658d9a86&is=657b2586&hm=075c23cf0c16b4fd8d0639965091a116bc85cb9d398e3857322d2697268be086&"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-span-anime-pretrain.pth"
             ]
         }
     ],
