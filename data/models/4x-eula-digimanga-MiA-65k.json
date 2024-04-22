@@ -23,7 +23,7 @@
             "size": 67010245,
             "sha256": "425c8fb3855b64dacd64cc83e4a9ce3fd61bfc7e92b6541129439bc15ad4465b",
             "urls": [
-                "https://cdn.discordapp.com/attachments/450036622940045325/1199472532269584425/4x_eula_digimanga_MiA_65k.pth?ex=65de5a58&is=65cbe558&hm=094cab134f4cff0cc6e9d6ecbe74b5b07b367224f87c917b68d288b42b71bc9c&"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-eula-digimanga-MiA-65k.pth"
             ]
         }
     ],
