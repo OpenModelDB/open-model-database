@@ -3,7 +3,8 @@
     "author": "kim2091",
     "license": "CC0-1.0",
     "tags": [
-        "anime"
+        "anime",
+        "pretrained"
     ],
     "description": "Basic 1x model to use for SPAN anime models. Enjoy",
     "date": "2023-12-14",
