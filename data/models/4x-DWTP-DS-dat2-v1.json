@@ -26,7 +26,7 @@
             "size": 140296934,
             "sha256": "64ea688f564f1779e24706ddd51e2326f6ab74b7cae6df43b5694cc1fc83a376",
             "urls": [
-                "https://cdn.discordapp.com/attachments/1170374027144089762/1204510487690354709/4x_DWTP_DS_dat2_v1.pth?ex=65de394e&is=65cbc44e&hm=bf9cfaad5898812f31a633b13e4feb5ab7e5e6b54db2c3447bbda62f507e8a4d&"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-DWTP-DS-dat2-v1.pth"
             ]
         }
     ],

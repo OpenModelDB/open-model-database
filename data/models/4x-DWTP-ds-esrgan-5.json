@@ -22,7 +22,7 @@
             "size": 67029568,
             "sha256": "1a98d50b9e71c575012f7f03d97fcc04c268d8b977fb4a3e08d0ae9dc151e773",
             "urls": [
-                "https://cdn.discordapp.com/attachments/1170374027144089762/1188611470825619516/4x_DWTP_ds_esrgan_5.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-DWTP-ds-esrgan-5.pth"
             ]
         }
     ],
