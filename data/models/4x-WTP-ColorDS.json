@@ -23,7 +23,7 @@
             "size": 67029568,
             "sha256": "5eb544a0826a923602cc8dc358dd00b3232288a35c76db9537622220a57bec9f",
             "urls": [
-                "https://cdn.discordapp.com/attachments/579685650824036387/1208066675136528456/4x_WTP_ColorDS.pth?ex=65e1eec4&is=65cf79c4&hm=a28e4d5fba8e4e92b496b98f34e4ab5a1aded359715a94953b862fad03585c01&"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-WTP-ColorDS.pth"
             ]
         }
     ],
