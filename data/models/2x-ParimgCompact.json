@@ -22,8 +22,7 @@
             "size": 2419014,
             "sha256": "405f8ce5b18ff23107028657c00687c7d27d74976a8999fab39f7c02680b1164",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-ParimgCompact.pth",
-                "https://cdn.discordapp.com/attachments/579685650824036387/1103997995172765787/2xParimgCompact.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-ParimgCompact.pth"
             ]
         }
     ],
