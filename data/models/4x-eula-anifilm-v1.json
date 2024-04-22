@@ -23,8 +23,7 @@
             "size": 66961958,
             "sha256": "c168436f137f91e842d952821391b7efb689bfc7b316c0886b2913c31f0d02f0",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-eula-anifilm-v1.pth",
-                "https://cdn.discordapp.com/attachments/450036622940045325/1052663903064162426/4x_eula_anifilm_v1_225k.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-eula-anifilm-v1.pth"
             ]
         }
     ],
