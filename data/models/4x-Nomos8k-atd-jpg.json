@@ -1,0 +1,82 @@
+{
+    "name": " 4xNomos8k_atd_jpg",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo",
+        "restoration"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/4xNomos8k_atd_jpg)\n\nName: 4xNomos8k_atd_jpg   \nLicense: CC BY 4.0   \nAuthor: Philip Hofmann   \nNetwork: [ATD](https://github.com/LabShuHangGU/Adaptive-Token-Dictionary)   \nScale: 4   \nRelease Date: 22.03.2024   \nPurpose: 4x photo upscaler, handles jpg compression   \nIterations: 240'000   \nepoch: 152   \nbatch_size: 6, 3   \nHR_size: 128, 192   \nDataset: nomos8k   \nNumber of train images: 8492   \nOTF Training: Yes   \nPretrained_Model_G: 003_ATD_SRx4_finetune   \n\nDescription:\n4x photo upscaler which handles jpg compression. This model will preserve noise. Trained on the very recently released (~2 weeks ago) Adaptive-Token-Dictionary network.   \n\nTraining details: \nAdamW optimizer with U-Net SN discriminator and BFloat16.\nDegraded with otf jpg compression down to 40, re-compression down to 40, together with resizes and the blur kernels.  \nLosses: PixelLoss using CHC (Clipped Huber with Cosine Similarity Loss), PerceptualLoss using Huber, GANLoss, [LDL](https://github.com/csjliang/LDL) using Huber, YCbCr Color Loss (bt601) and Luma Loss (CIE XYZ) on [neosr](https://github.com/muslll/neosr).\n\n7 Examples:\n[Slowpics](https://slow.pics/s/uwnoI435)",
+    "date": "2024-03-22",
+    "architecture": "atd",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 81978555,
+            "sha256": "f29bbe14d651be9331462f038bc13f1027f2564e14a9b44e2f6bf6eb2286f840",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos8k_atd_jpg/4xNomos8k_atd_jpg.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 81689540,
+            "sha256": "009671cec5a384db31052b52e344e5989b0c51a5ad4d25a8c2c629f658754d13",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos8k_atd_jpg/4xNomos8k_atd_jpg.safetensors"
+            ]
+        }
+    ],
+    "trainingIterations": 240000,
+    "trainingEpochs": 152,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 192,
+    "trainingOTF": true,
+    "dataset": "nomos8k",
+    "datasetSize": 8492,
+    "pretrainedModelG": "4x-003-ATD-SRx4-finetune",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/cQaluSYK.png",
+            "SR": "https://i.slow.pics/F1u6WFSN.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/dYreHhRM.png",
+            "SR": "https://i.slow.pics/SBpfYVLG.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/XJOfxR7Q.png",
+            "SR": "https://i.slow.pics/CMivOKUZ.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0oPYzsTs.png",
+            "SR": "https://i.slow.pics/pP7htVeS.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/A5LMdT9v.png",
+            "SR": "https://i.slow.pics/fBCGH7yy.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ldEYNWlT.png",
+            "SR": "https://i.slow.pics/xdmVEMYI.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/3oWFbFSX.png",
+            "SR": "https://i.slow.pics/zZ0RVK8I.png"
+        }
+    ]
+}
