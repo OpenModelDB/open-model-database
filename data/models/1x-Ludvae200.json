@@ -1,0 +1,40 @@
+{
+    "name": "Ludvae200",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo"
+    ],
+    "description": "[Github Release Link](https://github.com/Phhofm/models/releases/Ludvae200)\n\nName: Ludvae200   \nLicense: CC BY 4.0   \nAuthor: Philip Hofmann   \nNetwork: [LUD-VAE](https://github.com/zhengdharia/LUD-VAE)   \nScale: 1   \nRelease Date: 25.03.2024   \nPurpose: 1x realistic noise degradation model    \nIterations: 190'000   \nH_size: 64   \nn_channels: 3   \ndataloader_batch_size: 16    \nH_noise_level: 8   \nL_noise_level: 3   \nDataset: [RealLR200](https://drive.google.com/drive/folders/1L2VsQYQRKhWJxe6yWZU9FgBWSgBCk6mz)   \nNumber of train images: 200   \nOTF Training: No   \nPretrained_Model_G: None   \n\nDescription:\n1x realistic noise degradation model, trained on the [RealLR200](https://drive.google.com/drive/folders/1L2VsQYQRKhWJxe6yWZU9FgBWSgBCk6mz) dataset as found released on the [SeeSR](https://github.com/cswry/SeeSR) github repo.\nNext to the ludvae200.pth model file, I provide a ludvae200.zip file which not only contains the code but also an inference script to run this model on the dataset of your choice.\nAdapt the ludvae200_inference.py script accordingly by adjusting the file paths at the beginning section, to your input folder, output folder, the folder path holding the ludvae200.pth model, and a folder path where you want the text file to be generated. I made the textfile generation the same way as I did in [Kim's Dataset Destroyer](https://github.com/Kim2091/helpful-scripts/tree/main/Dataset%20Destroyer), which means you will have each image file logged with each of the values used to degrade that specific image file in the resulting text file, which will append only and never overwrite.\n\nYou can also adjust the strength settings inside the inference script file to fit to your needs. If you in general want less strong noise for example, you should adjust the temperature upper limit from 0.4 to 0.2 or go even lower.\nSo in line 96 change \"temperature_strength = uniform(0.1,0.4)\" to \"temperature_strength = uniform(0.1,0.2)\" just to give an example.\n\nThese values are defaulted to my needs of my last dataset degradation workflow I used, but feel free to adjust these values. You can also do the same as I did, temporarily using deterministic values with multiple runs to determine the min and max values of noise generation you deem suitable for your dataset needs.\n\nSee the examples of what this looked like for my last dataset workflow I used my model in.",
+    "date": "2024-03-25",
+    "architecture": "ludvae",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [],
+    "trainingIterations": 190000,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "RealLR200",
+    "datasetSize": 200,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/316479815-2cf53d9b-a601-4fea-9440-84c968a23e50.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ0ODIyODksIm5iZiI6MTcxNDQ4MTk4OSwicGF0aCI6Ii8xNDc1NTY3MC8zMTY0Nzk4MTUtMmNmNTNkOWItYTYwMS00ZmVhLTk0NDAtODRjOTY4YTIzZTUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MzAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDMwVDEyNTk0OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFhZDJjZmU0ZDdhNzAwOTVkZTE1NjI1NmY2YjFjZWUzMTM1ZTI3YjJhODdlN2FlZDNjZmFiYjhhMTk0MWE0ZDMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.Vzleq7_RFfhfhno_ntHKdqFa4AWX9LIiZLKg4tdoZSY"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/316479937-ec81280a-777d-4e08-b2a5-65e5411f744c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ0ODIyODksIm5iZiI6MTcxNDQ4MTk4OSwicGF0aCI6Ii8xNDc1NTY3MC8zMTY0Nzk5MzctZWM4MTI4MGEtNzc3ZC00ZTA4LWIyYTUtNjVlNTQxMWY3NDRjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MzAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDMwVDEyNTk0OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJmMjdiNWMyYjFjM2QxM2JlOTI0NjhhMmQxNDQ2ZjYzNTEyNTE2ODQyMTgyZmFiNDY1OGUzNmU4YWNiOWM1NWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.oAz1y9wZELhmCakvI7GSziJCH9opEIZ_PwxxVmzSj24"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/316479945-67b6178c-b5d3-43a2-b2e0-b6a3cfea6500.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ0ODIyODksIm5iZiI6MTcxNDQ4MTk4OSwicGF0aCI6Ii8xNDc1NTY3MC8zMTY0Nzk5NDUtNjdiNjE3OGMtYjVkMy00M2EyLWIyZTAtYjZhM2NmZWE2NTAwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MzAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDMwVDEyNTk0OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM2ZDY2ZmM5MjVjNjBiODgwYWE2MTg4YzllZGM0ODliYTA4ODBlMzhhNTU4YmMxMmIxYzViNGZjMWVlOWEyN2MmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.OG1MtFef3S-AQnxZT6HByLA95BN8TwUtV4z8iMd3LK8"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/316481351-b0aba32a-e0fc-430b-aacf-7f1b160f2d0c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ0ODIyODksIm5iZiI6MTcxNDQ4MTk4OSwicGF0aCI6Ii8xNDc1NTY3MC8zMTY0ODEzNTEtYjBhYmEzMmEtZTBmYy00MzBiLWFhY2YtN2YxYjE2MGYyZDBjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MzAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDMwVDEyNTk0OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM3OTdmNjljYmE2YzY4ZGQyNmFjNzBhOTVmYWQwYTI0NjMxZjNkOWZkZjk5NDhiYTk2MWZjODg3NDg4NGJkMjUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.mQ-cStR9WSnj613Ob9DnEbkHZqPy-vMeEk9NOaoV0fE"
+        }
+    ]
+}
