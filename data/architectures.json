@@ -1,4 +1,12 @@
 {
+    "atd": {
+        "name": "ATD",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "cain": {
         "name": "CAIN",
         "input": "video",
