@@ -1,0 +1,33 @@
+{
+    "name": "003_ATD_SRx4_finetune",
+    "author": "lehengzhang",
+    "license": "Apache-2.0",
+    "tags": [
+        "pretrained",
+        "research"
+    ],
+    "description": "Official 4x finetune pretrain from [ATD](https://github.com/LabShuHangGU/Adaptive-Token-Dictionary)\n\n# Adaptive Token Dictionary\n\nThis repository is an official implementation of the paper \"Transcending the Limit of Local Window: Advanced Super-Resolution Transformer with Adaptive Token Dictionary\", CVPR, 2024.\n\n[[Arxiv](https://arxiv.org/abs/2401.08209)] [[visual results](https://drive.google.com/drive/folders/1HwEbAGU6WEw9ZGbFdt__BOJo_5DKflEb?usp=sharing)] [[pretrained models](https://drive.google.com/drive/folders/1D3BvTS1xBcaU1mp50k3pBzUWb7qjRvmB?usp=sharing)]\n\nBy Leheng Zhang, Yawei Li, Xingyu Zhou, Xiaorui Zhao, and Shuhang Gu.\n\n> **Abstract:** Single Image Super-Resolution is a classic computer vision problem that involves estimating high-resolution (HR) images from low-resolution (LR) ones. Although deep neural networks (DNNs), especially Transformers for super-resolution, have seen significant advancements in recent years, challenges still remain, particularly in limited receptive field caused by window-based self-attention. To address these issues, we introduce a group of auxiliary **A**daptive **T**oken **D**ictionary to SR Transformer and establish an **ATD**-SR method. The introduced token dictionary could learn prior information from training data and adapt the learned prior to specific testing image through an adaptive refinement step. The refinement strategy could not only provide global information to all input tokens but also group image tokens into categories. Based on category partitions, we further propose a category-based self-attention mechanism designed to leverage distant but similar tokens for enhancing input features. The experimental results show that our method achieves the best performance on various single image super-resolution benchmarks.\n> \n> <img width=\"800\" src=\"figures/tdca-acmsa.png\"> \n> <img width=\"800\" src=\"figures/arch.png\"> \n> <br/><br/>\n> <img width=\"800\" src=\"figures/viscomp_076.png\">",
+    "date": "2024-03-05",
+    "architecture": "atd",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 163803535,
+            "sha256": "092bf6aa82f0ecb9f681a7da6a8e65e2c1280ae5b44f1608f60742d88547b833",
+            "urls": [
+                "https://drive.google.com/file/d/1J9kR9OyrOxtJ5Ygbr_W116BLBwnD4VNL/view?usp=drive_link"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://raw.githubusercontent.com/LabShuHangGU/Adaptive-Token-Dictionary/main/figures/viscomp_076.png"
+        }
+    ]
+}
