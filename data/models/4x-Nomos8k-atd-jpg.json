@@ -45,6 +45,11 @@
     "images": [
         {
             "type": "paired",
+            "LR": "https://i.slow.pics/ldEYNWlT.png",
+            "SR": "https://i.slow.pics/xdmVEMYI.png"
+        },
+        {
+            "type": "paired",
             "LR": "https://i.slow.pics/cQaluSYK.png",
             "SR": "https://i.slow.pics/F1u6WFSN.png"
         },
@@ -67,11 +72,6 @@
             "type": "paired",
             "LR": "https://i.slow.pics/A5LMdT9v.png",
             "SR": "https://i.slow.pics/fBCGH7yy.png"
-        },
-        {
-            "type": "paired",
-            "LR": "https://i.slow.pics/ldEYNWlT.png",
-            "SR": "https://i.slow.pics/xdmVEMYI.png"
         },
         {
             "type": "paired",
