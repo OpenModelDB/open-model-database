@@ -12,7 +12,17 @@
     "scale": 1,
     "inputChannels": 3,
     "outputChannels": 3,
-    "resources": [],
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 22870238,
+            "sha256": "a0c2a27f38dfbccba5cef33ffa19317b488ddcdd2ca7d5fee7df1b40a4d2b80f",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/Ludvae200/ludvae200.pth"
+            ]
+        }
+    ],
     "trainingIterations": 190000,
     "trainingBatchSize": 16,
     "trainingHRSize": 64,
