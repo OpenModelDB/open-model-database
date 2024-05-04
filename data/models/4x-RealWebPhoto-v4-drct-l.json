@@ -1,0 +1,90 @@
+{
+    "name": "4xRealWebPhoto_v4_drct-l",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xRealWebPhoto_v4_drct-l)\n\n## 4xRealWebPhoto_v4_drct-l\n\n**Scale:** 4  \n**Architecture:** [DRCT](https://github.com/ming053l/DRCT)  \n**Architecture Option:** [DRCT-L](https://github.com/ming053l/DRCT/blob/8c13e63135f494913cd504c073e41ef52250d1d4/options/train/train_DRCT-L_SRx4_finetune_from_ImageNet_pretrain.yml#L56)\n\n**Author:** Philip Hofmann  \n**License:** CC-BY-0.4  \n**Purpose:** Restoration  \n**Subject:** Realistic, Photography  \n**Input Type:** Images  \n**Release Date:** 02.05.2024  \n\n**Dataset:** 4xRealWebPhoto_v4  \n**Dataset Size:** 8492  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** 4xmssim_drct-l_pretrain  \n**Iterations:** 260'000  \n**Batch Size:** 6,4  \n**GT Size:** 128,192  \n\n**Description:** The first real-world drct model, so I am releasing it, or at least my try at it, maybe others will be able to get better results than me, I think I'd recommend my [4xRealWebPhoto_v3_atd](https://github.com/Phhofm/models/releases/tag/4xRealWebPhoto_v3_atd) model over this one if a real-world model for upscaling photos downloaded from the web is desired.   \nThis model is based on my previously released drct pretrain. Used mixup, cutmix, resizemix augmentations, and mssim, perceptual, gan, dists, ldl, focalfrequency, gradvar, color and luma losses.\n\n**Showcase:**\n[Slow.pics](https://slow.pics/s/VOKVChT9)",
+    "date": "2024-05-02",
+    "architecture": "drct",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 242789758,
+            "sha256": "ebbac92d14989f5c859cd516c81c3e4020d7f94422ed28aed23746adf5f5a18d",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v4_drct-l/4xRealWebPhoto_v4_drct-l.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 116790347,
+            "sha256": "f4bc3847096b64b178ff12f324ceb1a5a2b22921ca71fae85e5ad5fa12b49675",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v4_drct-l/4xRealWebPhoto_v4_drct-l_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 260000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "4xRealWebPhoto_v4",
+    "datasetSize": 8492,
+    "pretrainedModelG": "4x-mssim-drct-l-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/QNnbEkDj.png",
+            "SR": "https://i.slow.pics/zTaZ3aBS.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/T6HRFDDD.png",
+            "SR": "https://i.slow.pics/vjjme3f1.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/P5LsKxXG.png",
+            "SR": "https://i.slow.pics/62W4Riyg.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NDIKkiVD.png",
+            "SR": "https://i.slow.pics/pqknXuzo.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/qgKG3fPd.png",
+            "SR": "https://i.slow.pics/HXdI5F0s.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/f1Hw5sHa.png",
+            "SR": "https://i.slow.pics/THesUoSp.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Och0dSkm.png",
+            "SR": "https://i.slow.pics/72XtOoil.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/7TyHDZSu.png",
+            "SR": "https://i.slow.pics/sTwnVLHd.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/sXMhqJRw.png",
+            "SR": "https://i.slow.pics/7xYlvQ5p.png"
+        }
+    ]
+}
