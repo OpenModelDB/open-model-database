@@ -67,6 +67,13 @@
             "pytorch"
         ]
     },
+    "drct": {
+        "name": "DRCT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "edsr": {
         "name": "EDSR",
         "input": "image",

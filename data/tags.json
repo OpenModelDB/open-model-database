@@ -180,6 +180,10 @@
         "name": "DITN",
         "description": ""
     },
+    "arch:drct": {
+        "name": "DRCT",
+        "description": ""
+    },
     "arch:edsr": {
         "name": "EDSR",
         "description": ""

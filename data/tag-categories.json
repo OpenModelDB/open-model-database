@@ -75,7 +75,8 @@
             "arch:sr-res-net",
             "arch:swift-srgan",
             "arch:swinir",
-            "arch:atd"
+            "arch:atd",
+            "arch:drct"
         ]
     },
     "platform": {
