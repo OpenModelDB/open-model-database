@@ -285,7 +285,7 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
                 type: {
                     name: 'Type',
                     type: 'string',
-                    enum: ['pth', 'onnx'],
+                    enum: ['pth', 'onnx', 'safetensors'],
                 },
                 size: {
                     name: 'Size',
