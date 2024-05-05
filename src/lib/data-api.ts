@@ -129,7 +129,6 @@ export class MapCollection<Id, Value> implements CollectionApi<Id, Value> {
     }
 
     get(id: Id): Promise<Value> {
-        console.log('🚀 ~ MapCollection<Id, ~ get ~ id:', id);
         const value = this.map.get(id);
         if (value === undefined) {
             throw new Error(`No value for id ${String(id)}`);
@@ -143,12 +142,10 @@ export class MapCollection<Id, Value> implements CollectionApi<Id, Value> {
         return Promise.resolve(new Map(this.map));
     }
     update(updates: Iterable<readonly [Id, Value]>): Promise<void> {
-        console.log('🚀 ~ MapCollection<Id, ~ update ~ updates:', updates);
         updates = new Map(updates);
         for (const [id, value] of updates) {
             this.map.set(id, value);
         }
-        console.log('🚀 ~ MapCollection<Id, ~ update ~ this.map:', this.map);
         return Promise.resolve();
     }
     delete(ids: Iterable<Id>): Promise<void> {

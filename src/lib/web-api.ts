@@ -111,7 +111,6 @@ const getDbAPI = async (): Promise<DBApi> => {
 
 export const getWebApi = lazy(async (): Promise<DBApi | undefined> => {
     const webApi = await getDbAPI();
-    console.log('🚀 ~ getWebApi ~ webApi:', webApi);
 
     // we do an empty update to test the waters
     return webApi.tags.update([]).then(

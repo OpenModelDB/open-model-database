@@ -9,7 +9,6 @@ export default function Page() {
 
     useEffect(() => {
         const model = JSON.parse(sessionStorage.getItem('dummy-model') ?? '{}') as Model;
-        console.log('🚀 ~ useEffect ~ model:', model);
         setModel(model);
     }, []);
 
