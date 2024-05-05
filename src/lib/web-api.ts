@@ -1,5 +1,6 @@
-import { CollectionApi, DBApi, SessionStorageMapCollection, notifyOnWrite } from './data-api';
+import { CollectionApi, DBApi, notifyOnWrite } from './data-api';
 import { JsonApiCollection, JsonApiRequestHandler, JsonRequest, JsonResponse, Method } from './data-json-api';
+import { SessionStorageMapCollection } from './data-session';
 import { IS_DEPLOYED, SITE_URL } from './site-data';
 import { delay, lazy, noop } from './util';
 

@@ -1,11 +1,17 @@
+import { GetStaticProps } from 'next';
+import { ParsedUrlQuery } from 'querystring';
 import { useEffect, useState } from 'react';
 import { Model, ModelId } from '../../lib/schema';
 
 import ModelsPage from './[id]';
 
-export default function Page() {
+type Params = ParsedUrlQuery;
+interface Props {
+    modelId: ModelId;
+}
+
+export default function Page({ modelId }: Props) {
     const [model, setModel] = useState<Model | null>(null);
-    const id = 'OMDB_ADDMODEL_DUMMY' as ModelId;
 
     useEffect(() => {
         const model = JSON.parse(sessionStorage.getItem('dummy-model') ?? '{}') as Model;
@@ -18,10 +24,17 @@ export default function Page() {
         <div>
             <ModelsPage
                 editModeOverride={true}
-                modelData={{ [id]: model }}
-                modelId={id}
+                modelData={{ [modelId]: model }}
+                modelId={modelId}
                 similar={[]}
             />
         </div>
     );
 }
+
+export const getStaticProps: GetStaticProps<Props, Params> = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    return {
+        props: { modelId: 'OMDB_ADDMODEL_DUMMY' as ModelId },
+    };
+};
