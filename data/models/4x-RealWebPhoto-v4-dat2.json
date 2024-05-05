@@ -1,0 +1,115 @@
+{
+    "name": "4xRealWebPhoto_v4_dat2",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo",
+        "restoration"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/4xRealWebPhoto_v4_dat2)\n\n## 4xRealWebPhoto_v4_dat2\n\n**Scale:** 4   \n**Architecture:** DAT   \n\n**Author:** Philip Hofmann   \n**License:** CC-BY-4.0   \n**Purpose:** Compression Removal, Deblur, Denoise, JPEG, WEBP, Restoration   \n**Subject:** Photography   \n**Input Type:** Images   \n**Date:** 04.04.2024   \n\n**Architecture Option:** DAT-2   \n**I/O Channels:** 3(RGB)->3(RGB)   \n\n**Dataset:** Nomos8k   \n**Dataset Size:** 8492   \n**OTF (on the fly augmentations):** No   \n**Pretrained Model:** DAT_2_x4   \n**Iterations:** 243'000   \n**Batch Size:** 4-6   \n**GT Size:** 128-256   \n\n**Description:** 4x Upscaling Model for Photos from the Web. The dataset consists of only downscaled photos (to handle good quality), downscaled and compressed photos (uploaded to the web and compressed by service provider), and downscale, compressed, rescaled, recompressed photos (downloaded from the web and re-uploaded to the web).\n\nApplied lens blur, realistic noise with my ludvae200 model, JPG and WEBP compression (40-95), and down_up, linear, cubic_mitchell, lanczos, gaussian and box downsampling algorithms. For details on the degradation process, check out the pdf with its explanations and visualizations.\n\nThis is basically a dat2 version of my previous 4xRealWebPhoto_v3_atd model, but trained with a bit stronger noise values, and also a single image per variant so drastically reduced training dataset size.\n \n\n**Showcase:** \n[12 Slowpics Examples](https://slow.pics/s/TvJ21pJG)",
+    "date": "2024-04-30",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140299118,
+            "sha256": "9b82f8f60826e59b9d2e56a6e6ad9a842b84d57a9ec5ed7377bf120032b2c4c9",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v4_dat2/4xRealWebPhoto_v4_dat2.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 139792588,
+            "sha256": "819047acf43073f63ea7289ed94d6991ba8446a3bdf38e274fadfcbaa2b7381d",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v4_dat2/4xRealWebPhoto_v4_dat2.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 48760847,
+            "sha256": "a9a3a9099e0108b793556ed9cf2123a61a727bbc611dd8d93475f7144596589e",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v4_dat2/4xRealWebPhoto_v4_dat2_fp32_opset17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 243000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "4xRealWebPhoto_v4",
+    "datasetSize": 8492,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/31VMozq1.png",
+            "SR": "https://i.slow.pics/q5i4474A.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/kKcliX1P.png",
+            "SR": "https://i.slow.pics/QhOZRnvr.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/jwLpcajq.png",
+            "SR": "https://i.slow.pics/fNsgnlu6.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BzcCFRjg.png",
+            "SR": "https://i.slow.pics/giJItnCU.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/vQqrYQOP.png",
+            "SR": "https://i.slow.pics/1BG6po8d.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/88w7zIGu.png",
+            "SR": "https://i.slow.pics/cnC3mtmr.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/RvXOkHnX.png",
+            "SR": "https://i.slow.pics/T4RqvAa8.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/lufp8SfF.png",
+            "SR": "https://i.slow.pics/XUSKW17W.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/zSMuq9JO.png",
+            "SR": "https://i.slow.pics/aSpuYkeF.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/uAx6dITm.png",
+            "SR": "https://i.slow.pics/51uz3oft.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/cVSEH68q.png",
+            "SR": "https://i.slow.pics/o4T1W3h0.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0bwUZwiM.png",
+            "SR": "https://i.slow.pics/uVH0LRKw.png"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "name": "4xmssim_drct-s_pretrain",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "photo",
+        "pretrained"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xDRCT-mssim-pretrains)\n\nSince no [DRCT](https://github.com/ming053l/DRCT/tree/main) model releases exist yet, I am releasing my drct-s, drct and drct-l pretrains. \nThese can be used to speed up and stabilize early training stages when training new drct models.\nTrained with mssim (and augs, and color and lumaloss) on downscaled [nomosuni](https://github.com/muslll/neosr/tree/0ecbeb98dcefd97801da0ea39ca2cd03a87fce21?tab=readme-ov-file#datasets).\nTraining files are also provided additionally.\n\n\n## 4xmssim_drct-s_pretrain.pth  \n\n**Scale:** 4  \n**Architecture:** [DRCT](https://github.com/ming053l/DRCT)  \n**Architecture Option:** [DRCT-S](https://github.com/muslll/neosr/blob/0ecbeb98dcefd97801da0ea39ca2cd03a87fce21/neosr/archs/drct_arch.py#L923)  \n\n**Author:** Philip Hofmann  \n**License:** CC-BY-0.4  \n**Purpose:** Pretrained  \n**Subject:** Anime, Photography  \n**Input Type:** Images  \n**Release Date:** 28.04.2024  \n\n**Dataset:** [nomos_uni](https://github.com/muslll/neosr?tab=readme-ov-file#datasets)  \n**Dataset Size:** 2989  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** None (=From Scratch)  \n**Iterations:** 75'000  \n**Batch Size:** 6  \n**GT Size:** 128-320  \n\n**Description:** A pretrain to start drct-s model training, since there are no official released drct pretrains yet I trained these myself and release them here.",
+    "date": "2024-04-28",
+    "architecture": "drct",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 54001074,
+            "sha256": "d07ebac78c5fe1295480275189f132439aed4529e02dc4623a2b0b9684d8d787",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xDRCT-mssim-pretrains/4xmssim_drct-s_pretrain.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 75000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 320,
+    "trainingOTF": false,
+    "dataset": "nomos_uni",
+    "datasetSize": 2989,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/VR7jnVwY.png",
+            "SR": "https://i.slow.pics/mlW7H4rg.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/AEap6lvI.png",
+            "SR": "https://i.slow.pics/VrAtzBN4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/wkjWR3Vf.png",
+            "SR": "https://i.slow.pics/c6RcHIqK.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Mby5C2FV.png",
+            "SR": "https://i.slow.pics/w9Ogqxq6.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/VhannR7o.png",
+            "SR": "https://i.slow.pics/rEeJBKHP.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NNzIVCM6.png",
+            "SR": "https://i.slow.pics/UW6BLp9z.png"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "RGT_S",
+    "author": "zheng-chen",
+    "license": "Apache-2.0",
+    "tags": [
+        "pretrained",
+        "research"
+    ],
+    "description": "Official 4x rgt-s pretrain from [RGT](https://github.com/zhengchen1999/RGT)\n\n# Recursive Generalization Transformer for Image Super-Resolution\n\n[Zheng Chen](https://zhengchen1999.github.io/), [Yulun Zhang](http://yulunzhang.com/), [Jinjin Gu](https://www.jasongt.com/), [Linghe Kong](https://www.cs.sjtu.edu.cn/~linghe.kong/), and [Xiaokang Yang](https://scholar.google.com/citations?user=yDEavdMAAAAJ), \"Recursive Generalization Transformer for Image Super-Resolution\", ICLR, 2024\n\n[[paper](https://openreview.net/pdf?id=owziuM1nsR)] [[arXiv](https://arxiv.org/abs/2303.06373)] [[supplementary material](https://openreview.net/attachment?id=owziuM1nsR&name=supplementary_material)] [[visual results](https://drive.google.com/drive/folders/1TWIl66LPtojEbnlUr-s7qkUuTd7RF7Hp?usp=sharing)] [[pretrained models](https://drive.google.com/drive/folders/1UNn5LvnfQAi6eHAHz-mTYWu8vCJs5kwu?usp=sharing)]\n\n---\n\n> **Abstract:** Transformer architectures have exhibited remarkable performance in image superresolution (SR). Since the quadratic computational complexity of the selfattention (SA) in Transformer, existing methods tend to adopt SA in a local region to reduce overheads. However, the local design restricts the global context exploitation, which is crucial for accurate image reconstruction. In this work, we propose the Recursive Generalization Transformer (RGT) for image SR, which can capture global spatial information and is suitable for high-resolution images. Specifically, we propose the recursive-generalization self-attention (RG-SA). It recursively aggregates input features into representative feature maps, and then utilizes cross-attention to extract global information. Meanwhile, the channel dimensions of attention matrices ($query$, $key$, and $value$) are further scaled to mitigate the redundancy in the channel domain. Furthermore, we combine the RG-SA with local self-attention to enhance the exploitation of the global context, and propose the hybrid adaptive integration (HAI) for module integration. The HAI allows the direct and effective fusion between features at different levels (local or global). Extensive experiments demonstrate that our RGT outperforms recent state-of-the-art methods quantitatively and qualitatively.\n---",
+    "date": "2024-02-04",
+    "architecture": "rgt",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 135963303,
+            "sha256": "2ff12e257ca18d00cf9bc4b4dfbd65d8d59e40de7a15b6a94b9ec6496901d0c0",
+            "urls": [
+                "https://drive.google.com/file/d/1NNaj3UH5smEylwVabQLMEdey-FoaqnM_/view?usp=drive_link"
+            ]
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://raw.githubusercontent.com/zhengchen1999/RGT/main/figs/RGT.png"
+        }
+    ]
+}

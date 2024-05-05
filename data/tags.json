@@ -144,6 +144,10 @@
         "name": "Video Frame",
         "description": "Images of individual video frames."
     },
+    "arch:atd": {
+        "name": "ATD",
+        "description": ""
+    },
     "arch:cain": {
         "name": "CAIN",
         "description": ""
@@ -174,6 +178,10 @@
     },
     "arch:ditn": {
         "name": "DITN",
+        "description": ""
+    },
+    "arch:drct": {
+        "name": "DRCT",
         "description": ""
     },
     "arch:edsr": {
