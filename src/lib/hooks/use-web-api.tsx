@@ -1,5 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { DBApi } from '../data-api';
+import { IS_DEPLOYED } from '../site-data';
 import { noop } from '../util';
 import { getWebApi } from '../web-api';
 
@@ -41,7 +42,7 @@ export interface UseEditModeToggle {
 export function useEditModeToggle(): UseEditModeToggle {
     const { webApi, enabled, toggleEnabled } = useContext(WebApiContext);
 
-    const editModeAvailable = webApi !== undefined;
+    const editModeAvailable = webApi !== undefined && !IS_DEPLOYED;
 
     return {
         editModeAvailable,

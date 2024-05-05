@@ -42,6 +42,7 @@ interface Props {
     modelId: ModelId;
     similar: ModelId[];
     modelData: Record<ModelId, Model>;
+    editModeOverride?: boolean;
 }
 
 const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
@@ -351,12 +352,13 @@ function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [s
         </table>
     );
 }
-export default function Page({ modelId, similar: staticSimilar, modelData: staticModelData }: Props) {
+export default function Page({ modelId, similar: staticSimilar, modelData: staticModelData, editModeOverride }: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
     const { modelData } = useModels(staticModelData);
 
-    const { webApi, editMode } = useWebApi();
+    const { webApi, editMode: _editMode } = useWebApi();
+    const editMode = editModeOverride ?? _editMode;
     const model = modelData.get(modelId) || staticModelData[modelId];
 
     const authors = asArray(model.author);
@@ -425,7 +427,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         <button
                                             onClick={() => {
                                                 if (confirm('Are you sure you want to delete this model?')) {
-                                                    webApi.models.delete([modelId]).then(
+                                                    webApi?.models.delete([modelId]).then(
                                                         () => {
                                                             router.push('/').catch(console.error);
                                                         },
@@ -621,6 +623,49 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         </div>
                     </div>
                 </div>
+                {editMode && (
+                    <div className="flex h-full flex-row place-content-center content-center gap-4 sm:col-span-1 lg:col-span-2">
+                        <button
+                            onClick={() => {
+                                navigator.clipboard
+                                    .readText()
+                                    .then((text) => {
+                                        try {
+                                            // in the future we might want to actually validate the model
+                                            const model = JSON.parse(text) as Model;
+                                            webApi?.models.update([[modelId, model]]).catch(console.error);
+                                        } catch (e) {
+                                            console.error(e);
+                                        }
+                                    })
+                                    .catch(console.error);
+                            }}
+                        >
+                            Load Model from clipboard
+                        </button>
+                        <button
+                            onClick={() => {
+                                navigator.clipboard.writeText(JSON.stringify(model, null, 2)).catch(console.error);
+                            }}
+                        >
+                            Copy Model to clipboard
+                        </button>
+                        <button
+                            onClick={() => {
+                                const path = 'https://github.com/OpenModelDB/open-model-database/issues/new';
+                                const queryParams = new URLSearchParams({
+                                    title: `[MODEL ADD REQUEST] ${model.name}`,
+                                    body: JSON.stringify(model, null, 2),
+                                    template: 'model-add-request.md',
+                                });
+                                const url = `${path}?${queryParams.toString()}`;
+                                window.open(url, '_blank');
+                            }}
+                        >
+                            Submit Model as GitHub Issue
+                        </button>
+                    </div>
+                )}
                 {similar.length > 0 && (
                     <div>
                         <h2 className="text-lg font-bold">Similar Models</h2>

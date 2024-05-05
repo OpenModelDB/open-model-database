@@ -15,10 +15,13 @@ export default function Page() {
     if (!model) return null;
 
     return (
-        <ModelsPage
-            modelData={{ [id]: model }}
-            modelId={id}
-            similar={[]}
-        />
+        <div>
+            <ModelsPage
+                editModeOverride={true}
+                modelData={{ [id]: model }}
+                modelId={id}
+                similar={[]}
+            />
+        </div>
     );
 }
