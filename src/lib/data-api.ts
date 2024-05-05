@@ -129,6 +129,7 @@ export class MapCollection<Id, Value> implements CollectionApi<Id, Value> {
     }
 
     get(id: Id): Promise<Value> {
+        console.log('🚀 ~ MapCollection<Id, ~ get ~ id:', id);
         const value = this.map.get(id);
         if (value === undefined) {
             throw new Error(`No value for id ${String(id)}`);
@@ -142,10 +143,12 @@ export class MapCollection<Id, Value> implements CollectionApi<Id, Value> {
         return Promise.resolve(new Map(this.map));
     }
     update(updates: Iterable<readonly [Id, Value]>): Promise<void> {
+        console.log('🚀 ~ MapCollection<Id, ~ update ~ updates:', updates);
         updates = new Map(updates);
         for (const [id, value] of updates) {
             this.map.set(id, value);
         }
+        console.log('🚀 ~ MapCollection<Id, ~ update ~ this.map:', this.map);
         return Promise.resolve();
     }
     delete(ids: Iterable<Id>): Promise<void> {
@@ -165,5 +168,21 @@ export class MapCollection<Id, Value> implements CollectionApi<Id, Value> {
         this.map.delete(from);
         this.map.set(to, value);
         return Promise.resolve();
+    }
+}
+
+export class SessionStorageMapCollection<Id, Value> extends MapCollection<Id, Value> {
+    constructor(key: string, map = new Map<Id, Value>()) {
+        super();
+        const cachedItem = sessionStorage.getItem(key);
+        if (cachedItem) {
+            const data = JSON.parse(cachedItem) as Array<[Id, Value]>;
+            this.map = new Map(data);
+        } else {
+            this.map = map;
+        }
+        window.addEventListener('beforeunload', () => {
+            sessionStorage.setItem(key, JSON.stringify([...this.map]));
+        });
     }
 }
