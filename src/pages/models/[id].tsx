@@ -357,8 +357,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
     const { userData } = useUsers();
     const { modelData } = useModels(staticModelData);
 
-    const { webApi, editMode: _editMode } = useWebApi();
-    const editMode = editModeOverride ?? _editMode;
+    const { webApi, editMode } = useWebApi(editModeOverride);
     const model = modelData.get(modelId) || staticModelData[modelId];
 
     const authors = asArray(model.author);
@@ -427,7 +426,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         <button
                                             onClick={() => {
                                                 if (confirm('Are you sure you want to delete this model?')) {
-                                                    webApi?.models.delete([modelId]).then(
+                                                    webApi.models.delete([modelId]).then(
                                                         () => {
                                                             router.push('/').catch(console.error);
                                                         },
@@ -633,7 +632,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         try {
                                             // in the future we might want to actually validate the model
                                             const model = JSON.parse(text) as Model;
-                                            webApi?.models.update([[modelId, model]]).catch(console.error);
+                                            webApi.models.update([[modelId, model]]).catch(console.error);
                                         } catch (e) {
                                             console.error(e);
                                         }

@@ -27,10 +27,12 @@ export function WebApiProvider({ children }: React.PropsWithChildren<unknown>) {
 
 export type UseWebApi = { webApi: DBApi; editMode: true } | { webApi: undefined; editMode: false };
 
-export function useWebApi(): UseWebApi {
+export function useWebApi(override = false): UseWebApi {
     const { webApi, enabled } = useContext(WebApiContext);
 
-    return webApi && enabled ? { webApi, editMode: true } : { webApi: undefined, editMode: false };
+    return webApi && enabled && (!IS_DEPLOYED || override)
+        ? { webApi, editMode: true }
+        : { webApi: undefined, editMode: false };
 }
 
 export interface UseEditModeToggle {

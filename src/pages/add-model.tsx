@@ -116,7 +116,7 @@ function PageContent() {
     const { archData } = useArchitectures();
     const { tagData } = useTags();
     const router = useRouter();
-    const { webApi, editMode } = useWebApi();
+    const { webApi, editMode } = useWebApi(IS_DEPLOYED);
 
     const [processing, setProcessing] = useState(false);
 
