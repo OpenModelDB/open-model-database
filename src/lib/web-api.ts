@@ -93,25 +93,13 @@ async function createMapCollection<Id, Value>(path: string): Promise<CollectionA
 
 const getDbAPI = async (): Promise<DBApi> => {
     if (IS_DEPLOYED) {
-        const modelsPromise = createMapCollection('/api/v1/models.json');
-        const usersPromise = createMapCollection('/api/v1/users.json');
-        const tagsPromise = createMapCollection('/api/v1/tags.json');
-        const tagCategoriesPromise = createMapCollection('/api/v1/tagCategories.json');
-        const architecturesPromise = createMapCollection('/api/v1/architectures.json');
-
-        const results = await Promise.all([
-            modelsPromise,
-            usersPromise,
-            tagsPromise,
-            tagCategoriesPromise,
-            architecturesPromise,
+        const [models, users, tags, tagCategories, architectures] = await Promise.all([
+            createMapCollection<ModelId, Model>('/api/v1/models.json'),
+            createMapCollection<UserId, User>('/api/v1/users.json'),
+            createMapCollection<TagId, Tag>('/api/v1/tags.json'),
+            createMapCollection<TagCategoryId, TagCategory>('/api/v1/tagCategories.json'),
+            createMapCollection<ArchId, Arch>('/api/v1/architectures.json'),
         ]);
-
-        const models = results[0] as CollectionApi<ModelId, Model>;
-        const users = results[1] as CollectionApi<UserId, User>;
-        const tags = results[2] as CollectionApi<TagId, Tag>;
-        const tagCategories = results[3] as CollectionApi<TagCategoryId, TagCategory>;
-        const architectures = results[4] as CollectionApi<ArchId, Arch>;
 
         return {
             models,
