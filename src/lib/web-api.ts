@@ -1,6 +1,6 @@
-import { CollectionApi, DBApi, notifyOnWrite } from './data-api';
+import { CollectionApi, DBApi, MapCollection, notifyOnWrite } from './data-api';
 import { JsonApiCollection, JsonApiRequestHandler, JsonRequest, JsonResponse, Method } from './data-json-api';
-import { createMapCollectionFromSessionStorage } from './data-session';
+import { createMapFromSessionStorage } from './data-session';
 import { Arch, ArchId, Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from './schema';
 import { IS_DEPLOYED, SITE_URL } from './site-data';
 import { delay, lazy, noop } from './util';
@@ -83,7 +83,7 @@ async function createMapCollection<Id, Value>(path: string): Promise<CollectionA
     for (const [id, value] of Object.entries(data)) {
         map.set(id as Id, value as Value);
     }
-    return notifyOnWrite(createMapCollectionFromSessionStorage(path, map), {
+    return notifyOnWrite(new MapCollection(createMapFromSessionStorage(path, map)), {
         after: () => {
             mutationCounter++;
             notifyListeners();
