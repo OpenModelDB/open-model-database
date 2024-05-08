@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3010",
+    "dev:deployed": "cross-env DEPLOYED=true npm run dev",
     "build": "npm run generate-thumbnails && next build && next export && npm run generate-api && npm run fix-db",
     "start": "next start",
     "lint": "eslint . --ext \".js,.jsx,.ts,.tsx\" && stylelint \"src/**/*.{scss,css}\"",
@@ -63,6 +64,7 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "autoprefixer": "^10.4.13",
+    "cross-env": "^7.0.3",
     "cross-fetch": "^4.0.0",
     "eslint": "8.32.0",
     "eslint-config-next": "^14.0.4",
