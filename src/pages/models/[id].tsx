@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useCallback, useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
@@ -32,6 +32,7 @@ import { getSimilarModels } from '../../lib/similar';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { getTextDescription } from '../../lib/text-description';
 import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
+import { validateModel } from '../../lib/validate-model';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
 
@@ -381,6 +382,19 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
 
     const router = useRouter();
 
+    const runModelValidation = useCallback(async () => {
+        if (!webApi) {
+            throw new Error('API not available');
+        }
+        const modelData = await webApi.models.getAll();
+        const archData = await webApi.architectures.getAll();
+        const tagData = await webApi.tags.getAll();
+        const userData = await webApi.users.getAll();
+        const realModelId =
+            modelId === 'OMDB_ADDMODEL_DUMMY' ? (sessionStorage.getItem('dummy-modelId') as ModelId) : modelId;
+        return validateModel(model, realModelId, modelData, archData, tagData, userData, webApi);
+    }, [model, modelId, webApi]);
+
     return (
         <>
             <HeadCommon
@@ -651,14 +665,22 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         </button>
                         <button
                             onClick={() => {
-                                const path = 'https://github.com/OpenModelDB/open-model-database/issues/new';
-                                const queryParams = new URLSearchParams({
-                                    title: `[MODEL ADD REQUEST] ${model.name}`,
-                                    body: JSON.stringify(model, null, 2),
-                                    template: 'model-add-request.md',
-                                });
-                                const url = `${path}?${queryParams.toString()}`;
-                                window.open(url, '_blank');
+                                runModelValidation()
+                                    .then((errors) => {
+                                        if (errors.length > 0) {
+                                            alert(errors.map(({ message }) => message).join('\n'));
+                                            return;
+                                        }
+                                        const path = 'https://github.com/OpenModelDB/open-model-database/issues/new';
+                                        const queryParams = new URLSearchParams({
+                                            title: `[MODEL ADD REQUEST] ${model.name}`,
+                                            body: JSON.stringify(model, null, 2),
+                                            template: 'model-add-request.md',
+                                        });
+                                        const url = `${path}?${queryParams.toString()}`;
+                                        window.open(url, '_blank');
+                                    })
+                                    .catch(console.error);
                             }}
                         >
                             Submit Model as GitHub Issue
