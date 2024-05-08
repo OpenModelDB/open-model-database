@@ -29,6 +29,7 @@ import { ArchId, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
+import { IS_DEPLOYED } from '../../lib/site-data';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { getTextDescription } from '../../lib/text-description';
 import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
@@ -436,7 +437,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         <div className="relative">
                             <div>
                                 {editMode && (
-                                    <div className="text-right">
+                                    <div className="flex items-end justify-end gap-2 text-right">
                                         <button
                                             onClick={() => {
                                                 if (confirm('Are you sure you want to delete this model?')) {
@@ -454,6 +455,64 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         >
                                             Delete Model
                                         </button>
+                                        {IS_DEPLOYED && (
+                                            <>
+                                                <button
+                                                    onClick={() => {
+                                                        navigator.clipboard
+                                                            .readText()
+                                                            .then((text) => {
+                                                                try {
+                                                                    // in the future we might want to actually validate the model
+                                                                    const model = JSON.parse(text) as Model;
+                                                                    webApi.models
+                                                                        .update([[modelId, model]])
+                                                                        .catch(console.error);
+                                                                } catch (e) {
+                                                                    console.error(e);
+                                                                }
+                                                            })
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Load Model from clipboard
+                                                </button>
+                                                <button
+                                                    onClick={() => {
+                                                        navigator.clipboard
+                                                            .writeText(JSON.stringify(model, null, 2))
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Copy Model to clipboard
+                                                </button>
+                                                <button
+                                                    onClick={() => {
+                                                        runModelValidation()
+                                                            .then((errors) => {
+                                                                if (errors.length > 0) {
+                                                                    alert(
+                                                                        errors.map(({ message }) => message).join('\n')
+                                                                    );
+                                                                    return;
+                                                                }
+                                                                const path =
+                                                                    'https://github.com/OpenModelDB/open-model-database/issues/new';
+                                                                const queryParams = new URLSearchParams({
+                                                                    title: `[MODEL ADD REQUEST] ${model.name}`,
+                                                                    body: JSON.stringify(model, null, 2),
+                                                                    template: 'model-add-request.md',
+                                                                });
+                                                                const url = `${path}?${queryParams.toString()}`;
+                                                                window.open(url, '_blank');
+                                                            })
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Submit Model as GitHub Issue
+                                                </button>
+                                            </>
+                                        )}
                                     </div>
                                 )}
                                 <h1 className="mt-0 mb-1 leading-10">
@@ -636,57 +695,6 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         </div>
                     </div>
                 </div>
-                {editMode && (
-                    <div className="flex h-full flex-row place-content-center content-center gap-4 sm:col-span-1 lg:col-span-2">
-                        <button
-                            onClick={() => {
-                                navigator.clipboard
-                                    .readText()
-                                    .then((text) => {
-                                        try {
-                                            // in the future we might want to actually validate the model
-                                            const model = JSON.parse(text) as Model;
-                                            webApi.models.update([[modelId, model]]).catch(console.error);
-                                        } catch (e) {
-                                            console.error(e);
-                                        }
-                                    })
-                                    .catch(console.error);
-                            }}
-                        >
-                            Load Model from clipboard
-                        </button>
-                        <button
-                            onClick={() => {
-                                navigator.clipboard.writeText(JSON.stringify(model, null, 2)).catch(console.error);
-                            }}
-                        >
-                            Copy Model to clipboard
-                        </button>
-                        <button
-                            onClick={() => {
-                                runModelValidation()
-                                    .then((errors) => {
-                                        if (errors.length > 0) {
-                                            alert(errors.map(({ message }) => message).join('\n'));
-                                            return;
-                                        }
-                                        const path = 'https://github.com/OpenModelDB/open-model-database/issues/new';
-                                        const queryParams = new URLSearchParams({
-                                            title: `[MODEL ADD REQUEST] ${model.name}`,
-                                            body: JSON.stringify(model, null, 2),
-                                            template: 'model-add-request.md',
-                                        });
-                                        const url = `${path}?${queryParams.toString()}`;
-                                        window.open(url, '_blank');
-                                    })
-                                    .catch(console.error);
-                            }}
-                        >
-                            Submit Model as GitHub Issue
-                        </button>
-                    </div>
-                )}
                 {similar.length > 0 && (
                     <div>
                         <h2 className="text-lg font-bold">Similar Models</h2>
