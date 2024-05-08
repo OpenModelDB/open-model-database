@@ -1,16 +1,11 @@
 import { GetStaticProps } from 'next';
-import { ParsedUrlQuery } from 'querystring';
 import { useEffect, useState } from 'react';
 import { Model, ModelId } from '../../lib/schema';
-
 import ModelsPage from './[id]';
 
-type Params = ParsedUrlQuery;
-interface Props {
-    modelId: ModelId;
-}
+const modelId = 'OMDB_ADDMODEL_DUMMY' as ModelId;
 
-export default function Page({ modelId }: Props) {
+export default function Page() {
     const [model, setModel] = useState<Model | null>(null);
 
     useEffect(() => {
@@ -23,7 +18,7 @@ export default function Page({ modelId }: Props) {
     return (
         <div>
             <ModelsPage
-                editModeOverride={true}
+                editModeOverride
                 modelData={{ [modelId]: model }}
                 modelId={modelId}
                 similar={[]}
@@ -32,9 +27,6 @@ export default function Page({ modelId }: Props) {
     );
 }
 
-export const getStaticProps: GetStaticProps<Props, Params> = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 0));
-    return {
-        props: { modelId: 'OMDB_ADDMODEL_DUMMY' as ModelId },
-    };
+export const getStaticProps: GetStaticProps = () => {
+    return { props: {} };
 };
