@@ -12,10 +12,10 @@ export interface Report {
 export const validateModel = (
     model: Model,
     modelId: ModelId,
-    modelData: Map<ModelId, Model>,
-    architectureData: Map<ArchId, Arch>,
-    tagData: Map<TagId, Tag>,
-    userData: Map<UserId, User>,
+    modelData: ReadonlyMap<ModelId, Model>,
+    architectureData: ReadonlyMap<ArchId, Arch>,
+    tagData: ReadonlyMap<TagId, Tag>,
+    userData: ReadonlyMap<UserId, User>,
     api: DBApi
 ): Report[] => {
     const errors: Report[] = [];
