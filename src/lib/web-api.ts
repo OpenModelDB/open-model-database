@@ -1,6 +1,6 @@
 import { CollectionApi, DBApi, notifyOnWrite } from './data-api';
 import { JsonApiCollection, JsonApiRequestHandler, JsonRequest, JsonResponse, Method } from './data-json-api';
-import { SessionStorageMapCollection } from './data-session';
+import { createMapCollectionFromSessionStorage } from './data-session';
 import { IS_DEPLOYED, SITE_URL } from './site-data';
 import { delay, lazy, noop } from './util';
 
@@ -71,7 +71,7 @@ function createWebCollection<Id, Value>(path: string): CollectionApi<Id, Value> 
     });
 }
 
-async function createDeployedCollection<Id, Value>(path: string): Promise<CollectionApi<Id, Value>> {
+async function createMapCollection<Id, Value>(path: string): Promise<CollectionApi<Id, Value>> {
     const url = new URL(path, SITE_URL).href;
     const res = await fetch(url);
     if (res.status !== 200) {
@@ -82,7 +82,7 @@ async function createDeployedCollection<Id, Value>(path: string): Promise<Collec
     for (const [id, value] of Object.entries(data)) {
         map.set(id as Id, value as Value);
     }
-    return notifyOnWrite(new SessionStorageMapCollection(path, map), {
+    return notifyOnWrite(createMapCollectionFromSessionStorage(path, map), {
         after: () => {
             mutationCounter++;
             notifyListeners();
@@ -94,11 +94,11 @@ const getDbAPI = async (): Promise<DBApi> => {
     if (IS_DEPLOYED) {
         // we only have API access locally
         return {
-            models: await createDeployedCollection('/api/v1/models.json'),
-            users: await createDeployedCollection('/api/v1/users.json'),
-            tags: await createDeployedCollection('/api/v1/tags.json'),
-            tagCategories: await createDeployedCollection('/api/v1/tagCategories.json'),
-            architectures: await createDeployedCollection('/api/v1/architectures.json'),
+            models: await createMapCollection('/api/v1/models.json'),
+            users: await createMapCollection('/api/v1/users.json'),
+            tags: await createMapCollection('/api/v1/tags.json'),
+            tagCategories: await createMapCollection('/api/v1/tagCategories.json'),
+            architectures: await createMapCollection('/api/v1/architectures.json'),
         };
     }
     return {

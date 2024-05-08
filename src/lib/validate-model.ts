@@ -1,10 +1,8 @@
 import { DBApi } from './data-api';
 import { MODEL_PROPS, validateType } from './model-props';
-import { ArchId, Model, ModelId, TagId, UserId } from './schema';
+import { Arch, ArchId, Model, ModelId, Tag, TagId, User, UserId } from './schema';
 import { canonicalizeModelId } from './schema-util';
 import { typedEntries } from './util';
-
-type Unpromise<T extends Promise<unknown>> = T extends Promise<infer U> ? U : never;
 
 export interface Report {
     message: string;
@@ -14,10 +12,10 @@ export interface Report {
 export const validateModel = (
     model: Model,
     modelId: ModelId,
-    modelData: Unpromise<ReturnType<DBApi['models']['getAll']>>,
-    architectureData: Unpromise<ReturnType<DBApi['architectures']['getAll']>>,
-    tagData: Unpromise<ReturnType<DBApi['tags']['getAll']>>,
-    userData: Unpromise<ReturnType<DBApi['users']['getAll']>>,
+    modelData: Map<ModelId, Model>,
+    architectureData: Map<ArchId, Arch>,
+    tagData: Map<TagId, Tag>,
+    userData: Map<UserId, User>,
     api: DBApi
 ): Report[] => {
     const errors: Report[] = [];
