@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useCallback, useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
@@ -29,9 +29,11 @@ import { ArchId, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { getCachedModels } from '../../lib/server/cached-models';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
+import { IS_DEPLOYED } from '../../lib/site-data';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { getTextDescription } from '../../lib/text-description';
 import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
+import { validateModel } from '../../lib/validate-model';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
 
@@ -42,6 +44,7 @@ interface Props {
     modelId: ModelId;
     similar: ModelId[];
     modelData: Record<ModelId, Model>;
+    editModeOverride?: boolean;
 }
 
 const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
@@ -351,12 +354,12 @@ function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [s
         </table>
     );
 }
-export default function Page({ modelId, similar: staticSimilar, modelData: staticModelData }: Props) {
+export default function Page({ modelId, similar: staticSimilar, modelData: staticModelData, editModeOverride }: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
     const { modelData } = useModels(staticModelData);
 
-    const { webApi, editMode } = useWebApi();
+    const { webApi, editMode } = useWebApi(editModeOverride);
     const model = modelData.get(modelId) || staticModelData[modelId];
 
     const authors = asArray(model.author);
@@ -379,6 +382,19 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
     }, [staticSimilar, staticModelData, modelData, modelId, archData]);
 
     const router = useRouter();
+
+    const runModelValidation = useCallback(async () => {
+        if (!webApi) {
+            throw new Error('API not available');
+        }
+        const modelData = await webApi.models.getAll();
+        const archData = await webApi.architectures.getAll();
+        const tagData = await webApi.tags.getAll();
+        const userData = await webApi.users.getAll();
+        const realModelId =
+            modelId === 'OMDB_ADDMODEL_DUMMY' ? (sessionStorage.getItem('dummy-modelId') as ModelId) : modelId;
+        return validateModel(model, realModelId, modelData, archData, tagData, userData, webApi);
+    }, [model, modelId, webApi]);
 
     return (
         <>
@@ -421,7 +437,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         <div className="relative">
                             <div>
                                 {editMode && (
-                                    <div className="text-right">
+                                    <div className="flex items-end justify-end gap-2 text-right">
                                         <button
                                             onClick={() => {
                                                 if (confirm('Are you sure you want to delete this model?')) {
@@ -439,6 +455,64 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         >
                                             Delete Model
                                         </button>
+                                        {IS_DEPLOYED && (
+                                            <>
+                                                <button
+                                                    onClick={() => {
+                                                        navigator.clipboard
+                                                            .readText()
+                                                            .then((text) => {
+                                                                try {
+                                                                    // in the future we might want to actually validate the model
+                                                                    const model = JSON.parse(text) as Model;
+                                                                    webApi.models
+                                                                        .update([[modelId, model]])
+                                                                        .catch(console.error);
+                                                                } catch (e) {
+                                                                    console.error(e);
+                                                                }
+                                                            })
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Load Model from clipboard
+                                                </button>
+                                                <button
+                                                    onClick={() => {
+                                                        navigator.clipboard
+                                                            .writeText(JSON.stringify(model, null, 2))
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Copy Model to clipboard
+                                                </button>
+                                                <button
+                                                    onClick={() => {
+                                                        runModelValidation()
+                                                            .then((errors) => {
+                                                                if (errors.length > 0) {
+                                                                    alert(
+                                                                        errors.map(({ message }) => message).join('\n')
+                                                                    );
+                                                                    return;
+                                                                }
+                                                                const path =
+                                                                    'https://github.com/OpenModelDB/open-model-database/issues/new';
+                                                                const queryParams = new URLSearchParams({
+                                                                    title: `[MODEL ADD REQUEST] ${model.name}`,
+                                                                    body: JSON.stringify(model, null, 2),
+                                                                    template: 'model-add-request.md',
+                                                                });
+                                                                const url = `${path}?${queryParams.toString()}`;
+                                                                window.open(url, '_blank');
+                                                            })
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Submit Model as GitHub Issue
+                                                </button>
+                                            </>
+                                        )}
                                     </div>
                                 )}
                                 <h1 className="mt-0 mb-1 leading-10">
