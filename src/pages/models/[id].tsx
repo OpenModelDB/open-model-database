@@ -498,9 +498,11 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                                                 }
                                                                 const path =
                                                                     'https://github.com/OpenModelDB/open-model-database/issues/new';
+                                                                const modelJson = JSON.stringify(model, null, 2);
+                                                                const codeBlock = `\`\`\`json\n${modelJson}\n\`\`\``;
                                                                 const queryParams = new URLSearchParams({
                                                                     title: `[MODEL ADD REQUEST] ${model.name}`,
-                                                                    body: JSON.stringify(model, null, 2),
+                                                                    body: codeBlock,
                                                                     template: 'model-add-request.md',
                                                                 });
                                                                 const url = `${path}?${queryParams.toString()}`;
