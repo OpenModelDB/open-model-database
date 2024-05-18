@@ -534,7 +534,8 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                     />
                                 </div>
                             </div>
-                            <div className="mt-2 text-xs">
+                            <div className="mt-2 flex gap-2 text-xs">
+                                {editMode && <div>tags:</div>}
                                 <EditableTags
                                     readonly={!editMode}
                                     tags={model.tags}
