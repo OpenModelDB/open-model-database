@@ -51,7 +51,12 @@ def convert_issue_to_model(issue):
     issue_body = json.loads(issue_body)
 
     issue_title = issue["title"]
-    model_name = issue_title.replace("[MODEL ADD REQUEST] ", "").replace("-", "_")
+    model_name = (
+        issue_title.replace("[MODEL ADD REQUEST] ", "")
+        .replace("-", "_")
+        .replace(" ", "_")
+        .replace(".", "_")
+    )
 
     models_dir = "./data/models"
 
