@@ -53,9 +53,9 @@ def convert_issue_to_model(issue):
     issue_title = issue["title"]
     model_name = (
         issue_title.replace("[MODEL ADD REQUEST] ", "")
-        .replace("-", "_")
-        .replace(" ", "_")
-        .replace(".", "_")
+        .replace("_", "-")
+        .replace(" ", "-")
+        .replace(".", "-")
     )
 
     models_dir = "./data/models"
