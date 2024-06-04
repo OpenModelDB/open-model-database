@@ -27,7 +27,8 @@
             "sha256": "fde2299d8c98794e5fa36669978e6b69cce6fd7390ec6fe3a30d39da71ce5f30",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-Fatality.pth",
-                "https://owncube.cloud/index.php/s/jXwPFMzCmRwfifi/download/4x_Fatality_01_375000_G.pth"
+                "https://drive.proton.me/urls/RHDJE7EGXC#4KKUQ2PtPfWu",
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/4x_Fatality_01_375000_G.pth"
             ]
         }
     ],
