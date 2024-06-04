@@ -5,6 +5,7 @@
     "tags": [
         "anime",
         "cartoon",
+        "compression-removal",
         "restoration"
     ],
     "description": "Purpose: 4x anime upscaler handling video compression artifacts, trained for 200 epochs\n\n4x anime upscaler handling video compression artifacts since trained with otf degradations for \"mpeg2video\", \"libxvid\", \"libx264\", \"libx265\" with crf 20-32, mpeg bitrate 3800-5800 (together with the standard Real-ESRGAN otf pipeline). A faster arch using this otf degradation pipeline would be great for handling video compression artifacts. Since this one is a GRL model and therefore slow, [as noted by the dev](https://github.com/Kiteretsu77/VCISR-official/issues/3) maybe more for research purposes (or more for single images/screenshots). Trained using [VCISR](https://github.com/Kiteretsu77/VCISR-official) for 200 epochs.  \n\n\"This is epoch 200 and the start iteration is 85959 with learning rate 2.5e-05\"  \n\nSlow Pics examples:  \n[h264_crf28](https://slow.pics/c/fqOnxXep)  \n[ludvae1](https://slow.pics/c/OcukRy7d)  \n[ludvae2](https://slow.pics/c/FI33mX4F)",

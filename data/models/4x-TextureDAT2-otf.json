@@ -1,0 +1,64 @@
+{
+    "name": "4xTextureDAT2_otf",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "game-textures"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/4xTextureDAT2_otf)\n\nName: 4xTextureDAT2_otf   \nAuthor: Philip Hofmann   \nRelease: 13.12.2023   \nLicense: CC BY 4.0   \nNetwork: DAT   \nArch Option: DAT2   \nScale: 4   \nPurpose: 4x texture image upscaler, handling jpg compression, some noise and slight blur   \nIterations: 125000   \nbatch_size: 6   \nHR_size: 128   \nDataset: GTAV_512_Dataset   \nNumber of train images: 30122   \nOTF Training: Yes   \nPretrained_Model_G: DAT_2_x4   \n\nDescription: 4x upscale texture images, trained with the Real-ESRGAN otf pipeline so handles jpg compression, some noise and slight blur",
+    "date": "2023-12-13",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140339286,
+            "sha256": "201fd1cfe380cab32a036f5b35f50b40d79fd25f28e7ed378a385973b1b2887f",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextureDAT2_otf/4xTextureDAT2_otf.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 139792588,
+            "sha256": "5851f91a4c95d803c919dd279a9353e32b212495cf54c5fbc868eed23b9f068b",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextureDAT2_otf/4xTextureDAT2_otf.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 50171551,
+            "sha256": "1983ca762d159b33e029e36adfca3b90b7d934321f0d64ffb0a2ca692f682559",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextureDAT2_otf/4xTextureDAT2_otf_fp32_opset17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 125000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "GTAV_512_Dataset",
+    "datasetSize": 30122,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://github.com/Phhofm/models/assets/14755670/e212c397-3477-4d92-8d8c-9c2d594d638c"
+        }
+    ]
+}

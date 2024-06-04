@@ -1,0 +1,102 @@
+{
+    "name": " 4xRealWebPhoto_v3_atd",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo",
+        "restoration"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/4xRealWebPhoto_v3_atd)\n\nName: 4xRealWebPhoto_v3_atd   \nLicense: CC BY 4.0   \nAuthor: Philip Hofmann   \nNetwork: [ATD](https://github.com/LabShuHangGU/Adaptive-Token-Dictionary)   \nScale: 4   \nRelease Date: 22.03.2024   \nPurpose: 4x upscaler for photos downloaded from the web   \nIterations: 250'000   \nepoch: 10   \nbatch_size: 6, 3   \nHR_size: 128, 192   \nDataset: 4xRealWebPhoto_v3   \nNumber of train images: 101'904   \nOTF Training: No   \nPretrained_Model_G: 003_ATD_SRx4_finetune   \n\nDescription:   \n4x real web photo upscaler, meant for upscaling photos downloaded from the web. Trained on my v3 of my 4xRealWebPhoto dataset, it should be able to handle noise, jpg and webp (re)compression, (re)scaling, and just a little bit of lens blur, while also be able to handle good quality input. Trained on the very recently released (~2 weeks ago) Adaptive-Token-Dictionary network. \n\nMy 4xRealWebPhoto dataset tried to simulate the use-case of a photo being uploaded to the web and being processed by the service provides (like on a social media platform) so compression/downscaling, then maybe being downloaded and re-uploaded by another used where it, again, were processed by the service provider. I included different variants in the dataset. The pdf with info to the v2 dataset can be found [here](https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v2_rgt_s/4xRealWebPhoto_v2.pdf), while i simply included whats different in the v3 png:\n\n![4xRealWebPhoto_v3](https://github.com/Phhofm/models/assets/14755670/2ec67e48-bf21-4b57-9f27-69bc49b84315)\n\n\nTraining details: \nAdamW optimizer with U-Net SN discriminator and BFloat16.\nDegraded with otf jpg compression down to 40, re-compression down to 40, together with resizes and the blur kernels.  \nLosses: PixelLoss using CHC (Clipped Huber with Cosine Similarity Loss), PerceptualLoss using Huber, GANLoss, [LDL](https://github.com/csjliang/LDL) using Huber, [Focal Frequency](https://github.com/EndlessSora/focal-frequency-loss), [Gradient Variance](https://github.com/lusinlu/gradient-variance-loss) with Huber, YCbCr Color Loss (bt601) and Luma Loss (CIE XYZ) on [neosr](https://github.com/muslll/neosr) with norm: true.\n\n11 Examples:\n[Slowpics](https://slow.pics/s/plgWVh4j)",
+    "date": "2024-03-22",
+    "architecture": "atd",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 81689540,
+            "sha256": "1812b76bb92e0a1af04c3cf02b7bd192acbe35abb071442026bc3827033a5412",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v3_atd/4xRealWebPhoto_v3_atd.safetensors"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 81959074,
+            "sha256": "34d19b7bc551db75e454c6fd636bf92927515b95fce82aa4dfaac813b7529763",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xRealWebPhoto_v3_atd/4xRealWebPhoto_v3_atd.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 250000,
+    "trainingEpochs": 10,
+    "trainingBatchSize": 3,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "4xRealWebPhoto_v3",
+    "datasetSize": 101904,
+    "pretrainedModelG": "4x-003-ATD-SRx4-finetune",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/9wd2V9qs.png",
+            "SR": "https://i.slow.pics/FV2NjZA8.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/OrBt9f9U.png",
+            "SR": "https://i.slow.pics/Xx8OGr73.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Y5qT1SXj.png",
+            "SR": "https://i.slow.pics/0c3iPIjB.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Ity2TX7v.png",
+            "SR": "https://i.slow.pics/mfXmnPTM.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ECBPjINW.png",
+            "SR": "https://i.slow.pics/9q6TMRoF.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/eJwKda9N.png",
+            "SR": "https://i.slow.pics/zupCnVL1.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BnyRdSGI.png",
+            "SR": "https://i.slow.pics/R2OUHotH.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Mzl5HzIq.png",
+            "SR": "https://i.slow.pics/s41xVPc5.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/17TWGXoO.png",
+            "SR": "https://i.slow.pics/1fNbUbtf.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/aZ0BsrTU.png",
+            "SR": "https://i.slow.pics/imzRgmPA.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/rjqEkp7K.png",
+            "SR": "https://i.slow.pics/Lffh33Wc.png"
+        }
+    ]
+}

@@ -3,10 +3,11 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "restoration",
         "video-frame"
     ],
-    "description": "Category: Video Compression\nPurpose: Compression\n\nThis model decompresses images and video compressed using RoQ. Config and presets will be added when Mega decides to let me use their site!",
+    "description": "This model decompresses images and video compressed using RoQ. Config and presets will be added when Mega decides to let me use their site!",
     "date": "2021-11-21",
     "architecture": "esrgan",
     "size": [
@@ -36,20 +37,17 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/1c/8f/rvHewYJt_o.png",
-            "SR": "https://images2.imgbox.com/f5/6d/hlemKzno_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/f5/6d/hlemKzno_t.png"
+            "SR": "https://images2.imgbox.com/f5/6d/hlemKzno_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/61/7d/xEL8MtgJ_o.png",
-            "SR": "https://images2.imgbox.com/60/f3/6yO3HI7n_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/60/f3/6yO3HI7n_t.png"
+            "SR": "https://images2.imgbox.com/60/f3/6yO3HI7n_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/80/f8/AEPZbthA_o.png",
-            "SR": "https://images2.imgbox.com/ee/08/Xut7WB3G_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/ee/08/Xut7WB3G_t.png"
+            "SR": "https://images2.imgbox.com/ee/08/Xut7WB3G_o.png"
         },
         {
             "type": "paired",

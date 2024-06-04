@@ -37,20 +37,17 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/24/50/fQgJ0IJX_o.png",
-            "SR": "https://images2.imgbox.com/39/88/FbXYy0CA_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/39/88/FbXYy0CA_t.png"
+            "SR": "https://images2.imgbox.com/39/88/FbXYy0CA_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/a4/ff/SEgjveet_o.png",
-            "SR": "https://images2.imgbox.com/e0/38/X5BawSzZ_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/e0/38/X5BawSzZ_t.png"
+            "SR": "https://images2.imgbox.com/e0/38/X5BawSzZ_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/d7/e6/CGxcVXcZ_o.png",
-            "SR": "https://images2.imgbox.com/fa/ea/Wq0xAYSd_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/fa/ea/Wq0xAYSd_t.png"
+            "SR": "https://images2.imgbox.com/fa/ea/Wq0xAYSd_o.png"
         }
     ]
 }

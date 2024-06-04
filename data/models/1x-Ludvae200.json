@@ -1,0 +1,50 @@
+{
+    "name": "Ludvae200",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo"
+    ],
+    "description": "[Github Release Link](https://github.com/Phhofm/models/releases/Ludvae200)\n\nName: Ludvae200   \nLicense: CC BY 4.0   \nAuthor: Philip Hofmann   \nNetwork: [LUD-VAE](https://github.com/zhengdharia/LUD-VAE)   \nScale: 1   \nRelease Date: 25.03.2024   \nPurpose: 1x realistic noise degradation model    \nIterations: 190'000   \nH_size: 64   \nn_channels: 3   \ndataloader_batch_size: 16    \nH_noise_level: 8   \nL_noise_level: 3   \nDataset: [RealLR200](https://drive.google.com/drive/folders/1L2VsQYQRKhWJxe6yWZU9FgBWSgBCk6mz)   \nNumber of train images: 200   \nOTF Training: No   \nPretrained_Model_G: None   \n\nDescription:\n1x realistic noise degradation model, trained on the [RealLR200](https://drive.google.com/drive/folders/1L2VsQYQRKhWJxe6yWZU9FgBWSgBCk6mz) dataset as found released on the [SeeSR](https://github.com/cswry/SeeSR) github repo.\nNext to the ludvae200.pth model file, I provide a ludvae200.zip file which not only contains the code but also an inference script to run this model on the dataset of your choice.\nAdapt the ludvae200_inference.py script accordingly by adjusting the file paths at the beginning section, to your input folder, output folder, the folder path holding the ludvae200.pth model, and a folder path where you want the text file to be generated. I made the textfile generation the same way as I did in [Kim's Dataset Destroyer](https://github.com/Kim2091/helpful-scripts/tree/main/Dataset%20Destroyer), which means you will have each image file logged with each of the values used to degrade that specific image file in the resulting text file, which will append only and never overwrite.\n\nYou can also adjust the strength settings inside the inference script file to fit to your needs. If you in general want less strong noise for example, you should adjust the temperature upper limit from 0.4 to 0.2 or go even lower.\nSo in line 96 change \"temperature_strength = uniform(0.1,0.4)\" to \"temperature_strength = uniform(0.1,0.2)\" just to give an example.\n\nThese values are defaulted to my needs of my last dataset degradation workflow I used, but feel free to adjust these values. You can also do the same as I did, temporarily using deterministic values with multiple runs to determine the min and max values of noise generation you deem suitable for your dataset needs.\n\nSee the examples of what this looked like for my last dataset workflow I used my model in.",
+    "date": "2024-03-25",
+    "architecture": "ludvae",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 22870238,
+            "sha256": "a0c2a27f38dfbccba5cef33ffa19317b488ddcdd2ca7d5fee7df1b40a4d2b80f",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/Ludvae200/ludvae200.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 190000,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "RealLR200",
+    "datasetSize": 200,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://github.com/Phhofm/models/assets/14755670/2cf53d9b-a601-4fea-9440-84c968a23e50"
+        },
+        {
+            "type": "standalone",
+            "url": "https://github.com/Phhofm/models/assets/14755670/ec81280a-777d-4e08-b2a5-65e5411f744c"
+        },
+        {
+            "type": "standalone",
+            "url": "https://github.com/Phhofm/models/assets/14755670/67b6178c-b5d3-43a2-b2e0-b6a3cfea6500"
+        },
+        {
+            "type": "standalone",
+            "url": "https://github.com/Phhofm/models/assets/14755670/b0aba32a-e0fc-430b-aacf-7f1b160f2d0c"
+        }
+    ]
+}

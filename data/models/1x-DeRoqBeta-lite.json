@@ -3,10 +3,11 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "restoration",
         "video-frame"
     ],
-    "description": "Category: Video Compression\nPurpose: Compression\n\nIncomplete lite model to remove ROQ compression",
+    "description": "Incomplete lite model to remove ROQ compression",
     "date": "2022-07-26",
     "architecture": "esrgan",
     "size": [
@@ -32,8 +33,7 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/4c/e8/1KqdlfLe_o.png",
-            "SR": "https://images2.imgbox.com/2d/65/yJMH7jdQ_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/2d/65/yJMH7jdQ_t.png"
+            "SR": "https://images2.imgbox.com/2d/65/yJMH7jdQ_o.png"
         }
     ]
 }

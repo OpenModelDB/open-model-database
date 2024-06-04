@@ -12,7 +12,6 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
     const [caption, setCaption] = useState(image?.caption ?? '');
     const [lr, setLR] = useState(image?.LR ?? '');
     const [sr, setSR] = useState(image?.SR ?? '');
-    const [thumbnail, setThumbnail] = useState(image?.thumbnail ?? '');
 
     return (
         <div className="flex flex-col">
@@ -42,7 +41,6 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                                 if (value.type === 'paired') {
                                     setLR(value.LR);
                                     setSR(value.SR);
-                                    setThumbnail(value.thumbnail ?? '');
                                 } else {
                                     setLR(value.url);
                                 }
@@ -70,10 +68,8 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                                 if (value.type === 'paired') {
                                     setLR(value.LR);
                                     setSR(value.SR);
-                                    setThumbnail(value.thumbnail ?? '');
                                 } else {
                                     setSR(value.url);
-                                    setThumbnail(value.thumbnail ?? '');
                                 }
                             },
                             () => {
@@ -81,15 +77,6 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                             }
                         );
                     }}
-                />
-            </div>
-            <div className="flex flex-col">
-                <label htmlFor="image-thumbnail">Thumbnail</label>
-                <input
-                    id="image-thumbnail"
-                    type="text"
-                    value={thumbnail}
-                    onChange={(e) => setThumbnail(e.target.value)}
                 />
             </div>
             <Popover.Button
@@ -101,7 +88,6 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                         type: 'paired',
                         LR: lr,
                         SR: sr,
-                        thumbnail: thumbnail || undefined,
                         caption: caption || undefined,
                     });
                 }}
@@ -121,7 +107,6 @@ function StandaloneImageMenu({
 }) {
     const [caption, setCaption] = useState(image?.caption ?? '');
     const [url, setURL] = useState(image?.url ?? '');
-    const [thumbnail, setThumbnail] = useState(image?.thumbnail ?? '');
 
     async function parseSingle(url: string): Promise<StandaloneImage> {
         const value = await extractImage(url);
@@ -158,22 +143,12 @@ function StandaloneImageMenu({
                         parseSingle(url).then(
                             (value) => {
                                 setURL(value.url);
-                                setThumbnail(value.thumbnail ?? '');
                             },
                             () => {
                                 setURL(url);
                             }
                         );
                     }}
-                />
-            </div>
-            <div className="flex flex-col">
-                <label htmlFor="image-thumbnail">Thumbnail</label>
-                <input
-                    id="image-thumbnail"
-                    type="text"
-                    value={thumbnail}
-                    onChange={(e) => setThumbnail(e.target.value)}
                 />
             </div>
             <Popover.Button
@@ -184,7 +159,6 @@ function StandaloneImageMenu({
                     onChange({
                         type: 'standalone',
                         url: url,
-                        thumbnail: thumbnail || undefined,
                         caption: caption || undefined,
                     });
                 }}

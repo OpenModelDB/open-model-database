@@ -3,6 +3,7 @@
     "author": "cf2lter",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "game-textures",
         "restoration"
     ],
@@ -39,8 +40,7 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/5a/39/x9iljepb_o.png",
-            "SR": "https://images2.imgbox.com/b6/76/TYIrxF1Y_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/b6/76/TYIrxF1Y_t.png"
+            "SR": "https://images2.imgbox.com/b6/76/TYIrxF1Y_o.png"
         }
     ]
 }

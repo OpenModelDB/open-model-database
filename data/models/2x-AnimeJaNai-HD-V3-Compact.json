@@ -4,6 +4,7 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
+        "compression-removal",
         "restoration"
     ],
     "description": "Real-time 2x Real-ESRGAN Compact/UltraCompact/SuperUltraCompact models designed for upscaling 1080p anime to 4K. \n\nThe aim of these models is to address scaling, blur, oversharpening, and compression artifacts while upscaling to deliver a result that appears as if the anime was originally mastered in 4K resolution. Can be set up to run in real-time with mpv on Windows using https://github.com/the-database/mpv-upscale-2x_animejanai\n\nThe development of the V3 models spanned over seven months, during which over 100 release candidate models were trained and meticulously refined. The V3 models introduce several improvements compared to V2, including:\n\nMore faithful appearance to original source\nImproved handling of oversharpening artifacts, ringing, aliasing\nBetter at preserving intentional blur in scenes using depth of field\nMore accurate line colors, darkness, and thickness\nBetter preservation of soft shadow edges\n\nOverall, the V3 models yield significantly more natural and faithful results compared to the V2 models.test",

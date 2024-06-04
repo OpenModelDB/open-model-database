@@ -7,7 +7,7 @@
         "cartoon",
         "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Realtime animation restauration and doing stuff like deblur and compression artefact removal\n\n(Teacher: RealESRGANv2-animevideo-xsx2.pth)\n\nMy first attempt to make a REALTIME 2x upscaling model while also applying teacher student learning. It beats Anime4k in every way. These benchmarks use a 3060ti and it shows that everything better than a 3060ti should be able to handle 1080p input if you create engine files and use my TensorRT code. You can see in the readme how to convert onnx files into engines. The 2 right bars compare normal Compact2 and Ultracompact in speed, the 2 on the left showcase older apis I used which isn't too important for this showcase. To use this, you need to use my code which is https://github.com/styler00dollar/VSGAN-tensorrt-docker. If you use Manjaro, it is also possible to pipe the data stream directly into mpv, so you can watch it in a video player without rendering a video. Yeah the model does seem a little noisy if you zoom in a lot, but don't forget that the model itself is only 1.2mb. I think it does quite well. I still try to improve on fast models, but this is good enough to share as a first model. Plz don't steal without credits, k thx.",
+    "description": "Purpose: Realtime animation restauration and doing stuff like deblur and compression artefact removal\n\n(Teacher: RealESRGANv2-animevideo-xsx2.pth)\n\nMy first attempt to make a REALTIME 2x upscaling model while also applying teacher student learning. It beats Anime4k in every way. These benchmarks use a 3060ti and it shows that everything better than a 3060ti should be able to handle 1080p input if you create engine files and use my TensorRT code. You can see in the readme how to convert onnx files into engines. The 2 right bars compare normal Compact2 and Ultracompact in speed, the 2 on the left showcase older apis I used which isn't too important for this showcase. To use this, you need to use my code which is https://github.com/styler00dollar/VSGAN-tensorrt-docker. If you use Manjaro, it is also possible to pipe the data stream directly into mpv, so you can watch it in a video player without rendering a video. Yeah the model does seem a little noisy if you zoom in a lot, but don't forget that the model itself is only 1.2mb. I think it does quite well. I still try to improve on fast models, but this is good enough to share as a first model. Plz don't steal without credits, k thx.",
     "date": "2022-05-29",
     "architecture": "compact",
     "size": [
@@ -35,19 +35,16 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/b0/e4/y9YfLj2v_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/b0/e4/y9YfLj2v_t.png"
+            "url": "https://images2.imgbox.com/b0/e4/y9YfLj2v_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/75/d2/rkPyWK0z_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/75/d2/rkPyWK0z_t.png"
+            "url": "https://images2.imgbox.com/75/d2/rkPyWK0z_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/9c/a6/Cce0e4nl_o.png",
-            "SR": "https://images2.imgbox.com/09/bd/MzfTMS5C_o.jpg",
-            "thumbnail": "https://thumbs2.imgbox.com/09/bd/MzfTMS5C_t.jpg"
+            "SR": "https://images2.imgbox.com/09/bd/MzfTMS5C_o.jpg"
         }
     ]
 }

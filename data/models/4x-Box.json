@@ -5,7 +5,7 @@
     "tags": [
         "photo"
     ],
-    "description": "Category: Realistic Photos\nPurpose: Realistic Photos\n\nRRDB_ESRGAN_x4 replacement for stuff that's supposed to look realistic.",
+    "description": "RRDB_ESRGAN_x4 replacement for stuff that's supposed to look realistic.",
     "date": "2019-06-20",
     "architecture": "esrgan",
     "size": [

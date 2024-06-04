@@ -6,7 +6,7 @@
         "game-textures",
         "restoration"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures/Art\n\nThis model upscales artwork for the game Volfoss (2001). The model peaked in quality very quickly. The NR model removes most noise, but has the downside of removing transparent portions. Use the main model in most cases.",
+    "description": "Purpose: Game textures/Art\n\nThis model upscales artwork for the game Volfoss (2001). The model peaked in quality very quickly. The NR model removes most noise, but has the downside of removing transparent portions. Use the main model in most cases.",
     "date": "2021-09-18",
     "architecture": "esrgan",
     "size": [
@@ -37,14 +37,12 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/dc/40/E3v65js6_o.png",
-            "SR": "https://images2.imgbox.com/71/17/wh0MYUfQ_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/71/17/wh0MYUfQ_t.png"
+            "SR": "https://images2.imgbox.com/71/17/wh0MYUfQ_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/45/b3/20L1v1Au_o.png",
-            "SR": "https://images2.imgbox.com/72/c1/AR2re6tj_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/72/c1/AR2re6tj_t.png"
+            "SR": "https://images2.imgbox.com/72/c1/AR2re6tj_o.png"
         }
     ]
 }

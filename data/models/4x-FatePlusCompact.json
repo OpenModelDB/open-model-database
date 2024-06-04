@@ -24,8 +24,7 @@
             "size": 5004573,
             "sha256": "87ecbac840d83961340c18c2cd5220780be774b4ad95d79887441c0b92b5e8bf",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-FatePlusCompact.pth",
-                "https://cdn.discordapp.com/attachments/579685650824036387/1095202608655908944/4x-FatePlusCompact.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-FatePlusCompact.pth"
             ]
         }
     ],
@@ -41,8 +40,7 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/78/d4/EViQEN9C_o.png",
-            "SR": "https://images2.imgbox.com/af/a9/ebjjH8IN_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/af/a9/ebjjH8IN_t.png"
+            "SR": "https://images2.imgbox.com/af/a9/ebjjH8IN_o.png"
         }
     ]
 }

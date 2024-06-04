@@ -3,6 +3,8 @@
     "author": "crustaceous-d",
     "license": null,
     "tags": [
+        "compression-removal",
+        "denoise",
         "photo",
         "restoration"
     ],
@@ -35,8 +37,7 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/83/1d/tR7NEEws_o.jpg",
-            "SR": "https://images2.imgbox.com/b3/91/4DQlPAey_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/b3/91/4DQlPAey_t.png"
+            "SR": "https://images2.imgbox.com/b3/91/4DQlPAey_o.png"
         }
     ]
 }

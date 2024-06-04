@@ -3,10 +3,12 @@
     "author": "tal",
     "license": "WTFPL",
     "tags": [
+        "compression-removal",
+        "game-screenshots",
         "game-textures",
         "restoration"
     ],
-    "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
+    "description": "This model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
     "date": "2022-02-27",
     "architecture": "esrgan",
     "size": [

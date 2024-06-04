@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime/Pretrained\n\nAnime landscape upscale. Trained on Frames from BluRay of Byousoku 5 Centimeter",
+    "description": "Purpose: Anime/Pretrained\n\nAnime landscape upscale. Trained on Frames from BluRay of Byousoku 5 Centimeter",
     "date": "2020-04-08",
     "architecture": "esrgan",
     "size": [

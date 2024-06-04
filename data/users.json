@@ -74,6 +74,9 @@
     "deorder": {
         "name": "Deorder"
     },
+    "derpy": {
+        "name": ".derpy."
+    },
     "dinjerr": {
         "name": "DinJerr"
     },
@@ -145,6 +148,9 @@
     },
     "laserschwert": {
         "name": "Laserschwert"
+    },
+    "lehengzhang": {
+        "name": "LehengZhang"
     },
     "loinne": {
         "name": "Loinne"
@@ -256,6 +262,9 @@
     },
     "tldr-coder": {
         "name": "tldr_coder"
+    },
+    "tntwise": {
+        "name": "TNTwise"
     },
     "twittman": {
         "name": "Twittman"

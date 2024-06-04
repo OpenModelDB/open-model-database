@@ -1,0 +1,153 @@
+{
+    "name": "4xTextures_GTAV_rgt-s",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "game-textures"
+    ],
+    "description": "[Github Release Link](https://github.com/Phhofm/models/releases/tag/4xTextures_GTAV_rgt-s)\n\n## 4xTextures_GTAV_rgt-s\n\n**Scale:** 4   \n**Architecture:** [RGT](https://github.com/zhengchen1999/RGT)   \n**Architecture Option:** RGT-S  \n\n**License:** CC-BY-0.4  \n**Purpose:** Restoration   \n**Subject:** Game Textures   \n**Input Type:** Images   \n**Release Date:** 04.05.2024   \n\n**Dataset:** [GTAV_512_Textures](https://discord.com/channels/547949405949657098/905446120333930566/1132367991808466975)   \n**Dataset Size:** 8492   \n**OTF (on the fly augmentations):** No   \n**Pretrained Model:** RGT_S_x4   \n**Iterations:** 165'000   \n**Batch Size:** 6,4   \n**GT Size:** 128,256   \n\n**Description:** A model to upscale game textures, trained on GTAV Textures, handles jpg compression down to 80.\n\n**Showcase:**\n[Slow Pics](https://slow.pics/s/GqXdJ6Pd)",
+    "date": "2024-05-04",
+    "architecture": "rgt",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 136009036,
+            "sha256": "5a1f614d41d7043e7e8de32081d1d7e9d1b2ae30f1ecf89b4e059bcb331e5deb",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextures_GTAV_rgt-s/4xTextures_GTAV_rgt-s.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 135601676,
+            "sha256": "11ae0fdafe0c7cef12b0be71761fd03c6319c787ca678a9120df59e2d66e5607",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextures_GTAV_rgt-s/4xTextures_GTAV_rgt-s.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 46068836,
+            "sha256": "1bf93f38dd3ee94893642b8f3b1fffad163c0afd8c9e4e2d36f3e8e4e7983112",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextures_GTAV_rgt-s/4xTextures_GTAV_rgt-s_fp32_opset17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 165000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "GTAV_512_Textures",
+    "datasetSize": 7061,
+    "pretrainedModelG": "4x-RGT-S",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8HGfJZDa.png",
+            "SR": "https://i.slow.pics/EQ524I0k.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/e0RQeeXt.png",
+            "SR": "https://i.slow.pics/dvMeKRY6.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/qTjPPNaI.png",
+            "SR": "https://i.slow.pics/q8as3Y3X.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ak67xpXw.png",
+            "SR": "https://i.slow.pics/CvSSQsO4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/qCIcMnIq.png",
+            "SR": "https://i.slow.pics/rAYnXbse.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0bgFfo4E.png",
+            "SR": "https://i.slow.pics/zOY4FyY0.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pGoTQAYm.png",
+            "SR": "https://i.slow.pics/90NxQyq9.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/B8G4BEyk.png",
+            "SR": "https://i.slow.pics/qZ6PT60b.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ZF6hGoiA.png",
+            "SR": "https://i.slow.pics/JSgsyYnw.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/R1Ty0i1z.png",
+            "SR": "https://i.slow.pics/WmADktwA.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/7bcHD7j5.png",
+            "SR": "https://i.slow.pics/gIwi45sk.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/JV1pwGTs.png",
+            "SR": "https://i.slow.pics/BiB4vBpG.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/XfzGWfU9.png",
+            "SR": "https://i.slow.pics/FDDP2KXH.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/i0ewzvwq.png",
+            "SR": "https://i.slow.pics/5hK7XAPR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/fFpcGFY0.png",
+            "SR": "https://i.slow.pics/rx0QbGwX.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NqpR3ABH.png",
+            "SR": "https://i.slow.pics/RXtU1u1J.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BfbWBnAj.png",
+            "SR": "https://i.slow.pics/2qK4595w.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0Y1N5FnJ.png",
+            "SR": "https://i.slow.pics/Y9sxDWEz.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/lHIAjrhd.png",
+            "SR": "https://i.slow.pics/6Qx1c7EW.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/WY1sOe76.png",
+            "SR": "https://i.slow.pics/evN3xyiw.png"
+        }
+    ]
+}

@@ -7,7 +7,7 @@
         "cartoon",
         "text"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nThis is my first 2xcompact model, the main purpose of it is to upscale Dragon ball GT. for upscaling videos that have grain I would recommend denoising and dehaloing it before passing it to the model for temporal stability.",
+    "description": "This is my first 2xcompact model, the main purpose of it is to upscale Dragon ball GT. for upscaling videos that have grain I would recommend denoising and dehaloing it before passing it to the model for temporal stability.",
     "date": "2022-12-14",
     "architecture": "compact",
     "size": [
@@ -39,23 +39,19 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/5f/61/x41VesAN_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/5f/61/x41VesAN_t.png"
+            "url": "https://images2.imgbox.com/5f/61/x41VesAN_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/6a/a6/S7F0K5vG_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/6a/a6/S7F0K5vG_t.png"
+            "url": "https://images2.imgbox.com/6a/a6/S7F0K5vG_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/5b/c3/YhfmGASw_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/5b/c3/YhfmGASw_t.png"
+            "url": "https://images2.imgbox.com/5b/c3/YhfmGASw_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/93/a7/j2IpFrKG_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/93/a7/j2IpFrKG_t.png"
+            "url": "https://images2.imgbox.com/93/a7/j2IpFrKG_o.png"
         }
     ]
 }

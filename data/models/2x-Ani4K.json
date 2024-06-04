@@ -4,6 +4,7 @@
     "license": "CC-BY-NC-4.0",
     "tags": [
         "anime",
+        "compression-removal",
         "restoration"
     ],
     "description": "Ani4K is a 2x model for creating natural-looking 2K and 4K upscales of modern anime. The model places emphasis on depth of field and blur effect retention, which are extremely common in modern anime and something that many anime models struggle with. In addition, Ani4K is trained for strong detail retention, WEB/BD compression clean-up, and producing pleasing lineart. \n\nMore info on the Github page: https://github.com/Sirosky/Sirosky-Upscaling-Models.\n\nBlur Retention Comparisons (including vs. xinntao's 2x paper model): https://imgsli.com/MTg2NTg5/4/5\n\nGeneral Comparisons: https://imgsli.com/MTg2ODI2",

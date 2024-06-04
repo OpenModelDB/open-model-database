@@ -12,6 +12,7 @@ import { hashSha256 } from '../lib/model-files';
 import { ParseResult, parseDiscordMessage } from '../lib/parse-discord-message';
 import { Arch, ArchId, Model, ModelId, Tag, TagId } from '../lib/schema';
 import { canonicalizeModelId } from '../lib/schema-util';
+import { IS_DEPLOYED } from '../lib/site-data';
 import type { ResponseJson } from './api/pth-metadata';
 
 function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] {
@@ -115,7 +116,7 @@ function PageContent() {
     const { archData } = useArchitectures();
     const { tagData } = useTags();
     const router = useRouter();
-    const { webApi, editMode } = useWebApi();
+    const { webApi, editMode } = useWebApi(IS_DEPLOYED);
 
     const [processing, setProcessing] = useState(false);
 
@@ -124,7 +125,7 @@ function PageContent() {
     const [partialId, setPartialId] = useState<string>();
     const [scale, setScale] = useState(1);
     const [scaleDefinedBy, setScaleDefinedBy] = useState<string>();
-    const fullId = canonicalizeModelId(`${scale}x-${partialId ?? name}`);
+    let fullId = canonicalizeModelId(`${scale}x-${partialId ?? name}`);
     const partialIdFromFull = fullId.slice(`${scale}x-`.length);
 
     const [hasMainPth, setHasMainPth] = useState(false);
@@ -255,6 +256,13 @@ function PageContent() {
         model.tags = guessTags(model, tagData);
 
         setProcessing(true);
+
+        if (IS_DEPLOYED) {
+            sessionStorage.setItem('dummy-modelId', fullId);
+            sessionStorage.setItem('dummy-model', JSON.stringify(model));
+            fullId = 'OMDB_ADDMODEL_DUMMY' as ModelId;
+        }
+
         await webApi.models.update([[fullId, model]]);
 
         // fetch before navigating to ensure the model page is available

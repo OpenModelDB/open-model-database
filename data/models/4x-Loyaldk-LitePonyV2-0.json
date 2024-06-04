@@ -5,9 +5,11 @@
     "tags": [
         "anime",
         "cartoon",
+        "compression-removal",
+        "jpeg",
         "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nGood for Vector 2D art however converts detail to blobs. Quality seems weak with this one. However posting anyways to see if a use is found.",
+    "description": "Good for Vector 2D art however converts detail to blobs. Quality seems weak with this one. However posting anyways to see if a use is found.",
     "date": "2021-04-12",
     "architecture": "esrgan",
     "size": [

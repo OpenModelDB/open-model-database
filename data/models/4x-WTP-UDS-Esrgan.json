@@ -3,9 +3,11 @@
     "author": "umzi-x-dead",
     "license": "CC-BY-4.0",
     "tags": [
-        "manga"
+        "dehalftone",
+        "manga",
+        "restoration"
     ],
-    "description": "Purpose: descreenton\n\nI just decided to finish off the previous one, made the manga design more clear and corrected the deviation in color temperature by adding a more diverse set of colors",
+    "description": "I just decided to finish off the previous one, made the manga design more clear and corrected the deviation in color temperature by adding a more diverse set of colors",
     "date": "2024-02-19",
     "architecture": "esrgan",
     "size": [
@@ -22,7 +24,7 @@
             "size": 67029568,
             "sha256": "6b5823794353594d2b3b35930692a25687b2f707e0246dc5c47cad4dfddf4ca9",
             "urls": [
-                "https://cdn.discordapp.com/attachments/579685650824036387/1208802302576693258/4x_WTP_UDS_Esrgan.pth?ex=65e49bdf&is=65d226df&hm=90e6156d97c34316f856b230cb7ddc2a3882f7f75609e0168ecba7800abe6983&"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-WTP-UDS-Esrgan.pth"
             ]
         }
     ],

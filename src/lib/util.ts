@@ -1,4 +1,4 @@
-import { Image, TagCategory, TagCategoryId, TagId } from './schema';
+import { Model, TagCategory, TagCategoryId, TagId } from './schema';
 
 export const EMPTY_ARRAY: readonly never[] = [];
 export const EMPTY_SET: ReadonlySet<never> = new Set();
@@ -192,16 +192,32 @@ export function joinListString(elements: readonly string[], conjunction: 'and' |
     }
 }
 
-export function getPreviewImage(image: Image) {
+/**
+ * Returns the preview image for page embeds and search results.
+ * E.g. discord embeds, search results, etc.
+ */
+export function getPreviewImage(model: Model): string | undefined {
+    if (model.thumbnail) {
+        const thumb = model.thumbnail;
+        switch (thumb.type) {
+            case 'paired':
+                return thumb.SR;
+            case 'standalone':
+                return thumb.url;
+            default:
+                return assertNever(thumb);
+        }
+    }
+
+    if (model.images.length === 0) return undefined;
+    const image = model.images[0];
     switch (image.type) {
         case 'paired':
-            return image.thumbnail || image.SR;
-            break;
+            return image.SR;
         case 'standalone':
-            return image.thumbnail || image.url;
-            break;
+            return image.url;
         default:
-            return undefined;
+            return assertNever(image);
     }
 }
 

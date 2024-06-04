@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Linework Cartoons",
+    "description": "Purpose: Linework Cartoons",
     "date": "2020-11-27",
     "architecture": "esrgan",
     "size": [

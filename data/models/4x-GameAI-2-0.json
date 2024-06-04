@@ -3,10 +3,12 @@
     "author": "tal",
     "license": "WTFPL",
     "tags": [
+        "compression-removal",
+        "game-screenshots",
         "game-textures",
         "restoration"
     ],
-    "description": "Category: Game Screenshots\nPurpose: PS2 textures, cartoonish and realistic game textures.\n\nThis model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
+    "description": "This model is intended to mainly handle PS2 compression and a mixture of Realistic and cartoonish textures, it's not meant to be used for very low resolution textures such as item icons.",
     "date": "2022-02-27",
     "architecture": "esrgan",
     "size": [
@@ -38,26 +40,22 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/ea/23/KDi8BEVT_o.png",
-            "SR": "https://images2.imgbox.com/cf/9e/OqxrIO3s_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/cf/9e/OqxrIO3s_t.png"
+            "SR": "https://images2.imgbox.com/cf/9e/OqxrIO3s_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/7f/92/VDQOZBpb_o.png",
-            "SR": "https://images2.imgbox.com/ad/bc/gJfzDmi7_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/ad/bc/gJfzDmi7_t.png"
+            "SR": "https://images2.imgbox.com/ad/bc/gJfzDmi7_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/02/dc/p5FKHt55_o.png",
-            "SR": "https://images2.imgbox.com/59/11/hzxnnuHf_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/59/11/hzxnnuHf_t.png"
+            "SR": "https://images2.imgbox.com/59/11/hzxnnuHf_o.png"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/3b/7d/xyG5MAIi_o.png",
-            "SR": "https://images2.imgbox.com/b2/ae/RjdsPMwO_o.png",
-            "thumbnail": "https://thumbs2.imgbox.com/b2/ae/RjdsPMwO_t.png"
+            "SR": "https://images2.imgbox.com/b2/ae/RjdsPMwO_o.png"
         }
     ]
 }
