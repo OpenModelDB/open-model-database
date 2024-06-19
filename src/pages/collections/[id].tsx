@@ -8,7 +8,6 @@ import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useCollections } from '../../lib/hooks/use-collections';
 import { useModels } from '../../lib/hooks/use-models';
-import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { Collection, CollectionId, Model, ModelId } from '../../lib/schema';
 import { getCachedCollections, getCachedModels } from '../../lib/server/cached';
@@ -24,7 +23,6 @@ interface Props {
 }
 
 export default function Page({ collectionId, staticCollectionData, staticModelData }: Props) {
-    const { userData } = useUsers();
     const { modelData } = useModels(staticModelData);
     const { collectionData } = useCollections(staticCollectionData);
 
