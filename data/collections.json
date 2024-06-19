@@ -8,5 +8,17 @@
             "4x-Normal-RG0"
         ],
         "author": "rundevelopment"
+    },
+    "c-pbrify": {
+        "name": "PBRify",
+        "description": "PBRify_Remix is an easy way to upscale and generate PBR textures using existing low quality textures. The dataset consists of ethically sourced textures from websites like ambientCG and Polyhaven, which sets it apart from most other models.\n\nIt's intended for use with RTX Remix (hence the name) but it'll work for other things as well.\n\nMore models and other tools can be found here: https://github.com/Kim2091/PBRify_Remix",
+        "models": [
+            "1x-PBRify-Height",
+            "1x-PBRify-NormalV3",
+            "1x-PBRify-RoughnessV2",
+            "4x-PBRify-UpscalerSPANV4",
+            "4x-PBRify-UpscalerSIR-M-V2"
+        ],
+        "author": "kim2091"
     }
 }
