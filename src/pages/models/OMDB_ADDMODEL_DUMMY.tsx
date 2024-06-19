@@ -19,9 +19,10 @@ export default function Page() {
         <div>
             <ModelsPage
                 editModeOverride
-                modelData={{ [modelId]: model }}
                 modelId={modelId}
-                similar={[]}
+                staticCollectionData={{}}
+                staticModelData={{ [modelId]: model }}
+                staticSimilar={[]}
             />
         </div>
     );

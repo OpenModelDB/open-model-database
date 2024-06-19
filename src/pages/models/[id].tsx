@@ -19,14 +19,15 @@ import { Switch } from '../../elements/components/switch';
 import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
+import { useCollections } from '../../lib/hooks/use-collections';
 import { useModels } from '../../lib/hooks/use-models';
 import { UpdateModelPropertyFn, useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { KNOWN_LICENSES } from '../../lib/license';
 import { MODEL_PROPS, ModelProp } from '../../lib/model-props';
-import { ArchId, Model, ModelId, Resource, TagId } from '../../lib/schema';
-import { getCachedModels } from '../../lib/server/cached-models';
+import { ArchId, Collection, CollectionId, Model, ModelId, Resource, TagId } from '../../lib/schema';
+import { getCachedCollections, getCachedModels } from '../../lib/server/cached';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
 import { IS_DEPLOYED } from '../../lib/site-data';
@@ -42,8 +43,9 @@ interface Params extends ParsedUrlQuery {
 }
 interface Props {
     modelId: ModelId;
-    similar: ModelId[];
-    modelData: Record<ModelId, Model>;
+    staticSimilar: ModelId[];
+    staticModelData: Record<ModelId, Model>;
+    staticCollectionData: Record<CollectionId, Collection>;
     editModeOverride?: boolean;
 }
 
@@ -354,10 +356,17 @@ function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [s
         </table>
     );
 }
-export default function Page({ modelId, similar: staticSimilar, modelData: staticModelData, editModeOverride }: Props) {
+export default function Page({
+    modelId,
+    staticSimilar,
+    staticModelData,
+    staticCollectionData,
+    editModeOverride,
+}: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
     const { modelData } = useModels(staticModelData);
+    const { collectionData } = useCollections(staticCollectionData);
 
     const { webApi, editMode } = useWebApi(editModeOverride);
     const model = modelData.get(modelId) || staticModelData[modelId];
@@ -380,6 +389,10 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
             return [staticSimilar, []];
         }
     }, [staticSimilar, staticModelData, modelData, modelId, archData]);
+
+    const collections = useMemo(() => {
+        return [...collectionData].filter(([, collection]) => collection.models.includes(modelId)).map(([id]) => id);
+    }, [modelId, collectionData]);
 
     const router = useRouter();
 
@@ -698,6 +711,16 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         </div>
                     </div>
                 </div>
+                {collections.length > 0 && (
+                    <div>
+                        <h2 className="text-lg font-bold">Collections that include this model</h2>
+                        <ModelCardGrid
+                            collectionData={collectionData}
+                            modelData={modelData}
+                            models={collections}
+                        />
+                    </div>
+                )}
                 {similar.length > 0 && (
                     <div>
                         <h2 className="text-lg font-bold">Similar Models</h2>
@@ -737,17 +760,27 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     if (!modelId) throw new Error("Missing path param 'id'");
 
     const modelData = await getCachedModels();
+    const collectionData = await getCachedCollections();
     const archData = STATIC_ARCH_DATA;
 
     const similar = getSimilarModels(modelId, modelData, archData)
         .slice(0, MAX_SIMILAR_MODELS)
         .map(({ id }) => id);
 
-    const relevantIds = [...new Set([modelId, ...similar])].sort();
+    const collections = [...collectionData].filter(([, collection]) => collection.models.includes(modelId));
+
+    const relevantIds = [
+        ...new Set([modelId, ...similar, ...collections.flatMap(([, collection]) => collection.models)]),
+    ].sort();
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const relevantModelData = Object.fromEntries(relevantIds.map((id) => [id, modelData.get(id)!]));
 
     return {
-        props: { modelId, similar, modelData: relevantModelData },
+        props: {
+            modelId,
+            staticSimilar: similar,
+            staticModelData: relevantModelData,
+            staticCollectionData: Object.fromEntries(collections),
+        },
     };
 };
