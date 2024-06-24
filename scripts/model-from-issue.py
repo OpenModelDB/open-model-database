@@ -56,6 +56,8 @@ def convert_issue_to_model(issue):
         .replace("_", "-")
         .replace(" ", "-")
         .replace(".", "-")
+        .replace("\\", "-")
+        .replace("/", "-")
     )
 
     models_dir = "./data/models"
