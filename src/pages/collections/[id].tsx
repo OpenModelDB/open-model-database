@@ -1,5 +1,6 @@
 import deepEqual from 'fast-deep-equal';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useEffect, useMemo, useState } from 'react';
 import { EditableLabel } from '../../elements/components/editable-label';
@@ -31,7 +32,6 @@ export default function Page({ collectionId, staticCollectionData, staticModelDa
     const collection = collectionData.get(collectionId) || staticCollectionData[collectionId];
 
     const [modelsText, setModelsText] = useState(() => collection.models.join('\n'));
-
     const parsedModels = useMemo(() => {
         const models: ModelId[] = [];
         const invalid: string[] = [];
@@ -49,7 +49,6 @@ export default function Page({ collectionId, staticCollectionData, staticModelDa
 
         return { models: [...new Set(models)], invalid };
     }, [modelsText, modelData]);
-
     useEffect(() => {
         if (parsedModels.invalid.length > 0) return;
         if (!webApi) return;
@@ -59,6 +58,8 @@ export default function Page({ collectionId, staticCollectionData, staticModelDa
             .update([[collectionId, { ...collection, models: parsedModels.models }]])
             .catch(console.error);
     }, [webApi, collectionId, collection, parsedModels]);
+
+    const router = useRouter();
 
     return (
         <>
@@ -77,6 +78,21 @@ export default function Page({ collectionId, staticCollectionData, staticModelDa
                         }}
                     />
                 </h1>
+                {editMode && (
+                    <div className="mb-8">
+                        <button
+                            className="btn"
+                            onClick={() => {
+                                webApi.collections
+                                    .delete([collectionId])
+                                    .then(() => router.replace('/'))
+                                    .catch(console.error);
+                            }}
+                        >
+                            Delete Collection
+                        </button>
+                    </div>
+                )}
                 <div className="my-8">
                     <EditableMarkdownContainer
                         markdown={collection.description}

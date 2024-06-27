@@ -711,6 +711,40 @@ export default function Page({
                         </div>
                     </div>
                 </div>
+                {editMode && (
+                    <div>
+                        <button
+                            onClick={() => {
+                                const name = prompt('Enter the name of the new collection');
+                                if (!name) return;
+
+                                const collectionId = `c-${name
+                                    .toLowerCase()
+                                    .replace(/[^a-z0-9]/g, '-')}` as CollectionId;
+
+                                webApi.collections
+                                    .getIds()
+                                    .then(async (ids) => {
+                                        if (ids.includes(collectionId)) {
+                                            alert('Collection already exists');
+                                            return;
+                                        }
+
+                                        const newCollection: Collection = {
+                                            name,
+                                            author: model.author,
+                                            description: '',
+                                            models: [modelId],
+                                        };
+                                        await webApi.collections.update([[collectionId, newCollection]]);
+                                    })
+                                    .catch(console.error);
+                            }}
+                        >
+                            Create a new collection with this model
+                        </button>
+                    </div>
+                )}
                 {collections.length > 0 && (
                     <div>
                         <h2 className="text-lg font-bold">Collections that include this model</h2>
