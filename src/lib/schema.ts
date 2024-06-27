@@ -13,6 +13,7 @@ export type SPDXLicenseId = SPDXLicense & { readonly SPDXLicenseId: never };
 export type TagId = string & { readonly TagId: never };
 export type TagCategoryId = string & { readonly TagCategoryId: never };
 export type ArchId = string & { readonly ArchId: never };
+export type CollectionId = string & { readonly CollectionId: never };
 export type MarkDownString = string;
 
 export interface Model extends Partial<ExtraModelProperties> {
@@ -133,4 +134,11 @@ export interface Arch {
     name: string;
     input: InputType;
     compatiblePlatforms: Platform[];
+}
+
+export interface Collection {
+    name: string;
+    description: MarkDownString;
+    models: ModelId[];
+    author: UserId | UserId[];
 }
