@@ -1,6 +1,7 @@
+import deepEqual from 'fast-deep-equal';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
@@ -28,6 +29,36 @@ export default function Page({ collectionId, staticCollectionData, staticModelDa
 
     const { webApi, editMode } = useWebApi();
     const collection = collectionData.get(collectionId) || staticCollectionData[collectionId];
+
+    const [modelsText, setModelsText] = useState(() => collection.models.join('\n'));
+
+    const parsedModels = useMemo(() => {
+        const models: ModelId[] = [];
+        const invalid: string[] = [];
+
+        for (const line of modelsText.split('\n')) {
+            const id = line.trim();
+            if (!id) continue;
+
+            if (modelData.has(id as ModelId)) {
+                models.push(id as ModelId);
+            } else {
+                invalid.push(id);
+            }
+        }
+
+        return { models: [...new Set(models)], invalid };
+    }, [modelsText, modelData]);
+
+    useEffect(() => {
+        if (parsedModels.invalid.length > 0) return;
+        if (!webApi) return;
+        if (deepEqual(collection.models, parsedModels.models)) return;
+
+        webApi.collections
+            .update([[collectionId, { ...collection, models: parsedModels.models }]])
+            .catch(console.error);
+    }, [webApi, collectionId, collection, parsedModels]);
 
     return (
         <>
@@ -58,6 +89,22 @@ export default function Page({ collectionId, staticCollectionData, staticModelDa
                         }}
                     />
                 </div>
+                {editMode && (
+                    <div>
+                        <h2>Model IDs</h2>
+                        <p>Edit the model IDs here to change which models are part of the collection.</p>
+                        <textarea
+                            className="box-border h-64 w-full resize-y"
+                            value={modelsText}
+                            onChange={(e) => setModelsText(e.target.value)}
+                        />
+                        {parsedModels.invalid.length > 0 && (
+                            <pre className="text-red-400">
+                                Invalid model IDs:{parsedModels.invalid.map((i) => `\n  ${i}`).join('')}
+                            </pre>
+                        )}
+                    </div>
+                )}
                 <ModelCardGrid
                     collectionData={collectionData}
                     modelData={modelData}
