@@ -22,7 +22,7 @@ export const validateModel = (
     const report = (message: string, fix?: () => Promise<void>) =>
         errors.push({ message: `Model ${modelId}: ${message}`, fix });
 
-    if (modelId.startsWith(`${model.scale}x`)) {
+    if (modelId.startsWith(`${model.scale}x-`)) {
         const expected = canonicalizeModelId(modelId);
         if (expected !== modelId) {
             report(`Model ID should be ${expected}`, () => api.models.changeId(modelId, expected));
