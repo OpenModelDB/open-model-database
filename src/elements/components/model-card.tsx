@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/display-name */
 import React, { memo, useRef, useState } from 'react';
+import { MdCollections } from 'react-icons/md';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useDevicePixelRatio } from '../../lib/hooks/use-device-pixel-ratio';
@@ -203,7 +204,10 @@ const CollectionCardContent = memo(({ id, collection, preview }: CollectionCardP
         <div className={style.inner}>
             {/* Arch tag on image */}
             <div className={style.topTags}>
-                <AccentTag>Collection</AccentTag>
+                <MdCollections
+                    className="rounded-lg bg-black bg-opacity-40 p-1 text-white"
+                    size="1.5rem"
+                />
             </div>
 
             <Link
