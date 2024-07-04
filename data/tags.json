@@ -216,6 +216,10 @@
         "name": "Real-CUGAN",
         "description": ""
     },
+    "arch:realplksr": {
+        "name": "RealPLKSR",
+        "description": ""
+    },
     "arch:rgt": {
         "name": "RGT",
         "description": ""
