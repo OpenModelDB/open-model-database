@@ -1,0 +1,35 @@
+{
+    "name": "4x_realplksr_gan_pretrain",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [
+        "photo",
+        "pretrained"
+    ],
+    "description": "## RealPLKSR GAN pretrain\n\n**Scale:** 4x  \n**Architecture:** RealPLKSR  \n**Download:** [GDrive](https://drive.google.com/file/d/1iQmsnMhWXsHLYuYEwwRhdj9fMg71h-IU/view) | Training files: [GDrive](https://drive.google.com/drive/folders/1OWLGBce6oe8W6kARINFCWG7o0O5LeC_h?usp=sharing)  \n\n**Author:** musl  \n**License:** [CC0](https://creativecommons.org/public-domain/cc0/)  \n**Purpose:** Pretrain  \n**Subject:** Multipurpose  \n**Date:** 15 May 2024  \n\n**Size:** default Real-PLKSR  \n**I/O Channels:** 3(RGB)->3(RGB)  \n\n**Dataset:** Nomos-v2  \n**Dataset Size:** 6000  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** 4x_realplksr_mssim_pretrain  \n**Iterations:** ~450k  \n**Batch Size:** 2-6  \n**GT Size:** 128-416  \n\n**Description:** Pretrained GAN models for RealPLKSR network. Trained on downsampling-only (nearest, bilinear, bicubic, lanczos and mitchell).",
+    "date": "2024-05-15",
+    "architecture": "realplksr",
+    "size": [
+        "64dim",
+        "28nb",
+        "17ks",
+        "Real"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29678402,
+            "sha256": "bc7ed4f8fb54ebd7721e07bbf275109c1b7a19886b152808db4647f4f411b220",
+            "urls": [
+                "https://drive.google.com/file/d/1iQmsnMhWXsHLYuYEwwRhdj9fMg71h-IU/view"
+            ]
+        }
+    ],
+    "trainingOTF": false,
+    "pretrainedModelG": "4x-realplksr-mssim-pretrain",
+    "images": []
+}
