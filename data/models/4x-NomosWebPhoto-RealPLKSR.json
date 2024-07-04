@@ -1,0 +1,61 @@
+{
+    "name": "4xNomosWebPhoto_RealPLKSR",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "4xNomosWebPhoto_RealPLKSR  \n\nScale: 4  \nArchitecture: RealPLKSR  \nArchitecture Option: realplksr  \n[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xNomosWebPhoto_RealPLKSR)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Restoration  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 28.05.2024  \n\nDataset: Nomos-v2  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: 4x_realplksr_gan_pretrain  \nIterations: 404'000, 445'000  \nBatch Size: 12, 4  \nGT Size: 128, 256, 512  \n\nDescription:\n\nshort: 4x RealPLKSR model for photography, trained with realistic noise, lens blur, jpg and webp re-compression.\n\nfull: My newest version of my RealWebPhoto series, this time I used the newly released Nomos-v2 dataset by musl.   \nI then made 12 different low resolution degraded folders, using kim's datasetdestroyer for scaling and compression, my ludvae200 model for realistic noise, and umzi's wtp_dataset_destroyer with its floating point lens blur implementation for better control.   \nI then mixed them together in a single lr folder and trained for 460'000 iters, checked the results, and upon kims suggestion of using interpolation, I tested and am releasing this interpolation between the checkpoints 404'000 and 445'000.  \n\nThis model has been trained on neosr using mixup, cutmix, resizemix, cutblur, nadam, unet, multisteplr, mssim, perceptual, gan, dists, ldl, ff, color and lumaloss, and interpolated using the current chaiNNer nightly version.  \n\nThis model took multiple retrainings and reworks of the dataset, until I am now satisfied enough with the quality to release this version.   \n\nFor more details on the whole process see the pdf file in the attachement.  \n\nI am also attaching the 404'000, 445'000 and 460'000 checkpoints for completeness.    \n\nPS in general degradation strengths have been reduced/adjusted in comparison to my previous RealWebPhoto models  \n\nShowcase:\n[Slow Pics 10 Examples](https://slow.pics/s/euvEv4hL)",
+    "date": "2024-05-28",
+    "architecture": "realplksr",
+    "size": [
+        "64dim",
+        "28nb",
+        "17ks",
+        "Real"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29683482,
+            "sha256": "a9db66c9b674c6a5025b6ef3bee71a57c33b8605d8a2de0980470f89002efbbe",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomosWebPhoto_RealPLKSR/4xNomosWebPhoto_RealPLKSR.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 445000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "Nomos-v2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-realplksr-gan-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ttBmEsyM.png",
+            "SR": "https://i.slow.pics/yHKf35eW.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/68yeIooo.png",
+            "SR": "https://i.slow.pics/Z6vmBN69.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/LUc7ikyl.png",
+            "SR": "https://i.slow.pics/IhI3wtGC.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/mljAdTUv.png",
+            "SR": "https://i.slow.pics/XtfSCf8c.png"
+        }
+    ]
+}
