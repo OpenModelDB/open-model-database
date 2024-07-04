@@ -1,6 +1,19 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { RWLock } from './lock';
-import { Arch, ArchId, Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from './schema';
+import {
+    Arch,
+    ArchId,
+    Collection,
+    CollectionId,
+    Model,
+    ModelId,
+    Tag,
+    TagCategory,
+    TagCategoryId,
+    TagId,
+    User,
+    UserId,
+} from './schema';
 import { noop } from './util';
 
 export interface DBApi {
@@ -9,6 +22,7 @@ export interface DBApi {
     readonly tagCategories: CollectionApi<TagCategoryId, TagCategory>;
     readonly users: CollectionApi<UserId, User>;
     readonly architectures: CollectionApi<ArchId, Arch>;
+    readonly collections: CollectionApi<CollectionId, Collection>;
 }
 
 /**

@@ -27,7 +27,7 @@ def print_metadata(file: str):
 
         return_success(
             {
-                "architecture": model.architecture,
+                "architecture": model.architecture.name,
                 "tags": model.tags,
                 "scale": model.scale,
                 "inputChannels": model.input_channels,
@@ -45,6 +45,8 @@ if __name__ == "__main__":
             current_python = sys.executable
             os.system(current_python + " -m pip install spandrel")
         else:
-            return_error("PyTorch is not installed. Install PyTorch on your system's Python installation to automatically detect model metadata.")
+            return_error(
+                "PyTorch is not installed. Install PyTorch on your system's Python installation to automatically detect model metadata."
+            )
 
     print_metadata(sys.argv[1])

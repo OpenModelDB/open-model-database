@@ -1,0 +1,66 @@
+{
+    "name": "1xSkinContrast-SuperUltraCompact",
+    "author": "brigadeiro",
+    "license": "CC0-1.0",
+    "tags": [
+        "ai-generated",
+        "cgi",
+        "colorization",
+        "faces",
+        "game-screenshots",
+        "game-textures",
+        "photo",
+        "restoration",
+        "texture-generation",
+        "video-frame"
+    ],
+    "description": "A 1x model designed for skin contrast (although some backgrounds suffer a little modification), also try the other SkinContrast models",
+    "date": "2024-06-04",
+    "architecture": "compact",
+    "size": [
+        "24nf",
+        "8nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "https://www.mediafire.com/file/hnvatglitgayunh/1xSkinContrast-SuperUltraCompact.pth/file"
+            ],
+            "sha256": "2713e618f12995f243aafd1963e1fcc23d49b5ae6f151c14e12b6ce65e711663",
+            "size": 181474,
+            "platform": "pytorch",
+            "type": "pth"
+        }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/5YMK1m4/00.png",
+            "SR": "https://i.ibb.co/D5kLGHg/00-1x-Skin-Contrast-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/JcS42TX/02.png",
+            "SR": "https://i.ibb.co/xGhPqgs/02-1x-Skin-Contrast-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/XLkG4k3/03.png",
+            "SR": "https://i.ibb.co/C29zHY0/03-1x-Skin-Contrast-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/YXWXmmr/98020a65-72b6-4659-b624-f77d64afe189.png",
+            "SR": "https://i.ibb.co/nCXsNmR/98020a65-72b6-4659-b624-f77d64afe189-1x-Skin-Contrast-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/0QB18Sd/ss-f14055548a6c51171036ebb3d00ddf5c97e5bd05-1920x1080.png",
+            "SR": "https://i.ibb.co/4J4jtDL/ss-f14055548a6c51171036ebb3d00ddf5c97e5bd05-1920x1080-1x-Skin-Contrast-Super-Ultra-Compact.png"
+        }
+    ],
+    "pretrainedModelG": "1x-SuperUltraCompact-Pretrain"
+}

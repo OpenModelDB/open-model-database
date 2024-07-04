@@ -73,7 +73,7 @@ function validateTypeImpl(
     value: unknown,
     prop: PropType,
     name: string,
-    external: ExternalValidator = {}
+    external: ExternalValidator
 ): ErrorReport | string | undefined {
     switch (prop.type) {
         case 'number':
@@ -162,7 +162,7 @@ function validateTypeImpl(
 
             for (let i = 0; i < arrayValue.length; i++) {
                 const item = arrayValue[i];
-                const itemError = validateType(item, prop.of, `${name}[${i}]`);
+                const itemError = validateTypeImpl(item, prop.of, `${name}[${i}]`, external);
                 if (itemError) return itemError;
             }
 
@@ -186,7 +186,7 @@ function validateTypeImpl(
                     continue;
                 }
 
-                const subError = validateType(subValue, subProp, `${name}.${key}`);
+                const subError = validateTypeImpl(subValue, subProp, `${name}.${key}`, external);
                 if (subError) return subError;
             }
             if (prop.customValidate) {

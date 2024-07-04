@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/display-name */
 import React, { memo, useRef, useState } from 'react';
+import { MdCollections } from 'react-icons/md';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
 import { useDevicePixelRatio } from '../../lib/hooks/use-device-pixel-ratio';
@@ -8,18 +9,22 @@ import { useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
-import { ImageSize, Model, ModelId, PairedThumbnail } from '../../lib/schema';
+import { Collection, CollectionId, ImageSize, Model, ModelId, PairedThumbnail } from '../../lib/schema';
 import { getTextDescription } from '../../lib/text-description';
-import { asArray, joinClasses } from '../../lib/util';
+import { asArray, assertNever, joinClasses } from '../../lib/util';
 import { EditableTags } from './editable-tags';
 import { Link } from './link';
 import style from './model-card.module.scss';
 
-interface BaseModelCardProps {
+export interface ModelCardProps {
     id: ModelId;
     model: Model;
+    lazy?: boolean;
 }
-interface ModelCardProps extends BaseModelCardProps {
+export interface CollectionCardProps {
+    id: CollectionId;
+    collection: Collection;
+    preview: Model | undefined;
     lazy?: boolean;
 }
 
@@ -94,9 +99,12 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedThumbnai
     );
 };
 
-const getModelCardImageComponent = (model: Model) => {
-    const image = model.thumbnail ?? (model.images.length === 0 ? undefined : model.images[0]);
-    switch (image?.type) {
+const getModelCardImageComponent = (model: Model | undefined) => {
+    const image = model?.thumbnail ?? model?.images[0];
+    if (!model || !image) {
+        return <div className="margin-auto z-0 w-full text-center">No Image</div>;
+    }
+    switch (image.type) {
         case 'paired': {
             return (
                 <SideBySideImage
@@ -117,12 +125,12 @@ const getModelCardImageComponent = (model: Model) => {
             );
         }
         default:
-            return <div className="margin-auto z-0 w-full text-center">No Image</div>;
+            return assertNever(image);
     }
 };
 
 // eslint-disable-next-line react/display-name
-export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
+const ModelCardContent = memo(({ id, model }: ModelCardProps) => {
     const { userData } = useUsers();
     const { archData } = useArchitectures();
 
@@ -186,7 +194,62 @@ export const ModelCardContent = memo(({ id, model }: BaseModelCardProps) => {
     );
 });
 
-export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
+// eslint-disable-next-line react/display-name
+const CollectionCardContent = memo(({ id, collection, preview }: CollectionCardProps) => {
+    const { userData } = useUsers();
+
+    const isPaired = preview?.images[0]?.type === 'paired';
+
+    return (
+        <div className={style.inner}>
+            {/* Arch tag on image */}
+            <div className={style.topTags}>
+                <MdCollections
+                    className="rounded-lg bg-black bg-opacity-40 p-1 text-white"
+                    size="1.5rem"
+                />
+            </div>
+
+            <Link
+                className={joinClasses(style.thumbnail, isPaired && style.paired, 'bg-fade-300 dark:bg-fade-700 ')}
+                href={`/collections/${id}`}
+                tabIndex={-1}
+            >
+                {getModelCardImageComponent(preview)}
+            </Link>
+
+            <div className={joinClasses(style.details, isPaired && style.paired)}>
+                <Link
+                    className={`${style.name} block text-xl font-bold text-gray-800 dark:text-gray-100`}
+                    href={`/collections/${id}`}
+                >
+                    {collection.name}
+                </Link>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                    {'by '}
+                    {joinList(
+                        asArray(collection.author).map((userId) => (
+                            <Link
+                                className="font-bold text-accent-600 dark:text-accent-400"
+                                href={`/users/${userId}`}
+                                key={userId}
+                            >
+                                {userData.get(userId)?.name ?? `unknown user:${userId}`}
+                            </Link>
+                        ))
+                    )}
+                </div>
+
+                {/* Description */}
+                <div className="mb-2 mt-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">
+                    {collection.description}
+                </div>
+            </div>
+        </div>
+    );
+});
+
+const useMakeLazyCard = (lazy: boolean, card: JSX.Element) => {
     const { editMode } = useWebApi();
 
     const inner = (
@@ -197,10 +260,7 @@ export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
                 'border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900'
             )}
         >
-            <ModelCardContent
-                id={id}
-                model={model}
-            />
+            {card}
         </div>
     );
 
@@ -216,6 +276,27 @@ export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
         >
             {inner}
         </LazyLoadComponent>
+    );
+};
+
+export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
+    return useMakeLazyCard(
+        lazy,
+        <ModelCardContent
+            id={id}
+            model={model}
+        />
+    );
+});
+
+export const CollectionCard = memo(({ id, collection, preview, lazy = false }: CollectionCardProps) => {
+    return useMakeLazyCard(
+        lazy,
+        <CollectionCardContent
+            collection={collection}
+            id={id}
+            preview={preview}
+        />
     );
 });
 

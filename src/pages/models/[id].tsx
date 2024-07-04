@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useCallback, useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
 import { DownloadButton } from '../../elements/components/download-button';
@@ -19,19 +19,22 @@ import { Switch } from '../../elements/components/switch';
 import { HeadCommon } from '../../elements/head-common';
 import { PageContainer } from '../../elements/page';
 import { useArchitectures } from '../../lib/hooks/use-architectures';
+import { useCollections } from '../../lib/hooks/use-collections';
 import { useModels } from '../../lib/hooks/use-models';
 import { UpdateModelPropertyFn, useUpdateModel } from '../../lib/hooks/use-update-model';
 import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { KNOWN_LICENSES } from '../../lib/license';
 import { MODEL_PROPS, ModelProp } from '../../lib/model-props';
-import { ArchId, Model, ModelId, Resource, TagId } from '../../lib/schema';
-import { getCachedModels } from '../../lib/server/cached-models';
+import { ArchId, Collection, CollectionId, Model, ModelId, Resource, TagId } from '../../lib/schema';
+import { getCachedCollections, getCachedModels } from '../../lib/server/cached';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
+import { IS_DEPLOYED } from '../../lib/site-data';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { getTextDescription } from '../../lib/text-description';
 import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
+import { validateModel } from '../../lib/validate-model';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
 
@@ -40,8 +43,10 @@ interface Params extends ParsedUrlQuery {
 }
 interface Props {
     modelId: ModelId;
-    similar: ModelId[];
-    modelData: Record<ModelId, Model>;
+    staticSimilar: ModelId[];
+    staticModelData: Record<ModelId, Model>;
+    staticCollectionData: Record<CollectionId, Collection>;
+    editModeOverride?: boolean;
 }
 
 const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTags: string[]) => void) => (
@@ -351,12 +356,19 @@ function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [s
         </table>
     );
 }
-export default function Page({ modelId, similar: staticSimilar, modelData: staticModelData }: Props) {
+export default function Page({
+    modelId,
+    staticSimilar,
+    staticModelData,
+    staticCollectionData,
+    editModeOverride,
+}: Props) {
     const { archData } = useArchitectures();
     const { userData } = useUsers();
     const { modelData } = useModels(staticModelData);
+    const { collectionData } = useCollections(staticCollectionData);
 
-    const { webApi, editMode } = useWebApi();
+    const { webApi, editMode } = useWebApi(editModeOverride);
     const model = modelData.get(modelId) || staticModelData[modelId];
 
     const authors = asArray(model.author);
@@ -378,7 +390,24 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
         }
     }, [staticSimilar, staticModelData, modelData, modelId, archData]);
 
+    const collections = useMemo(() => {
+        return [...collectionData].filter(([, collection]) => collection.models.includes(modelId)).map(([id]) => id);
+    }, [modelId, collectionData]);
+
     const router = useRouter();
+
+    const runModelValidation = useCallback(async () => {
+        if (!webApi) {
+            throw new Error('API not available');
+        }
+        const modelData = await webApi.models.getAll();
+        const archData = await webApi.architectures.getAll();
+        const tagData = await webApi.tags.getAll();
+        const userData = await webApi.users.getAll();
+        const realModelId =
+            modelId === 'OMDB_ADDMODEL_DUMMY' ? (sessionStorage.getItem('dummy-modelId') as ModelId) : modelId;
+        return validateModel(model, realModelId, modelData, archData, tagData, userData, webApi);
+    }, [model, modelId, webApi]);
 
     return (
         <>
@@ -421,7 +450,7 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         <div className="relative">
                             <div>
                                 {editMode && (
-                                    <div className="text-right">
+                                    <div className="flex items-end justify-end gap-2 text-right">
                                         <button
                                             onClick={() => {
                                                 if (confirm('Are you sure you want to delete this model?')) {
@@ -439,6 +468,66 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                         >
                                             Delete Model
                                         </button>
+                                        {IS_DEPLOYED && (
+                                            <>
+                                                <button
+                                                    onClick={() => {
+                                                        navigator.clipboard
+                                                            .readText()
+                                                            .then((text) => {
+                                                                try {
+                                                                    // in the future we might want to actually validate the model
+                                                                    const model = JSON.parse(text) as Model;
+                                                                    webApi.models
+                                                                        .update([[modelId, model]])
+                                                                        .catch(console.error);
+                                                                } catch (e) {
+                                                                    console.error(e);
+                                                                }
+                                                            })
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Load Model from clipboard
+                                                </button>
+                                                <button
+                                                    onClick={() => {
+                                                        navigator.clipboard
+                                                            .writeText(JSON.stringify(model, null, 2))
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Copy Model to clipboard
+                                                </button>
+                                                <button
+                                                    onClick={() => {
+                                                        runModelValidation()
+                                                            .then((errors) => {
+                                                                if (errors.length > 0) {
+                                                                    alert(
+                                                                        errors.map(({ message }) => message).join('\n')
+                                                                    );
+                                                                    return;
+                                                                }
+                                                                const path =
+                                                                    'https://github.com/OpenModelDB/open-model-database/issues/new';
+                                                                const modelJson = JSON.stringify(model, null, 2);
+                                                                const codeBlock = `\`\`\`json\n${modelJson}\n\`\`\``;
+                                                                const queryParams = new URLSearchParams({
+                                                                    title: `[MODEL ADD REQUEST] ${model.name}`,
+                                                                    body: codeBlock,
+                                                                    template: 'model-add-request.md',
+                                                                });
+                                                                const url = `${path}?${queryParams.toString()}`;
+                                                                window.open(url, '_blank');
+                                                            })
+                                                            .catch(console.error);
+                                                    }}
+                                                >
+                                                    Submit Model as GitHub Issue
+                                                </button>
+                                            </>
+                                        )}
                                     </div>
                                 )}
                                 <h1 className="mt-0 mb-1 leading-10">
@@ -458,7 +547,8 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                                     />
                                 </div>
                             </div>
-                            <div className="mt-2 text-xs">
+                            <div className="mt-2 flex gap-2 text-xs">
+                                {editMode && <div>tags:</div>}
                                 <EditableTags
                                     readonly={!editMode}
                                     tags={model.tags}
@@ -621,6 +711,50 @@ export default function Page({ modelId, similar: staticSimilar, modelData: stati
                         </div>
                     </div>
                 </div>
+                {editMode && (
+                    <div>
+                        <button
+                            onClick={() => {
+                                const name = prompt('Enter the name of the new collection');
+                                if (!name) return;
+
+                                const collectionId = `c-${name
+                                    .toLowerCase()
+                                    .replace(/[^a-z0-9]/g, '-')}` as CollectionId;
+
+                                webApi.collections
+                                    .getIds()
+                                    .then(async (ids) => {
+                                        if (ids.includes(collectionId)) {
+                                            alert('Collection already exists');
+                                            return;
+                                        }
+
+                                        const newCollection: Collection = {
+                                            name,
+                                            author: model.author,
+                                            description: '',
+                                            models: [modelId],
+                                        };
+                                        await webApi.collections.update([[collectionId, newCollection]]);
+                                    })
+                                    .catch(console.error);
+                            }}
+                        >
+                            Create a new collection with this model
+                        </button>
+                    </div>
+                )}
+                {collections.length > 0 && (
+                    <div>
+                        <h2 className="text-lg font-bold">Collections that include this model</h2>
+                        <ModelCardGrid
+                            collectionData={collectionData}
+                            modelData={modelData}
+                            models={collections}
+                        />
+                    </div>
+                )}
                 {similar.length > 0 && (
                     <div>
                         <h2 className="text-lg font-bold">Similar Models</h2>
@@ -660,17 +794,27 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
     if (!modelId) throw new Error("Missing path param 'id'");
 
     const modelData = await getCachedModels();
+    const collectionData = await getCachedCollections();
     const archData = STATIC_ARCH_DATA;
 
     const similar = getSimilarModels(modelId, modelData, archData)
         .slice(0, MAX_SIMILAR_MODELS)
         .map(({ id }) => id);
 
-    const relevantIds = [...new Set([modelId, ...similar])].sort();
+    const collections = [...collectionData].filter(([, collection]) => collection.models.includes(modelId));
+
+    const relevantIds = [
+        ...new Set([modelId, ...similar, ...collections.flatMap(([, collection]) => collection.models)]),
+    ].sort();
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const relevantModelData = Object.fromEntries(relevantIds.map((id) => [id, modelData.get(id)!]));
 
     return {
-        props: { modelId, similar, modelData: relevantModelData },
+        props: {
+            modelId,
+            staticSimilar: similar,
+            staticModelData: relevantModelData,
+            staticCollectionData: Object.fromEntries(collections),
+        },
     };
 };

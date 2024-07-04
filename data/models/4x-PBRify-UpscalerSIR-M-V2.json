@@ -1,0 +1,60 @@
+{
+    "name": "4x-PBRify_UpscalerSIR-M_V2",
+    "author": "kim2091",
+    "license": "CC0-1.0",
+    "tags": [
+        "dedither",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "This is part of my [PBRify_Remix](<https://github.com/Kim2091/PBRify_Remix>) project. This is a much more capable model based on SwinIR Medium, which should strike a balance between capacity for learning + inference speed. It appears to have done so :)",
+    "date": "2024-05-19",
+    "architecture": "swinir",
+    "size": [
+        "Medium"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/4x-PBRify_UpscalerSIR-M_V2/4x-PBRify_UpscalerSIR-M_V2.pth"
+            ],
+            "sha256": "65f5706973c4a66321b26681f3de3583c73b807dd97dd00fc69dfdb747396fd2",
+            "size": 59606776,
+            "platform": "pytorch",
+            "type": "pth"
+        }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xJmIuxId.png",
+            "SR": "https://i.slow.pics/uEF2YWSy.png",
+            "caption": "Input vs Output (RTX Remix)"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pOpqMtIv.png",
+            "SR": "https://i.slow.pics/KExMUh07.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/p1BX66df.png",
+            "SR": "https://i.slow.pics/eDZkR2gl.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/YyrZBxVe.png",
+            "SR": "https://i.slow.pics/O38UCmyY.png",
+            "caption": "Old vs New SR Model"
+        }
+    ],
+    "dataset": "ambientCG + PolyHaven + UltraSharpV2",
+    "datasetSize": 26000,
+    "trainingIterations": 400000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 256,
+    "trainingOTF": false
+}

@@ -38,6 +38,9 @@
     "boxdrop": {
         "name": "BoxDrop"
     },
+    "brigadeiro": {
+        "name": "Brigadeiro"
+    },
     "bubblemint": {
         "name": "Bubblemint#6472"
     },
@@ -73,6 +76,9 @@
     },
     "deorder": {
         "name": "Deorder"
+    },
+    "derpy": {
+        "name": ".derpy."
     },
     "dinjerr": {
         "name": "DinJerr"
@@ -227,6 +233,9 @@
     "sazoji": {
         "name": "Sazoji"
     },
+    "sharekhan": {
+        "name": "SharekhaN"
+    },
     "sirosky": {
         "name": "Sirosky"
     },
@@ -259,6 +268,9 @@
     },
     "tldr-coder": {
         "name": "tldr_coder"
+    },
+    "tntwise": {
+        "name": "TNTwise"
     },
     "twittman": {
         "name": "Twittman"

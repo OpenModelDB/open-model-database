@@ -1,0 +1,67 @@
+{
+    "name": "AniSD Suite (Multiple Models)",
+    "author": "sirosky",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "anime",
+        "anti-aliasing",
+        "compression-removal",
+        "debanding",
+        "dehalo",
+        "denoise",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "## AniSD Suite (15 models)\n\n**Scale:** 2x (1x for AniSD DB)  \n**Architecture:** SPAN / Compact / SwinIR Small / CRAFT / DAT2  / RPLKSR\n\n**Dataset:** Anime frames. Credits to @.kuronoe. and @pwnsweet (EVA dataset) for their contributions to the dataset!  \n**Dataset Size:** ~7,000 - ~13,000  \n\nAniSD is a suite of 15 (as of time of writing) specialized SISR models trained to restore and upscale standard definition digital anime from ~2000s and onwards, including both both WEB and DVD releases. Faithfulness to the source and natural-looking output are the guiding principles behind the training of the AniSD models. This means avoiding oversharpened output (which can look especially absurd on standard definition sources), minimizing upscaling artifacts, retaining the natural detail of the source and of course, fixing the standard range of issues found in many DVD/WEB release (chroma issues, compression, haloing/ringing, blur, dotcrawl, banding etc.). Refer to the infographic above for a quick breakdown of the available models, and refer to the [Github release](https://github.com/Sirosky/Upscale-Hub/releases/tag/AniSD-RealPLKSR) for further information.",
+    "date": "2024-06-09",
+    "architecture": "span",
+    "size": [
+        "feature channels: 48"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "https://github.com/Sirosky/Upscale-Hub/releases/tag/AniSD-RealPLKSR"
+            ],
+            "sha256": "8d4223495eb8c87d31c24a030370432d612708e4cac11e833a48563a71fa7f36",
+            "size": 8954413,
+            "platform": "pytorch",
+            "type": "pth"
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/FLCL-Comparison.png?raw=true",
+            "caption": "FLCL Comparison"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/2752448/337998212-2deaaa03-ef0b-4f93-9b33-6207f03937aa.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTc5ODE2NTUsIm5iZiI6MTcxNzk4MTM1NSwicGF0aCI6Ii8yNzUyNDQ4LzMzNzk5ODIxMi0yZGVhYWEwMy1lZjBiLTRmOTMtOWIzMy02MjA3ZjAzOTM3YWEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDYxMCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA2MTBUMDEwMjM1WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9M2RmZmE2NTcxN2ZiNmQxYWEyMWEwY2IwMGM3OTc2MWZjMTE3YmY4YjgwNTg4NzMyYjA2NzM1MmZjZmNjMDNmMCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.5yl8WTLgFbv3STuXBiCoUDbldDeMkfA1kKe7wE2lEOs",
+            "caption": "AniSD Models Infographic"
+        },
+        {
+            "type": "standalone",
+            "url": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/D_OP1-200-Comparison.png",
+            "caption": "One Piece Comparison"
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/DC/Yugi%201.png?raw=true",
+            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/DC/Yugi%201-2x_AniSD_DC_RealPLKSR_115K_fp32_FO_dynamic-50.png?raw=true",
+            "caption": "Yugi Comparison"
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/AC/Rainbows-200.png?raw=true",
+            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/AC/Rainbows-2x_AniSD_AC_RealPLKSR_127500_fp32_FO_dynamic-100.png?raw=true",
+            "caption": "Rainbows Comparison"
+        }
+    ],
+    "dataset": "Anime frames",
+    "datasetSize": 13000,
+    "trainingOTF": false
+}

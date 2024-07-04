@@ -1,0 +1,41 @@
+{
+    "name": "4x-PBRify_UpscalerSPANV4",
+    "author": "kim2091",
+    "license": "CC0-1.0",
+    "tags": [
+        "compression-removal",
+        "dds",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "This is part of a larger model set, PBRify_Remix. PBRify_Remix is an easy way to upscale and generate PBR textures using existing low quality textures. The dataset consists of ethically sourced textures from websites like ambientCG and Polyhaven, which sets it apart from most other models.\n\nIt's intended for use with RTX Remix (hence the name) but it'll work for other things as well.",
+    "date": "2024-04-11",
+    "architecture": "span",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "https://github.com/Kim2091/PBRify_Remix/raw/main/Models/4x-PBRify_UpscalerSPANV4.pth"
+            ],
+            "sha256": "d1f1fa1af7a5ab23fcf143e75aac4951e6c52d56bf77d9ccd4d004a4831d0461",
+            "size": 9016813,
+            "platform": "pytorch",
+            "type": "pth"
+        }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NRxyrWXc.png",
+            "SR": "https://i.slow.pics/0zgJyGr0.png"
+        }
+    ],
+    "dataset": "ambientCG + UltraSharpV2",
+    "trainingIterations": 1000000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 256,
+    "trainingOTF": false
+}
