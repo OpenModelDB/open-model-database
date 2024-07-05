@@ -76,7 +76,8 @@
             "arch:swift-srgan",
             "arch:swinir",
             "arch:atd",
-            "arch:drct"
+            "arch:drct",
+            "arch:realplksr"
         ]
     },
     "platform": {

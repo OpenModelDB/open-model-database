@@ -138,6 +138,14 @@
             "onnx"
         ]
     },
+    "realplksr": {
+        "name": "RealPLKSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "rgt": {
         "name": "RGT",
         "input": "image",
