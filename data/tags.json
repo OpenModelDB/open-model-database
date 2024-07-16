@@ -220,6 +220,10 @@
         "name": "RealPLKSR",
         "description": ""
     },
+    "arch:realplksr-dysample": {
+        "name": "RealPLKSR_dysample",
+        "description": ""
+    },
     "arch:rgt": {
         "name": "RGT",
         "description": ""

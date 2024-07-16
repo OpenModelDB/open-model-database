@@ -1,0 +1,47 @@
+{
+    "name": "4x-PBRify_UpscalerDAT2_V1",
+    "author": "kim2091",
+    "license": "CC0-1.0",
+    "tags": [
+        "compression-removal",
+        "dds",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "Project page: https://github.com/Kim2091/PBRify_Remix\n\nYet another model in the PBRify_Remix series. This is a new upscaler to replace the previous 4x-PBRify_UpscalerSIR-M_V2 model.\n\nThis model far exceeds the quality of the previous, with far more natural detail generation and better reconstruction of lines and edges.\n\nComparison: https://slow.pics/c/DCjlXPGb",
+    "date": "2024-06-05",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [],
+    "trainingIterations": 300000,
+    "trainingBatchSize": 18,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "ambientCG + PolyHaven V2 dataset",
+    "datasetSize": 5500,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "LR vs DAT2",
+            "LR": "https://i.slow.pics/xC4ZENp7.png",
+            "SR": "https://i.slow.pics/iT43SRNQ.png"
+        },
+        {
+            "type": "paired",
+            "caption": "SwinIR vs DAT2",
+            "LR": "https://i.slow.pics/eAeuBEq4.png",
+            "SR": "https://i.slow.pics/iT43SRNQ.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/62084776/337503147-92710afd-c3bd-4522-8d46-c83dd2bbb02b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjEwOTQ0NzUsIm5iZiI6MTcyMTA5NDE3NSwicGF0aCI6Ii82MjA4NDc3Ni8zMzc1MDMxNDctOTI3MTBhZmQtYzNiZC00NTIyLThkNDYtYzgzZGQyYmJiMDJiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA3MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNzE2VDAxNDI1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA3MzBhZTk4ZmZlNzkyNmQ1YzRkYzQxODBmODdkYWZmYWY5Njk4YzMxN2JiZWY5OWQ4ZDVmMWU0YTQ3MWRlZjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.xQSb9ahCK9WSSo5jB-hO01MCPYpCvi4k1GiL3vWojKw"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/62084776/337505062-59134bb6-a44f-4c98-b17a-52a1c5651dc7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjEwOTQ0NzUsIm5iZiI6MTcyMTA5NDE3NSwicGF0aCI6Ii82MjA4NDc3Ni8zMzc1MDUwNjItNTkxMzRiYjYtYTQ0Zi00Yzk4LWIxN2EtNTJhMWM1NjUxZGM3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA3MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNzE2VDAxNDI1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQwYzBmM2QxM2FjMTg0N2UzNjU1NDJlNTRmM2Y4MTc4ZGJiNzIxOTMwMDVhZjE5NTI5OTI4ZmFhMDRmNjYwOTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.cxVnhY-drjO5t__Rs3dtsBYkZmm36LAkXU9j9KoLh2o"
+        }
+    ]
+}

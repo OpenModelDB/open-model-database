@@ -17,7 +17,8 @@
             "1x-PBRify-NormalV3",
             "1x-PBRify-RoughnessV2",
             "4x-PBRify-UpscalerSPANV4",
-            "4x-PBRify-UpscalerSIR-M-V2"
+            "4x-PBRify-UpscalerSIR-M-V2",
+            "4x-PBRify-UpscalerDAT2-V1"
         ],
         "author": "kim2091"
     }

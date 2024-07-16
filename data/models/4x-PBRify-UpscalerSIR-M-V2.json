@@ -7,7 +7,7 @@
         "game-textures",
         "restoration"
     ],
-    "description": "This is part of my [PBRify_Remix](<https://github.com/Kim2091/PBRify_Remix>) project. This is a much more capable model based on SwinIR Medium, which should strike a balance between capacity for learning + inference speed. It appears to have done so :)",
+    "description": "This is part of my [PBRify_Remix](<https://github.com/Kim2091/PBRify_Remix>) project. This is a much more capable model based on SwinIR Medium, which should strike a balance between capacity for learning + inference speed. It appears to have done so :)\n\n### Replaced by 4x-PBRify_UpscalerDAT2_V1",
     "date": "2024-05-19",
     "architecture": "swinir",
     "size": [
@@ -18,21 +18,27 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 59606776,
+            "sha256": "65f5706973c4a66321b26681f3de3583c73b807dd97dd00fc69dfdb747396fd2",
             "urls": [
                 "https://github.com/Kim2091/Kim2091-Models/releases/download/4x-PBRify_UpscalerSIR-M_V2/4x-PBRify_UpscalerSIR-M_V2.pth"
-            ],
-            "sha256": "65f5706973c4a66321b26681f3de3583c73b807dd97dd00fc69dfdb747396fd2",
-            "size": 59606776,
-            "platform": "pytorch",
-            "type": "pth"
+            ]
         }
     ],
+    "trainingIterations": 400000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "ambientCG + PolyHaven + UltraSharpV2",
+    "datasetSize": 26000,
     "images": [
         {
             "type": "paired",
+            "caption": "Input vs Output (RTX Remix)",
             "LR": "https://i.slow.pics/xJmIuxId.png",
-            "SR": "https://i.slow.pics/uEF2YWSy.png",
-            "caption": "Input vs Output (RTX Remix)"
+            "SR": "https://i.slow.pics/uEF2YWSy.png"
         },
         {
             "type": "paired",
@@ -46,15 +52,9 @@
         },
         {
             "type": "paired",
+            "caption": "Old vs New SR Model",
             "LR": "https://i.slow.pics/YyrZBxVe.png",
-            "SR": "https://i.slow.pics/O38UCmyY.png",
-            "caption": "Old vs New SR Model"
+            "SR": "https://i.slow.pics/O38UCmyY.png"
         }
-    ],
-    "dataset": "ambientCG + PolyHaven + UltraSharpV2",
-    "datasetSize": 26000,
-    "trainingIterations": 400000,
-    "trainingBatchSize": 8,
-    "trainingHRSize": 256,
-    "trainingOTF": false
+    ]
 }
