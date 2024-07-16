@@ -2,7 +2,9 @@
     "name": "4x-RealPLKSR_dysample_pretrain",
     "author": "kim2091",
     "license": "CC0-1.0",
-    "tags": [],
+    "tags": [
+        "pretrained"
+    ],
     "description": "Simple pretrain for RealPLKSR Dysample, trained on CC0 content. \"Ethical\" model",
     "date": "2024-07-06",
     "architecture": "realplksr-dysample",

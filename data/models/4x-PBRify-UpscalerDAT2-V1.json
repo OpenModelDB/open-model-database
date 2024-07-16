@@ -15,7 +15,17 @@
     "scale": 4,
     "inputChannels": 3,
     "outputChannels": 3,
-    "resources": [],
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140405038,
+            "sha256": "ff133c35707986e253a9e84aae16ef0295847de41239f1eda53fbbeb0e2243b7",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/4x-PBRify_UpscalerDAT2_V1/4x-PBRify_UpscalerDAT2_V1.pth"
+            ]
+        }
+    ],
     "trainingIterations": 300000,
     "trainingBatchSize": 18,
     "trainingHRSize": 192,
