@@ -77,7 +77,8 @@
             "arch:swinir",
             "arch:atd",
             "arch:drct",
-            "arch:realplksr"
+            "arch:realplksr",
+            "arch:realplksr-dysample"
         ]
     },
     "platform": {

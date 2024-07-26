@@ -146,6 +146,13 @@
             "onnx"
         ]
     },
+    "realplksr-dysample": {
+        "name": "RealPLKSR_dysample",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "rgt": {
         "name": "RGT",
         "input": "image",
