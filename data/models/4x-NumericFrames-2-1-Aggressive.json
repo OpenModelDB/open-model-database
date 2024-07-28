@@ -1,0 +1,31 @@
+{
+    "name": "NumericFrames 2.1-Aggressive",
+    "author": "muf",
+    "license": "WTFPL",
+    "tags": [
+        "anime"
+    ],
+    "description": "Upscaling of Numeric Animation from SD to HD with high texture retention.\n\nProvides the sharpest results yet. About 30% better than the base 2.0 version. But as the title says it's the most aggressive version of NF. Does it's best on animation with little to no textures. The model as well as any version of NF is not suitable at all for overly deteriorated/blurred and low quality TVRips and VHSRips copies of animation pieces.",
+    "date": "2024-07-20",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "http://mufunyo.net/esrgan/4x_NumericFrames_2.1_Aggressive.pth"
+            ],
+            "sha256": "88682b360ed52de1016d345e9f2e8f5c99f017b4b5188ea8d8e7bd335a6ad2f9",
+            "size": 66906130,
+            "platform": "pytorch",
+            "type": "pth"
+        }
+    ],
+    "images": [],
+    "dataset": "SD Numeric cartoon and anime frames and counterpart HD versions",
+    "trainingIterations": 230000,
+    "trainingEpochs": 2,
+    "trainingOTF": false
+}
