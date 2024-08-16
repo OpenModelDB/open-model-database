@@ -15,7 +15,35 @@
     "scale": 1,
     "inputChannels": 3,
     "outputChannels": 3,
-    "resources": [],
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29559554,
+            "sha256": "3bf4959fbd4b39b8877e73ea97a54d4280755371fe4bd64a2836c707d7fd485b",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeJPG_realplksr_otf/1xDeJPG_realplksr_otf.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 29486580,
+            "sha256": "bfc0b9a1163bf20eb18479e1f4faa0ece1b4d5ce59759be8b843d6ef32d1890f",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeJPG_realplksr_otf/1xDeJPG_realplksr_otf.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 29620809,
+            "sha256": "70832d4536202d7e83603debb7b3e47a798553f0b534e708a498a23939c905b2",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeJPG_realplksr_otf/1xDeJPG_realplksr_otf_fp32_fullyoptimized.onnx"
+            ]
+        }
+    ],
     "trainingIterations": 196000,
     "trainingBatchSize": 24,
     "trainingHRSize": 64,
