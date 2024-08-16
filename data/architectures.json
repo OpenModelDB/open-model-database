@@ -116,6 +116,13 @@
             "onnx"
         ]
     },
+    "hma": {
+        "name": "HMA",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "ludvae": {
         "name": "LUDVAE",
         "input": "image",

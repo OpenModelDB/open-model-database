@@ -1,0 +1,48 @@
+{
+    "name": " 4xmssim_hma_pretrains",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "pretrained"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xmssim_hma_pretrains)\n\nSince no official [HMA](https://github.com/korouuuuu/HMA) model releases exist yet, I am releasing my [hma](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1148) and [hma_medium](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1386) mssim pretrains.   \nThese can be used to speed up and stabilize early training stages when training new hma models.  \nTrained with mssim on [nomosv2](https://github.com/muslll/neosr/tree/a50b56de418c938425fd3606697f62d61dbddfc3?tab=readme-ov-file#-datasets).  \n\n\n## 4xmssim_hma_pretrain  \n\n**Scale:** 4  \n**Architecture:** [HMA](https://github.com/korouuuuu/HMA)  \n**Architecture Option:** [hma](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1148)  \n\n**Author:** Philip Hofmann  \n**License:** CC-BY-0.4  \n**Purpose:** Pretrained  \n**Subject:** Photography  \n**Input Type:** Images  \n**Release Date:** 19.07.2024  \n\n**Dataset:** [nomosv2](https://github.com/muslll/neosr/tree/a50b56de418c938425fd3606697f62d61dbddfc3?tab=readme-ov-file#-datasets)  \n**Dataset Size:** 6000  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** None (=From Scratch)  \n**Iterations:** 205'000  \n**Batch Size:** 4  \n**Patch Size:** 96  \n\n**Description:** A pretrain to start hma model training.  \n\n---\n\n## 4xmssim_hma_medium_pretrain  \n\n**Scale:** 4  \n**Architecture:** [HMA](https://github.com/korouuuuu/HMA)  \n**Architecture Option:** [hma_medium](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1386)  \n\n**Author:** Philip Hofmann  \n**License:** CC-BY-0.4  \n**Purpose:** Pretrained  \n**Subject:** Photography  \n**Input Type:** Images  \n**Release Date:** 19.07.2024  \n\n**Dataset:** [nomosv2](https://github.com/muslll/neosr/tree/a50b56de418c938425fd3606697f62d61dbddfc3?tab=readme-ov-file#-datasets)  \n**Dataset Size:** 6000  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** None (=From Scratch)  \n**Iterations:** 150'000  \n**Batch Size:** 4  \n**Patch Size:** 48  \n\n**Description:** A pretrain to start hma_medium model training.  \n\n---\n\n**Showcase:**  \n[slow.pics](https://slow.pics/c/Eoq18VDx)",
+    "date": "2024-07-19",
+    "architecture": "hma",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 280320346,
+            "sha256": "64bbb90bbf37d5ede3a9723a57b0b6bf20ac10c766f23558643261dc3ca616a8",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xmssim_hma_pretrains/4xmssim_hma_medium_pretrain.pth"
+            ]
+        }
+    ],
+    "trainingOTF": false,
+    "dataset": "Nomosv2",
+    "datasetSize": 6000,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/350413952-eb02bf8d-91bc-4442-81cb-6496f930dd0d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM4MTQyNzAsIm5iZiI6MTcyMzgxMzk3MCwicGF0aCI6Ii8xNDc1NTY3MC8zNTA0MTM5NTItZWIwMmJmOGQtOTFiYy00NDQyLTgxY2ItNjQ5NmY5MzBkZDBkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODE2VDEzMTI1MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY1OTgxN2RhODJjZmFlNjcyODMzMDUwMzk5MmJiYzc5NTRkMTY1ZWMwM2VjY2JjZTRmMDc4YmIyNDVmNGJhMTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.aLYmYqrOP0dPcveUR-30HnREgBy9Ik19snbM6cuZCdc"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/350413958-5ceec445-37fe-416e-af5c-c6d0e759ff72.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM4MTQyNzAsIm5iZiI6MTcyMzgxMzk3MCwicGF0aCI6Ii8xNDc1NTY3MC8zNTA0MTM5NTgtNWNlZWM0NDUtMzdmZS00MTZlLWFmNWMtYzZkMGU3NTlmZjcyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODE2VDEzMTI1MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNiOTY4MmM2ZGVkZDRhNjExZmI5MTE5OTBjMzVjM2MxYjcwZjVhM2FlMGY3NGJiNjQxNDg1NjNhMzkxZTc0ZTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.NdBLsjpr68MgkovBokycKoDJ2AVLSwjMj0T3H67vw48"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/350413961-39792fa6-250c-4fea-b4f8-4c9dbf80a4db.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM4MTQyNzAsIm5iZiI6MTcyMzgxMzk3MCwicGF0aCI6Ii8xNDc1NTY3MC8zNTA0MTM5NjEtMzk3OTJmYTYtMjUwYy00ZmVhLWI0ZjgtNGM5ZGJmODBhNGRiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODE2VDEzMTI1MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZiMjU4Nzg5Y2M1MjY5Mzc5NDA3M2UyNzNhMzAxN2MxYWQzMzY1NjZmNWU3ZTk1MDc5YTZhNDNkNjNjNmVlYzcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.EPdjUdnZZslj0Jc9DsXyCKqRAdyA5HPJvXvusJ08wDA"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/350413963-16f839af-ccfa-485a-bb2d-2635930a329f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM4MTQyNzAsIm5iZiI6MTcyMzgxMzk3MCwicGF0aCI6Ii8xNDc1NTY3MC8zNTA0MTM5NjMtMTZmODM5YWYtY2NmYS00ODVhLWJiMmQtMjYzNTkzMGEzMjlmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODE2VDEzMTI1MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM5NjIwYmUzMmNlYmVjMGMzYjFlOTFjOTMxZjA2NDFmYzRjZDRkMzFhODM1OWMzMzJkYjU1NmU2MWE4MWYzN2EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.aLoUjv4ihBb3TC3crhhpx0f0rI50oDiZJMMXDvWkc-I"
+        }
+    ]
+}
