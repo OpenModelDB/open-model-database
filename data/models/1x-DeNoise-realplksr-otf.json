@@ -1,0 +1,67 @@
+{
+    "name": "1xDeNoise_realplksr_otf ",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "denoise",
+        "photo",
+        "restoration"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/1xDeNoise_realplksr_otf)\n\n# 1xDeNoise_realplksr_otf  \nScale: 1  \nArchitecture: [RealPLKSR](https://github.com/muslll/neosr/?tab=readme-ov-file#supported-archs)  \nArchitecture Option: [realplksr](https://github.com/muslll/neosr/blob/master/neosr/archs/realplksr_arch.py)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Restoration, Denoise    \nSubject: Photography  \nInput Type: Images  \nRelease Date: 08.08.2024  \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)  \nDataset Size: 6000  \nOTF (on the fly augmentations): Yes  \nPretrained Model: [1xDeJPG_realplksr_otf](https://github.com/Phhofm/models/releases/tag/1xDeJPG_realplksr_otf)  \nIterations: 200'000  \nBatch Size: 8  \nPatch Size: 64  \n\nDescription:   \nA 1x realplksr model to denoise, trained with the realesrgan-otf pipeline, also handles a bit of jpg compression (if stronger jpg compression handling is needed, [1xDeJPG_realplksr_otf](https://github.com/Phhofm/models/releases/tag/1xDeJPG_realplksr_otf) can be used).",
+    "date": "2024-08-08",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29559554,
+            "sha256": "f4774fbe13ceaa9df390343c2baaa980061458ef27292fa6aca6740d87608a8e",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeNoise_realplksr_otf/1xDeNoise_realplksr_otf.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 29486580,
+            "sha256": "0a3e22bdcb70dd790fce66f45df8d07e774e269b17c92a2835162b150d4a365c",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeNoise_realplksr_otf/1xDeNoise_realplksr_otf.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 29874321,
+            "sha256": "fa7a85412634b30e078299aafc9a9d4074358f1a5abcd8f17a8355715a258c51",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeNoise_realplksr_otf/1xDeNoise_realplksr_otf_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "dataset": "Nomosv2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "1x-DeJPG-realplksr-otf",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/356213305-7ce8d0ca-b4ee-48a5-b6d5-82d45a058ad8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM4MTQ5MTEsIm5iZiI6MTcyMzgxNDYxMSwicGF0aCI6Ii8xNDc1NTY3MC8zNTYyMTMzMDUtN2NlOGQwY2EtYjRlZS00OGE1LWI2ZDUtODJkNDVhMDU4YWQ4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODE2VDEzMjMzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk5ZjMyYjQzMzk2MTRmMmQ0M2I1OTYwMTk2ZGI2OTE2NTc5ZDFkMTA1MGM2ZmRhZjA4Mjg3ZmRiZTViOWY1ZWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0._3ueOaJlrqvOtlYREJb1Qbk3LJfnYuslC5uIUo5zIeA"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/356213299-deb667d5-4aea-4f8d-ba38-c6a942d7113b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM4MTQ5MTEsIm5iZiI6MTcyMzgxNDYxMSwicGF0aCI6Ii8xNDc1NTY3MC8zNTYyMTMyOTktZGViNjY3ZDUtNGFlYS00ZjhkLWJhMzgtYzZhOTQyZDcxMTNiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODE2VDEzMjMzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYyZjkzOThjNDgwYmI1ZGZiYzI0NGIxZDBjZDNkOTUwMzY5MDMyNTk3ZGViZGNiZmY5ZDE5YjFjN2IwNmYwYjYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.ws4F-mAeX7F_upz2snoattajXiBZrm_Si7HFqI48W6A"
+        },
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/14755670/356213314-2d9c02a6-3334-4960-91b6-740ce6702e26.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM4MTQ5MTEsIm5iZiI6MTcyMzgxNDYxMSwicGF0aCI6Ii8xNDc1NTY3MC8zNTYyMTMzMTQtMmQ5YzAyYTYtMzMzNC00OTYwLTkxYjYtNzQwY2U2NzAyZTI2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODE2VDEzMjMzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcwZjliYWE0MjhkZmNiODY4OWRkMzE4YjQ2MGZmZmZiOGE4YWNkYTg4ODgyNmM4YWE5NDE1MzQ2ZmQwOGRiZWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.KPwUttmg--bKIVGAF-gF_LuQZr2dglvRT9gP2GrmTmU"
+        }
+    ]
+}
