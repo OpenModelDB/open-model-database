@@ -130,6 +130,14 @@
             "pytorch"
         ]
     },
+    "mosr": {
+        "name": "MoSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "omnisr": {
         "name": "OmniSR",
         "input": "image",

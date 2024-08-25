@@ -212,6 +212,10 @@
         "name": "LUDVAE",
         "description": ""
     },
+    "arch:mosr": {
+        "name": "MoSR",
+        "description": ""
+    },
     "arch:omnisr": {
         "name": "OmniSR",
         "description": ""
