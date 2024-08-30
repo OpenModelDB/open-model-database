@@ -33,7 +33,7 @@
             "size": 81689540,
             "sha256": "ca0e7a3ecbb042dad1695d4dd3b73cf355af6db822984b61ac363e42fac7dff1",
             "urls": [
-                "/home/phhofm/Downloads/4xNomosWebPhoto_atd.safetensors"
+                "https://github.com/Phhofm/models/releases/download/4xNomosWebPhoto_atd/4xNomosWebPhoto_atd.safetensors"
             ]
         }
     ],
