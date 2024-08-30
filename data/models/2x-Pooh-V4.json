@@ -22,38 +22,38 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20220514,
+            "sha256": "f2b8e939f35dd5de46b5867c7753e200102ef6ae7e33fddeb8d374402f1d5ef1",
             "urls": [
                 "https://mega.nz/folder/IdFAnAoD#ptHOPvdfl-jvHzCvcNmicw/file/ZMViFR7b"
-            ],
-            "sha256": "f2b8e939f35dd5de46b5867c7753e200102ef6ae7e33fddeb8d374402f1d5ef1",
-            "size": 20220514,
-            "platform": "pytorch",
-            "type": "pth"
+            ]
         }
     ],
-    "images": [
-        {
-            "type": "paired",
-            "LR": "https://imgsli.com/i/d63f832a-a71f-4253-b8ed-0afbe621c12d.jpg",
-            "SR": "https://imgsli.com/i/ffb00da6-236a-4a01-9d24-eeec2507d119.jpg",
-            "caption": "Goof Troop 1"
-        },
-        {
-            "type": "paired",
-            "LR": "https://imgsli.com/i/90ec7bcf-80f9-41ec-8130-520bcf8caa9c.jpg",
-            "SR": "https://imgsli.com/i/f381ca20-bf1b-4834-9790-55d18ce615d5.jpg",
-            "caption": "Donald Duck 1"
-        },
-        {
-            "type": "paired",
-            "LR": "https://imgsli.com//i/1dac194e-499f-448c-aa2d-e676607c23f6.jpg",
-            "SR": "https://imgsli.com//i/3a51dfb5-e821-41fd-bfa6-89bbacd8544a.jpg",
-            "caption": "Pooh 1"
-        }
-    ],
-    "dataset": "Custom dataset of The New Adventures of Winnie The Pooh images. I downloaded interlaced Laserdisc transfers of the show. Then the show was de-interlaced without additional filters. Corresponding HQ episodes of the show were sourced from the web. The images were extracted and paired to make the LR and HR set. The HR then was further treated for Noise and Lines via SCUNet and Dotzilla. The resultant set of images is considered as GT.",
     "trainingBatchSize": 32,
     "trainingHRSize": 128,
     "trainingOTF": false,
-    "pretrainedModelG": "2x-Garfield1-308k"
+    "dataset": "Custom dataset of The New Adventures of Winnie The Pooh images. I downloaded interlaced Laserdisc transfers of the show. Then the show was de-interlaced without additional filters. Corresponding HQ episodes of the show were sourced from the web. The images were extracted and paired to make the LR and HR set. The HR then was further treated for Noise and Lines via SCUNet and Dotzilla. The resultant set of images is considered as GT.",
+    "pretrainedModelG": "2x-Garfield1-308k",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Goof Troop 1",
+            "LR": "https://imgsli.com/i/d63f832a-a71f-4253-b8ed-0afbe621c12d.jpg",
+            "SR": "https://imgsli.com/i/ffb00da6-236a-4a01-9d24-eeec2507d119.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Donald Duck 1",
+            "LR": "https://imgsli.com/i/90ec7bcf-80f9-41ec-8130-520bcf8caa9c.jpg",
+            "SR": "https://imgsli.com/i/f381ca20-bf1b-4834-9790-55d18ce615d5.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Pooh 1",
+            "LR": "https://imgsli.com//i/1dac194e-499f-448c-aa2d-e676607c23f6.jpg",
+            "SR": "https://imgsli.com//i/3a51dfb5-e821-41fd-bfa6-89bbacd8544a.jpg"
+        }
+    ]
 }

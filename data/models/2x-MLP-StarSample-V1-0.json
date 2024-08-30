@@ -24,95 +24,95 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 1215294,
+            "sha256": "106ef781b08e33bb794c59bdb2c7a528b4f4106f516235115949f2ac03f45ba2",
             "urls": [
                 "https://github.com/Derpiesaurus/models/releases/download/v1.0/2x.StarSample.V1.0.pth"
-            ],
-            "sha256": "106ef781b08e33bb794c59bdb2c7a528b4f4106f516235115949f2ac03f45ba2",
-            "size": 1215294,
-            "platform": "pytorch",
-            "type": "pth"
+            ]
         },
         {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 1205456,
+            "sha256": "a83685aa15674a955ed2eec9cdffe2e1a591967f581d6c356a63f1cf4ae07a49",
             "urls": [
                 "https://github.com/Derpiesaurus/models/releases/download/v1.0/2x.StarSample.V1.0.safetensors"
-            ],
-            "sha256": "a83685aa15674a955ed2eec9cdffe2e1a591967f581d6c356a63f1cf4ae07a49",
-            "size": 1205456,
-            "platform": "pytorch",
-            "type": "safetensors"
+            ]
         },
         {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2412381,
+            "sha256": "b4e6caadbbc6305e31686378821b6ba02a6d9b92f3e8aa29995594f7676f018b",
             "urls": [
                 "https://github.com/Derpiesaurus/models/releases/download/v1.0/2x.StarSample.V1.0.-.FP32.OPSET17.onnx"
-            ],
-            "sha256": "b4e6caadbbc6305e31686378821b6ba02a6d9b92f3e8aa29995594f7676f018b",
-            "size": 2412381,
-            "platform": "onnx",
-            "type": "onnx"
+            ]
         }
     ],
+    "trainingIterations": 230000,
+    "trainingEpochs": 2058,
+    "trainingBatchSize": 28,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "A mix of 4K GT show frames and background-only images.",
+    "datasetSize": 2567,
+    "pretrainedModelG": "2x-Compact-Pretrain",
     "images": [
         {
             "type": "paired",
+            "caption": "1x Example 1",
             "LR": "https://i.slow.pics/ybI7gjob.png",
-            "SR": "https://i.slow.pics/y3ZXMgNB.png",
-            "caption": "1x Example 1"
+            "SR": "https://i.slow.pics/y3ZXMgNB.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 2",
             "LR": "https://i.slow.pics/yLqT8WfS.png",
-            "SR": "https://i.slow.pics/LvaT8PZH.png",
-            "caption": "1x Example 2"
+            "SR": "https://i.slow.pics/LvaT8PZH.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 3",
             "LR": "https://i.slow.pics/nX12VuVR.png",
-            "SR": "https://i.slow.pics/94GEHzCS.png",
-            "caption": "1x Example 3"
+            "SR": "https://i.slow.pics/94GEHzCS.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 4",
             "LR": "https://i.slow.pics/9n5Rkdrg.png",
-            "SR": "https://i.slow.pics/OxedRFur.png",
-            "caption": "1x Example 4"
+            "SR": "https://i.slow.pics/OxedRFur.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 5",
             "LR": "https://i.slow.pics/PeyCu2Qt.png",
-            "SR": "https://i.slow.pics/vim2aDTH.png",
-            "caption": "1x Example 5"
+            "SR": "https://i.slow.pics/vim2aDTH.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 6",
             "LR": "https://i.slow.pics/quoAHJZq.png",
-            "SR": "https://i.slow.pics/ByMKyWsc.png",
-            "caption": "1x Example 6"
+            "SR": "https://i.slow.pics/ByMKyWsc.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 7",
             "LR": "https://i.slow.pics/p9BPSyR4.png",
-            "SR": "https://i.slow.pics/vYMqhFzg.png",
-            "caption": "1x Example 7"
+            "SR": "https://i.slow.pics/vYMqhFzg.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 8",
             "LR": "https://i.slow.pics/75JM3CJm.png",
-            "SR": "https://i.slow.pics/2bJP6xEW.png",
-            "caption": "1x Example 8"
+            "SR": "https://i.slow.pics/2bJP6xEW.png"
         },
         {
             "type": "paired",
+            "caption": "1x Example 9",
             "LR": "https://i.slow.pics/CIF0ulQP.png",
-            "SR": "https://i.slow.pics/uXkIKtxT.png",
-            "caption": "1x Example 9"
+            "SR": "https://i.slow.pics/uXkIKtxT.png"
         }
-    ],
-    "dataset": "A mix of 4K GT show frames and background-only images.",
-    "datasetSize": 2567,
-    "trainingIterations": 230000,
-    "trainingBatchSize": 28,
-    "trainingEpochs": 2058,
-    "trainingHRSize": 256,
-    "trainingOTF": false,
-    "pretrainedModelG": "2x-Compact-Pretrain"
+    ]
 }

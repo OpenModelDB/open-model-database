@@ -17,24 +17,27 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 15830922,
+            "sha256": "bc6ca08ab1eeb9884a5c43c025eda97a5aa9ccfaa567734f426aedf55cf78327",
             "urls": [
                 "https://github.com/TNTwise/Models/releases/download/2x_ModernSpanimationV1/2x_ModernSpanimationV1.pth"
-            ],
-            "sha256": "bc6ca08ab1eeb9884a5c43c025eda97a5aa9ccfaa567734f426aedf55cf78327",
-            "size": 15830922,
-            "platform": "pytorch",
-            "type": "pth"
+            ]
         },
         {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1465817,
+            "sha256": "55e774fcb080296dcf3c8a93f315397ce96b6fce3b2c66818e302f2d94019e9c",
             "urls": [
                 "https://github.com/TNTwise/Models/releases/download/2x_ModernSpanimationV1/ONNX.zip"
-            ],
-            "sha256": "55e774fcb080296dcf3c8a93f315397ce96b6fce3b2c66818e302f2d94019e9c",
-            "size": 1465817,
-            "platform": "onnx",
-            "type": "onnx"
+            ]
         }
     ],
+    "trainingOTF": false,
+    "dataset": "ModernAnimation1080v2",
+    "datasetSize": 2200,
     "images": [
         {
             "type": "paired",
@@ -51,8 +54,5 @@
             "LR": "https://github.com/TNTwise/Models/raw/main/2x_ModernSpanimationV1/Comparison/gravityfalls.webp",
             "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/gravityfalls.png?raw=true"
         }
-    ],
-    "dataset": "ModernAnimation1080v2",
-    "datasetSize": 2200,
-    "trainingOTF": false
+    ]
 }
