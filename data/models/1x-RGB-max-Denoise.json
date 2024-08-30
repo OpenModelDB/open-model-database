@@ -1,0 +1,64 @@
+{
+    "name": "1x RGB max Denoise",
+    "author": "loganavter",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "cartoon",
+        "denoise",
+        "restoration"
+    ],
+    "description": "A fast upscaler that is a replacement for standard methods of cleaning noise from the picture. Ideal for BDRemux or WEB-DL 720p or 1080p it. It gets rid of floral noise well, the smaller its grain size, the more uniform the resolution for all videos will be. If you need a more stable video, then you can also add 2x-DigitalFlim-SuperUltraCompact after this upscaler. My upscaler can slightly simplify the geometry of very small objects.",
+    "date": "2024-08-16",
+    "architecture": "compact",
+    "size": [
+        "32nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 1235365,
+            "sha256": "599fc3e28391a04b3cd5798f05429888580ef4c672e88c9b33b12b15b9244eed",
+            "urls": [
+                "https://mega.nz/folder/tfsT1BoY#5I6oOnQ603Ybt4BdF5j8RQ"
+            ]
+        }
+    ],
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "A custom dataset made up of various cartoons from MGM, DFE and DISNEY studios. LR is footage with real BDRemux noise. HR is the same frames, but cleaned by the plugin, and additionally, the results were run through the modern spanimation upscaler and the NoiseToiner upscaler.",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Tom and Jerry",
+            "LR": "https://imgsli.com/i/28cd9a25-829c-4286-9241-9f6953a22ace.jpg",
+            "SR": "https://imgsli.com/i/a11ca8c2-c237-4311-97aa-1550818435ef.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Bugs Bunny",
+            "LR": "https://imgsli.com/i/aac5b2d1-0463-4222-87b6-59feb589630c.jpg",
+            "SR": "https://imgsli.com/i/b4d78a9f-be84-44b7-b489-e5cb64f212ac.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Walky Talky",
+            "LR": "https://imgsli.com/i/32a4eac0-93dc-47db-bda0-2f3d5346ba79.jpg",
+            "SR": "https://imgsli.com/i/30ed6040-b9df-4078-9cd5-324b93bb7217.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Tex Avery",
+            "LR": "https://imgsli.com/i/3f5022d2-8461-42f2-974a-127640e21cee.jpg",
+            "SR": "https://imgsli.com/i/89028ac1-2bd4-4e09-9402-9d5184bdc483.jpg"
+        }
+    ],
+    "Datasize": 1100,
+    "Training epochs": 629,
+    "Training iterations": 160000
+}
