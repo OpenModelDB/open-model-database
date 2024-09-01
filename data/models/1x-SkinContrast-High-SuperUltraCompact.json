@@ -26,15 +26,16 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 181474,
+            "sha256": "7bbea62563203f099ea1cf60ce483ac60d22eb93d30f11be4cb1a229e3585e9e",
             "urls": [
                 "https://www.mediafire.com/file/py46fnq12hhs5sz/1xSkinContrast-High-SuperUltraCompact.pth/file"
-            ],
-            "sha256": "7bbea62563203f099ea1cf60ce483ac60d22eb93d30f11be4cb1a229e3585e9e",
-            "size": 181474,
-            "platform": "pytorch",
-            "type": "pth"
+            ]
         }
     ],
+    "pretrainedModelG": "1x-SuperUltraCompact-Pretrain",
     "images": [
         {
             "type": "paired",
@@ -66,6 +67,5 @@
             "LR": "https://i.ibb.co/Vm9TBN1/ss-91c4e1cd57a692d6fe6ebbc662cd549820e42de1-1920x1080.png",
             "SR": "https://i.ibb.co/p3jT0FZ/ss-91c4e1cd57a692d6fe6ebbc662cd549820e42de1-1920x1080-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
         }
-    ],
-    "pretrainedModelG": "1x-SuperUltraCompact-Pretrain"
+    ]
 }

@@ -1,0 +1,90 @@
+{
+    "name": "4xNomos2_hq_mosr",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_mosr)\n\n# 4xNomos2_hq_mosr  \nScale: 4  \nArchitecture: [MoSR](https://github.com/umzi2/MoSR)  \nArchitecture Option: [mosr](https://github.com/umzi2/MoSR/blob/95c5bf73cca014493fe952c2fbc0bdbe593da08f/neosr/archs/mosr_arch.py#L117)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Upscaler  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 25.08.2024  \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: [4xmssim_mosr_pretrain](https://github.com/Phhofm/models/releases/tag/4xmssim_mosr_pretrain)  \nIterations: 190'000  \nBatch Size: 6  \nPatch Size: 64  \n\nDescription:   \nA 4x [MoSR](https://github.com/umzi2/MoSR) upscaling model, meant for non-degraded input, since this model was trained on non-degraded input to give good quality output.   \n\nIf your input is degraded, use a 1x degrade model first. So for example if your input is a .jpg file, you could use a 1x dejpg model first.  \n\nModel Showcase:  [Slowpics](https://slow.pics/c/cqGJb0gT)",
+    "date": "2024-08-25",
+    "architecture": "mosr",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 17213494,
+            "sha256": "c60dbfc7e6f7d27e03517d1bec3f3cbd16e8cd4288eefd1358952f73f8497ddc",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_mosr/4xNomos2_hq_mosr.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 17288863,
+            "sha256": "f31fde6bd0e3475759aa5677d37b43b4e660d75e3629cd096bbc590feb746808",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_mosr/4xNomos2_hq_mosr_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 190000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "nomosv2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-mssim-mosr-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ZIKbM9eP.webp",
+            "SR": "https://i.slow.pics/PIgZDy6T.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/s1hij4Od.webp",
+            "SR": "https://i.slow.pics/3Acn0SYs.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/uPad2heK.webp",
+            "SR": "https://i.slow.pics/PqaMMYN4.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/atbpBswr.webp",
+            "SR": "https://i.slow.pics/yctDsFPC.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/tYQ5KasA.webp",
+            "SR": "https://i.slow.pics/dWMOLSM3.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oBi3wXy1.webp",
+            "SR": "https://i.slow.pics/ESWD90pQ.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/6jejJasv.webp",
+            "SR": "https://i.slow.pics/xBV1feGZ.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/DgqCdj3C.webp",
+            "SR": "https://i.slow.pics/haiROW2m.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/57pqAXqU.webp",
+            "SR": "https://i.slow.pics/e3DTrXnD.webp"
+        }
+    ]
+}

@@ -116,11 +116,26 @@
             "onnx"
         ]
     },
+    "hma": {
+        "name": "HMA",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "ludvae": {
         "name": "LUDVAE",
         "input": "image",
         "compatiblePlatforms": [
             "pytorch"
+        ]
+    },
+    "mosr": {
+        "name": "MoSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
         ]
     },
     "omnisr": {

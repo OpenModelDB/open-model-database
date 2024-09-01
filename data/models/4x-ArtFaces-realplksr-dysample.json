@@ -1,0 +1,55 @@
+{
+    "name": " 4xArtFaces_realplksr_dysample",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "faces"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xArtFaces_realplksr_dysample)\n\n# 4xArtFaces_realplksr_dysample  \nScale: 4  \nArchitecture: [RealPLKSR with Dysample](https://github.com/muslll/neosr/?tab=readme-ov-file#supported-archs)  \nArchitecture Option: [realplksr](https://github.com/muslll/neosr/blob/master/neosr/archs/realplksr_arch.py)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Restoration  \nSubject: Art  \nInput Type: Images  \nRelease Date: 08.08.2024  \n\nDataset: [ArtFaces](https://github.com/Phhofm/models/releases/tag/dataset_artfaces)  \nDataset Size: 5'630  \nOTF (on the fly augmentations): No  \nPretrained Model: [4xNomos2_realplksr_dysample](https://github.com/Phhofm/models/releases/tag/4xNomos2_realplksr_dysample)  \nIterations: 139'000  \nBatch Size: 6  \nPatch Size: 64  \n\nDescription:  \nA Dysample RealPLKSR 4x upscaling model for art / painted faces.   \nBased on my [ArtFaces Dataset](https://github.com/Phhofm/models/releases/tag/dataset_artfaces) which is a curated version of the [metfaces dataset](https://github.com/NVlabs/metfaces-dataset) for the purpose of training single image super resolution models.",
+    "date": "2024-08-08",
+    "architecture": "realplksr-dysample",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29715988,
+            "sha256": "bf313b7bad114cc22538c28341fcfc9d9e9d9c623ad25633ee49ee34625e271a",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xArtFaces_realplksr_dysample/4xArtFaces_realplksr_dysample.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 139000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "ArtFaces",
+    "datasetSize": 5630,
+    "pretrainedModelG": "4x-Nomos2-realplksr-dysample",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/Aa7VfJfd.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/R1BEAMoC.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/jVfNJtyc.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/1i8QMfh4.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/3N2ODLTA.webp"
+        }
+    ]
+}

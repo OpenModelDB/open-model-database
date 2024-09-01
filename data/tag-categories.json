@@ -78,7 +78,9 @@
             "arch:atd",
             "arch:drct",
             "arch:realplksr",
-            "arch:realplksr-dysample"
+            "arch:realplksr-dysample",
+            "arch:hma",
+            "arch:mosr"
         ]
     },
     "platform": {

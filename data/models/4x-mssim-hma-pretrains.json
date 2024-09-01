@@ -1,0 +1,48 @@
+{
+    "name": " 4xmssim_hma_pretrains",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "pretrained"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xmssim_hma_pretrains)\n\nSince no official [HMA](https://github.com/korouuuuu/HMA) model releases exist yet, I am releasing my [hma](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1148) and [hma_medium](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1386) mssim pretrains.   \nThese can be used to speed up and stabilize early training stages when training new hma models.  \nTrained with mssim on [nomosv2](https://github.com/muslll/neosr/tree/a50b56de418c938425fd3606697f62d61dbddfc3?tab=readme-ov-file#-datasets).  \n\n\n## 4xmssim_hma_pretrain  \n\n**Scale:** 4  \n**Architecture:** [HMA](https://github.com/korouuuuu/HMA)  \n**Architecture Option:** [hma](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1148)  \n\n**Author:** Philip Hofmann  \n**License:** CC-BY-0.4  \n**Purpose:** Pretrained  \n**Subject:** Photography  \n**Input Type:** Images  \n**Release Date:** 19.07.2024  \n\n**Dataset:** [nomosv2](https://github.com/muslll/neosr/tree/a50b56de418c938425fd3606697f62d61dbddfc3?tab=readme-ov-file#-datasets)  \n**Dataset Size:** 6000  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** None (=From Scratch)  \n**Iterations:** 205'000  \n**Batch Size:** 4  \n**Patch Size:** 96  \n\n**Description:** A pretrain to start hma model training.  \n\n---\n\n## 4xmssim_hma_medium_pretrain  \n\n**Scale:** 4  \n**Architecture:** [HMA](https://github.com/korouuuuu/HMA)  \n**Architecture Option:** [hma_medium](https://github.com/muslll/neosr/blob/a50b56de418c938425fd3606697f62d61dbddfc3/neosr/archs/hma_arch.py#L1386)  \n\n**Author:** Philip Hofmann  \n**License:** CC-BY-0.4  \n**Purpose:** Pretrained  \n**Subject:** Photography  \n**Input Type:** Images  \n**Release Date:** 19.07.2024  \n\n**Dataset:** [nomosv2](https://github.com/muslll/neosr/tree/a50b56de418c938425fd3606697f62d61dbddfc3?tab=readme-ov-file#-datasets)  \n**Dataset Size:** 6000  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** None (=From Scratch)  \n**Iterations:** 150'000  \n**Batch Size:** 4  \n**Patch Size:** 48  \n\n**Description:** A pretrain to start hma_medium model training.  \n\n---\n\n**Showcase:**  \n[slow.pics](https://slow.pics/c/Eoq18VDx)",
+    "date": "2024-07-19",
+    "architecture": "hma",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 280320346,
+            "sha256": "64bbb90bbf37d5ede3a9723a57b0b6bf20ac10c766f23558643261dc3ca616a8",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xmssim_hma_pretrains/4xmssim_hma_medium_pretrain.pth"
+            ]
+        }
+    ],
+    "trainingOTF": false,
+    "dataset": "Nomosv2",
+    "datasetSize": 6000,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/ByeF13Az.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/59nHibou.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/nq4w3FiO.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/kYr60Vdt.webp"
+        }
+    ]
+}

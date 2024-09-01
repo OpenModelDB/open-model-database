@@ -204,8 +204,16 @@
         "name": "HAT",
         "description": ""
     },
+    "arch:hma": {
+        "name": "HMA",
+        "description": ""
+    },
     "arch:ludvae": {
         "name": "LUDVAE",
+        "description": ""
+    },
+    "arch:mosr": {
+        "name": "MoSR",
         "description": ""
     },
     "arch:omnisr": {

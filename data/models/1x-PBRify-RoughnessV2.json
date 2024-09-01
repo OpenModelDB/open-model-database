@@ -15,25 +15,25 @@
     "outputChannels": 3,
     "resources": [
         {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8938652,
+            "sha256": "7003c39041af64cdb77d5120bd560a2878538fbb14a07657d8fd12aac5773679",
             "urls": [
                 "https://github.com/Kim2091/PBRify_Remix/raw/main/Models/1x-PBRify_RoughnessV2.pth"
-            ],
-            "sha256": "7003c39041af64cdb77d5120bd560a2878538fbb14a07657d8fd12aac5773679",
-            "size": 8938652,
-            "platform": "pytorch",
-            "type": "pth"
+            ]
         }
     ],
+    "trainingIterations": 500000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "ambientCG + UltraSharpV2",
     "images": [
         {
             "type": "paired",
             "LR": "https://i.slow.pics/IhgNOy39.png",
             "SR": "https://i.slow.pics/Dq2D30Lg.png"
         }
-    ],
-    "dataset": "ambientCG + UltraSharpV2",
-    "trainingIterations": 500000,
-    "trainingBatchSize": 12,
-    "trainingHRSize": 128,
-    "trainingOTF": false
+    ]
 }

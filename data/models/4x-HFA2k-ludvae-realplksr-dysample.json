@@ -1,0 +1,116 @@
+{
+    "name": "4xHFA2k_ludvae_realplksr_dysample",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "compression-removal",
+        "restoration"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xHFA2k_ludvae_realplksr_dysample)\n\n4xHFA2k_ludvae_realplksr_dysample  \nScale: 4  \nArchitecture: [RealPLKSR with Dysample](https://github.com/muslll/neosr/?tab=readme-ov-file#supported-archs)  \nArchitecture Option: [realplksr](https://github.com/muslll/neosr/blob/master/neosr/archs/realplksr_arch.py)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4 \nPurpose: Restoration  \nSubject: Anime  \nInput Type: Images  \nRelease Date: 13.07.2024  \n\nDataset: HFA2k_LUDVAE  \nDataset Size: 10'272  \nOTF (on the fly augmentations): No  \nPretrained Model: [4xNomos2_realplksr_dysample](https://github.com/Phhofm/models/releases/tag/4xNomos2_realplksr_dysample)  \nIterations: 165'000  \nBatch Size: 12  \nGT Size: 256  \n\nDescription:  \nA Dysample RealPLKSR 4x upscaling model for anime single-image resolution.  \nThe dataset has been degraded using DM600_LUDVAE, for more realistic noise/compression. Downscaling algorithms used were imagemagick box, triangle, catrom, lanczos and mitchell. Blurs applied were gaussian, box and lens blur (using chaiNNer). Some images were further compressed using -quality 75-92. Down-up was applied to roughly 10% of the dataset (5 to 15% variation in size). Degradations orders were shuffled, to give as many variations as possible.  \n\nExamples are inferenced with [neosr](https://github.com/muslll/neosr) testscript and the released pth file. I include the test images also as a zip file in this release together with the model outputs, so others can test their models against these test images aswell to compare.  \n\nonnx conversions are  static since dysample doesnt allow dynamic conversion, I tested the conversions with [chaiNNer](https://github.com/chaiNNer-org/chaiNNer).  \n\nShowcase:  \n[Slowpics](https://slow.pics/c/FKDZAcyI)",
+    "date": "2024-07-13",
+    "architecture": "realplksr-dysample",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29715988,
+            "sha256": "c6e44af18fd3159787b0dbf81d432a6c1ba12c736fc1184b107ed091e49e327c",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xHFA2k_ludvae_realplksr_dysample/4xHFA2k_ludvae_realplksr_dysample.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 30298952,
+            "sha256": "3657c824bffac916f085ee6ada635c469f380a88fe0d5bc2a7bc1a1113788957",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xHFA2k_ludvae_realplksr_dysample/4xHFA2k_ludvae_realplksr_dysample_256_fp32_fullyoptimized.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 165000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "HFA2k_LUDVAE",
+    "datasetSize": 10272,
+    "pretrainedModelG": "4x-Nomos2-realplksr-dysample",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/kLwIUqm7.png",
+            "SR": "https://i.slow.pics/HusyaW0C.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/yvbB2AEx.png",
+            "SR": "https://i.slow.pics/Gj2wAuxD.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/uIEGue9E.png",
+            "SR": "https://i.slow.pics/B9UPlCaz.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/HhSe2VjT.png",
+            "SR": "https://i.slow.pics/6VVBQPCZ.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/emvE9BvJ.png",
+            "SR": "https://i.slow.pics/dUtGHJyG.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pEfQdgPn.png",
+            "SR": "https://i.slow.pics/M4cqOSkR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/otu0eCN7.png",
+            "SR": "https://i.slow.pics/wvmphWg8.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/l5krURfm.png",
+            "SR": "https://i.slow.pics/Lko2uehK.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ul1UsNP8.png",
+            "SR": "https://i.slow.pics/2vBL9LQl.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/HeNfkgOQ.png",
+            "SR": "https://i.slow.pics/IFOJZnfD.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/y4pQRkuR.png",
+            "SR": "https://i.slow.pics/zpCQayxX.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8rSF5oDS.png",
+            "SR": "https://i.slow.pics/j9WbAFwT.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pj5fTu6q.png",
+            "SR": "https://i.slow.pics/VKgDO6FX.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Q03fVaZB.png",
+            "SR": "https://i.slow.pics/mFmxl9vo.png"
+        }
+    ]
+}

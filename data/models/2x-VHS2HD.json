@@ -1,0 +1,52 @@
+{
+    "name": "VHS2HD",
+    "author": "asterixcool",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "compression-removal",
+        "dehalo",
+        "photo",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "Purpose: VHS Restoration\n\nAn advanced VHS recording model designed to enhance video quality by reducing artifacts such as haloing, ghosting, and noise patterns. Optimized primarily for PAL resolution (NTSC might work good as well).",
+    "date": "2024-08-27",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29580290,
+            "sha256": "a702c79ec1d0421b46e91b1848b384a064b88ecffd14cffc998ded716a9e2d8a",
+            "urls": [
+                "https://github.com/starinspace/StarinspaceUpscale/releases/download/Models/2xVHS2HD-RealPLKSR.pth0824036387/1276163747102195784"
+            ]
+        }
+    ],
+    "trainingIterations": 385000,
+    "trainingBatchSize": 8,
+    "trainingOTF": false,
+    "dataset": "Movies and private films",
+    "datasetSize": 6019,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/236c9e6f-581f-4946-adb5-a83ddcf204f0.jpg",
+            "SR": "https://imgsli.com/i/d46bfe61-add0-499b-a72e-e275b9dc46bb.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/8cbfa1b5-9684-48d2-ba37-81adbc5f160c.jpg",
+            "SR": "https://imgsli.com/i/1b39596c-25c8-4b27-b2a1-a5cedd3f8d27.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b110c99e-85d6-461c-a5ff-80aa916ede45.jpg",
+            "SR": "https://imgsli.com/i/bfa51d58-9d7c-401a-8a17-953353bac27a.jpg"
+        }
+    ]
+}
