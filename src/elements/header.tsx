@@ -122,7 +122,7 @@ export function Header({ searchBar }: HeaderProps) {
                             external
                             aria-label="Discord"
                             className={joinClasses(style.iconLink, style.hideMobile)}
-                            href="https://discord.gg/enhance-everything-547949405949657098"
+                            href="https://discord.gg/cpAUpDK"
                         >
                             <FaDiscord />
                         </Link>
@@ -230,7 +230,7 @@ function HeaderDrawer() {
                                 external
                                 aria-label="Discord"
                                 className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="https://discord.gg/enhance-everything-547949405949657098"
+                                href="https://discord.gg/cpAUpDK"
                             >
                                 <div className="relative flex items-center gap-2 align-middle">
                                     <FaDiscord />
