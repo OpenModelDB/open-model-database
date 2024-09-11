@@ -22,7 +22,7 @@
             "size": 9016813,
             "sha256": "d1f1fa1af7a5ab23fcf143e75aac4951e6c52d56bf77d9ccd4d004a4831d0461",
             "urls": [
-                "https://github.com/Kim2091/PBRify_Remix/raw/main/Models/4x-PBRify_UpscalerSPANV4.pth"
+                "https://github.com/Kim2091/PBRify_Remix/raw/main/Extras/Old_Models/4x-PBRify_UpscalerSPANV4.pth"
             ]
         }
     ],
