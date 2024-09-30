@@ -1,0 +1,67 @@
+{
+    "name": "2xAoMR_mosr",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "game-textures",
+        "general-upscaler",
+        "restoration"
+    ],
+    "description": "[Link to Github Release with more infos to the process](https://github.com/Phhofm/models/releases/tag/2xAoMR_mosr)\n\n2xAoMR_mosr  \nScale: 4  \nArchitecture: [MoSR](https://github.com/umzi2/MoSR)  \nArchitecture Option: [mosr](https://github.com/umzi2/MoSR/blob/95c5bf73cca014493fe952c2fbc0bdbe593da08f/neosr/archs/mosr_arch.py#L117)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: A 2x mosr upscaling model for game textures  \nSubject: Game Textures  \nInput Type: Images  \nRelease Date: 21.09.2024 (dd/mm/yy)  \n\nDataset: Game Textures from Age of Mythology: Retold  \nDataset Size: 13'847  \nOTF (on the fly augmentations): No  \nPretrained Model: [4xNomos2_hq_mosr](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_mosr)  \nIterations: 510'000  \nBatch Size: 4  \nPatch Size: 64  \n\n## Description:   \nIn short: A 2x game texture mosr upscaling model, trained on and for (but not limited to) Age of Mythology: Retold textures.\n\nSince I have been playing Age of Mythology: Retold (casual player), I thought it would be interesting to train an single image super resolution model on (and for) game textures of AoMR, but this model should be usable for other game textures aswell.\nThis is a 2x model, since the biggest texture images are already 4096x4096, I thought going 4x on those would be overkill (also there are already 4x game texture upscaling models, so this model can be used for similiar cases where 4x is not needed).\n\nModel Showcase:\n[Slowpics](https://slow.pics/s/IlkmsToH)",
+    "date": "2024-09-21",
+    "architecture": "mosr",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 17121346,
+            "sha256": "6297be8b3671e4f49bb67de55901a43a9d79a829a69263b3f1cd77242b084dd8",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/2xAoMR_mosr/2xAoMR_mosr.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 17176545,
+            "sha256": "bbb2d937d4bf048b64811fa9a9fe1ce568a7020244af8b82640aed10257bb9d3",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/2xAoMR_mosr/2xAoMR_mosr_static_3_256_256_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 510000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Game Textures from Age of Mythology: Retold",
+    "datasetSize": 13847,
+    "pretrainedModelG": "4x-Nomos2-hq-mosr",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8lxm7EFW.webp",
+            "SR": "https://i.slow.pics/waabp4ph.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/3j7OZmwh.webp",
+            "SR": "https://i.slow.pics/0fR4zr75.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/zvWFFRaJ.webp",
+            "SR": "https://i.slow.pics/OCEPN5Ql.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/SOnGYqrz.webp",
+            "SR": "https://i.slow.pics/0TiiqMNv.webp"
+        }
+    ]
+}
