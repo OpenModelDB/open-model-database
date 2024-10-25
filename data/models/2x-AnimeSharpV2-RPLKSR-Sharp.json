@@ -1,0 +1,60 @@
+{
+    "name": "2x-AnimeSharpV2_RPLKSR_Sharp",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "compression-removal",
+        "restoration"
+    ],
+    "description": "GitHub Link: https://github.com/Kim2091/Kim2091-Models/releases/tag/2x-AnimeSharpV2_Set\n\nThis is my first anime model in years. Hopefully you guys can find a good use-case for it. Included are 4 models:\n\n1. RealPLKSR (Higher quality, slower)\n2. MoSR (Lower quality, faster)\n\nThere are Sharp and Soft versions of both\nWhen to use each:\n- __Sharp:__ For heavily degraded sources. Sharp models have issues depth of field but are best at removing artifacts \n- __Soft:__ For cleaner sources. Soft models preserve depth of field but may not remove other artifacts as well\n\n__Notes:__\n- MoSR doesn't work in chaiNNer currently\n- To use MoSR:\n  1. Use the ONNX version in tools like [VideoJaNai](<https://github.com/the-database/VideoJaNai>)\n  2. Update spandrel in the latest version of ComfyUI\n\nThe ONNX version may produce slightly different results than the .pth version. If you have issues, try the .pth model.",
+    "date": "2024-10-05",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29581322,
+            "sha256": "ff5230dec962235e2ffbc542c232ba438537aefe6cb2db8d072c7bdf1247fbc9",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-AnimeSharpV2_Set/2x-AnimeSharpV2_RPLKSR_Sharp.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 15324988,
+            "sha256": "b8704239f9cbacec75f6a078257bb2ee7a9a0ee7917c7029a331d1fbf4d59054",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-AnimeSharpV2_Set/2x-AnimeSharpV2_RPLKSR_Sharp_fp16.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 150000,
+    "trainingBatchSize": 10,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "HFA2k Modified",
+    "datasetSize": 3000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/7JZs9Otd.webp",
+            "SR": "https://i.slow.pics/6Jxhk9W7.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/mJZnrE4U.webp",
+            "SR": "https://i.slow.pics/11ju3S94.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/4RUqHkln.webp",
+            "SR": "https://i.slow.pics/H1hh7YYK.webp"
+        }
+    ]
+}
