@@ -1,0 +1,28 @@
+{
+    "name": "DRCT-L_X4",
+    "author": "ming053l",
+    "license": "MIT",
+    "tags": [
+        "pretrained",
+        "research"
+    ],
+    "description": "Official 4x drct-l Pretrain model, as released on their [DRCT Github Page](https://github.com/ming053l/DRCT?tab=readme-ov-file)",
+    "date": "2024-06-02",
+    "architecture": "drct",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 485570697,
+            "sha256": "a99044c0275699d1a296ae21b8f322fa8c65d7b9be2213ee2a3dcc280ab8d64b",
+            "urls": [
+                "https://drive.google.com/file/d/1bVxvA6QFbne2se0CQJ-jyHFy94UOi3h5/view?usp=drive_link"
+            ]
+        }
+    ],
+    "images": []
+}

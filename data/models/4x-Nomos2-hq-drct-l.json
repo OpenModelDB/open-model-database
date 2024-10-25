@@ -1,0 +1,60 @@
+{
+    "name": "4xNomos2_hq_drct-l",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_drct-l)\n\n4xNomos2_hq_drct-l  \nScale: 4  \nArchitecture: [DRCT](https://github.com/ming053l/DRCT)  \nArchitecture Option: [drct_l](https://github.com/muslll/neosr/blob/dc4e3742132bae2c2aa8e8d16de3a9fcec6b1a74/neosr/archs/drct_arch.py#L937)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Upscaler  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 08.09.2024  \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: DRCT-L_X4  \nIterations: 200'000  \nBatch Size: 2  \nPatch Size: 64  \n\nDescription: \nAn drct-l 4x upscaling model, similiar to the [4xNomos2_hq_atd](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_atd), [4xNomos2_hq_dat2](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_dat2) and [4xNomos2_hq_mosr](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_mosr) models, trained and for usage on non-degraded input to give good quality output.   \n\nModel Showcase:\n[Slowpics](https://slow.pics/c/1mODuuUS)",
+    "date": "2024-09-08",
+    "architecture": "drct",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 242743038,
+            "sha256": "9f10855fb26dfc2e1c475188d0f16e4692e2e7ca792d46ddf39d75b6ed2326dd",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_drct-l/4xNomos2_hq_drct-l.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 242543780,
+            "sha256": "1a10632101bb2aca6151301dd811921f1c438ff55159fd579fb576c143477797",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_drct-l/4xNomos2_hq_drct-l.safetensors"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingBatchSize": 2,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "nomosv2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-DRCT-L",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/62pgfv2s.webp",
+            "SR": "https://i.slow.pics/KTaesH50.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/UQ7MU0Dy.webp",
+            "SR": "https://i.slow.pics/s7eIGeNr.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/zz8eMuz4.webp",
+            "SR": "https://i.slow.pics/qtRZt0Hw.webp"
+        }
+    ]
+}
