@@ -1,0 +1,53 @@
+{
+    "name": "NES Composite to RGB",
+    "author": "pokepress",
+    "license": "MIT",
+    "tags": [
+        "debanding",
+        "denoise",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "Takes composite/RF/VHS NES footage and attempts to restore it to RGB quality. Assumes footage has been properly deinterlaced via field duplication from 240p to 480p. Note that:\n\n* All footage was captured in 240p/480p NTSC.\n* RGB footage was captured via an AV Famicom with the RGB Blaster via the Retrotink 2x.\n* The model was trained exclusively on individual frames, so it can't fix things like dropouts.\n* The even and odd fields of NES composite tend to be a bit...different from each other, so there will be some jitter at 60fps.\n* I don't have access to an NES Toploader, so I wouldn't expect it to fix the jailbars very well.",
+    "date": "2024-11-03",
+    "architecture": "omnisr",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3223546,
+            "sha256": "77511d759530b0cef77c919c40870f3fe3b9330e39e2aaacaac7848c06fb2b20",
+            "urls": [
+                "https://www.mediafire.com/file/qzaox0y51zh9ja7/NES_Composite_to_RGB.pth/file"
+            ]
+        }
+    ],
+    "trainingIterations": 445000,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Screenshots of NES games",
+    "datasetSize": 194,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ce97c530-8f99-448c-8101-e072b7f72851.jpg",
+            "SR": "https://imgsli.com/i/e3b66191-0e6e-4264-a97f-d7b79c8a2f23.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Legacy of the Wizard (VHS)",
+            "LR": "https://imgsli.com/i/0e8cc744-8e50-4b4c-8a0a-ccca9ffb9ea3.jpg",
+            "SR": "https://imgsli.com/i/d730abc1-ce80-495d-8a79-1504c6f7df33.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Defender of the Crown (RF)",
+            "LR": "https://imgsli.com/i/0f0d8130-cc2b-4e3a-afad-45aa6bf5c504.jpg",
+            "SR": "https://imgsli.com/i/4416deb1-bbed-49a2-b882-45179b301b46.jpg"
+        }
+    ]
+}
