@@ -3,7 +3,8 @@
     "author": "mutin-choler",
     "license": null,
     "tags": [
-        "denoise"
+        "denoise",
+        "restoration"
     ],
     "description": "",
     "date": "2020-10-14",
@@ -22,6 +23,7 @@
             "size": 66667161,
             "sha256": "e67ace42f63320dfe4ccc0a8016165eb1bcae802c4c0e031d72b101ab470d639",
             "urls": [
+                "https://drive.google.com/file/d/1AqnL27V3Tv4eCjKckwiA2yAn7pPWjdol/view?usp=drive_link",
                 "https://drive.google.com/drive/u/1/folders/12j6BvuR7SU48ui9DHjBPB1vzPpQri9bD"
             ]
         }

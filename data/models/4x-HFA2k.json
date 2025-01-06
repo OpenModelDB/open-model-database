@@ -4,6 +4,8 @@
     "license": "CC-BY-4.0",
     "tags": [
         "anime",
+        "compression-removal",
+        "jpeg",
         "restoration"
     ],
     "description": "4x anime image upscaler with a bit of otf jpg compression and blur. Trained on musl's hfa2k dataset release for Anime SISR, which has been extracted from modern anime films, where the selection criteria was high SNR, no DOF and high frequency information.\n\nExamples: https://imgsli.com/MTc2NDgx (PS Example input images are small, each around 500x280 px) \\\nExample input files: https://drive.google.com/drive/folders/1RI6gGqRy-KxDujbaIrpEMdvFkIWHvfPt \\\nExample output files: https://drive.google.com/drive/folders/1GqHwPlFp6bIQl4R1AxmrmJ6vUUD8FUxH \\\nAll my model files can be found on my github repo https://github.com/Phhofm/models",

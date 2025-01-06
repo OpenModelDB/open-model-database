@@ -3,6 +3,7 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "jpeg",
         "restoration"
     ],
@@ -23,7 +24,9 @@
             "size": 66662414,
             "sha256": "1c93728803e9a3525afa4d7b23e08be531202e2ffc1f046f79bd1733be139c21",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-DeJpeg-Fatality-PlusULTRA.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-DeJpeg-Fatality-PlusULTRA.pth",
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_DeJpeg_Fatality_PlusULTRA_200000_G.pth",
+                "https://drive.proton.me/urls/99P2D8ES9R#n3fGtpBrE0to"
             ]
         }
     ],
@@ -33,5 +36,16 @@
     "trainingHRSize": 128,
     "dataset": "Real life, Manga and digital text",
     "datasetSize": 26000,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/09/3f/ZcIq3bwn_o.jpeg",
+            "SR": "https://images2.imgbox.com/c7/dd/lIHpU4PZ_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/d7/75/ABl71IIh_o.jpg",
+            "SR": "https://images2.imgbox.com/35/f9/ylu0nTiz_o.png"
+        }
+    ]
 }

@@ -2,7 +2,9 @@
     "name": "2xLexicaRRDBNet",
     "author": "helaman",
     "license": "CC-BY-4.0",
-    "tags": [],
+    "tags": [
+        "ai-generated"
+    ],
     "description": "2x upscaler for the AI generated image output. Trained on 43856 images from lexica.art, so its trained specifically on that model but should work in general on ai generated images.",
     "date": "2023-06-01",
     "architecture": "esrgan",

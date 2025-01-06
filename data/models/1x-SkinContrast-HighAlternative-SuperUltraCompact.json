@@ -1,0 +1,81 @@
+{
+    "name": "1xSkinContrast-HighAlternative-SuperUltraCompact",
+    "author": "brigadeiro",
+    "license": "CC0-1.0",
+    "tags": [
+        "ai-generated",
+        "cgi",
+        "colorization",
+        "faces",
+        "game-screenshots",
+        "game-textures",
+        "photo",
+        "restoration",
+        "texture-generation",
+        "video-frame"
+    ],
+    "description": "A 1x model designed for skin contrast (although some backgrounds suffer a little modification), some images may suffer from the creation of artifacts, High Alternative is the model that generates the most artifacts, also try the other SkinContrast models",
+    "date": "2024-06-04",
+    "architecture": "compact",
+    "size": [
+        "24nf",
+        "8nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 181474,
+            "sha256": "9760acf822181f17191f367f914cf04316718a7f8492413440206e0e6f6c58a6",
+            "urls": [
+                "https://www.mediafire.com/file/5qwtnosdfuq9bgl/1xSkinContrast-HighAlternative-SuperUltraCompact.pth/file"
+            ]
+        }
+    ],
+    "pretrainedModelG": "1x-SuperUltraCompact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/kxSnnQw/0-foto.png",
+            "SR": "https://i.ibb.co/n6gRwbQ/0-foto-HCAlt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/9sHgvC8/2-foto.png",
+            "SR": "https://i.ibb.co/TB3GQgs/2-foto-HCAlt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/HKj6Yy1/3-foto.png",
+            "SR": "https://i.ibb.co/L9MTvNP/3-foto-HCAlt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/bFD31Vw/1-test.png",
+            "SR": "https://i.ibb.co/wChkwMv/1-test-HCAlt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/zGY3Fm7/54-screenshot.png",
+            "SR": "https://i.ibb.co/g3wXByw/54-screenshot-HCAlt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/CBpPwYw/33-screenshot.png",
+            "SR": "https://i.ibb.co/tQBWG2k/33-screenshot-HCAlt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/vQ4bmxx/60-screenshot.png",
+            "SR": "https://i.ibb.co/Mn0PS2w/60-screenshot-HCAlt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/sPLth3m/46-screenshot.png",
+            "SR": "https://i.ibb.co/d4Pg8Hd/46-screenshot-HCAlt.png"
+        }
+    ]
+}

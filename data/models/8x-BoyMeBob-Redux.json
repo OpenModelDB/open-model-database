@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nUpscaling cartoons\n\nPretrained model: 8xBoyMeBob (unreleased) which used 8xESRGAN",
+    "description": "Upscaling cartoons\n\nPretrained model: 8xBoyMeBob (unreleased) which used 8xESRGAN",
     "date": "2021-08-19",
     "architecture": "esrgan+",
     "size": [
@@ -34,56 +34,79 @@
     "datasetSize": 24123,
     "images": [
         {
-            "type": "standalone",
-            "url": "https://p-lux3.pcloud.com/D4ZFqLCfeZXFC3CCZZZcUH1o7Z3VZZnl0ZXZ52H0ZHzZZZy6TKXZFl67UPA7QtF7Wa0Eh3h390u1WWVy/th-32633200259-2048x576.png"
+            "type": "paired",
+            "caption": "S11E9",
+            "LR": "https://images2.imgbox.com/ae/52/oewaMULv_o.png",
+            "SR": "https://images2.imgbox.com/26/08/2RVVFOT7_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux1.pcloud.com/D4ZIMLCfeZMoP3CCZZZoUH1o7Z3VZZnl0ZXZqvT0ZrkZZZy6TKXZiJM29YazhIFHESCfRjHuBhwDBeuk/th-32633199741-2048x576.png"
+            "type": "paired",
+            "caption": "S11E9",
+            "LR": "https://images2.imgbox.com/70/60/yclcqkvG_o.png",
+            "SR": "https://images2.imgbox.com/1c/32/IwU4jzqA_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux4.pcloud.com/D4ZlUSpsTZngP3CCZZZoUH1o7Z3VZZnl0ZXZKIuXZMzZZZy6TKXZIyiG3Lj5iCL1RMsdzO7M3kJw8Ogk/th-32633198275-2048x576.png"
+            "type": "paired",
+            "caption": "S11E9",
+            "LR": "https://images2.imgbox.com/0a/e8/JLixWFmh_o.png",
+            "SR": "https://images2.imgbox.com/4b/ca/6Sd8RMmN_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux3.pcloud.com/D4Z4CLCfeZtqP3CCZZZpIH1o7Z3VZZnl0ZXZjuB0ZFRZZZy6TKXZLHGnpx1lUcuq8aL4owC6hSwD5Puy/th-32633198776-2048x576.png"
+            "type": "paired",
+            "caption": "S11E16",
+            "LR": "https://images2.imgbox.com/e6/76/6VWdcPOa_o.png",
+            "SR": "https://images2.imgbox.com/56/54/XrGu89Y6_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux3.pcloud.com/D4ZX6LCfeZHYP3CCZZZ7aH1o7Z3VZZnl0ZXZt4V5ZHzZZZy6TKXZMR0iF3UO78zLlSpi5HoVimGxUngk/th-32633197094-2048x576.png"
+            "type": "paired",
+            "caption": "S11E16",
+            "LR": "https://images2.imgbox.com/a6/5c/zeELiVdV_o.png",
+            "SR": "https://images2.imgbox.com/02/43/p2ILGZqu_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux2.pcloud.com/D4ZEJ4CfeZEYP3CCZZZ7aH1o7Z3VZZnl0ZXZNtH5ZS0ZZZy6TKXZ6wSpKtGTnUkGsWdRXxoPkyIsqOok/th-32633197131-2048x576.png"
+            "type": "paired",
+            "caption": "S11E16",
+            "LR": "https://images2.imgbox.com/d2/1a/uJXzPPva_o.png",
+            "SR": "https://images2.imgbox.com/21/7e/eeiZPvg6_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux2.pcloud.com/D4Zay8CfeZsdg3CCZZZkaH1o7Z3VZZnl0ZXZP405Z9VZZZy6TKXZFVpqoBBtlSzejBGjdHeXMHGP0hMV/th-32633194977-2048x576.png"
+            "type": "paired",
+            "caption": "S11E22",
+            "LR": "https://images2.imgbox.com/4b/a4/ZGr0cQcK_o.png",
+            "SR": "https://images2.imgbox.com/e1/12/yCQWm4Eq_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux4.pcloud.com/D4Zh4mCfeZzdg3CCZZZHaH1o7Z3VZZnl0ZXZbCzJZXJZZZy6TKXZv3S9bMS7rYylE3I33DAJfkCeUTdy/th-32633194960-2048x576.png"
+            "type": "paired",
+            "caption": "S11E22",
+            "LR": "https://images2.imgbox.com/b9/19/lo8qWOb6_o.png",
+            "SR": "https://images2.imgbox.com/a9/d4/NMMNCxZk_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux1.pcloud.com/D4ZrgbCfeZHpx3CCZZZYaH1o7Z3VZZnl0ZXZ7MK5ZO0ZZZy6TKXZJdAwt0u29lzaHQUv5AFe78es2YvX/th-32633204048-2048x576.png"
+            "type": "paired",
+            "caption": "S11E22",
+            "LR": "https://images2.imgbox.com/44/3f/97Ufk6mq_o.png",
+            "SR": "https://images2.imgbox.com/4d/f1/lzOxVTF7_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux4.pcloud.com/D4Z04QCfeZdOC3CCZZZfaH1o7Z3VZZnl0ZXZXQvXZ8VZZZy6TKXZ5prO8Tg6nghyGHb1BFpJdu0j9DPX/th-32633202739-2048x576.png"
+            "type": "paired",
+            "caption": "S11E22",
+            "LR": "https://images2.imgbox.com/ed/0d/gU8m4b1P_o.png",
+            "SR": "https://images2.imgbox.com/39/5e/GdadZCEd_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux3.pcloud.com/D4Zrl8CfeZjIC3CCZZZeaH1o7Z3VZZnl0ZXZN93VZFRZZZy6TKXZbu0PYE5JHF8UGmzs740YkbASVPBV/th-32633202840-2048x576.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/c9/4b/Fs7Cd0KT_o.png",
+            "SR": "https://images2.imgbox.com/38/ad/z0fp7m72_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux4.pcloud.com/D4Z2S4CfeZfeC3CCZZZwaH1o7Z3VZZnl0ZXZcPKVZVXZZZy6TKXZE7GULIwmg4f7WURzxwAy3miQCwkV/th-32633201683-2048x576.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/3a/5b/wFo4olPU_o.png",
+            "SR": "https://images2.imgbox.com/9d/1a/UiinCLCd_o.jpg"
         },
         {
-            "type": "standalone",
-            "url": "https://p-lux1.pcloud.com/D4ZFCuStMZkWC3CCZZZEaH1o7Z3VZZnl0ZXZ3Nv0ZvkZZZy6TKXZXfEh3yW78N5wjnvRu3146Vt05FQX/th-32633201417-2048x576.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/1e/6d/vvMfK97H_o.png",
+            "SR": "https://images2.imgbox.com/b3/af/O8E5fn7c_o.jpg"
         }
     ]
 }

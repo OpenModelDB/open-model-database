@@ -1,0 +1,150 @@
+{
+    "name": "AnimeJaNai_HD_V3_Compact",
+    "author": "the-database",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "compression-removal",
+        "restoration"
+    ],
+    "description": "Real-time 2x Real-ESRGAN Compact/UltraCompact/SuperUltraCompact models designed for upscaling 1080p anime to 4K. \n\nThe aim of these models is to address scaling, blur, oversharpening, and compression artifacts while upscaling to deliver a result that appears as if the anime was originally mastered in 4K resolution. Can be set up to run in real-time with mpv on Windows using https://github.com/the-database/mpv-upscale-2x_animejanai\n\nThe development of the V3 models spanned over seven months, during which over 100 release candidate models were trained and meticulously refined. The V3 models introduce several improvements compared to V2, including:\n\nMore faithful appearance to original source\nImproved handling of oversharpening artifacts, ringing, aliasing\nBetter at preserving intentional blur in scenes using depth of field\nMore accurate line colors, darkness, and thickness\nBetter preservation of soft shadow edges\n\nOverall, the V3 models yield significantly more natural and faithful results compared to the V2 models.test",
+    "date": "2024-01-17",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 4838742,
+            "sha256": "af7307eee19e5982a8014dd0e4650d3bde2e25aa78d2105a4bdfd947636e4c8f",
+            "urls": [
+                "https://github.com/the-database/mpv-upscale-2x_animejanai/releases/download/3.0.0/2x_AnimeJaNai_HD_V3_ModelsOnly.zip"
+            ]
+        }
+    ],
+    "trainingIterations": 583000,
+    "trainingBatchSize": 9,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "1080p anime",
+    "datasetSize": 239484,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xttdFobW.png",
+            "SR": "https://i.slow.pics/1rp2lkNh.png"
+        },
+        {
+            "type": "paired",
+            "caption": "Lanczos vs Upscale",
+            "LR": "https://i.slow.pics/0r3azeT4.png",
+            "SR": "https://i.slow.pics/EBbp3lJq.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oCxHxIUA.png",
+            "SR": "https://i.slow.pics/DS4nIeSk.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/4l0JJEfj.png",
+            "SR": "https://i.slow.pics/AYRvi2WF.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/zqHgUJpm.png",
+            "SR": "https://i.slow.pics/mcPMXFRf.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/yw2gadF4.png",
+            "SR": "https://i.slow.pics/T9bHzshY.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/aGQOOK8D.png",
+            "SR": "https://i.slow.pics/fBqGSNCf.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/4n06AbjO.png",
+            "SR": "https://i.slow.pics/wJPH69fA.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/m8ld0h5o.png",
+            "SR": "https://i.slow.pics/jsSGcwwm.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Ux67Hgot.png",
+            "SR": "https://i.slow.pics/K7r6vKNE.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Gu5oDhzV.png",
+            "SR": "https://i.slow.pics/mYLY1vsu.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/QX0FqOwm.png",
+            "SR": "https://i.slow.pics/NLBrf7wr.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BKuBSW0C.png",
+            "SR": "https://i.slow.pics/2w5f0Oe4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/YJL912IH.png",
+            "SR": "https://i.slow.pics/69Z54sJB.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/mhsxx8RT.png",
+            "SR": "https://i.slow.pics/m9b12XbZ.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0Gd3nmPO.png",
+            "SR": "https://i.slow.pics/nSGaCvnF.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/tuK4JcEh.png",
+            "SR": "https://i.slow.pics/estteSKY.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/DyZhKgXT.png",
+            "SR": "https://i.slow.pics/n6hyQvo4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/MXp7u1yO.png",
+            "SR": "https://i.slow.pics/rMwSvQCV.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xTSKm4pf.png",
+            "SR": "https://i.slow.pics/kJaIkCrt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oJnDS8O3.png",
+            "SR": "https://i.slow.pics/oJnDS8O3.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/BIdeMtbu.png",
+            "SR": "https://i.slow.pics/7IEJOV4o.png"
+        }
+    ]
+}

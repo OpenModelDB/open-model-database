@@ -3,10 +3,11 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "restoration",
         "video-frame"
     ],
-    "description": "Category: Video Compression\nPurpose: Compression\n\nThis model removes early 2000s Bink and other compression artifacts. Works well on almost any image or video compression type.",
+    "description": "This model removes early 2000s Bink and other compression artifacts. Works well on almost any image or video compression type.",
     "date": "2021-06-08",
     "architecture": "esrgan",
     "size": [

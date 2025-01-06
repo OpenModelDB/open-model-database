@@ -3,6 +3,7 @@
     "author": "cf2lter",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "game-textures",
         "restoration"
     ],
@@ -38,12 +39,13 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://cdn.discordapp.com/attachments/579685650824036387/1089380930935849000/Orig.png",
-            "SR": "https://cdn.discordapp.com/attachments/579685650824036387/1089380931615338568/DEPVR.png"
+            "LR": "https://images2.imgbox.com/d1/f8/U8JOnTJe_o.png",
+            "SR": "https://images2.imgbox.com/db/6c/nkv1Au60_o.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1089380932382896299/depvrcomp2.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/88/d0/kZO1rnqH_o.png",
+            "SR": "https://images2.imgbox.com/00/ad/gICBtgCz_o.png"
         }
     ]
 }

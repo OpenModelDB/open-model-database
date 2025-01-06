@@ -3,6 +3,7 @@
     "author": "blueamulet",
     "license": "CC-BY-NC-4.0",
     "tags": [
+        "compression-removal",
         "jpeg",
         "restoration"
     ],
@@ -23,6 +24,7 @@
             "size": 66658222,
             "sha256": "486f6fa647dac3c17bf454c0397fdf7c2c3bf9d7c5909da3f1ba4537515c7505",
             "urls": [
+                "https://drive.google.com/file/d/1lgpo60okKC_9D6mzymHOvwdJDsOqxi7j/view?usp=drive_link",
                 "https://drive.google.com/drive/folders/1HWokMsUwsR_Mw-NOJgc8OdS8mkdIje_C"
             ]
         }

@@ -1,4 +1,12 @@
 {
+    "atd": {
+        "name": "ATD",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "cain": {
         "name": "CAIN",
         "input": "video",
@@ -22,8 +30,15 @@
             "ncnn"
         ]
     },
+    "craft": {
+        "name": "CRAFT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "cugan": {
-        "name": "Cugan",
+        "name": "CUGAN",
         "input": "image",
         "compatiblePlatforms": [
             "pytorch",
@@ -36,6 +51,27 @@
         "compatiblePlatforms": [
             "pytorch",
             "onnx"
+        ]
+    },
+    "dctlsa": {
+        "name": "DCTLSA",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
+    "ditn": {
+        "name": "DITN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
+    "drct": {
+        "name": "DRCT",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
         ]
     },
     "edsr": {
@@ -64,15 +100,6 @@
             "ncnn"
         ]
     },
-    "esrgan-2c2": {
-        "name": "ESRGAN 2C2",
-        "input": "image",
-        "compatiblePlatforms": [
-            "pytorch",
-            "onnx",
-            "ncnn"
-        ]
-    },
     "grl": {
         "name": "GRL",
         "input": "image",
@@ -89,6 +116,13 @@
             "onnx"
         ]
     },
+    "hma": {
+        "name": "HMA",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "ludvae": {
         "name": "LUDVAE",
         "input": "image",
@@ -96,8 +130,46 @@
             "pytorch"
         ]
     },
+    "mosr": {
+        "name": "MoSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
     "omnisr": {
         "name": "OmniSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
+    "real-cugan": {
+        "name": "Real-CUGAN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "realplksr": {
+        "name": "RealPLKSR",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "realplksr-dysample": {
+        "name": "RealPLKSR_dysample",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
+    "rgt": {
+        "name": "RGT",
         "input": "image",
         "compatiblePlatforms": [
             "pytorch"
@@ -115,6 +187,15 @@
         "input": "video",
         "compatiblePlatforms": [
             "pytorch"
+        ]
+    },
+    "span": {
+        "name": "SPAN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx",
+            "ncnn"
         ]
     },
     "spsr": {

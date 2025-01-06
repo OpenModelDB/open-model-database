@@ -10,6 +10,7 @@ import Logo from '../../public/logo.svg';
 import { toggleColorScheme } from '../lib/color-scheme';
 import { useEditModeToggle } from '../lib/hooks/use-web-api';
 import { joinClasses } from '../lib/util';
+import { ClientOnly } from './components/client';
 import { SearchIcon } from './components/custom-icons';
 import { Link } from './components/link';
 import { SearchBar } from './components/searchbar';
@@ -42,7 +43,9 @@ export function Header({ searchBar }: HeaderProps) {
                         href="/"
                     >
                         <div className={style.logoContainer}>
-                            <Logo />
+                            <ClientOnly>
+                                <Logo />
+                            </ClientOnly>
                         </div>
                     </Link>
 
@@ -84,55 +87,57 @@ export function Header({ searchBar }: HeaderProps) {
                         </button>
                     )}
 
-                    {searchBar && (
-                        <>
-                            <SearchBar
-                                className={`${style.search} mx-4 hidden lg:flex`}
-                                placeholder="Search models"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                onEnter={onSearch}
-                            />
-                            <Link
-                                aria-label="Search models"
-                                className={joinClasses(style.iconLink, 'lg:hidden')}
-                                href="/"
-                            >
-                                <SearchIcon
-                                    height="1em"
-                                    width="1em"
+                    <ClientOnly>
+                        {searchBar && (
+                            <>
+                                <SearchBar
+                                    className={`${style.search} mx-4 hidden lg:flex`}
+                                    placeholder="Search models"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    onEnter={onSearch}
                                 />
-                            </Link>
-                        </>
-                    )}
+                                <Link
+                                    aria-label="Search models"
+                                    className={joinClasses(style.iconLink, 'lg:hidden')}
+                                    href="/"
+                                >
+                                    <SearchIcon
+                                        height="1em"
+                                        width="1em"
+                                    />
+                                </Link>
+                            </>
+                        )}
 
-                    <Link
-                        external
-                        aria-label="GitHub"
-                        className={joinClasses(style.iconLink, style.hideMobile)}
-                        href="https://github.com/OpenModelDB/open-model-database"
-                    >
-                        <FaGithub />
-                    </Link>
-                    <Link
-                        external
-                        aria-label="Discord"
-                        className={joinClasses(style.iconLink, style.hideMobile)}
-                        href="https://discord.gg/enhance-everything-547949405949657098"
-                    >
-                        <FaDiscord />
-                    </Link>
-                    <button
-                        aria-label="Toggle color scheme"
-                        className={joinClasses(style.themeButton, style.hideMobile)}
-                        type="button"
-                        onClick={toggleColorScheme}
-                    >
-                        <MdLightMode className={style.light} />
-                        <MdDarkMode className={style.dark} />
-                    </button>
+                        <Link
+                            external
+                            aria-label="GitHub"
+                            className={joinClasses(style.iconLink, style.hideMobile)}
+                            href="https://github.com/OpenModelDB/open-model-database"
+                        >
+                            <FaGithub />
+                        </Link>
+                        <Link
+                            external
+                            aria-label="Discord"
+                            className={joinClasses(style.iconLink, style.hideMobile)}
+                            href="https://discord.gg/cpAUpDK"
+                        >
+                            <FaDiscord />
+                        </Link>
+                        <button
+                            aria-label="Toggle color scheme"
+                            className={joinClasses(style.themeButton, style.hideMobile)}
+                            type="button"
+                            onClick={toggleColorScheme}
+                        >
+                            <MdLightMode className={style.light} />
+                            <MdDarkMode className={style.dark} />
+                        </button>
 
-                    <HeaderDrawer />
+                        <HeaderDrawer />
+                    </ClientOnly>
                 </div>
             </header>
         </>
@@ -225,7 +230,7 @@ function HeaderDrawer() {
                                 external
                                 aria-label="Discord"
                                 className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="https://discord.gg/enhance-everything-547949405949657098"
+                                href="https://discord.gg/cpAUpDK"
                             >
                                 <div className="relative flex items-center gap-2 align-middle">
                                     <FaDiscord />

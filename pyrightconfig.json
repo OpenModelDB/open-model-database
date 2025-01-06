@@ -1,0 +1,29 @@
+{
+	"include": [
+		"scripts"
+	],
+	"exclude": [
+		"**/__pycache__"
+	],
+	"ignore": [],
+	"typeCheckingMode": "basic",
+	"useLibraryCodeForTypes": false,
+	"strictListInference": true,
+	"strictDictionaryInference": true,
+	"strictSetInference": true,
+	"reportDuplicateImport": "warning",
+	"reportImportCycles": "error",
+	"reportIncompatibleVariableOverride": "error",
+	"reportOverlappingOverload": "error",
+	"reportPrivateImportUsage": "error",
+	"reportUninitializedInstanceVariable": "error",
+	"reportUnnecessaryCast": "error",
+	"reportUnnecessaryComparison": "error",
+	"reportUnnecessaryContains": "error",
+	"reportUnnecessaryIsInstance": "error",
+	// "reportUnnecessaryTypeIgnoreComment": "warning",
+	"reportUnusedClass": "warning",
+	"reportUnusedFunction": "warning",
+	"reportUnusedImport": "warning",
+	"reportUnusedVariable": "warning",
+}

@@ -69,10 +69,8 @@ function getSortKeyFn(
                 // find the minimum size
                 let size: number | undefined = undefined;
                 for (const resource of resources) {
-                    if (resource.size !== null) {
-                        if (size === undefined || resource.size < size) {
-                            size = resource.size;
-                        }
+                    if (size === undefined || resource.size < size) {
+                        size = resource.size;
                     }
                 }
                 return size;

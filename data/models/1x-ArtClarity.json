@@ -5,7 +5,8 @@
     "tags": [
         "deblur",
         "denoise",
-        "pixel-art"
+        "pixel-art",
+        "restoration"
     ],
     "description": "Pretrained: 4xPSNR\n\nTexture retaining denoiser and sharpener for digital artwork\n\nSample images: https://1drv.ms/u/s!Aip-EMByJHY28xKFp93VIGydNsoN?e=vN2WYh",
     "date": "2021-08-05",

@@ -1,0 +1,36 @@
+{
+    "name": "DWTP DS dat2 v1",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "manga"
+    ],
+    "description": "Purpose: remove paper texture and screentone from independent manga scans\n\nThis is my first model for this, it can be said to remove poorly https://discord.com/channels/547949405949657098/1159598245417332796/1185562840304721921",
+    "date": "2024-02-06",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140296934,
+            "sha256": "64ea688f564f1779e24706ddd51e2326f6ab74b7cae6df43b5694cc1fc83a376",
+            "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-DWTP-DS-dat2-v1.pth"
+            ]
+        }
+    ],
+    "trainingOTF": false,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": []
+}

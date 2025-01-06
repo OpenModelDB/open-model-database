@@ -3,7 +3,8 @@
     "author": "blackscout",
     "license": null,
     "tags": [
-        "deblur"
+        "deblur",
+        "restoration"
     ],
     "description": "General Deblurring",
     "date": "2020-02-19",

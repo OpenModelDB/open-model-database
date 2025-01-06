@@ -2,8 +2,11 @@
     "name": "Cat_Patch",
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
-    "description": "Category: Cats\nPurpose: Cats\n\nPretrained model: Previous attempt",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "Purpose: Cats\n\nPretrained model: Previous attempt",
     "date": "2020-11-28",
     "architecture": "esrgan",
     "size": [
@@ -21,9 +24,11 @@
             "sha256": "9260fac8bee3794ba2b9081d317ddbdee82e2ab99338741bf00cd33020dd757a",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-Cat-Patch.pth",
-                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/4x_cat_patch_325000_G.pth"
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/4x_cat_patch_325000_G.pth",
+                "https://drive.proton.me/urls/W4T4P2JXTC#MEgR0R1zXbF0"
             ]
         }
     ],
+    "trainingIterations": 325000,
     "images": []
 }

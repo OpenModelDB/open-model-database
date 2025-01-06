@@ -1,0 +1,36 @@
+{
+    "name": "span_pretrain",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [
+        "pretrained"
+    ],
+    "description": "Please load it using `strict_load_g: false`. Model trained only on downscale degradation (bicubic, bilinear, nearest, lanczos and mitchell). Can be used to start new SPAN models.",
+    "date": "2023-12-05",
+    "architecture": "span",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 7418098,
+            "sha256": "c81bd8fb15eca0394a447a5fe731c3883614dbf925a35156e4ce5caf6a3e07b3",
+            "urls": [
+                "https://drive.google.com/file/d/1O2_wJoTpCo4fko8gPaiepFjomcXK2Uo_/view?usp=drive_link",
+                "https://drive.google.com/drive/folders/17Wyr7yCQhh9GdZcv1KT2oEXuMaV-bGjg?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 430000,
+    "dataset": "nomos_uni",
+    "pretrainedModelG": "4x-spanx4-ch48",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/83/90/joav4okw_o.png"
+        }
+    ]
+}

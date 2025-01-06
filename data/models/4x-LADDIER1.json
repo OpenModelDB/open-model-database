@@ -4,7 +4,8 @@
     "license": null,
     "tags": [
         "deblur",
-        "denoise"
+        "denoise",
+        "restoration"
     ],
     "description": "Remove noise, grain, box blur, lens blur and gaussian blur and increase overall image quality.",
     "date": "2019-11-13",

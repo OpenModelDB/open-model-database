@@ -3,7 +3,8 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "deblur"
+        "deblur",
+        "restoration"
     ],
     "description": "These models deblur most images. It was trained mostly on aniso2 and iso blurring (BSRGAN augmentation) with some gaussian mixed in. It performs well on most blurry images, but I'd recommend using something like Fatality_Deblur for very strong gaussian blur.",
     "date": "2021-10-01",
@@ -35,18 +36,18 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108220390720929863/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108220391127789589/SR.png"
+            "LR": "https://images2.imgbox.com/e3/53/V4cYjrNU_o.png",
+            "SR": "https://images2.imgbox.com/9d/1e/bnOnRtDF_o.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108220021970305024/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108220022226173992/SR.png"
+            "LR": "https://images2.imgbox.com/72/11/xzrP7FIe_o.png",
+            "SR": "https://images2.imgbox.com/13/44/kiNOMDpz_o.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108220507259678812/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108220508023050321/SR.png"
+            "LR": "https://images2.imgbox.com/c7/d3/34yxTsyx_o.png",
+            "SR": "https://images2.imgbox.com/fc/14/kzOOWxaA_o.png"
         }
     ]
 }

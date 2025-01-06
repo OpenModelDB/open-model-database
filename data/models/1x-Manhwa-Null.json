@@ -1,0 +1,60 @@
+{
+    "name": "1x Manhwa Null",
+    "author": "null-llun",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "compression-removal",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "Model designed exclusively to remove compression artifacts while preserving noise in Manhwa, Manhua, Webtoons etc.",
+    "date": "2023-12-06",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67132992,
+            "sha256": "7d7cee6e08f72cd231fa0d5083e7ec13fb464eff82cae73e0b1292ac6fe51f87",
+            "urls": [
+                "https://drive.proton.me/urls/7GEFYESYJ8#FBwTw8efR6yJ"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "datasetSize": 18000,
+    "pretrainedModelG": "1x-ESRGAN",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/b527cfb1-cc80-49d8-9dc3-09c16d66b811.jpg",
+            "SR": "https://imgsli.com/i/054f91e9-b0f0-447b-9542-924b9d282d66.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/e73d3327-61b0-465e-9d93-4492eb2a3877.jpg",
+            "SR": "https://imgsli.com/i/5bcb1965-6632-4cf7-8173-6425f4720858.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6ffd0d79-2175-4a6d-846a-7523ee1e9f4e.jpg",
+            "SR": "https://imgsli.com/i/6224684b-5dd3-4bb6-88ad-d693910dcd50.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/88e7c498-8136-435f-ad5f-f571c814c56a.jpg",
+            "SR": "https://imgsli.com/i/3804eaee-e0eb-45b9-a814-fab0bd40a2e6.jpg"
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "name": "AniScale-2-ESRGAN-Lite",
+    "author": "sirosky",
+    "license": "CC-BY-NC-4.0",
+    "tags": [
+        "anime",
+        "compression-removal",
+        "restoration"
+    ],
+    "description": "AniScale 2 is a versatile and faithful anime model trained for use on a variety of post ~2000 sources. As the name suggests, this is the successor to the original AniScale, and a substantial upgrade in nearly every respect. Superb blur and depth of field handling, thorough WEB and DVD compression repair, and pleasing line art refinement are the hallmarks of AniScale 2. A few notes:\n\n- While AniScale 2 is trained first and foremost as an OmniSR model, AniScale 2 is also intended to be a platform to explore multiple SISR archs. For starters, I've trained OmniSR and Compact versions, but more will come.\n- AniScale 2 also comes with a \"refiner\" model, creatively named AniScale 2 Refiner (AS2R). AS2R is a 1x Compact model (for maximum speed) trained to supplement and increase the versatility of AniScale 2, without making the base model excessively aggressive. The Refiner is focused on providing light sharpening, fixing line art and line thinning, depending on whether you run the model before or after upscaling with AniScale 2. \n- For more information, please visit the [Github wiki page](https://github.com/Sirosky/Upscale-Hub/wiki/%F0%9F%8C%9F-AniScale-2-&--AniScale-2-Refiner).\n\n**Comparisons**\n\n- [General Comparisons](https://imgsli.com/MjEyMjQw/0/1)\n- [Depth of Field/Blur Comparisons](https://imgsli.com/MjEyMjQ1/5/4) (including vs. my favorite model punching bag)",
+    "date": "2023-10-08",
+    "architecture": "esrgan",
+    "size": [
+        "32nf",
+        "12nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 20220386,
+            "sha256": "b5a9a3bda59e47ee7f62d56dfd89d61ebf8964464b5b0153fdedfaed84caf935",
+            "urls": [
+                "https://github.com/Sirosky/Upscale-Hub/releases/download/AniScale2/2x_AniScale2_ESRGAN_Lite_i16_165K.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 165000,
+    "trainingBatchSize": 28,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Custom image pair and synthetic dataset",
+    "datasetSize": 6655,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/ec1cb60c-f565-459d-af05-6cc5b1403506.jpg",
+            "SR": "https://imgsli.com/i/113dfd01-b267-4dc1-a74c-a22069c08222.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/829ee286-353f-4f5a-8a97-18e07b8ba497.jpg",
+            "SR": "https://imgsli.com/i/30a0011e-1735-4da8-9af8-522886b02b9c.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/6924d14b-c7ce-482b-bf67-5be8dec994fd.jpg",
+            "SR": "https://imgsli.com/i/44943edf-7ff5-4379-9c0d-ec89fd47e856.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/46668f08-392e-4e4e-a735-ddb29a1e646c.jpg",
+            "SR": "https://imgsli.com/i/d6e1b919-a741-42fc-8f8a-73ea2598e1f2.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/96f4a751-fde8-47bd-9cbf-3e09c5b78ebe.jpg",
+            "SR": "https://imgsli.com/i/a1f84964-2a33-453f-95d5-143c6ed5e131.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/9768bf0d-ad19-4f59-89b8-6a43740b3628.jpg",
+            "SR": "https://imgsli.com/i/682d04c2-c6db-439f-b881-4964e7ec8d65.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Bokeh_1",
+            "LR": "https://imgsli.com/i/84aed542-9ce8-42be-8e83-03d547b24b64.jpg",
+            "SR": "https://imgsli.com/i/2f4187b2-b325-4817-9f6e-b1ab2332d94f.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Blur and Shadow",
+            "LR": "https://imgsli.com/i/9e759309-b23b-490d-9ed2-4aabd6c94629.jpg",
+            "SR": "https://imgsli.com/i/24ffb53e-bb83-4104-8fe2-0d69755d7837.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/706c03df-a50a-41c4-9c74-988dee54d222.jpg",
+            "SR": "https://imgsli.com/i/1506f521-15a7-4d4a-aad9-11ef2ef221f4.jpg"
+        }
+    ]
+}

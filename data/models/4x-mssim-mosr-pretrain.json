@@ -1,0 +1,40 @@
+{
+    "name": " 4xmssim_mosr_pretrain",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "pretrained"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xmssim_mosr_pretrain)\n\n# 4xmssim_mosr_pretrain  \nScale: 4  \nArchitecture: [MoSR](https://github.com/umzi2/MoSR)  \nArchitecture Option: [mosr](https://github.com/umzi2/MoSR/blob/95c5bf73cca014493fe952c2fbc0bdbe593da08f/neosr/archs/mosr_arch.py#L117)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Pretrained  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 25.08.2024  \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: None  \nIterations: 420'000  \nBatch Size: 6  \nPatch Size: 64  \n\nDescription:   \nA 4x [MoSR](https://github.com/umzi2/MoSR) pretrain model with mssim only on the Nomos2 dataset, usable as a pretrain when starting training new mosr models.  \n\nTraining metrics graphs:  \n![image](https://github.com/user-attachments/assets/b66b75d8-f83c-4b6e-8094-ef5e5cba9c81)  \n\nShowcase:  \n[Slowpics](https://slow.pics/c/T59QQaQ0)",
+    "date": "2024-08-25",
+    "architecture": "mosr",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 17213494,
+            "sha256": "ce1f5ac585ad25fd65511c2f1d7401c43b0dc2108d82e330a49ec7d67defcbf5",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xmssim_mosr_pretrain/4xmssim_mosr_pretrain.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 420000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "nomosv2",
+    "datasetSize": 6000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pV88gDQz.webp",
+            "SR": "https://i.slow.pics/zbQtgg8a.webp"
+        }
+    ]
+}

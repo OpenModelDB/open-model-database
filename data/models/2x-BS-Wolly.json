@@ -2,8 +2,11 @@
     "name": "BSWolly",
     "author": "blackscout",
     "license": "GPL-3.0-only",
-    "tags": [],
-    "description": "Category: CGI\nPurpose: CGI Animation\n\nPixar Movies or Wall-E pictures/frames",
+    "tags": [
+        "cgi",
+        "restoration"
+    ],
+    "description": "Pixar Movies or Wall-E pictures/frames",
     "date": "2020-02-07",
     "architecture": "esrgan",
     "size": [

@@ -3,7 +3,8 @@
     "author": "alpha",
     "license": "WTFPL",
     "tags": [
-        "denoise"
+        "denoise",
+        "restoration"
     ],
     "description": "Remove high ISO noise",
     "date": "2020-03-16",

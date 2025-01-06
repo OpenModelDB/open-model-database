@@ -1,0 +1,41 @@
+{
+    "name": "FrankendataPretainer_SRFormer",
+    "author": "crustaceous-d",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "pretrained",
+        "restoration"
+    ],
+    "description": "4x realistic upscaler that may also work for general purpose usage. Trained on Bicubic downscaled tiles from very high quality images.",
+    "date": "2023-12-19",
+    "architecture": "srformer",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 180479507,
+            "sha256": "c446d2b7b432030797b6c596c47d829276381cce7a0d41c631a2892ecf926fec",
+            "urls": [
+                "https://drive.google.com/file/d/1SaKvpYYIm2Vj2m9GifUMlNCbmkE6JZmr/view?usp=drive_link",
+                "https://drive.google.com/drive/folders/1hlvRpTywCwthPGFOVGogoYUEflDHDlfI?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 400000,
+    "trainingEpochs": 8,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "Custom dataset",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/94/95/lNEpE2mO_o.png",
+            "SR": "https://images2.imgbox.com/d8/ef/FYDhr24J_o.png"
+        }
+    ]
+}

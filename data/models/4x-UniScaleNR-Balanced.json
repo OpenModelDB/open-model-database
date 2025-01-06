@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "denoise",
-        "general-upscaler"
+        "general-upscaler",
+        "restoration"
     ],
     "description": "Version of UniScale trained with camera noise injection (NR = Noise Removal). This model removes noise from images while upscaling.",
     "date": "2021-08-23",

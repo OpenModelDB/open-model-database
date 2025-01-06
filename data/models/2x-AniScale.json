@@ -4,6 +4,7 @@
     "license": "CC-BY-NC-4.0",
     "tags": [
         "anime",
+        "compression-removal",
         "dehalo",
         "restoration"
     ],
@@ -25,7 +26,6 @@
             "sha256": "8036d8e4da1c1f16db79a4aefbda86f7c9a07c6a7fa03d5d2d9e2f0012909671",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/2x-AniScale.pth",
-                "https://cdn.discordapp.com/attachments/579685650824036387/1097231218333974668/2x_AniScale_30000.pth",
                 "https://icedrive.net/s/5fiR884Qh2ggGitujhgzxW19VZjj"
             ]
         }

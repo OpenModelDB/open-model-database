@@ -2,7 +2,10 @@
     "name": "DigiPaint",
     "author": "rastrum",
     "license": "CC0-1.0",
-    "tags": [],
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
     "description": "Category: Drawings\nPurpose: Art\n\nDigital Art Upscaler\n\nPretrained model: 4xfalcoon300(manga).pth",
     "date": "2019-09-07",
     "architecture": "esrgan",

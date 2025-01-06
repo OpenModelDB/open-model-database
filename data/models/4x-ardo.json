@@ -21,8 +21,7 @@
             "size": 6718451,
             "sha256": "03a1a017522017c49bdecd2814303f9413b765b715b22f22fc9cdffe697f90ce",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-ardo.pth",
-                "https://cdn.discordapp.com/attachments/579685650824036387/1117894518642069514/4x_ardo.zip"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-ardo.pth"
             ]
         }
     ],
@@ -31,24 +30,29 @@
     "datasetSize": 2568,
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897320521011321/4x_ardo_cmp_4.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/03/26/jOLy208n_o.png",
+            "SR": "https://images2.imgbox.com/5e/6d/Nu6aLe2F_o.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897320206454886/4x_ardo_cmp_3.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/e7/70/zxOYBQI7_o.png",
+            "SR": "https://images2.imgbox.com/5c/d6/WRXkyB2z_o.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897319711522846/4x_ardo_cmp_2.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ee/96/qjVt4cH5_o.png",
+            "SR": "https://images2.imgbox.com/7c/0b/UGFTMaoX_o.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897319409537175/4x_ardo_cmp_1.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/d7/00/n8eCZ0B4_o.png",
+            "SR": "https://images2.imgbox.com/0f/fb/Pz24zlwL_o.png"
         },
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1117897318771986543/4x_ardo_cmp_0.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ba/5b/n8LhTqf6_o.png",
+            "SR": "https://images2.imgbox.com/b2/db/QxSXB9Ie_o.png"
         }
     ]
 }

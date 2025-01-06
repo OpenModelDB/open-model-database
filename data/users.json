@@ -20,6 +20,12 @@
     "archerpolation": {
         "name": "Archerpolation"
     },
+    "asterixcool": {
+        "name": "asterixcool"
+    },
+    "bendel": {
+        "name": "Bendel"
+    },
     "blackscout": {
         "name": "BlackScout"
     },
@@ -31,6 +37,9 @@
     },
     "boxdrop": {
         "name": "BoxDrop"
+    },
+    "brigadeiro": {
+        "name": "Brigadeiro"
     },
     "bubblemint": {
         "name": "Bubblemint#6472"
@@ -59,11 +68,17 @@
     "computerk": {
         "name": "ComputerK"
     },
+    "crustaceous-d": {
+        "name": "Crustaceous D"
+    },
     "cszn": {
         "name": "cszn"
     },
     "deorder": {
         "name": "Deorder"
+    },
+    "derpy": {
+        "name": ".derpy."
     },
     "dinjerr": {
         "name": "DinJerr"
@@ -88,6 +103,9 @@
     },
     "helaman": {
         "name": "Helaman"
+    },
+    "hongyuanyu": {
+        "name": "hongyuanyu"
     },
     "hubert": {
         "name": "hubert"
@@ -134,6 +152,12 @@
     "laserschwert": {
         "name": "Laserschwert"
     },
+    "lehengzhang": {
+        "name": "LehengZhang"
+    },
+    "loganavter": {
+        "name": "Loganavter"
+    },
     "loinne": {
         "name": "Loinne"
     },
@@ -142,6 +166,9 @@
     },
     "madiator": {
         "name": "Madiator"
+    },
+    "ming053l": {
+        "name": "ming053l"
     },
     "mitch": {
         "name": "mitch#1337"
@@ -173,8 +200,14 @@
     "nonogamester": {
         "name": "nonogamester#3975"
     },
+    "null-llun": {
+        "name": "null"
+    },
     "optimusprimal": {
         "name": "OptimusPrimal"
+    },
+    "ora": {
+        "name": "Ora"
     },
     "pheonix": {
         "name": "PHEONiX"
@@ -205,6 +238,9 @@
     },
     "sazoji": {
         "name": "Sazoji"
+    },
+    "sharekhan": {
+        "name": "SharekhaN"
     },
     "sirosky": {
         "name": "Sirosky"
@@ -239,8 +275,14 @@
     "tldr-coder": {
         "name": "tldr_coder"
     },
+    "tntwise": {
+        "name": "TNTwise"
+    },
     "twittman": {
         "name": "Twittman"
+    },
+    "umzi-x-dead": {
+        "name": "umzi.x.dead"
     },
     "venomalia": {
         "name": "Venomalia"

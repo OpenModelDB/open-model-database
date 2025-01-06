@@ -3,7 +3,8 @@
     "author": "jacob",
     "license": "GPL-3.0-only",
     "tags": [
-        "dedither"
+        "dedither",
+        "restoration"
     ],
     "description": "For photos/realistic images, but worth trying on other images that have reduced colors and dithering along with fine details. Trained using the ESRGAN-FS code (https://github.com/ManuelFritsche/real-world-sr/tree/master/esrgan-fs/codes) for better details compared to plain ESRGAN.",
     "date": "2020-01-29",

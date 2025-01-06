@@ -1,0 +1,58 @@
+{
+    "name": "ModernSpanimationV1",
+    "author": "tntwise",
+    "license": "MIT",
+    "tags": [
+        "anime",
+        "general-upscaler"
+    ],
+    "description": "Upscale modern animation images/videos. Compression, blur, and un-sharpening degradations were used on the dataset. First model I trained and I think it came out pretty well.",
+    "date": "2024-04-07",
+    "architecture": "span",
+    "size": [
+        "64"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 15830922,
+            "sha256": "bc6ca08ab1eeb9884a5c43c025eda97a5aa9ccfaa567734f426aedf55cf78327",
+            "urls": [
+                "https://github.com/TNTwise/Models/releases/download/2x_ModernSpanimationV1/2x_ModernSpanimationV1.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1465817,
+            "sha256": "55e774fcb080296dcf3c8a93f315397ce96b6fce3b2c66818e302f2d94019e9c",
+            "urls": [
+                "https://github.com/TNTwise/Models/releases/download/2x_ModernSpanimationV1/ONNX.zip"
+            ]
+        }
+    ],
+    "trainingOTF": false,
+    "dataset": "ModernAnimation1080v2",
+    "datasetSize": 2200,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://github.com/TNTwise/Models/raw/main/2x_ModernSpanimationV1/Comparison/violet.webp",
+            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/violet.png?raw=true"
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/TNTwise/Models/raw/main/2x_ModernSpanimationV1/Comparison/yourname.webp",
+            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/yourname.png?raw=true"
+        },
+        {
+            "type": "paired",
+            "LR": "https://github.com/TNTwise/Models/raw/main/2x_ModernSpanimationV1/Comparison/gravityfalls.webp",
+            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/gravityfalls.png?raw=true"
+        }
+    ]
+}

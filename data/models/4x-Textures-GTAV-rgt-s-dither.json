@@ -1,0 +1,77 @@
+{
+    "name": "4xTextures_GTAV_rgt-s_dither",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "dedither",
+        "game-textures",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "## 4xTextures_GTAV_rgt-s_dither\n\n**Scale:** 4  \n**Architecture:** [RGT](https://github.com/zhengchen1999/RGT)  \n**Architecture Option:** RGT-S  \n\n**Author:** Philip Hofmann  \n**License:** CC-BY-0.4  \n**Purpose:** Restoration  \n**Subject:** Game Textures  \n**Input Type:** Images  \n**Release Date:** 08.05.2024  \n\n**Dataset:** [GTAV_512_Textures](https://discord.com/channels/547949405949657098/905446120333930566/1132367991808466975)  \n**Dataset Size:** 7061  \n**OTF (on the fly augmentations):** No  \n**Pretrained Model:** 4xTextures_GTAV_rgt-s  \n**Iterations:** 128'000  \n**Batch Size:** 6,4  \n**GT Size:** 128,256  \n\n**Description:**\nA model to upscale game textures, trained on GTAV Textures, handles jpg compression down to 80 and was trained with dithering. Basically the previous 4xTextures_GTAV_rgt-s model but extended to handle dithering.\n\n**Showcase:**  \n[Slow Pics 25 Examples](https://slow.pics/s/EW7Ifiuw)",
+    "date": "2024-05-08",
+    "architecture": "rgt",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 135994918,
+            "sha256": "49e4b4aaac843839219d509242298c9e9b1a5d5294e9bad1154f05aa732a6a09",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextures_GTAV_rgt-s_dither/4xTextures_GTAV_rgt-s_dither.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 135601676,
+            "sha256": "ef850c4fd1d1ab81eb8cf63a0e11c62adfead07ec3a34f81675e986e76800f3f",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextures_GTAV_rgt-s_dither/4xTextures_GTAV_rgt-s_dither.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 46068836,
+            "sha256": "40bcebc87f5fd2308763fba5d3e71d9cebead68f0e0771fbc53bb78914b84b27",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xTextures_GTAV_rgt-s_dither/4xTextures_GTAV_rgt-s_dither_fp32_opset17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 128000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "GTAV_512_Textures",
+    "datasetSize": 7061,
+    "pretrainedModelG": "4x-Textures-GTAV-rgt-s",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/47Est1eG.png",
+            "SR": "https://i.slow.pics/0mT3MX6v.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/sYlGUhTR.png",
+            "SR": "https://i.slow.pics/6QzxAMM1.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/HTBuOdVM.png",
+            "SR": "https://i.slow.pics/ccSW80P4.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/IHo1iJkB.png",
+            "SR": "https://i.slow.pics/FNkq7062.png"
+        }
+    ]
+}

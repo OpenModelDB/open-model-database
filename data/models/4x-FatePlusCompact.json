@@ -4,6 +4,7 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
+        "game-textures",
         "restoration"
     ],
     "description": "Images from the Fate/Extra games. Works better on the newer ones.\n\nJust a model I trained quickly to test traiNNer-redux and see what I could do with OTF. Works well enough",
@@ -23,8 +24,7 @@
             "size": 5004573,
             "sha256": "87ecbac840d83961340c18c2cd5220780be774b4ad95d79887441c0b92b5e8bf",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-FatePlusCompact.pth",
-                "https://cdn.discordapp.com/attachments/579685650824036387/1095202608655908944/4x-FatePlusCompact.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-FatePlusCompact.pth"
             ]
         }
     ],
@@ -38,8 +38,9 @@
     "pretrainedModelG": "4x-Compact-Pretrain",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/579685650824036387/1095202609268264960/1681187006.1504378.png"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/78/d4/EViQEN9C_o.png",
+            "SR": "https://images2.imgbox.com/af/a9/ebjjH8IN_o.png"
         }
     ]
 }

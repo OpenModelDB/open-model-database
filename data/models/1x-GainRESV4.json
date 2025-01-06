@@ -3,7 +3,8 @@
     "author": "cf2lter",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "anti-aliasing"
+        "anti-aliasing",
+        "game-screenshots"
     ],
     "description": "Eliminate aliasing and general artifacts caused by not enough resolution. Model knows to add clarity and soften oversharpened areas. Gives image a supersampled look. Had a better version thats more faithful to details but i lost it.",
     "date": "2023-03-05",

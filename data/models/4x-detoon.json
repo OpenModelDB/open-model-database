@@ -2,7 +2,11 @@
     "name": "detoon",
     "author": "lyonhrt",
     "license": null,
-    "tags": [],
+    "tags": [
+        "cartoon",
+        "photo",
+        "restoration"
+    ],
     "description": "Category: DeToon\nPurpose: Detooning\n\nA toon to realistic shading style model to wiki under drawings",
     "date": "2019-06-24",
     "architecture": "esrgan",

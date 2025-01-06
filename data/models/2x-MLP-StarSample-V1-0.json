@@ -1,0 +1,118 @@
+{
+    "name": "MLP StarSample V1.0",
+    "author": "derpy",
+    "license": "CC0-1.0",
+    "tags": [
+        "cartoon",
+        "colorization",
+        "compression-removal",
+        "deblur",
+        "denoise",
+        "general-upscaler",
+        "restoration",
+        "texture-generation"
+    ],
+    "description": "This is a model for the restoration of My Little Pony: Friendship is Magic, however it also works decently well on all similar art. \n\nIt was trained in 2x on ground truth 3840x2160 HRs and 1920x1080 LRs of varying compression, so it is able to upscale from 1080p to 2160p, where its detail retention is great, however it may create noticeable artifacting if looked at closely, like areas of randomly coloured pixels along edges. In 1x or 1.5x (2x upscaled and then downscaled back down) it performs extremely well, almost perfectly in fact, in correcting colours, removing compression, and crisping up lines - and this is the way the model is intended to be used (hence the acronym of its name being \"SS\", or \"supersampling\").\n\n**[Github Release](https://github.com/Derpiesaurus/models/releases/tag/v1.0)**   \n**Showcase:** https://slow.pics/s/1ixqCSjy",
+    "date": "2024-05-22",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 1215294,
+            "sha256": "106ef781b08e33bb794c59bdb2c7a528b4f4106f516235115949f2ac03f45ba2",
+            "urls": [
+                "https://github.com/Derpiesaurus/models/releases/download/v1.0/2x.StarSample.V1.0.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 1205456,
+            "sha256": "a83685aa15674a955ed2eec9cdffe2e1a591967f581d6c356a63f1cf4ae07a49",
+            "urls": [
+                "https://github.com/Derpiesaurus/models/releases/download/v1.0/2x.StarSample.V1.0.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2412381,
+            "sha256": "b4e6caadbbc6305e31686378821b6ba02a6d9b92f3e8aa29995594f7676f018b",
+            "urls": [
+                "https://github.com/Derpiesaurus/models/releases/download/v1.0/2x.StarSample.V1.0.-.FP32.OPSET17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 230000,
+    "trainingEpochs": 2058,
+    "trainingBatchSize": 28,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "A mix of 4K GT show frames and background-only images.",
+    "datasetSize": 2567,
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "1x Example 1",
+            "LR": "https://i.slow.pics/ybI7gjob.png",
+            "SR": "https://i.slow.pics/y3ZXMgNB.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 2",
+            "LR": "https://i.slow.pics/yLqT8WfS.png",
+            "SR": "https://i.slow.pics/LvaT8PZH.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 3",
+            "LR": "https://i.slow.pics/nX12VuVR.png",
+            "SR": "https://i.slow.pics/94GEHzCS.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 4",
+            "LR": "https://i.slow.pics/9n5Rkdrg.png",
+            "SR": "https://i.slow.pics/OxedRFur.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 5",
+            "LR": "https://i.slow.pics/PeyCu2Qt.png",
+            "SR": "https://i.slow.pics/vim2aDTH.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 6",
+            "LR": "https://i.slow.pics/quoAHJZq.png",
+            "SR": "https://i.slow.pics/ByMKyWsc.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 7",
+            "LR": "https://i.slow.pics/p9BPSyR4.png",
+            "SR": "https://i.slow.pics/vYMqhFzg.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 8",
+            "LR": "https://i.slow.pics/75JM3CJm.png",
+            "SR": "https://i.slow.pics/2bJP6xEW.png"
+        },
+        {
+            "type": "paired",
+            "caption": "1x Example 9",
+            "LR": "https://i.slow.pics/CIF0ulQP.png",
+            "SR": "https://i.slow.pics/uXkIKtxT.png"
+        }
+    ]
+}

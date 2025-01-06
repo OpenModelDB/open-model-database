@@ -3,6 +3,7 @@
     "author": "mutin-choler",
     "license": null,
     "tags": [
+        "compression-removal",
         "dds",
         "restoration"
     ],
@@ -23,6 +24,7 @@
             "size": 66665765,
             "sha256": "f433aaac96ecc55056c1cf029d7544514abe233377c4d4d6b627601c2ca006f3",
             "urls": [
+                "https://drive.google.com/file/d/1XS0uBDDhIpZGROFeASlfQrrTuUKc8k9r/view?usp=drive_link",
                 "https://drive.google.com/drive/folders/1pnyPklpLPtMAHeNC5NVU1mV_Qh61wWnx?usp=sharing"
             ]
         }

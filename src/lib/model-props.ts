@@ -1,6 +1,8 @@
 import { Model } from './schema';
 import { DATE_REGEX, assertNever } from './util';
 
+export type CustomValidator<T> = (value: T) => string | ErrorReport | void;
+
 export interface PropBase {
     name: string;
     optional?: boolean;
@@ -10,28 +12,35 @@ export interface NumberProp {
     isInteger?: boolean;
     min?: number;
     max?: number;
+    customValidate?: CustomValidator<number>;
 }
 export interface StringProp {
     type: 'string';
+    minLength?: number;
     format?: RegExp;
     kind?: 'model-id' | 'user-id' | 'tag-id' | 'arch-id';
     enum?: string[];
+    customValidate?: CustomValidator<string>;
 }
 export interface BooleanProp {
     type: 'boolean';
+    customValidate?: CustomValidator<boolean>;
 }
 export interface ArrayProp {
     type: 'array';
     of: PropType;
     allowEmpty?: boolean;
     allowSingleItem?: boolean;
+    customValidate?: CustomValidator<readonly unknown[]>;
 }
 export interface ObjectProp {
     type: 'object';
     properties: Record<string, ModelProp>;
+    customValidate?: CustomValidator<Readonly<Record<string, unknown>>>;
 }
 export interface UnknownTypeProp {
     type: 'unknown';
+    customValidate?: CustomValidator<unknown>;
 }
 export type PropType = NumberProp | StringProp | BooleanProp | ArrayProp | ObjectProp | UnknownTypeProp;
 export type ModelProp = PropBase & PropType;
@@ -42,12 +51,30 @@ export interface ExternalValidator {
     isValidTagId?(tagId: string): boolean;
     isValidArchitectureId?(arch: string): boolean;
 }
+
+export interface ErrorReport {
+    message: string;
+    fix?: () => unknown;
+}
+
 export function validateType(
     value: unknown,
     prop: PropType,
     name: string,
     external: ExternalValidator = {}
-): string | undefined {
+): ErrorReport | undefined {
+    const error = validateTypeImpl(value, prop, name, external);
+    if (typeof error === 'string') {
+        return { message: error };
+    }
+    return error;
+}
+function validateTypeImpl(
+    value: unknown,
+    prop: PropType,
+    name: string,
+    external: ExternalValidator
+): ErrorReport | string | undefined {
     switch (prop.type) {
         case 'number':
             if (typeof value !== 'number') {
@@ -62,10 +89,17 @@ export function validateType(
             if (prop.max !== undefined && value > prop.max) {
                 return `Expected ${name} to be <= ${prop.max}`;
             }
+            if (prop.customValidate) {
+                const error = prop.customValidate(value);
+                if (error) return error;
+            }
             break;
         case 'string':
             if (typeof value !== 'string') {
                 return `Expected ${name} to be a string`;
+            }
+            if (prop.minLength && value.length < prop.minLength) {
+                return `Expected ${name} to be at least ${prop.minLength} character(s) long, but found ${value.length} character(s).`;
             }
             if (prop.format && !prop.format.test(value)) {
                 return `Expected ${name} to match ${prop.format.toString()}`;
@@ -97,10 +131,18 @@ export function validateType(
                         break;
                 }
             }
+            if (prop.customValidate) {
+                const error = prop.customValidate(value);
+                if (error) return error;
+            }
             break;
         case 'boolean':
             if (typeof value !== 'boolean') {
                 return `Expected ${name} to be a boolean`;
+            }
+            if (prop.customValidate) {
+                const error = prop.customValidate(value);
+                if (error) return error;
             }
             break;
         case 'array': {
@@ -120,9 +162,15 @@ export function validateType(
 
             for (let i = 0; i < arrayValue.length; i++) {
                 const item = arrayValue[i];
-                const itemError = validateType(item, prop.of, `${name}[${i}]`);
+                const itemError = validateTypeImpl(item, prop.of, `${name}[${i}]`, external);
                 if (itemError) return itemError;
             }
+
+            if (prop.customValidate) {
+                const error = prop.customValidate(arrayValue);
+                if (error) return error;
+            }
+
             break;
         }
         case 'object':
@@ -138,11 +186,19 @@ export function validateType(
                     continue;
                 }
 
-                const subError = validateType(subValue, subProp, `${name}.${key}`);
+                const subError = validateTypeImpl(subValue, subProp, `${name}.${key}`, external);
                 if (subError) return subError;
+            }
+            if (prop.customValidate) {
+                const error = prop.customValidate(value as Record<string, unknown>);
+                if (error) return error;
             }
             break;
         case 'unknown':
+            if (prop.customValidate) {
+                const error = prop.customValidate(value);
+                if (error) return error;
+            }
             break;
         default:
             return assertNever(prop);
@@ -164,11 +220,19 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         name: 'Tags',
         type: 'array',
         of: { type: 'string', kind: 'tag-id' },
-        allowEmpty: true,
+        allowEmpty: false,
     },
     description: {
         name: 'Description',
         type: 'string',
+        customValidate(desc) {
+            if (desc != desc.trim()) {
+                return {
+                    message: 'Description should not have leading or trailing whitespace',
+                    fix: () => desc.trim(),
+                };
+            }
+        },
     },
     license: {
         name: 'License',
@@ -189,7 +253,7 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         name: 'Size',
         optional: true,
         type: 'array',
-        of: { type: 'string' },
+        of: { type: 'string', minLength: 1 },
     },
     scale: {
         name: 'Scale',
@@ -221,25 +285,31 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
                 type: {
                     name: 'Type',
                     type: 'string',
-                    enum: ['pth', 'onnx'],
+                    enum: ['pth', 'onnx', 'safetensors'],
                 },
                 size: {
                     name: 'Size',
-                    optional: true,
                     type: 'number',
                     isInteger: true,
                     min: 1,
                 },
                 sha256: {
                     name: 'SHA256',
-                    optional: true,
                     type: 'string',
                     format: /^[0-9a-f]{64}$/i,
                 },
                 urls: {
                     name: 'URLs',
                     type: 'array',
-                    of: { type: 'string' },
+                    of: {
+                        type: 'string',
+                        customValidate(url) {
+                            if (url.startsWith('https://cdn.discordapp.com/')) {
+                                // For later. They seem to still work.
+                                return 'Discord CDN links are not allowed, because they expire after 24h. Please host your models somewhere else. We suggest Google Drive or GitHub Releases.';
+                            }
+                        },
+                    },
                 },
                 platform: {
                     name: 'Platform',
@@ -311,5 +381,10 @@ export const MODEL_PROPS: Readonly<Record<keyof Model, ModelProp>> = {
         type: 'array',
         of: { type: 'unknown' },
         allowEmpty: true,
+    },
+    thumbnail: {
+        optional: true,
+        name: 'Thumbnail',
+        type: 'unknown',
     },
 };

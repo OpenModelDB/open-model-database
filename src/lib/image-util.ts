@@ -2,8 +2,26 @@ import { Image, PairedImage, StandaloneImage } from './schema';
 
 export type GetDocument = (url: string) => Promise<Document>;
 
+export async function fetchHtml(url: string): Promise<string> {
+    if (location.hostname === 'localhost') {
+        // we should have access to our API routes
+        const res = await fetch('/api/fetch', {
+            method: 'POST',
+            body: JSON.stringify({ url }),
+        });
+        const json = (await res.json()) as { ok: true; data: string } | { ok: false; error: string };
+        if (!json.ok) {
+            throw new Error(json.error);
+        }
+        return json.data;
+    }
+
+    // use cors-anywhere to bypass CORS
+    return fetch(`https://cors-anywhere.herokuapp.com/${url}`).then((res) => res.text());
+}
+
 export async function getDocumentBrowser(url: string): Promise<Document> {
-    const html = await fetch(`https://cors-anywhere.herokuapp.com/${url}`).then((res) => res.text());
+    const html = await fetchHtml(url);
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
 

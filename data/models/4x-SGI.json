@@ -3,9 +3,11 @@
     "author": "chrisnonyminus",
     "license": "GPL-3.0-only",
     "tags": [
-        "dedither"
+        "cgi",
+        "dedither",
+        "restoration"
     ],
-    "description": "Category: CGI\nPurpose: CGI\n\nUpscaling and dedithering pre-rendered sprites, images and textures made in the 90s. Basically vintage CGI.",
+    "description": "Upscaling and dedithering pre-rendered sprites, images and textures made in the 90s. Basically vintage CGI.",
     "date": "2020-12-17",
     "architecture": "esrgan",
     "size": [
@@ -35,18 +37,18 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108633820279885854/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226185424551956/SR.png"
+            "LR": "https://images2.imgbox.com/f7/36/gpKNUGdP_o.png",
+            "SR": "https://images2.imgbox.com/0a/ea/0nmzKFRd_o.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108633876286427136/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226391402627093/SR.png"
+            "LR": "https://images2.imgbox.com/8f/e6/F8vywJCQ_o.png",
+            "SR": "https://images2.imgbox.com/fd/7c/Q89on261_o.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108633926651609118/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226448277389373/SR.png"
+            "LR": "https://images2.imgbox.com/b7/86/17kmJNy4_o.png",
+            "SR": "https://images2.imgbox.com/1c/bc/A9dcK68i_o.png"
         },
         {
             "type": "standalone",

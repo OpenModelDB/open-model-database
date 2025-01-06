@@ -1,0 +1,48 @@
+{
+    "name": "SwatKats_SPAN",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "cartoon"
+    ],
+    "description": "This is SaurusX's original description:\nFix vertical blur / split lines / shadowing. A 1x model of my 2xSwatKats. Resolves the same video problems as before, but 1x and faster and meant for chaining to other 2x models (or whatever). Input MUST be 540 vertical as the blur problem is very resolution sensitive.\n\n-------\n\nThe goal for this retrain was to get the \"magic\" of SwatKatsLite into SPAN for much faster video processing. It's about 80% of the way there. There's some artifacts here and there that aren't present in the original, and it has small amounts of color halos in certain areas. I've retrained this model so many times that I've just decided to release it. This particular release was trained to ~450k.\n\nThe included Family Guy image shows the color ringing issue. Sorry. \n\nUpdate: I've added a second alt model that has less color ringing, but doesn't do quite as good with line repair. I believe I've reached architecture limits",
+    "date": "2023-12-15",
+    "architecture": "span",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8938330,
+            "sha256": "5ff633e6c3db4e8b21daeb3e3159b598a83b8e8305e6f22b7a11a9b231c39eea",
+            "urls": [
+                "https://mega.nz/folder/vQIg0RjA#BGQEW8rt2zvDN1vdL35CUA"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 827353,
+            "sha256": "1e71ae7f06525d0bd3202c8c1ae822bf909c7625fa4ef981a511a27e24cb20af",
+            "urls": [
+                "https://mega.nz/folder/vQIg0RjA#BGQEW8rt2zvDN1vdL35CUA"
+            ]
+        }
+    ],
+    "pretrainedModelG": "1x-span-anime-pretrain",
+    "images": [
+        {
+            "type": "standalone",
+            "caption": "1",
+            "url": "https://images2.imgbox.com/55/e0/ug5US1Mo_o.png"
+        },
+        {
+            "type": "standalone",
+            "caption": "2",
+            "url": "https://images2.imgbox.com/89/1b/asi5fXrO_o.png"
+        }
+    ]
+}

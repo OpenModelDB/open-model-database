@@ -1,0 +1,84 @@
+{
+    "name": "GarfieldJr_span",
+    "author": "eva-01",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
+    "description": "2x span nf48 model trained with 2x_Garfield dataset.\nthe output of this model is in no way near the 2x_Garfield, but it can do everything that the esrgan model does to some degree and have the speed advantage. \nfinally, I would like to thank @SaurusX for providing me with his dataset.\nComp:\nhttps://slow.pics/c/Yezua7O7",
+    "date": "2023-12-13",
+    "architecture": "span",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8954090,
+            "sha256": "4792417fae3c2a2eedb185c9b68eb582c38ace36bbbaaac94a32f76776606f2d",
+            "urls": [
+                "https://mega.nz/folder/Ny9WmDTA#T9buYfFbZch1FE2hmcliWw"
+            ]
+        }
+    ],
+    "trainingIterations": 315000,
+    "trainingEpochs": 56,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "SaurusX's Garfield Dataset",
+    "datasetSize": 6474,
+    "pretrainedModelG": "2x-span-anime-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "LR vs SPAN 1",
+            "LR": "https://i.slow.pics/P8ycFvBX.png",
+            "SR": "https://i.slow.pics/wbrPKSIS.png"
+        },
+        {
+            "type": "paired",
+            "caption": "2",
+            "LR": "https://i.slow.pics/Wo3cR64d.png",
+            "SR": "https://i.slow.pics/BEeAIhEJ.png"
+        },
+        {
+            "type": "paired",
+            "caption": "3",
+            "LR": "https://i.slow.pics/zO1s8sRf.png",
+            "SR": "https://i.slow.pics/WQkN6ZWF.png"
+        },
+        {
+            "type": "paired",
+            "caption": "4",
+            "LR": "https://i.slow.pics/V2tWwxsv.png",
+            "SR": "https://i.slow.pics/D3O5B6p5.png"
+        },
+        {
+            "type": "paired",
+            "caption": "5",
+            "LR": "https://i.slow.pics/UD9yZUHY.png",
+            "SR": "https://i.slow.pics/R8PbbdZu.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/JtB4HkAQ.png",
+            "SR": "https://i.slow.pics/mMKJURnZ.png"
+        },
+        {
+            "type": "paired",
+            "caption": "7",
+            "LR": "https://i.slow.pics/rEhEUWze.png",
+            "SR": "https://i.slow.pics/w3WTU28M.png"
+        },
+        {
+            "type": "paired",
+            "caption": "8",
+            "LR": "https://i.slow.pics/OjHNU1JW.png",
+            "SR": "https://i.slow.pics/197bJpV0.png"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "name": "Text2HD v.1",
+    "author": "asterixcool",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "compression-removal",
+        "denoise",
+        "general-upscaler",
+        "jpeg",
+        "restoration",
+        "text"
+    ],
+    "description": "Purpose: Upscale text in very low quality to normal quality.\n\nThe upscale model is specifically designed to enhance lower-quality text images, improving their clarity and readability by upscaling them by 2x. It excels at processing moderately sized text, effectively transforming it into high-quality, legible scans. However, the model may encounter challenges when dealing with very small text, as its performance is optimized for text of a certain minimum size. For best results, input images should contain text that is not excessively small.",
+    "date": "2024-08-27",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29580290,
+            "sha256": "1aeb4f5816fa2fd302a2c8aef49c3252cc14a5e22c4d9359f5c266a823ceb269",
+            "urls": [
+                "https://github.com/starinspace/StarinspaceUpscale/releases/download/Models/2x_Text2HD_v.1-RealPLKSR.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 168000,
+    "trainingBatchSize": 8,
+    "dataset": "Scanned books and text",
+    "datasetSize": 8000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/46f1c843-958d-4310-80d4-9d7767fa42d4.jpg",
+            "SR": "https://imgsli.com/i/0527a29d-d889-4422-adde-5316a29c4b2e.jpg"
+        }
+    ]
+}

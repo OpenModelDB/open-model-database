@@ -5,6 +5,7 @@
     ],
     "license": "Apache-2.0",
     "tags": [
+        "compression-removal",
         "general-upscaler",
         "jpeg",
         "photo",

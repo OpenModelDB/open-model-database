@@ -1,4 +1,8 @@
 {
+    "ai-generated": {
+        "name": "AI Generated",
+        "description": "Images or videos rendered with tools such as Stable Diffusion"
+    },
     "anime": {
         "name": "Anime",
         "description": "Image or video of anime or anime-style artwork."
@@ -11,40 +15,78 @@
         "name": "Cartoon",
         "description": "Image or video of western cartoon or artwork in a similar style."
     },
+    "cgi": {
+        "name": "CGI",
+        "description": "Computer Generated Imagery (CGI). These are images or videos that have been rendered in software such as Blender. A good example would be the movie \"Toy Story\""
+    },
     "colorization": {
         "name": "Colorization",
         "description": "The model colorizes grayscale and/or black-and-white images."
+    },
+    "compression-removal": {
+        "name": "Compression Removal",
+        "description": "The model is capable of removing compression. This can be any type of compression, such as JPEG or H264.",
+        "implies": [
+            "restoration"
+        ]
     },
     "dds": {
         "name": "DDS",
         "description": "The model is able to remove DDS block compression artifacts. \n\nModels with this tag may only support specific compression methods and/or settings (e.g. BC1/DTX1, BC7).",
         "implies": [
+            "compression-removal",
             "restoration"
         ]
     },
     "debanding": {
         "name": "Debanding",
-        "description": "The removes banding artifacts caused by color quantization. Such artifacts and frequently be observed in GIF images."
+        "description": "The removes banding artifacts caused by color quantization. Such artifacts and frequently be observed in GIF images.",
+        "implies": [
+            "restoration"
+        ]
     },
     "deblur": {
         "name": "Deblur",
-        "description": "The model tries to remove blur from the input."
+        "description": "The model tries to remove blur from the input.",
+        "implies": [
+            "restoration"
+        ]
     },
     "dedither": {
         "name": "Dedither",
-        "description": "The model removes dithering artifacts from the input."
+        "description": "The model removes dithering artifacts from the input.",
+        "implies": [
+            "restoration"
+        ]
+    },
+    "dehalftone": {
+        "name": "Dehalftone",
+        "description": "The model removes halftone patterns from the input. This is typically on printed media, such as magazines or album covers.",
+        "implies": [
+            "restoration"
+        ]
     },
     "dehalo": {
         "name": "Dehalo",
-        "description": "The model removes haloing and color bleeding from the input."
+        "description": "The model removes haloing and color bleeding from the input.",
+        "implies": [
+            "restoration"
+        ]
     },
     "denoise": {
         "name": "Denoise",
-        "description": "The model removes noise from the input.\n\nModels with this tag may only work with specific kinds of noise."
+        "description": "The model removes noise from the input.\n\nModels with this tag may only work with specific kinds of noise.",
+        "implies": [
+            "restoration"
+        ]
     },
     "faces": {
         "name": "Faces",
         "description": "Image or video of faces. This can be photograph or artwork."
+    },
+    "game-screenshots": {
+        "name": "Game Screenshots",
+        "description": "Images (screenshots) taken of video games."
     },
     "game-textures": {
         "name": "Game Textures",
@@ -62,6 +104,7 @@
         "name": "JPEG",
         "description": "The model is able to remove JPEG compression artifacts.\n\nModels with this tag may only support specific JPEG compression settings (e.g. quality between 80% and 100%).",
         "implies": [
+            "compression-removal",
             "restoration"
         ]
     },
@@ -70,12 +113,12 @@
         "description": "Image of manga pages or manga-style artwork."
     },
     "photo": {
-        "name": "Photo",
-        "description": "Image or video of realistic scenes recorded with a camera."
+        "name": "Realistic",
+        "description": "Image or video of realistic looking imagery. E.g. images recorded with camera."
     },
     "pixel-art": {
         "name": "Pixel Art",
-        "description": "Digital art. This includes everything from retro pixel artworks to modern CGI."
+        "description": "Pixel art. This includes things such as retro pixel artwork (think SNES games)."
     },
     "pretrained": {
         "name": "Pretrained",
@@ -87,7 +130,7 @@
     },
     "restoration": {
         "name": "Restoration",
-        "description": "The model removes compression artifacts."
+        "description": "The model restores images or video frames through compression removal, artifact clean up, or otherwise."
     },
     "text": {
         "name": "Text",
@@ -99,7 +142,11 @@
     },
     "video-frame": {
         "name": "Video Frame",
-        "description": "Image of individual video frames."
+        "description": "Images of individual video frames."
+    },
+    "arch:atd": {
+        "name": "ATD",
+        "description": ""
     },
     "arch:cain": {
         "name": "CAIN",
@@ -113,12 +160,28 @@
         "name": "Compact",
         "description": ""
     },
+    "arch:craft": {
+        "name": "CRAFT",
+        "description": ""
+    },
     "arch:cugan": {
-        "name": "Cugan",
+        "name": "CUGAN",
         "description": ""
     },
     "arch:dat": {
         "name": "DAT",
+        "description": ""
+    },
+    "arch:dctlsa": {
+        "name": "DCTLSA",
+        "description": ""
+    },
+    "arch:ditn": {
+        "name": "DITN",
+        "description": ""
+    },
+    "arch:drct": {
+        "name": "DRCT",
         "description": ""
     },
     "arch:edsr": {
@@ -133,10 +196,6 @@
         "name": "ESRGAN+",
         "description": ""
     },
-    "arch:esrgan-2c2": {
-        "name": "ESRGAN 2C2",
-        "description": ""
-    },
     "arch:grl": {
         "name": "GRL",
         "description": ""
@@ -145,12 +204,36 @@
         "name": "HAT",
         "description": ""
     },
+    "arch:hma": {
+        "name": "HMA",
+        "description": ""
+    },
     "arch:ludvae": {
         "name": "LUDVAE",
         "description": ""
     },
+    "arch:mosr": {
+        "name": "MoSR",
+        "description": ""
+    },
     "arch:omnisr": {
         "name": "OmniSR",
+        "description": ""
+    },
+    "arch:real-cugan": {
+        "name": "Real-CUGAN",
+        "description": ""
+    },
+    "arch:realplksr": {
+        "name": "RealPLKSR",
+        "description": ""
+    },
+    "arch:realplksr-dysample": {
+        "name": "RealPLKSR_dysample",
+        "description": ""
+    },
+    "arch:rgt": {
+        "name": "RGT",
         "description": ""
     },
     "arch:rife": {
@@ -159,6 +242,10 @@
     },
     "arch:sofvsr": {
         "name": "SOFVSR",
+        "description": ""
+    },
+    "arch:span": {
+        "name": "SPAN",
         "description": ""
     },
     "arch:spsr": {

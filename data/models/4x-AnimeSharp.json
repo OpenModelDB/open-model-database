@@ -7,7 +7,7 @@
         "cartoon",
         "text"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime or Text\n\nInterpolation between 4x-UltraSharp and 4x-TextSharp-v0.5. Works amazingly on anime. It also upscales text, but it's far better with anime content. I rebranded this model on 2/10/22 to 4x-AnimeSharp from 4x-TextSharpV1.\n\nPretrained model: Interpolation between 4x-UltraSharp and 4x-TextSharp-v0.5",
+    "description": "Interpolation between 4x-UltraSharp and 4x-TextSharp-v0.5. Works amazingly on anime. It also upscales text, but it's far better with anime content. I rebranded this model on 2/10/22 to 4x-AnimeSharp from 4x-TextSharpV1.\n\nPretrained model: Interpolation between 4x-UltraSharp and 4x-TextSharp-v0.5",
     "date": "2021-12-28",
     "architecture": "esrgan",
     "size": [
@@ -33,22 +33,23 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631664269201488/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222599089094696/SR.png"
+            "LR": "https://images2.imgbox.com/cf/49/3SC5Wv9c_o.png",
+            "SR": "https://images2.imgbox.com/31/c7/ZKOomXJz_o.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631715297112084/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222834192416778/SR.png"
-        },
-        {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/903415274521374750/925533775616696340/unknown.png"
+            "LR": "https://images2.imgbox.com/8f/10/pduoMuMg_o.png",
+            "SR": "https://images2.imgbox.com/15/81/4F2Z2JBQ_o.png"
         },
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631757827346473/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108222984424001616/SR.png"
+            "LR": "https://images2.imgbox.com/e9/a9/pgiOy0oU_o.png",
+            "SR": "https://images2.imgbox.com/6f/ca/SQhvn7vO_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/bd/74/0ff4YgCh_o.png",
+            "SR": "https://images2.imgbox.com/17/f7/QqYKNI6m_o.png"
         }
     ]
 }

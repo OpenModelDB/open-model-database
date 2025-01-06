@@ -1,6 +1,21 @@
-import { CollectionApi, DBApi, notifyOnWrite } from './data-api';
+import { CollectionApi, DBApi, MapCollection, notifyOnWrite } from './data-api';
 import { JsonApiCollection, JsonApiRequestHandler, JsonRequest, JsonResponse, Method } from './data-json-api';
-import { IS_DEPLOYED } from './site-data';
+import { createMapFromSessionStorage } from './data-session';
+import {
+    Arch,
+    ArchId,
+    Collection,
+    CollectionId,
+    Model,
+    ModelId,
+    Tag,
+    TagCategory,
+    TagCategoryId,
+    TagId,
+    User,
+    UserId,
+} from './schema';
+import { IS_DEPLOYED, SITE_URL } from './site-data';
 import { delay, lazy, noop } from './util';
 
 const updateListeners = new Set<() => void>();
@@ -69,19 +84,58 @@ function createWebCollection<Id, Value>(path: string): CollectionApi<Id, Value> 
         },
     });
 }
-export const getWebApi = lazy(async (): Promise<DBApi | undefined> => {
-    if (IS_DEPLOYED) {
-        // we only have API access locally
-        return Promise.resolve(undefined);
-    }
 
-    const webApi: DBApi = {
+async function createMapCollection<Id, Value>(path: string): Promise<CollectionApi<Id, Value>> {
+    const url = new URL(path, SITE_URL).href;
+    const res = await fetch(url);
+    if (res.status !== 200) {
+        throw new Error(res.statusText);
+    }
+    const map = new Map<Id, Value>();
+    const data = (await res.json()) as Record<string, Value>[];
+    for (const [id, value] of Object.entries(data)) {
+        map.set(id as Id, value as Value);
+    }
+    return notifyOnWrite(new MapCollection(createMapFromSessionStorage(path, map)), {
+        after: () => {
+            mutationCounter++;
+            notifyListeners();
+        },
+    });
+}
+
+const getDbAPI = async (): Promise<DBApi> => {
+    if (IS_DEPLOYED) {
+        const [models, users, tags, tagCategories, architectures, collections] = await Promise.all([
+            createMapCollection<ModelId, Model>('/api/v1/models.json'),
+            createMapCollection<UserId, User>('/api/v1/users.json'),
+            createMapCollection<TagId, Tag>('/api/v1/tags.json'),
+            createMapCollection<TagCategoryId, TagCategory>('/api/v1/tagCategories.json'),
+            createMapCollection<ArchId, Arch>('/api/v1/architectures.json'),
+            createMapCollection<CollectionId, Collection>('/api/v1/collections.json'),
+        ]);
+
+        return {
+            models,
+            users,
+            tags,
+            tagCategories,
+            architectures,
+            collections,
+        };
+    }
+    return {
         models: createWebCollection('/api/models'),
         users: createWebCollection('/api/users'),
         tags: createWebCollection('/api/tags'),
         tagCategories: createWebCollection('/api/tag-categories'),
         architectures: createWebCollection('/api/architectures'),
+        collections: createWebCollection('/api/collections'),
     };
+};
+
+export const getWebApi = lazy(async (): Promise<DBApi | undefined> => {
+    const webApi = await getDbAPI();
 
     // we do an empty update to test the waters
     return webApi.tags.update([]).then(

@@ -1,0 +1,49 @@
+{
+    "name": "WTP UDS Esrgan",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "dehalftone",
+        "manga",
+        "restoration"
+    ],
+    "description": "I just decided to finish off the previous one, made the manga design more clear and corrected the deviation in color temperature by adding a more diverse set of colors",
+    "date": "2024-02-19",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67029568,
+            "sha256": "6b5823794353594d2b3b35930692a25687b2f707e0246dc5c47cad4dfddf4ca9",
+            "urls": [
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-WTP-UDS-Esrgan.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 219000,
+    "trainingEpochs": 9,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 240,
+    "trainingOTF": false,
+    "dataset": "my manga dataset + my color dataset + ModernAnimation1080",
+    "datasetSize": 86000,
+    "pretrainedModelG": "4x-WTP-ColorDS",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/ab/ac/FSeGGH04_o.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/e3/7e/L4XY11Hq_o.png"
+        }
+    ]
+}

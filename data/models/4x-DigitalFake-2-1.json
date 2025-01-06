@@ -2,8 +2,12 @@
     "name": "DigitalFake 2.1",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
-    "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nReplica of DigitalFrames 2.1 but interpolatable",
+    "tags": [
+        "anime",
+        "cartoon",
+        "restoration"
+    ],
+    "description": "Purpose: Digital Animation\n\nReplica of DigitalFrames 2.1 but interpolatable",
     "date": "2021-02-18",
     "architecture": "esrgan",
     "size": [

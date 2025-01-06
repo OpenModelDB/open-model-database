@@ -2,8 +2,11 @@
     "name": "Nickelfront",
     "author": "blackscout",
     "license": "GPL-3.0-only",
-    "tags": [],
-    "description": "Category: Coins\nPurpose: Coins\n\nUpscale coins. That's it. If you were mad at me because Nickelback doesn't make any sense. Now you have the perfect solution to your problems. If you want to upscale nickels or anything with similar texture made out of metal, now you can. It works pretty well for a joke.",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "Purpose: Coins\n\nUpscale coins. That's it. If you were mad at me because Nickelback doesn't make any sense. Now you have the perfect solution to your problems. If you want to upscale nickels or anything with similar texture made out of metal, now you can. It works pretty well for a joke.",
     "date": "2020-02-13",
     "architecture": "esrgan",
     "size": [

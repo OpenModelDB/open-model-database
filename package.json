@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3010",
-    "build": "next build",
+    "build": "npm run generate-thumbnails && next build && next export && npm run generate-api && npm run fix-db",
     "start": "next start",
     "lint": "eslint . --ext \".js,.jsx,.ts,.tsx\" && stylelint \"src/**/*.{scss,css}\"",
     "lint:fix": "eslint . --ext \".js,.jsx,.ts,.tsx\" --fix && stylelint \"src/**/*.{scss,css}\" --fix",
@@ -16,16 +16,21 @@
     "fix-db": "ts-node --project scripts/tsconfig.json scripts/validate-db.ts -- --fix",
     "detect-broken": "ts-node --project scripts/tsconfig.json scripts/broken.ts",
     "generate-api": "ts-node --project scripts/tsconfig.json scripts/generate-api.ts",
-    "build-full": "npm run build && npx next export && npm run generate-api"
+    "generate-thumbnails": "ts-node --project scripts/tsconfig.json scripts/generate-thumbnails.ts",
+    "download-images": "ts-node --project scripts/tsconfig.json scripts/download-images.ts"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.9",
     "@headlessui/tailwindcss": "^0.1.2",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "async-mutex": "^0.4.0",
     "chokidar": "^3.5.3",
     "chroma-js": "^2.4.2",
     "fast-deep-equal": "^3.1.3",
-    "next": "^13.3.1",
+    "next": "13.2",
     "react": "18.2.0",
     "react-compare-slider": "^2.2.0",
     "react-dom": "18.2.0",
@@ -44,7 +49,7 @@
     "@storybook/addon-interactions": "^7.0.7",
     "@storybook/addon-links": "^7.0.7",
     "@storybook/blocks": "^7.0.7",
-    "@storybook/nextjs": "^7.0.7",
+    "@storybook/nextjs": "^7.6.6",
     "@storybook/react": "^7.0.7",
     "@storybook/testing-library": "^0.1.0",
     "@svgr/webpack": "^6.5.1",
@@ -60,7 +65,7 @@
     "autoprefixer": "^10.4.13",
     "cross-fetch": "^4.0.0",
     "eslint": "8.32.0",
-    "eslint-config-next": "13.1.5",
+    "eslint-config-next": "^14.0.4",
     "eslint-config-prettier": "^8.6.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-eslint-comments": "^3.2.0",

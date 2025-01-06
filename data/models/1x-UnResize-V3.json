@@ -3,9 +3,10 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "deblur"
+        "deblur",
+        "restoration"
     ],
-    "description": "Purpose: Deblur / Unresize\n\nPurpose: Fix images that have been arbitrarily / poorly resized, such as non-integer nearest-neighbor upscaling/downscaling - Also acts as an image sharpener/deblur when used on slightly soft inputs\n\nPretrained model: 1x_UnResize_MKII_030000_G.pth",
+    "description": "Fix images that have been arbitrarily / poorly resized, such as non-integer nearest-neighbor upscaling/downscaling - Also acts as an image sharpener/deblur when used on slightly soft inputs\n\nPretrained model: 1x_UnResize_MKII_030000_G.pth",
     "date": "2021-06-28",
     "architecture": "esrgan",
     "size": [
@@ -22,10 +23,28 @@
             "size": 66665765,
             "sha256": "41c1fd640c265375b4649f6c41772714081ea77faf07593456c8021638d3e1d3",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-UnResize-V3.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-UnResize-V3.pth",
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_UnResize_V3_200000_G.pth",
+                "https://drive.proton.me/urls/0XZX6TQV78#cDkZpdI3zgHj"
             ]
         }
     ],
     "dataset": "Anime, manga, and photos",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/a2/db/fnkd4keM_o.png",
+            "SR": "https://images2.imgbox.com/50/73/RaW34frI_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/50/9d/7rMYh4AD_o.png",
+            "SR": "https://images2.imgbox.com/93/34/BYuR1cyD_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/b1/bb/zOQHEYSb_o.png",
+            "SR": "https://images2.imgbox.com/44/c7/bupHmmI8_o.png"
+        }
+    ]
 }

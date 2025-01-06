@@ -3,9 +3,10 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "debanding"
+        "debanding",
+        "restoration"
     ],
-    "description": "Purpose: Debanding images",
+    "description": "",
     "date": "2020-12-21",
     "architecture": "esrgan",
     "size": [
@@ -23,10 +24,23 @@
             "sha256": "027dfbf10e0ff3f8347960106f89443241b85e91edbd7329d3ded50829ee98f7",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-Debandurh-FS-Ultra-lite.pth",
-                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Debandurh_FS_lite_140000_G.pth"
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Debandurh_FS_lite_140000_G.pth",
+                "https://drive.proton.me/urls/T9V02731AG#KUhNQD5PCmCG"
             ]
         }
     ],
+    "trainingIterations": 140000,
     "dataset": "Anime, real life, manga",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/8b/ce/e5ckcFRb_o.png",
+            "SR": "https://images2.imgbox.com/00/89/p0ftmdpc_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/b1/8a/lkEef7yC_o.png",
+            "SR": "https://images2.imgbox.com/42/45/4oGJ6ijH_o.png"
+        }
+    ]
 }

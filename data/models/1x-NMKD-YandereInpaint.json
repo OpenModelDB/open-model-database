@@ -29,23 +29,29 @@
     "trainingIterations": 375000,
     "images": [
         {
-            "type": "standalone",
-            "url": "https://icecube-eu-286.icedrive.io/download?p=M3HvpEBXcC9z4VRuKnwlc_0m_eYVePVZVLQMq4R0CqTPq66Dm49CPdKpn2uahnRI6BKJOnmHFddCEQLsNVz3hJ2x9LCo9LGrwPSskmD31w2u2HGit_ih_Z0KmQY_fZYbJPikwHyBIcLww9eSG5w9PoYdQOq1aAbDLDxy29.qdkZAkPxysEAnt8p90W0KL0f_muSWPWpeQOMSiY56hBik8g--",
-            "thumbnail": "https://icecube-eu-286.icedrive.io/thumbnail?p=KZnaB3klpgKv0f49yDs59BlaJl8e_lBzf6wbhH3Gl7UKQbRwqWYuxxCBER01hFuyt.9xWbZkbzIjSDpS_zi.QvK6OJ6HgLglYnv45wJ0oWp4iN3IHlDyCn8p0gt2ur_h"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/af/2b/9L60d6lw_o.png",
+            "SR": "https://images2.imgbox.com/54/0b/PBYug68M_o.png"
         },
         {
             "type": "standalone",
-            "url": "https://icecube-eu-286.icedrive.io/download?p=M3HvpEBXcC9z4VRuKnwlc_0m_eYVePVZVLQMq4R0CqQ2Asuh9cmF2eKvYOVmvBbE6BKJOnmHFddCEQLsNVz3hLsKxNJuRgUI1wFWrvv.0JHIV9Z8yKB7p0xoJbgYC7aFlTRImZBUFlXZyAFkbAFJnYYdQOq1aAbDLDxy29.qdkZAkPxysEAnt8p90W0KL0f_yvCcb9lR6n_M1f3BrB97_w--",
-            "thumbnail": "https://icecube-eu-286.icedrive.io/thumbnail?p=kSP2ZFXucfhNDqV0m0ZC3H1I.FF10ZG8QiVbfPke39BqAP03WeqOvd3j.2tkBCKmPBhrrLts.YQkX4EKudGEkPK6OJ6HgLglYnv45wJ0oWp4iN3IHlDyCn8p0gt2ur_h"
+            "caption": "Instructions",
+            "url": "https://images2.imgbox.com/57/7b/sRCjoiUO_o.png"
         },
         {
-            "type": "standalone",
-            "url": "https://icecube-eu-286.icedrive.io/download?p=M3HvpEBXcC9z4VRuKnwlc_0m_eYVePVZVLQMq4R0CqR3QCDCfPE_2slY2j7GvJLv6BKJOnmHFddCEQLsNVz3hCy3EF.WNurD.1gb4vfAJf4xcXtv0LDhn3ibVyMKcEk67OHkYvM5wz_2knOgNLNhvYYdQOq1aAbDLDxy29.qdkZAkPxysEAnt8p90W0KL0f_ACih35_rfJJOh.N0qCjoNA--",
-            "thumbnail": "https://icecube-eu-286.icedrive.io/thumbnail?p=B8VDvq2L2lJLz5nNC2tS_nmc.2Y4SoCsiasAf9HFntGt0vl6uLO5b8AD3joj0ejdqJAiRZ9i5VfaC7ip1NvxHfK6OJ6HgLglYnv45wJ0oWp4iN3IHlDyCn8p0gt2ur_h"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/94/c2/6NWDDbkY_o.png",
+            "SR": "https://images2.imgbox.com/14/29/OwsPY8If_o.png"
         },
         {
-            "type": "standalone",
-            "url": "https://icecube-eu-286.icedrive.io/download?p=TZKrzhXJb_pSXfJYPeHlxFEQNRq7lj1NUlQb_WM1c6cOPR8NTDLBxTX34mLscx3UB.2EQkV2AjhbopISfrZQakFWwg9lsYtqHvDO0zGXZScB.Sby5bxejCreYki69bGNQGFqhJE2ADJQF0hFe8HkGrZhZEeuOn0CcqqLtJKnZUfPQjKKk6Amo2C7E_780.SxQs.mMQw1FVidHTfoaWMAlg--"
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ee/60/nVr7fOAC_o.png",
+            "SR": "https://images2.imgbox.com/00/82/5R5RvOED_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/55/9c/lfoZS1lx_o.png",
+            "SR": "https://images2.imgbox.com/2c/22/qtRz5N4B_o.png"
         }
     ]
 }

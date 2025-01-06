@@ -30,5 +30,26 @@
     "trainingBatchSize": 3,
     "dataset": "Custom - Typography images from Flickr",
     "pretrainedModelG": "8x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/71/65/x5mgr1NB_o.png",
+            "SR": "https://images2.imgbox.com/a2/95/B7yMocye_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/fb/fd/ljc1tSb3_o.png",
+            "SR": "https://images2.imgbox.com/c3/43/5aidz7QD_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/8b/1a/Q758Nu44_o.png",
+            "SR": "https://images2.imgbox.com/63/7e/kaCUsdEq_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/9f/bf/t4nGiECP_o.png",
+            "SR": "https://images2.imgbox.com/5a/1c/YkquMn6A_o.jpg"
+        }
+    ]
 }

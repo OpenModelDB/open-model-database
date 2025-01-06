@@ -6,7 +6,8 @@
         "cartoon",
         "dedither",
         "manga",
-        "pixel-art"
+        "pixel-art",
+        "restoration"
     ],
     "description": "Manga-style images with or without dithering - cartoons, maybe pixel art, etc",
     "date": "2020-12-14",
@@ -39,8 +40,8 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108638070024192000/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108225428570787902/SR.png"
+            "LR": "https://images2.imgbox.com/1e/ec/ebyT3WQ2_o.png",
+            "SR": "https://images2.imgbox.com/84/0b/MMp7ed2u_o.png"
         }
     ]
 }
