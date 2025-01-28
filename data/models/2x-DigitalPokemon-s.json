@@ -1,0 +1,59 @@
+{
+    "name": "Digital Pokémon-Small",
+    "author": "pokepress",
+    "license": "MIT",
+    "tags": [
+        "anime",
+        "cartoon",
+        "general-upscaler"
+    ],
+    "description": "This model is designed to upscale the standard definition digital era of the Pokémon anime, which runs from late season 5 (Master Quest) to early season 12 (Galactic Battles). During this time, the show was animated digitally in a 4:3 ratio. This process was also used for Mewtwo Returns, most of Pokémon Chronicles, and the Mystery Dungeon specials.\n\nAdvice/Known Limitations:\n* I recommend using QTGMC on a preset of \"Slow\" or slower for deinterlacing. While the show is primarily animated at 12/24 fps, some elements like backgrounds are animated at a full 60i.\n* The model is not great at handling fonts, particularly the italicized text in the episode credits. This is despite including font images in the training data,.",
+    "date": "2025-01-05",
+    "architecture": "compact",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2418324,
+            "sha256": "bfa3409a2a2306314645c65f6660cff2077bde1ba9dbbbf08248ecbace7ade3a",
+            "urls": [
+                "https://www.mediafire.com/file/37n5iwfkrpqd3ef/digital_pokemon_compact.pth/file"
+            ]
+        }
+    ],
+    "trainingIterations": 230000,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Screenshots from seasons 6-11 of the English Pokémon dub, plus some manually created images for fonts.",
+    "datasetSize": 74,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "A Bite to Remember",
+            "LR": "https://imgsli.com/i/db8243fa-875a-410e-a3cd-fafbb3af9cb1.jpg",
+            "SR": "https://imgsli.com/i/08e7cfd5-a764-4db4-9184-a9392504af3c.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Going, Going, Yawn Title Card",
+            "LR": "https://imgsli.com/i/d36cf8f0-7755-443e-b248-c06e2a7c9449.jpg",
+            "SR": "https://imgsli.com/i/bdd8af00-b6c0-4a53-8465-bfa82c5fe0c3.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Fear Factor Phony!",
+            "LR": "https://imgsli.com/i/2d6cacbe-91e9-4564-a197-9a86d9ed4c60.jpg",
+            "SR": "https://imgsli.com/i/e7623bdb-6aec-4b83-bb90-8e7b0a4a63fd.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Once There Were Greenfields",
+            "LR": "https://imgsli.com/i/5a326f65-f23f-4eee-9538-94eba40d0c0b.jpg",
+            "SR": "https://imgsli.com/i/93ca0d6e-28ac-4eef-9227-8e828b90a045.jpg"
+        }
+    ]
+}
