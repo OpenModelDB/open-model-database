@@ -220,6 +220,10 @@
         "name": "OmniSR",
         "description": ""
     },
+    "arch:rcan": {
+        "name": "RCAN",
+        "description": ""
+    },
     "arch:real-cugan": {
         "name": "Real-CUGAN",
         "description": ""
@@ -266,6 +270,10 @@
     },
     "arch:swinir": {
         "name": "SwinIR",
+        "description": ""
+    },
+    "arch:tscunet": {
+        "name": "TSCUNet",
         "description": ""
     },
     "color:1": {

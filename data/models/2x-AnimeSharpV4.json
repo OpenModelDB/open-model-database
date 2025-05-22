@@ -1,0 +1,50 @@
+{
+    "name": "AnimeSharpV4",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "compression-removal",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "Purpose: Anime\n\nThis is a successor to AnimeSharpV3 based on RCAN instead of ESRGAN. It outperforms both versions of AnimeSharpV3 in every capacity. It's sharper, retains *even more* detail, and has very few artifacts. It is __extremely faithful__ to the input image, even with heavily compressed inputs. \n\nTo use this model, you must update to the [**latest chaiNNer nightly build**](https://github.com/chaiNNer-org/chaiNNer-nightly/releases)\n\nThe `2x-AnimeSharpV4_Fast_RCAN_PU` model is trained on RCAN PixelUnshuffle. This is much faster, but comes at the cost of quality. I believe the model is ~95% the quality of the full V4 RCAN model, but ~6x faster in Pytorch and ~4x faster in TensorRT. This model is ideal for video processing, and as such was trained to handle MPEG2 & H264 compression.\n\n__Comparisons:__ https://slow.pics/c/63Qu8HTN\nhttps://slow.pics/c/DBJPDJM9\n![1736292155 679079](https://github.com/user-attachments/assets/875be696-0948-4de2-9d03-85a581891a49)",
+    "date": "2025-01-07",
+    "architecture": "rcan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 31053198,
+            "sha256": "6470bb91d6622d6acdff81132c1a8615b961b919ce2b9a01ce993378500cfbe1",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-AnimeSharpV4/2x-AnimeSharpV4_RCAN.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 31272323,
+            "sha256": "75af72e9a5bcb3bd948f5f41b177998a65309f4cb10ff3eb6e5b917de1f25f47",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-AnimeSharpV4/2x-AnimeSharpV4_RCAN_fp16_op17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 100000,
+    "trainingBatchSize": 8,
+    "dataset": "ModernAnimation1080_v3 & digital_art_v3",
+    "datasetSize": 6000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/O7YCV8LN.webp",
+            "SR": "https://i.slow.pics/XXBmQMgp.webp"
+        }
+    ]
+}
