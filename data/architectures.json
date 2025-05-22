@@ -149,7 +149,8 @@
         "name": "RCAN",
         "input": "image",
         "compatiblePlatforms": [
-            "pytorch"
+            "pytorch",
+            "onnx"
         ]
     },
     "real-cugan": {
