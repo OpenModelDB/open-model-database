@@ -1,0 +1,53 @@
+{
+    "name": "BroadcastToStudio Compact",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "cartoon",
+        "compression-removal",
+        "deblur",
+        "restoration"
+    ],
+    "description": "Purpose: Cartoons\n\nThis is a simple retrain of SaurusX's 1x_BroadcastToStudioLite_485k model from a couple years ago. This one is trained on compact, actually has less artifacts, and is significantly faster.\n\n__Comparisons:__ <https://slow.pics/c/oGwHyYym>\n![1733071729 5752351](https://github.com/user-attachments/assets/f247b870-d49e-4c37-ad39-c4565efe164d)",
+    "date": "2024-12-01",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2400484,
+            "sha256": "f4876edc5f12783395c444bbb1d2f1bc304ed69b2cc82409dff9d6dad6fbd596",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/1x-BroadcastToStudio_Compact/1x-BroadcastToStudio_Compact.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1200682,
+            "sha256": "52836c782140058bcc695e90102c3ef54961ebab2c12e66298eaba25d42570bc",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/1x-BroadcastToStudio_Compact/1x-BroadcastToStudio_Compact-fp16.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 25000,
+    "trainingBatchSize": 8,
+    "dataset": "BroadcastToStudio",
+    "datasetSize": 6000,
+    "pretrainedModelG": "1x-SwatKats-Compact",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/DBrq6k0g.webp",
+            "SR": "https://i.slow.pics/XJmeT86k.webp"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "name": "GameUp_TSCUNet",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anti-aliasing",
+        "compression-removal",
+        "deblur",
+        "game-screenshots",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "Purpose: Compression Removal, General Upscaler, Restoration\n\nThis is my first video model! It's aimed at restoring compressed video game footage, like what you'd get from Twitch or Youtube. I've attached an example below.\n\nIt's trained on TSCUNet using lossless game recordings, and degraded with my [video destroyer](https://github.com/Kim2091/video-destroyer). The degradations include resizing, and H264, H265, and AV1 compression. \n\n__IMPORTANT:__ You cannot use this model with chaiNNer or any other tool. You need to use [**this**](https://github.com/Kim2091/SCUNet). \nYou just run `test_vsr.py` after installing the requirements. Use the example command from the readme. \nYou can also use the ONNX version of the model with `test_onnx.py`\n\nIf you want to train a TSCUNet model yourself, use [traiNNer-redux](https://github.com/the-database/traiNNer-redux). I've included scripts in the [SCUNet repository](https://github.com/Kim2091/SCUNet) to convert your own models to ONNX if desired.\n\n**Showcase:** Watch in a Chrome based browser: https://video.yellowmouse.workers.dev/?key=Fvxw482Nsv8=\n\n![Animation](https://github.com/user-attachments/assets/b70e0d87-1ba1-4c35-9af2-c2a18c5ad6e2)",
+    "date": "2025-03-26",
+    "architecture": "tscunet",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 116834995,
+            "sha256": "d91cb1fb373789391c78f94c838069f976a4f57a9c94f2055b3706f910a807cc",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-GameUp_TSCUNet/2x-GameUp_TSCUNET.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 58525677,
+            "sha256": "5f4daef932648653e323f06b4eac220a74a3da202ffc1647170a49f14205b27c",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-GameUp_TSCUNet/2x-GameUp_TSCUNET_fp16.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 66373648,
+            "sha256": "bf563a8799f375cb704567e4b0237ed9cf40a0b2f2acd7130f6f832a166250d1",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-GameUp_TSCUNet/2x-GameUp_TSCUNET_fp16_op17.onnx"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 122386883,
+            "sha256": "a3d9a273e06cdc8f9873cd6ebbc03d7de348670004d88b3c229bf9261bc3c333",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-GameUp_TSCUNet/2x-GameUp_TSCUNET_fp32_op17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 160000,
+    "trainingBatchSize": 8,
+    "dataset": "Custom game dataset",
+    "datasetSize": 11150,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://private-user-images.githubusercontent.com/62084776/427010081-b70e0d87-1ba1-4c35-9af2-c2a18c5ad6e2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc4NzM5ODAsIm5iZiI6MTc0Nzg3MzY4MCwicGF0aCI6Ii82MjA4NDc3Ni80MjcwMTAwODEtYjcwZTBkODctMWJhMS00YzM1LTlhZjItYzJhMThjNWFkNmUyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTIyVDAwMjgwMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA1ZDFkMzc1ZDQwOTRjZmE1Zjk3ODI5OGJkNjgyYmUyNmE0NGFkZmVmZmFlMWU3Y2VjNjlmM2EyZTE0YzYzMDQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.vEI8TUkJd805h3Jp3eNUBobb74HVUQvolRoQJqeOxkY"
+        }
+    ]
+}

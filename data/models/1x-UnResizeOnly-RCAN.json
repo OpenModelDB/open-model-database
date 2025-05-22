@@ -1,0 +1,38 @@
+{
+    "name": "UnResizeOnly_RCAN",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anti-aliasing",
+        "restoration"
+    ],
+    "description": "Purpose: Artifact Removal\n\nA version of UnResize trained on RCAN, which is faster and provides better quality than ESRGAN\n\nThis model does **not remove compression or perform deblurring**, unlike the original UnResize models. __It **only** removes scaling artifacts.__\n\nI've attached the script I used to create the dataset (it utilizes imagemagick) and the config for [traiNNer-redux](https://github.com/the-database/traiNNer-redux)",
+    "date": "2025-01-06",
+    "architecture": "rcan",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 30757598,
+            "sha256": "b88289e770207e634181b595845e0d240cc397714aefe659bcf9b70478b64373",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/1x-UnResizeOnly_RCAN/1x-UnResizeOnly_RCAN.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 95000,
+    "trainingBatchSize": 8,
+    "dataset": "UltraSharpV2_Ethical, DigitalArtV3, ModernAnimation1080_v3, Kim2091's 8k Dataset V2",
+    "datasetSize": 13000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/1cdd6669-3798-4359-b62d-0a18a38a810b.jpg",
+            "SR": "https://imgsli.com/i/aaa71ef9-e7c7-4af1-8aee-d653b903bd6f.jpg"
+        }
+    ]
+}

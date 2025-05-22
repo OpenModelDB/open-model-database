@@ -1,0 +1,56 @@
+{
+    "name": "AnimeSharpV3",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon"
+    ],
+    "description": "Purpose: Anime\n\nThis release contains an ESRGAN and an RCAN version. Both provide superior quality compared to AnimeSharpV2 in nearly every scenario. It has most of the advantages of the old V2 Sharp models, while not having issues with depth of field. \n\nThe RCAN model outperforms the ESRGAN model by a significant margin, with much more consistent generation and overall better detail retention. Currently it is NOT compatible with chaiNNer, but will be available on the nightly build soon (hopefully).\n\nRCAN vs ESRGAN: https://slow.pics/c/Zqgl62Ni\n\n__Comparisons:__ <https://slow.pics/c/A2BRSa0U>\n\n\n![1729798851 305732](https://github.com/user-attachments/assets/4d7aaf33-5a39-4f75-8a05-90b90a693e49)",
+    "date": "2024-10-03",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 67104146,
+            "sha256": "d5722d738002c1353ce4bbc3fb44fe2ecf01606c713cdb5853f772b08af84f53",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-AnimeSharpV3/2x-AnimeSharpV3.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 33619368,
+            "sha256": "fe4cbe50bfc8b20dfcb16b0935ef4dbdb64547224bee17ec2f496385bc37a71e",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-AnimeSharpV3/2x-AnimeSharpV3-fp16.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 140000,
+    "trainingBatchSize": 8,
+    "dataset": "ModernAnimation1080_v3",
+    "datasetSize": 3000,
+    "pretrainedModelG": "4x-ESRGAN",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/TwfO01xU.webp",
+            "SR": "https://i.slow.pics/4LuILsUF.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/PsraU7Kd.webp",
+            "SR": "https://i.slow.pics/qdXwDmJ6.webp"
+        }
+    ]
+}

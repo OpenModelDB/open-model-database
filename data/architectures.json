@@ -145,6 +145,13 @@
             "pytorch"
         ]
     },
+    "rcan": {
+        "name": "RCAN",
+        "input": "image",
+        "compatiblePlatforms": [
+            "pytorch"
+        ]
+    },
     "real-cugan": {
         "name": "Real-CUGAN",
         "input": "image",
@@ -232,6 +239,14 @@
     "swinir": {
         "name": "SwinIR",
         "input": "image",
+        "compatiblePlatforms": [
+            "pytorch",
+            "onnx"
+        ]
+    },
+    "tscunet": {
+        "name": "TSCUNet",
+        "input": "video",
         "compatiblePlatforms": [
             "pytorch",
             "onnx"

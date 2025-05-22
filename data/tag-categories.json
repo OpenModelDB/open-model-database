@@ -80,7 +80,9 @@
             "arch:realplksr",
             "arch:realplksr-dysample",
             "arch:hma",
-            "arch:mosr"
+            "arch:mosr",
+            "arch:rcan",
+            "arch:tscunet"
         ]
     },
     "platform": {

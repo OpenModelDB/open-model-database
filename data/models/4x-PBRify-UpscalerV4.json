@@ -1,0 +1,43 @@
+{
+    "name": "PBRify_UpscalerV4",
+    "author": "kim2091",
+    "license": "CC0-1.0",
+    "tags": [
+        "compression-removal",
+        "dds",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "Purpose: Compression Removal, General Upscaler, Restoration\n\nA new version of the main PBRify upscaling model. The PBRify Upscaler series of models are meant to take existing game textures from older 2000s era games, and upscale them to usable quality. \n\nV4 significantly improves detail over the previous V3 model. It is slower, as it's based on the DAT2 architecture, however the results are very much worthwhile imo.\n\n**Showcase:** https://slow.pics/c/vMGFFfFh\n\n![PBRify_Upscaler_V4_1](https://github.com/user-attachments/assets/184c3040-680d-4091-a0a6-43e1bbde639e)",
+    "date": "2025-05-19",
+    "architecture": "dat",
+    "size": [
+        "DAT2"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 139793020,
+            "sha256": "a00fa50116895a9b766aeb012edad0a14d66f3afda65539efc0f6fc28c991ba2",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/4x-PBRify_UpscalerV4/4x-PBRify_UpscalerV4.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 200000,
+    "trainingBatchSize": 8,
+    "dataset": "Custom texture dataset",
+    "pretrainedModelG": "4x-PBRify-UpscalerDAT2-V1",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "RPLKSRd vs DAT2",
+            "LR": "https://i.slow.pics/CQxiDB6s.webp",
+            "SR": "https://i.slow.pics/rj7yTTZq.webp"
+        }
+    ]
+}
