@@ -16,7 +16,7 @@
         "description": "",
         "models": [
             "2x-AnimeSharpV3",
-            "2x-AnimeSharpV3_RCAN"
+            "2x-AnimeSharpV3-RCAN"
         ]
     },
     "c-animesharpv4": {
@@ -25,7 +25,7 @@
         "description": "",
         "models": [
             "2x-AnimeSharpV4",
-            "2x-AnimeSharpV4_Fast_RCAN_PU"
+            "2x-AnimeSharpV4-Fast-RCAN-PU"
         ]
     },
     "c-normal-map-upscaling": {
