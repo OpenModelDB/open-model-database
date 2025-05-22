@@ -58,7 +58,7 @@
         "description": "GameUp is a set of video upscaling models intended for upscaling and restoring video game footage",
         "models": [
             "2x-GameUpV2-TSCUNet",
-            "2x-GameUpV2-TSCUNet_Small",
+            "2x-GameUpV2-TSCUNet-Small",
             "2x-GameUp-TSCUNet"
         ],
         "author": "kim2091"
