@@ -8,8 +8,8 @@
         "restoration",
         "video-frame"
     ],
-    "description": "Takes composite/RF/VHS NES footage and attempts to restore it to RGB quality. Assumes footage has been properly deinterlaced via field duplication from 240p to 480p. Note that:\n\n* All footage was captured in 240p/480p NTSC.\n* RGB footage was captured via an AV Famicom with the RGB Blaster via the Retrotink 2x.\n* The model was trained exclusively on individual frames, so it can't fix things like dropouts.\n* The even and odd fields of NES composite tend to be a bit...different from each other, so there will be some jitter at 60fps.\n* I don't have access to an NES Toploader, so I wouldn't expect it to fix the jailbars very well.",
-    "date": "2024-11-03",
+    "description": "Takes composite/RF/VHS NES footage and attempts to restore it to RGB quality. Assumes footage has been properly deinterlaced via field duplication from 240p to 480p/720p/etc. Note that:\n\n* All footage was captured in 240p/480p/720p NTSC.\n* RGB footage was captured via an AV Famicom with the RGB Blaster via the Retrotink 2x or GBS Control.\n* The model was trained exclusively on individual frames, so it can't fix things like dropouts.\n* The even and odd fields of NES composite tend to be a bit...different from each other, so there will be some jitter at 60fps.\n* I don't have access to an NES Toploader, so I wouldn't expect it to fix the jailbars very well.\n\nRevision History:\n\n* 1.5.0 (06/29/2025): Applied additional augmentations to reduce overfitting. Also added a small amount of 720p training data.\n* 1.0.0 (11/03/2024): Initial release.",
+    "date": "2025-06-29",
     "architecture": "omnisr",
     "size": null,
     "scale": 1,
@@ -20,34 +20,41 @@
             "platform": "pytorch",
             "type": "pth",
             "size": 3223546,
-            "sha256": "77511d759530b0cef77c919c40870f3fe3b9330e39e2aaacaac7848c06fb2b20",
+            "sha256": "353bcd2456ac85e4adc0c1e81c65d245b41dfec0adf14488de7abb9ac6da8e42",
             "urls": [
-                "https://www.mediafire.com/file/qzaox0y51zh9ja7/NES_Composite_to_RGB.pth/file"
+                "https://www.mediafire.com/file/077qptk82lkww92/NES_Composite_To_RGB_1_5_0.pth/file"
             ]
         }
     ],
-    "trainingIterations": 445000,
+    "trainingIterations": 540000,
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "Screenshots of NES games",
-    "datasetSize": 194,
+    "datasetSize": 198,
     "images": [
         {
             "type": "paired",
-            "LR": "https://imgsli.com/i/ce97c530-8f99-448c-8101-e072b7f72851.jpg",
-            "SR": "https://imgsli.com/i/e3b66191-0e6e-4264-a97f-d7b79c8a2f23.jpg"
+            "caption": "Mike Tyson's Punch Out",
+            "LR": "https://imgsli.com/i/dfce5cbb-b577-4e3d-aa40-f7821066de06.jpg",
+            "SR": "https://imgsli.com/i/4574e581-e64f-45f3-8cac-ee235f92e0a4.jpg"
         },
         {
             "type": "paired",
             "caption": "Legacy of the Wizard (VHS)",
-            "LR": "https://imgsli.com/i/0e8cc744-8e50-4b4c-8a0a-ccca9ffb9ea3.jpg",
-            "SR": "https://imgsli.com/i/d730abc1-ce80-495d-8a79-1504c6f7df33.jpg"
+            "LR": "https://imgsli.com/i/2e315c2e-a182-4dad-84a4-deb9810738d4.jpg",
+            "SR": "https://imgsli.com/i/8991355d-6f6c-44ed-9ab0-e24dab13f522.jpg"
         },
         {
             "type": "paired",
             "caption": "Defender of the Crown (RF)",
-            "LR": "https://imgsli.com/i/0f0d8130-cc2b-4e3a-afad-45aa6bf5c504.jpg",
-            "SR": "https://imgsli.com/i/4416deb1-bbed-49a2-b882-45179b301b46.jpg"
+            "LR": "https://imgsli.com/i/49e3668a-9c6a-438f-8ca0-6e58d98d2bfa.jpg",
+            "SR": "https://imgsli.com/i/a73ee47a-adca-4249-8e54-cebf2a7e828a.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Ninja Gaiden (Game Center CX)",
+            "LR": "https://imgsli.com/i/d8930871-c0d2-487a-a94c-d1a93c5ea6b6.jpg",
+            "SR": "https://imgsli.com/i/24018d25-2483-497a-8575-67251d7dd161.jpg"
         }
     ]
 }
