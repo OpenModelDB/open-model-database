@@ -1,0 +1,63 @@
+{
+    "name": "Where On Earth-Deinterlace Fix-Large",
+    "author": "pokepress",
+    "license": "MIT",
+    "tags": [
+        "cartoon",
+        "restoration"
+    ],
+    "description": "The \"Complete Series\" release of \"Where on Earth is Carmen Sandiego?\" by Mill Creek has a number of episodes that suffer from some rather harsh deinterlacing. This model attempts to restore the footage to something closer to a more advanced deinterlacing job.",
+    "date": "2025-06-29",
+    "architecture": "omnisr",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3223953,
+            "sha256": "e3ae3caec0e242086342653e22bd953eb62dc78a6f35eb1787423266d55f4f0a",
+            "urls": [
+                "https://www.mediafire.com/file/y2b35chuwp2lg9f/WoEiCS_Deint_Fix.pth/file"
+            ]
+        }
+    ],
+    "trainingIterations": 305251,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Cross-referenced frames between the Shout Factory and Mill Creek DVD releases",
+    "datasetSize": 93,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Carmen",
+            "LR": "https://imgsli.com/i/0e4dd7ab-542f-47a9-86d1-12475ba34713.jpg",
+            "SR": "https://imgsli.com/i/e27b61c4-ae45-4dec-a59f-09f53cbb143b.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/efe1a373-2619-4dce-853a-6eb6526c93bb.jpg",
+            "SR": "https://imgsli.com/i/22a25600-ad16-4527-b893-63fa9c80e821.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "All for One-Title Card",
+            "LR": "https://imgsli.com/i/dbe28e5f-1785-42b6-b337-acf9f3f12602.jpg",
+            "SR": "https://imgsli.com/i/0794593b-89a5-4e3f-a657-6e2bfcf18f13.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/0e82be0c-b2a6-4e05-a406-1f7b35012daa.jpg",
+            "SR": "https://imgsli.com/i/2c9d5138-9f75-484b-8fbc-f71387e35da6.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "C5 Corridor",
+            "LR": "https://imgsli.com/i/dfdbfddb-1bfb-4f56-b4e3-1d1aa4215099.jpg",
+            "SR": "https://imgsli.com/i/0edb0bbe-e566-46b1-8b76-d3b96da7cb8c.jpg"
+        }
+    ]
+}
