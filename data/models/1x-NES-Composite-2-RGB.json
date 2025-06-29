@@ -55,6 +55,12 @@
             "caption": "Ninja Gaiden (Game Center CX)",
             "LR": "https://imgsli.com/i/d8930871-c0d2-487a-a94c-d1a93c5ea6b6.jpg",
             "SR": "https://imgsli.com/i/24018d25-2483-497a-8575-67251d7dd161.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Mega Man II (The Wizard)",
+            "LR": "https://imgsli.com/i/3ecb313a-2652-44db-b10d-0d2f8e1f5c41.jpg",
+            "SR": "https://imgsli.com/i/7b34d757-ff72-4450-939d-785fe9d39dcf.jpg"
         }
     ]
 }
