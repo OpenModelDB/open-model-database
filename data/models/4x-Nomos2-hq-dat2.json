@@ -1,0 +1,79 @@
+{
+    "name": "4xNomos2_hq_dat2",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_dat2)\n\n# 4xNomos2_hq_dat2   \nScale: 4   \nArchitecture: [DAT](https://github.com/zhengchen1999/dat)   \nArchitecture Option: [dat2](https://github.com/muslll/neosr/blob/5fba7f162d36052010169e6517dec3b406c569ab/neosr/archs/dat_arch.py#L1111)   \n\nAuthor: Philip Hofmann   \nLicense: CC-BY-0.4   \nPurpose: Upscaler   \nSubject: Photography   \nInput Type: Images   \nRelease Date: 29.08.2024   \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)   \nDataset Size: 6000   \nOTF (on the fly augmentations): No   \nPretrained Model: DAT_2_x4   \nIterations: 140'000   \nBatch Size: 4   \nPatch Size: 48   \n\nDescription:    \nA dat2 4x upscaling model, similiar to the [4xNomos2_hq_mosr](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_mosr) model, trained and for usage on non-degraded input to give good quality output.    \n\nI scored 7 validation outputs of each of the 21 checkpoints (10k-210k) of this model training with 68 metrics.    \n[The metric scores can be found in this google sheet](https://docs.google.com/spreadsheets/d/1NL-by7WvZyDMHj5XN8UeDALVSSwH70IKvwV65ATWqrA/edit?usp=sharing).   \nThe corresponding image files for this scoring can be [found here](https://drive.google.com/file/d/1ZTp9fBMeawftNqzg4RN9_zIvHtul5jVc/view?usp=sharing)     \nScreenshot of the google sheet:     \n![|100](https://i.slow.pics/VZJTsrUv.webp)\n\nRelease checkpoint has been selected by looking at the scores, manually inspecting, and then getting responses on discord to this quick visual test, A B or C, which denote different checkpoints: https://slow.pics/c/8Akzj6rR   \n\nCheckpoint B is the one released here, but you can also try out [Checkpoint A](https://github.com/Phhofm/models/releases/download/4xNomos2_hq_dat2/4xNomos2_hq_dat2_150000.pth) or [Checkpoint C](https://github.com/Phhofm/models/releases/download/4xNomos2_hq_dat2/4xNomos2_hq_dat2_10000.pth) if you like them better.\n\n## Model Showcase:\n[Slowpics](https://slow.pics/c/yuue9WpF)",
+    "date": "2024-08-29",
+    "architecture": "dat",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140196334,
+            "sha256": "1f2be2b4786b5031776aed90e1818564f5576ab1e44da9355c7f3788ea25bdea",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_dat2/4xNomos2_hq_dat2.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 52855546,
+            "sha256": "f5b0b05f767ebc4b85431df6743f52995824eb3f965a8b9b97d94e5b896df5ca",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_dat2/4xNomos2_hq_dat2_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 140000,
+    "trainingBatchSize": 4,
+    "trainingOTF": false,
+    "dataset": "nomosv2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/oW1f4p1l.webp",
+            "SR": "https://i.slow.pics/CRfQ7dU2.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/6Qi5mWHb.webp",
+            "SR": "https://i.slow.pics/GQOCnBa6.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/zIGNMeLm.webp",
+            "SR": "https://i.slow.pics/qmW0vhkn.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/a3CuMs15.webp",
+            "SR": "https://i.slow.pics/A1PdbkMy.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/8FgJcKRP.webp",
+            "SR": "https://i.slow.pics/4tW09CWE.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/SXH01SS2.webp",
+            "SR": "https://i.slow.pics/FVjyAFHf.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/YwG0JUQY.webp",
+            "SR": "https://i.slow.pics/ZmyGy2An.webp"
+        }
+    ]
+}

@@ -5,7 +5,7 @@
     "tags": [
         "game-textures"
     ],
-    "description": "Category: Video Game Textures\nPurpose: Game textures\n\nVarious game textures. Primary wood, metal, stone",
+    "description": "Various game textures. Primary wood, metal, stone",
     "date": "2020-05-15",
     "architecture": "esrgan",
     "size": [

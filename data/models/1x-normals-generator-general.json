@@ -28,5 +28,46 @@
         }
     ],
     "trainingIterations": 215000,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/11/e3/MpVVEkio_o.png",
+            "SR": "https://images2.imgbox.com/e5/58/WABOxyU4_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ed/f7/rqHJfbIW_o.png",
+            "SR": "https://images2.imgbox.com/66/7b/GdRRjKFF_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/55/ce/vy9dbNTy_o.png",
+            "SR": "https://images2.imgbox.com/59/01/2KWZkICT_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/24/63/G7aopVh5_o.png",
+            "SR": "https://images2.imgbox.com/33/d7/EihtrwEO_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/af/39/MLsJj5fj_o.png",
+            "SR": "https://images2.imgbox.com/26/cf/Ch3iedj5_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/68/fa/iFA1xxvZ_o.png",
+            "SR": "https://images2.imgbox.com/95/be/kOXnEi5d_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/87/e8/pECIhJha_o.png",
+            "SR": "https://images2.imgbox.com/87/a7/Pmx3sxSg_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/c2/12/RJrqamt5_o.png",
+            "SR": "https://images2.imgbox.com/7c/0b/n1DaGCPP_o.png"
+        }
+    ]
 }

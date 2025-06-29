@@ -2,7 +2,10 @@
     "name": "FireAlpha",
     "author": "blueamulet",
     "license": "CC-BY-NC-4.0",
-    "tags": [],
+    "tags": [
+        "game-textures",
+        "restoration"
+    ],
     "description": "Category: Alphas\nPurpose: Alpha (4 channel)",
     "date": "2019-11-12",
     "architecture": "esrgan",

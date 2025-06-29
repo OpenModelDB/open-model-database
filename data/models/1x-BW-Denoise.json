@@ -1,0 +1,58 @@
+{
+    "name": "1x BW Denoise",
+    "author": "loganavter",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "cartoon",
+        "denoise",
+        "restoration"
+    ],
+    "description": "A fast upscaler that is a replacement for standard methods of cleaning noise from the picture. Ideal for BDRemux 720p and 1080p, but only if the noise is monochrome or close to it. So far, attempts are underway to create a dataset that could eliminate color noise at the same speed.",
+    "date": "2024-08-16",
+    "architecture": "compact",
+    "size": [
+        "32nf",
+        "16nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 1235465,
+            "sha256": "0b55ffff419351736c3b824c23b1df01af2c0734aab308256bc75970f2e4e5be",
+            "urls": [
+                "https://mega.nz/file/tWEECawD#PG3_dUsHQWzSCexDpZlESaMpMpCOArobbgUTVyz8fos"
+            ]
+        }
+    ],
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "A custom dataset made up of various cartoons from MGM, DFE and DISNEY studios. LR is footage with real BDRemux noise. HR is the same frames, but cleaned by the plugin, and then run through the AniScale upscaler and compressed to the original resolution to increase the clarity of the final images.",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Chip an' Dale 1",
+            "LR": "https://imgsli.com/i/f40c891e-78e1-415a-a314-d283fe0a852a.jpg",
+            "SR": "https://imgsli.com/i/f28e7683-7460-4b72-b57d-4bfa4f3bab43.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "The Inspector 1",
+            "LR": "https://imgsli.com/i/6d4ee331-06ad-4a56-9b40-7e68f2db5eb7.jpg",
+            "SR": "https://imgsli.com/i/fa7686f8-2211-4fe5-b215-626e167c3775.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Chip an' Dale 2",
+            "LR": "https://imgsli.com/i/b0d0c639-2b12-44e5-9b16-cad841a36855.jpg",
+            "SR": "https://imgsli.com/i/78a40991-6cc2-495d-a1fa-ab78648a5080.jpg"
+        }
+    ],
+    "Datasize": 2200,
+    "Training epochs": 51,
+    "Training iterations": 104000
+}

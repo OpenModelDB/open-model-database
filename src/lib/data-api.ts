@@ -1,6 +1,19 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { RWLock } from './lock';
-import { Arch, ArchId, Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from './schema';
+import {
+    Arch,
+    ArchId,
+    Collection,
+    CollectionId,
+    Model,
+    ModelId,
+    Tag,
+    TagCategory,
+    TagCategoryId,
+    TagId,
+    User,
+    UserId,
+} from './schema';
 import { noop } from './util';
 
 export interface DBApi {
@@ -9,15 +22,55 @@ export interface DBApi {
     readonly tagCategories: CollectionApi<TagCategoryId, TagCategory>;
     readonly users: CollectionApi<UserId, User>;
     readonly architectures: CollectionApi<ArchId, Arch>;
+    readonly collections: CollectionApi<CollectionId, Collection>;
 }
 
+/**
+ * A collections of key-value pairs.
+ *
+ * All operations guarantee atomicity, consistency, and isolation (see ACID).
+ * Durability is not always guaranteed and depends on the implementation.
+ */
 export interface CollectionApi<Id, Value> {
+    /**
+     * Returns the value of the given id.
+     *
+     * @throws if the id does not exist
+     */
     get(id: Id): Promise<Value>;
+    /**
+     * Returns all ids in the collection.
+     */
     getIds(): Promise<Id[]>;
+    /**
+     * Returns map representation of the collection.
+     *
+     * Changes to the map will not be reflected in the collection.
+     */
     getAll(): Promise<Map<Id, Value>>;
 
+    /**
+     * Sets the value of the given ids. The values of ids that already exist
+     * will be overwritten. Ids that do not exist will be added to be collection.
+     *
+     * The order of ids is irrelevant.
+     *
+     * @throws if there are duplicate ids.
+     */
     update(updates: Iterable<readonly [Id, Value]>): Promise<void>;
+    /**
+     * Removes the given ids from the collection.
+     *
+     * Duplicate ids and ids not in the collection are ignored. The order of ids is irrelevant.
+     */
     delete(ids: Iterable<Id>): Promise<void>;
+    /**
+     * Changes the id of a value.
+     *
+     * Does nothing if `from` and `to` are the same.
+     *
+     * @throws if `from` does not exist or `to` already exists.
+     */
     changeId(from: Id, to: Id): Promise<void>;
 }
 
@@ -77,4 +130,54 @@ export function notifyOnWrite<Id, Value>(
             return collection.changeId(from, to).then(after);
         },
     };
+}
+
+/**
+ * A collection that is backed by a simple `Map`.
+ */
+export class MapCollection<Id, Value> implements CollectionApi<Id, Value> {
+    public map: Map<Id, Value>;
+
+    constructor(map: Map<Id, Value> = new Map()) {
+        this.map = map;
+    }
+
+    get(id: Id): Promise<Value> {
+        const value = this.map.get(id);
+        if (value === undefined) {
+            throw new Error(`No value for id ${String(id)}`);
+        }
+        return Promise.resolve(value);
+    }
+    getIds(): Promise<Id[]> {
+        return Promise.resolve([...this.map.keys()]);
+    }
+    getAll(): Promise<Map<Id, Value>> {
+        return Promise.resolve(new Map(this.map));
+    }
+    update(updates: Iterable<readonly [Id, Value]>): Promise<void> {
+        updates = new Map(updates);
+        for (const [id, value] of updates) {
+            this.map.set(id, value);
+        }
+        return Promise.resolve();
+    }
+    delete(ids: Iterable<Id>): Promise<void> {
+        for (const id of ids) {
+            this.map.delete(id);
+        }
+        return Promise.resolve();
+    }
+    changeId(from: Id, to: Id): Promise<void> {
+        const value = this.map.get(from);
+        if (value === undefined) {
+            throw new Error(`No value for id ${String(from)}`);
+        }
+        if (this.map.has(to)) {
+            throw new Error(`Id ${String(to)} already exists`);
+        }
+        this.map.delete(from);
+        this.map.set(to, value);
+        return Promise.resolve();
+    }
 }

@@ -3,6 +3,7 @@
     "author": "kim2091",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "dds",
         "restoration"
     ],
@@ -36,8 +37,10 @@
     "pretrainedModelG": "4x-ESRGAN",
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/887850596214902835/887856392269094952/unknown.png"
+            "type": "paired",
+            "caption": "Clipboard",
+            "LR": "https://images2.imgbox.com/e4/be/nJHLBgN8_o.png",
+            "SR": "https://images2.imgbox.com/fb/7f/63YHgw51_o.png"
         }
     ]
 }

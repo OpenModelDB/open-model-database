@@ -4,8 +4,11 @@
     "license": "CC-BY-4.0",
     "tags": [
         "anime",
+        "compression-removal",
         "general-upscaler",
-        "photo"
+        "jpeg",
+        "photo",
+        "restoration"
     ],
     "description": "A 4x photo upscaler with otf jpg compression, blur and resize, trained on musl's Nomos8k_sfw dataset for realisic sr, this time based on the [DAT arch](https://github.com/zhengchen1999/DAT), as a finetune on the official 4x DAT model.\n\n\nThe 295 MB file is the pth file which can be run with the [dat reo github code](https://github.com/zhengchen1999/DAT). The 85.8 MB file is an onnx conversion.\n\n\nAll Files can be found in [this google drive folder](https://drive.google.com/drive/folders/1b2vQHxlFQrVW22osIhQbDk98sdXzzFkx). If above onnx file is not working, you can try the other conversions in the onnx subfolder.\n\n\nExamples:\n\n[Imgsli1](https://imgsli.com/MTk4Mjg1) (generated with onnx file)\n\n[Imgsli2](https://imgsli.com/MTk4Mjg2) (generated with onnx file)\n\n[Imgsli](https://imgsli.com/MTk4Mjk5) (generated with testscript of dat repo on the three test images in dataset/single with pth file)",
     "date": "2023-08-13",

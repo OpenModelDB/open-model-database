@@ -2,8 +2,11 @@
     "name": "KCJPUNK",
     "author": "kcjpunk",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
-    "description": "Category: Digital Animation\nPurpose: Digital Animation\n\nUp-scaling Digital Animation",
+    "tags": [
+        "anime",
+        "cartoon"
+    ],
+    "description": "Purpose: Digital Animation\n\nUp-scaling Digital Animation",
     "date": "2021-03-23",
     "architecture": "esrgan",
     "size": [

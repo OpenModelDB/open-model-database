@@ -2,7 +2,10 @@
     "name": "VESRGAN_G",
     "author": "victorca25",
     "license": null,
-    "tags": [],
+    "tags": [
+        "restoration",
+        "video-frame"
+    ],
     "description": "Category: Pretrained SOFVSR Models\nPurpose: \n\nTrained on REDS' size dataset",
     "date": "2020-11-24",
     "architecture": "sofvsr",

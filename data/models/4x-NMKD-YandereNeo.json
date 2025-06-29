@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nPretrained model: 4x_DIV2K-Lite_1M (`4x_NMKD-YandereNeo-Lite_320k` for the 2x conversion)",
+    "description": "Pretrained model: 4x_DIV2K-Lite_1M (`4x_NMKD-YandereNeo-Lite_320k` for the 2x conversion)",
     "date": "2021-01-26",
     "architecture": "esrgan",
     "size": [
@@ -34,8 +34,33 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108633741972217927/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108226081577775175/SR.png"
+            "LR": "https://images2.imgbox.com/5c/9c/VFyr7MbK_o.png",
+            "SR": "https://images2.imgbox.com/6c/fd/6H2csAVh_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/9c/f6/48cKCVoT_o.png",
+            "SR": "https://images2.imgbox.com/2b/41/uTd3zguW_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/b4/59/KBMJXalI_o.png",
+            "SR": "https://images2.imgbox.com/93/a1/pVs6ThXI_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/76/96/LwW4gz2c_o.png",
+            "SR": "https://images2.imgbox.com/c9/d8/2GEsc22U_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/c9/f2/rJDw4CtT_o.png",
+            "SR": "https://images2.imgbox.com/5d/19/uVx0gEtp_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/2d/53/Ba2dYXLZ_o.png",
+            "SR": "https://images2.imgbox.com/97/ce/215NR8cQ_o.jpg"
         }
     ]
 }

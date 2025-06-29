@@ -1,0 +1,38 @@
+{
+    "name": "SuperScale_RPLKSR_S",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anti-aliasing",
+        "game-screenshots",
+        "photo",
+        "restoration"
+    ],
+    "description": "Purpose: Anti-aliasing, Restoration\n\nI was bored, so I did this. This model uses DPID as the scaling algorithm for the HRs. The original images were 8k or 12k. It's significantly sharper than Box/Area scaling, yet does a great job with aliasing. This allows for a very sharp model with minimal artifacts, even on the SPAN version.\n\nThe main model is trained on 12k images captured with Nvidia Ansel. It took about 2 days capturing manual 4k and 12k pairs for this model. The 4k captures were used as the LR, the 12k captures were resized to 4k with DPID with randomized lambda values, then trained on as HRs. \n\nThe Alt model is trained exclusively on 8k images from my 8k dataset, resized to 4k with dpid. This provides a clearer result with less noise, but it doesn't handle long edges well at all.\n\nThanks to CF2lter for advice on preparing the dataset, and umzi2 for creating the [rust version of DPID](<https://github.com/umzi2/pepedpid>). \n\n**Showcase:** https://slow.pics/c/TCyqje9K\n![Animation (2)](https://github.com/user-attachments/assets/fb9f010a-a4e1-4537-8b23-9a69974011c6)",
+    "date": "2025-05-05",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 1195070,
+            "sha256": "f5844dd72922a6579cf73c44de5cf35f0d700bd407982ae8d03bcdf720924425",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/1x-SuperScale/1x-SuperScale_RPLKSR_S.safetensors"
+            ]
+        }
+    ],
+    "dataset": "8k Dataset V3, Custom Ansel dataset",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "1",
+            "LR": "https://i.slow.pics/543aXqwG.webp",
+            "SR": "https://i.slow.pics/V1xP5Zh5.webp"
+        }
+    ]
+}

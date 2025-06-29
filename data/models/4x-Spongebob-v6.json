@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation\n\nNew version of the Spongebob model. Ideally it's a lot sharper and cleaner but I'm still not sure if it works better than the old one. From what I can tell it's better in many cases.",
+    "description": "New version of the Spongebob model. Ideally it's a lot sharper and cleaner but I'm still not sure if it works better than the old one. From what I can tell it's better in many cases.",
     "date": "2019-11-08",
     "architecture": "esrgan",
     "size": [

@@ -3,9 +3,10 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
-        "deblur"
+        "deblur",
+        "restoration"
     ],
-    "description": "Purpose: Deblur / ReFocus\n\nPurpose: DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",
+    "description": "DeBlur, ReFocus, Sharpen Real life style images, but will work on Anime images too.",
     "date": "2022-03-12",
     "architecture": "esrgan",
     "size": [
@@ -22,11 +23,35 @@
             "size": 66665765,
             "sha256": "94d8f38726c7abaa83a3fad27c01863ba961f76a995d8541c173eb3195062547",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-ReFocus-V3.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-ReFocus-V3.pth",
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_ReFocus_V3_140000_G.pth",
+                "https://drive.proton.me/urls/EBGFFZVGPM#qKGEzHEmmMTl"
             ]
         }
     ],
+    "trainingIterations": 140000,
     "dataset": "Photos, Anime, and manga",
     "pretrainedModelG": "1x-SaiyaJin-DeJpeg",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/d1/3a/FWiljvjK_o.png",
+            "SR": "https://images2.imgbox.com/fe/2e/ai4d2bYM_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/bf/de/0gOsvj3f_o.png",
+            "SR": "https://images2.imgbox.com/78/ce/CHZGbwcz_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/0a/0e/sfOoK4Nr_o.png",
+            "SR": "https://images2.imgbox.com/e2/27/0XO0qmg2_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/c4/43/itjsiUjX_o.jpg",
+            "SR": "https://images2.imgbox.com/e4/65/qrESTJUG_o.png"
+        }
+    ]
 }

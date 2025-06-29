@@ -1,0 +1,72 @@
+{
+    "name": "4xNomos2_realplksr_dysample",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "jpeg",
+        "photo",
+        "restoration"
+    ],
+    "description": "4xNomos2_realplksr_dysample  \nScale: 4  \nArchitecture: [RealPLKSR with Dysample](https://github.com/muslll/neosr/?tab=readme-ov-file#supported-archs)  \nArchitecture Option: [realplksr](https://github.com/muslll/neosr/blob/master/neosr/archs/realplksr_arch.py)  \n[Github Release](https://github.com/Phhofm/models/releases/tag/4xNomos2_realplksr_dysample)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Pretrained  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 30.06.2024  \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: [4xmssim_realplksr_dysample_pretrain](https://github.com/Phhofm/models/releases/tag/4xmssim_realplksr_dysample_pretrain)  \nIterations: 185'000  \nBatch Size: 8  \nGT Size: 256, 512  \n\nDescription: \nA Dysample RealPLKSR 4x upscaling model that was trained with / handles jpg compression down to 70 on the Nomosv2 dataset, preserves DoF.   \nBased on the [4xmssim_realplksr_dysample_pretrain](https://github.com/Phhofm/models/releases/tag/4xmssim_realplksr_dysample_pretrain) I released 3 days ago.  \nThis model affects / saturate colors, which can be counteracted a bit by using wavelet color fix, as used in these examples.  \n\nShowcase:\n[Slowpics](https://slow.pics/s/p3sMnd5l)",
+    "date": "2024-06-30",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29715988,
+            "sha256": "96c8476ed2c42107628d10562b32ae89e7be3c2f7a53d29504823e9bafe8121d",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_realplksr_dysample/4xNomos2_realplksr_dysample.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 30298952,
+            "sha256": "f4da353c0a380aa2c53485f2479bfd7959cab071734075d96f53df3233976716",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_realplksr_dysample/4xNomos2_realplksr_dysample_256_fp32_fullyoptimized.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 185000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "Nomos-v2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-mssim-realplksr-dysample-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/9ZnUcVDC.png",
+            "SR": "https://i.slow.pics/XJ5Tt9ja.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/wdQgPTgv.png",
+            "SR": "https://i.slow.pics/1jspoDeR.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/7NVM3NoB.png",
+            "SR": "https://i.slow.pics/481WUhuM.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/4PZ6cOrU.png",
+            "SR": "https://i.slow.pics/xlPjpxUS.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/SHPUrMz1.png",
+            "SR": "https://i.slow.pics/YVMbx6KC.png"
+        }
+    ]
+}

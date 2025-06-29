@@ -21,7 +21,7 @@
         {
             "platform": "pytorch",
             "type": "pth",
-            "size": 66921375,
+            "size": 66923471,
             "sha256": "b39f06be1aea3349a2d4ea584262e7baa5f62a54d9be3247c12b7823c3aa72a0",
             "urls": [
                 "https://drive.google.com/open?id=1zZIuQSepFlupV103AatoP-JSJpwJFS19"

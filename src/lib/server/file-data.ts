@@ -3,7 +3,20 @@ import { readFile, readdir, rename, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { CollectionApi, DBApi, SynchronizedCollection, notifyOnWrite } from '../data-api';
 import { RWLock } from '../lock';
-import { Arch, ArchId, Model, ModelId, Tag, TagCategory, TagCategoryId, TagId, User, UserId } from '../schema';
+import {
+    Arch,
+    ArchId,
+    Collection,
+    CollectionId,
+    Model,
+    ModelId,
+    Tag,
+    TagCategory,
+    TagCategoryId,
+    TagId,
+    User,
+    UserId,
+} from '../schema';
 import { compareTagId, getTagCategoryOrder, hasOwn, sortObjectKeys, typedEntries, typedKeys } from '../util';
 import { JsonFile, fileExists } from './fs-util';
 
@@ -13,6 +26,7 @@ const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
 const TAG_CATEGORIES_JSON = join(DATA_DIR, 'tag-categories.json');
 const ARCHITECTURES_JSON = join(DATA_DIR, 'architectures.json');
+const COLLECTIONS_JSON = join(DATA_DIR, 'collections.json');
 
 const usersFile = new JsonFile<Record<UserId, User>>(USERS_JSON, {
     beforeWrite(data) {
@@ -40,6 +54,12 @@ const tagCategoriesFile = new JsonFile<Record<TagCategoryId, TagCategory>>(TAG_C
     },
 });
 const architecturesFile = new JsonFile<Record<ArchId, Arch>>(ARCHITECTURES_JSON, {
+    beforeWrite(data) {
+        sortObjectKeys(data);
+        return data;
+    },
+});
+const collectionsFile = new JsonFile<Record<CollectionId, Collection>>(COLLECTIONS_JSON, {
     beforeWrite(data) {
         sortObjectKeys(data);
         return data;
@@ -90,6 +110,7 @@ const modelKeyOrder = [
     'pretrainedModelG',
     'pretrainedModelD',
     'images',
+    'thumbnail',
 ] as const satisfies readonly (keyof Model)[];
 type IsNever<T extends never> = T;
 type MissingKeys = Exclude<keyof Model, (typeof modelKeyOrder)[number]>;
@@ -144,7 +165,7 @@ const modelApi: CollectionApi<ModelId, Model> = {
 
     async update(updates: Iterable<readonly [ModelId, Model]>): Promise<void> {
         await Promise.all(
-            [...updates].map(async ([id, value]) => {
+            [...new Map(updates)].map(async ([id, value]) => {
                 await writeModelData(id, value);
                 console.warn(`Updated model data of ${id}`);
             })
@@ -220,6 +241,7 @@ function ofJsonFile<Id extends string, Value>(
         },
 
         async update(updates: Iterable<readonly [Id, Value]>): Promise<void> {
+            updates = new Map(updates);
             await file.update((old) => {
                 for (const [id, value] of updates) {
                     old[id] = value;
@@ -336,6 +358,8 @@ const archApi = ofJsonFile(architecturesFile, {
     },
 });
 
+const collectionApi = ofJsonFile(collectionsFile);
+
 const fileLock = new RWLock();
 let mutationCounter = 0;
 const addMutation = () => {
@@ -353,6 +377,7 @@ export const fileApi: DBApi = {
     tags: wrapCollection(tagApi),
     tagCategories: wrapCollection(tagCategoryApi),
     architectures: wrapCollection(archApi),
+    collections: wrapCollection(collectionApi),
 };
 
 export function getFileApiMutationCounter(): Promise<number> {

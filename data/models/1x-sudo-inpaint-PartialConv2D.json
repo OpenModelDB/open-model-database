@@ -33,5 +33,11 @@
     "trainingOTF": false,
     "dataset": "Full res yande.re images",
     "datasetSize": 9147,
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/55/9c/lfoZS1lx_o.png",
+            "SR": "https://images2.imgbox.com/e0/e1/xjnMCWJh_o.png"
+        }
+    ]
 }

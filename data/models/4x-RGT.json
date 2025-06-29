@@ -1,0 +1,28 @@
+{
+    "name": "RGT x4",
+    "author": "zheng-chen",
+    "license": "Apache-2.0",
+    "tags": [
+        "pretrained",
+        "research"
+    ],
+    "description": "",
+    "date": "2024-02-04",
+    "architecture": "rgt",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 180352241,
+            "sha256": "8335d4d314cf778df0fba0b1a57d757dcbc80267afd08ab45647a9997a45133c",
+            "urls": [
+                "https://drive.google.com/file/d/1uULArtV1EcPbS3ujVbZvJIRMogldRMHr/view?usp=sharing"
+            ]
+        }
+    ],
+    "images": []
+}

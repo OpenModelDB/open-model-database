@@ -3,9 +3,10 @@
     "author": "dinjerr",
     "license": "CC-BY-NC-4.0",
     "tags": [
-        "anime"
+        "anime",
+        "cgi"
     ],
-    "description": "Category: CGI\nPurpose: CGI\n\nUpscaling CG-painted anime with variable outlines.\n\nPretrained model: Manga109v2.pth",
+    "description": "Upscaling CG-painted anime with variable outlines.\n\nPretrained model: Manga109v2.pth",
     "date": "2019-07-12",
     "architecture": "esrgan",
     "size": [

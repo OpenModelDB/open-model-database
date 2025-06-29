@@ -1,0 +1,53 @@
+{
+    "name": "HFA2k compact multijpg",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "compression-removal",
+        "jpeg",
+        "restoration"
+    ],
+    "description": "Purpose: 2x anime upscaler which tries to preserve dof\n\n2x anime upscaler, a non-otf version of the HFA2kCompact model which tries to preserve dof by not deblurring.\n\nOriginal Link: https://drive.google.com/drive/folders/1RZbALUTCf4DYDTVMBR74b8Nt-7m6TEyk?usp=drive_link",
+    "date": "2023-12-26",
+    "architecture": "compact",
+    "size": [
+        "64nf",
+        "16nc"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2418985,
+            "sha256": "19cf4ab7da0f970964962637eb9b4ec81d99b4bea1afff3d889689e79327cdbb",
+            "urls": [
+                "https://drive.google.com/file/d/1FgN0ib5Ah8vU0-yxwaZ4mnwO-_4i_QcD/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 22000,
+    "trainingEpochs": 12,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "dataset": "hfa2k",
+    "datasetSize": 2568,
+    "pretrainedModelG": "2x-Compact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/CZYzvs54.png",
+            "SR": "https://i.slow.pics/iWNO5BL0.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/pN6CdBMN.png",
+            "SR": "https://i.slow.pics/a4ucOqhV.webp"
+        }
+    ]
+}

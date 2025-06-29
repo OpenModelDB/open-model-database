@@ -1,0 +1,75 @@
+{
+    "name": "1xDeH264_realplksr",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "photo",
+        "restoration"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/1xDeH264_realplksr)\n\n# 1xDeH264_realplksr  \nScale: 1  \nArchitecture: [RealPLKSR](https://github.com/muslll/neosr/?tab=readme-ov-file#supported-archs)  \nArchitecture Option: [realplksr](https://github.com/muslll/neosr/blob/master/neosr/archs/realplksr_arch.py)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Restoration, H264  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 08.08.2024  \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: [1xDeJPG_realplksr_otf](https://github.com/Phhofm/models/releases/tag/1xDeJPG_realplksr_otf)  \nIterations: 210'000  \nBatch Size: 8  \nPatch Size: 64  \n\nDescription:   \nA 1x de h264 model to remove h264 compression.  \n\nShowcase:  \n[Slowpics](https://slow.pics/c/71ulMz8P?canvas-mode=fit-height)  \n[Imgsli](https://imgsli.com/Mjg1NTQy)",
+    "date": "2024-08-08",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29559554,
+            "sha256": "92829754924fbcf944acf5d09e9cfd1cb3d1f2ee67a208a9921c1c0e4d74d6e7",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeH264_realplksr/1xDeH264_realplksr.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 29486580,
+            "sha256": "91f054af6308e37b81c261ecf775a58be5fa1d37a816709db5d0fea6fceb24b8",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeH264_realplksr/1xDeH264_realplksr.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 29874321,
+            "sha256": "0fc49973ded9372527685cdb966f7a214c46748e43e76671e649e06a2beee190",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/1xDeH264_realplksr/1xDeH264_realplksr_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 210000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Nomosv2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "1x-DeJPG-realplksr-otf",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/W7XnAQyq.webp",
+            "SR": "https://i.slow.pics/oApzfWL5.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/7I6VglYj.webp",
+            "SR": "https://i.slow.pics/nirdkNCy.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/DStoOqpl.webp",
+            "SR": "https://i.slow.pics/hFYBKe4f.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/p2gWcS3V.webp",
+            "SR": "https://i.slow.pics/UnK3wpJH.webp"
+        }
+    ]
+}

@@ -4,7 +4,8 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
-        "deblur"
+        "deblur",
+        "restoration"
     ],
     "description": "Sharpening, line darkening and slight line thinning, specifically made for the Boruto anime.",
     "date": "2021-05-09",

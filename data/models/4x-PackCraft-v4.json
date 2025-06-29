@@ -2,8 +2,11 @@
     "name": "PackCraft v4",
     "author": "joey",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
-    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.\n\nPretrained model: 4xESRGAN originally, but I used each previous version as a pretrained until I got to v4.",
+    "tags": [
+        "game-screenshots",
+        "restoration"
+    ],
+    "description": "Purpose: Upscaling pack.png\n\nDesigned to upscale one specific minecraft screenshot. Results on dissimilar screenshots may be poor.\n\nPretrained model: 4xESRGAN originally, but I used each previous version as a pretrained until I got to v4.",
     "date": "2020-09-05",
     "architecture": "esrgan",
     "size": [
@@ -30,8 +33,10 @@
     "datasetSize": 60000,
     "images": [
         {
-            "type": "standalone",
-            "url": "https://cdn.discordapp.com/attachments/436411385673547787/750481717307113543/pack.png"
+            "type": "paired",
+            "caption": "pack.png",
+            "LR": "https://images2.imgbox.com/4e/cd/as8bIO38_o.png",
+            "SR": "https://images2.imgbox.com/a6/03/AOsW3a19_o.png"
         }
     ]
 }

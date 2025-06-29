@@ -1,0 +1,66 @@
+{
+    "c-animesharpv2": {
+        "name": "AnimeSharpV2",
+        "author": "kim2091",
+        "description": "",
+        "models": [
+            "2x-AnimeSharpV2-RPLKSR-Sharp",
+            "2x-AnimeSharpV2-RPLKSR-Soft",
+            "2x-AnimeSharpV2-MoSR-Sharp",
+            "2x-AnimeSharpV2-MoSR-Soft"
+        ]
+    },
+    "c-animesharpv3": {
+        "name": "AnimeSharpV3",
+        "author": "kim2091",
+        "description": "",
+        "models": [
+            "2x-AnimeSharpV3",
+            "2x-AnimeSharpV3-RCAN"
+        ]
+    },
+    "c-animesharpv4": {
+        "name": "AnimeSharpV4",
+        "author": "kim2091",
+        "description": "",
+        "models": [
+            "2x-AnimeSharpV4",
+            "2x-AnimeSharpV4-Fast-RCAN-PU"
+        ]
+    },
+    "c-normal-map-upscaling": {
+        "name": "Normal Map Upscaling",
+        "description": "This collection contain my RG0 normal map upscaling models.\n\nAll models here are for upscaling *tangent-space* normal maps in RG0 format. RG0 means that the B channel is set to 0. These models will work not correctly if you give them images with non-zero B channel, so you either have to zero the B channel manually or use tool like chaiNNer to do it.\n\n## DDS Compression\n\nI made 3 versions: \n- Normal RG0 is for uncompressed normal map textures. Since it hasn't been trained on compression artifacts, it's highly sensitive to quantization artifacts and noise.\n- Normal RG0 BC1 is for BC1-compressed DDS normal map textures.\n- Normal RG0 BC7 is for BC7-compressed DDS normal map textures. This model sometimes produces images that aren't as sharp. In those cases, you can try the BC1 version to see whether it gives better results.",
+        "models": [
+            "4x-Normal-RG0-BC1",
+            "4x-Normal-RG0-BC7",
+            "4x-Normal-RG0"
+        ],
+        "author": "rundevelopment"
+    },
+    "c-pbrify": {
+        "name": "PBRify",
+        "description": "PBRify_Remix is an easy way to upscale and generate PBR textures using existing low quality textures. The dataset consists of ethically sourced textures from websites like ambientCG and Polyhaven, which sets it apart from most other models.\n\nIt's intended for use with RTX Remix (hence the name) but it'll work for other things as well.\n\nMore models and other tools can be found here: https://github.com/Kim2091/PBRify_Remix",
+        "models": [
+            "1x-PBRify-Height",
+            "1x-PBRify-NormalV3",
+            "1x-PBRify-RoughnessV2",
+            "4x-PBRify-UpscalerSPANV4",
+            "4x-PBRify-UpscalerSIR-M-V2",
+            "4x-PBRify-UpscalerDAT2-V1",
+            "4x-PBRify-RPLKSRd-V3",
+            "4x-PBRify-UpscalerV4"
+        ],
+        "author": "kim2091"
+    },
+    "c-gameup": {
+        "name": "GameUp",
+        "description": "GameUp is a set of video upscaling models intended for upscaling and restoring video game footage",
+        "models": [
+            "2x-GameUpV2-TSCUNet",
+            "2x-GameUpV2-TSCUNet-Small",
+            "2x-GameUp-TSCUNet"
+        ],
+        "author": "kim2091"
+    }
+}

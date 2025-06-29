@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime",
+    "description": "",
     "date": "2021-01-26",
     "architecture": "esrgan",
     "size": [
@@ -28,5 +28,31 @@
             ]
         }
     ],
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/9c/f6/48cKCVoT_o.png",
+            "SR": "https://images2.imgbox.com/ab/c1/Iy0DudX4_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/b4/59/KBMJXalI_o.png",
+            "SR": "https://images2.imgbox.com/6f/4e/Mkh1JPZV_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/76/96/LwW4gz2c_o.png",
+            "SR": "https://images2.imgbox.com/eb/90/oZmNVkZc_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/c9/f2/rJDw4CtT_o.png",
+            "SR": "https://images2.imgbox.com/ad/4a/RqXXFhxp_o.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/2d/53/Ba2dYXLZ_o.png",
+            "SR": "https://images2.imgbox.com/83/f5/TfJx0g9S_o.jpg"
+        }
+    ]
 }

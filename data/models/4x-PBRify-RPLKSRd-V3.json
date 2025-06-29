@@ -1,0 +1,58 @@
+{
+    "name": "4x-PBRify_RPLKSRd_V3",
+    "author": "kim2091",
+    "license": "CC0-1.0",
+    "tags": [
+        "compression-removal",
+        "dds",
+        "debanding",
+        "dedither",
+        "dehalo",
+        "game-textures",
+        "restoration"
+    ],
+    "description": "PBRify Github: https://github.com/Kim2091/PBRify_Remix\n\nRelease Link: https://github.com/Kim2091/Kim2091-Models/releases/tag/4x-PBRify_RPLKSRd_V3\n\nThis update brings a new upscaling model, 4x-PBRify_RPLKSRd_V3. This model is roughly 8x faster than the current DAT2 model, while being *higher quality*. It produces far more natural detail, resolves lines and edges more smoothly, and cleans up compression artifacts better.\n\nAs a result of those improvements, PBR is also much improved. It tends to be clearer with less defined artifacts. \n\nHowever, this model is currently **only compatible with ComfyUI**. chaiNNer has not yet been updated to support this architecture.\n\n[More Comparisons](https://imgsli.com/Mjk5NjQ5)",
+    "date": "2024-09-23",
+    "architecture": "realplksr-dysample",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 29717038,
+            "sha256": "1325a08842ebfc18aea90e71594aa9b9e82b9c7e16321dccf5b757884a22daf1",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/4x-PBRify_RPLKSRd_V3/4x-PBRify_RPLKSRd_V3.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 160000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "PolyHaven, FreePBR, ambientCG, UltraSharpV2",
+    "datasetSize": 26000,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "DAT2 vs RPLKSR",
+            "LR": "https://imgsli.com/i/e4d8eaad-956c-4145-b827-4cfceecb9801.jpg",
+            "SR": "https://imgsli.com/i/4d840f43-504b-4f15-bdf4-d548fdf7ec05.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "DAT2 vs RPLKSR 2",
+            "LR": "https://imgsli.com/i/edaa03e0-4c1f-4a5d-ae30-e07cec74cc89.jpg",
+            "SR": "https://imgsli.com/i/47d0cd27-2897-4749-b8c4-8aea10e49609.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "DAT2 vs RPLKSR 3",
+            "LR": "https://imgsli.com/i/dae8bf21-6d48-4e97-a4a8-acd58e343918.jpg",
+            "SR": "https://imgsli.com/i/747ffb24-619b-49a8-9720-6497a974549e.jpg"
+        }
+    ]
+}

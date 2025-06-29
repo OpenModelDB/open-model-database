@@ -1,0 +1,114 @@
+{
+    "name": "IllustrationJaNai_V1_DAT2",
+    "author": "the-database",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "cartoon",
+        "compression-removal",
+        "dehalftone",
+        "general-upscaler",
+        "jpeg",
+        "manga",
+        "restoration"
+    ],
+    "description": "Purpose: Illustrations, digital art, manga covers\n\nModel for color images including manga covers and color illustrations, digital art, visual novel art, artbooks, and more. The DAT2 version is the highest quality version but also the slowest. See the ESRGAN version for faster performance. \n\nhttps://slow.pics/c/GfArurPG",
+    "date": "2024-02-24",
+    "architecture": "dat",
+    "size": [
+        "medium",
+        "s64|8x32",
+        "64nf",
+        "180dim",
+        "2.0ef",
+        "1conv"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 140402790,
+            "sha256": "a82f3a2d8d1c676171b86a00048b7a624e3c62c87ec701012f106a171c309fbe",
+            "urls": [
+                "https://drive.google.com/file/d/1qpioSqBkB_IkSBhEAewSSNFt6qgkBimP/view"
+            ]
+        }
+    ],
+    "trainingIterations": 190000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "digital art, anime",
+    "datasetSize": 199936,
+    "pretrainedModelG": "4x-DAT-2",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0O4vdI7C.png",
+            "SR": "https://i.slow.pics/KE2Qa4qg.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/lHotTXax.png",
+            "SR": "https://i.slow.pics/WKSFfayc.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/MQr34muG.png",
+            "SR": "https://i.slow.pics/4HWxQo78.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/GelM134s.png",
+            "SR": "https://i.slow.pics/cHiqRMJE.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/yF6LBUXB.png",
+            "SR": "https://i.slow.pics/b9ot2dHw.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/0qo1SlRQ.png",
+            "SR": "https://i.slow.pics/Gv9sL0F5.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xqECVdcg.png",
+            "SR": "https://i.slow.pics/pDyjUwrk.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ip4sKpvR.png",
+            "SR": "https://i.slow.pics/LeZRIxtj.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/lLCzhdim.png",
+            "SR": "https://i.slow.pics/l6M3CHfG.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/NK4yYDZx.png",
+            "SR": "https://i.slow.pics/NTVJIwqg.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/vmle5Bnm.png",
+            "SR": "https://i.slow.pics/XsShhvDd.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/h676SXio.png",
+            "SR": "https://i.slow.pics/kq594c1P.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/5ci4Wrfk.png",
+            "SR": "https://i.slow.pics/NUNuj1rg.png"
+        }
+    ]
+}

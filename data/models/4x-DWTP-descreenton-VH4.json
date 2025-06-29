@@ -1,0 +1,72 @@
+{
+    "name": "DWTP_descreenton_VH4",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "dehalftone",
+        "manga",
+        "restoration"
+    ],
+    "description": "I've been experimenting a lot since the last descripton was released to save even more detail, and to get rid of some of the beginner's soreness. All three models are not yet perfect and I will develop them, but what is the essence of the three models, the models on omni is just a division of VL eats less large screenton, VH is just a re-trained model on a modified dataset and with VL as a prevoritolnoy shadowing that it would demolish more screenton, while not going to demolish all the textures and very large screenton. Esrgan model was trained on a dataset VH for use in the colab, it works in some places worse than Omni, so could not fight with overlapping screenton.",
+    "date": "2023-10-04",
+    "architecture": "omnisr",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 6718258,
+            "sha256": "e6aaf81ef986b7404a94c337d69f9a36106310ee3f4dee18f3e03bc41eff9ade",
+            "urls": [
+                "https://drive.google.com/file/d/16BPbb1cjp2v9Z_XKZdDUTPFayOcfDIs6/view?usp=drive_link",
+                "https://drive.google.com/drive/u/0/folders/1InaE_wiqlk2AbOqp3JaXrTAn83B0yppA"
+            ]
+        }
+    ],
+    "trainingIterations": 108000,
+    "trainingEpochs": 8,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 192,
+    "dataset": "custom dataset",
+    "datasetSize": 76000,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/YYveImRW.png",
+            "SR": "https://i.slow.pics/ITtZPVKp.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/uS9iHKFy.png",
+            "SR": "https://i.slow.pics/AtZFnDJQ.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/He5Daol7.png",
+            "SR": "https://i.slow.pics/559ZOYAc.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/I03bX7lE.png",
+            "SR": "https://i.slow.pics/x0gmfubg.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/d33L8k03.png",
+            "SR": "https://i.slow.pics/riX7eJiQ.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/98PCDkBI.png",
+            "SR": "https://i.slow.pics/g5QAXt7c.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/jna7q2Wa.png",
+            "SR": "https://i.slow.pics/smDrjVmn.png"
+        }
+    ]
+}

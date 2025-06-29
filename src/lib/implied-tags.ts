@@ -1,4 +1,5 @@
 import { Tag, TagId } from './schema';
+import { compareTagId } from './util';
 
 /**
  * If a tag is in the given set, then all of its implied tags are added to the set.
@@ -12,6 +13,15 @@ export function addImpliedTags(tags: Set<TagId>, tagData: ReadonlyMap<TagId, Tag
             }
         }
     }
+}
+
+/**
+ * Returns a sorted sorted list of tags with all of their implied tags.
+ */
+export function withImpliedTags(tags: Iterable<TagId>, tagData: ReadonlyMap<TagId, Tag>): TagId[] {
+    const result = new Set<TagId>(tags);
+    addImpliedTags(result, tagData);
+    return [...result].sort(compareTagId);
 }
 
 /**

@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation",
+    "description": "",
     "date": "2019-09-12",
     "architecture": "esrgan",
     "size": [

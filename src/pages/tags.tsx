@@ -9,7 +9,8 @@ import { deriveTags } from '../lib/derive-tags';
 import { useModels } from '../lib/hooks/use-models';
 import { useTags } from '../lib/hooks/use-tags';
 import { useWebApi } from '../lib/hooks/use-web-api';
-import { Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
+import { withImpliedTags } from '../lib/implied-tags';
+import { Model, ModelId, Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
 import { canonicalizeTagId } from '../lib/schema-util';
 import { compareTagId } from '../lib/util';
 
@@ -55,6 +56,21 @@ export default function Page() {
         return [...tagUsage.keys()].filter((id) => !known.has(id) && !id.startsWith('by:')).sort(compareTagId);
     }, [tagUsage, tagData]);
 
+    const addImplications = async () => {
+        if (!webApi) return;
+
+        const models = await webApi.models.getAll();
+        const updates: [ModelId, Model][] = [];
+        for (const [modelId, model] of models) {
+            const fullTags = withImpliedTags(model.tags, tagData);
+            if (fullTags.length !== model.tags.length) {
+                updates.push([modelId, { ...model, tags: fullTags }]);
+            }
+        }
+
+        await webApi.models.update(updates);
+    };
+
     return (
         <>
             <HeadCommon
@@ -66,10 +82,25 @@ export default function Page() {
 
                 {!editMode && <p className="text-red-700 dark:text-red-300">Not in edit mode!</p>}
 
+                <p>
+                    <button
+                        className="text-sm"
+                        onClick={() => {
+                            addImplications().catch((e) => console.error(e));
+                        }}
+                    >
+                        Add tag implications on models
+                    </button>
+                    <span className="pl-4 opacity-80">
+                        (This will go through all models and add tags if necessary to reflect current tag implications.)
+                    </span>
+                </p>
+
                 <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
                     {categoryOrder.map(([categoryId, category]) => {
                         const isArch = categoryId === 'architecture' || undefined;
                         const isFree = !isArch || undefined;
+                        const isSimple = category.simple || undefined;
 
                         const add = () => {
                             if (!webApi) return;
@@ -159,6 +190,10 @@ export default function Page() {
                                                     updateCategory(categoryId, { tags: newTags });
                                                 }}
                                                 onRename={isFree && ((name) => updateTag(tagId, { name }))}
+                                                onSetHidden={
+                                                    isSimple &&
+                                                    ((hidden) => updateTag(tagId, { hidden: hidden || undefined }))
+                                                }
                                             />
                                         );
                                     })}
@@ -186,6 +221,7 @@ export default function Page() {
                                         onDelete={() => deleteTag(tagId)}
                                         onDescriptionChange={(description) => updateTag(tagId, { description })}
                                         onRename={(name) => updateTag(tagId, { name })}
+                                        onSetHidden={(hidden) => updateTag(tagId, { hidden: hidden || undefined })}
                                     />
                                 );
                             })}

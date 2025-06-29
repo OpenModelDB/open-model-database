@@ -39,6 +39,15 @@ export default function Page({ modelData: staticModelData }: Props) {
                 }
             }
 
+            // give a small boost to recent models
+            for (const result of searchResults) {
+                const model = modelData.get(result.id);
+                if (model?.date) {
+                    const daysSinceUpload = (Date.now() - Date.parse(model.date)) / (1000 * 60 * 60 * 24);
+                    result.score -= daysSinceUpload / 10000;
+                }
+            }
+
             // sort by score
             searchResults.sort((a, b) => b.score - a.score);
         },

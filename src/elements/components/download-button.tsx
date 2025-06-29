@@ -4,6 +4,7 @@ import { BsChevronDown, BsFillTrashFill } from 'react-icons/bs';
 import { FiExternalLink } from 'react-icons/fi';
 import { SiDropbox, SiGithub, SiGoogledrive, SiMega, SiMicrosoftonedrive } from 'react-icons/si';
 import Logo from '../../../public/logo.svg';
+import { isSelfHosted, toDirectDownloadLink } from '../../lib/download-util';
 import { Resource } from '../../lib/schema';
 import { joinClasses } from '../../lib/util';
 import { Link } from './link';
@@ -72,9 +73,7 @@ const iconFromHost = (host: string) => {
     }
 };
 
-const isMirrorExternal = (url: string) => {
-    return !url.startsWith('https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/');
-};
+const isMirrorExternal = (url: string) => !isSelfHosted(url);
 
 const fileType: Record<Resource['type'], () => JSX.Element> = {
     onnx() {
@@ -88,6 +87,13 @@ const fileType: Record<Resource['type'], () => JSX.Element> = {
         return (
             <>
                 PyTorch <code>.pth</code> file
+            </>
+        );
+    },
+    safetensors() {
+        return (
+            <>
+                PyTorch <code>.safetensors</code> file
             </>
         );
     },
@@ -109,7 +115,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                     'inline-flex h-20 w-full cursor-pointer items-center rounded-l-lg border-0 bg-accent-600 text-center text-lg font-medium text-white transition duration-100 ease-in-out hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600',
                     !showMenu && 'rounded-r-lg'
                 )}
-                href={selectedMirror}
+                href={toDirectDownloadLink(selectedMirror)}
                 type="button"
             >
                 <div className="w-full">
@@ -127,7 +133,7 @@ export const DownloadButton = ({ resource, readonly, onChange }: DownloadButtonP
                             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
                         </svg>
                     )}
-                    Download {resource.size ? `(${(resource.size / 1024 / 1024).toFixed(1)} MB)` : ''}
+                    Download ({(resource.size / 1024 / 1024).toFixed(1)} MB)
                     <div className="text-center text-sm font-normal">
                         <span className="whitespace-nowrap px-1">{fileType[resource.type]()}</span>
                         {isExternal && (

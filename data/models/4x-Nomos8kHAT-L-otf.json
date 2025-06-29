@@ -1,0 +1,49 @@
+{
+    "name": "Nomos8kHAT-L_otf",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "faces",
+        "general-upscaler",
+        "photo",
+        "restoration"
+    ],
+    "description": "4x photo upscaler trained with otf",
+    "date": "2023-11-01",
+    "architecture": "hat",
+    "size": [
+        "HAT-L"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 165797931,
+            "sha256": "ff7413cf954fe2812391da47c8365dcff0a9437d0581fbd1a3f21d37f4c43773",
+            "urls": [
+                "https://drive.google.com/file/d/1_7cmypb7d-GGgGwmWmPg8ugJjOozXrFU/view?usp=drive_link"
+            ]
+        }
+    ],
+    "trainingIterations": 220000,
+    "trainingEpochs": 19,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 128,
+    "trainingOTF": true,
+    "dataset": "nomos8k",
+    "datasetSize": 8492,
+    "pretrainedModelG": "4x-HAT-L-SRx4-ImageNet-pretrain",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/58/f5/FG5fdJ7m_o.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/a6/0f/rltFmzxp_o.png"
+        }
+    ]
+}

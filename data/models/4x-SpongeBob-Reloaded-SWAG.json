@@ -5,9 +5,11 @@
     "tags": [
         "anime",
         "cartoon",
-        "pixel-art"
+        "compression-removal",
+        "pixel-art",
+        "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation, Pixel Art",
+    "description": "Purpose: Animation, Pixel Art",
     "date": "2020-12-11",
     "architecture": "esrgan",
     "size": [

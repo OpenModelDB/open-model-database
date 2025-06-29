@@ -1,0 +1,71 @@
+{
+    "name": "1xSkinContrast-High-SuperUltraCompact",
+    "author": "brigadeiro",
+    "license": "CC0-1.0",
+    "tags": [
+        "ai-generated",
+        "cgi",
+        "colorization",
+        "faces",
+        "game-screenshots",
+        "game-textures",
+        "photo",
+        "restoration",
+        "texture-generation",
+        "video-frame"
+    ],
+    "description": "A 1x model designed for skin contrast (although some backgrounds suffer a little modification), also try the other SkinContrast models",
+    "date": "2024-06-04",
+    "architecture": "compact",
+    "size": [
+        "24nf",
+        "8nc"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 181474,
+            "sha256": "7bbea62563203f099ea1cf60ce483ac60d22eb93d30f11be4cb1a229e3585e9e",
+            "urls": [
+                "https://www.mediafire.com/file/py46fnq12hhs5sz/1xSkinContrast-High-SuperUltraCompact.pth/file"
+            ]
+        }
+    ],
+    "pretrainedModelG": "1x-SuperUltraCompact-Pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/5YMK1m4/00.png",
+            "SR": "https://i.ibb.co/p49sgXJ/00-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/JcS42TX/02.png",
+            "SR": "https://i.ibb.co/w6vGxpF/02-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/XLkG4k3/03.png",
+            "SR": "https://i.ibb.co/zmVM1br/03-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/b3fZq8f/download-9.png",
+            "SR": "https://i.ibb.co/MZCx1Cq/download-9-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/p4wdJqV/ss-20a352a2c20dd4bfb08fa131dc4c2e763510f584-1920x1080.png",
+            "SR": "https://i.ibb.co/SwynSRD/ss-20a352a2c20dd4bfb08fa131dc4c2e763510f584-1920x1080-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.ibb.co/Vm9TBN1/ss-91c4e1cd57a692d6fe6ebbc662cd549820e42de1-1920x1080.png",
+            "SR": "https://i.ibb.co/p3jT0FZ/ss-91c4e1cd57a692d6fe6ebbc662cd549820e42de1-1920x1080-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+        }
+    ]
+}

@@ -22,10 +22,13 @@
             "size": 66958607,
             "sha256": "d30ac78343e0a7ffaa805b8ab7840fb1d6b9e6083fe1728c651e2064210e5994",
             "urls": [
-                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-Fatal-Pixels.pth"
+                "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/4x-Fatal-Pixels.pth",
+                "https://drive.proton.me/urls/ETFPG5X9J4#MjZ8znfE2v2d",
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/4x_FatalPixels_340000_G.pth"
             ]
         }
     ],
+    "trainingIterations": 340000,
     "dataset": "Anime, Manga",
     "pretrainedModelG": "4x-Fatality-MK2",
     "images": []

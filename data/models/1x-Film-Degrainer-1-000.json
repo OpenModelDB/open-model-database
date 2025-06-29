@@ -3,7 +3,8 @@
     "author": "tika",
     "license": "CC0-1.0",
     "tags": [
-        "denoise"
+        "denoise",
+        "restoration"
     ],
     "description": "Remove film grain/noise",
     "date": "2021-09-29",

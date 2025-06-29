@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { hashSha256 } from '../../lib/model-files';
 import { ModelId, Resource } from '../../lib/schema';
 
 export interface EditResourceProps {
@@ -12,27 +13,26 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
     const [size, setSize] = useState(resource?.size ?? 0);
     const [sha256, setSHA256] = useState(resource?.sha256 ?? '');
     const [urls, setURLs] = useState(resource?.urls ?? ['']);
-    const [platform, setPlatform] = useState(resource?.platform ?? 'pytorch');
+    const [fileType, setFileType] = useState<Resource['type']>(resource?.type ?? 'pth');
 
-    const platformOptions = [
-        { label: 'PyTorch', value: 'pytorch' },
-        { label: 'ONNX', value: 'onnx' },
+    const fileTypeOptions: { label: string; type: Resource['type'] }[] = [
+        { label: 'PyTorch (.pth)', type: 'pth' },
+        { label: 'PyTorch (.safetensors)', type: 'safetensors' },
+        { label: 'ONNX', type: 'onnx' },
     ];
 
     function getInfoFromFile(): void {
         const input = document.createElement('input');
         input.type = 'file';
-        input.accept = '.pth,.onnx';
+        input.accept = '.pth,.safetensors,.onnx';
         input.onchange = () => {
             const file = input.files?.[0];
             if (file) {
                 setSize(file.size);
 
                 const ext = file.name.split('.').pop()?.toLowerCase();
-                if (ext === 'pth') {
-                    setPlatform('pytorch');
-                } else if (ext === 'onnx') {
-                    setPlatform('onnx');
+                if (ext === 'pth' || ext === 'safetensors' || ext === 'onnx') {
+                    setFileType(ext);
                 }
 
                 file.arrayBuffer()
@@ -48,13 +48,9 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                             body: bytes,
                         }).catch((error) => console.error(error));
 
-                        return crypto.subtle.digest('SHA-256', bytes);
+                        return hashSha256(bytes);
                     })
-                    .then((sha256) => {
-                        const hashArray = Array.from(new Uint8Array(sha256));
-                        const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
-                        setSHA256(hashHex.toLowerCase());
-                    })
+                    .then((sha256) => setSHA256(sha256))
                     .catch((error) => console.error(error));
             }
         };
@@ -105,18 +101,18 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                 />
             </div>
             <div className="flex flex-col">
-                <label htmlFor="resource-platform">
-                    Platform <a className="text-red-500">*</a>
+                <label htmlFor="resource-type">
+                    File type <a className="text-red-500">*</a>
                 </label>
                 <select
-                    id="resource-platform"
-                    value={platform}
-                    onChange={(e) => setPlatform(e.target.value as 'pytorch' | 'onnx')}
+                    id="resource-type"
+                    value={fileType}
+                    onChange={(e) => setFileType(e.target.value as Resource['type'])}
                 >
-                    {platformOptions.map((option) => (
+                    {fileTypeOptions.map((option) => (
                         <option
-                            key={option.value}
-                            value={option.value}
+                            key={option.type}
+                            value={option.type}
                         >
                             {option.label}
                         </option>
@@ -131,22 +127,30 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                 disabled={!urls.length || !sha256 || !size}
                 type="submit"
                 onClick={() => {
-                    if (platform === 'pytorch') {
+                    if (fileType === 'pth') {
                         onChange({
                             urls,
                             sha256,
                             size,
-                            platform,
-                            type: 'pth',
+                            platform: 'pytorch',
+                            type: fileType,
+                        });
+                    } else if (fileType === 'safetensors') {
+                        onChange({
+                            urls,
+                            sha256,
+                            size,
+                            platform: 'pytorch',
+                            type: fileType,
                         });
                         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-                    } else if (platform === 'onnx') {
+                    } else if (fileType === 'onnx') {
                         onChange({
                             urls,
                             sha256,
                             size,
-                            platform,
-                            type: 'onnx',
+                            platform: 'onnx',
+                            type: fileType,
                         });
                     }
                 }}

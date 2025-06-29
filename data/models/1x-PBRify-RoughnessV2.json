@@ -1,0 +1,39 @@
+{
+    "name": "1x-PBRify_RoughnessV2.pth",
+    "author": "kim2091",
+    "license": "CC0-1.0",
+    "tags": [
+        "game-textures",
+        "texture-generation"
+    ],
+    "description": "This is part of a larger model set, PBRify_Remix. PBRify_Remix is an easy way to upscale and generate PBR textures using existing low quality textures. The dataset consists of ethically sourced textures from websites like ambientCG and Polyhaven, which sets it apart from most other models.\n\nIt's intended for use with RTX Remix (hence the name) but it'll work for other things as well.",
+    "date": "2024-04-11",
+    "architecture": "span",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8938652,
+            "sha256": "7003c39041af64cdb77d5120bd560a2878538fbb14a07657d8fd12aac5773679",
+            "urls": [
+                "https://github.com/Kim2091/PBRify_Remix/raw/main/Models/1x-PBRify_RoughnessV2.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "ambientCG + UltraSharpV2",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/IhgNOy39.png",
+            "SR": "https://i.slow.pics/Dq2D30Lg.png"
+        }
+    ]
+}

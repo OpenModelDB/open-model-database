@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Animation - Quantized\n\nA model I trained to do both de-quantizing as well as upscaling. The results are pretty blurry but it works decently for what it is.",
+    "description": "Purpose: Animation - Quantized\n\nA model I trained to do both de-quantizing as well as upscaling. The results are pretty blurry but it works decently for what it is.",
     "date": "2019-11-08",
     "architecture": "esrgan",
     "size": [

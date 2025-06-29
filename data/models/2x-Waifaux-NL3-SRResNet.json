@@ -5,9 +5,12 @@
     "tags": [
         "anime",
         "cartoon",
-        "denoise"
+        "compression-removal",
+        "denoise",
+        "jpeg",
+        "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: \n\nEmulating Waifu2x at Noise Level 3 NOTE: You can't use this with regular esrgan forks or the bot, it has to be run through basicsr",
+    "description": "Purpose: \n\nEmulating Waifu2x at Noise Level 3 NOTE: You can't use this with regular esrgan forks or the bot, it has to be run through basicsr",
     "date": "2021-02-25",
     "architecture": "sr-res-net",
     "size": null,

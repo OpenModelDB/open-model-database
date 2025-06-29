@@ -3,6 +3,7 @@
     "author": "bunzero",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "jpeg",
         "manga",
         "restoration"
@@ -36,8 +37,8 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108220899737473035/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108220900060438610/SR.png"
+            "LR": "https://images2.imgbox.com/84/0f/q7W72gn5_o.png",
+            "SR": "https://images2.imgbox.com/28/04/wus0QURa_o.png"
         }
     ]
 }

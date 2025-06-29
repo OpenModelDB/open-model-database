@@ -1,0 +1,48 @@
+{
+    "name": "PurePhoto span",
+    "author": "asterixcool",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "Purpose: upscaling model for amateur to professional photos (regular)\n\nSkilled in working with cats, hair, parties, and creating clear images. Also proficient in resizing photos and enlarging large, sharp images. Can effectively improve images from small sizes as well (300px at smallest on one side, depending on the subject). Experienced in experimenting with techniques like upscaling with this model twice and then reducing it by 50% to enhance details, especially in features like hair or animals.\n\nOriginal image, second is upscale with the model once, and the last is upscaled with model twice.",
+    "date": "2024-02-08",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 9016490,
+            "sha256": "c689eec59771ed3eaffc10eea933c44fdb9131f83251c51c5bab4cae7c4d3bf2",
+            "urls": [
+                "https://github.com/starinspace/StarinspaceUpscale/releases/download/Models/4xPurePhoto-span.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 488000,
+    "trainingBatchSize": 4,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "6500 handpicked photos",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Upscaled",
+            "LR": "https://imgsli.com/i/87bb7a53-8fcb-4b16-9aa0-21c8fbe5c745.jpg",
+            "SR": "https://imgsli.com/i/a4559f68-bd72-4e84-a51d-16e372c7ef2c.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Upscaled Twice",
+            "LR": "https://imgsli.com/i/87bb7a53-8fcb-4b16-9aa0-21c8fbe5c745.jpg",
+            "SR": "https://imgsli.com/i/170aada0-a042-48b5-883b-edcc5a7d9344.jpg"
+        }
+    ]
+}

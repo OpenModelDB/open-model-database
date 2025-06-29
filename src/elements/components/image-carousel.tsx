@@ -127,7 +127,7 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                                         <img
                                             alt={image.caption || 'Thumbnail'}
                                             className="m-auto h-auto max-h-full w-auto max-w-full"
-                                            src={image.thumbnail || (image.type === 'paired' ? image.SR : image.url)}
+                                            src={image.thumbnail || (image.type === 'paired' ? image.LR : image.url)}
                                             title={image.caption}
                                         />
                                     </div>

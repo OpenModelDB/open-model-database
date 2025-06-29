@@ -4,9 +4,13 @@
     "license": "WTFPL",
     "tags": [
         "anime",
-        "cartoon"
+        "cartoon",
+        "compression-removal",
+        "dedither",
+        "jpeg",
+        "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Art/Anime\n\nHighly flexible 2D Art upscaling",
+    "description": "Purpose: Art/Anime\n\nHighly flexible 2D Art upscaling",
     "date": "2020-10-08",
     "architecture": "esrgan",
     "size": [
@@ -28,5 +32,30 @@
         }
     ],
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Pixelated",
+            "LR": "https://images2.imgbox.com/81/cc/vKXAeMTF_o.png",
+            "SR": "https://images2.imgbox.com/2b/3d/QhztiFA0_o.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Dither",
+            "LR": "https://images2.imgbox.com/76/ab/eKBuQmXP_o.png",
+            "SR": "https://images2.imgbox.com/cd/ff/BhyGF2Dp_o.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Dither",
+            "LR": "https://images2.imgbox.com/ee/44/laUihKeZ_o.png",
+            "SR": "https://images2.imgbox.com/8b/5c/dRyQbd55_o.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "JPEG",
+            "LR": "https://images2.imgbox.com/aa/d2/ouZNGja2_o.png",
+            "SR": "https://images2.imgbox.com/c6/de/AGBABP8O_o.jpg"
+        }
+    ]
 }

@@ -3,7 +3,8 @@
     "author": "mutin-choler",
     "license": "WTFPL",
     "tags": [
-        "dedither"
+        "dedither",
+        "restoration"
     ],
     "description": "https://imgsli.com/Mzg0MTk/1/2",
     "date": "2021-01-23",
@@ -22,6 +23,7 @@
             "size": 66665765,
             "sha256": "55887681f7bd0967ac52b483b7b6aa63309aae78fefc42853843cf21ad5f709a",
             "urls": [
+                "https://drive.google.com/file/d/1GXWe8ZJIx3UQ8Io9Lr2ybcpn0tUcukgN/view?usp=drive_link",
                 "https://drive.google.com/drive/folders/1XKREcpHnaYz_dcmkMPDbyETcXzDcQsR2?usp=sharing"
             ]
         }

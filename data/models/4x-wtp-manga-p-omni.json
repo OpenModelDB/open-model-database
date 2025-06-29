@@ -1,0 +1,50 @@
+{
+    "name": "wtp manga p omni",
+    "author": "umzi-x-dead",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "manga"
+    ],
+    "description": "Purpose: pre-workout to speed up your workouts\n\nI see that many people are trying manga scale models on the Omni, and to speed up the process I decided to do preliminary training, the only loss is the resize: (“lanczos”, “bicubic”, “bilenear”, “HAMMING”)\n\nOriginal link: https://drive.google.com/drive/folders/1ln1ZneTvqPbvi8nsJwzjMoYSDQ_DcHBS?usp=sharing",
+    "date": "2024-01-31",
+    "architecture": "omnisr",
+    "size": [
+        "64nf",
+        "w16",
+        "5nr"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3477242,
+            "sha256": "a437719e9c13d24ef4f0d3655befa3f1034656bf3923b380f46b25a86fb41b3e",
+            "urls": [
+                "https://drive.google.com/file/d/1sLBYfOJD0_-ZyJVqBkJSPkd_E1uVGUCX/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 304000,
+    "trainingEpochs": 9,
+    "trainingBatchSize": 9,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "1 bit manga(sintetik)",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "LR vs Upscale",
+            "LR": "https://i.slow.pics/Y1Oa8zT1.png",
+            "SR": "https://i.slow.pics/6Ku2aFcO.png"
+        },
+        {
+            "type": "paired",
+            "caption": "Upscale vs HR",
+            "LR": "https://i.slow.pics/6Ku2aFcO.png",
+            "SR": "https://i.slow.pics/oiTHhXay.png"
+        }
+    ]
+}

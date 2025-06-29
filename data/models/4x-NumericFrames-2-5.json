@@ -1,0 +1,33 @@
+{
+    "name": "NumericFrames 2.5",
+    "author": "muf",
+    "license": "WTFPL",
+    "tags": [
+        "anime"
+    ],
+    "description": "Upscaling of Numeric Animation from SD to HD with high texture retention.\n\nBig leap from 2.0, especially as much as texture retention is concerned. But also deals much better with distant characters/shots.",
+    "date": "2024-07-20",
+    "architecture": "esrgan",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "http://mufunyo.net/esrgan/4x_NumericFrames_2.5.pth"
+            ],
+            "sha256": "f1bbc3831cb0880dbc98eff03f818eba9327a72cb21f51274bf803abf8119b67",
+            "size": 67025055,
+            "platform": "pytorch",
+            "type": "pth"
+        }
+    ],
+    "images": [],
+    "dataset": "SD Numeric cartoon and anime frames and counterpart HD versions",
+    "datasetSize": 40000,
+    "trainingIterations": 920000,
+    "trainingBatchSize": 38,
+    "trainingHRSize": 128,
+    "trainingOTF": false
+}

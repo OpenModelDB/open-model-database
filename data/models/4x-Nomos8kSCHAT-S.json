@@ -4,8 +4,11 @@
     "license": "CC-BY-4.0",
     "tags": [
         "anime",
+        "compression-removal",
         "general-upscaler",
-        "photo"
+        "jpeg",
+        "photo",
+        "restoration"
     ],
     "description": "4x photo upscaler with otf jpg compression and blur, trained on musl's Nomos8k_sfw dataset for realisic sr. \nHAT-S version/model. \nFp16 Onnx (56.5MB) and pth (77.3MB) file download provided.",
     "date": "2023-06-30",

@@ -1,0 +1,71 @@
+{
+    "name": "2xLiveActionV1_SPAN",
+    "author": "jcj83429",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "compression-removal",
+        "deblur",
+        "dehalo",
+        "general-upscaler",
+        "jpeg",
+        "photo",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "SPAN model for live action film and digital video. The main goal is to fix/reduce common video quality problems while maintaining fidelity. I tried the existing video-focused models and they all denoise or cause colour shifts so I decided to train my own.\n\nThe model is trained with compression (JPEG, MPEG-4 ASP, H264, VP9, H265), chroma subsampling, blurriness from multiple scaling, uneven horizontal and vertical resolution, oversharpening halos, bad deinterlacing jaggies, and onscreen text. It is not trained to remove noise at all so it preserves details in the source well. To prevent colour/brightness shifts, I used consistency loss in neosr. I had to modify consistency loss to use a stronger blur so it doesn't interfere with the halo removal.\n\nLimitations:\n1. The model has limited ability to see details through heavy grain, but light to moderate grain is fine.\n2. The model still does not handle bad deinterlacing perfectly, especially if the source is vertically resized. Fixing bad deinterlacing is not the main goal so it is what it is. Sources that are line-doubled throughout should be descaled back to half height first for best results.\n3. The model sometimes oversharpens a little. This is probably because the training data has some oversharpened images.\n4. This model generally cannot handle VHS degradation.\n\nMore comparisons: https://slow.pics/c/DtDN7gaq\n\nThe training config and image degradation scripts used to create training data can be found in https://github.com/jcj83429/upscaling/tree/9332e7d5b07747ff347e5abdc43f8144364de9f7/2xLiveActionV1_SPAN",
+    "date": "2025-05-19",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8947821,
+            "sha256": "8b166c75831ea7f694d9058ee9c8df8148af8cc1d2b57e69e6581b15cab572f7",
+            "urls": [
+                "https://raw.githubusercontent.com/jcj83429/upscaling/f73a3a02874360ec6ced18f8bdd8e43b5d7bba57/2xLiveActionV1_SPAN/2xLiveActionV1_SPAN_490000.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1654748,
+            "sha256": "bfa72f3c6347076aed140d0836cee30c27ea434c047beeaf9466469483836ecc",
+            "urls": [
+                "https://github.com/jcj83429/upscaling/raw/f73a3a02874360ec6ced18f8bdd8e43b5d7bba57/2xLiveActionV1_SPAN/2xLiveActionV1_SPAN_490000.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 490000,
+    "trainingEpochs": 271,
+    "trainingBatchSize": 20,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "nomosv2",
+    "datasetSize": 36000,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "xvid bad quality",
+            "LR": "https://i.slow.pics/MqRdbeSL.webp",
+            "SR": "https://i.slow.pics/k1sDOhPk.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "720p slightly oversharpened",
+            "LR": "https://i.slow.pics/TCCKrYSs.webp",
+            "SR": "https://i.slow.pics/BIRBcKK9.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "1080p noisy and soft",
+            "LR": "https://i.slow.pics/GJhVMCUy.webp",
+            "SR": "https://i.slow.pics/h9VzPczR.webp"
+        }
+    ]
+}

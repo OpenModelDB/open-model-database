@@ -1,0 +1,72 @@
+{
+    "name": "4xNomosWebPhoto_esrgan",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "I simply wanted to release an ESRGAN model just because I had not trained one for quite a while and just wanted to revisit this older arch for the current series.\n\n4xNomosWebPhoto_esrgan\n\nScale: 4  \nArchitecture: ESRGAN  \nArchitecture Option: esrgan  \n[Github Release Link](https://github.com/Phhofm/models/releases/tag/4xNomosWebPhoto_esrgan)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Restoration  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 16.06.2024  \n\nDataset: Nomos-v2  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: RealESRGAN_x4plus  \nIterations: 210'000  \nBatch Size: 12  \nGT Size: 256  \n\nDescription:\n\n4x ESRGAN model for photography, trained with realistic noise, lens blur, jpg and webp re-compression.  \nESRGAN version of 4xNomosWebPhoto_RealPLKSR, trained on the same dataset and in a similiar way.  \nFor more information look into the 4xNomosWebPhoto_RealPLKSR release, and the pdf file in its attachments.",
+    "date": "2024-06-16",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 33688212,
+            "sha256": "131bb044af9fff0c748e460df1dce5aff018e2cd44340bbc6d97e683cdc0d491",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomosWebPhoto_esrgan/4xNomosWebPhoto_esrgan.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 33467822,
+            "sha256": "2f49c3065db8aaeb64adb08e8879001fe2f1460df5655499707efedad8a3d556",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomosWebPhoto_esrgan/4xNomosWebPhoto_esrgan.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 67003044,
+            "sha256": "e29f473727ee0e32416d3a2d2642568e0159e2608d67236193772fced8696121",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomosWebPhoto_esrgan/4xNomosWebPhoto_esrgan_fp32_opset17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 210000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "Nomos-v2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-realesrgan-x4plus",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Q20xKISa.png",
+            "SR": "https://i.slow.pics/JFKE6GKT.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/fY0zlrme.png",
+            "SR": "https://i.slow.pics/5yq29FLI.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/ORvP5MW6.png",
+            "SR": "https://i.slow.pics/fwrZBVdt.png"
+        }
+    ]
+}

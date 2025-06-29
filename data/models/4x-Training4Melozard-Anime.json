@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime\n\nPretrained model: RRDB_ESRGAN_x4_old_arch.pth",
+    "description": "Pretrained model: RRDB_ESRGAN_x4_old_arch.pth",
     "date": "2021-03-17",
     "architecture": "esrgan",
     "size": [

@@ -2,8 +2,11 @@
     "name": "Minepack",
     "author": "blackscout",
     "license": "CC-BY-NC-SA-4.0",
-    "tags": [],
-    "description": "Category: Game Screenshots\nPurpose: Upscaling pack.png.pth\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
+    "tags": [
+        "game-screenshots",
+        "restoration"
+    ],
+    "description": "Purpose: Upscaling pack.png\n\nUpscales Minecraft screenshots by 4x. May suffer from haloing, weird patterns on blocks and JPEG-like artifacts.",
     "date": "2020-01-26",
     "architecture": "esrgan",
     "size": [
@@ -31,5 +34,12 @@
     "dataset": "Custom -> `https://drive.google.com/file/d/1N5BQgLJ59zNRwiPbf4nRsLLBT2WoVwaN/view` + `https://mega.nz/#!lpMHRAqS!bHN9Ioj7l2Gfvm1HOxTR8rqcGNrrx3Ai-1-bj7YejuU` (crowdsourced, posted in #post-your-screenshot-zips-here in SalC1's Discord Server)",
     "datasetSize": 53390,
     "pretrainedModelG": "4x-ESRGAN",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "caption": "pack.png",
+            "LR": "https://images2.imgbox.com/4e/cd/as8bIO38_o.png",
+            "SR": "https://images2.imgbox.com/f7/09/WmmhhmS0_o.png"
+        }
+    ]
 }

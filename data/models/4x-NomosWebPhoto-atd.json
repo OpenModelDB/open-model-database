@@ -1,0 +1,69 @@
+{
+    "name": "4xNomosWebPhoto_atd",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "photo",
+        "restoration"
+    ],
+    "description": "4xNomosWebPhoto_atd\n\nScale: 4  \nArchitecture: [ATD](https://github.com/LabShuHangGU/Adaptive-Token-Dictionary)  \nArchitecture Option: atd  \n[Github Release Link](https://github.com/Phhofm/models/releases/tag/4xNomosWebPhoto_atd)  \n\n\nAuthor: Philip Hofmann   \nLicense: CC-BY-0.4  \nPurpose: Restoration  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 07.06.2024  \n\nDataset: Nomos-v2  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: 003_ATD_SRx4_finetune.pth  \nIterations: 460'000  \nBatch Size: 6, 2  \nGT Size: 128, 192  \n\nDescription:  \n\n4x ATD model for photography, trained with realistic noise, lens blur, jpg and webp re-compression.   \nATD version of [4xNomosWebPhoto_RealPLKSR](https://github.com/Phhofm/models/releases/tag/4xNomosWebPhoto_RealPLKSR), trained on the same dataset and in the same way. For more information look into the [4xNomosWebPhoto_RealPLKSR](https://github.com/Phhofm/models/releases/tag/4xNomosWebPhoto_RealPLKSR) release, and the pdf file in its attachments.\n\nShowcase:\n[Slow Pics 18 Examples](https://slow.pics/s/GkS39XYi)",
+    "date": "2024-06-07",
+    "architecture": "atd",
+    "size": [
+        "210dim",
+        "16w",
+        "256cat"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 81959074,
+            "sha256": "f1af8e13824e44dfaefd9954e4dd9a5abe916f40971ed323f63727735aa0983c",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomosWebPhoto_atd/4xNomosWebPhoto_atd.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 81689540,
+            "sha256": "ca0e7a3ecbb042dad1695d4dd3b73cf355af6db822984b61ac363e42fac7dff1",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomosWebPhoto_atd/4xNomosWebPhoto_atd.safetensors"
+            ]
+        }
+    ],
+    "trainingIterations": 460000,
+    "trainingBatchSize": 2,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "Nomos-v2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-003-ATD-SRx4-finetune",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/cJW6aPS0.png",
+            "SR": "https://i.slow.pics/CLWwbc3K.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/OuZiJlE6.png",
+            "SR": "https://i.slow.pics/11QRFEdo.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Nls9WLwm.png",
+            "SR": "https://i.slow.pics/vbYgeTL8.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/U06F3Fm2.png",
+            "SR": "https://i.slow.pics/RXBNdhut.png"
+        }
+    ]
+}

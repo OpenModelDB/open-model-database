@@ -1,0 +1,39 @@
+{
+    "name": "dctlsa_pretrained",
+    "author": "musl",
+    "license": "CC0-1.0",
+    "tags": [
+        "pretrained"
+    ],
+    "description": "Model trained only on downscale degradation (bicubic, bilinear, nearest, lanczos and mitchell). Can be used to start new DCTLSA models.",
+    "date": "2023-11-27",
+    "architecture": "dctlsa",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3776492,
+            "sha256": "46e99c066e4367a320ca4b33f302e28544631ae9e9a82d40f53dda22ef5b7d6b",
+            "urls": [
+                "https://drive.google.com/file/d/1EQ4rcOleDPSIACSdXKbZSlehyJM5sDKh/view?usp=drive_link",
+                "https://drive.google.com/drive/folders/1pGA25CgJeCpqZnFP_pwYY4669dGVkE-X?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "dataset": "nomos_uni",
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/e8/a3/305LPHGh_o.png"
+        },
+        {
+            "type": "standalone",
+            "url": "https://images2.imgbox.com/3a/fe/Jly5NKED_o.png"
+        }
+    ]
+}

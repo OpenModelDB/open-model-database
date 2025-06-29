@@ -5,9 +5,12 @@
     "tags": [
         "anime",
         "cartoon",
-        "denoise"
+        "compression-removal",
+        "denoise",
+        "jpeg",
+        "restoration"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: \n\nTrained this model to see how it would work trying to essentially get the same results as Waifu2x but with ESRGAN",
+    "description": "Purpose: \n\nTrained this model to see how it would work trying to essentially get the same results as Waifu2x but with ESRGAN",
     "date": "2021-02-23",
     "architecture": "esrgan",
     "size": [

@@ -6,7 +6,7 @@
         "anime",
         "cartoon"
     ],
-    "description": "Category: Anime and Cartoons\nPurpose: Anime / Visual Novel Art\n\nThird iteration of my eroge upscaling model. Discriminator: https://drive.google.com/file/d/18q-4ktFNZ8tPjkszuoG6kVBhCjKl8iFa/view?usp=sharing",
+    "description": "Purpose: Anime / Visual Novel Art\n\nThird iteration of my eroge upscaling model. Discriminator: https://drive.google.com/file/d/18q-4ktFNZ8tPjkszuoG6kVBhCjKl8iFa/view?usp=sharing",
     "date": "2022-12-17",
     "architecture": "esrgan",
     "size": [

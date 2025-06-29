@@ -1,0 +1,99 @@
+{
+    "name": "4xNomos2_otf_esrgan",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "compression-removal",
+        "jpeg",
+        "photo",
+        "restoration"
+    ],
+    "description": "4xNomos2_otf_esrgan\n\nScale: 4  \nArchitecture: ESRGAN  \nArchitecture Option: esrgan  \n[Github Release Link](https://github.com/Phhofm/models/releases/tag/4xNomos2_otf_esrgan)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Restoration  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 22.06.2024  \n\nDataset: Nomos-v2  \nDataset Size: 6000  \nOTF (on the fly augmentations): Yes  \nPretrained Model: RealESRGAN_x4plus  \nIterations: 246'000  \nBatch Size: 8  \nGT Size: 256  \n\nDescription:  \n\n4x ESRGAN model for photography, trained using the Real-ESRGAN otf degradation pipeline.  \n\nShowcase:\n[Slow Pics 8 Examples](https://slow.pics/s/Y5wdyTPh?canvas-mode=fit-width&image-fit=contain)",
+    "date": "2024-06-22",
+    "architecture": "esrgan",
+    "size": [
+        "64nf",
+        "23nb"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 33686030,
+            "sha256": "6c16d8b22b8468e0c0b766f1569e10a77d38fc7a1a929b804806dce84ddb85d3",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_otf_esrgan/4xNomos2_otf_esrgan.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 33467822,
+            "sha256": "12db878907ed3a52ee97de552dfc0ce7ffd38559ca9760a7803cb2d06a737055",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_otf_esrgan/4xNomos2_otf_esrgan.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 67003044,
+            "sha256": "21905712a7963b95bc7e6e0b506e2fc6f353742fa7bc3ccdb81c0ad47744cc8b",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_otf_esrgan/4xNomos2_otf_esrgan_fp32_opset17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 246000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 256,
+    "trainingOTF": true,
+    "dataset": "Nomos-v2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-realesrgan-x4plus",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/s0aTG2Vz.png",
+            "SR": "https://i.slow.pics/TOL43AJ8.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/556Unq6x.png",
+            "SR": "https://i.slow.pics/hF8hT44R.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/lP3gidyo.png",
+            "SR": "https://i.slow.pics/nvQUv1Ah.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/fBt2h5Lh.png",
+            "SR": "https://i.slow.pics/5TEHOFxf.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/Xw0C7wiT.png",
+            "SR": "https://i.slow.pics/X4V4vmWk.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/4XjROU2k.png",
+            "SR": "https://i.slow.pics/EMnCftls.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/LhqBaoQa.png",
+            "SR": "https://i.slow.pics/6qr5sQZt.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/5YsUu1mQ.png",
+            "SR": "https://i.slow.pics/gkbocFPC.png"
+        }
+    ]
+}

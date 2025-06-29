@@ -1,0 +1,70 @@
+{
+    "name": "4xNomos2_hq_atd",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "general-upscaler",
+        "photo"
+    ],
+    "description": "[Link to Github Release](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_atd)\n\n4xNomos2_hq_atd  \nScale: 4  \nArchitecture: [ATD](https://github.com/LabShuHangGU/Adaptive-Token-Dictionary)  \nArchitecture Option: [atd](https://github.com/muslll/neosr/blob/dc4e3742132bae2c2aa8e8d16de3a9fcec6b1a74/neosr/archs/atd_arch.py#L891)  \n\nAuthor: Philip Hofmann  \nLicense: CC-BY-0.4  \nPurpose: Upscaler  \nSubject: Photography  \nInput Type: Images  \nRelease Date: 05.09.2024  \n\nDataset: [nomosv2](https://github.com/muslll/neosr/?tab=readme-ov-file#-datasets)  \nDataset Size: 6000  \nOTF (on the fly augmentations): No  \nPretrained Model: 003_ATD_SRx4_finetune  \nIterations: 180'000  \nBatch Size: 2  \nPatch Size: 48  \nNorm: true  \n\nDescription:   \nAn atd 4x upscaling model, similiar to the [4xNomos2_hq_dat2](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_dat2) or [4xNomos2_hq_mosr](https://github.com/Phhofm/models/releases/tag/4xNomos2_hq_mosr) models, trained and for usage on non-degraded input to give good quality output.",
+    "date": "2024-09-05",
+    "architecture": "atd",
+    "size": null,
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 81890530,
+            "sha256": "06e007a70af59c4e3acfbfbd5dca4ed20dfaeadd9857ffca63c8c807a8c40283",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_atd/4xNomos2_hq_atd.pth"
+            ]
+        },
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 81689540,
+            "sha256": "0fc5d114b19d1fe3c444e27e87a742f3584fb9bef412339f0c71474e93df39a6",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xNomos2_hq_atd/4xNomos2_hq_atd.safetensors"
+            ]
+        }
+    ],
+    "trainingIterations": 180000,
+    "trainingBatchSize": 2,
+    "trainingHRSize": 192,
+    "trainingOTF": false,
+    "dataset": "nomosv2",
+    "datasetSize": 6000,
+    "pretrainedModelG": "4x-003-ATD-SRx4-finetune",
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/v0AY9pMK.webp",
+            "SR": "https://i.slow.pics/IiC6UJxW.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/7AtECrMv.webp",
+            "SR": "https://i.slow.pics/ms06gbzQ.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/RHQ89ltM.webp",
+            "SR": "https://i.slow.pics/Xjgl2Lf0.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/elPUwwzO.webp",
+            "SR": "https://i.slow.pics/ubFVzUbe.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/tUS50pl7.webp",
+            "SR": "https://i.slow.pics/tatSlTZZ.webp"
+        }
+    ]
+}

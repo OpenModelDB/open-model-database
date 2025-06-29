@@ -1,0 +1,61 @@
+{
+    "name": "GameUpV2-TSCUNet-Small",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anti-aliasing",
+        "compression-removal",
+        "deblur",
+        "game-screenshots",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "Purpose: Compression Removal, General Upscaler, Restoration\n\nThis is my first video model! It's aimed at restoring compressed video game footage, like what you'd get from Twitch or Youtube. I've attached an example below.\n\nIt's trained on TSCUNet using lossless game recordings, and degraded with my [video destroyer](https://github.com/Kim2091/video-destroyer). The degradations include resizing, and H264, H265, and AV1 compression. \n\n__IMPORTANT:__ You cannot use this model with chaiNNer or any other tool. You need to use [**this**](https://github.com/Kim2091/SCUNet). \nYou just run `test_vsr.py` after installing the requirements. Use the example command from the readme. \nYou can also use the ONNX version of the model with `test_onnx.py`\n\nIf you want to train a TSCUNet model yourself, use [traiNNer-redux](https://github.com/the-database/traiNNer-redux). I've included scripts in the [SCUNet repository](https://github.com/Kim2091/SCUNet) to convert your own models to ONNX if desired.\n\n**Showcase:** Watch in a Chrome based browser: https://video.yellowmouse.workers.dev/?key=Fvxw482Nsv8=\n\n![Animation](https://github.com/user-attachments/assets/b70e0d87-1ba1-4c35-9af2-c2a18c5ad6e2)",
+    "date": "2025-03-28",
+    "architecture": "tscunet",
+    "size": [
+        "Small"
+    ],
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 83614765,
+            "sha256": "58ad3ccdd62d76f9914a00e3c9fe4baa0972fd5399426aefdf01145add2f0c10",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-GameUpV2_TSCUNet/2x-GameUpV2_TSCUNet_Small.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 43760071,
+            "sha256": "e2377e0179452a66c771489039784c8e32c3820b752fc1e6af06eb6bb2b3c3f3",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-GameUpV2_TSCUNet/2x-GameUpV2_TSCUNet_Small_op17_fp16.onnx"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 84950818,
+            "sha256": "66679853ef5fb6276cb9327760e7728a7cf123a84338074d9ff84c4233fb15ac",
+            "urls": [
+                "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-GameUpV2_TSCUNet/2x-GameUpV2_TSCUNet_Small_op17_fp32.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 160000,
+    "trainingBatchSize": 8,
+    "dataset": "Custom game dataset",
+    "datasetSize": 11150,
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/S9slXDGd.png"
+        }
+    ]
+}

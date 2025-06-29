@@ -1,0 +1,58 @@
+{
+    "name": "4xpix_span_pretrain",
+    "author": "helaman",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "photo",
+        "pretrained"
+    ],
+    "description": "[Github Release Link](https://github.com/Phhofm/models/releases/4xSPAN_pretrains)\n\n[Neosr](https://github.com/muslll/neosr)'s latest update from yesterday included a [new adaptation of the multi-scale ssim loss](https://github.com/muslll/neosr/wiki/Losses#mssim_opt). \nThis was an experiment to test out the difference between making a SPAN pretrain with pixel loss with L1 criteria (as often used in research) vs mssim loss as its only loss. \nModels are provided so they can be used for tests or also used as a pretrain for another SPAN model.\n\n---\n\n## 4xpix_span_pretrain\n\nScale: 4  \nArchitecture: SPAN  \n\nAuthor: Philip Hofmann    \nLicense: CC-BY-4.0  \nPurpose: Pretrain  \nSubject: Realistic, Anime  \nDate: 10.04.2024  \n\nDataset: [nomos_uni](https://github.com/muslll/neosr)  \nDataset Size: 2989   \nOTF (on the fly augmentations): No  \nPretrained Model: None  \nIterations: 80'000  \nBatch Size: 12  \nGT Size: 128  \n\nDescription: 4x SPAN pretrain trained on pixel loss with L1 criteria (as often used in research) on downsampled nomos_uni dataset using kim's [dataset destroyer](https://github.com/Kim2091/helpful-scripts/tree/main/Dataset%20Destroyer) with down_up,linear,cubic_mitchell,lanczos,gauss,box (while down_up used the same and with range = 0.15,1.5). \nThe new augmentations except CutBlur have also been used (since CutBlur is meant to be applied to real-world SR and may cause undesired effects if applied to bicubic-only). \nConfig and training log provided for more details.\n \nShowcase: \n[7 Slowpics Examples](https://slow.pics/c/zyilXhKU)",
+    "date": "2024-04-10",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 9016540,
+            "sha256": "724d6a9f675c008ff1a85e5af4938e756d5add4ba32f8af62f56cee45dd3927f",
+            "urls": [
+                "https://github.com/Phhofm/models/releases/download/4xSPAN_pretrains/4xpix_span_pretrain.pth"
+            ]
+        }
+    ],
+    "trainingIterations": 90000,
+    "trainingBatchSize": 12,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "nomos_uni",
+    "datasetSize": 2989,
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/sGGs6ZXt.png",
+            "SR": "https://i.slow.pics/TQDyAXXm.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/q1f4XANK.png",
+            "SR": "https://i.slow.pics/qxrex6pm.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/UxJ7LBvN.png",
+            "SR": "https://i.slow.pics/fMHjJpUM.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/flpV6uxG.png",
+            "SR": "https://i.slow.pics/vQwAR3aH.png"
+        }
+    ]
+}

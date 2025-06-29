@@ -3,6 +3,7 @@
     "author": "twittman",
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
+        "compression-removal",
         "jpeg",
         "restoration"
     ],
@@ -24,11 +25,29 @@
             "sha256": "01b61695d20543009a0c8bf17ee80d31f6d8e4e237134ecded3fd9266dbe3750",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-SaiyaJin-DeJpeg.pth",
-                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Saiyajin_DeJPEG_300000_G.pth"
+                "https://f002.backblazeb2.com/file/ESRGAN/_RELEASE/1x_Saiyajin_DeJPEG_300000_G.pth",
+                "https://drive.proton.me/urls/0FPHSEAMEC#horIENiYjx6w"
             ]
         }
     ],
+    "trainingIterations": 300000,
     "dataset": "Anime, real life, manga, generated",
     "pretrainedModelG": "1x-DeJpeg-Fatality-PlusULTRA",
-    "images": []
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/ee/11/rXrR4Qhz_o.jpeg",
+            "SR": "https://images2.imgbox.com/23/f3/VaV44P9f_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/8f/8d/Tp32sdgt_o.jpg",
+            "SR": "https://images2.imgbox.com/53/da/f3jHdJ3N_o.png"
+        },
+        {
+            "type": "paired",
+            "LR": "https://images2.imgbox.com/43/42/1W6PduYH_o.jpg",
+            "SR": "https://images2.imgbox.com/8a/89/qV4Xr1hM_o.png"
+        }
+    ]
 }

@@ -5,7 +5,8 @@
     "tags": [
         "deblur",
         "faces",
-        "game-textures"
+        "game-textures",
+        "restoration"
     ],
     "description": "Category: Skin\nPurpose: Skin Upscaling\n\nAdds plausible high frequency detail and removes subtle blur. This is an early unfinished attempt at a x1 Lite model designed specifically for enhancing detail on skin diffuse textures of 3d characters. Even in its current state it works quite well.\n\nBest suited for uncompressed or cleaned textures - otherwise it may just enhance any existing compression artefacts too. The training set included faces, body parts, eyes and hair in a variety of skin types and tones so it should work well on most related diffuse textures.\n\nHowever it's not just limited to skin, many other images and textures can be enhanced with this model. The results are subtle, so run multiple times if desired.\n\nPretrained model: 50/50 Interpolation of DIV2K-Lite and SpongeBC1-Lite",
     "date": "2022-08-04",
@@ -25,6 +26,7 @@
             "sha256": "94d368b633614958f84f335b129fd85abd30200e8fbc575b859ba6762116222b",
             "urls": [
                 "https://objectstorage.us-phoenix-1.oraclecloud.com/n/ax6ygfvpvzka/b/open-modeldb-files/o/1x-ITF-SkinDiffDetail-Lite-v1.pth",
+                "https://drive.google.com/file/d/1zAJfsgX-aLdt7y1UilActp3SF5NsfXr5/view?usp=drive_link",
                 "https://drive.google.com/drive/folders/1VkT6tpbCPn2gKZYPtawDJGMpLg6EyRpO?usp=sharing"
             ]
         }

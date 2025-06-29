@@ -4,6 +4,7 @@
     "license": "CC-BY-NC-SA-4.0",
     "tags": [
         "anime",
+        "compression-removal",
         "jpeg",
         "restoration"
     ],
@@ -24,6 +25,7 @@
             "size": 66758126,
             "sha256": "b64cec8f4c2a848e0e67eb8d8992b8dd9e0d6a82b330f09150c36b3089d9878b",
             "urls": [
+                "https://drive.google.com/file/d/1QHb8Fr9-VUdsoC_XpnuNnR7A7T-yXYU2/view?usp=drive_link",
                 "https://drive.google.com/drive/u/4/folders/19IQNM5Vo5vGcoKaRJaRrLScfxBbFBVff"
             ]
         }
@@ -36,8 +38,8 @@
     "images": [
         {
             "type": "paired",
-            "LR": "https://media.discordapp.net/attachments/1108219399560761385/1108631117696864327/LR.png",
-            "SR": "https://media.discordapp.net/attachments/1108219399560761385/1108221945394233474/SR.png"
+            "LR": "https://images2.imgbox.com/20/dc/QE2nbgTT_o.png",
+            "SR": "https://images2.imgbox.com/40/cc/yX6IpAFe_o.png"
         }
     ]
 }
