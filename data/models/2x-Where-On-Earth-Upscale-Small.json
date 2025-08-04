@@ -1,0 +1,60 @@
+{
+    "name": "Where On Earth-Upscale-Small",
+    "author": "pokepress",
+    "license": "MIT",
+    "tags": [
+        "cartoon",
+        "general-upscaler",
+        "video-frame"
+    ],
+    "description": "Upscaling model for 1990s cartoon series \"Where on Earth is Carmen Sandiego?\" May also be useful for other shows of that era.\n\nNote: Before using this model, you will need to either:\n* Deinterlace the episodes (I recommend QTGMC on Slower) to 60 fps (I recommend 60 fps because that's the rate of the live-action footage and some other components).\n* Repair the existing deinterlacing via one of the related models for this show.\nWhich method will depend on the episode and release. See the related deinterlacing models for details.\n\nThis show is...complicated. Unlike, say, the Super Mario Bros. Super Show, where live action and animated segments are generally separated into large chunks, Where on Earth is Carmen Sandiego repeatedly switches between live-action, traditional animation, 3D CGI, 2D computer graphics, stock photography, and other sources, sometimes combining them in the same frame. As such, rather than create multiple models for each type, I've created a single model for all footage types.\n\nKnown Weaknesses:\n* The model performs less well on the live-action (Player) and 3D CGI (C5 Corridor) segments due to a scarcity of usable data in those scenes.\n* I don't own the 2025 DVD release, so I can't comment on how well this model works on that footage.",
+    "date": "2025-08-03",
+    "architecture": "compact",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 2418731,
+            "sha256": "b9890a16ed0c4d113dfa4742bdc3ce0c668ade21d777e03e696eeca03a11ad10",
+            "urls": [
+                "https://www.mediafire.com/file/3pslq6vqgiedgav/WoEiCS_2x.pth/file"
+            ]
+        }
+    ],
+    "trainingIterations": 203247,
+    "trainingBatchSize": 30,
+    "trainingHRSize": 64,
+    "trainingOTF": false,
+    "dataset": "Footage from Shout Factory and Mill Creek DVD releases, and some manually-created images.",
+    "datasetSize": 80,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Carmen (The Tigress)",
+            "LR": "https://imgsli.com/i/17911e09-4ce1-4960-bee4-2559698bee0a.jpg",
+            "SR": "https://imgsli.com/i/9460e5d6-28e2-4e96-ba64-8c0d4dda9008.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "The Trial of Carmen Sandiego",
+            "LR": "https://imgsli.com/i/7a097b3d-e808-4aeb-8761-b1fb51316d67.jpg",
+            "SR": "https://imgsli.com/i/02d5516a-dcdc-4b99-9de6-6f443e09fc30.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Opening Sequence",
+            "LR": "https://imgsli.com/i/0dc9b8df-415d-46fe-949f-9b2e989cccc5.jpg",
+            "SR": "https://imgsli.com/i/bc24ff89-ccaa-4d1f-a583-0ea5bbc8ead9.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Hot Ice",
+            "LR": "https://imgsli.com/i/36c28cc9-d634-4483-adab-0a30a530f721.jpg",
+            "SR": "https://imgsli.com/i/07fb69a3-c4f3-45bc-a1e6-190c19ceec9e.jpg"
+        }
+    ]
+}
