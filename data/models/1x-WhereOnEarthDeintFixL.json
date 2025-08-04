@@ -6,8 +6,8 @@
         "cartoon",
         "restoration"
     ],
-    "description": "The \"Complete Series\" release of \"Where on Earth is Carmen Sandiego?\" by Mill Creek has a number of episodes that suffer from some rather harsh deinterlacing. This model attempts to restore the footage to something closer to a more advanced deinterlacing job.",
-    "date": "2025-06-29",
+    "description": "The \"Complete Series\" release of \"Where on Earth is Carmen Sandiego?\" by Mill Creek has a number of episodes that suffer from some rather harsh deinterlacing. This model attempts to restore the footage to something closer to a more advanced deinterlacing job. It may also be useful on episodes (primarily found in seasons 3 & 4) that were produced with advanced compositing where certain layers used similar forced deinterlacing techniques, and for cleaning up artifacts left by Yadif, QTGMC, etc.\n\nRevision History:\n* v1.1.0: Added data to improve handing of certain situations, particularly in season 3.\n* v1.0.0: Initial release.",
+    "date": "2025-08-02",
     "architecture": "omnisr",
     "size": null,
     "scale": 1,
@@ -18,46 +18,67 @@
             "platform": "pytorch",
             "type": "pth",
             "size": 3223953,
-            "sha256": "e3ae3caec0e242086342653e22bd953eb62dc78a6f35eb1787423266d55f4f0a",
+            "sha256": "e4fbd8f7206db1383399b65c96bf649229c0810db4f28a01209f2192dbe0b4fe",
             "urls": [
-                "https://www.mediafire.com/file/y2b35chuwp2lg9f/WoEiCS_Deint_Fix.pth/file"
+                "https://www.mediafire.com/file/fu34uqhhk1xuohq/WoEiCS_Deint_Fix_1_1_0.pth/file"
             ]
         }
     ],
-    "trainingIterations": 305251,
+    "trainingIterations": 328918,
     "trainingBatchSize": 8,
     "trainingHRSize": 128,
     "trainingOTF": false,
     "dataset": "Cross-referenced frames between the Shout Factory and Mill Creek DVD releases",
-    "datasetSize": 93,
+    "datasetSize": 111,
     "images": [
         {
             "type": "paired",
             "caption": "Carmen",
             "LR": "https://imgsli.com/i/0e4dd7ab-542f-47a9-86d1-12475ba34713.jpg",
-            "SR": "https://imgsli.com/i/e27b61c4-ae45-4dec-a59f-09f53cbb143b.jpg"
+            "SR": "\thttps://imgsli.com/i/a2fba69c-2ace-46cc-9669-1f69dcea3f23.jpg"
         },
         {
             "type": "paired",
+            "caption": "All for One",
             "LR": "https://imgsli.com/i/efe1a373-2619-4dce-853a-6eb6526c93bb.jpg",
-            "SR": "https://imgsli.com/i/22a25600-ad16-4527-b893-63fa9c80e821.jpg"
+            "SR": "https://imgsli.com/i/5539a03e-3b53-42db-bac6-578925c250d4.jpg"
         },
         {
             "type": "paired",
             "caption": "All for One-Title Card",
             "LR": "https://imgsli.com/i/dbe28e5f-1785-42b6-b337-acf9f3f12602.jpg",
-            "SR": "https://imgsli.com/i/0794593b-89a5-4e3f-a657-6e2bfcf18f13.jpg"
+            "SR": "https://imgsli.com/i/7796c3dd-3fbf-4d9e-8d3e-bb8e6fbef649.jpg"
         },
         {
             "type": "paired",
+            "caption": "Curses, Foiled Again",
             "LR": "https://imgsli.com/i/0e82be0c-b2a6-4e05-a406-1f7b35012daa.jpg",
-            "SR": "https://imgsli.com/i/2c9d5138-9f75-484b-8fbc-f71387e35da6.jpg"
+            "SR": "https://imgsli.com/i/3628c78b-7345-4bbf-a566-a887e4c86618.jpg"
         },
         {
             "type": "paired",
             "caption": "C5 Corridor",
             "LR": "https://imgsli.com/i/dfdbfddb-1bfb-4f56-b4e3-1d1aa4215099.jpg",
-            "SR": "https://imgsli.com/i/0edb0bbe-e566-46b1-8b76-d3b96da7cb8c.jpg"
+            "SR": "https://imgsli.com/i/477da5e0-5c3e-40e4-87fb-38b04df5d7f2.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "The Tigress",
+            "LR": "https://imgsli.com/i/37b6789c-01c7-499d-b4c6-8126c30c7ccc.jpg",
+            "SR": "https://imgsli.com/i/1068b14d-060f-448a-82d5-c9d4d5398b5c.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/7f859a105985479a1f568ebd.jpg",
+        "SR": "/thumbs/142bc07f881b16314bcf03ba.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }
