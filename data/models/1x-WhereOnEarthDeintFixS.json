@@ -67,18 +67,5 @@
             "LR": "https://imgsli.com/i/9e0afc37-7d2c-4ca2-b272-8b360f83afe8.jpg",
             "SR": "https://imgsli.com/i/ef034b48-d386-4a45-a151-3dae5f9d3ba8.jpg"
         }
-    ],
-    "thumbnail": {
-        "type": "paired",
-        "LR": "/thumbs/bd96fba39ecb64bad207ff87.jpg",
-        "SR": "/thumbs/12ad2a3f51828234a2eca4e7.jpg",
-        "LRSize": {
-            "width": 366,
-            "height": 296
-        },
-        "SRSize": {
-            "width": 366,
-            "height": 296
-        }
-    }
+    ]
 }
