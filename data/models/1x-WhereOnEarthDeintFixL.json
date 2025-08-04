@@ -4,7 +4,8 @@
     "license": "MIT",
     "tags": [
         "cartoon",
-        "restoration"
+        "restoration",
+        "video-frame"
     ],
     "description": "The \"Complete Series\" release of \"Where on Earth is Carmen Sandiego?\" by Mill Creek has a number of episodes that suffer from some rather harsh deinterlacing. This model attempts to restore the footage to something closer to a more advanced deinterlacing job. It may also be useful on episodes (primarily found in seasons 3 & 4) that were produced with advanced compositing where certain layers used similar forced deinterlacing techniques, and for cleaning up artifacts left by Yadif, QTGMC, etc.\n\nRevision History:\n* v1.1.0: Added data to improve handing of certain situations, particularly in season 3.\n* v1.0.0: Initial release.",
     "date": "2025-08-02",
