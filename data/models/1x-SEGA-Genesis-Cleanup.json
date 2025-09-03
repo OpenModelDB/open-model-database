@@ -1,0 +1,68 @@
+{
+    "name": "SEGA Genesis Cleanup",
+    "author": "pokepress",
+    "license": "MIT",
+    "tags": [
+        "deblur",
+        "game-screenshots",
+        "general-upscaler",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "Takes composite/RF/RGB/VHS Genesis footage and attempts to restore it to RGB quality. Assumes footage has been properly deinterlaced via field duplication from 240p to 480p/720p/etc. Note that:\n\n* All footage was captured in 240p/480p/720p NTSC.\n* Ground truth RGB footage was captured via a triple-bypassed Model 2 Genesis with new capacitors via the Retrotink 2x or GBS Control. Other footage was captured from various Model 1 Genesis consoles (with and without the \"High Definition Graphics\" mark).\n* The model was trained exclusively on individual frames, so it can't fix things like dropouts.\n* Should help fix color, blur, and jailbars.\n* Cannot un-dither fully blended pixels.\n\nRevision History:\n\n1.0.0 (09/02/2025): Initial release.",
+    "date": "2025-09-03",
+    "architecture": "omnisr",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 3223953,
+            "sha256": "20f633b5ae53bd8fd062033667dd42acaab5f68a9b9463ce7af87908e60fad95",
+            "urls": [
+                "https://www.mediafire.com/file/w02o5cus3q6jx4d/Genesis_Cleanup.pth/file"
+            ]
+        }
+    ],
+    "trainingIterations": 331453,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Screenshots from various Genesis games.",
+    "datasetSize": 112,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Sonic 2 (Composite)",
+            "LR": "https://imgsli.com/i/358e3b0b-41e2-4407-89d7-3247eba39e1d.jpg",
+            "SR": "https://imgsli.com/i/eede6029-52a3-4008-bf19-d6d0925126bc.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "T2: The Arcade Game (VHS)",
+            "LR": "https://imgsli.com/i/4f512227-3c8a-4c3e-b7a5-c4164cae9c78.jpg",
+            "SR": "https://imgsli.com/i/7fe69ca5-6e42-4061-9021-aeef6b821d26.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Tower Bridge (RF)",
+            "LR": "https://imgsli.com/i/87ddc552-cfb1-4daa-ab63-82ad9201b2ac.jpg",
+            "SR": "https://imgsli.com/i/7dae175a-f97f-4b51-a96d-03ce2cb2b376.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Super Fantasy Zone (GameCenter CX)",
+            "LR": "https://imgsli.com/i/084edca0-3359-4e63-84be-a405d1ab73a9.jpg",
+            "SR": "https://imgsli.com/i/a01db35d-394a-4e7e-99ea-8a9eed245f2d.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Sonic 2 (Model 1 RGB)",
+            "LR": "https://imgsli.com/i/fbf9065c-ae78-49d2-a9d9-1998d8a81c84.jpg",
+            "SR": "https://imgsli.com/i/e77e0e5a-ef7c-4c48-a37a-42c46cd5790a.jpg"
+        }
+    ]
+}
