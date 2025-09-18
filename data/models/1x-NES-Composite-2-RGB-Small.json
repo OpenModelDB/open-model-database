@@ -1,0 +1,68 @@
+{
+    "name": "NES-Composite-2-RGB-Small",
+    "author": "pokepress",
+    "license": "MIT",
+    "tags": [
+        "debanding",
+        "denoise",
+        "game-screenshots",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "Takes composite/RF/VHS NES footage and attempts to restore it to RGB quality. Assumes footage has been properly deinterlaced via field duplication from 240p to 480p/720p/etc. Note that:\n\n* All footage was captured in 240p/480p/720p NTSC.\n* RGB footage was captured via an AV Famicom with the RGB Blaster via the Retrotink 2x or GBS Control.\n* The model was trained exclusively on individual frames, so it can't fix things like dropouts.\n* The even and odd fields of NES composite tend to be a bit...different from each other, so there will be some jitter at 60fps.\n* I don't have access to an NES Toploader, so I wouldn't expect it to fix the jailbars very well.\n\nCompared to the OmniSR variant of this model, this version runs more quickly (despite the larger model file size), and should do a good job on footage captured directly from the console using composite. If your footage is from a VHS tape or was captured over RF, the slower OmniSR model is probably a better choice.\n\nRevision History:\n\n* 1.5.0 (09/17/2025): Added \"Small\" version of model",
+    "date": "2025-09-17",
+    "architecture": "compact",
+    "size": null,
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 8025476,
+            "sha256": "6ce8754f660dd44c7c98e5c15e5125eaeb7a593d003c29b67fbf351099fcae73",
+            "urls": [
+                "https://www.mediafire.com/file/xuzy50qsayrkpxq/NES_Composite_To_RGB_compact_1_5_0.pth/file"
+            ]
+        }
+    ],
+    "trainingIterations": 236330,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Screenshots of NES games",
+    "datasetSize": 198,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Mike Tyson's Punch Out",
+            "LR": "https://imgsli.com/i/0c4c242e-708b-4c47-b2a9-94f306a1e805.jpg",
+            "SR": "https://imgsli.com/i/bbe1d2b1-e24b-44d1-a765-da5c1dffbd87.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Legacy of the Wizard (VHS)",
+            "LR": "https://imgsli.com/i/82831713-fa5d-43ac-8ec4-5f1aa28a715a.jpg",
+            "SR": "https://imgsli.com/i/a9351ae6-b095-46f7-b32f-a7f2d9dc941d.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Defender of the Crown (RF)",
+            "LR": "https://imgsli.com/i/61c72f7a-efd5-48af-ad72-3114c654ecd9.jpg",
+            "SR": "https://imgsli.com/i/9f76ef1c-8660-43a6-b080-9d82ad9401ff.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Ninja Gaiden (Game Center CX)",
+            "LR": "https://imgsli.com/i/571c1b9a-a2be-4c10-a080-3b62667a5b94.jpg",
+            "SR": "https://imgsli.com/i/a2d46549-bea4-4683-9ed7-3543afe99a06.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "Mega Man II (The Wizard)",
+            "LR": "https://imgsli.com/i/9c3f1b24-4ac4-4b93-8e3d-df04a926bad2.jpg",
+            "SR": "https://imgsli.com/i/cb1a0f83-3851-4a0f-85ed-3edcd9e1b426.jpg"
+        }
+    ]
+}
