@@ -1,0 +1,83 @@
+{
+    "name": "Fallin Strong",
+    "author": "renarchi",
+    "license": "CC-BY-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Purpose: Real time upscaler for 1080p anime with Shuffle Cugan\n\nFallin has two versions:\n “Soft” is better than Strong at denoise and compression removal, and i think is a better for most users.\n\n “Strong” is a retrained version of Soft and a sharper version.\n\n I used Clamp and only tested it in TensorRT and Onnxruntime, and there was no color issue.\n Thanks to @styler00dollar  for helping me fix the color issue.",
+    "date": "2025-09-14",
+    "architecture": "cugan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 5657145,
+            "sha256": "14b8415199aa66a6507725408a66758ba2bff9286736f19f7f07524efd821a56",
+            "urls": [
+                "https://github.com/renarchi/models/releases/download/Fallin/Fallin_strong.pth"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 5670257,
+            "sha256": "sha256:b19c5eafb1e91c4233cb091b4a062f9eeb1c05d2df9bdedd482b40e8e034eb81",
+            "urls": [
+                "https://github.com/renarchi/models/releases/download/Fallin/2x_Fallin_strong_renarchi_fp32.onnx"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2852267,
+            "sha256": "f3d636e298a22fd54ad66571e74f6c91afc6cc7929799d224dc6ebb864c128df",
+            "urls": [
+                "https://github.com/renarchi/models/releases/download/Fallin/2x_Fallin_strong_renarchi_fp16.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 150000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 256,
+    "trainingOTF": false,
+    "dataset": "Anime BD",
+    "datasetSize": 3000,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "2x-Fallin-Strong",
+            "LR": "https://imgsli.com/i/a3088948-39b2-4ad1-ae4c-b52ba30249e5.jpg",
+            "SR": "https://imgsli.com/i/6c932bb7-e6aa-4e3b-97b9-8cf69af19571.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "2x-Fallin-Strong",
+            "LR": "https://imgsli.com/i/01e6b74a-3521-463f-a798-856c2b77dc37.jpg",
+            "SR": "https://imgsli.com/i/39fe76ca-3083-4a55-8eb2-ce591583f427.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "2x-Fallin-Strong",
+            "LR": "https://imgsli.com/i/9f01d82c-a6b1-4773-bf10-ca0d5b8dffc7.jpg",
+            "SR": "https://imgsli.com/i/9f01d82c-a6b1-4773-bf10-ca0d5b8dffc7.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "2x-Fallin-Strong",
+            "LR": "https://imgsli.com/i/52600c60-4586-43dc-b06a-97063fedb704.jpg",
+            "SR": "https://imgsli.com/i/52600c60-4586-43dc-b06a-97063fedb704.jpg"
+        },
+        {
+            "type": "paired",
+            "caption": "2x-Fallin-Strong",
+            "LR": "https://imgsli.com/i/20eea71e-a2a0-4078-adba-a9ba60bdcec8.jpg",
+            "SR": "https://imgsli.com/i/1c216e6c-ef4e-4b36-a86d-4847d4496ed9.jpg"
+        }
+    ]
+}
