@@ -28,6 +28,15 @@
             "2x-AnimeSharpV4-Fast-RCAN-PU"
         ]
     },
+    "c-fallin": {
+        "name": "Fallin",
+        "author": "renarchi",
+        "description": "",
+        "models": [
+            "2x-Fallin-Soft",
+            "2x-Fallin-Strong"
+        ]
+    },
     "c-gameup": {
         "name": "GameUp",
         "description": "GameUp is a set of video upscaling models intended for upscaling and restoring video game footage",
