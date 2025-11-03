@@ -27,7 +27,7 @@
             "platform": "onnx",
             "type": "onnx",
             "size": 5670257,
-            "sha256": "sha256:b19c5eafb1e91c4233cb091b4a062f9eeb1c05d2df9bdedd482b40e8e034eb81",
+            "sha256": "b19c5eafb1e91c4233cb091b4a062f9eeb1c05d2df9bdedd482b40e8e034eb81",
             "urls": [
                 "https://github.com/renarchi/models/releases/download/Fallin/2x_Fallin_strong_renarchi_fp32.onnx"
             ]
@@ -60,18 +60,6 @@
             "caption": "2x-Fallin-Strong",
             "LR": "https://imgsli.com/i/01e6b74a-3521-463f-a798-856c2b77dc37.jpg",
             "SR": "https://imgsli.com/i/39fe76ca-3083-4a55-8eb2-ce591583f427.jpg"
-        },
-        {
-            "type": "paired",
-            "caption": "2x-Fallin-Strong",
-            "LR": "https://imgsli.com/i/9f01d82c-a6b1-4773-bf10-ca0d5b8dffc7.jpg",
-            "SR": "https://imgsli.com/i/9f01d82c-a6b1-4773-bf10-ca0d5b8dffc7.jpg"
-        },
-        {
-            "type": "paired",
-            "caption": "2x-Fallin-Strong",
-            "LR": "https://imgsli.com/i/52600c60-4586-43dc-b06a-97063fedb704.jpg",
-            "SR": "https://imgsli.com/i/52600c60-4586-43dc-b06a-97063fedb704.jpg"
         },
         {
             "type": "paired",
