@@ -6,7 +6,7 @@
         "anime",
         "restoration"
     ],
-    "description": "Purpose: Real time upscaler for 1080p anime with Shuffle Cugan\n\nFallin has two versions:\n “Soft” is better than Strong at denoise and compression removal, and i think is a better for most users.\n\n “Strong” is a retrained version of Soft and a sharper version.\n\n I used Clamp and only tested it in TensorRT and Onnxruntime, and there was no color issue.\n Thanks to @styler00dollar  for helping me fix the color issue.",
+    "description": "Purpose: Real time upscaler for 1080p anime\n\n Fallin has two versions: “Soft” and \"Strong\" \n\n For most users, “Soft” is a more safe choice, it has no oversharpening artifacts, and it is better at removing compression artifacts and denoising. If you want a safe choice, you should choose “Soft”.\n\n “Strong” is the oversharpened version of Soft. Oversharpening artifacts may appear on lines, and lines may not always look good due to oversharpening. Unlike “Soft”, it has a problem with whitening faces. If you like sharpness, choose “Strong”. And I think “Strong” is better in DOF\n\n Note: Keep in mind that Strong produces oversharpening artifacts.\n\nThanks to @styler00dollar  for helping me fix the color issue.",
     "date": "2025-09-14",
     "architecture": "cugan",
     "size": null,
@@ -16,29 +16,11 @@
     "resources": [
         {
             "platform": "pytorch",
-            "type": "pth",
+            "type": "safetensors",
             "size": 5657145,
-            "sha256": "910aa56a9a1187df97c3284177da1bc66836679350b2613191340734937e9960",
+            "sha256": "526a4bb8a01273b420105458f850435576d7be95c4029add6cc05cad57d2c3b4",
             "urls": [
-                "https://github.com/renarchi/models/releases/download/Fallin/Fallin_soft.pth"
-            ]
-        },
-        {
-            "platform": "onnx",
-            "type": "onnx",
-            "size": 5670257,
-            "sha256": "487792c65406a6851a6bd48d5cbdcee75317fdc3e241f02fe7054936b9914d15",
-            "urls": [
-                "https://github.com/renarchi/models/releases/download/Fallin/2x_Fallin_soft_renarchi_fp32.onnx"
-            ]
-        },
-        {
-            "platform": "onnx",
-            "type": "onnx",
-            "size": 2852267,
-            "sha256": "17a4c0c6af5a187389f52a9bd026553a8819f148b70dea1a242d1517a352dfec",
-            "urls": [
-                "https://github.com/renarchi/models/releases/download/Fallin/2x_Fallin_soft_renarchi_fp16.onnx"
+                "https://mega.nz/file/LwoxXZgS#J5kh2DIkn7NhxbSKOqhyX4gIO39MrVWLCTJGOZd9yzo"
             ]
         }
     ],
