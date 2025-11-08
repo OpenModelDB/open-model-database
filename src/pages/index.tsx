@@ -133,8 +133,12 @@ export default function Page({ modelData: staticModelData }: Props) {
                     </p>
                 </div>
 
-                <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
-                    The best place to find AI Upscaling models
+                <h1 className="mb-4 text-center text-4xl font-extrabold md:mb-6 md:text-5xl lg:text-6xl">
+                    <span className="text-gray-800 dark:text-gray-100">The best place to find </span>
+                    <span className="bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600 bg-clip-text text-transparent">
+                        AI Upscaling
+                    </span>
+                    <span className="text-gray-800 dark:text-gray-100"> models</span>
                 </h1>
 
                 <p className="mx-auto max-w-screen-md text-center text-gray-600 dark:text-gray-400 md:text-lg">

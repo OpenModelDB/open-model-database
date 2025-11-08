@@ -257,7 +257,7 @@ const useMakeLazyCard = (lazy: boolean, card: JSX.Element) => {
             className={joinClasses(
                 style.modelCard,
                 !editMode && style.overflowHidden,
-                'border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900'
+                'border-gray-300 bg-white shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-fade-900'
             )}
         >
             {card}
@@ -270,7 +270,7 @@ const useMakeLazyCard = (lazy: boolean, card: JSX.Element) => {
         <LazyLoadComponent
             placeholder={
                 <div
-                    className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-xl dark:border-gray-700 dark:bg-fade-900`}
+                    className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-fade-900`}
                 />
             }
         >

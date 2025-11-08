@@ -9,8 +9,13 @@
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     --inner-radius: calc(0.5rem - 1px);
+
+    &:hover {
+        transform: scale(1.02);
+    }
 
     &.overflowHidden {
         --inner-radius: 0;
