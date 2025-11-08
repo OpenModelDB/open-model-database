@@ -4,7 +4,15 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+                sans: [
+                    'var(--font-inter)',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    'Segoe UI',
+                    'Helvetica',
+                    'Arial',
+                    'sans-serif',
+                ],
             },
             colors: {
                 'fade-50': '#f9f8ff',

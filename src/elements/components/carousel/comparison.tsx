@@ -101,7 +101,6 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
 
     return (
         <ReactCompareSlider
-            key={`${image.LR}-${image.SR}`}
             onlyHandleDraggable
             className="react-compare-slider w-full"
             handle={
@@ -194,6 +193,7 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
                     </TransformComponent>
                 </TransformWrapper>
             }
+            key={`${image.LR}-${image.SR}`}
             position={handlePosition}
             onPositionChange={setHandlePosition}
         />
