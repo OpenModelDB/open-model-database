@@ -99,7 +99,7 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
                 leaveTo="transform opacity-0 scale-95"
             >
                 <Popover.Panel
-                    className={`absolute z-50 mt-2 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 text-sm shadow-lg focus:outline-none dark:bg-black ${
+                    className={`absolute z-[9999] mt-2 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 text-sm shadow-lg focus:outline-none dark:bg-black ${
                         position === 'left' ? 'left-0' : 'right-0'
                     }`}
                 >

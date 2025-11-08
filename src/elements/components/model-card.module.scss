@@ -10,17 +10,25 @@
     border-width: 1px;
     border-style: solid;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
 
     --inner-radius: calc(0.5rem - 1px);
 
     &:hover {
         transform: scale(1.02);
+        z-index: 10;
     }
 
     &.overflowHidden {
         --inner-radius: 0;
 
         overflow: hidden;
+    }
+
+    // Ensure popovers can escape the card's bounds when open
+    &:has([data-headlessui-state='open']) {
+        overflow: visible;
+        z-index: 100;
     }
 
     .inner {
@@ -65,6 +73,9 @@
     .details {
         padding: 0.75rem;
         padding-top: 0;
+        overflow: visible;
+        position: relative;
+        z-index: 10;
 
         &.paired {
             position: absolute;
@@ -73,7 +84,7 @@
             right: 0;
             backdrop-filter: blur(2rem) saturate(2);
             border-radius: 0 0 var(--inner-radius) var(--inner-radius);
-            overflow: hidden;
+            overflow: visible;
 
             @include themed using($t) {
                 background: linear-gradient(transparent, t($t, white, $fade-900))
