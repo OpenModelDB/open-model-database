@@ -47,7 +47,7 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
     return (
         <div className="relative w-full">
             <div
-                className={`${style.imageWrapper} flex h-96 w-full overflow-hidden rounded-lg bg-fade-100 align-middle dark:bg-fade-800`}
+                className={`${style.imageWrapper} flex w-full overflow-hidden rounded-lg bg-fade-100 align-middle dark:bg-fade-800`}
             >
                 {selectedImage ? (
                     <ImageCarouselImage image={selectedImage} />

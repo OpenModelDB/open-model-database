@@ -437,16 +437,20 @@ export default function Page({
                 </Head>
             )}
             <PageContainer searchBar>
-                {/* Two columns */}
-                <div className="grid h-full w-full gap-4 pb-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
-                    {/* Left column */}
+                {/* Full-width preview at top (YouTube-style) */}
+                <div className="mb-6 w-full">
+                    <ImageCarousel
+                        images={model.images}
+                        indexKey={modelId}
+                        readonly={!editMode}
+                        onChange={(images) => updateModelProperty('images', images)}
+                    />
+                </div>
+
+                {/* Two columns: Description and Sidebar */}
+                <div className="grid h-full w-full gap-6 pb-4 sm:grid-cols-1 lg:grid-cols-3">
+                    {/* Left column: Description */}
                     <div className="relative flex h-full flex-col gap-4 sm:col-span-1 lg:col-span-2">
-                        <ImageCarousel
-                            images={model.images}
-                            indexKey={modelId}
-                            readonly={!editMode}
-                            onChange={(images) => updateModelProperty('images', images)}
-                        />
                         <div className="relative">
                             <div>
                                 {editMode && (
@@ -564,7 +568,7 @@ export default function Page({
                             </div>
                         </div>
                     </div>
-                    {/* Right column */}
+                    {/* Right column: Sidebar */}
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
                         <div className="mb-2 flex w-full flex-col gap-2">
