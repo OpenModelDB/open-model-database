@@ -50,10 +50,10 @@
 :root {
     --max-page-width: 1400px;
 
-    --fonts-heading: -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol';
-    --fonts-body: -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol';
+    --fonts-heading: var(--font-inter), -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --fonts-body: var(--font-inter), -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     --fonts-mono: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace;
 
     overflow-y: scroll;
