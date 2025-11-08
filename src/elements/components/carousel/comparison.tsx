@@ -19,6 +19,7 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
         scale: 1,
     });
     const prevTransformStateRef = useRef(transformState);
+    const imagesLoadedRef = useRef({ lr: false, sr: false });
 
     useEffect(() => {
         const prevTransformState = prevTransformStateRef.current;
@@ -38,13 +39,69 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
     }, [transformState]);
 
     useEffect(() => {
-        lrRef.current?.centerView(1, 0);
-        srRef.current?.centerView(1, 0);
+        // Reset transform state when image changes
+        setTransformState({
+            positionX: 0,
+            positionY: 0,
+            scale: 1,
+        });
+        // Reset image load tracking
+        imagesLoadedRef.current = { lr: false, sr: false };
         setHandlePosition(50);
+    }, [image]);
+
+    // Track image loading and center images once loaded
+    useEffect(() => {
+        // Center images function
+        const centerImages = () => {
+            if (lrRef.current && srRef.current) {
+                // Use requestAnimationFrame to ensure DOM is updated
+                requestAnimationFrame(() => {
+                    lrRef.current?.centerView(1, 0);
+                    srRef.current?.centerView(1, 0);
+                });
+            }
+        };
+
+        const lrImg = new Image();
+        const srImg = new Image();
+        let loadedCount = 0;
+
+        const checkAndCenter = () => {
+            loadedCount++;
+            if (loadedCount === 2) {
+                // Both images loaded, center them
+                setTimeout(() => {
+                    centerImages();
+                }, 50); // Small delay to ensure DOM is ready
+            }
+        };
+
+        lrImg.onload = () => {
+            imagesLoadedRef.current.lr = true;
+            checkAndCenter();
+        };
+        srImg.onload = () => {
+            imagesLoadedRef.current.sr = true;
+            checkAndCenter();
+        };
+
+        lrImg.src = image.LR;
+        srImg.src = image.SR;
+
+        // Fallback: center after a timeout even if images don't load
+        const fallbackTimer = setTimeout(() => {
+            centerImages();
+        }, 500);
+
+        return () => {
+            clearTimeout(fallbackTimer);
+        };
     }, [image]);
 
     return (
         <ReactCompareSlider
+            key={`${image.LR}-${image.SR}`}
             onlyHandleDraggable
             className="react-compare-slider w-full"
             handle={
