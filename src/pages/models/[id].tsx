@@ -334,26 +334,33 @@ function isTrue<T>(value: T | null | undefined | false | '' | 0): value is T {
 }
 
 function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [string, ReactNode])[] }) {
+    const filteredRows = rows.filter(isTrue);
     return (
-        <table className="w-full border-collapse text-left text-sm text-gray-700 dark:text-gray-400 ">
-            <tbody>
-                {rows.filter(isTrue).map((row, i) => {
-                    const [label, value] = row;
-                    const extraPadding = i === 0 ? 'pt-3' : i === rows.length - 1 ? 'pb-3' : '';
-                    return (
-                        <tr key={i}>
-                            <th
-                                className={`${extraPadding} whitespace-nowrap bg-fade-100 px-4 py-2 text-right align-top font-medium text-fade-900 dark:bg-fade-800 dark:text-white`}
-                                scope="row"
+        <div className="overflow-hidden rounded-lg border border-fade-200 bg-white dark:border-fade-700 dark:bg-fade-900">
+            <table className="w-full border-collapse text-left text-sm text-gray-700 dark:text-gray-400">
+                <tbody>
+                    {filteredRows.map((row, i) => {
+                        const [label, value] = row;
+                        const extraPadding = i === 0 ? 'pt-3' : i === filteredRows.length - 1 ? 'pb-3' : '';
+                        const isLastRow = i === filteredRows.length - 1;
+                        return (
+                            <tr
+                                className={!isLastRow ? 'border-b border-fade-200 dark:border-fade-700' : ''}
+                                key={i}
                             >
-                                {label}
-                            </th>
-                            <td className={`${extraPadding} px-4 py-2`}>{value}</td>
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
+                                <th
+                                    className={`${extraPadding} whitespace-nowrap bg-fade-100 px-4 py-2 text-right align-top font-medium text-fade-900 dark:bg-fade-800 dark:text-white`}
+                                    scope="row"
+                                >
+                                    {label}
+                                </th>
+                                <td className={`${extraPadding} px-4 py-2`}>{value}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
     );
 }
 export default function Page({
@@ -437,16 +444,20 @@ export default function Page({
                 </Head>
             )}
             <PageContainer searchBar>
-                {/* Two columns */}
-                <div className="grid h-full w-full gap-4 pb-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
-                    {/* Left column */}
+                {/* Full-width preview at top (YouTube-style) */}
+                <div className="mb-6 w-full">
+                    <ImageCarousel
+                        images={model.images}
+                        indexKey={modelId}
+                        readonly={!editMode}
+                        onChange={(images) => updateModelProperty('images', images)}
+                    />
+                </div>
+
+                {/* Two columns: Description and Sidebar */}
+                <div className="grid h-full w-full gap-6 pb-4 sm:grid-cols-1 lg:grid-cols-3">
+                    {/* Left column: Description */}
                     <div className="relative flex h-full flex-col gap-4 sm:col-span-1 lg:col-span-2">
-                        <ImageCarousel
-                            images={model.images}
-                            indexKey={modelId}
-                            readonly={!editMode}
-                            onChange={(images) => updateModelProperty('images', images)}
-                        />
                         <div className="relative">
                             <div>
                                 {editMode && (
@@ -564,7 +575,7 @@ export default function Page({
                             </div>
                         </div>
                     </div>
-                    {/* Right column */}
+                    {/* Right column: Sidebar */}
                     <div className="col-span-1 w-full">
                         {/* Download Button */}
                         <div className="mb-2 flex w-full flex-col gap-2">
