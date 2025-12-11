@@ -1,0 +1,46 @@
+{
+    "name": "Book Compact",
+    "author": "asterixcool",
+    "license": "CC-BY-SA-4.0",
+    "tags": [
+        "restoration",
+        "text"
+    ],
+    "description": "Purpose: \"binarization\" for scanned books.\n\nA compact, lightweight version trained for general-purpose cleanup. While it performs well, RealPLSKR delivers superior results for more complex cases.<br><br>\n- Strengths (Handles Well):<br><br>\n\u2714 Color bleed<br>\n\u2714 Spots & small speckles<br>\n\u2714 Mould stains<br>\n\u2714 Fine hair & scratches \u2013 Good at thin, faint lines.<br>\n\u2714 Light pencil marks<br>\n\u2714 Dividers & text preservation<br>\n- Weaknesses (Struggles With):<br><br>\n\u2716 Large speckles<br>\n\u2716 Thick hair/clumps \u2013 May leave remnants or blurring.<br>\n\u2716 Photographs \u2013 Bad lighting; noisy/dark images degrade quality.<br>",
+    "date": "2025-06-04",
+    "architecture": "compact",
+    "size": [
+        "2,27mb"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "https://github.com/starinspace/StarinspaceUpscale/releases/download/Models/1xBook-Compact.safetensors"
+            ],
+            "sha256": "fbccfd710b4a2abf9e20b58b2714a2292d4f26571ed481af20d0c519fde10885",
+            "size": 2386212,
+            "platform": "pytorch",
+            "type": "safetensors"
+        }
+    ],
+    "images": [
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/bd86a96f-d27e-4d43-9bf5-29f60d3e92ef.jpg",
+            "SR": "https://imgsli.com/i/20ed68f8-84c2-4fb0-a171-aa302ba17076.jpg"
+        },
+        {
+            "type": "paired",
+            "LR": "https://imgsli.com/i/bba8979b-c44e-4fbe-9546-e53b607fa52f.jpg",
+            "SR": "https://imgsli.com/i/69d1c126-7c8e-4bfe-8a9f-2b5849247d4d.jpg"
+        }
+    ],
+    "dataset": "My own collection.",
+    "datasetSize": 13150,
+    "trainingIterations": 399000,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 95
+}
