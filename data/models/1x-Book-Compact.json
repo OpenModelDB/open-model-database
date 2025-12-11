@@ -6,7 +6,7 @@
         "restoration",
         "text"
     ],
-    "description": "Purpose: \"binarization\" for scanned books.\n\nA compact, lightweight version trained for general-purpose cleanup. While it performs well, RealPLSKR delivers superior results for more complex cases.<br><br>\n- Strengths (Handles Well):<br><br>\n\u2714 Color bleed<br>\n\u2714 Spots & small speckles<br>\n\u2714 Mould stains<br>\n\u2714 Fine hair & scratches \u2013 Good at thin, faint lines.<br>\n\u2714 Light pencil marks<br>\n\u2714 Dividers & text preservation<br>\n- Weaknesses (Struggles With):<br><br>\n\u2716 Large speckles<br>\n\u2716 Thick hair/clumps \u2013 May leave remnants or blurring.<br>\n\u2716 Photographs \u2013 Bad lighting; noisy/dark images degrade quality.<br>",
+    "description": "Purpose: \"binarization\" for scanned books.\n\nA compact, lightweight version trained for general-purpose cleanup. While it performs well, RealPLSKR delivers superior results for more complex cases.<br><br>\n- Strengths (Handles Well):<br><br>\n✔ Color bleed<br>\n✔ Spots & small speckles<br>\n✔ Mould stains<br>\n✔ Fine hair & scratches – Good at thin, faint lines.<br>\n✔ Light pencil marks<br>\n✔ Dividers & text preservation<br>\n- Weaknesses (Struggles With):<br><br>\n✖ Large speckles<br>\n✖ Thick hair/clumps – May leave remnants or blurring.<br>\n✖ Photographs – Bad lighting; noisy/dark images degrade quality.<br>",
     "date": "2025-06-04",
     "architecture": "compact",
     "size": [
