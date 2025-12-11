@@ -1,0 +1,88 @@
+{
+    "name": "UltraSharpV2",
+    "author": "kim2091",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "ai-generated",
+        "anime",
+        "anti-aliasing",
+        "compression-removal",
+        "deblur",
+        "game-textures",
+        "general-upscaler",
+        "jpeg",
+        "photo",
+        "restoration",
+        "text"
+    ],
+    "description": "Please consider supporting my work on [Ko-Fi](https://ko-fi.com/kim20913944)!\n\nThis model has been in the works for a very very very long time. I spent years creating my own private dataset just to train this model. It can handle realistic images, anime, cartoons, and quite a bit more without much hassle. It also works amazingly on illustrations and artwork. This is easily the best model I've ever trained.\n\nI hope you all like it.\n\nThe Lite model is based on the RealPLKSR architecture, rather than DAT2.\n\nAnd please consider donating! I'm going through a rough time right now & any support helps a LOT\n\n**Showcase:**\n\nFlux comparisons: <https://slow.pics/s/bsfbNpMA>\n\nImage Upscales: <https://slow.pics/s/RORQ4R0U?image-fit=contain>\n\nV1 vs V2 Upscales: <https://slow.pics/c/2HIBlzAh>",
+    "date": "2025-05-23",
+    "architecture": "dat",
+    "size": [
+        "DAT2"
+    ],
+    "scale": 4,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "urls": [
+                "https://huggingface.co/Kim2091/UltraSharpV2/resolve/main/4x-UltraSharpV2.safetensors?download=true"
+            ],
+            "sha256": "2b5db674aa8f3864a696dccd1d07d7cc0500fbf220f35044cd30eee9a7f971a7",
+            "size": 139792588,
+            "platform": "pytorch",
+            "type": "safetensors"
+        },
+        {
+            "urls": [
+                "https://huggingface.co/Kim2091/UltraSharpV2/blob/main/4x-UltraSharpV2_fp32_op17.onnx"
+            ],
+            "sha256": "6c0201e3403745f39a9aa5273c50ed084cf6c4af5a71a4654c30252cf19bf0a5",
+            "size": 51800517,
+            "platform": "onnx",
+            "type": "onnx"
+        }
+    ],
+    "images": [
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/WIlUYVEn.webp"
+        },
+        {
+            "type": "standalone",
+            "url": "https://i.slow.pics/gn1LTyo2.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/rYWRc0Vt.webp",
+            "SR": "https://i.slow.pics/ovD5pg9L.webp",
+            "caption": "lossless"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/EURPGH5C.webp",
+            "SR": "https://i.slow.pics/QhszMnKH.webp",
+            "caption": "jpeg75"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/jzA04YFI.webp",
+            "SR": "https://i.slow.pics/3it3fgKN.webp"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/O7MSvzVY.webp",
+            "SR": "https://i.slow.pics/DIIcP5Rz.webp",
+            "caption": "jpeg85"
+        },
+        {
+            "type": "paired",
+            "LR": "https://i.slow.pics/xdMMHbxp.webp",
+            "SR": "https://i.slow.pics/TDb7SUJQ.webp",
+            "caption": "lossless"
+        }
+    ],
+    "dataset": "Private dataset",
+    "trainingOTF": false
+}
