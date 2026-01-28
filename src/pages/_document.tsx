@@ -13,7 +13,12 @@ const themeInit =
 export default function Document() {
     return (
         <Html lang="en">
-            <Head />
+            <Head>
+                <meta
+                    content={ADSENSE_PUBLISHER_ID}
+                    name="google-adsense-account"
+                />
+            </Head>
             <body>
                 <Main />
                 <NextScript />
