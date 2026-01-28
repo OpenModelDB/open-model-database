@@ -1,5 +1,6 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 import Script from 'next/script';
+import { ADSENSE_PUBLISHER_ID } from '../lib/site-data';
 
 // This little script will read the last theme from localStorage and assign it to the HTML element.
 // This ensure that the website is always displayed with the correct them.
@@ -22,6 +23,13 @@ export default function Document() {
                 >
                     {themeInit}
                 </Script>
+                <Script
+                    async
+                    crossOrigin="anonymous"
+                    id="google-adsense"
+                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUBLISHER_ID}`}
+                    strategy="afterInteractive"
+                />
             </body>
         </Html>
     );
