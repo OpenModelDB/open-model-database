@@ -4,22 +4,38 @@
 
     h2 {
         margin-top: 1.5em;
-        margin-bottom: 1em;
+        margin-bottom: 0.75em;
+        letter-spacing: -0.01em;
     }
 
     h3 {
         margin-top: 1.75em;
-        margin-bottom: 1em;
+        margin-bottom: 0.75em;
+        letter-spacing: -0.01em;
+    }
+
+    p {
+        margin-bottom: 1.25em;
+    }
+
+    ul,
+    ol {
+        margin-bottom: 1.25em;
+
+        li {
+            margin-bottom: 0.25em;
+        }
     }
 }
 
 .codeWrapper > code {
     background-color: rgb(29 31 33); // color of the theme we use for code blocks
-    font-size: 90%;
-    padding: 0.25em 0.5em;
+    font-size: 87.5%;
+    padding: 0.2em 0.45em;
     white-space: break-spaces !important;
-    border-radius: 0.25em;
+    border-radius: 0.375em;
     line-height: inherit !important;
+    font-weight: 500;
 }
 
 .linkableHeading {

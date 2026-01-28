@@ -14,24 +14,31 @@
     // design
     cursor: pointer;
     border: none;
-    background: none;
+    background: var(--page-bg);
     border-radius: 100%;
-    padding: 0.25rem;
-    opacity: 0.3;
-    transition: opacity 0.5s ease-in-out;
+    padding: 0.5rem;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
 
     @media screen and (max-width: 1600px) {
-        opacity: 0.5;
+        opacity: 0.7;
     }
 
     &:hover {
         opacity: 1;
-        transition-duration: 0.2s;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 
     svg {
-        width: 2rem;
-        height: 2rem;
+        width: 1.75rem;
+        height: 1.75rem;
         border-radius: 100%;
+        display: block;
     }
 }

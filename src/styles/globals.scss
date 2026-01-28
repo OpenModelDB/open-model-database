@@ -66,11 +66,14 @@ body {
     margin: 0;
     font-family: var(--fonts-body);
     color: var(--font-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
     background-color: var(--page-bg);
-    transition: background-color linear 0.2s;
+    transition: background-color 0.25s ease-out;
     line-height: 1.6;
 
     // Storybook hacks
@@ -100,6 +103,12 @@ h6 {
 a {
     color: inherit;
     text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: white;
 }
 
 .rendering-pixelated {

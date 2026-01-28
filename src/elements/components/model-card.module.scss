@@ -9,14 +9,22 @@
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: solid;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     z-index: 1;
 
     --inner-radius: calc(0.5rem - 1px);
 
+    @include themed using($t) {
+        box-shadow: t($t, 0 1px 3px rgb(0 0 0 / 5%), 0 1px 3px rgb(0 0 0 / 15%));
+    }
+
     &:hover {
-        transform: scale(1.02);
+        transform: translateY(-4px);
         z-index: 10;
+
+        @include themed using($t) {
+            box-shadow: t($t, 0 12px 24px -8px rgb(0 0 0 / 15%), 0 12px 24px -8px rgb(0 0 0 / 40%));
+        }
     }
 
     &.overflowHidden {

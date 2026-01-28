@@ -9,7 +9,7 @@
     width: calc(var(--switch-inner-height) * var(--switch-ratio));
     box-sizing: content-box;
     background-color: hsl(0deg 0% 40% / 50%);
-    transition: background-color 200ms linear;
+    transition: background-color 200ms ease-out, box-shadow 200ms ease-out;
     padding: calc(var(--switch-inner-height) * 0.125);
     flex-shrink: 0;
     border: none;
@@ -21,6 +21,10 @@
         outline: none;
     }
 
+    &:hover {
+        box-shadow: 0 0 0 2px hsl(0deg 0% 50% / 20%);
+    }
+
     .circle {
         background-color: white;
         display: inline-block;
@@ -28,12 +32,17 @@
         border-radius: 100%;
         width: var(--switch-inner-height);
         height: var(--switch-inner-height);
-        transition: transform 200ms ease-in-out;
+        transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
         transform: translate(0, 0);
+        box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
     }
 
     &[data-headlessui-state='checked'] {
         background-color: var(--accent);
+
+        &:hover {
+            box-shadow: 0 0 0 2px hsl(250deg 50% 50% / 30%);
+        }
 
         .circle {
             transform: translate(calc(var(--switch-inner-height) * (var(--switch-ratio) - 1)), 0);

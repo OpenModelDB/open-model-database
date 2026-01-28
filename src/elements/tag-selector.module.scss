@@ -34,7 +34,15 @@
     border: none;
     display: inline-flex;
     overflow: hidden;
-    transition: all 0.1s linear;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
 
     .icon {
         --extra-size: 0.2em;

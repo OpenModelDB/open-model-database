@@ -13,11 +13,11 @@
 .header {
     @include themed using ($t) {
         background: linear-gradient(t($t, white, $fade-900), transparent)
-            t($t, color.change(white, $alpha: 0.8), color.change($fade-900, $alpha: 0.85));
+            t($t, color.change(white, $alpha: 0.85), color.change($fade-900, $alpha: 0.9));
     }
 
-    transition: background-color linear 0.2s, border-color linear 0.2s;
-    backdrop-filter: saturate(200%) blur(8px);
+    transition: background-color 0.25s ease-out, border-color 0.25s ease-out;
+    backdrop-filter: saturate(180%) blur(12px);
     border-bottom: 1px solid var(--line-color);
     position: fixed;
     z-index: 50;
@@ -97,10 +97,14 @@
     border: none;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-timing-function: ease-in-out;
-    transition-duration: 300ms;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform;
+    transition-timing-function: ease-out;
+    transition-duration: 150ms;
     white-space: nowrap;
+
+    &:active {
+        transform: scale(0.97);
+    }
 }
 
 .iconLink,
@@ -111,13 +115,18 @@
     margin: 0.5em;
     font-size: 150%;
     cursor: pointer;
-    transition: color 0.1s linear;
+    transition: color 0.15s ease, transform 0.15s ease;
     width: 1em;
     height: 1em;
     line-height: 1;
 
     &:hover {
         color: var(--font-color-hover);
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(0.95);
     }
 }
 
