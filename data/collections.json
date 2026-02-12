@@ -72,6 +72,18 @@
         ],
         "author": "kim2091"
     },
+    "c-starsample-v2-0": {
+        "name": "StarSample V2.0",
+        "author": "derpy",
+        "description": "**A collection of StarSample V2.0 models, now trained in a few architectures, rather than just one.**\n\nThe dataset for V2 is made completely from scratch (in relation to V1, but also in general), and includes what I'd consider many smaller datasets purpose-made to target areas where the models couldn't quite get up to the quality I wanted (particularly with focus on the heavier-weight models — the lighter architectures aren't really big enough for much effect). The improvement in dataset mostly, but also training heavier models has lead to a very large improvement, particularly with the \"HQ\" model.\n\nI wouldn't suggest using V1 over V2 in any circumstances — which I am very pleased to be able to say, having gone through at least 20 attempts to actually achieve that... somehow.",
+        "models": [
+            "2x-StarSample-V2-HQ",
+            "2x-StarSample-V2",
+            "2x-StarSample-V2-Lite",
+            "1x-StarSample-V2-NS",
+            "1x-StarSample-V2-Lite-NS"
+        ]
+    },
     "c-where-on-earth-is-carmen-sandiego-": {
         "name": "Where On Earth Is Carmen Sandiego?",
         "author": "pokepress",
