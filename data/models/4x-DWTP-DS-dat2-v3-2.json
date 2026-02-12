@@ -5,7 +5,7 @@
     "tags": [
         "restoration"
     ],
-    "description": "Purpose: remove screentone\n\nin some places an improved version 4x_DWTP_DS_dat2_v3 one of my friends likes it less than 3 and another more so here is v3_2\n\n[raw](https://media.discordapp.net/attachments/771403403372527656/1201288063666634842/raw.png?ex=65d28031&is=65c00b31&hm=3400b1731a8907aec6315da5513e4e3b02ac162c160f990ec780d54451e39ea1&=&format=webp&quality=lossless&width=323&height=459) - [v3](https://cdn.discordapp.com/attachments/771403403372527656/1201288064077660271/dat3.png?ex=65d28031&is=65c00b31&hm=6211a2344c4b6e53cafe6f4618aecd4c48c6c48babba4ca2c9fa5c980ab1e665&) - [v3.2](https://cdn.discordapp.com/attachments/771403403372527656/1201288064492904528/dat4.png?ex=65d28031&is=65c00b31&hm=294a2145d28e31d3f9b9dbbf92cbc15ea90694e2ab18a49d386e2c8ce6969aa0&)\n\np.s. Sorry for the size of all this and examples with links, it was just easier with real examples, and I don’t have the opportunity to try something with all of them now",
+    "description": "Purpose: remove screentone\n\nin some places an improved version 4x_DWTP_DS_dat2_v3 one of my friends likes it less than 3 and another more so here is v3_2\n\n[raw](https://media.discordapp.net/attachments/771403403372527656/1201288063666634842/raw.png?ex=65d28031&is=65c00b31&hm=3400b1731a8907aec6315da5513e4e3b02ac162c160f990ec780d54451e39ea1&=&format=webp&quality=lossless&width=323&height=459) - [v3](https://cdn.discordapp.com/attachments/771403403372527656/1201288064077660271/dat3.png?ex=65d28031&is=65c00b31&hm=6211a2344c4b6e53cafe6f4618aecd4c48c6c48babba4ca2c9fa5c980ab1e665&) - [v3.2](https://cdn.discordapp.com/attachments/771403403372527656/1201288064492904528/dat4.png?ex=65d28031&is=65c00b31&hm=294a2145d28e31d3f9b9dbbf92cbc15ea90694e2ab18a49d386e2c8ce6969aa0&)\n\np.s. Sorry for the size of all this and examples with links, it was just easier with real examples, and I don\u2019t have the opportunity to try something with all of them now",
     "date": "2024-02-06",
     "architecture": "dat",
     "size": [
@@ -36,7 +36,21 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/fe/89/8DrUOV4o_o.png",
-            "SR": "https://images2.imgbox.com/b7/a9/3qw3r33z_o.png"
+            "SR": "https://images2.imgbox.com/b7/a9/3qw3r33z_o.png",
+            "thumbnail": "/thumbs/small/d7f733bf25d09b266da63579.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/011891721ec232a2a6daecbd.png",
+        "SR": "/thumbs/0932d4ed281c27c110dfcf56.jpg",
+        "LRSize": {
+            "width": 61,
+            "height": 50
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 300
+        }
+    }
 }

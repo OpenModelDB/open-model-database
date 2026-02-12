@@ -5,7 +5,7 @@
     "tags": [
         "manga"
     ],
-    "description": "Purpose: pre-workout to speed up your workouts\n\nI see that many people are trying manga scale models on the Omni, and to speed up the process I decided to do preliminary training, the only loss is the resize: (“lanczos”, “bicubic”, “bilenear”, “HAMMING”)\n\nOriginal link: https://drive.google.com/drive/folders/1ln1ZneTvqPbvi8nsJwzjMoYSDQ_DcHBS?usp=sharing",
+    "description": "Purpose: pre-workout to speed up your workouts\n\nI see that many people are trying manga scale models on the Omni, and to speed up the process I decided to do preliminary training, the only loss is the resize: (\u201clanczos\u201d, \u201cbicubic\u201d, \u201cbilenear\u201d, \u201cHAMMING\u201d)\n\nOriginal link: https://drive.google.com/drive/folders/1ln1ZneTvqPbvi8nsJwzjMoYSDQ_DcHBS?usp=sharing",
     "date": "2024-01-31",
     "architecture": "omnisr",
     "size": [
@@ -38,13 +38,28 @@
             "type": "paired",
             "caption": "LR vs Upscale",
             "LR": "https://i.slow.pics/Y1Oa8zT1.png",
-            "SR": "https://i.slow.pics/6Ku2aFcO.png"
+            "SR": "https://i.slow.pics/6Ku2aFcO.png",
+            "thumbnail": "/thumbs/small/cd755c608f240c505b730dd9.jpg"
         },
         {
             "type": "paired",
             "caption": "Upscale vs HR",
             "LR": "https://i.slow.pics/6Ku2aFcO.png",
-            "SR": "https://i.slow.pics/oiTHhXay.png"
+            "SR": "https://i.slow.pics/oiTHhXay.png",
+            "thumbnail": "/thumbs/small/ee634c642c45e1bd9bce8bb5.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/ae71b6dc928102ca64195480.jpg",
+        "SR": "/thumbs/d4f71accedee2285895347a7.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

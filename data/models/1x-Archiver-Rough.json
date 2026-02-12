@@ -39,7 +39,21 @@
             "type": "paired",
             "caption": "Test case: Heavy degradation and noise",
             "LR": "https://imgsli.com/i/0f4817f0-69c6-444b-8718-2b39439ef938.jpg",
-            "SR": "https://imgsli.com/i/339dd3c2-40b5-4da6-9402-6c7688fe0f04.jpg"
+            "SR": "https://imgsli.com/i/339dd3c2-40b5-4da6-9402-6c7688fe0f04.jpg",
+            "thumbnail": "/thumbs/small/f6885a60a103ca60c0005c5b.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/2d72c28ca5d78760bf018074.jpg",
+        "SR": "/thumbs/6884aaaa550370da9ba248f2.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

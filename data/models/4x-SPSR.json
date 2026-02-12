@@ -32,7 +32,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://github.com/Maclory/SPSR/raw/master/visual_results/fig4.png"
+            "url": "https://github.com/Maclory/SPSR/raw/master/visual_results/fig4.png",
+            "thumbnail": "/thumbs/small/0706d4c4a755f322eff74b6f.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/7f49efa6113d7f3fb941c39c.jpg"
+    }
 }

@@ -32,19 +32,27 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://github.com/Phhofm/models/assets/14755670/2cf53d9b-a601-4fea-9440-84c968a23e50"
+            "url": "https://github.com/Phhofm/models/assets/14755670/2cf53d9b-a601-4fea-9440-84c968a23e50",
+            "thumbnail": "/thumbs/small/1c9d90f89b8d6b469f0c6559.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://github.com/Phhofm/models/assets/14755670/ec81280a-777d-4e08-b2a5-65e5411f744c"
+            "url": "https://github.com/Phhofm/models/assets/14755670/ec81280a-777d-4e08-b2a5-65e5411f744c",
+            "thumbnail": "/thumbs/small/702954ca203f36563348cd89.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://github.com/Phhofm/models/assets/14755670/67b6178c-b5d3-43a2-b2e0-b6a3cfea6500"
+            "url": "https://github.com/Phhofm/models/assets/14755670/67b6178c-b5d3-43a2-b2e0-b6a3cfea6500",
+            "thumbnail": "/thumbs/small/4a275b76a8779c2b296c3287.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://github.com/Phhofm/models/assets/14755670/b0aba32a-e0fc-430b-aacf-7f1b160f2d0c"
+            "url": "https://github.com/Phhofm/models/assets/14755670/b0aba32a-e0fc-430b-aacf-7f1b160f2d0c",
+            "thumbnail": "/thumbs/small/20657e7c2de7bede009abcfc.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/15ce8a42a318660eb47d55b5.jpg"
+    }
 }

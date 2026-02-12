@@ -53,15 +53,22 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/rE3PKKTD.webp"
+            "url": "https://i.slow.pics/rE3PKKTD.webp",
+            "thumbnail": "/thumbs/small/85e62ea0e6801e7a0bf5acb6.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/fDy2lsuI.webp"
+            "url": "https://i.slow.pics/fDy2lsuI.webp",
+            "thumbnail": "/thumbs/small/513b78d51c6641e1463efc39.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/qpQpa1Zh.webp"
+            "url": "https://i.slow.pics/qpQpa1Zh.webp",
+            "thumbnail": "/thumbs/small/9343a2eb49c76e1902e1a9c8.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/32f56319a7a8f9fb411fc9f3.jpg"
+    }
 }

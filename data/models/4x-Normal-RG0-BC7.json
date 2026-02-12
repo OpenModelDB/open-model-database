@@ -42,7 +42,21 @@
             "type": "paired",
             "caption": "Crystal Lizard from Dark Souls 3",
             "LR": "https://images2.imgbox.com/cc/e1/i20G62sv_o.png",
-            "SR": "https://images2.imgbox.com/39/c1/IDCLFuJ6_o.jpg"
+            "SR": "https://images2.imgbox.com/39/c1/IDCLFuJ6_o.jpg",
+            "thumbnail": "/thumbs/small/75e9cc24145369323e414cfe.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/941f8c2abc9f4fe2e4ca30bf.png",
+        "SR": "/thumbs/ec3ba6d7b3ddd66bdb812c91.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

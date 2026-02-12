@@ -40,67 +40,93 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/74d2ac37-96de-4f77-b7a9-8821aac62656.jpg",
-            "SR": "https://imgsli.com/i/a86ca862-a303-42c3-9449-4b7618cc940f.jpg"
+            "SR": "https://imgsli.com/i/a86ca862-a303-42c3-9449-4b7618cc940f.jpg",
+            "thumbnail": "/thumbs/small/f6e01cebbc8ad7b2da334222.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/rEBbmuTB.png",
-            "SR": "https://i.slow.pics/lJttZXhP.png"
+            "SR": "https://i.slow.pics/lJttZXhP.png",
+            "thumbnail": "/thumbs/small/39c73c09ae946027903f5bbd.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/2JHLei12.png",
-            "SR": "https://i.slow.pics/4gTu6pCy.png"
+            "SR": "https://i.slow.pics/4gTu6pCy.png",
+            "thumbnail": "/thumbs/small/e0b148166d03b012d5435c90.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/HWgCanJf.png",
-            "SR": "https://i.slow.pics/aq7zOznB.png"
+            "SR": "https://i.slow.pics/aq7zOznB.png",
+            "thumbnail": "/thumbs/small/685fccff71cb850589b5b4f5.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/3gZfpSoR.png",
-            "SR": "https://i.slow.pics/0Vuh9G84.png"
+            "SR": "https://i.slow.pics/0Vuh9G84.png",
+            "thumbnail": "/thumbs/small/a71e3803d3df13c8188ca395.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/dJaFEYCn.png",
-            "SR": "https://i.slow.pics/ENj4PGb3.png"
+            "SR": "https://i.slow.pics/ENj4PGb3.png",
+            "thumbnail": "/thumbs/small/a4b82d6f4ece762eb4a85f57.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/N9ldl5RA.png",
-            "SR": "https://i.slow.pics/ILGjgzDf.png"
+            "SR": "https://i.slow.pics/ILGjgzDf.png",
+            "thumbnail": "/thumbs/small/5264e27dc9055cfacee6e78b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/cdnPaeWD.png",
-            "SR": "https://i.slow.pics/i0woQOn4.png"
+            "SR": "https://i.slow.pics/i0woQOn4.png",
+            "thumbnail": "/thumbs/small/9b04dfda7032de845da9a307.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/YeUFM9SM.png",
-            "SR": "https://i.slow.pics/xraOWdNY.png"
+            "SR": "https://i.slow.pics/xraOWdNY.png",
+            "thumbnail": "/thumbs/small/940431d6da8896a4a75676c1.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/O8l7bna6.png",
-            "SR": "https://i.slow.pics/YER8Ow7h.png"
+            "SR": "https://i.slow.pics/YER8Ow7h.png",
+            "thumbnail": "/thumbs/small/abbfa9afeaf052c4cd08238e.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/dHiYtJaS.png",
-            "SR": "https://i.slow.pics/cOgoV31t.png"
+            "SR": "https://i.slow.pics/cOgoV31t.png",
+            "thumbnail": "/thumbs/small/8e4d5043a1f1b13998ce835d.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/UQDiziqK.png",
-            "SR": "https://i.slow.pics/u8bEQ0QC.png"
+            "SR": "https://i.slow.pics/u8bEQ0QC.png",
+            "thumbnail": "/thumbs/small/4c7ad19f3fc36e0b842db8cf.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/SUen7VG2.png",
-            "SR": "https://i.slow.pics/NrRj0TPo.png"
+            "SR": "https://i.slow.pics/NrRj0TPo.png",
+            "thumbnail": "/thumbs/small/92590004c435e2bedb92866d.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/87c2f1f2c2863a4bffde60ba.png",
+        "SR": "/thumbs/424ebc931ff65a908ef25885.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

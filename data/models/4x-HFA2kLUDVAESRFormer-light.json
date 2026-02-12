@@ -36,22 +36,39 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0550.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0550_4xHFA2kLUDVAESRFormer_light.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0550_4xHFA2kLUDVAESRFormer_light.png",
+            "thumbnail": "/thumbs/small/2df0d32a80bceada994dc713.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0045.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0045_4xHFA2kLUDVAESRFormer_light.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0045_4xHFA2kLUDVAESRFormer_light.png",
+            "thumbnail": "/thumbs/small/298fc4a57a2f5a67c58b0911.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0140.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0140_4xHFA2kLUDVAESRFormer_light.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0140_4xHFA2kLUDVAESRFormer_light.png",
+            "thumbnail": "/thumbs/small/83260d26f052c93f385f510a.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/VAL_LR/0238.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0238_4xHFA2kLUDVAESRFormer_light.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2kLUDVAE_results/4xHFA2kLUDVAESRFormer_light/visualization/LUDVAE_TEST/0238_4xHFA2kLUDVAESRFormer_light.png",
+            "thumbnail": "/thumbs/small/4f87bff68b624305de9ec126.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/71fc51c6b248f98ab2d40038.png",
+        "SR": "/thumbs/217ea6f5fd73df8a92ab550f.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

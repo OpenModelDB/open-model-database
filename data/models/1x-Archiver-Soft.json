@@ -39,7 +39,21 @@
             "type": "paired",
             "caption": "Test case: Light noise and grain preservation",
             "LR": "https://imgsli.com/i/f667ebba-4728-4514-bac6-ccb7e14c03b1.jpg",
-            "SR": "https://imgsli.com/i/3a42eb2f-f798-4916-b4b7-8eec3ae8d002.jpg"
+            "SR": "https://imgsli.com/i/3a42eb2f-f798-4916-b4b7-8eec3ae8d002.jpg",
+            "thumbnail": "/thumbs/small/6823c1991ab44c62742fcc90.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/ccff1485227418d67427caf1.jpg",
+        "SR": "/thumbs/c96a07c0cd51d4246fed06ab.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

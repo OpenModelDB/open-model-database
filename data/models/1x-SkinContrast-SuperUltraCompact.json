@@ -40,27 +40,45 @@
         {
             "type": "paired",
             "LR": "https://i.ibb.co/5YMK1m4/00.png",
-            "SR": "https://i.ibb.co/D5kLGHg/00-1x-Skin-Contrast-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/D5kLGHg/00-1x-Skin-Contrast-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/2fa99beb24b7e8c53fb195d6.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/JcS42TX/02.png",
-            "SR": "https://i.ibb.co/xGhPqgs/02-1x-Skin-Contrast-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/xGhPqgs/02-1x-Skin-Contrast-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/a77c21d27d1eb6a96d36cbb7.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/XLkG4k3/03.png",
-            "SR": "https://i.ibb.co/C29zHY0/03-1x-Skin-Contrast-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/C29zHY0/03-1x-Skin-Contrast-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/d801ebb51b4104abb8fc11a1.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/YXWXmmr/98020a65-72b6-4659-b624-f77d64afe189.png",
-            "SR": "https://i.ibb.co/nCXsNmR/98020a65-72b6-4659-b624-f77d64afe189-1x-Skin-Contrast-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/nCXsNmR/98020a65-72b6-4659-b624-f77d64afe189-1x-Skin-Contrast-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/786a6db46b76beaef574ba1a.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/0QB18Sd/ss-f14055548a6c51171036ebb3d00ddf5c97e5bd05-1920x1080.png",
-            "SR": "https://i.ibb.co/4J4jtDL/ss-f14055548a6c51171036ebb3d00ddf5c97e5bd05-1920x1080-1x-Skin-Contrast-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/4J4jtDL/ss-f14055548a6c51171036ebb3d00ddf5c97e5bd05-1920x1080-1x-Skin-Contrast-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/873079f91128d4b727ee7756.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/968f3cfd5e2d2a6e250c77fb.jpg",
+        "SR": "/thumbs/96500841352e5467d72ac676.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

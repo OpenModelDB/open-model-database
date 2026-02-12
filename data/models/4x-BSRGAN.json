@@ -36,62 +36,87 @@
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/butterfly.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/butterfly_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/butterfly_BSRGAN.png",
+            "thumbnail": "/thumbs/small/a68e63305288976f386a2471.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/oldphoto2.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto2_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto2_BSRGAN.png",
+            "thumbnail": "/thumbs/small/61fe6f3e5d35e9ff33d6ee59.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/oldphoto3.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto3_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto3_BSRGAN.png",
+            "thumbnail": "/thumbs/small/b650e61647cde97265f53bf8.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/oldphoto6.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto6_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/oldphoto6_BSRGAN.png",
+            "thumbnail": "/thumbs/small/46777bf19df7c90c538427e8.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/dog.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/dog_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/dog_BSRGAN.png",
+            "thumbnail": "/thumbs/small/9b1ed1bae224b7a8912d58a1.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/dped_crop00061.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/dped_crop00061_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/dped_crop00061_BSRGAN.png",
+            "thumbnail": "/thumbs/small/0d33932e34861b6d38cf4a2e.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/chip.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/chip_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/chip_BSRGAN.png",
+            "thumbnail": "/thumbs/small/ae27daa85438115f9518fd59.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/comic1.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/comic1_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/comic1_BSRGAN.png",
+            "thumbnail": "/thumbs/small/cd40d8a83c14374bf2545651.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/testsets/RealSRSet/comic3.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/comic3_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/testsets/BSRGAN/comic3_BSRGAN.png",
+            "thumbnail": "/thumbs/small/184696f2cf7ca8114d4e6f61.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/figs/00003.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00003_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00003_BSRGAN.png",
+            "thumbnail": "/thumbs/small/c42ee0adfe67329accbde27b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/figs/00080.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00080_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00080_BSRGAN.png",
+            "thumbnail": "/thumbs/small/b243209463f55ee731e1e102.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/cszn/BSRGAN/raw/main/figs/00081.png",
-            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00081_BSRGAN.png"
+            "SR": "https://github.com/cszn/BSRGAN/raw/main/figs/00081_BSRGAN.png",
+            "thumbnail": "/thumbs/small/32c3a2e755df2c6d171eed13.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/ba28b4645c27013a317d0f95.png",
+        "SR": "/thumbs/7a6753b113e16ff1648ce4a5.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

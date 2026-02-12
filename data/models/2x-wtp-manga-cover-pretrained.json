@@ -6,7 +6,7 @@
         "manga",
         "pretrained"
     ],
-    "description": "Purpose: pre-workout to speed up your workouts\n\nWhile experimenting with color models for cugan, I just ran into problems that the official models are not imported correctly and have additional processing in addition to resizing. As a result, for my project I trained 2 x cugans for neosr; only resizing losses were applied to the dataset `(“lanczos”, “bicubic”, “bilenear”, “HAMMING”, “NEAREST”)`",
+    "description": "Purpose: pre-workout to speed up your workouts\n\nWhile experimenting with color models for cugan, I just ran into problems that the official models are not imported correctly and have additional processing in addition to resizing. As a result, for my project I trained 2 x cugans for neosr; only resizing losses were applied to the dataset `(\u201clanczos\u201d, \u201cbicubic\u201d, \u201cbilenear\u201d, \u201cHAMMING\u201d, \u201cNEAREST\u201d)`",
     "date": "2024-02-19",
     "architecture": "real-cugan",
     "size": null,
@@ -35,7 +35,21 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/a5/7a/BG0z0XJL_o.png",
-            "SR": "https://images2.imgbox.com/14/ac/jbeZitdN_o.png"
+            "SR": "https://images2.imgbox.com/14/ac/jbeZitdN_o.png",
+            "thumbnail": "/thumbs/small/0dd2d9d1ccadc3db6b67b906.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/41ad22252becc1b5791792b0.png",
+        "SR": "/thumbs/c55f762299af194c8e8ff1bd.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -39,7 +39,21 @@
             "type": "paired",
             "caption": "Test case: Medium noise and grain",
             "LR": "https://imgsli.com/i/f9c99bbc-6d87-48fb-9cdf-454115514860.jpg",
-            "SR": "https://imgsli.com/i/db120500-57d5-4421-a909-c2d31c009ad1.jpg"
+            "SR": "https://imgsli.com/i/db120500-57d5-4421-a909-c2d31c009ad1.jpg",
+            "thumbnail": "/thumbs/small/128fe0b8abe541edcecf2704.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/0d48160e5c60ec085401cb50.jpg",
+        "SR": "/thumbs/6c328c546c88bc2b996eacbe.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

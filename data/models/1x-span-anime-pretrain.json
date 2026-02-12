@@ -30,7 +30,12 @@
         {
             "type": "standalone",
             "caption": "1",
-            "url": "https://images2.imgbox.com/34/27/VczQKFKi_o.png"
+            "url": "https://images2.imgbox.com/34/27/VczQKFKi_o.png",
+            "thumbnail": "/thumbs/small/d78716a1e69ff3320a2abecd.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/5dae4f9bc8e12b93b49b6240.jpg"
+    }
 }

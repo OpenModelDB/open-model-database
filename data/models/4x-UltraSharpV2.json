@@ -47,42 +47,53 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/WIlUYVEn.webp"
+            "url": "https://i.slow.pics/WIlUYVEn.webp",
+            "thumbnail": "/thumbs/small/749f042118da34343c02934b.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/gn1LTyo2.webp"
+            "url": "https://i.slow.pics/gn1LTyo2.webp",
+            "thumbnail": "/thumbs/small/d339795ad48685b33dbbfd8a.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/rYWRc0Vt.webp",
             "SR": "https://i.slow.pics/ovD5pg9L.webp",
-            "caption": "lossless"
+            "caption": "lossless",
+            "thumbnail": "/thumbs/small/ce9f049caf64bf0f92984fe6.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/EURPGH5C.webp",
             "SR": "https://i.slow.pics/QhszMnKH.webp",
-            "caption": "jpeg75"
+            "caption": "jpeg75",
+            "thumbnail": "/thumbs/small/fb66c0db320a149cb8aa9c16.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/jzA04YFI.webp",
-            "SR": "https://i.slow.pics/3it3fgKN.webp"
+            "SR": "https://i.slow.pics/3it3fgKN.webp",
+            "thumbnail": "/thumbs/small/302aba775ef2dd866cee77db.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/O7MSvzVY.webp",
             "SR": "https://i.slow.pics/DIIcP5Rz.webp",
-            "caption": "jpeg85"
+            "caption": "jpeg85",
+            "thumbnail": "/thumbs/small/e57c4286b997075ec1fb9152.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/xdMMHbxp.webp",
             "SR": "https://i.slow.pics/TDb7SUJQ.webp",
-            "caption": "lossless"
+            "caption": "lossless",
+            "thumbnail": "/thumbs/small/c90bb07086c84a22f9a708da.jpg"
         }
     ],
     "dataset": "Private dataset",
-    "trainingOTF": false
+    "trainingOTF": false,
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/d9cd619a02c4596b80c0ef1c.jpg"
+    }
 }

@@ -40,32 +40,51 @@
         {
             "type": "paired",
             "LR": "https://i.ibb.co/5YMK1m4/00.png",
-            "SR": "https://i.ibb.co/p49sgXJ/00-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/p49sgXJ/00-1x-Skin-Contrast-High-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/2fa99beb24b7e8c53fb195d6.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/JcS42TX/02.png",
-            "SR": "https://i.ibb.co/w6vGxpF/02-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/w6vGxpF/02-1x-Skin-Contrast-High-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/a77c21d27d1eb6a96d36cbb7.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/XLkG4k3/03.png",
-            "SR": "https://i.ibb.co/zmVM1br/03-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/zmVM1br/03-1x-Skin-Contrast-High-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/d801ebb51b4104abb8fc11a1.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/b3fZq8f/download-9.png",
-            "SR": "https://i.ibb.co/MZCx1Cq/download-9-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/MZCx1Cq/download-9-1x-Skin-Contrast-High-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/a1cb6ac249e73c8dff35fdb0.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/p4wdJqV/ss-20a352a2c20dd4bfb08fa131dc4c2e763510f584-1920x1080.png",
-            "SR": "https://i.ibb.co/SwynSRD/ss-20a352a2c20dd4bfb08fa131dc4c2e763510f584-1920x1080-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/SwynSRD/ss-20a352a2c20dd4bfb08fa131dc4c2e763510f584-1920x1080-1x-Skin-Contrast-High-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/3ab7c8f618ebf0097d8c7035.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/Vm9TBN1/ss-91c4e1cd57a692d6fe6ebbc662cd549820e42de1-1920x1080.png",
-            "SR": "https://i.ibb.co/p3jT0FZ/ss-91c4e1cd57a692d6fe6ebbc662cd549820e42de1-1920x1080-1x-Skin-Contrast-High-Super-Ultra-Compact.png"
+            "SR": "https://i.ibb.co/p3jT0FZ/ss-91c4e1cd57a692d6fe6ebbc662cd549820e42de1-1920x1080-1x-Skin-Contrast-High-Super-Ultra-Compact.png",
+            "thumbnail": "/thumbs/small/e8e1b7646d869ed0613ca305.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/968f3cfd5e2d2a6e250c77fb.jpg",
+        "SR": "/thumbs/9297d98ef2df4b95357d61b4.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

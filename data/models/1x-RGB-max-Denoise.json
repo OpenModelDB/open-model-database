@@ -37,28 +37,45 @@
             "type": "paired",
             "caption": "Tom and Jerry",
             "LR": "https://imgsli.com/i/28cd9a25-829c-4286-9241-9f6953a22ace.jpg",
-            "SR": "https://imgsli.com/i/a11ca8c2-c237-4311-97aa-1550818435ef.jpg"
+            "SR": "https://imgsli.com/i/a11ca8c2-c237-4311-97aa-1550818435ef.jpg",
+            "thumbnail": "/thumbs/small/f577c57afb0f3ccaec2963aa.jpg"
         },
         {
             "type": "paired",
             "caption": "Bugs Bunny",
             "LR": "https://imgsli.com/i/aac5b2d1-0463-4222-87b6-59feb589630c.jpg",
-            "SR": "https://imgsli.com/i/b4d78a9f-be84-44b7-b489-e5cb64f212ac.jpg"
+            "SR": "https://imgsli.com/i/b4d78a9f-be84-44b7-b489-e5cb64f212ac.jpg",
+            "thumbnail": "/thumbs/small/0b43b6b467f9a07767cdebe1.jpg"
         },
         {
             "type": "paired",
             "caption": "Walky Talky",
             "LR": "https://imgsli.com/i/32a4eac0-93dc-47db-bda0-2f3d5346ba79.jpg",
-            "SR": "https://imgsli.com/i/30ed6040-b9df-4078-9cd5-324b93bb7217.jpg"
+            "SR": "https://imgsli.com/i/30ed6040-b9df-4078-9cd5-324b93bb7217.jpg",
+            "thumbnail": "/thumbs/small/9bf1d5ad935d481ccf36b1cf.jpg"
         },
         {
             "type": "paired",
             "caption": "Tex Avery",
             "LR": "https://imgsli.com/i/3f5022d2-8461-42f2-974a-127640e21cee.jpg",
-            "SR": "https://imgsli.com/i/89028ac1-2bd4-4e09-9402-9d5184bdc483.jpg"
+            "SR": "https://imgsli.com/i/89028ac1-2bd4-4e09-9402-9d5184bdc483.jpg",
+            "thumbnail": "/thumbs/small/828b7f9a73c7618ee47a2b7e.jpg"
         }
     ],
     "Datasize": 1100,
     "Training epochs": 629,
-    "Training iterations": 160000
+    "Training iterations": 160000,
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/ce9237da345f352d71c17359.jpg",
+        "SR": "/thumbs/f171bff620de90a6ebf8b394.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -27,7 +27,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/HVision-NKU/SRFormer/main/figs/classicalSR_2.png"
+            "url": "https://raw.githubusercontent.com/HVision-NKU/SRFormer/main/figs/classicalSR_2.png",
+            "thumbnail": "/thumbs/small/2b298521c2b8e95f4c5b3b41.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/d43a1edbb8e62bb7a4f4bbcd.jpg"
+    }
 }

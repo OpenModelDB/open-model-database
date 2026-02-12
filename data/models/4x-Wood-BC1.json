@@ -41,7 +41,21 @@
             "type": "paired",
             "caption": "A wooden shield from Dark Souls 3",
             "LR": "https://images2.imgbox.com/30/14/ENiJ6x4m_o.png",
-            "SR": "https://images2.imgbox.com/ef/01/H8jd66tX_o.jpg"
+            "SR": "https://images2.imgbox.com/ef/01/H8jd66tX_o.jpg",
+            "thumbnail": "/thumbs/small/929de5688bfab999f6b6733e.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/22dcabde8b9971c09d25675e.png",
+        "SR": "/thumbs/6be7f4cd23fb84e046279f5b.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

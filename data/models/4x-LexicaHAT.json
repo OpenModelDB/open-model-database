@@ -33,27 +33,45 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_1.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_1.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_1.png",
+            "thumbnail": "/thumbs/small/1b2cb9690f520da23313b5f8.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_6.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_6.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_6.png",
+            "thumbnail": "/thumbs/small/d3adb4ad3f185dbabb82d55f.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_10.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_10.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_10.png",
+            "thumbnail": "/thumbs/small/e894ae5a687c0a53b6b90bc3.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_11.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_11.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_11.png",
+            "thumbnail": "/thumbs/small/5177bbabc488511b2df92ce9.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_15.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_15.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLexicaHAT/examples/outputs/Input_15.png",
+            "thumbnail": "/thumbs/small/72c94ee76f6b8156bb934e45.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/a0bea76f6ae3159fb94d1860.png",
+        "SR": "/thumbs/6ffc580bd9286205084c4a69.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

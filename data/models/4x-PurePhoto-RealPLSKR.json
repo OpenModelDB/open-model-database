@@ -37,13 +37,28 @@
             "type": "paired",
             "caption": "Cat",
             "LR": "https://imgsli.com/i/b1c777f5-5e38-4674-9af6-1925ddbddbee.jpg",
-            "SR": "https://imgsli.com/i/3fe8e25b-20d3-4e6a-932c-45cb5342ff60.jpg"
+            "SR": "https://imgsli.com/i/3fe8e25b-20d3-4e6a-932c-45cb5342ff60.jpg",
+            "thumbnail": "/thumbs/small/d79dc1b71a159e3cfadff043.jpg"
         },
         {
             "type": "paired",
             "caption": "Cow",
             "LR": "https://imgsli.com/i/b05e0fdc-7861-48dc-bf0e-a8af14023ac2.jpg",
-            "SR": "https://imgsli.com/i/056afafe-ffe5-4b2e-b22f-84ba94ce0a41.jpg"
+            "SR": "https://imgsli.com/i/056afafe-ffe5-4b2e-b22f-84ba94ce0a41.jpg",
+            "thumbnail": "/thumbs/small/2719291f8ef7346f20115ab4.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/bd17b7a9689a94a6c5fd1c76.png",
+        "SR": "/thumbs/c65cf53744032e7abe2a3a8f.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

@@ -39,7 +39,21 @@
             "type": "paired",
             "caption": "Test case: Heavy chromatic (color) noise",
             "LR": "https://imgsli.com/i/681b8d22-cc4b-41e9-8c4a-b8a829c04533.jpg",
-            "SR": "https://imgsli.com/i/1ed4a803-cdcb-4e46-87c1-e5776a568389.jpg"
+            "SR": "https://imgsli.com/i/1ed4a803-cdcb-4e46-87c1-e5776a568389.jpg",
+            "thumbnail": "/thumbs/small/6a0322f64bfcf15493b5e5cd.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/21e7302fbe8f7df138244286.jpg",
+        "SR": "/thumbs/3809cae942448ef1e8004783.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

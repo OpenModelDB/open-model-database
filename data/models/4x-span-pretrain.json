@@ -30,7 +30,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/83/90/joav4okw_o.png"
+            "url": "https://images2.imgbox.com/83/90/joav4okw_o.png",
+            "thumbnail": "/thumbs/small/8ed6852904ec261c272c4547.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/34159a0092a20dd13921c1f2.jpg"
+    }
 }

@@ -47,37 +47,56 @@
             "type": "paired",
             "caption": "face",
             "LR": "https://i.slow.pics/pFLYQEHA.webp",
-            "SR": "https://i.slow.pics/kEtl601R.webp"
+            "SR": "https://i.slow.pics/kEtl601R.webp",
+            "thumbnail": "/thumbs/small/79f872996bfe5337f216a292.jpg"
         },
         {
             "type": "paired",
             "caption": "ani_bokeh",
             "LR": "https://i.slow.pics/a7EC1d6D.webp",
-            "SR": "https://i.slow.pics/TmpX6Crn.webp"
+            "SR": "https://i.slow.pics/TmpX6Crn.webp",
+            "thumbnail": "/thumbs/small/8973247056c322fb1bee4f4d.jpg"
         },
         {
             "type": "paired",
             "caption": "real_degraded",
             "LR": "https://i.slow.pics/gzlsVGMx.webp",
-            "SR": "https://i.slow.pics/psuXPeSD.webp"
+            "SR": "https://i.slow.pics/psuXPeSD.webp",
+            "thumbnail": "/thumbs/small/71d802fc552d0f1785133e86.jpg"
         },
         {
             "type": "paired",
             "caption": "noisy",
             "LR": "https://i.slow.pics/RWSRoQQl.webp",
-            "SR": "https://i.slow.pics/eTUAjvTS.webp"
+            "SR": "https://i.slow.pics/eTUAjvTS.webp",
+            "thumbnail": "/thumbs/small/5ca9b3743c50f58685577a6a.jpg"
         },
         {
             "type": "paired",
             "caption": "BF4",
             "LR": "https://i.slow.pics/Im90vdVx.webp",
-            "SR": "https://i.slow.pics/NHex8zaz.webp"
+            "SR": "https://i.slow.pics/NHex8zaz.webp",
+            "thumbnail": "/thumbs/small/ce70cf3c9e48c9bcd674781a.jpg"
         },
         {
             "type": "paired",
             "caption": "Control",
             "LR": "https://i.slow.pics/ELIuNgOd.webp",
-            "SR": "https://i.slow.pics/CqtGEdoH.webp"
+            "SR": "https://i.slow.pics/CqtGEdoH.webp",
+            "thumbnail": "/thumbs/small/873b257bb0b3c0daaf1e2f61.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/21076806ec5b12cb3f0dd212.jpg",
+        "SR": "/thumbs/3afd5122d5990c4b6418be08.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -32,7 +32,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/5O74rRL.png"
+            "url": "https://i.imgur.com/5O74rRL.png",
+            "thumbnail": "/thumbs/small/d86ecf06bcb483daeb81aecf.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/1c5ea87aadec8f111c4ea15e.jpg"
+    }
 }

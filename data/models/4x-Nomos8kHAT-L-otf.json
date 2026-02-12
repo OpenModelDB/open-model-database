@@ -39,11 +39,17 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/58/f5/FG5fdJ7m_o.png"
+            "url": "https://images2.imgbox.com/58/f5/FG5fdJ7m_o.png",
+            "thumbnail": "/thumbs/small/4ca94f1f681c0263109dec00.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/a6/0f/rltFmzxp_o.png"
+            "url": "https://images2.imgbox.com/a6/0f/rltFmzxp_o.png",
+            "thumbnail": "/thumbs/small/04c14d8bf9a7cd631fefae0f.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/cdc1b27fe2b6a17861edb7d8.jpg"
+    }
 }

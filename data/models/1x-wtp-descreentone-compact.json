@@ -37,13 +37,28 @@
             "type": "paired",
             "caption": "Raw Comparison",
             "LR": "https://imgsli.com/i/e05f82d5-fa88-46d6-bf16-3b661826cdad.jpg",
-            "SR": "https://imgsli.com/i/58aa3ab0-9ae1-4316-953b-61e8180f809e.jpg"
+            "SR": "https://imgsli.com/i/58aa3ab0-9ae1-4316-953b-61e8180f809e.jpg",
+            "thumbnail": "/thumbs/small/4bb3eb648af45f49c895c5e1.jpg"
         },
         {
             "type": "paired",
             "caption": "Overlaid Screentone (color deviation)",
             "LR": "https://imgsli.com/i/16282bc7-627c-475f-9fbe-9226b229f5ff.jpg",
-            "SR": "https://imgsli.com/i/c4be5206-b757-4f4f-9dc8-29900c5a3d67.jpg"
+            "SR": "https://imgsli.com/i/c4be5206-b757-4f4f-9dc8-29900c5a3d67.jpg",
+            "thumbnail": "/thumbs/small/436dad7e39152f08f03ebe92.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/1bf873e63694df554317afc8.jpg",
+        "SR": "/thumbs/7d3e0cc2033b5ff506c63b41.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

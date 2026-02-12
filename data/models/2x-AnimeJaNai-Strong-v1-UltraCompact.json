@@ -38,27 +38,45 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/1a0d1ffe-2f90-416d-8038-f0625b321c52.jpg",
-            "SR": "https://imgsli.com/i/71b70e79-a529-47d5-b2f7-3aad8e1c5ab5.jpg"
+            "SR": "https://imgsli.com/i/71b70e79-a529-47d5-b2f7-3aad8e1c5ab5.jpg",
+            "thumbnail": "/thumbs/small/add29c89513b3e2a02961bfc.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/cd32d835-778c-4d01-b665-8098da623e62.jpg",
-            "SR": "https://imgsli.com/i/c910b883-76b3-42fa-8170-d8a847296384.jpg"
+            "SR": "https://imgsli.com/i/c910b883-76b3-42fa-8170-d8a847296384.jpg",
+            "thumbnail": "/thumbs/small/2b4243668f40286a238297f4.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/4af7e16f-87f0-4dc1-9ceb-3e3bf7224baf.jpg",
-            "SR": "https://imgsli.com/i/a1a1166b-231b-4237-896a-dfe22eca150c.jpg"
+            "SR": "https://imgsli.com/i/a1a1166b-231b-4237-896a-dfe22eca150c.jpg",
+            "thumbnail": "/thumbs/small/a917ecc32cddbe4045e97a73.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/074652f5-54c0-4403-8926-5bdbc355d9eb.jpg",
-            "SR": "https://imgsli.com/i/c589caf6-7225-4536-88fc-eebfc65b6251.jpg"
+            "SR": "https://imgsli.com/i/c589caf6-7225-4536-88fc-eebfc65b6251.jpg",
+            "thumbnail": "/thumbs/small/12a3aafc07e36dd979656424.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/736fb35f-5082-4a03-ac6a-34f7cdab8214.jpg",
-            "SR": "https://imgsli.com/i/7c57ebf5-f1c2-437b-909d-f40bd1ad5999.jpg"
+            "SR": "https://imgsli.com/i/7c57ebf5-f1c2-437b-909d-f40bd1ad5999.jpg",
+            "thumbnail": "/thumbs/small/e1a1cd570e2511316eec7f8e.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/1b3ad0b8ed2c04867e90bc7b.png",
+        "SR": "/thumbs/f77f0d2b55c8dda3d24a8bc0.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -31,7 +31,21 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/ec1411e8-24c1-464f-89af-57c2aadc76d9.jpg",
-            "SR": "https://imgsli.com/i/54b345f3-fcae-4c13-b630-b627efdfa97f.jpg"
+            "SR": "https://imgsli.com/i/54b345f3-fcae-4c13-b630-b627efdfa97f.jpg",
+            "thumbnail": "/thumbs/small/9f31c7479100c241f31b794f.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/b0cf5ebaaa7353d0a7d8f738.jpg",
+        "SR": "/thumbs/c503d06e41ab25b1b0eb9cb9.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

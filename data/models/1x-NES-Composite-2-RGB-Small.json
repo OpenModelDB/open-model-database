@@ -38,31 +38,49 @@
             "type": "paired",
             "caption": "Mike Tyson's Punch Out",
             "LR": "https://imgsli.com/i/0c4c242e-708b-4c47-b2a9-94f306a1e805.jpg",
-            "SR": "https://imgsli.com/i/bbe1d2b1-e24b-44d1-a765-da5c1dffbd87.jpg"
+            "SR": "https://imgsli.com/i/bbe1d2b1-e24b-44d1-a765-da5c1dffbd87.jpg",
+            "thumbnail": "/thumbs/small/5712762e40eeacfad654c71b.jpg"
         },
         {
             "type": "paired",
             "caption": "Legacy of the Wizard (VHS)",
             "LR": "https://imgsli.com/i/82831713-fa5d-43ac-8ec4-5f1aa28a715a.jpg",
-            "SR": "https://imgsli.com/i/a9351ae6-b095-46f7-b32f-a7f2d9dc941d.jpg"
+            "SR": "https://imgsli.com/i/a9351ae6-b095-46f7-b32f-a7f2d9dc941d.jpg",
+            "thumbnail": "/thumbs/small/3507ab847be05877d6910e0c.jpg"
         },
         {
             "type": "paired",
             "caption": "Defender of the Crown (RF)",
             "LR": "https://imgsli.com/i/61c72f7a-efd5-48af-ad72-3114c654ecd9.jpg",
-            "SR": "https://imgsli.com/i/9f76ef1c-8660-43a6-b080-9d82ad9401ff.jpg"
+            "SR": "https://imgsli.com/i/9f76ef1c-8660-43a6-b080-9d82ad9401ff.jpg",
+            "thumbnail": "/thumbs/small/87fbab5871917ea3c6336268.jpg"
         },
         {
             "type": "paired",
             "caption": "Ninja Gaiden (Game Center CX)",
             "LR": "https://imgsli.com/i/571c1b9a-a2be-4c10-a080-3b62667a5b94.jpg",
-            "SR": "https://imgsli.com/i/a2d46549-bea4-4683-9ed7-3543afe99a06.jpg"
+            "SR": "https://imgsli.com/i/a2d46549-bea4-4683-9ed7-3543afe99a06.jpg",
+            "thumbnail": "/thumbs/small/f3b3177c3ab7d116d10b1154.jpg"
         },
         {
             "type": "paired",
             "caption": "Mega Man II (The Wizard)",
             "LR": "https://imgsli.com/i/9c3f1b24-4ac4-4b93-8e3d-df04a926bad2.jpg",
-            "SR": "https://imgsli.com/i/cb1a0f83-3851-4a0f-85ed-3edcd9e1b426.jpg"
+            "SR": "https://imgsli.com/i/cb1a0f83-3851-4a0f-85ed-3edcd9e1b426.jpg",
+            "thumbnail": "/thumbs/small/b9946efa32e8b89653e2ac4d.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/2d891d650745c9819777ceee.jpg",
+        "SR": "/thumbs/e8a457745ce5943af79f286f.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

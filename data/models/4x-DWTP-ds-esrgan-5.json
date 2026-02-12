@@ -5,7 +5,7 @@
     "tags": [
         "manga"
     ],
-    "description": "Purpose: manga screentone removal\n\nI haven’t shared models for a long time, I think one of these days I’ll upload a dat version and a less accurate esrgan. This version of the model was meant to be an attempt to get as much detail out of the scans as possible while removing the screentone, so some things had to be sacrificed, but overall it is better than all my previous models combined in terms of accuracy and tone.\n\n[**examples**](https://slow.pics/c/zbOGXoDv)\n[colab which contains the rest of my models](https://colab.research.google.com/drive/1w8fgsmh9fcHDtpQnYy77aKgpHEWlKpj-?usp=sharing#scrollTo=aYbqM1pWkPTT)\n||In general, this is a collab for convenient scaling of manga in the ru segment of translators and there are other people’s models there, if I suddenly added someone else’s model that has a license, please let me know, I’ll correct it||",
+    "description": "Purpose: manga screentone removal\n\nI haven\u2019t shared models for a long time, I think one of these days I\u2019ll upload a dat version and a less accurate esrgan. This version of the model was meant to be an attempt to get as much detail out of the scans as possible while removing the screentone, so some things had to be sacrificed, but overall it is better than all my previous models combined in terms of accuracy and tone.\n\n[**examples**](https://slow.pics/c/zbOGXoDv)\n[colab which contains the rest of my models](https://colab.research.google.com/drive/1w8fgsmh9fcHDtpQnYy77aKgpHEWlKpj-?usp=sharing#scrollTo=aYbqM1pWkPTT)\n||In general, this is a collab for convenient scaling of manga in the ru segment of translators and there are other people\u2019s models there, if I suddenly added someone else\u2019s model that has a license, please let me know, I\u2019ll correct it||",
     "date": "2023-12-24",
     "architecture": "esrgan",
     "size": [
@@ -32,22 +32,39 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/1AYwEBYM.png",
-            "SR": "https://i.slow.pics/DH4EmgHP.png"
+            "SR": "https://i.slow.pics/DH4EmgHP.png",
+            "thumbnail": "/thumbs/small/36eb4732d6439ecd80efebe1.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/NcVYzhzq.png",
-            "SR": "https://i.slow.pics/YqPPVbWQ.png"
+            "SR": "https://i.slow.pics/YqPPVbWQ.png",
+            "thumbnail": "/thumbs/small/878bd833ab7a5ed2f9b5de8b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/WBmSe12N.png",
-            "SR": "https://i.slow.pics/7hk647lt.png"
+            "SR": "https://i.slow.pics/7hk647lt.png",
+            "thumbnail": "/thumbs/small/06d2bdbf8f2068e61f025e32.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/cy0pnfJH.png",
-            "SR": "https://i.slow.pics/47oCvFOG.png"
+            "SR": "https://i.slow.pics/47oCvFOG.png",
+            "thumbnail": "/thumbs/small/d19b33dd206977867ba6b524.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/50ffe626b581d97bcfc7586a.jpg",
+        "SR": "/thumbs/63fb16d474cbdc4b90e7b4a3.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

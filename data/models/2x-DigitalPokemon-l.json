@@ -1,5 +1,5 @@
 {
-    "name": "Digital Pokémon-Large",
+    "name": "Digital Pok\u00e9mon-Large",
     "author": "pokepress",
     "license": "MIT",
     "tags": [
@@ -7,7 +7,7 @@
         "cartoon",
         "general-upscaler"
     ],
-    "description": "This model is designed to upscale the standard definition digital era of the Pokémon anime, which runs from late season 5 (Master Quest) to early season 12 (Galactic Battles). During this time, the show was animated digitally in a 4:3 ratio. This process was also used for Mewtwo Returns, most of Pokémon Chronicles, and the Mystery Dungeon specials.\n\nAdvice/Known Limitations:\n* This OmniSR model can occasionally produce black frames when run in fp16 mode. This seems to be more common in the TPCi era (seasons 9 and later). The issue is sporadic enough that it probably makes sense to do a first pass in fp16, then re-upscale any affected shots in fp32.\n* I recommend using QTGMC on a preset of \"Slow\" or slower for deinterlacing. While the show is primarily animated at 12/24 fps, some elements like backgrounds are animated at a full 60i, particularly for the Diamond & Pearl era, which increased the base animation frame rate to 15 fps.\n* The model is not great at handling fonts, particularly the italicized text in the episode credits. This is despite including font images in the training data.\n\nVersion History:\n\n* 1.1.0 (9/16/2025): Added images from SD portion of season 12, augmented training to better handle slightly resized images.\n* 1.0.0: Initial Release",
+    "description": "This model is designed to upscale the standard definition digital era of the Pok\u00e9mon anime, which runs from late season 5 (Master Quest) to early season 12 (Galactic Battles). During this time, the show was animated digitally in a 4:3 ratio. This process was also used for Mewtwo Returns, most of Pok\u00e9mon Chronicles, and the Mystery Dungeon specials.\n\nAdvice/Known Limitations:\n* This OmniSR model can occasionally produce black frames when run in fp16 mode. This seems to be more common in the TPCi era (seasons 9 and later). The issue is sporadic enough that it probably makes sense to do a first pass in fp16, then re-upscale any affected shots in fp32.\n* I recommend using QTGMC on a preset of \"Slow\" or slower for deinterlacing. While the show is primarily animated at 12/24 fps, some elements like backgrounds are animated at a full 60i, particularly for the Diamond & Pearl era, which increased the base animation frame rate to 15 fps.\n* The model is not great at handling fonts, particularly the italicized text in the episode credits. This is despite including font images in the training data.\n\nVersion History:\n\n* 1.1.0 (9/16/2025): Added images from SD portion of season 12, augmented training to better handle slightly resized images.\n* 1.0.0: Initial Release",
     "date": "2025-09-16",
     "architecture": "omnisr",
     "size": null,
@@ -28,38 +28,56 @@
     "trainingIterations": 510000,
     "trainingHRSize": 64,
     "trainingOTF": false,
-    "dataset": "Screenshots from seasons 6-12 of the English Pokémon dub, plus some manually created images for fonts.",
+    "dataset": "Screenshots from seasons 6-12 of the English Pok\u00e9mon dub, plus some manually created images for fonts.",
     "datasetSize": 80,
     "images": [
         {
             "type": "paired",
             "caption": "A Bite to Remember",
             "LR": "https://imgsli.com/i/9ae50058-ac4a-415a-a243-8f924015fd46.jpg",
-            "SR": "https://imgsli.com/i/7208b898-7087-4b3f-b7e5-e0de26b7bee3.jpg"
+            "SR": "https://imgsli.com/i/7208b898-7087-4b3f-b7e5-e0de26b7bee3.jpg",
+            "thumbnail": "/thumbs/small/889ac513a1462f56d51c0730.jpg"
         },
         {
             "type": "paired",
             "caption": "Going, Going, Yawn Title Card",
             "LR": "https://imgsli.com/i/64ed6a26-8fb9-4849-996d-2d240b3eda97.jpg",
-            "SR": "https://imgsli.com/i/149ea0dc-4a0d-4054-b303-029a637b84de.jpg"
+            "SR": "https://imgsli.com/i/149ea0dc-4a0d-4054-b303-029a637b84de.jpg",
+            "thumbnail": "/thumbs/small/53c431e87582eccb11a2be65.jpg"
         },
         {
             "type": "paired",
             "caption": "Fear Factor Phony!",
             "LR": "https://imgsli.com/i/165ae236-385e-4519-b062-d7e8ec21d797.jpg",
-            "SR": "https://imgsli.com/i/ac297d41-2be8-4589-9faa-7bfcddcdc73e.jpg"
+            "SR": "https://imgsli.com/i/ac297d41-2be8-4589-9faa-7bfcddcdc73e.jpg",
+            "thumbnail": "/thumbs/small/3edfcec6236cf738e0c345c1.jpg"
         },
         {
             "type": "paired",
             "caption": "Once There Were Greenfields",
             "LR": "https://imgsli.com/i/91270773-c8e9-4ea3-a679-ce1acde79b60.jpg",
-            "SR": "https://imgsli.com/i/f336ac86-33a2-4ba1-b4d4-d676e637ee12.jpg"
+            "SR": "https://imgsli.com/i/f336ac86-33a2-4ba1-b4d4-d676e637ee12.jpg",
+            "thumbnail": "/thumbs/small/25ded8266104f26f98558c88.jpg"
         },
         {
             "type": "paired",
             "caption": "Cheers on Castaways Isle!",
             "LR": "https://imgsli.com/i/f71c330d-8a10-4285-ada6-d9bcad0429c7.jpg",
-            "SR": "https://imgsli.com/i/768b6012-dc7c-42cd-a369-b25c1ba736e0.jpg"
+            "SR": "https://imgsli.com/i/768b6012-dc7c-42cd-a369-b25c1ba736e0.jpg",
+            "thumbnail": "/thumbs/small/65b4af12cce32adb18454361.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/0c070558243e511567d359ca.png",
+        "SR": "/thumbs/06ed95a03219f41e1be84b72.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

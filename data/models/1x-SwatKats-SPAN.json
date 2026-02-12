@@ -37,12 +37,18 @@
         {
             "type": "standalone",
             "caption": "1",
-            "url": "https://images2.imgbox.com/55/e0/ug5US1Mo_o.png"
+            "url": "https://images2.imgbox.com/55/e0/ug5US1Mo_o.png",
+            "thumbnail": "/thumbs/small/b3abddefef97e10e7c044cda.jpg"
         },
         {
             "type": "standalone",
             "caption": "2",
-            "url": "https://images2.imgbox.com/89/1b/asi5fXrO_o.png"
+            "url": "https://images2.imgbox.com/89/1b/asi5fXrO_o.png",
+            "thumbnail": "/thumbs/small/711e63748ecba46d345c6426.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/31798c0c04ecbeca7e0d9b32.jpg"
+    }
 }

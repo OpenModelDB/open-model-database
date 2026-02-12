@@ -35,16 +35,23 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/b0/e4/y9YfLj2v_o.png"
+            "url": "https://images2.imgbox.com/b0/e4/y9YfLj2v_o.png",
+            "thumbnail": "/thumbs/small/cb7c188f89cd69c128e958af.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/75/d2/rkPyWK0z_o.png"
+            "url": "https://images2.imgbox.com/75/d2/rkPyWK0z_o.png",
+            "thumbnail": "/thumbs/small/fe2d7da1f4e4fda56289f98a.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/9c/a6/Cce0e4nl_o.png",
-            "SR": "https://images2.imgbox.com/09/bd/MzfTMS5C_o.jpg"
+            "SR": "https://images2.imgbox.com/09/bd/MzfTMS5C_o.jpg",
+            "thumbnail": "/thumbs/small/d3f28b59521e1a4d337e5cbc.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/029076242e5eaa41b2586075.jpg"
+    }
 }

@@ -37,13 +37,15 @@
             "type": "paired",
             "caption": "LR vs DAT2",
             "LR": "https://i.slow.pics/xC4ZENp7.png",
-            "SR": "https://i.slow.pics/iT43SRNQ.png"
+            "SR": "https://i.slow.pics/iT43SRNQ.png",
+            "thumbnail": "/thumbs/small/18e51f67832b6c48db7e7221.jpg"
         },
         {
             "type": "paired",
             "caption": "SwinIR vs DAT2",
             "LR": "https://i.slow.pics/eAeuBEq4.png",
-            "SR": "https://i.slow.pics/iT43SRNQ.png"
+            "SR": "https://i.slow.pics/iT43SRNQ.png",
+            "thumbnail": "/thumbs/small/b144c74ce11d44aefd83d9bb.jpg"
         },
         {
             "type": "standalone",
@@ -53,5 +55,18 @@
             "type": "standalone",
             "url": "https://private-user-images.githubusercontent.com/62084776/337505062-59134bb6-a44f-4c98-b17a-52a1c5651dc7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjEwOTQ0NzUsIm5iZiI6MTcyMTA5NDE3NSwicGF0aCI6Ii82MjA4NDc3Ni8zMzc1MDUwNjItNTkxMzRiYjYtYTQ0Zi00Yzk4LWIxN2EtNTJhMWM1NjUxZGM3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA3MTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNzE2VDAxNDI1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQwYzBmM2QxM2FjMTg0N2UzNjU1NDJlNTRmM2Y4MTc4ZGJiNzIxOTMwMDVhZjE5NTI5OTI4ZmFhMDRmNjYwOTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.cxVnhY-drjO5t__Rs3dtsBYkZmm36LAkXU9j9KoLh2o"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/188db7a0d6007633f302505a.png",
+        "SR": "/thumbs/e85d9aaf4129193967a65cd6.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

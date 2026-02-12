@@ -32,7 +32,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/51/10/bht8DYhH_o.png"
+            "url": "https://images2.imgbox.com/51/10/bht8DYhH_o.png",
+            "thumbnail": "/thumbs/small/549dff258d239cd8aef01a59.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/fe957c12b8b510a9be1072c2.jpg"
+    }
 }

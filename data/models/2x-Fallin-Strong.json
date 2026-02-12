@@ -6,7 +6,7 @@
         "anime",
         "restoration"
     ],
-    "description": "Purpose: Real time upscaler for 1080p anime\n\n Fallin has two versions: “Soft” and \"Strong\" \n\n For most users, “Soft” is a more safe choice, it has no oversharpening artifacts, and it is better at removing compression artifacts and denoising. If you want a safe choice, you should choose “Soft”.\n\n “Strong” is the oversharpened version of Soft. Oversharpening artifacts may appear on lines, and lines may not always look good due to oversharpening. Unlike “Soft”, it has a problem with whitening faces. If you like sharpness, choose “Strong”. And I think “Strong” is better in DOF\n\n Note: Keep in mind that Strong produces oversharpening artifacts.\n\nThanks to @styler00dollar  for helping me fix the color issue.",
+    "description": "Purpose: Real time upscaler for 1080p anime\n\n Fallin has two versions: \u201cSoft\u201d and \"Strong\" \n\n For most users, \u201cSoft\u201d is a more safe choice, it has no oversharpening artifacts, and it is better at removing compression artifacts and denoising. If you want a safe choice, you should choose \u201cSoft\u201d.\n\n \u201cStrong\u201d is the oversharpened version of Soft. Oversharpening artifacts may appear on lines, and lines may not always look good due to oversharpening. Unlike \u201cSoft\u201d, it has a problem with whitening faces. If you like sharpness, choose \u201cStrong\u201d. And I think \u201cStrong\u201d is better in DOF\n\n Note: Keep in mind that Strong produces oversharpening artifacts.\n\nThanks to @styler00dollar  for helping me fix the color issue.",
     "date": "2025-09-14",
     "architecture": "cugan",
     "size": null,
@@ -35,19 +35,35 @@
             "type": "paired",
             "caption": "2x-Fallin-Strong",
             "LR": "https://imgsli.com/i/a3088948-39b2-4ad1-ae4c-b52ba30249e5.jpg",
-            "SR": "https://imgsli.com/i/6c932bb7-e6aa-4e3b-97b9-8cf69af19571.jpg"
+            "SR": "https://imgsli.com/i/6c932bb7-e6aa-4e3b-97b9-8cf69af19571.jpg",
+            "thumbnail": "/thumbs/small/d0e0e095e80d7a4dfec20dcc.jpg"
         },
         {
             "type": "paired",
             "caption": "2x-Fallin-Strong",
             "LR": "https://imgsli.com/i/01e6b74a-3521-463f-a798-856c2b77dc37.jpg",
-            "SR": "https://imgsli.com/i/39fe76ca-3083-4a55-8eb2-ce591583f427.jpg"
+            "SR": "https://imgsli.com/i/39fe76ca-3083-4a55-8eb2-ce591583f427.jpg",
+            "thumbnail": "/thumbs/small/2a8b08aa8587bdd62abd87ed.jpg"
         },
         {
             "type": "paired",
             "caption": "2x-Fallin-Strong",
             "LR": "https://imgsli.com/i/20eea71e-a2a0-4078-adba-a9ba60bdcec8.jpg",
-            "SR": "https://imgsli.com/i/1c216e6c-ef4e-4b36-a86d-4847d4496ed9.jpg"
+            "SR": "https://imgsli.com/i/1c216e6c-ef4e-4b36-a86d-4847d4496ed9.jpg",
+            "thumbnail": "/thumbs/small/551f8d39a342f9b283a341c6.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/cde1465daa90a4596ee0637d.png",
+        "SR": "/thumbs/27a0b425b954a5a961fc99d3.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -33,22 +33,39 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_5.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_5_4xLSDIRplusN.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_5_4xLSDIRplusN.png",
+            "thumbnail": "/thumbs/small/8bd492f6ea83479db4467ceb.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_14.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_14_4xLSDIRplusN.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_14_4xLSDIRplusN.png",
+            "thumbnail": "/thumbs/small/d9dc543f3f85b88eaf518b4b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_13.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_13_4xLSDIRplusN.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_13_4xLSDIRplusN.png",
+            "thumbnail": "/thumbs/small/23e39951018b5d4c7bc9faaa.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_6.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_6_4xLSDIRplusN.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusN/Input_6_4xLSDIRplusN.png",
+            "thumbnail": "/thumbs/small/62d539719974b34b7c668729.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/f633606261b759fe8b78f400.png",
+        "SR": "/thumbs/681dd434e1249b0c885d70f8.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

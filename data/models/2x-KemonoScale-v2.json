@@ -39,7 +39,21 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/20/dc/QE2nbgTT_o.png",
-            "SR": "https://images2.imgbox.com/40/cc/yX6IpAFe_o.png"
+            "SR": "https://images2.imgbox.com/40/cc/yX6IpAFe_o.png",
+            "thumbnail": "/thumbs/small/98e197002cf06e69d97ee7fc.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/f7bb4ed00a6a1279f252afd8.png",
+        "SR": "/thumbs/ebb32ea78ada610454e48b3d.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

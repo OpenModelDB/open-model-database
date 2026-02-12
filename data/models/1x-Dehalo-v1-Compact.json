@@ -34,13 +34,28 @@
             "type": "paired",
             "caption": "GoldenBoy01",
             "LR": "https://imgsli.com/i/5b7c56fb-3edf-468b-a33c-f53dc10f8603.jpg",
-            "SR": "https://imgsli.com/i/76c4804b-c3ff-4c91-a071-7e858a5cf939.jpg"
+            "SR": "https://imgsli.com/i/76c4804b-c3ff-4c91-a071-7e858a5cf939.jpg",
+            "thumbnail": "/thumbs/small/9e89f6807d6904ac1d813101.jpg"
         },
         {
             "type": "paired",
             "caption": "Kodocha01",
             "LR": "https://imgsli.com/i/483527f5-3365-488b-8b71-4fab596a9c6c.jpg",
-            "SR": "https://imgsli.com/i/218c298d-f446-44dc-860f-af4785baf11d.jpg"
+            "SR": "https://imgsli.com/i/218c298d-f446-44dc-860f-af4785baf11d.jpg",
+            "thumbnail": "/thumbs/small/62d200aa0aa2afdbe6e2a79f.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/1de440666f96083376446c83.jpg",
+        "SR": "/thumbs/2a9b2a90b4db9ad3fdd1ff36.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

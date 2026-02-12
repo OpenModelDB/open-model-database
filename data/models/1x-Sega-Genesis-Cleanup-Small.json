@@ -37,31 +37,49 @@
             "type": "paired",
             "caption": "Sonic 2 (Composite)",
             "LR": "https://imgsli.com/i/cb5210fa-b962-4b66-b891-586a4dd73b3d.jpg",
-            "SR": "https://imgsli.com/i/cb9d6c04-012a-4e9a-86ba-7e9666cf6f66.jpg"
+            "SR": "https://imgsli.com/i/cb9d6c04-012a-4e9a-86ba-7e9666cf6f66.jpg",
+            "thumbnail": "/thumbs/small/25f93293bd92e254caf6d006.jpg"
         },
         {
             "type": "paired",
             "caption": "T2: The Arcade Game (VHS)",
             "LR": "https://imgsli.com/i/b7dd7f8a-161c-44e6-87e0-60f80c11c2cf.jpg",
-            "SR": "https://imgsli.com/i/c3d6ec1a-7a04-4033-95a0-a11959a5edd2.jpg"
+            "SR": "https://imgsli.com/i/c3d6ec1a-7a04-4033-95a0-a11959a5edd2.jpg",
+            "thumbnail": "/thumbs/small/619ea1dc53e85d5671ab6f7c.jpg"
         },
         {
             "type": "paired",
             "caption": "Tower Bridge (RF)",
             "LR": "https://imgsli.com/i/9564a712-79b2-48c1-8043-18885d9e0640.jpg",
-            "SR": "https://imgsli.com/i/2ee8ddd3-ddf5-4d1b-a167-cb0d73091df4.jpg"
+            "SR": "https://imgsli.com/i/2ee8ddd3-ddf5-4d1b-a167-cb0d73091df4.jpg",
+            "thumbnail": "/thumbs/small/b517386dded9d971813429b3.jpg"
         },
         {
             "type": "paired",
             "caption": "Super Fantasy Zone (GameCenter CX)",
             "LR": "https://imgsli.com/i/42aad9f2-0d65-485c-9e8d-7b07bb7a2583.jpg",
-            "SR": "https://imgsli.com/i/80922473-0dd3-405f-a5d7-a0db31d8940c.jpg"
+            "SR": "https://imgsli.com/i/80922473-0dd3-405f-a5d7-a0db31d8940c.jpg",
+            "thumbnail": "/thumbs/small/be3fb1ace9e567ee2e59ce5b.jpg"
         },
         {
             "type": "paired",
             "caption": "Sonic 2 (Model 1 RGB)",
             "LR": "https://imgsli.com/i/70a80c2b-41d3-48c5-a040-704f72833fae.jpg",
-            "SR": "https://imgsli.com/i/bcbb28ef-91e7-4d74-8b05-0acfef62338d.jpg"
+            "SR": "https://imgsli.com/i/bcbb28ef-91e7-4d74-8b05-0acfef62338d.jpg",
+            "thumbnail": "/thumbs/small/5fa2af280c2092adf2e8534a.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/f17354287cf41b0f43bf90e9.jpg",
+        "SR": "/thumbs/b6b7f8ea2a133e5df9c9c2fe.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

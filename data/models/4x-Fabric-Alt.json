@@ -40,7 +40,21 @@
             "type": "paired",
             "caption": "Clipboard",
             "LR": "https://images2.imgbox.com/e4/be/nJHLBgN8_o.png",
-            "SR": "https://images2.imgbox.com/fb/7f/63YHgw51_o.png"
+            "SR": "https://images2.imgbox.com/fb/7f/63YHgw51_o.png",
+            "thumbnail": "/thumbs/small/a939683b09599418b6004b16.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/cb3c98c66cbe4fea9cc4c95b.png",
+        "SR": "/thumbs/ce27d0823ba9cb96f0e56834.jpg",
+        "LRSize": {
+            "width": 84,
+            "height": 72
+        },
+        "SRSize": {
+            "width": 336,
+            "height": 288
+        }
+    }
 }

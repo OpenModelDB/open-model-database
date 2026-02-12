@@ -38,23 +38,40 @@
             "type": "paired",
             "caption": "Input vs Output (RTX Remix)",
             "LR": "https://i.slow.pics/xJmIuxId.png",
-            "SR": "https://i.slow.pics/uEF2YWSy.png"
+            "SR": "https://i.slow.pics/uEF2YWSy.png",
+            "thumbnail": "/thumbs/small/f9141fa9586398f017c08e0e.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/pOpqMtIv.png",
-            "SR": "https://i.slow.pics/KExMUh07.png"
+            "SR": "https://i.slow.pics/KExMUh07.png",
+            "thumbnail": "/thumbs/small/d0b57b7222e2b402a99ebb5d.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/p1BX66df.png",
-            "SR": "https://i.slow.pics/eDZkR2gl.png"
+            "SR": "https://i.slow.pics/eDZkR2gl.png",
+            "thumbnail": "/thumbs/small/98aa52fcc8a3da655f3a0fc1.jpg"
         },
         {
             "type": "paired",
             "caption": "Old vs New SR Model",
             "LR": "https://i.slow.pics/YyrZBxVe.png",
-            "SR": "https://i.slow.pics/O38UCmyY.png"
+            "SR": "https://i.slow.pics/O38UCmyY.png",
+            "thumbnail": "/thumbs/small/0f8e742c5630f6c14190bc2e.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/5eb4f8d7b79868307c457565.jpg",
+        "SR": "/thumbs/bccff6df2ef65e74821eb5cd.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

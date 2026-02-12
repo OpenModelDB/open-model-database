@@ -37,7 +37,21 @@
             "type": "paired",
             "caption": "RPLKSRd vs DAT2",
             "LR": "https://i.slow.pics/CQxiDB6s.webp",
-            "SR": "https://i.slow.pics/rj7yTTZq.webp"
+            "SR": "https://i.slow.pics/rj7yTTZq.webp",
+            "thumbnail": "/thumbs/small/107087fb6f6361d6a3c967dc.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/dfd1dedec508235ec2a0758e.jpg",
+        "SR": "/thumbs/ffe7bce1b618ffecf60f2d76.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

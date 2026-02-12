@@ -38,17 +38,33 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/fe2bacc5-2204-42bc-b3a0-efb8ff1244c9.jpg",
-            "SR": "https://imgsli.com/i/9606ac90-201f-423c-813f-f8fcf0dd93ad.jpg"
+            "SR": "https://imgsli.com/i/9606ac90-201f-423c-813f-f8fcf0dd93ad.jpg",
+            "thumbnail": "/thumbs/small/0491c4699a4b5ecb173db243.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/05ebf10a-5e01-4b90-80ea-18b624a65bbf.jpg",
-            "SR": "https://imgsli.com/i/afebc5b0-f86a-4c46-b552-29457de4b95a.jpg"
+            "SR": "https://imgsli.com/i/afebc5b0-f86a-4c46-b552-29457de4b95a.jpg",
+            "thumbnail": "/thumbs/small/28aa6ccc0fb590f2c694c538.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/878daac4-a0fe-4c0e-9a82-0d62106f0027.jpg",
-            "SR": "https://imgsli.com/i/2ed9bee1-0822-454f-a824-acf627a05523.jpg"
+            "SR": "https://imgsli.com/i/2ed9bee1-0822-454f-a824-acf627a05523.jpg",
+            "thumbnail": "/thumbs/small/0516fcbbf030ccefdbec7cf3.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/eccf81144e39bb47d1cc15b6.jpg",
+        "SR": "/thumbs/df8e90fc70cdfb3b4268cefd.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

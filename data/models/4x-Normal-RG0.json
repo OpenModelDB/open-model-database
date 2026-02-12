@@ -39,7 +39,21 @@
             "type": "paired",
             "caption": "Dragonslayer Armour shield from Dark Souls 3",
             "LR": "https://images2.imgbox.com/0a/c5/h00712oc_o.png",
-            "SR": "https://images2.imgbox.com/14/c8/H3XDEUYS_o.jpg"
+            "SR": "https://images2.imgbox.com/14/c8/H3XDEUYS_o.jpg",
+            "thumbnail": "/thumbs/small/060796f6ed81c1773cd19165.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/deb3679fbd6537ec201f6d16.png",
+        "SR": "/thumbs/5d26f1c6c9fbf317c4509494.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

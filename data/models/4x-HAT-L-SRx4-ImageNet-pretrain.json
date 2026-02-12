@@ -29,7 +29,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/chxy95/HAT/master/figures/Performance_comparison.png"
+            "url": "https://raw.githubusercontent.com/chxy95/HAT/master/figures/Performance_comparison.png",
+            "thumbnail": "/thumbs/small/8e606ce8388664689e94e596.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/efb375d7e3aa0a376dd59224.jpg"
+    }
 }

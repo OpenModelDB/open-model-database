@@ -6,7 +6,7 @@
         "restoration",
         "text"
     ],
-    "description": "Purpose: \"binarization\" for scanned books.\n\nA compact, lightweight version trained for general-purpose cleanup. While it performs well, RealPLSKR delivers superior results for more complex cases.<br><br>\n- Strengths (Handles Well):<br><br>\n✔ Color bleed<br>\n✔ Spots & small speckles<br>\n✔ Mould stains<br>\n✔ Fine hair & scratches – Good at thin, faint lines.<br>\n✔ Light pencil marks<br>\n✔ Dividers & text preservation<br>\n- Weaknesses (Struggles With):<br><br>\n✖ Large speckles<br>\n✖ Thick hair/clumps – May leave remnants or blurring.<br>\n✖ Photographs – Bad lighting; noisy/dark images degrade quality.<br>",
+    "description": "Purpose: \"binarization\" for scanned books.\n\nA compact, lightweight version trained for general-purpose cleanup. While it performs well, RealPLSKR delivers superior results for more complex cases.<br><br>\n- Strengths (Handles Well):<br><br>\n\u2714 Color bleed<br>\n\u2714 Spots & small speckles<br>\n\u2714 Mould stains<br>\n\u2714 Fine hair & scratches \u2013 Good at thin, faint lines.<br>\n\u2714 Light pencil marks<br>\n\u2714 Dividers & text preservation<br>\n- Weaknesses (Struggles With):<br><br>\n\u2716 Large speckles<br>\n\u2716 Thick hair/clumps \u2013 May leave remnants or blurring.<br>\n\u2716 Photographs \u2013 Bad lighting; noisy/dark images degrade quality.<br>",
     "date": "2025-06-04",
     "architecture": "compact",
     "size": [
@@ -30,17 +30,32 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/bd86a96f-d27e-4d43-9bf5-29f60d3e92ef.jpg",
-            "SR": "https://imgsli.com/i/20ed68f8-84c2-4fb0-a171-aa302ba17076.jpg"
+            "SR": "https://imgsli.com/i/20ed68f8-84c2-4fb0-a171-aa302ba17076.jpg",
+            "thumbnail": "/thumbs/small/e5c91bb059f869f4447a8b0c.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/bba8979b-c44e-4fbe-9546-e53b607fa52f.jpg",
-            "SR": "https://imgsli.com/i/69d1c126-7c8e-4bfe-8a9f-2b5849247d4d.jpg"
+            "SR": "https://imgsli.com/i/69d1c126-7c8e-4bfe-8a9f-2b5849247d4d.jpg",
+            "thumbnail": "/thumbs/small/b15d36696a93d4638d6c50a9.jpg"
         }
     ],
     "dataset": "My own collection.",
     "datasetSize": 13150,
     "trainingIterations": 399000,
     "trainingBatchSize": 16,
-    "trainingHRSize": 95
+    "trainingHRSize": 95,
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/b4f0bc0a2d2172566ab2e5ce.jpg",
+        "SR": "/thumbs/9f1b86451e9851d3e970eb05.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

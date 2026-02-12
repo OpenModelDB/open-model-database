@@ -43,37 +43,57 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/oW1f4p1l.webp",
-            "SR": "https://i.slow.pics/CRfQ7dU2.webp"
+            "SR": "https://i.slow.pics/CRfQ7dU2.webp",
+            "thumbnail": "/thumbs/small/4fc250add54644dd5bdb22eb.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/6Qi5mWHb.webp",
-            "SR": "https://i.slow.pics/GQOCnBa6.webp"
+            "SR": "https://i.slow.pics/GQOCnBa6.webp",
+            "thumbnail": "/thumbs/small/b2b9d97717f13ac05375fea9.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/zIGNMeLm.webp",
-            "SR": "https://i.slow.pics/qmW0vhkn.webp"
+            "SR": "https://i.slow.pics/qmW0vhkn.webp",
+            "thumbnail": "/thumbs/small/6df19e725acc8871eb61177d.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/a3CuMs15.webp",
-            "SR": "https://i.slow.pics/A1PdbkMy.webp"
+            "SR": "https://i.slow.pics/A1PdbkMy.webp",
+            "thumbnail": "/thumbs/small/ea6358150b3192c16e2e8a5b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/8FgJcKRP.webp",
-            "SR": "https://i.slow.pics/4tW09CWE.webp"
+            "SR": "https://i.slow.pics/4tW09CWE.webp",
+            "thumbnail": "/thumbs/small/063b7f98d5f4d1f6e67c982a.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/SXH01SS2.webp",
-            "SR": "https://i.slow.pics/FVjyAFHf.webp"
+            "SR": "https://i.slow.pics/FVjyAFHf.webp",
+            "thumbnail": "/thumbs/small/6ac6ae146d55ce14a6c0c0ce.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/YwG0JUQY.webp",
-            "SR": "https://i.slow.pics/ZmyGy2An.webp"
+            "SR": "https://i.slow.pics/ZmyGy2An.webp",
+            "thumbnail": "/thumbs/small/608b2e9be3c9085369bfa34f.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/a5830a98c896629990c0f8a6.jpg",
+        "SR": "/thumbs/772e41c09e5e357a8fa5d9ce.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

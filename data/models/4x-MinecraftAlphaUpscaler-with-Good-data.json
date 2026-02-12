@@ -39,7 +39,21 @@
             "type": "paired",
             "caption": "pack.png (50500_G.pth)",
             "LR": "https://images2.imgbox.com/4e/cd/as8bIO38_o.png",
-            "SR": "https://images2.imgbox.com/3b/d7/7Kh9F6WQ_o.png"
+            "SR": "https://images2.imgbox.com/3b/d7/7Kh9F6WQ_o.png",
+            "thumbnail": "/thumbs/small/219ea6fa6d90111b6c854df2.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/4c996c3671db47b9186fe86b.png",
+        "SR": "/thumbs/373b2035e6693c2bf617f83c.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

@@ -37,32 +37,51 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_JPG_1.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_JPG_1_4xLSDIRplusR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_JPG_1_4xLSDIRplusR.png",
+            "thumbnail": "/thumbs/small/a0bd68742afc0751db510964.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_JPG_4.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_JPG_4_4xLSDIRplusR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_JPG_4_4xLSDIRplusR.png",
+            "thumbnail": "/thumbs/small/deb39b6095e85318f1e4d34f.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_5.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_5_4xLSDIRplusR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_5_4xLSDIRplusR.png",
+            "thumbnail": "/thumbs/small/8bd492f6ea83479db4467ceb.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_14.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_14_4xLSDIRplusR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_14_4xLSDIRplusR.png",
+            "thumbnail": "/thumbs/small/d9dc543f3f85b88eaf518b4b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_13.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_13_4xLSDIRplusR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_13_4xLSDIRplusR.png",
+            "thumbnail": "/thumbs/small/23e39951018b5d4c7bc9faaa.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/input/Input_6.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_6_4xLSDIRplusR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIRplus/examples/output/4xLSDIRplusR/Input_6_4xLSDIRplusR.png",
+            "thumbnail": "/thumbs/small/62d539719974b34b7c668729.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/52642fc6b1b37f2c6e6f59fc.png",
+        "SR": "/thumbs/bcf0229fa12938129d15577e.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

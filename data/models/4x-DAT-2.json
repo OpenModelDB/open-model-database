@@ -27,7 +27,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/zhengchen1999/DAT/main/figs/DAT.png"
+            "url": "https://raw.githubusercontent.com/zhengchen1999/DAT/main/figs/DAT.png",
+            "thumbnail": "/thumbs/small/6ffc0a9a20d4b1f68d75cee6.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/110d52296f313b0387099636.jpg"
+    }
 }

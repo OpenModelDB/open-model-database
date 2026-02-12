@@ -38,31 +38,49 @@
             "type": "paired",
             "caption": "Sonic 2 (Composite)",
             "LR": "https://imgsli.com/i/358e3b0b-41e2-4407-89d7-3247eba39e1d.jpg",
-            "SR": "https://imgsli.com/i/eede6029-52a3-4008-bf19-d6d0925126bc.jpg"
+            "SR": "https://imgsli.com/i/eede6029-52a3-4008-bf19-d6d0925126bc.jpg",
+            "thumbnail": "/thumbs/small/cc9d6a9c6d457e950d0435f9.jpg"
         },
         {
             "type": "paired",
             "caption": "T2: The Arcade Game (VHS)",
             "LR": "https://imgsli.com/i/4f512227-3c8a-4c3e-b7a5-c4164cae9c78.jpg",
-            "SR": "https://imgsli.com/i/7fe69ca5-6e42-4061-9021-aeef6b821d26.jpg"
+            "SR": "https://imgsli.com/i/7fe69ca5-6e42-4061-9021-aeef6b821d26.jpg",
+            "thumbnail": "/thumbs/small/af18d0a3963a2419c1f1735f.jpg"
         },
         {
             "type": "paired",
             "caption": "Tower Bridge (RF)",
             "LR": "https://imgsli.com/i/87ddc552-cfb1-4daa-ab63-82ad9201b2ac.jpg",
-            "SR": "https://imgsli.com/i/7dae175a-f97f-4b51-a96d-03ce2cb2b376.jpg"
+            "SR": "https://imgsli.com/i/7dae175a-f97f-4b51-a96d-03ce2cb2b376.jpg",
+            "thumbnail": "/thumbs/small/99779f032d02aad24c0a474c.jpg"
         },
         {
             "type": "paired",
             "caption": "Super Fantasy Zone (GameCenter CX)",
             "LR": "https://imgsli.com/i/084edca0-3359-4e63-84be-a405d1ab73a9.jpg",
-            "SR": "https://imgsli.com/i/a01db35d-394a-4e7e-99ea-8a9eed245f2d.jpg"
+            "SR": "https://imgsli.com/i/a01db35d-394a-4e7e-99ea-8a9eed245f2d.jpg",
+            "thumbnail": "/thumbs/small/8397dcc0b3133d6978b78f81.jpg"
         },
         {
             "type": "paired",
             "caption": "Sonic 2 (Model 1 RGB)",
             "LR": "https://imgsli.com/i/fbf9065c-ae78-49d2-a9d9-1998d8a81c84.jpg",
-            "SR": "https://imgsli.com/i/e77e0e5a-ef7c-4c48-a37a-42c46cd5790a.jpg"
+            "SR": "https://imgsli.com/i/e77e0e5a-ef7c-4c48-a37a-42c46cd5790a.jpg",
+            "thumbnail": "/thumbs/small/fb5538a63ed5dc3e570a341e.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/6fa202106f2d831df7f2750b.jpg",
+        "SR": "/thumbs/9f97bd669e3da5d2151bf0cf.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -36,13 +36,28 @@
             "type": "paired",
             "caption": "Upscaled",
             "LR": "https://imgsli.com/i/87bb7a53-8fcb-4b16-9aa0-21c8fbe5c745.jpg",
-            "SR": "https://imgsli.com/i/a4559f68-bd72-4e84-a51d-16e372c7ef2c.jpg"
+            "SR": "https://imgsli.com/i/a4559f68-bd72-4e84-a51d-16e372c7ef2c.jpg",
+            "thumbnail": "/thumbs/small/f82d7a3b20e08e717b827977.jpg"
         },
         {
             "type": "paired",
             "caption": "Upscaled Twice",
             "LR": "https://imgsli.com/i/87bb7a53-8fcb-4b16-9aa0-21c8fbe5c745.jpg",
-            "SR": "https://imgsli.com/i/170aada0-a042-48b5-883b-edcc5a7d9344.jpg"
+            "SR": "https://imgsli.com/i/170aada0-a042-48b5-883b-edcc5a7d9344.jpg",
+            "thumbnail": "/thumbs/small/f82d7a3b20e08e717b827977.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/246a50269ebac385554e2464.png",
+        "SR": "/thumbs/b763d35312aafd1f4d390765.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

@@ -40,22 +40,39 @@
         {
             "type": "paired",
             "LR": "https://i.imgur.com/476bdeZ.png",
-            "SR": "https://i.imgur.com/LV4UmEv.png"
+            "SR": "https://i.imgur.com/LV4UmEv.png",
+            "thumbnail": "/thumbs/small/64d31db9963a3ab417f41144.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.imgur.com/7GGgStJ.png",
-            "SR": "https://i.imgur.com/6lPu1HK.png"
+            "SR": "https://i.imgur.com/6lPu1HK.png",
+            "thumbnail": "/thumbs/small/3e0998b0a993b95ac0edf2ea.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.imgur.com/Bz39avz.png",
-            "SR": "https://i.imgur.com/pMCqCP4.png"
+            "SR": "https://i.imgur.com/pMCqCP4.png",
+            "thumbnail": "/thumbs/small/028e3f98f7f276bfe01d8c4b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.imgur.com/kn2ey2d.png",
-            "SR": "https://i.imgur.com/JMQRv0a.png"
+            "SR": "https://i.imgur.com/JMQRv0a.png",
+            "thumbnail": "/thumbs/small/c2881c50c0a66fc7b1a92777.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/f2e49c064ca672c05f51eb65.png",
+        "SR": "/thumbs/a2dd4cf0b295b0ccf373fae9.jpg",
+        "LRSize": {
+            "width": 64,
+            "height": 64
+        },
+        "SRSize": {
+            "width": 128,
+            "height": 128
+        }
+    }
 }

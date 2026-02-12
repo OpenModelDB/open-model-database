@@ -13,7 +13,7 @@
         "jpeg",
         "restoration"
     ],
-    "description": "## Ani4K v2  \n\n Ani4K v2, as the successor to the original Ani4K, retains its predecessor's fantastic detail retention, depth of field preservation and faithfulness to the original source. As the name suggests, the model is targeted at modern anime, ranging from high-quality Bluray to crappy WEB releases, for upscaling either to 2K or 4K.\n\nAn **UltraCompact** version of the model is available on the [Github release](https://github.com/Sirosky/Upscale-Hub/releases/tag/Ani4K-v2). The UltraCompact version is faster, without a perceptual hit to quality in most cases.\n\n📌 [More comparisons](https://slow.pics/c/1HykdyT5)\n\n****\n\n**FAQ**\n\n- *How does v2 differ from v1?* I'm so glad you asked! A shortcoming of the v1 models is that the model really struggled on sources which were poorly mastered. This is unfortunately still very common even with modern anime. v2 is far more capable of dealing with such sources. \n- *How does Ani4K v2 differ from JaNai v3? Which one should I pick?* JaNai v3 is a fantastic model, and shares many of the fundamental training objectives behind Ani4K (DOF preservation, faithfulness, etc.). I'd say that the primary difference is one of training philosophy-- JaNai seeks to render the source as if it was originally mastered in 4K, whereas Ani4K seeks to produce an upscale that is as close as possible to the source (while cleaning up any issues). Long story short, test both models and see which you prefer.\n- *What model versions are there?* Ani4K comes in Compact and UltraCompact flavors. Compact is of course a standard option. UltraCompact provides a noticeable performance uplift, without too much impact on quality. I ultimately did not train a SuperUltraCompact variant as I felt the hit to the model quality was far too significant.",
+    "description": "## Ani4K v2  \n\n Ani4K v2, as the successor to the original Ani4K, retains its predecessor's fantastic detail retention, depth of field preservation and faithfulness to the original source. As the name suggests, the model is targeted at modern anime, ranging from high-quality Bluray to crappy WEB releases, for upscaling either to 2K or 4K.\n\nAn **UltraCompact** version of the model is available on the [Github release](https://github.com/Sirosky/Upscale-Hub/releases/tag/Ani4K-v2). The UltraCompact version is faster, without a perceptual hit to quality in most cases.\n\n\ud83d\udccc [More comparisons](https://slow.pics/c/1HykdyT5)\n\n****\n\n**FAQ**\n\n- *How does v2 differ from v1?* I'm so glad you asked! A shortcoming of the v1 models is that the model really struggled on sources which were poorly mastered. This is unfortunately still very common even with modern anime. v2 is far more capable of dealing with such sources.\u00a0\n- *How does Ani4K v2 differ from JaNai v3? Which one should I pick?* JaNai v3 is a fantastic model, and shares many of the fundamental training objectives behind Ani4K (DOF preservation, faithfulness, etc.). I'd say that the primary difference is one of training philosophy-- JaNai seeks to render the source as if it was originally mastered in 4K, whereas Ani4K seeks to produce an upscale that is as close as possible to the source (while cleaning up any issues). Long story short, test both models and see which you prefer.\n- *What model versions are there?* Ani4K comes in Compact and UltraCompact flavors. Compact is of course a standard option. UltraCompact provides a noticeable performance uplift, without too much impact on quality. I ultimately did not train a SuperUltraCompact variant as I felt the hit to the model quality was far too significant.",
     "date": "2024-03-23",
     "architecture": "compact",
     "size": [
@@ -60,19 +60,26 @@
             "type": "paired",
             "caption": "Chainsaw",
             "LR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Chainsaw%20LR.png?raw=true",
-            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Chainsaw%20HR.png?raw=true"
+            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Chainsaw%20HR.png?raw=true",
+            "thumbnail": "/thumbs/small/d292d60cd56bb48c7c23331f.jpg"
         },
         {
             "type": "paired",
             "caption": "Oshi no Ko",
             "LR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Oshi%20LR.png?raw=true",
-            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Oshi%20HR.png?raw=true"
+            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Oshi%20HR.png?raw=true",
+            "thumbnail": "/thumbs/small/cb87a28c837c8b8b72ca3066.jpg"
         },
         {
             "type": "paired",
             "caption": "Heavenly Delusion",
             "LR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Heavenly%20LR.png?raw=true",
-            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Heavenly%20HR.png?raw=true"
+            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/Ani4K%20v2%20Model%20Images/Heavenly%20HR.png?raw=true",
+            "thumbnail": "/thumbs/small/512c3fb58cd49df32dcda7b3.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "https://private-user-images.githubusercontent.com/2752448/316255429-ff8eba86-fe90-4b2b-9c51-44248da81c20.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTc5OTEzMzksIm5iZiI6MTcxNzk5MTAzOSwicGF0aCI6Ii8yNzUyNDQ4LzMxNjI1NTQyOS1mZjhlYmE4Ni1mZTkwLTRiMmItOWM1MS00NDI0OGRhODFjMjAucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDYxMCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA2MTBUMDM0MzU5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9M2NmMjhlYTk2NDNmNmVkZjRlMzNiMmIyMzc4MDc5NWVkYjg2NmY5ZDZkNjk0ZjIzMmE5YzE1MDFiZTcwN2E0MyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.c4VAhhx7U2rC5Ud64Fk32L4CgqNva-wKDsisvpA-J54"
+    }
 }

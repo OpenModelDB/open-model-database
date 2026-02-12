@@ -7,7 +7,7 @@
         "photo",
         "research"
     ],
-    "description": "[Omni Aggregation Networks for Lightweight Image Super-Resolution (OmniSR)](https://github.com/Francis0625/Omni-SR)\n\nWhile lightweight ViT framework has made tremendous progress in image super-resolution, its uni-dimensional\nself-attention modeling, as well as homogeneous aggregation scheme, limit its effective receptive field (ERF) to\ninclude more comprehensive interactions from both spatial and channel dimensions. To tackle these drawbacks,\nthis work proposes two enhanced components under a new Omni-SR architecture. First, an Omni Self-Attention (OSA) block is proposed based on dense interaction principle, which can simultaneously model pixel-interaction from both spatial and channel dimensions, mining the potential correlations across omni-axis (i.e., spatial and channel). Coupling with mainstream window partitioning strategies, OSA can achieve superior performance with compelling computational budgets. Second, a multi-scale interaction scheme is proposed to mitigate sub-optimal ERF (i.e., premature saturation) in shallow models, which facilitates local propagation and meso-/global-scale interactions, rendering an omni-scale aggregation building block. Extensive experiments demonstrate that Omni-SR achieves recordhigh performance on lightweight super-resolution benchmarks (e.g., 26.95dB@Urban100 ×4 with only 792K parameters). Our code is available at https://github.com/Francis0625/Omni-SR",
+    "description": "[Omni Aggregation Networks for Lightweight Image Super-Resolution (OmniSR)](https://github.com/Francis0625/Omni-SR)\n\nWhile lightweight ViT framework has made tremendous progress in image super-resolution, its uni-dimensional\nself-attention modeling, as well as homogeneous aggregation scheme, limit its effective receptive field (ERF) to\ninclude more comprehensive interactions from both spatial and channel dimensions. To tackle these drawbacks,\nthis work proposes two enhanced components under a new Omni-SR architecture. First, an Omni Self-Attention (OSA) block is proposed based on dense interaction principle, which can simultaneously model pixel-interaction from both spatial and channel dimensions, mining the potential correlations across omni-axis (i.e., spatial and channel). Coupling with mainstream window partitioning strategies, OSA can achieve superior performance with compelling computational budgets. Second, a multi-scale interaction scheme is proposed to mitigate sub-optimal ERF (i.e., premature saturation) in shallow models, which facilitates local propagation and meso-/global-scale interactions, rendering an omni-scale aggregation building block. Extensive experiments demonstrate that Omni-SR achieves recordhigh performance on lightweight super-resolution benchmarks (e.g., 26.95dB@Urban100 \u00d74 with only 792K parameters). Our code is available at https://github.com/Francis0625/Omni-SR",
     "date": "2023-04-19",
     "architecture": "omnisr",
     "size": [
@@ -34,7 +34,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/Francis0625/Omni-SR/main/doc/imgs/vis.png"
+            "url": "https://raw.githubusercontent.com/Francis0625/Omni-SR/main/doc/imgs/vis.png",
+            "thumbnail": "/thumbs/small/1f9fd3c2b76e39c120d5dfe8.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/d7281efadb275a166719c4e2.jpg"
+    }
 }

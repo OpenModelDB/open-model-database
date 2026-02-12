@@ -34,7 +34,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg"
+            "url": "https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg",
+            "thumbnail": "/thumbs/small/f1ecccc20ad2fe13977a07e6.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/26e68c82a77407f444def098.jpg"
+    }
 }

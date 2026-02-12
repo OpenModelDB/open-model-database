@@ -37,22 +37,38 @@
             "type": "paired",
             "caption": "Chip an' Dale 1",
             "LR": "https://imgsli.com/i/f40c891e-78e1-415a-a314-d283fe0a852a.jpg",
-            "SR": "https://imgsli.com/i/f28e7683-7460-4b72-b57d-4bfa4f3bab43.jpg"
+            "SR": "https://imgsli.com/i/f28e7683-7460-4b72-b57d-4bfa4f3bab43.jpg",
+            "thumbnail": "/thumbs/small/b67fc2cb7fec6f7ded392892.jpg"
         },
         {
             "type": "paired",
             "caption": "The Inspector 1",
             "LR": "https://imgsli.com/i/6d4ee331-06ad-4a56-9b40-7e68f2db5eb7.jpg",
-            "SR": "https://imgsli.com/i/fa7686f8-2211-4fe5-b215-626e167c3775.jpg"
+            "SR": "https://imgsli.com/i/fa7686f8-2211-4fe5-b215-626e167c3775.jpg",
+            "thumbnail": "/thumbs/small/db8a7b8d024cacbd38b39316.jpg"
         },
         {
             "type": "paired",
             "caption": "Chip an' Dale 2",
             "LR": "https://imgsli.com/i/b0d0c639-2b12-44e5-9b16-cad841a36855.jpg",
-            "SR": "https://imgsli.com/i/78a40991-6cc2-495d-a1fa-ab78648a5080.jpg"
+            "SR": "https://imgsli.com/i/78a40991-6cc2-495d-a1fa-ab78648a5080.jpg",
+            "thumbnail": "/thumbs/small/310ad2c2b4f779c1f382b68d.jpg"
         }
     ],
     "Datasize": 2200,
     "Training epochs": 51,
-    "Training iterations": 104000
+    "Training iterations": 104000,
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/167a8ad198fedd859b4c4255.jpg",
+        "SR": "/thumbs/3f8000c84f17fa1b175733b6.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

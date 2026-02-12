@@ -40,31 +40,49 @@
             "type": "paired",
             "caption": "JPEG 30",
             "LR": "https://imgsli.com/i/91087439-c866-4438-a74d-7d068bc991df.jpg",
-            "SR": "https://imgsli.com/i/278a1397-f28a-47d5-89eb-5f558978eeb6.jpg"
+            "SR": "https://imgsli.com/i/278a1397-f28a-47d5-89eb-5f558978eeb6.jpg",
+            "thumbnail": "/thumbs/small/5a0aaf3a4d9b9e1ae82e7a39.jpg"
         },
         {
             "type": "paired",
             "caption": "JPEG 40",
             "LR": "https://imgsli.com/i/9a77ffa4-af8d-48db-b306-1713b4e56a48.jpg",
-            "SR": "https://imgsli.com/i/996484c9-25cd-4022-92b6-add0942f414e.jpg"
+            "SR": "https://imgsli.com/i/996484c9-25cd-4022-92b6-add0942f414e.jpg",
+            "thumbnail": "/thumbs/small/3cf437164119125bb329efea.jpg"
         },
         {
             "type": "paired",
             "caption": "JPEG 45",
             "LR": "https://imgsli.com/i/80c70b77-a8ab-4a9d-8aa1-426d9da8bfb1.jpg",
-            "SR": "https://imgsli.com/i/4026406f-5a32-4e7e-becf-7e5243a261e3.jpg"
+            "SR": "https://imgsli.com/i/4026406f-5a32-4e7e-becf-7e5243a261e3.jpg",
+            "thumbnail": "/thumbs/small/005d6b3cd05696e720a6ed7c.jpg"
         },
         {
             "type": "paired",
             "caption": "JPEG 60",
             "LR": "https://imgsli.com/i/c2df4625-083d-4505-9dbc-904d95dd5f5a.jpg",
-            "SR": "https://imgsli.com/i/cd41e1c9-c1d8-4d11-a07d-345638fc3041.jpg"
+            "SR": "https://imgsli.com/i/cd41e1c9-c1d8-4d11-a07d-345638fc3041.jpg",
+            "thumbnail": "/thumbs/small/5d69fc7d837c5de7385ba7dc.jpg"
         },
         {
             "type": "paired",
             "caption": "Uncompressed",
             "LR": "https://imgsli.com/i/ce7ff38e-476a-49c3-b410-5aa8bd5481f6.jpg",
-            "SR": "https://imgsli.com/i/36243516-b37e-4964-94e1-f224f2a678fa.jpg"
+            "SR": "https://imgsli.com/i/36243516-b37e-4964-94e1-f224f2a678fa.jpg",
+            "thumbnail": "/thumbs/small/313e01570d5e52883f4e98ad.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/1604d84aa13643f9fe16306d.png",
+        "SR": "/thumbs/eaf303e90bfa6d7478772c25.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

@@ -36,7 +36,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/xinntao/public-figures/master/Real-ESRGAN/cmp_realesrgan_anime_1.png"
+            "url": "https://raw.githubusercontent.com/xinntao/public-figures/master/Real-ESRGAN/cmp_realesrgan_anime_1.png",
+            "thumbnail": "/thumbs/small/b1533f6be7b500709f0b3d34.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/7b345c984f66138da5b7f230.jpg"
+    }
 }

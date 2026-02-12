@@ -40,19 +40,35 @@
             "type": "paired",
             "caption": "DAT2 vs RPLKSR",
             "LR": "https://imgsli.com/i/e4d8eaad-956c-4145-b827-4cfceecb9801.jpg",
-            "SR": "https://imgsli.com/i/4d840f43-504b-4f15-bdf4-d548fdf7ec05.jpg"
+            "SR": "https://imgsli.com/i/4d840f43-504b-4f15-bdf4-d548fdf7ec05.jpg",
+            "thumbnail": "/thumbs/small/c9208debadd2667e0cd056fc.jpg"
         },
         {
             "type": "paired",
             "caption": "DAT2 vs RPLKSR 2",
             "LR": "https://imgsli.com/i/edaa03e0-4c1f-4a5d-ae30-e07cec74cc89.jpg",
-            "SR": "https://imgsli.com/i/47d0cd27-2897-4749-b8c4-8aea10e49609.jpg"
+            "SR": "https://imgsli.com/i/47d0cd27-2897-4749-b8c4-8aea10e49609.jpg",
+            "thumbnail": "/thumbs/small/caae8e3621a2524fb46d8962.jpg"
         },
         {
             "type": "paired",
             "caption": "DAT2 vs RPLKSR 3",
             "LR": "https://imgsli.com/i/dae8bf21-6d48-4e97-a4a8-acd58e343918.jpg",
-            "SR": "https://imgsli.com/i/747ffb24-619b-49a8-9720-6497a974549e.jpg"
+            "SR": "https://imgsli.com/i/747ffb24-619b-49a8-9720-6497a974549e.jpg",
+            "thumbnail": "/thumbs/small/ebe17dac4a879c2778afe16e.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/bdacdefc9c632fa9dcdd9a8b.jpg",
+        "SR": "/thumbs/13f86b7d22819ec089d0bf29.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

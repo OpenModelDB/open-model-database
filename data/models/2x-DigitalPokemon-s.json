@@ -1,5 +1,5 @@
 {
-    "name": "Digital Pokémon-Small",
+    "name": "Digital Pok\u00e9mon-Small",
     "author": "pokepress",
     "license": "MIT",
     "tags": [
@@ -7,7 +7,7 @@
         "cartoon",
         "general-upscaler"
     ],
-    "description": "This model is designed to upscale the standard definition digital era of the Pokémon anime, which runs from late season 5 (Master Quest) to early season 12 (Galactic Battles). During this time, the show was animated digitally in a 4:3 ratio. This process was also used for Mewtwo Returns, most of Pokémon Chronicles, and the Mystery Dungeon specials.\n\nAdvice/Known Limitations:\n* I recommend using QTGMC on a preset of \"Slow\" or slower for deinterlacing. While the show is primarily animated at 12/24 fps, some elements like backgrounds are animated at a full 60i, particularly for the Diamond & Pearl era, which increased the base animation frame rate to 15 fps.\n* The model is not great at handling fonts, particularly the italicized text in the episode credits. This is despite including font images in the training data.\n\nVersion History:\n\n* 1.1.0 (9/16/2025): Added images from SD portion of season 12, augmented training to better handle slightly resized images.\n* 1.0.0: Initial Release",
+    "description": "This model is designed to upscale the standard definition digital era of the Pok\u00e9mon anime, which runs from late season 5 (Master Quest) to early season 12 (Galactic Battles). During this time, the show was animated digitally in a 4:3 ratio. This process was also used for Mewtwo Returns, most of Pok\u00e9mon Chronicles, and the Mystery Dungeon specials.\n\nAdvice/Known Limitations:\n* I recommend using QTGMC on a preset of \"Slow\" or slower for deinterlacing. While the show is primarily animated at 12/24 fps, some elements like backgrounds are animated at a full 60i, particularly for the Diamond & Pearl era, which increased the base animation frame rate to 15 fps.\n* The model is not great at handling fonts, particularly the italicized text in the episode credits. This is despite including font images in the training data.\n\nVersion History:\n\n* 1.1.0 (9/16/2025): Added images from SD portion of season 12, augmented training to better handle slightly resized images.\n* 1.0.0: Initial Release",
     "date": "2025-01-05",
     "architecture": "compact",
     "size": null,
@@ -28,38 +28,56 @@
     "trainingIterations": 280000,
     "trainingHRSize": 64,
     "trainingOTF": false,
-    "dataset": "Screenshots from seasons 6-12 of the English Pokémon dub, plus some manually created images for fonts.",
+    "dataset": "Screenshots from seasons 6-12 of the English Pok\u00e9mon dub, plus some manually created images for fonts.",
     "datasetSize": 80,
     "images": [
         {
             "type": "paired",
             "caption": "A Bite to Remember",
             "LR": "https://imgsli.com/i/db8243fa-875a-410e-a3cd-fafbb3af9cb1.jpg",
-            "SR": "https://imgsli.com/i/9b072610-df0d-4079-a647-a515cc25ec8f.jpg"
+            "SR": "https://imgsli.com/i/9b072610-df0d-4079-a647-a515cc25ec8f.jpg",
+            "thumbnail": "/thumbs/small/6f41c58153a4f684168ddb6c.jpg"
         },
         {
             "type": "paired",
             "caption": "Going, Going, Yawn Title Card",
             "LR": "https://imgsli.com/i/d36cf8f0-7755-443e-b248-c06e2a7c9449.jpg",
-            "SR": "https://imgsli.com/i/d276a501-5e96-42c6-98f0-72664e97193e.jpg"
+            "SR": "https://imgsli.com/i/d276a501-5e96-42c6-98f0-72664e97193e.jpg",
+            "thumbnail": "/thumbs/small/92dbdb633c72c795166b97b9.jpg"
         },
         {
             "type": "paired",
             "caption": "Fear Factor Phony!",
             "LR": "https://imgsli.com/i/2d6cacbe-91e9-4564-a197-9a86d9ed4c60.jpg",
-            "SR": "https://imgsli.com/i/cf9d83e5-6d27-417b-bdfd-4c577e286bb8.jpg"
+            "SR": "https://imgsli.com/i/cf9d83e5-6d27-417b-bdfd-4c577e286bb8.jpg",
+            "thumbnail": "/thumbs/small/812a401615936ffb1d5a2f68.jpg"
         },
         {
             "type": "paired",
             "caption": "Once There Were Greenfields",
             "LR": "https://imgsli.com/i/5a326f65-f23f-4eee-9538-94eba40d0c0b.jpg",
-            "SR": "https://imgsli.com/i/be3a0b9a-2b50-4ffd-b951-a90517bd67c1.jpg"
+            "SR": "https://imgsli.com/i/be3a0b9a-2b50-4ffd-b951-a90517bd67c1.jpg",
+            "thumbnail": "/thumbs/small/7b2cf37b9df84c76d1a06a5a.jpg"
         },
         {
             "type": "paired",
             "caption": "Cheers on Castaways Isle!",
             "LR": "https://imgsli.com/i/ef6de563-3a65-450e-ade3-387bcba2212c.jpg",
-            "SR": "https://imgsli.com/i/368cd5de-fa07-4ae8-97fb-f73e31321b59.jpg"
+            "SR": "https://imgsli.com/i/368cd5de-fa07-4ae8-97fb-f73e31321b59.jpg",
+            "thumbnail": "/thumbs/small/bf1441380b2e0af6967e46ec.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/fa98ae067e5324d2b8e7da34.png",
+        "SR": "/thumbs/1eb46818d7fd4377fe12ed9d.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

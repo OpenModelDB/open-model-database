@@ -58,7 +58,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://github.com/Phhofm/models/assets/14755670/e212c397-3477-4d92-8d8c-9c2d594d638c"
+            "url": "https://github.com/Phhofm/models/assets/14755670/e212c397-3477-4d92-8d8c-9c2d594d638c",
+            "thumbnail": "/thumbs/small/98bc66607fb9ac79ac05e189.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/3d09e53510cda704da121953.jpg"
+    }
 }

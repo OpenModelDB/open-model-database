@@ -35,32 +35,51 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/VR7jnVwY.png",
-            "SR": "https://i.slow.pics/mlW7H4rg.png"
+            "SR": "https://i.slow.pics/mlW7H4rg.png",
+            "thumbnail": "/thumbs/small/9a928f1178fd31a7b22c4668.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/AEap6lvI.png",
-            "SR": "https://i.slow.pics/VrAtzBN4.png"
+            "SR": "https://i.slow.pics/VrAtzBN4.png",
+            "thumbnail": "/thumbs/small/c18165d4d9c926552d2ce80e.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/wkjWR3Vf.png",
-            "SR": "https://i.slow.pics/c6RcHIqK.png"
+            "SR": "https://i.slow.pics/c6RcHIqK.png",
+            "thumbnail": "/thumbs/small/4331a488e62a308f0967c163.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/Mby5C2FV.png",
-            "SR": "https://i.slow.pics/w9Ogqxq6.png"
+            "SR": "https://i.slow.pics/w9Ogqxq6.png",
+            "thumbnail": "/thumbs/small/35565b91e6eee4a56ad07ce5.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/VhannR7o.png",
-            "SR": "https://i.slow.pics/rEeJBKHP.png"
+            "SR": "https://i.slow.pics/rEeJBKHP.png",
+            "thumbnail": "/thumbs/small/2d47f0cde1d242d422ee1422.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/NNzIVCM6.png",
-            "SR": "https://i.slow.pics/UW6BLp9z.png"
+            "SR": "https://i.slow.pics/UW6BLp9z.png",
+            "thumbnail": "/thumbs/small/3f0d8178c4561d429178b9a7.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/22e158156aa7d0aa6b64c69c.jpg",
+        "SR": "/thumbs/c082f01b49cc6e7a3744e54b.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

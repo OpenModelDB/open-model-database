@@ -40,12 +40,27 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/d1/f8/U8JOnTJe_o.png",
-            "SR": "https://images2.imgbox.com/db/6c/nkv1Au60_o.png"
+            "SR": "https://images2.imgbox.com/db/6c/nkv1Au60_o.png",
+            "thumbnail": "/thumbs/small/2a32ddc88764824ba54c2d30.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/88/d0/kZO1rnqH_o.png",
-            "SR": "https://images2.imgbox.com/00/ad/gICBtgCz_o.png"
+            "SR": "https://images2.imgbox.com/00/ad/gICBtgCz_o.png",
+            "thumbnail": "/thumbs/small/91eed5fe157ef4f53adc8850.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/4ecfac5849f54e348b180dd7.jpg",
+        "SR": "/thumbs/4b1ffaf6fec50736694d8a05.jpg",
+        "LRSize": {
+            "width": 256,
+            "height": 256
+        },
+        "SRSize": {
+            "width": 256,
+            "height": 256
+        }
+    }
 }

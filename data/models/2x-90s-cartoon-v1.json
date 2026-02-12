@@ -48,15 +48,18 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/QgqxmUE.png"
+            "url": "https://i.imgur.com/QgqxmUE.png",
+            "thumbnail": "/thumbs/small/94ca0e186a7d65d630a74215.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/W1B9yQ6.png"
+            "url": "https://i.imgur.com/W1B9yQ6.png",
+            "thumbnail": "/thumbs/small/0a97940e508a8d9f4c2b6559.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/3s6DC1G.png"
+            "url": "https://i.imgur.com/3s6DC1G.png",
+            "thumbnail": "/thumbs/small/d1f965a123d1574635b20158.jpg"
         },
         {
             "type": "standalone",
@@ -64,15 +67,22 @@
         },
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/kZmQvGg.png"
+            "url": "https://i.imgur.com/kZmQvGg.png",
+            "thumbnail": "/thumbs/small/3697f10e8299efc50eb3376b.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/o9AixpW.png"
+            "url": "https://i.imgur.com/o9AixpW.png",
+            "thumbnail": "/thumbs/small/2ee33d8ce9c06f6022d5727d.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/0GyusQj.png"
+            "url": "https://i.imgur.com/0GyusQj.png",
+            "thumbnail": "/thumbs/small/5ef6f9dde93ecc26cdb4c843.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/89f2a30e76e3eb6208dec3fa.jpg"
+    }
 }

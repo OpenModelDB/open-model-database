@@ -31,27 +31,45 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/af/2b/9L60d6lw_o.png",
-            "SR": "https://images2.imgbox.com/54/0b/PBYug68M_o.png"
+            "SR": "https://images2.imgbox.com/54/0b/PBYug68M_o.png",
+            "thumbnail": "/thumbs/small/a89f634b4ab64685935f7975.jpg"
         },
         {
             "type": "standalone",
             "caption": "Instructions",
-            "url": "https://images2.imgbox.com/57/7b/sRCjoiUO_o.png"
+            "url": "https://images2.imgbox.com/57/7b/sRCjoiUO_o.png",
+            "thumbnail": "/thumbs/small/7198805f618f6a38f951b2f1.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/94/c2/6NWDDbkY_o.png",
-            "SR": "https://images2.imgbox.com/14/29/OwsPY8If_o.png"
+            "SR": "https://images2.imgbox.com/14/29/OwsPY8If_o.png",
+            "thumbnail": "/thumbs/small/011bbfef29d410033b3296b0.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/ee/60/nVr7fOAC_o.png",
-            "SR": "https://images2.imgbox.com/00/82/5R5RvOED_o.png"
+            "SR": "https://images2.imgbox.com/00/82/5R5RvOED_o.png",
+            "thumbnail": "/thumbs/small/7769f3ad70f8076ffba8741d.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/55/9c/lfoZS1lx_o.png",
-            "SR": "https://images2.imgbox.com/2c/22/qtRz5N4B_o.png"
+            "SR": "https://images2.imgbox.com/2c/22/qtRz5N4B_o.png",
+            "thumbnail": "/thumbs/small/b58a31f3252b6a1d43d4ec41.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/702052ca02556fff782dcb9a.jpg",
+        "SR": "/thumbs/1734dfd85372e6923e234f7d.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

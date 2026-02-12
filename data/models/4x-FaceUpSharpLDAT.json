@@ -40,7 +40,21 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/8AjR9i2h.png",
-            "SR": "https://i.slow.pics/8AjR9i2h.png"
+            "SR": "https://i.slow.pics/8AjR9i2h.png",
+            "thumbnail": "/thumbs/small/04d096261b4ab23fa33e69e5.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/ae0cc911d9fb6688f0280e7d.jpg",
+        "SR": "/thumbs/ae0cc911d9fb6688f0280e7d.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

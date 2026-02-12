@@ -39,7 +39,8 @@
         {
             "type": "standalone",
             "caption": "FLCL Comparison",
-            "url": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/FLCL-Comparison.png?raw=true"
+            "url": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/FLCL-Comparison.png?raw=true",
+            "thumbnail": "/thumbs/small/6de27fd885231e22618ed671.jpg"
         },
         {
             "type": "standalone",
@@ -55,13 +56,19 @@
             "type": "paired",
             "caption": "Yugi Comparison",
             "LR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/DC/Yugi%201.png?raw=true",
-            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/DC/Yugi%201-2x_AniSD_DC_RealPLKSR_115K_fp32_FO_dynamic-50.png?raw=true"
+            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/DC/Yugi%201-2x_AniSD_DC_RealPLKSR_115K_fp32_FO_dynamic-50.png?raw=true",
+            "thumbnail": "/thumbs/small/992a2353d78ae414ae9db74a.jpg"
         },
         {
             "type": "paired",
             "caption": "Rainbows Comparison",
             "LR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/AC/Rainbows-200.png?raw=true",
-            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/AC/Rainbows-2x_AniSD_AC_RealPLKSR_127500_fp32_FO_dynamic-100.png?raw=true"
+            "SR": "https://github.com/Sirosky/Upscale-Hub/blob/main/Comparison%20Images/RPLKSR%20Model%20Images/AC/Rainbows-2x_AniSD_AC_RealPLKSR_127500_fp32_FO_dynamic-100.png?raw=true",
+            "thumbnail": "/thumbs/small/d7822e711b252e2647ba53a1.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/a6c2d71be83e786aeba9fb76.jpg"
+    }
 }

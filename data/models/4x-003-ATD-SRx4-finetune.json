@@ -27,7 +27,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/LabShuHangGU/Adaptive-Token-Dictionary/main/figures/viscomp_076.png"
+            "url": "https://raw.githubusercontent.com/LabShuHangGU/Adaptive-Token-Dictionary/main/figures/viscomp_076.png",
+            "thumbnail": "/thumbs/small/270c560be91f8dd20b2a5d3a.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/bbdb8788136e7458dbca5d02.jpg"
+    }
 }

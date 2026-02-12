@@ -28,15 +28,22 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/cc/a8/6w6BYmOn_o.png"
+            "url": "https://images2.imgbox.com/cc/a8/6w6BYmOn_o.png",
+            "thumbnail": "/thumbs/small/4117bac9608efecfbaa24774.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/9e/c3/3faQxSmT_o.png"
+            "url": "https://images2.imgbox.com/9e/c3/3faQxSmT_o.png",
+            "thumbnail": "/thumbs/small/120839cc74604a3ecc9ebbf6.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/03/a9/PHV25PVS_o.png"
+            "url": "https://images2.imgbox.com/03/a9/PHV25PVS_o.png",
+            "thumbnail": "/thumbs/small/83fdb5b08a3e7c56fdd3800a.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/51a852f520943c9b578f636b.jpg"
+    }
 }

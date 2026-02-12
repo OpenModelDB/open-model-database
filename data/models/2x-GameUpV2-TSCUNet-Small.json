@@ -55,7 +55,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/S9slXDGd.png"
+            "url": "https://i.slow.pics/S9slXDGd.png",
+            "thumbnail": "/thumbs/small/09d348776023699c9dac635c.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/9078b50ced243ab0ec257ff0.jpg"
+    }
 }

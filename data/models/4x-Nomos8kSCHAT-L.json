@@ -51,37 +51,56 @@
             "type": "paired",
             "caption": "Seeufer",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/seeufer.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/seeufer_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/seeufer_4xNomos8kSCHAT-L.png",
+            "thumbnail": "/thumbs/small/cd386c149300e2518ebb8480.jpg"
         },
         {
             "type": "paired",
             "caption": "Dearalice",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/dearalice.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/dearalice_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/dearalice_4xNomos8kSCHAT-L.png",
+            "thumbnail": "/thumbs/small/c0df4b03fe3f106fd4fab7e2.jpg"
         },
         {
             "type": "paired",
             "caption": "Bibli",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/bibli.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/bibli_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/bibli_4xNomos8kSCHAT-L.png",
+            "thumbnail": "/thumbs/small/acaf2f916089c54ff6f57d88.jpg"
         },
         {
             "type": "paired",
             "caption": "Dearalice2",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/dearalice2.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/dearalice2_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/dearalice2_4xNomos8kSCHAT-L.png",
+            "thumbnail": "/thumbs/small/080ff46957ed5da213419022.jpg"
         },
         {
             "type": "paired",
             "caption": "Palme",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/palme.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/palme_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/palme_4xNomos8kSCHAT-L.png",
+            "thumbnail": "/thumbs/small/1bb0781bcf9e112fca7b78ce.jpg"
         },
         {
             "type": "paired",
             "caption": "Jujutsukaisen",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/input/jujutsukaisen.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/jujutsukaisen_4xNomos8kSCHAT-L.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xNomos8kSC_results/4xNomos8kSCHAT-L/jujutsukaisen_4xNomos8kSCHAT-L.png",
+            "thumbnail": "/thumbs/small/18044fb4d4e844128fb748b3.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/1da0783f39b671469a194da3.png",
+        "SR": "/thumbs/27502dfeeea4bcfb49bee704.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

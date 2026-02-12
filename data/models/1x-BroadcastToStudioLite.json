@@ -37,52 +37,75 @@
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/0d56beb6-5e51-4d51-87df-3a5563d993e9.jpg",
-            "SR": "https://imgsli.com/i/942fc401-cf4c-4611-bf24-441984b10a6a.jpg"
+            "SR": "https://imgsli.com/i/942fc401-cf4c-4611-bf24-441984b10a6a.jpg",
+            "thumbnail": "/thumbs/small/2829680bd028368cd8fb130d.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/40cad094-ec25-4cf1-bf50-2e8c74e98206.jpg",
-            "SR": "https://imgsli.com/i/b197890a-ac6c-4071-bf4c-f8af488d9408.jpg"
+            "SR": "https://imgsli.com/i/b197890a-ac6c-4071-bf4c-f8af488d9408.jpg",
+            "thumbnail": "/thumbs/small/3857be876cbb217f94da14a0.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/5e970a53-6e1c-429c-b767-7ac01de50dc2.jpg",
-            "SR": "https://imgsli.com/i/d2a2dee1-d2ad-40ad-aa66-5b2b7adb5362.jpg"
+            "SR": "https://imgsli.com/i/d2a2dee1-d2ad-40ad-aa66-5b2b7adb5362.jpg",
+            "thumbnail": "/thumbs/small/8448575dd96bffe351b4464a.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/6e59596f-efd0-4bf4-b1da-362fe5241a83.jpg",
-            "SR": "https://imgsli.com/i/e42d0cdb-99eb-4a9d-9746-15896c6af6ac.jpg"
+            "SR": "https://imgsli.com/i/e42d0cdb-99eb-4a9d-9746-15896c6af6ac.jpg",
+            "thumbnail": "/thumbs/small/6ecf9facdd3b1ad3c9280204.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/37d2ae35-0bf6-4d67-9d76-75bc3fde06bc.jpg",
-            "SR": "https://imgsli.com/i/d8791c57-0573-4d65-8956-be2b5b9922b1.jpg"
+            "SR": "https://imgsli.com/i/d8791c57-0573-4d65-8956-be2b5b9922b1.jpg",
+            "thumbnail": "/thumbs/small/2f24f7c7dd3c788aea1e0b84.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/88aba67b-fb58-4590-8b0f-e8fa3e143c14.jpg",
-            "SR": "https://imgsli.com/i/c01b230b-5cbb-4dcd-b118-362861fb33e3.jpg"
+            "SR": "https://imgsli.com/i/c01b230b-5cbb-4dcd-b118-362861fb33e3.jpg",
+            "thumbnail": "/thumbs/small/937b61ffdc77ad316bafef63.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/caa9fdfe-a0d2-4c70-989d-2d2e795df633.jpg",
-            "SR": "https://imgsli.com/i/ea9fce11-6ce4-4d6a-b735-b5dc8acedad9.jpg"
+            "SR": "https://imgsli.com/i/ea9fce11-6ce4-4d6a-b735-b5dc8acedad9.jpg",
+            "thumbnail": "/thumbs/small/baa7bd2cf3295f7e886ab5a8.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/d0a60877-acc0-448d-9def-de622775f2e5.jpg",
-            "SR": "https://imgsli.com/i/cf93e0ce-cc99-4bbe-8188-0905c817f316.jpg"
+            "SR": "https://imgsli.com/i/cf93e0ce-cc99-4bbe-8188-0905c817f316.jpg",
+            "thumbnail": "/thumbs/small/cd69ee2a50e1e62f656aacde.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/f880f569-d3aa-4067-9520-6399b2c237ad.jpg",
-            "SR": "https://imgsli.com/i/5f2c6c41-4c31-4b86-a603-b61bd6880970.jpg"
+            "SR": "https://imgsli.com/i/5f2c6c41-4c31-4b86-a603-b61bd6880970.jpg",
+            "thumbnail": "/thumbs/small/eede1ea744b3a0869d633879.jpg"
         },
         {
             "type": "paired",
             "LR": "https://imgsli.com/i/b2f9ec77-64e9-41c0-a7e0-414e1ef591cb.jpg",
-            "SR": "https://imgsli.com/i/15f54cb3-90f5-4294-a82d-d5f4742ec473.jpg"
+            "SR": "https://imgsli.com/i/15f54cb3-90f5-4294-a82d-d5f4742ec473.jpg",
+            "thumbnail": "/thumbs/small/638afa8d1e580299cfc1bd85.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/f597a63da3b4ca4a0672c13f.jpg",
+        "SR": "/thumbs/f7969607797fd0623631c4c0.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

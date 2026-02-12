@@ -40,42 +40,63 @@
         {
             "type": "paired",
             "LR": "https://i.ibb.co/kxSnnQw/0-foto.png",
-            "SR": "https://i.ibb.co/n6gRwbQ/0-foto-HCAlt.png"
+            "SR": "https://i.ibb.co/n6gRwbQ/0-foto-HCAlt.png",
+            "thumbnail": "/thumbs/small/dabf04d58371321a7a97c60c.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/9sHgvC8/2-foto.png",
-            "SR": "https://i.ibb.co/TB3GQgs/2-foto-HCAlt.png"
+            "SR": "https://i.ibb.co/TB3GQgs/2-foto-HCAlt.png",
+            "thumbnail": "/thumbs/small/54e459606f6a954302adfe45.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/HKj6Yy1/3-foto.png",
-            "SR": "https://i.ibb.co/L9MTvNP/3-foto-HCAlt.png"
+            "SR": "https://i.ibb.co/L9MTvNP/3-foto-HCAlt.png",
+            "thumbnail": "/thumbs/small/b7dbbb56263f1604344e852c.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/bFD31Vw/1-test.png",
-            "SR": "https://i.ibb.co/wChkwMv/1-test-HCAlt.png"
+            "SR": "https://i.ibb.co/wChkwMv/1-test-HCAlt.png",
+            "thumbnail": "/thumbs/small/50dadca10705ce7a0f3172d6.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/zGY3Fm7/54-screenshot.png",
-            "SR": "https://i.ibb.co/g3wXByw/54-screenshot-HCAlt.png"
+            "SR": "https://i.ibb.co/g3wXByw/54-screenshot-HCAlt.png",
+            "thumbnail": "/thumbs/small/97b8688832771e747ed8e52e.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/CBpPwYw/33-screenshot.png",
-            "SR": "https://i.ibb.co/tQBWG2k/33-screenshot-HCAlt.png"
+            "SR": "https://i.ibb.co/tQBWG2k/33-screenshot-HCAlt.png",
+            "thumbnail": "/thumbs/small/3614a3a4102815d96545615f.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/vQ4bmxx/60-screenshot.png",
-            "SR": "https://i.ibb.co/Mn0PS2w/60-screenshot-HCAlt.png"
+            "SR": "https://i.ibb.co/Mn0PS2w/60-screenshot-HCAlt.png",
+            "thumbnail": "/thumbs/small/a0c29a3d8ea36bdc4703ab5d.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.ibb.co/sPLth3m/46-screenshot.png",
-            "SR": "https://i.ibb.co/d4Pg8Hd/46-screenshot-HCAlt.png"
+            "SR": "https://i.ibb.co/d4Pg8Hd/46-screenshot-HCAlt.png",
+            "thumbnail": "/thumbs/small/c75dd69e2ce942c67f644e0f.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/366869036634172742ff095f.jpg",
+        "SR": "/thumbs/fc2b37ca5bc28917b80db9ea.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

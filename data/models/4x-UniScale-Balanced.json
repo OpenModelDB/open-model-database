@@ -36,7 +36,21 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/LCM8sExR.png",
-            "SR": "https://i.slow.pics/79XopsLh.png"
+            "SR": "https://i.slow.pics/79XopsLh.png",
+            "thumbnail": "/thumbs/small/b8818e39a6dcf1ce1c07eff8.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/832e35ddf66b50fab8db40be.jpg",
+        "SR": "/thumbs/991e282e8b37a464ee0da428.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

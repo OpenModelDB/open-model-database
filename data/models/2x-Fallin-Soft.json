@@ -6,7 +6,7 @@
         "anime",
         "restoration"
     ],
-    "description": "Purpose: Real time upscaler for 1080p anime\n\n Fallin has two versions: “Soft” and \"Strong\" \n\n For most users, “Soft” is a more safe choice, it has no oversharpening artifacts, and it is better at removing compression artifacts and denoising. If you want a safe choice, you should choose “Soft”.\n\n “Strong” is the oversharpened version of Soft. Oversharpening artifacts may appear on lines, and lines may not always look good due to oversharpening. Unlike “Soft”, it has a problem with whitening faces. If you like sharpness, choose “Strong”. And I think “Strong” is better in DOF\n\n Note: Keep in mind that Strong produces oversharpening artifacts.\n\nThanks to @styler00dollar  for helping me fix the color issue.",
+    "description": "Purpose: Real time upscaler for 1080p anime\n\n Fallin has two versions: \u201cSoft\u201d and \"Strong\" \n\n For most users, \u201cSoft\u201d is a more safe choice, it has no oversharpening artifacts, and it is better at removing compression artifacts and denoising. If you want a safe choice, you should choose \u201cSoft\u201d.\n\n \u201cStrong\u201d is the oversharpened version of Soft. Oversharpening artifacts may appear on lines, and lines may not always look good due to oversharpening. Unlike \u201cSoft\u201d, it has a problem with whitening faces. If you like sharpness, choose \u201cStrong\u201d. And I think \u201cStrong\u201d is better in DOF\n\n Note: Keep in mind that Strong produces oversharpening artifacts.\n\nThanks to @styler00dollar  for helping me fix the color issue.",
     "date": "2025-09-14",
     "architecture": "cugan",
     "size": null,
@@ -35,31 +35,49 @@
             "type": "paired",
             "caption": "2x-Fallin-Soft",
             "LR": "https://imgsli.com/i/20958268-44c6-4d79-b38b-09494a6be577.jpg",
-            "SR": "https://imgsli.com/i/702e0627-22c4-4387-aac9-944882727e15.jpg"
+            "SR": "https://imgsli.com/i/702e0627-22c4-4387-aac9-944882727e15.jpg",
+            "thumbnail": "/thumbs/small/f5bd89cc449e62e3138018c6.jpg"
         },
         {
             "type": "paired",
             "caption": "2x-Fallin-Soft",
             "LR": "https://imgsli.com/i/3c3e5d8e-4ca0-4988-98fb-f52837380f45.jpg",
-            "SR": "https://imgsli.com/i/670b4539-ca43-4ba6-9fa2-954a12f7f6c8.jpg"
+            "SR": "https://imgsli.com/i/670b4539-ca43-4ba6-9fa2-954a12f7f6c8.jpg",
+            "thumbnail": "/thumbs/small/31c4982dc102f7fa5a8da3a1.jpg"
         },
         {
             "type": "paired",
             "caption": "2x-Fallin-Soft",
             "LR": "https://imgsli.com/i/3315b3d0-cefb-4267-9579-beab0b82ca7c.jpg",
-            "SR": "https://imgsli.com/i/0c07887c-8fe1-42aa-8d9b-b545f2b849fb.jpg"
+            "SR": "https://imgsli.com/i/0c07887c-8fe1-42aa-8d9b-b545f2b849fb.jpg",
+            "thumbnail": "/thumbs/small/bf58cbacc3e6ff50644bd740.jpg"
         },
         {
             "type": "paired",
             "caption": "2x-Fallin-Soft",
             "LR": "https://imgsli.com/i/5d05694f-e85f-4912-b921-3e131e2c1b83.jpg",
-            "SR": "https://imgsli.com/i/b9c5ce51-6a78-4bcf-ba81-952cfc4ce278.jpg"
+            "SR": "https://imgsli.com/i/b9c5ce51-6a78-4bcf-ba81-952cfc4ce278.jpg",
+            "thumbnail": "/thumbs/small/90eb25b607023f8b9dd28bce.jpg"
         },
         {
             "type": "paired",
             "caption": "2x-Fallin-Soft",
             "LR": "https://imgsli.com/i/4c4704d3-1c55-404f-a5ee-0efc0551de7d.jpg",
-            "SR": "https://imgsli.com/i/12883662-8bbe-49a5-90f6-bfae8ffa5060.jpg"
+            "SR": "https://imgsli.com/i/12883662-8bbe-49a5-90f6-bfae8ffa5060.jpg",
+            "thumbnail": "/thumbs/small/4daa271acde01c254f8cd6d2.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/b092bddc3ff020d70a8c34a3.png",
+        "SR": "/thumbs/383774355cda71d193cbdb3b.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

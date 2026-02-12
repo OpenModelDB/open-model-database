@@ -1,16 +1,12 @@
 {
-    "name": "MLP StarSample V1.0",
+    "name": "StarSample V1.0",
     "author": "derpy",
     "license": "CC0-1.0",
     "tags": [
         "cartoon",
-        "colorization",
         "compression-removal",
-        "deblur",
-        "denoise",
         "general-upscaler",
-        "restoration",
-        "texture-generation"
+        "restoration"
     ],
     "description": "This is a model for the restoration of My Little Pony: Friendship is Magic, however it also works decently well on all similar art. \n\nIt was trained in 2x on ground truth 3840x2160 HRs and 1920x1080 LRs of varying compression, so it is able to upscale from 1080p to 2160p, where its detail retention is great, however it may create noticeable artifacting if looked at closely, like areas of randomly coloured pixels along edges. In 1x or 1.5x (2x upscaled and then downscaled back down) it performs extremely well, almost perfectly in fact, in correcting colours, removing compression, and crisping up lines - and this is the way the model is intended to be used (hence the acronym of its name being \"SS\", or \"supersampling\").\n\n**[Github Release](https://github.com/Derpiesaurus/models/releases/tag/v1.0)**   \n**Showcase:** https://slow.pics/s/1ixqCSjy",
     "date": "2024-05-22",
@@ -64,55 +60,77 @@
             "type": "paired",
             "caption": "1x Example 1",
             "LR": "https://i.slow.pics/ybI7gjob.png",
-            "SR": "https://i.slow.pics/y3ZXMgNB.png"
+            "SR": "https://i.slow.pics/y3ZXMgNB.png",
+            "thumbnail": "/thumbs/small/1065b7dbaedfb13a4715dcce.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 2",
             "LR": "https://i.slow.pics/yLqT8WfS.png",
-            "SR": "https://i.slow.pics/LvaT8PZH.png"
+            "SR": "https://i.slow.pics/LvaT8PZH.png",
+            "thumbnail": "/thumbs/small/c40c0cc0280a4e649380ed41.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 3",
             "LR": "https://i.slow.pics/nX12VuVR.png",
-            "SR": "https://i.slow.pics/94GEHzCS.png"
+            "SR": "https://i.slow.pics/94GEHzCS.png",
+            "thumbnail": "/thumbs/small/5f44e9f5c1d3caec7ba2b724.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 4",
             "LR": "https://i.slow.pics/9n5Rkdrg.png",
-            "SR": "https://i.slow.pics/OxedRFur.png"
+            "SR": "https://i.slow.pics/OxedRFur.png",
+            "thumbnail": "/thumbs/small/90af869642808cbd77ef3064.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 5",
             "LR": "https://i.slow.pics/PeyCu2Qt.png",
-            "SR": "https://i.slow.pics/vim2aDTH.png"
+            "SR": "https://i.slow.pics/vim2aDTH.png",
+            "thumbnail": "/thumbs/small/f762624860ae2a4fc425524b.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 6",
             "LR": "https://i.slow.pics/quoAHJZq.png",
-            "SR": "https://i.slow.pics/ByMKyWsc.png"
+            "SR": "https://i.slow.pics/ByMKyWsc.png",
+            "thumbnail": "/thumbs/small/bc73fcbbd29fd555c212d646.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 7",
             "LR": "https://i.slow.pics/p9BPSyR4.png",
-            "SR": "https://i.slow.pics/vYMqhFzg.png"
+            "SR": "https://i.slow.pics/vYMqhFzg.png",
+            "thumbnail": "/thumbs/small/a0ba5902adc38e574b62b99d.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 8",
             "LR": "https://i.slow.pics/75JM3CJm.png",
-            "SR": "https://i.slow.pics/2bJP6xEW.png"
+            "SR": "https://i.slow.pics/2bJP6xEW.png",
+            "thumbnail": "/thumbs/small/3daa7e319e6eb458618e52f6.jpg"
         },
         {
             "type": "paired",
             "caption": "1x Example 9",
             "LR": "https://i.slow.pics/CIF0ulQP.png",
-            "SR": "https://i.slow.pics/uXkIKtxT.png"
+            "SR": "https://i.slow.pics/uXkIKtxT.png",
+            "thumbnail": "/thumbs/small/46a3af26df02bea0617c465e.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/38da27a8dc4c063514840213.jpg",
+        "SR": "/thumbs/063faadac8d2fe188ae2d98a.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -33,27 +33,45 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_1.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_1.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_1.png",
+            "thumbnail": "/thumbs/small/1b2cb9690f520da23313b5f8.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_6.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_6.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_6.png",
+            "thumbnail": "/thumbs/small/d3adb4ad3f185dbabb82d55f.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_10.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_10.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_10.png",
+            "thumbnail": "/thumbs/small/e894ae5a687c0a53b6b90bc3.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_11.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_11.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_11.png",
+            "thumbnail": "/thumbs/small/5177bbabc488511b2df92ce9.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/Input/Input_15.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_15.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/2xLexicaRRDBNet/examples/2xLexicaRRDBNet/2xLexicaRRDBNet_15.png",
+            "thumbnail": "/thumbs/small/72c94ee76f6b8156bb934e45.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/5e71cb46a7bb4e3012e52197.png",
+        "SR": "/thumbs/64900297cf70d2af9c018201.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

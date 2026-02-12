@@ -39,7 +39,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/72/be/tZSbuNd5_o.png"
+            "url": "https://images2.imgbox.com/72/be/tZSbuNd5_o.png",
+            "thumbnail": "/thumbs/small/443f994fcd0540a5d0a799de.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/5d87c30e5df48ee0b3c1dc96.jpg"
+    }
 }

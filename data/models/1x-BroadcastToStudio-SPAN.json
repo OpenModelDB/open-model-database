@@ -42,12 +42,18 @@
         {
             "type": "standalone",
             "caption": "1",
-            "url": "https://images2.imgbox.com/cf/bd/lq4EWYPp_o.png"
+            "url": "https://images2.imgbox.com/cf/bd/lq4EWYPp_o.png",
+            "thumbnail": "/thumbs/small/8b42fb3bf51f730e764c046e.jpg"
         },
         {
             "type": "standalone",
             "caption": "2",
-            "url": "https://images2.imgbox.com/ba/81/OepEK0UZ_o.png"
+            "url": "https://images2.imgbox.com/ba/81/OepEK0UZ_o.png",
+            "thumbnail": "/thumbs/small/ab68bf920b3fd00313b24a9e.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/d5ab7a8841cb834eb2e2a27d.jpg"
+    }
 }

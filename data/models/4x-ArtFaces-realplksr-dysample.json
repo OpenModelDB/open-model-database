@@ -33,23 +33,32 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/Aa7VfJfd.webp"
+            "url": "https://i.slow.pics/Aa7VfJfd.webp",
+            "thumbnail": "/thumbs/small/873b928541eccb84ec968967.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/R1BEAMoC.webp"
+            "url": "https://i.slow.pics/R1BEAMoC.webp",
+            "thumbnail": "/thumbs/small/fe878fd363edd0b62c75b187.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/jVfNJtyc.webp"
+            "url": "https://i.slow.pics/jVfNJtyc.webp",
+            "thumbnail": "/thumbs/small/6bafcbe6d040a6d3a809feb0.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/1i8QMfh4.webp"
+            "url": "https://i.slow.pics/1i8QMfh4.webp",
+            "thumbnail": "/thumbs/small/3fcfd3a1d6b13de4d99a2429.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/3N2ODLTA.webp"
+            "url": "https://i.slow.pics/3N2ODLTA.webp",
+            "thumbnail": "/thumbs/small/6b7a4cf9687ca70bf2f8312a.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/62857ce4d95a12b82b1916eb.jpg"
+    }
 }

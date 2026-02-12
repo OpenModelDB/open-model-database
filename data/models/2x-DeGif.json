@@ -34,12 +34,27 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/d6/82/MoHmVWrR_o.png",
-            "SR": "https://images2.imgbox.com/37/e7/FO1qlrJM_o.png"
+            "SR": "https://images2.imgbox.com/37/e7/FO1qlrJM_o.png",
+            "thumbnail": "/thumbs/small/6139ce50bf2ebe29eeb2016b.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/3b/e0/opNUfwEG_o.png",
-            "SR": "https://images2.imgbox.com/72/aa/PicQjfoA_o.png"
+            "SR": "https://images2.imgbox.com/72/aa/PicQjfoA_o.png",
+            "thumbnail": "/thumbs/small/3e30dbc665114a0a368b4ab9.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/db04d17d6fcb03708cc33b3c.png",
+        "SR": "/thumbs/ca5c1ca070305c90f59d8710.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

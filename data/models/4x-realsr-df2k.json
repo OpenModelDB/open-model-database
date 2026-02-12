@@ -32,11 +32,17 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0913.png"
+            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0913.png",
+            "thumbnail": "/thumbs/small/6c00b72fe83e2f4f3722acfd.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0935.png"
+            "url": "https://github.com/jixiaozhong/RealSR/raw/master/figures/0935.png",
+            "thumbnail": "/thumbs/small/ab185412381f38b308bba124.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/6cd73887cc90ab44c921228e.jpg"
+    }
 }

@@ -38,19 +38,35 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/Lz3nmJ5c.webp",
-            "SR": "https://i.slow.pics/2GfYgS0z.png"
+            "SR": "https://i.slow.pics/2GfYgS0z.png",
+            "thumbnail": "/thumbs/small/73605fc92ee5043228fdff99.jpg"
         },
         {
             "type": "paired",
             "caption": "ani_bokeh",
             "LR": "https://i.slow.pics/FeIsRUYB.webp",
-            "SR": "https://i.slow.pics/c1Prs8y9.png"
+            "SR": "https://i.slow.pics/c1Prs8y9.png",
+            "thumbnail": "/thumbs/small/843c7de512b1a4dd3432c7ff.jpg"
         },
         {
             "type": "paired",
             "caption": "face",
             "LR": "https://i.slow.pics/f9vUfSfL.webp",
-            "SR": "https://i.slow.pics/3HATRbYp.png"
+            "SR": "https://i.slow.pics/3HATRbYp.png",
+            "thumbnail": "/thumbs/small/4dda1ce69662b742b1b71491.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/93defc4a120be82a222b2900.jpg",
+        "SR": "/thumbs/68e118bae36e450534fd9f2f.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

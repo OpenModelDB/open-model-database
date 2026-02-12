@@ -41,19 +41,35 @@
             "type": "paired",
             "caption": "Goof Troop 1",
             "LR": "https://imgsli.com/i/d63f832a-a71f-4253-b8ed-0afbe621c12d.jpg",
-            "SR": "https://imgsli.com/i/ffb00da6-236a-4a01-9d24-eeec2507d119.jpg"
+            "SR": "https://imgsli.com/i/ffb00da6-236a-4a01-9d24-eeec2507d119.jpg",
+            "thumbnail": "/thumbs/small/d5e6f209e0d3a9a7da63725a.jpg"
         },
         {
             "type": "paired",
             "caption": "Donald Duck 1",
             "LR": "https://imgsli.com/i/90ec7bcf-80f9-41ec-8130-520bcf8caa9c.jpg",
-            "SR": "https://imgsli.com/i/f381ca20-bf1b-4834-9790-55d18ce615d5.jpg"
+            "SR": "https://imgsli.com/i/f381ca20-bf1b-4834-9790-55d18ce615d5.jpg",
+            "thumbnail": "/thumbs/small/c8b1c4e24d74484c5a3db92d.jpg"
         },
         {
             "type": "paired",
             "caption": "Pooh 1",
             "LR": "https://imgsli.com//i/1dac194e-499f-448c-aa2d-e676607c23f6.jpg",
-            "SR": "https://imgsli.com//i/3a51dfb5-e821-41fd-bfa6-89bbacd8544a.jpg"
+            "SR": "https://imgsli.com//i/3a51dfb5-e821-41fd-bfa6-89bbacd8544a.jpg",
+            "thumbnail": "/thumbs/small/f44b8d42cf86050a3a4bd2c1.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/10ff2b59d227cdb99a704569.png",
+        "SR": "/thumbs/19d81fd578f7280577591b24.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -32,11 +32,26 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/LR/baboon.png",
-            "SR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/results/baboon_ESRGAN.png"
+            "SR": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/results/baboon_ESRGAN.png",
+            "thumbnail": "/thumbs/small/f59d6f3fd20840661de3d705.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/figures/baboon.jpg"
+            "url": "https://raw.githubusercontent.com/xinntao/ESRGAN/master/figures/baboon.jpg",
+            "thumbnail": "/thumbs/small/57164688556a6b3040f07568.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/cead740a799b7891a6a9b848.png",
+        "SR": "/thumbs/ab69dbe919716ca40c448519.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

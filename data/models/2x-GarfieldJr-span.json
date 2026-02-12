@@ -37,48 +37,69 @@
             "type": "paired",
             "caption": "LR vs SPAN 1",
             "LR": "https://i.slow.pics/P8ycFvBX.png",
-            "SR": "https://i.slow.pics/wbrPKSIS.png"
+            "SR": "https://i.slow.pics/wbrPKSIS.png",
+            "thumbnail": "/thumbs/small/dbe5230cf0e7604839feb378.jpg"
         },
         {
             "type": "paired",
             "caption": "2",
             "LR": "https://i.slow.pics/Wo3cR64d.png",
-            "SR": "https://i.slow.pics/BEeAIhEJ.png"
+            "SR": "https://i.slow.pics/BEeAIhEJ.png",
+            "thumbnail": "/thumbs/small/d1321ca0cae3adc00079b990.jpg"
         },
         {
             "type": "paired",
             "caption": "3",
             "LR": "https://i.slow.pics/zO1s8sRf.png",
-            "SR": "https://i.slow.pics/WQkN6ZWF.png"
+            "SR": "https://i.slow.pics/WQkN6ZWF.png",
+            "thumbnail": "/thumbs/small/716700625d3f8af5b8363d6b.jpg"
         },
         {
             "type": "paired",
             "caption": "4",
             "LR": "https://i.slow.pics/V2tWwxsv.png",
-            "SR": "https://i.slow.pics/D3O5B6p5.png"
+            "SR": "https://i.slow.pics/D3O5B6p5.png",
+            "thumbnail": "/thumbs/small/aeffd9f8ee0d00815c3826c6.jpg"
         },
         {
             "type": "paired",
             "caption": "5",
             "LR": "https://i.slow.pics/UD9yZUHY.png",
-            "SR": "https://i.slow.pics/R8PbbdZu.png"
+            "SR": "https://i.slow.pics/R8PbbdZu.png",
+            "thumbnail": "/thumbs/small/14ba736d5c02ebef61084633.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/JtB4HkAQ.png",
-            "SR": "https://i.slow.pics/mMKJURnZ.png"
+            "SR": "https://i.slow.pics/mMKJURnZ.png",
+            "thumbnail": "/thumbs/small/59b57fd775722baa811a0268.jpg"
         },
         {
             "type": "paired",
             "caption": "7",
             "LR": "https://i.slow.pics/rEhEUWze.png",
-            "SR": "https://i.slow.pics/w3WTU28M.png"
+            "SR": "https://i.slow.pics/w3WTU28M.png",
+            "thumbnail": "/thumbs/small/6febe552179b73f333b5c85e.jpg"
         },
         {
             "type": "paired",
             "caption": "8",
             "LR": "https://i.slow.pics/OjHNU1JW.png",
-            "SR": "https://i.slow.pics/197bJpV0.png"
+            "SR": "https://i.slow.pics/197bJpV0.png",
+            "thumbnail": "/thumbs/small/83740b7ef03eb442a38d88be.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/19a1a03bacf84de9a5ab6847.jpg",
+        "SR": "/thumbs/f7a3c80022fb3eea5a7b7dce.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

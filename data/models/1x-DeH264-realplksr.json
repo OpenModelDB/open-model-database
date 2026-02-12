@@ -54,22 +54,39 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/W7XnAQyq.webp",
-            "SR": "https://i.slow.pics/oApzfWL5.webp"
+            "SR": "https://i.slow.pics/oApzfWL5.webp",
+            "thumbnail": "/thumbs/small/61529f1233e113efa42e0c97.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/7I6VglYj.webp",
-            "SR": "https://i.slow.pics/nirdkNCy.webp"
+            "SR": "https://i.slow.pics/nirdkNCy.webp",
+            "thumbnail": "/thumbs/small/a17f53145961e0d8cea8b20a.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/DStoOqpl.webp",
-            "SR": "https://i.slow.pics/hFYBKe4f.webp"
+            "SR": "https://i.slow.pics/hFYBKe4f.webp",
+            "thumbnail": "/thumbs/small/98351dddb0424f581d8b2928.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/p2gWcS3V.webp",
-            "SR": "https://i.slow.pics/UnK3wpJH.webp"
+            "SR": "https://i.slow.pics/UnK3wpJH.webp",
+            "thumbnail": "/thumbs/small/87ce03e5eaffeb59c7889131.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/28540c5eccb8dc9a82a8e0f6.jpg",
+        "SR": "/thumbs/f6c44867bed965db8da71cb3.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

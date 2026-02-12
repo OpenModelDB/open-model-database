@@ -32,22 +32,39 @@
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_5.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_5_4xLSDIR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_5_4xLSDIR.png",
+            "thumbnail": "/thumbs/small/89be574ac42f5ba9cbaeec95.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_14.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_14_4xLSDIR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_14_4xLSDIR.png",
+            "thumbnail": "/thumbs/small/8d7c9720cd5c6bcb9d6aa201.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_13.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_13_4xLSDIR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_13_4xLSDIR.png",
+            "thumbnail": "/thumbs/small/716a445e8d1bb68ea9212421.jpg"
         },
         {
             "type": "paired",
             "LR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/input/Input_6.png",
-            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_6_4xLSDIR.png"
+            "SR": "https://raw.githubusercontent.com/Phhofm/models/main/4xLSDIR/examples/output/Input_6_4xLSDIR.png",
+            "thumbnail": "/thumbs/small/e93f3a4355769879b3085660.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/efd5d2d2b016785a6e6d49c6.png",
+        "SR": "/thumbs/6a352874d273a1974c98d140.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

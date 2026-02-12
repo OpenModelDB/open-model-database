@@ -53,19 +53,35 @@
             "type": "paired",
             "caption": "xvid bad quality",
             "LR": "https://i.slow.pics/MqRdbeSL.webp",
-            "SR": "https://i.slow.pics/k1sDOhPk.webp"
+            "SR": "https://i.slow.pics/k1sDOhPk.webp",
+            "thumbnail": "/thumbs/small/66b2a7c8d56a2778e46ade3d.jpg"
         },
         {
             "type": "paired",
             "caption": "720p slightly oversharpened",
             "LR": "https://i.slow.pics/TCCKrYSs.webp",
-            "SR": "https://i.slow.pics/BIRBcKK9.webp"
+            "SR": "https://i.slow.pics/BIRBcKK9.webp",
+            "thumbnail": "/thumbs/small/b18e3fe98b85f3669c727e09.jpg"
         },
         {
             "type": "paired",
             "caption": "1080p noisy and soft",
             "LR": "https://i.slow.pics/GJhVMCUy.webp",
-            "SR": "https://i.slow.pics/h9VzPczR.webp"
+            "SR": "https://i.slow.pics/h9VzPczR.webp",
+            "thumbnail": "/thumbs/small/782dc3033d2fe0cca230d6d1.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/11f854b93b75aa10b13bf5b3.png",
+        "SR": "/thumbs/de5524f8183346e8d036f358.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

@@ -62,7 +62,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.slow.pics/nrZhKdOx.png"
+            "url": "https://i.slow.pics/nrZhKdOx.png",
+            "thumbnail": "/thumbs/small/552eb4c0ae0416d0cec0c5ec.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/8a64384309ffed75fa6b38e5.jpg"
+    }
 }

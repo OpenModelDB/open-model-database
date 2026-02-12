@@ -39,7 +39,21 @@
             "type": "paired",
             "caption": "Test case: Removing horizontal film lines",
             "LR": "https://imgsli.com/i/d9cdfc24-21c7-4889-926c-c037d453d581.jpg",
-            "SR": "https://imgsli.com/i/a4f15a21-6196-4e4b-ab88-53b1665b0db4.jpg"
+            "SR": "https://imgsli.com/i/a4f15a21-6196-4e4b-ab88-53b1665b0db4.jpg",
+            "thumbnail": "/thumbs/small/cd6a290b350918d2ad8cc312.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/4deea4f5edbd6b2c81bb679b.jpg",
+        "SR": "/thumbs/c431d6ede679511dd5bdcc54.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

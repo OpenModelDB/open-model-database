@@ -36,25 +36,42 @@
             "type": "paired",
             "caption": "Carmen (The Tigress)",
             "LR": "https://imgsli.com/i/17911e09-4ce1-4960-bee4-2559698bee0a.jpg",
-            "SR": "https://imgsli.com/i/9460e5d6-28e2-4e96-ba64-8c0d4dda9008.jpg"
+            "SR": "https://imgsli.com/i/9460e5d6-28e2-4e96-ba64-8c0d4dda9008.jpg",
+            "thumbnail": "/thumbs/small/3960e955df4fed350bd4294f.jpg"
         },
         {
             "type": "paired",
             "caption": "The Trial of Carmen Sandiego",
             "LR": "https://imgsli.com/i/7a097b3d-e808-4aeb-8761-b1fb51316d67.jpg",
-            "SR": "https://imgsli.com/i/02d5516a-dcdc-4b99-9de6-6f443e09fc30.jpg"
+            "SR": "https://imgsli.com/i/02d5516a-dcdc-4b99-9de6-6f443e09fc30.jpg",
+            "thumbnail": "/thumbs/small/4e8552f60746fb6b06ecf60d.jpg"
         },
         {
             "type": "paired",
             "caption": "Opening Sequence",
             "LR": "https://imgsli.com/i/0dc9b8df-415d-46fe-949f-9b2e989cccc5.jpg",
-            "SR": "https://imgsli.com/i/bc24ff89-ccaa-4d1f-a583-0ea5bbc8ead9.jpg"
+            "SR": "https://imgsli.com/i/bc24ff89-ccaa-4d1f-a583-0ea5bbc8ead9.jpg",
+            "thumbnail": "/thumbs/small/26831d84a715204f72ca3fb2.jpg"
         },
         {
             "type": "paired",
             "caption": "Hot Ice",
             "LR": "https://imgsli.com/i/36c28cc9-d634-4483-adab-0a30a530f721.jpg",
-            "SR": "https://imgsli.com/i/07fb69a3-c4f3-45bc-a1e6-190c19ceec9e.jpg"
+            "SR": "https://imgsli.com/i/07fb69a3-c4f3-45bc-a1e6-190c19ceec9e.jpg",
+            "thumbnail": "/thumbs/small/5f6097e89f19cd46e1ce7ab2.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/e5d777eade4a75fe79e75ffc.png",
+        "SR": "/thumbs/98440c7067799a596cdd6a22.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

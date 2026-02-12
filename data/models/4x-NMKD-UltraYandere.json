@@ -37,25 +37,42 @@
             "type": "paired",
             "caption": "Pixelated",
             "LR": "https://images2.imgbox.com/81/cc/vKXAeMTF_o.png",
-            "SR": "https://images2.imgbox.com/2b/3d/QhztiFA0_o.jpg"
+            "SR": "https://images2.imgbox.com/2b/3d/QhztiFA0_o.jpg",
+            "thumbnail": "/thumbs/small/947791ed1ab3ac531accb20d.jpg"
         },
         {
             "type": "paired",
             "caption": "Dither",
             "LR": "https://images2.imgbox.com/76/ab/eKBuQmXP_o.png",
-            "SR": "https://images2.imgbox.com/cd/ff/BhyGF2Dp_o.jpg"
+            "SR": "https://images2.imgbox.com/cd/ff/BhyGF2Dp_o.jpg",
+            "thumbnail": "/thumbs/small/4534aceea6db0c76e7afc2e7.jpg"
         },
         {
             "type": "paired",
             "caption": "Dither",
             "LR": "https://images2.imgbox.com/ee/44/laUihKeZ_o.png",
-            "SR": "https://images2.imgbox.com/8b/5c/dRyQbd55_o.jpg"
+            "SR": "https://images2.imgbox.com/8b/5c/dRyQbd55_o.jpg",
+            "thumbnail": "/thumbs/small/b5cbe5e8c47bf75683864169.jpg"
         },
         {
             "type": "paired",
             "caption": "JPEG",
             "LR": "https://images2.imgbox.com/aa/d2/ouZNGja2_o.png",
-            "SR": "https://images2.imgbox.com/c6/de/AGBABP8O_o.jpg"
+            "SR": "https://images2.imgbox.com/c6/de/AGBABP8O_o.jpg",
+            "thumbnail": "/thumbs/small/24f6c517851828754dd4139a.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/8c0f2b5256e14184d545f973.png",
+        "SR": "/thumbs/6363780287e5bd50b4e80884.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

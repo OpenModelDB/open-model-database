@@ -42,7 +42,21 @@
             "type": "paired",
             "caption": "Face of an old man",
             "LR": "https://images2.imgbox.com/65/bf/AdbeC87A_o.png",
-            "SR": "https://images2.imgbox.com/bd/ae/gU4oQXzh_o.jpg"
+            "SR": "https://images2.imgbox.com/bd/ae/gU4oQXzh_o.jpg",
+            "thumbnail": "/thumbs/small/81bd5b21285dd7067653c3ab.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/7e59ec865b08cb4903f8fdeb.png",
+        "SR": "/thumbs/d3afa3b471f83af46f790bb5.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }

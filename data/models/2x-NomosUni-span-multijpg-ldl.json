@@ -39,17 +39,33 @@
         {
             "type": "paired",
             "LR": "https://i.slow.pics/OkXGM7rw.png",
-            "SR": "https://i.slow.pics/6Krn4xYp.png"
+            "SR": "https://i.slow.pics/6Krn4xYp.png",
+            "thumbnail": "/thumbs/small/afbe26c1ec642f78c3e1f159.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/fj51WeqR.png",
-            "SR": "https://i.slow.pics/lK1aqXoV.png"
+            "SR": "https://i.slow.pics/lK1aqXoV.png",
+            "thumbnail": "/thumbs/small/a47789e26ccb60ac258a4bdd.jpg"
         },
         {
             "type": "paired",
             "LR": "https://i.slow.pics/X2sdVVnP.png",
-            "SR": "https://i.slow.pics/dAnxx3kR.png"
+            "SR": "https://i.slow.pics/dAnxx3kR.png",
+            "thumbnail": "/thumbs/small/f4a28b0205e18f1e66c69911.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/215dfd4e893cd25cfab36e31.jpg",
+        "SR": "/thumbs/2e43f72336976bd562f64765.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

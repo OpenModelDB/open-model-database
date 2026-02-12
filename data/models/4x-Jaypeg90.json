@@ -38,7 +38,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://i.imgur.com/n09m2Rt.png"
+            "url": "https://i.imgur.com/n09m2Rt.png",
+            "thumbnail": "/thumbs/small/39e9f2eccdf00645a0bff442.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/5c61426c7adf8a9edb4efb10.jpg"
+    }
 }

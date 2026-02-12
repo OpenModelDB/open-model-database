@@ -42,17 +42,33 @@
         {
             "type": "paired",
             "LR": "https://github.com/TNTwise/Models/raw/main/2x_ModernSpanimationV1/Comparison/violet.webp",
-            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/violet.png?raw=true"
+            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/violet.png?raw=true",
+            "thumbnail": "/thumbs/small/b036ef0edd8722777c386690.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/TNTwise/Models/raw/main/2x_ModernSpanimationV1/Comparison/yourname.webp",
-            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/yourname.png?raw=true"
+            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/yourname.png?raw=true",
+            "thumbnail": "/thumbs/small/5646eb11af82bad29ac11a98.jpg"
         },
         {
             "type": "paired",
             "LR": "https://github.com/TNTwise/Models/raw/main/2x_ModernSpanimationV1/Comparison/gravityfalls.webp",
-            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/gravityfalls.png?raw=true"
+            "SR": "https://github.com/TNTwise/Models/blob/main/2x_ModernSpanimationV1/Comparison/gravityfalls.png?raw=true",
+            "thumbnail": "/thumbs/small/66a4c56e7ca803d38204ddfe.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/90a62fc0f4db432cad15d5b9.png",
+        "SR": "/thumbs/314cf60126ab3cff76d6d744.jpg",
+        "LRSize": {
+            "width": 183,
+            "height": 148
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

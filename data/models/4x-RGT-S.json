@@ -27,7 +27,12 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://raw.githubusercontent.com/zhengchen1999/RGT/main/figs/RGT.png"
+            "url": "https://raw.githubusercontent.com/zhengchen1999/RGT/main/figs/RGT.png",
+            "thumbnail": "/thumbs/small/c0be1e1fa68b0061179c27d4.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/a3eb2a2c1657604f9676befd.jpg"
+    }
 }

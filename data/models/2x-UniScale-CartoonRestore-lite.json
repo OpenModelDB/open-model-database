@@ -39,23 +39,32 @@
     "images": [
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/48/92/MHmxEqw5_o.png"
+            "url": "https://images2.imgbox.com/48/92/MHmxEqw5_o.png",
+            "thumbnail": "/thumbs/small/7d3a7468a553988b4a6ac6d1.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/22/c9/WdC46jec_o.png"
+            "url": "https://images2.imgbox.com/22/c9/WdC46jec_o.png",
+            "thumbnail": "/thumbs/small/0034956d0e295ee0b9223f0f.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/3b/72/fuEXjznn_o.png"
+            "url": "https://images2.imgbox.com/3b/72/fuEXjznn_o.png",
+            "thumbnail": "/thumbs/small/22a84f39aace67dd5b02c372.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/b1/e0/u7Z0QANc_o.png"
+            "url": "https://images2.imgbox.com/b1/e0/u7Z0QANc_o.png",
+            "thumbnail": "/thumbs/small/94cc3bed024df266f2629d03.jpg"
         },
         {
             "type": "standalone",
-            "url": "https://images2.imgbox.com/89/ae/A9mWAieR_o.png"
+            "url": "https://images2.imgbox.com/89/ae/A9mWAieR_o.png",
+            "thumbnail": "/thumbs/small/714c0b8f039634c16aed90e2.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "standalone",
+        "url": "/thumbs/315ea1ce25ea0656fb490927.jpg"
+    }
 }

@@ -36,37 +36,56 @@
             "type": "paired",
             "caption": "Carmen",
             "LR": "https://imgsli.com/i/0e4dd7ab-542f-47a9-86d1-12475ba34713.jpg",
-            "SR": "\thttps://imgsli.com/i/a2fba69c-2ace-46cc-9669-1f69dcea3f23.jpg"
+            "SR": "\thttps://imgsli.com/i/a2fba69c-2ace-46cc-9669-1f69dcea3f23.jpg",
+            "thumbnail": "/thumbs/small/55abe7378180eec9b8e30709.jpg"
         },
         {
             "type": "paired",
             "caption": "All for One",
             "LR": "https://imgsli.com/i/efe1a373-2619-4dce-853a-6eb6526c93bb.jpg",
-            "SR": "https://imgsli.com/i/5539a03e-3b53-42db-bac6-578925c250d4.jpg"
+            "SR": "https://imgsli.com/i/5539a03e-3b53-42db-bac6-578925c250d4.jpg",
+            "thumbnail": "/thumbs/small/18fd60ea92da2bb0e9d13d2f.jpg"
         },
         {
             "type": "paired",
             "caption": "All for One-Title Card",
             "LR": "https://imgsli.com/i/dbe28e5f-1785-42b6-b337-acf9f3f12602.jpg",
-            "SR": "https://imgsli.com/i/7796c3dd-3fbf-4d9e-8d3e-bb8e6fbef649.jpg"
+            "SR": "https://imgsli.com/i/7796c3dd-3fbf-4d9e-8d3e-bb8e6fbef649.jpg",
+            "thumbnail": "/thumbs/small/4bc189496d3a5a1ab87c17e2.jpg"
         },
         {
             "type": "paired",
             "caption": "Curses, Foiled Again",
             "LR": "https://imgsli.com/i/0e82be0c-b2a6-4e05-a406-1f7b35012daa.jpg",
-            "SR": "https://imgsli.com/i/3628c78b-7345-4bbf-a566-a887e4c86618.jpg"
+            "SR": "https://imgsli.com/i/3628c78b-7345-4bbf-a566-a887e4c86618.jpg",
+            "thumbnail": "/thumbs/small/cc76a771226b867b540c7993.jpg"
         },
         {
             "type": "paired",
             "caption": "C5 Corridor",
             "LR": "https://imgsli.com/i/dfdbfddb-1bfb-4f56-b4e3-1d1aa4215099.jpg",
-            "SR": "https://imgsli.com/i/477da5e0-5c3e-40e4-87fb-38b04df5d7f2.jpg"
+            "SR": "https://imgsli.com/i/477da5e0-5c3e-40e4-87fb-38b04df5d7f2.jpg",
+            "thumbnail": "/thumbs/small/a864dc2c22582734059de21e.jpg"
         },
         {
             "type": "paired",
             "caption": "The Tigress",
             "LR": "https://imgsli.com/i/37b6789c-01c7-499d-b4c6-8126c30c7ccc.jpg",
-            "SR": "https://imgsli.com/i/1068b14d-060f-448a-82d5-c9d4d5398b5c.jpg"
+            "SR": "https://imgsli.com/i/1068b14d-060f-448a-82d5-c9d4d5398b5c.jpg",
+            "thumbnail": "/thumbs/small/4ecd894fa72fc75e9f6d5dcd.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/7f859a105985479a1f568ebd.jpg",
+        "SR": "/thumbs/95eb6315037f9edff5063d2a.jpg",
+        "LRSize": {
+            "width": 366,
+            "height": 296
+        },
+        "SRSize": {
+            "width": 366,
+            "height": 296
+        }
+    }
 }

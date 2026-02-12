@@ -36,17 +36,33 @@
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/ca/dd/tf0mcM9K_o.png",
-            "SR": "https://images2.imgbox.com/b8/c8/k5NQpLIv_o.png"
+            "SR": "https://images2.imgbox.com/b8/c8/k5NQpLIv_o.png",
+            "thumbnail": "/thumbs/small/893a6df00016d501505c31e8.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/04/73/DqR3wgUs_o.png",
-            "SR": "https://images2.imgbox.com/7d/82/SUpoCECc_o.png"
+            "SR": "https://images2.imgbox.com/7d/82/SUpoCECc_o.png",
+            "thumbnail": "/thumbs/small/33508290c4449abc54ab57b9.jpg"
         },
         {
             "type": "paired",
             "LR": "https://images2.imgbox.com/b5/74/CyAcjETs_o.png",
-            "SR": "https://images2.imgbox.com/45/bc/p8yLmiXJ_o.png"
+            "SR": "https://images2.imgbox.com/45/bc/p8yLmiXJ_o.png",
+            "thumbnail": "/thumbs/small/2a2e83beb90eac2a035a5765.jpg"
         }
-    ]
+    ],
+    "thumbnail": {
+        "type": "paired",
+        "LR": "/thumbs/995a4128540c3ec2d27bb01a.png",
+        "SR": "/thumbs/cec189b37d31cfa1cada500e.jpg",
+        "LRSize": {
+            "width": 92,
+            "height": 74
+        },
+        "SRSize": {
+            "width": 368,
+            "height": 296
+        }
+    }
 }
