@@ -27,7 +27,7 @@ There are many programs that can perform AI upscaling, though not all are able t
   - chaiNNer is a node-based image processing GUI that can also be used for image upscaling. It has the most support for models listed on OpenModelDB and can be run with PyTorch (CUDA), ONNX (CUDA), and NCNN (AMD/Intel). Being node based, it allows you to process your images with a lot more control, at the cost of being a bit more complex. Besides upscaling, chaiNNer also has a variety of other use cases and is a very versatile program.
 
 - **Vivid** (closed-source | paid)
-  - [GitHub (Extension SDK)](https://github.com/dusklaboratory/vivid-core)
+  - [Website](https://vividenhance.com/) | [GitHub (Extension SDK)](https://github.com/dusklaboratory/vivid-core)
   - Desktop AI video processing platform focused on upscaling, frame interpolation, and restoration. It supports multiple runtimes including TensorRT, NCNN, DirectML, CoreML, and ONNX Runtime, enabling efficient processing across NVIDIA, AMD, Intel, and Apple Silicon hardware. Built-in model hub and custom model support!
   - Unlike traditional tools, Vivid is built around pipelines and queue-based workflows, allowing users to chain operations like upscaling, interpolation, and restoration into a single process. It also supports optional cloud acceleration for significantly faster processing when local hardware is insufficient.
 
