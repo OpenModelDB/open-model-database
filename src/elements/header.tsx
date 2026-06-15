@@ -59,17 +59,39 @@ export function Header({ searchBar }: HeaderProps) {
                     >
                         How To Upscale
                     </Link>
+                    <Link
+                        className={joinClasses(
+                            style.docLink,
+                            'ml-8 font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                            style.hideMobile
+                        )}
+                        href="/datasets"
+                    >
+                        Datasets
+                    </Link>
                     {editMode && (
-                        <Link
-                            className={joinClasses(
-                                style.docLink,
-                                'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                                style.hideMobile
-                            )}
-                            href="/add-model"
-                        >
-                            Add Model
-                        </Link>
+                        <>
+                            <Link
+                                className={joinClasses(
+                                    style.docLink,
+                                    'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                                    style.hideMobile
+                                )}
+                                href="/add-model"
+                            >
+                                Add Model
+                            </Link>
+                            <Link
+                                className={joinClasses(
+                                    style.docLink,
+                                    'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                                    style.hideMobile
+                                )}
+                                href="/add-dataset"
+                            >
+                                Add Dataset
+                            </Link>
+                        </>
                     )}
 
                     <span className={style.spacer} />
@@ -146,6 +168,7 @@ export function Header({ searchBar }: HeaderProps) {
 
 function HeaderDrawer() {
     const [showDrawer, setShowDrawer] = useState(false);
+    const { editMode } = useEditModeToggle();
 
     return (
         <>
@@ -214,6 +237,30 @@ function HeaderDrawer() {
                                     How To Upscale
                                 </div>
                             </Link>
+                            Browse
+                            <Link
+                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
+                                href="/datasets"
+                            >
+                                <div className="relative flex items-center gap-2 align-middle">Datasets</div>
+                            </Link>
+                            {editMode && (
+                                <>
+                                    Edit
+                                    <Link
+                                        className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
+                                        href="/add-model"
+                                    >
+                                        <div className="relative flex items-center gap-2 align-middle">Add Model</div>
+                                    </Link>
+                                    <Link
+                                        className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
+                                        href="/add-dataset"
+                                    >
+                                        <div className="relative flex items-center gap-2 align-middle">Add Dataset</div>
+                                    </Link>
+                                </>
+                            )}
                             Links
                             <Link
                                 external

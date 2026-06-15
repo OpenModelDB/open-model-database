@@ -1,4 +1,4 @@
-import { Collection, CollectionId, Model, ModelId } from '../schema';
+import { Collection, CollectionId, Dataset, DatasetId, Model, ModelId } from '../schema';
 import { fileApi, getFileApiMutationCounterUnsynchronized } from './file-data';
 
 let cachedMutationCounter = 0;
@@ -29,3 +29,10 @@ export const getCachedModels = cached((): Promise<ReadonlyMap<ModelId, Model>> =
 export const getCachedCollections = cached(
     (): Promise<ReadonlyMap<CollectionId, Collection>> => fileApi.collections.getAll()
 );
+
+/**
+ * This is a cached version of `fileApi.datasets.getAll()`.
+ *
+ * The caller is not allowed to mutate the returned map or any of its values.
+ */
+export const getCachedDatasets = cached((): Promise<ReadonlyMap<DatasetId, Dataset>> => fileApi.datasets.getAll());
