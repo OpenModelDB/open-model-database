@@ -159,21 +159,19 @@ export const DatasetDownloadButton = ({ url, readonly, onChange }: DatasetDownlo
                                         ) : (
                                             <Logo />
                                         )}
-                                        {!readonly && (
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if (onChange) {
-                                                        onChange('');
-                                                    }
-                                                }}
-                                            >
-                                                <BsFillTrashFill />
-                                            </button>
-                                        )}
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (onChange) {
+                                                    onChange('');
+                                                }
+                                            }}
+                                        >
+                                            <BsFillTrashFill />
+                                        </button>
                                     </Menu.Item>
                                 )}
-                                {!readonly && url === '' && (
+                                {url === '' && (
                                     <Menu.Item
                                         as="a"
                                         className="cursor-pointer rounded-lg p-2 text-center transition-colors duration-100 ease-in-out ui-active:bg-fade-300 ui-active:text-black ui-not-active:text-black dark:ui-active:bg-fade-600 dark:ui-active:text-white dark:ui-not-active:text-white"
