@@ -65,6 +65,16 @@ export function Header({ searchBar }: HeaderProps) {
                             'ml-8 font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
                             style.hideMobile
                         )}
+                        href="/"
+                    >
+                        Models
+                    </Link>
+                    <Link
+                        className={joinClasses(
+                            style.docLink,
+                            'ml-8 font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                            style.hideMobile
+                        )}
                         href="/datasets"
                     >
                         Datasets
@@ -238,6 +248,12 @@ function HeaderDrawer() {
                                 </div>
                             </Link>
                             Browse
+                            <Link
+                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
+                                href="/"
+                            >
+                                <div className="relative flex items-center gap-2 align-middle">Models</div>
+                            </Link>
                             <Link
                                 className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
                                 href="/datasets"
