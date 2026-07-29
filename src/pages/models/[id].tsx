@@ -15,7 +15,7 @@ import { ImageCarousel } from '../../elements/components/image-carousel';
 import { LicenseAttributes } from '../../elements/components/license-attributes';
 import { Link } from '../../elements/components/link';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
-import { MetadataTable } from '../../elements/components/model-page/metadata-table';
+import { SpecCards } from '../../elements/components/model-page/spec-cards';
 import { TrainingDetails } from '../../elements/components/model-page/training-details';
 import { Switch } from '../../elements/components/switch';
 import { HeadCommon } from '../../elements/head-common';
@@ -694,8 +694,8 @@ export default function Page({
                         </div>
 
                         <div className="relative flex flex-col gap-5">
-                            <MetadataTable
-                                rows={[
+                            <SpecCards
+                                modelRows={[
                                     /* eslint-disable react/jsx-key */
                                     [
                                         'Architecture',
@@ -729,23 +729,13 @@ export default function Page({
                                     ],
                                     /* eslint-enable react/jsx-key */
                                 ]}
-                                title="Model"
-                            />
-
-                            <MetadataTable
-                                rows={[
-                                    /* eslint-disable react/jsx-key */
-                                    [
-                                        'License',
-                                        <LicenseProp
-                                            editMode={editMode}
-                                            model={model}
-                                            updateModelProperty={updateModelProperty}
-                                        />,
-                                    ],
-                                    /* eslint-enable react/jsx-key */
-                                ]}
-                                title="Rights"
+                                rights={
+                                    <LicenseProp
+                                        editMode={editMode}
+                                        model={model}
+                                        updateModelProperty={updateModelProperty}
+                                    />
+                                }
                             />
 
                             <TrainingDetails
