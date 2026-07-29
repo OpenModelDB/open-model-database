@@ -15,6 +15,7 @@ import { joinClasses } from '../../lib/util';
 import { EditImageButton } from './image-carousel-edit-popover';
 import { ImageCarouselImage } from './image-carousel-image';
 import style from './image-carousel.module.scss';
+import { EmptyStage } from './model-page/empty-stage';
 
 type ImageCarouselProps = {
     images: readonly Image[];
@@ -49,17 +50,15 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
 
     return (
         <div className="relative w-full">
-            <div
-                className={`${style.imageWrapper} flex w-full overflow-hidden rounded-card border border-solid border-line bg-surface-sunken align-middle`}
-            >
-                {selectedImage ? (
+            {selectedImage ? (
+                <div
+                    className={`${style.imageWrapper} flex w-full overflow-hidden rounded-card border border-solid border-line bg-surface-sunken align-middle`}
+                >
                     <ImageCarouselImage image={selectedImage} />
-                ) : (
-                    <div className="flex h-full w-full items-center align-middle">
-                        <div className="m-auto text-sm text-ink-muted">This model does not have preview images.</div>
-                    </div>
-                )}
-            </div>
+                </div>
+            ) : (
+                <EmptyStage />
+            )}
             {(!readonly || images.length > 1) && (
                 // Centred as one group: the arrows used to be pinned to the far
                 // edges of the page, a long way from the thumbnails they page.
