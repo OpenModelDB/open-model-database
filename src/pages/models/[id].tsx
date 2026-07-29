@@ -581,6 +581,51 @@ export default function Page({
                                 />
                             </div>
 
+                            {/* Training provenance sits here rather than in the sidebar: two
+                                thirds of descriptions run under 400 characters, so this column
+                                ran out of body while the sidebar kept going. */}
+                            <div className="mb-5">
+                                <TrainingDetails
+                                    editMode={editMode}
+                                    rows={[
+                                        /* eslint-disable react/jsx-key */
+                                        ...typedKeys(MODEL_PROPS)
+                                            .filter((key) => {
+                                                return [
+                                                    'date',
+                                                    'dataset',
+                                                    'datasetSize',
+                                                    'trainingIterations',
+                                                    'trainingEpochs',
+                                                    'trainingBatchSize',
+                                                    'trainingHRSize',
+                                                    'trainingOTF',
+                                                ].includes(key);
+                                            })
+                                            .map((key) => [key, model[key]] as const)
+                                            .filter(([, value]) => editMode || value != null)
+                                            .map(([key, value]) => {
+                                                const prop = MODEL_PROPS[key];
+                                                return [
+                                                    prop.name,
+                                                    Array.isArray(value)
+                                                        ? renderTags(
+                                                              value.map((v) => String(v)),
+                                                              editMode,
+                                                              (newTags) => {
+                                                                  updateModelProperty(key, newTags);
+                                                              }
+                                                          )
+                                                        : editableMetadata(editMode, value, prop, (newValue) => {
+                                                              updateModelProperty(key, newValue);
+                                                          }),
+                                                ] as const;
+                                            }),
+                                        /* eslint-enable react/jsx-key */
+                                    ]}
+                                />
+                            </div>
+
                             <RelatedGuides />
                         </div>
 
@@ -626,7 +671,7 @@ export default function Page({
                             editMode={editMode}
                             modelId={modelId}
                             resources={model.resources}
-                            skip={1}
+                            skip={0}
                             onChange={(newResources) => updateModelProperty('resources', newResources)}
                         />
 
@@ -673,46 +718,6 @@ export default function Page({
                                         updateModelProperty={updateModelProperty}
                                     />
                                 }
-                            />
-
-                            <TrainingDetails
-                                editMode={editMode}
-                                rows={[
-                                    /* eslint-disable react/jsx-key */
-                                    ...typedKeys(MODEL_PROPS)
-                                        .filter((key) => {
-                                            return [
-                                                'date',
-                                                'dataset',
-                                                'datasetSize',
-                                                'trainingIterations',
-                                                'trainingEpochs',
-                                                'trainingBatchSize',
-                                                'trainingHRSize',
-                                                'trainingOTF',
-                                            ].includes(key);
-                                        })
-                                        .map((key) => [key, model[key]] as const)
-                                        .filter(([, value]) => editMode || value != null)
-                                        .map(([key, value]) => {
-                                            const prop = MODEL_PROPS[key];
-                                            return [
-                                                prop.name,
-                                                Array.isArray(value)
-                                                    ? renderTags(
-                                                          value.map((v) => String(v)),
-                                                          editMode,
-                                                          (newTags) => {
-                                                              updateModelProperty(key, newTags);
-                                                          }
-                                                      )
-                                                    : editableMetadata(editMode, value, prop, (newValue) => {
-                                                          updateModelProperty(key, newValue);
-                                                      }),
-                                            ] as const;
-                                        }),
-                                    /* eslint-enable react/jsx-key */
-                                ]}
                             />
                         </div>
                     </div>

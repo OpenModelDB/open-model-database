@@ -30,9 +30,10 @@ export function DownloadsBlock({ resources, modelId, editMode, onChange, skip }:
 
     return (
         <section>
-            <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
-                {editMode ? 'Downloads' : 'Other downloads'}
-            </h2>
+            {/* A single download needs no heading — the button says what it is. */}
+            {(editMode || shown.length > 1) && (
+                <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">Downloads</h2>
+            )}
             <div className="flex w-full flex-col gap-2">
                 {shown.map((resource) => (
                     <div
