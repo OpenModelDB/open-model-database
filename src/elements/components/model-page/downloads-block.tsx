@@ -20,7 +20,10 @@ interface DownloadsBlockProps {
  */
 export function DownloadsBlock({ resources, modelId, editMode, onChange, skip }: DownloadsBlockProps) {
     const shown = editMode ? resources : resources.slice(skip);
-    if (shown.length === 0) return null;
+    // Read mode only: a model can have zero resources (e.g. added without a main file),
+    // and edit mode must still render so `Add Resource` — the only place in the app that
+    // adds a resource — stays reachable. Do not extend this guard to editMode.
+    if (!editMode && shown.length === 0) return null;
 
     const replaceResource = (original: Resource, next: Resource) =>
         onChange(resources.map((r) => (r.sha256 === original.sha256 ? next : r)).filter((r) => r.urls.length > 0));
