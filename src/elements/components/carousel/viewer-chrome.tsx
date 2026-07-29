@@ -1,6 +1,8 @@
-import { MdAdd, MdRemove } from 'react-icons/md';
+import { createPortal } from 'react-dom';
+import { MdAdd, MdFullscreen, MdFullscreenExit, MdRemove } from 'react-icons/md';
 import { useIsTouch } from '../../../lib/hooks/use-is-touch';
 import { joinClasses } from '../../../lib/util';
+import { useCarouselChrome } from './chrome-context';
 import style from './viewer-chrome.module.scss';
 
 /**
@@ -29,19 +31,26 @@ interface ZoomControlsProps {
  * gesture and gives it visible controls, which also makes the viewer usable
  * without a scroll wheel.
  *
- * Anchored bottom-left as one group. Image captions are pinned to the
- * bottom-right corner, and plenty of example images have their own text baked
- * into that corner too, so the controls must stay out of it.
+ * Normally these dock into the carousel's toolbar, which keeps them off the
+ * image entirely. In fullscreen there is no toolbar, so they overlay the image
+ * anchored bottom-left — image captions own the bottom-right corner, and
+ * plenty of example images have their own text baked into it too.
  */
 export function ZoomControls({ scale, onZoomIn, onZoomOut, onReset }: ZoomControlsProps) {
     const isTouch = useIsTouch();
+    const { zoomSlot, overlay } = useCarouselChrome();
+    const docked = zoomSlot !== null;
+    // Themed only when docked into a toolbar that sits on a real surface.
+    // Floating over image pixels — either as the fallback below or as the
+    // fullscreen toolbar — keeps the original white-on-scrim treatment.
+    const themed = docked && !overlay;
 
-    return (
-        <div className={style.bottomBar}>
-            <div className={style.controls}>
+    const controls = (
+        <div className={joinClasses(style.bottomBar, docked && style.bottomBarDocked)}>
+            <div className={joinClasses(style.controls, themed && style.controlsDocked)}>
                 <button
                     aria-label="Zoom out"
-                    className={style.button}
+                    className={joinClasses(style.button, themed && style.buttonDocked)}
                     type="button"
                     onClick={onZoomOut}
                 >
@@ -49,13 +58,13 @@ export function ZoomControls({ scale, onZoomIn, onZoomOut, onReset }: ZoomContro
                 </button>
                 <span
                     aria-live="off"
-                    className={style.readout}
+                    className={joinClasses(style.readout, themed && style.readoutDocked)}
                 >
                     {Math.round(scale * 100)}%
                 </span>
                 <button
                     aria-label="Zoom in"
-                    className={style.button}
+                    className={joinClasses(style.button, themed && style.buttonDocked)}
                     type="button"
                     onClick={onZoomIn}
                 >
@@ -63,11 +72,11 @@ export function ZoomControls({ scale, onZoomIn, onZoomOut, onReset }: ZoomContro
                 </button>
                 <span
                     aria-hidden
-                    className={style.divider}
+                    className={joinClasses(style.divider, themed && style.dividerDocked)}
                 />
                 <button
                     aria-label="Reset zoom and position"
-                    className={joinClasses(style.button, style.resetButton)}
+                    className={joinClasses(style.button, style.resetButton, themed && style.buttonDocked)}
                     type="button"
                     onClick={onReset}
                 >
@@ -75,7 +84,40 @@ export function ZoomControls({ scale, onZoomIn, onZoomOut, onReset }: ZoomContro
                 </button>
             </div>
 
-            <span className={style.hint}>{isTouch ? 'Pinch to zoom' : 'Scroll to zoom'} · Drag to pan</span>
+            {!docked && (
+                <span className={style.hint}>{isTouch ? 'Pinch to zoom' : 'Scroll to zoom'} · Drag to pan</span>
+            )}
         </div>
+    );
+
+    return zoomSlot ? createPortal(controls, zoomSlot) : controls;
+}
+
+/**
+ * Sits at the toolbar's right edge and toggles both ways. Rendered by the
+ * carousel rather than the viewer, because the element that goes fullscreen is
+ * the stage that contains both of them.
+ */
+export function FullscreenButton({
+    isFullscreen,
+    overlay,
+    onClick,
+}: {
+    isFullscreen: boolean;
+    overlay: boolean;
+    onClick: () => void;
+}) {
+    const label = isFullscreen ? 'Exit fullscreen' : 'View fullscreen';
+
+    return (
+        <button
+            aria-label={label}
+            className={joinClasses(style.fullscreenButton, overlay && style.fullscreenButtonOverlay)}
+            title={label}
+            type="button"
+            onClick={onClick}
+        >
+            {isFullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
+        </button>
     );
 }

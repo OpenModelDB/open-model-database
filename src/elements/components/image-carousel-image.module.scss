@@ -1,13 +1,22 @@
+// Matches the Before/After chips in carousel/viewer-chrome.module.scss: same
+// scrim, radius and inset from the corner. It used to be a corner-pinned
+// diagonal-gradient banner at 1.125rem, which read as a different era of the
+// design sitting on the same image as those chips.
 .caption {
+    right: 0.625rem;
+    bottom: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.375rem;
+    background-color: rgb(17 17 23 / 65%);
+    backdrop-filter: blur(4px);
     color: white;
-    text-shadow: 0 0 5px black, 0 0 5px black;
-    background: linear-gradient(-45deg, rgb(0 0 0 / 90%), rgb(0 0 0 / 60%));
-    right: -1px;
-    bottom: -1px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.4;
     text-align: right;
 
-    // Bounded so a long caption cannot run left into the zoom controls, which
-    // are anchored in the opposite corner.
+    // Bounded so a long caption cannot run left into the zoom controls when
+    // those are overlaying the image rather than docked in the toolbar.
     max-width: 55%;
     overflow: hidden;
     text-overflow: ellipsis;

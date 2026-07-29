@@ -24,3 +24,85 @@
         height: clamp(240px, 45vh, 380px);
     }
 }
+
+// Zoom controls dock left, thumbnails centre, fullscreen sits right.
+// `1fr auto 1fr` rather than a flex row so the thumbnails stay centred on the
+// stage regardless of how wide the two control clusters are.
+.toolbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0.5rem;
+
+    // Tailwind Preflight is disabled, so box-sizing is the CSS default of
+    // content-box. Without this the horizontal padding is added *outside* the
+    // grid's width and the fullscreen button overflows the stage, which clips
+    // it — the stage sets overflow: hidden for its rounded corners.
+    box-sizing: border-box;
+}
+
+.toolbarStart {
+    display: flex;
+    justify-content: flex-start;
+    min-width: 0;
+}
+
+.toolbarEnd {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+.toolbarCenter {
+    min-width: 0;
+}
+
+@media screen and (max-width: 640px) {
+    // Three columns can't hold the thumbnails and both control clusters at
+    // phone width, so the thumbnails take a row of their own above them.
+    .toolbar {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 0.625rem;
+    }
+
+    .toolbarCenter {
+        grid-row: 1;
+        grid-column: 1 / -1;
+    }
+
+    .toolbarStart,
+    .toolbarEnd {
+        grid-row: 2;
+    }
+}
+
+// The stage itself is the fullscreen element, so it carries both the image and
+// the toolbar, and the thumbnails stay reachable without leaving fullscreen.
+// Keyed off the attribute React sets from `fullscreenchange` rather than the
+// `:fullscreen` pseudo-class: one source of truth, no prefixed selector needed
+// for older Safari, and the state can actually be exercised in a test.
+.stage[data-fullscreen] {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    border: 0;
+    border-radius: 0;
+    background-color: black;
+
+    // The toolbar takes real layout space rather than floating over the image.
+    // Floating it looked tidier but put the bar on top of the caption, which is
+    // pinned to the same bottom corner — and any future bottom-anchored chrome
+    // would have hit the same wall. Giving it its own row costs the picture the
+    // bar's height and makes the whole class of occlusion bugs impossible.
+    .imageArea {
+        height: auto;
+        flex: 1;
+        min-height: 0;
+    }
+
+    .toolbar {
+        flex: none;
+        border-top-color: rgb(255 255 255 / 12%);
+        background-color: rgb(23 23 30);
+    }
+}
