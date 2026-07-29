@@ -1,18 +1,19 @@
 .imageWrapper {
-    height: 350px;
+    // Viewport-relative. The previous fixed 350/450/500px steps meant a 13"
+    // laptop got a stage that pushed the page off screen while a large monitor
+    // wasted half of it.
+    height: clamp(320px, 65vh, 700px);
 
-    @media screen and (min-width: 768px) {
-        height: 450px;
-    }
+    @media screen and (max-width: 768px) {
+        height: clamp(240px, 45vh, 380px);
 
-    @media screen and (min-width: 1024px) {
-        height: 500px;
-    }
-
-    @media screen and (max-width: 1023px) {
+        // Full-bleed on narrow screens. Derived from --page-gutter rather than
+        // a hardcoded 1rem, which silently broke if the gutter changed.
         border-radius: 0;
-        margin: -1rem 0 0 -1rem;
-        width: calc(100% + 2rem);
-        height: 300px;
+        margin-left: calc(var(--page-gutter) * -1);
+        margin-right: calc(var(--page-gutter) * -1);
+        width: calc(100% + var(--page-gutter) * 2);
+        border-left: 0;
+        border-right: 0;
     }
 }
