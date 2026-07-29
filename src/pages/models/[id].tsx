@@ -341,45 +341,36 @@ function isTrue<T>(value: T | null | undefined | false | '' | 0): value is T {
     return Boolean(value);
 }
 
-/**
- * Model properties, as a specification list. Labels are quiet micro-type in a
- * fixed left column so the values read as the content; previously the labels
- * sat in a filled, right-aligned header column that outweighed them.
- */
-/**
- * Closes the loop after the download button: the visitor now has a file and no
- * idea what runs it. Links to the existing how-to rather than restating it.
- */
-function UsingThisModel({ archName, scale }: { archName: string; scale: number }) {
+/** Quiet pointers to the guides, without restating what this audience knows. */
+function RelatedGuides() {
     return (
-        <section className="rounded-card border border-solid border-line bg-surface-sunken p-4">
-            <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
-                Using this model
-            </h2>
-            <p className="m-0 text-sm leading-relaxed text-ink-muted">
-                This is a {scale}x {archName} model. You run it in an upscaling application such as chaiNNer — the model
-                file itself is not an executable.
-            </p>
-            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                <Link
-                    className="font-medium text-accent-text hover:underline"
-                    href="/docs/faq"
-                >
-                    How to upscale →
-                </Link>
-                <Link
-                    className="font-medium text-accent-text hover:underline"
-                    href="/docs/licenses"
-                >
-                    Understanding licenses →
-                </Link>
-            </div>
-        </section>
+        <div className="flex flex-wrap gap-x-5 gap-y-2 border-x-0 border-b-0 border-t border-solid border-line pt-4 text-sm">
+            <Link
+                className="font-medium text-accent-text hover:underline"
+                href="/docs/faq"
+            >
+                How to upscale →
+            </Link>
+            <Link
+                className="font-medium text-accent-text hover:underline"
+                href="/docs/licenses"
+            >
+                Understanding licenses →
+            </Link>
+        </div>
     );
 }
 
 type MetadataRow = false | null | undefined | readonly [string, ReactNode];
 
+/**
+ * Model properties, as a specification list. Labels are quiet micro-type in a
+ * fixed left column so the values read as the content; previously the labels
+ * sat in a filled, right-aligned header column that outweighed them.
+ *
+ * Grouped by kind, because a flat list gave nine training fields the same
+ * weight as the license.
+ */
 function MetadataTable({ title, rows }: { title?: string; rows: MetadataRow[] }) {
     const filteredRows = rows.filter(isTrue);
     if (filteredRows.length === 0) return null;
@@ -514,9 +505,9 @@ export default function Page({
                 </div>
 
                 {/* Two columns: Description and Sidebar */}
-                <div className="grid h-full w-full gap-6 pb-4 sm:grid-cols-1 lg:grid-cols-3">
+                <div className="grid w-full items-start gap-6 pb-4 sm:grid-cols-1 lg:grid-cols-3">
                     {/* Left column: Description */}
-                    <div className="relative flex h-full flex-col gap-4 sm:col-span-1 lg:col-span-2">
+                    <div className="relative flex flex-col gap-4 sm:col-span-1 lg:col-span-2">
                         <div className="relative">
                             <div>
                                 {editMode && (
@@ -644,11 +635,44 @@ export default function Page({
                                 />
                             </div>
 
-                            <UsingThisModel
-                                archName={archName}
-                                scale={model.scale}
-                            />
+                            <RelatedGuides />
                         </div>
+
+                        {/* Related models live in this column so it always has
+                            body: most descriptions are short, and the sidebar is
+                            long, which otherwise left a tall void beside it. */}
+                        {collections.length > 0 && (
+                            <div className="mt-6">
+                                <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
+                                    Collections that include this model
+                                </h2>
+                                <ModelCardGrid
+                                    collectionData={collectionData}
+                                    modelData={modelData}
+                                    models={collections}
+                                />
+                            </div>
+                        )}
+
+                        {similar.length > 0 && (
+                            <div className="mt-6">
+                                <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">Similar models</h2>
+                                {editMode && similarWithScores.length > 0 && (
+                                    <details>
+                                        <summary>Show scores</summary>{' '}
+                                        <pre className="overflow-auto">
+                                            {similarWithScores
+                                                .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
+                                                .join('\n')}
+                                        </pre>
+                                    </details>
+                                )}
+                                <ModelCardGrid
+                                    modelData={modelData}
+                                    models={similar}
+                                />
+                            </div>
+                        )}
                     </div>
                     {/* Right column: Sidebar */}
                     <div className="col-span-1 flex w-full flex-col gap-5">
@@ -851,37 +875,6 @@ export default function Page({
                         >
                             Create a new collection with this model
                         </button>
-                    </div>
-                )}
-                {collections.length > 0 && (
-                    <div className="mt-10">
-                        <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
-                            Collections that include this model
-                        </h2>
-                        <ModelCardGrid
-                            collectionData={collectionData}
-                            modelData={modelData}
-                            models={collections}
-                        />
-                    </div>
-                )}
-                {similar.length > 0 && (
-                    <div className="mt-10">
-                        <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">Similar models</h2>
-                        {editMode && similarWithScores.length > 0 && (
-                            <details>
-                                <summary>Show scores</summary>{' '}
-                                <pre className="overflow-auto">
-                                    {similarWithScores
-                                        .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
-                                        .join('\n')}
-                                </pre>
-                            </details>
-                        )}
-                        <ModelCardGrid
-                            modelData={modelData}
-                            models={similar}
-                        />
                     </div>
                 )}
                 <div className="h-6" />
