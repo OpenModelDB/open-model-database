@@ -22,8 +22,14 @@ export function TrainingDetails({ rows, editMode }: TrainingDetailsProps) {
             <summary className="cursor-pointer px-4 py-3 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
                 Training details ({filled})
             </summary>
+            {/* `flush`: the <details> above is already the card. Without it the
+                table draws its own border and radius a hairline inside the
+                parent's, which reads as a doubled rounded box on expand. */}
             <div className="border-x-0 border-t border-b-0 border-solid border-line">
-                <MetadataTable rows={rows} />
+                <MetadataTable
+                    flush
+                    rows={rows}
+                />
             </div>
         </details>
     );
