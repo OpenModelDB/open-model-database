@@ -135,6 +135,54 @@ a {
     transition: color 0.15s ease;
 }
 
+// Tailwind's Preflight is disabled in this project, so form controls still
+// render with the operating system's own chrome: a grey face and an `outset`
+// border that follow `color-scheme` rather than the theme. Read-mode controls
+// all set their own background so nobody noticed, but edit mode is built from
+// bare <button>/<select>/<input>, which is why it looked unthemed.
+// Wrapped in :where() so these carry ZERO specificity. This file is emitted
+// after `@tailwind utilities`, so a plain `button { … }` selector here would
+// beat `bg-accent-600` on every styled button in the app. :where() keeps that
+// from happening — any class still wins.
+// Padding is deliberately NOT reset. Preflight would zero it, but plenty of
+// controls here have no padding class of their own and rely on the UA value;
+// zeroing it collapses them onto their icons.
+:where(button) {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+:where(button:disabled) {
+    cursor: default;
+}
+
+:where(select, input, textarea) {
+    box-sizing: border-box;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-control);
+    background-color: var(--surface);
+    color: var(--font-color);
+    font: inherit;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+:where(select, input, textarea):hover {
+    border-color: var(--accent-text);
+}
+
+:where(input[type='checkbox'], input[type='radio']) {
+    padding: 0;
+    accent-color: var(--accent);
+}
+
+:where(input[type='file']) {
+    padding: 0.25rem;
+}
+
 ::selection {
     background-color: var(--accent);
     color: white;
