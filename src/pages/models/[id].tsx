@@ -14,6 +14,7 @@ import { LicenseAttributes } from '../../elements/components/license-attributes'
 import { Link } from '../../elements/components/link';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
 import { DownloadsBlock } from '../../elements/components/model-page/downloads-block';
+import { IdentityStrip } from '../../elements/components/model-page/identity-strip';
 import { SpecCards } from '../../elements/components/model-page/spec-cards';
 import { TrainingDetails } from '../../elements/components/model-page/training-details';
 import { Switch } from '../../elements/components/switch';
@@ -27,7 +28,7 @@ import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { KNOWN_LICENSES } from '../../lib/license';
 import { MODEL_PROPS, ModelProp } from '../../lib/model-props';
-import { ArchId, Collection, CollectionId, Model, ModelId, TagId } from '../../lib/schema';
+import { ArchId, Collection, CollectionId, Model, ModelId, Resource, TagId } from '../../lib/schema';
 import { getCachedCollections, getCachedModels } from '../../lib/server/cached';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
@@ -390,6 +391,20 @@ export default function Page({
 
     const router = useRouter();
 
+    /**
+     * The identity strip shows the primary resource and `DownloadsBlock` shows the
+     * same array, so both must replace a resource identically: match on `sha256`
+     * and drop any resource left with no URLs.
+     */
+    const replacePrimaryResource = (newResource: Resource) => {
+        const primary = model.resources[0] as Resource | undefined;
+        if (!primary) return;
+        updateModelProperty(
+            'resources',
+            model.resources.map((r) => (r.sha256 === primary.sha256 ? newResource : r)).filter((r) => r.urls.length > 0)
+        );
+    };
+
     const runModelValidation = useCallback(async () => {
         if (!webApi) {
             throw new Error('API not available');
@@ -440,7 +455,108 @@ export default function Page({
                     </Link>
                 </div>
 
-                {/* Full-width preview at top (YouTube-style) */}
+                {editMode && (
+                    <div className="flex items-end justify-end gap-2 text-right">
+                        <button
+                            onClick={() => {
+                                if (confirm('Are you sure you want to delete this model?')) {
+                                    webApi.models.delete([modelId]).then(
+                                        () => {
+                                            router.push('/').catch(console.error);
+                                        },
+                                        (e) => {
+                                            console.error(e);
+                                            alert(`Error deleting model: ${String(e)}`);
+                                        }
+                                    );
+                                }
+                            }}
+                        >
+                            Delete Model
+                        </button>
+                        {IS_DEPLOYED && (
+                            <>
+                                <button
+                                    onClick={() => {
+                                        navigator.clipboard
+                                            .readText()
+                                            .then((text) => {
+                                                try {
+                                                    // in the future we might want to actually validate the model
+                                                    const model = JSON.parse(text) as Model;
+                                                    webApi.models.update([[modelId, model]]).catch(console.error);
+                                                } catch (e) {
+                                                    console.error(e);
+                                                }
+                                            })
+                                            .catch(console.error);
+                                    }}
+                                >
+                                    Load Model from clipboard
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        navigator.clipboard
+                                            .writeText(JSON.stringify(model, null, 2))
+                                            .catch(console.error);
+                                    }}
+                                >
+                                    Copy Model to clipboard
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        runModelValidation()
+                                            .then((errors) => {
+                                                if (errors.length > 0) {
+                                                    alert(errors.map(({ message }) => message).join('\n'));
+                                                    return;
+                                                }
+                                                const path =
+                                                    'https://github.com/OpenModelDB/open-model-database/issues/new';
+                                                const modelJson = JSON.stringify(model, null, 2);
+                                                const codeBlock = `\`\`\`json\n${modelJson}\n\`\`\``;
+                                                const queryParams = new URLSearchParams({
+                                                    title: `[MODEL ADD REQUEST] ${model.name}`,
+                                                    body: codeBlock,
+                                                    template: 'model-add-request.md',
+                                                });
+                                                const url = `${path}?${queryParams.toString()}`;
+                                                window.open(url, '_blank');
+                                            })
+                                            .catch(console.error);
+                                    }}
+                                >
+                                    Submit Model as GitHub Issue
+                                </button>
+                            </>
+                        )}
+                    </div>
+                )}
+
+                <IdentityStrip
+                    archName={archName}
+                    authors={
+                        <EditableUsers
+                            readonly={!editMode}
+                            users={authors}
+                            onChange={(users) => {
+                                updateModelProperty('author', users.length === 1 ? users[0] : users);
+                            }}
+                        />
+                    }
+                    editMode={editMode}
+                    model={model}
+                    name={
+                        <EditableLabel
+                            readonly={!editMode}
+                            text={model.name}
+                            onChange={(value) => updateModelProperty('name', value)}
+                        />
+                    }
+                    onResourceChange={replacePrimaryResource}
+                />
+
+                {/* Full-width preview (YouTube-style) */}
                 <div className="mb-6 w-full">
                     <ImageCarousel
                         images={model.images}
@@ -450,273 +566,160 @@ export default function Page({
                     />
                 </div>
 
-                {/* Two columns: Description and Sidebar */}
-                <div className="grid w-full items-start gap-6 pb-4 sm:grid-cols-1 lg:grid-cols-3">
-                    {/* Left column: Description */}
-                    <div className="relative flex flex-col gap-4 sm:col-span-1 lg:col-span-2">
-                        <div className="relative">
-                            <div>
-                                {editMode && (
-                                    <div className="flex items-end justify-end gap-2 text-right">
-                                        <button
-                                            onClick={() => {
-                                                if (confirm('Are you sure you want to delete this model?')) {
-                                                    webApi.models.delete([modelId]).then(
-                                                        () => {
-                                                            router.push('/').catch(console.error);
-                                                        },
-                                                        (e) => {
-                                                            console.error(e);
-                                                            alert(`Error deleting model: ${String(e)}`);
-                                                        }
-                                                    );
-                                                }
-                                            }}
-                                        >
-                                            Delete Model
-                                        </button>
-                                        {IS_DEPLOYED && (
-                                            <>
-                                                <button
-                                                    onClick={() => {
-                                                        navigator.clipboard
-                                                            .readText()
-                                                            .then((text) => {
-                                                                try {
-                                                                    // in the future we might want to actually validate the model
-                                                                    const model = JSON.parse(text) as Model;
-                                                                    webApi.models
-                                                                        .update([[modelId, model]])
-                                                                        .catch(console.error);
-                                                                } catch (e) {
-                                                                    console.error(e);
-                                                                }
-                                                            })
-                                                            .catch(console.error);
-                                                    }}
-                                                >
-                                                    Load Model from clipboard
-                                                </button>
-                                                <button
-                                                    onClick={() => {
-                                                        navigator.clipboard
-                                                            .writeText(JSON.stringify(model, null, 2))
-                                                            .catch(console.error);
-                                                    }}
-                                                >
-                                                    Copy Model to clipboard
-                                                </button>
-                                                <button
-                                                    onClick={() => {
-                                                        runModelValidation()
-                                                            .then((errors) => {
-                                                                if (errors.length > 0) {
-                                                                    alert(
-                                                                        errors.map(({ message }) => message).join('\n')
-                                                                    );
-                                                                    return;
-                                                                }
-                                                                const path =
-                                                                    'https://github.com/OpenModelDB/open-model-database/issues/new';
-                                                                const modelJson = JSON.stringify(model, null, 2);
-                                                                const codeBlock = `\`\`\`json\n${modelJson}\n\`\`\``;
-                                                                const queryParams = new URLSearchParams({
-                                                                    title: `[MODEL ADD REQUEST] ${model.name}`,
-                                                                    body: codeBlock,
-                                                                    template: 'model-add-request.md',
-                                                                });
-                                                                const url = `${path}?${queryParams.toString()}`;
-                                                                window.open(url, '_blank');
-                                                            })
-                                                            .catch(console.error);
-                                                    }}
-                                                >
-                                                    Submit Model as GitHub Issue
-                                                </button>
-                                            </>
-                                        )}
-                                    </div>
-                                )}
-                                <h1 className="mt-0 mb-2 text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                                    <EditableLabel
-                                        readonly={!editMode}
-                                        text={model.name}
-                                        onChange={(value) => updateModelProperty('name', value)}
-                                    />
-                                </h1>
-                                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
-                                    <span className="rounded border border-solid border-line px-1.5 py-0.5 text-xs font-semibold text-ink">
-                                        {model.scale}x
-                                    </span>
-                                    <span className="rounded border border-solid border-line px-1.5 py-0.5 text-xs font-semibold text-ink">
-                                        {archName}
-                                    </span>
-                                    <span aria-hidden>·</span>
-                                    <EditableUsers
-                                        readonly={!editMode}
-                                        users={authors}
-                                        onChange={(users) => {
-                                            updateModelProperty('author', users.length === 1 ? users[0] : users);
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                            <div className="mt-4">
-                                <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
-                                    Good for
-                                </h2>
-                                <div className="flex flex-wrap gap-2 text-xs">
-                                    <EditableTags
-                                        readonly={!editMode}
-                                        tags={model.tags}
-                                        onChange={(tags) => updateModelProperty('tags', tags)}
-                                    />
-                                </div>
-                            </div>
-                            <div className="py-5">
-                                <EditableMarkdownContainer
-                                    markdown={model.description}
-                                    readonly={!editMode}
-                                    onChange={(value) => updateModelProperty('description', value)}
-                                />
-                            </div>
-
-                            <RelatedGuides />
+                {/* Reading column: capped so prose keeps a comfortable measure
+                    instead of stretching the full container width. */}
+                <div className="mx-auto flex w-full max-w-4xl flex-col gap-6">
+                    <div>
+                        <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
+                            Good for
+                        </h2>
+                        <div className="flex flex-wrap gap-2 text-xs">
+                            <EditableTags
+                                readonly={!editMode}
+                                tags={model.tags}
+                                onChange={(tags) => updateModelProperty('tags', tags)}
+                            />
                         </div>
-
-                        {/* Related models live in this column so it always has
-                            body: most descriptions are short, and the sidebar is
-                            long, which otherwise left a tall void beside it. */}
-                        {collections.length > 0 && (
-                            <div className="mt-6">
-                                <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
-                                    Collections that include this model
-                                </h2>
-                                <ModelCardGrid
-                                    collectionData={collectionData}
-                                    modelData={modelData}
-                                    models={collections}
-                                />
-                            </div>
-                        )}
-
-                        {similar.length > 0 && (
-                            <div className="mt-6">
-                                <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">Similar models</h2>
-                                {editMode && similarWithScores.length > 0 && (
-                                    <details>
-                                        <summary>Show scores</summary>{' '}
-                                        <pre className="overflow-auto">
-                                            {similarWithScores
-                                                .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
-                                                .join('\n')}
-                                        </pre>
-                                    </details>
-                                )}
-                                <ModelCardGrid
-                                    modelData={modelData}
-                                    models={similar}
-                                />
-                            </div>
-                        )}
                     </div>
-                    {/* Right column: Sidebar */}
-                    <div className="col-span-1 flex w-full flex-col gap-5">
-                        <DownloadsBlock
-                            editMode={editMode}
-                            modelId={modelId}
-                            resources={model.resources}
-                            skip={1}
-                            onChange={(newResources) => updateModelProperty('resources', newResources)}
+
+                    {/* `|| editMode` keeps the description editor reachable on the
+                        20 models that have none. Do not simplify it away. */}
+                    {(model.description || editMode) && (
+                        <EditableMarkdownContainer
+                            markdown={model.description}
+                            readonly={!editMode}
+                            onChange={(value) => updateModelProperty('description', value)}
                         />
+                    )}
 
-                        <div className="relative flex flex-col gap-5">
-                            <SpecCards
-                                modelRows={[
-                                    /* eslint-disable react/jsx-key */
-                                    [
-                                        'Architecture',
-                                        <ArchitectureProp
-                                            editMode={editMode}
-                                            model={model}
-                                            updateModelProperty={updateModelProperty}
-                                        />,
-                                    ],
-                                    [
-                                        'Scale',
-                                        <ScaleProp
-                                            editMode={editMode}
-                                            model={model}
-                                            updateModelProperty={updateModelProperty}
-                                        />,
-                                    ],
-                                    (model.size || editMode) && [
-                                        'Size',
-                                        renderTags(model.size ?? EMPTY_ARRAY, editMode, (newTags: string[]) => {
-                                            updateModelProperty('size', newTags.length === 0 ? null : newTags);
-                                        }),
-                                    ],
-                                    [
-                                        'Color Mode',
-                                        <ColorModeProp
-                                            editMode={editMode}
-                                            model={model}
-                                            updateModelProperty={updateModelProperty}
-                                        />,
-                                    ],
-                                    /* eslint-enable react/jsx-key */
-                                ]}
-                                rights={
-                                    <LicenseProp
-                                        editMode={editMode}
-                                        model={model}
-                                        updateModelProperty={updateModelProperty}
-                                    />
-                                }
-                            />
-
-                            <TrainingDetails
+                    <SpecCards
+                        modelRows={[
+                            /* eslint-disable react/jsx-key */
+                            [
+                                'Architecture',
+                                <ArchitectureProp
+                                    editMode={editMode}
+                                    model={model}
+                                    updateModelProperty={updateModelProperty}
+                                />,
+                            ],
+                            [
+                                'Scale',
+                                <ScaleProp
+                                    editMode={editMode}
+                                    model={model}
+                                    updateModelProperty={updateModelProperty}
+                                />,
+                            ],
+                            (model.size || editMode) && [
+                                'Size',
+                                renderTags(model.size ?? EMPTY_ARRAY, editMode, (newTags: string[]) => {
+                                    updateModelProperty('size', newTags.length === 0 ? null : newTags);
+                                }),
+                            ],
+                            [
+                                'Color Mode',
+                                <ColorModeProp
+                                    editMode={editMode}
+                                    model={model}
+                                    updateModelProperty={updateModelProperty}
+                                />,
+                            ],
+                            /* eslint-enable react/jsx-key */
+                        ]}
+                        rights={
+                            <LicenseProp
                                 editMode={editMode}
-                                rows={[
-                                    /* eslint-disable react/jsx-key */
-                                    ...typedKeys(MODEL_PROPS)
-                                        .filter((key) => {
-                                            return [
-                                                'date',
-                                                'dataset',
-                                                'datasetSize',
-                                                'trainingIterations',
-                                                'trainingEpochs',
-                                                'trainingBatchSize',
-                                                'trainingHRSize',
-                                                'trainingOTF',
-                                            ].includes(key);
-                                        })
-                                        .map((key) => [key, model[key]] as const)
-                                        .filter(([, value]) => editMode || value != null)
-                                        .map(([key, value]) => {
-                                            const prop = MODEL_PROPS[key];
-                                            return [
-                                                prop.name,
-                                                Array.isArray(value)
-                                                    ? renderTags(
-                                                          value.map((v) => String(v)),
-                                                          editMode,
-                                                          (newTags) => {
-                                                              updateModelProperty(key, newTags);
-                                                          }
-                                                      )
-                                                    : editableMetadata(editMode, value, prop, (newValue) => {
-                                                          updateModelProperty(key, newValue);
-                                                      }),
-                                            ] as const;
-                                        }),
-                                    /* eslint-enable react/jsx-key */
-                                ]}
+                                model={model}
+                                updateModelProperty={updateModelProperty}
                             />
-                        </div>
-                    </div>
+                        }
+                    />
+
+                    <DownloadsBlock
+                        editMode={editMode}
+                        modelId={modelId}
+                        resources={model.resources}
+                        skip={1}
+                        onChange={(newResources) => updateModelProperty('resources', newResources)}
+                    />
+
+                    <TrainingDetails
+                        editMode={editMode}
+                        rows={[
+                            /* eslint-disable react/jsx-key */
+                            ...typedKeys(MODEL_PROPS)
+                                .filter((key) => {
+                                    return [
+                                        'date',
+                                        'dataset',
+                                        'datasetSize',
+                                        'trainingIterations',
+                                        'trainingEpochs',
+                                        'trainingBatchSize',
+                                        'trainingHRSize',
+                                        'trainingOTF',
+                                    ].includes(key);
+                                })
+                                .map((key) => [key, model[key]] as const)
+                                .filter(([, value]) => editMode || value != null)
+                                .map(([key, value]) => {
+                                    const prop = MODEL_PROPS[key];
+                                    return [
+                                        prop.name,
+                                        Array.isArray(value)
+                                            ? renderTags(
+                                                  value.map((v) => String(v)),
+                                                  editMode,
+                                                  (newTags) => {
+                                                      updateModelProperty(key, newTags);
+                                                  }
+                                              )
+                                            : editableMetadata(editMode, value, prop, (newValue) => {
+                                                  updateModelProperty(key, newValue);
+                                              }),
+                                    ] as const;
+                                }),
+                            /* eslint-enable react/jsx-key */
+                        ]}
+                    />
+
+                    <RelatedGuides />
                 </div>
+
+                {collections.length > 0 && (
+                    <div className="mt-6">
+                        <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
+                            Collections that include this model
+                        </h2>
+                        <ModelCardGrid
+                            collectionData={collectionData}
+                            modelData={modelData}
+                            models={collections}
+                        />
+                    </div>
+                )}
+
+                {similar.length > 0 && (
+                    <div className="mt-6">
+                        <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">Similar models</h2>
+                        {editMode && similarWithScores.length > 0 && (
+                            <details>
+                                <summary>Show scores</summary>{' '}
+                                <pre className="overflow-auto">
+                                    {similarWithScores
+                                        .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
+                                        .join('\n')}
+                                </pre>
+                            </details>
+                        )}
+                        <ModelCardGrid
+                            modelData={modelData}
+                            models={similar}
+                        />
+                    </div>
+                )}
+
                 {editMode && (
                     <div>
                         <button
