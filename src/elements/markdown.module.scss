@@ -2,6 +2,24 @@
     word-break: normal;
     overflow-wrap: anywhere;
 
+    // Tailwind Preflight is disabled in this project, so nothing supplies the
+    // usual `img { max-width: 100% }`. Description images are author-supplied
+    // and routinely far wider than the column — a 2048px comparison strip used
+    // to run straight out of the column and under the sidebar.
+    img,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    // Same problem, different element: a wide table or a long code block scrolls
+    // within its own box rather than pushing the column open.
+    pre,
+    table {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
     h2 {
         margin-top: 1.5em;
         margin-bottom: 0.75em;
