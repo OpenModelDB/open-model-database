@@ -33,7 +33,15 @@ import { getSimilarModels } from '../../lib/similar';
 import { IS_DEPLOYED } from '../../lib/site-data';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { getTextDescription } from '../../lib/text-description';
-import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
+import {
+    EMPTY_ARRAY,
+    asArray,
+    getColorMode,
+    getPreviewImage,
+    joinClasses,
+    joinListString,
+    typedKeys,
+} from '../../lib/util';
 import { validateModel } from '../../lib/validate-model';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
@@ -333,34 +341,35 @@ function isTrue<T>(value: T | null | undefined | false | '' | 0): value is T {
     return Boolean(value);
 }
 
+/**
+ * Model properties, as a specification list. Labels are quiet micro-type in a
+ * fixed left column so the values read as the content; previously the labels
+ * sat in a filled, right-aligned header column that outweighed them.
+ */
 function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [string, ReactNode])[] }) {
     const filteredRows = rows.filter(isTrue);
     return (
-        <div className="overflow-hidden rounded-lg border border-fade-200 bg-white dark:border-fade-700 dark:bg-fade-900">
-            <table className="w-full border-collapse text-left text-sm text-gray-700 dark:text-gray-400">
-                <tbody>
-                    {filteredRows.map((row, i) => {
-                        const [label, value] = row;
-                        const extraPadding = i === 0 ? 'pt-3' : i === filteredRows.length - 1 ? 'pb-3' : '';
-                        const isLastRow = i === filteredRows.length - 1;
-                        return (
-                            <tr
-                                className={!isLastRow ? 'border-b border-fade-200 dark:border-fade-700' : ''}
-                                key={i}
-                            >
-                                <th
-                                    className={`${extraPadding} whitespace-nowrap bg-fade-100 px-4 py-2 text-right align-top font-medium text-fade-900 dark:bg-fade-800 dark:text-white`}
-                                    scope="row"
-                                >
-                                    {label}
-                                </th>
-                                <td className={`${extraPadding} px-4 py-2`}>{value}</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
+        <dl className="m-0 overflow-hidden rounded-card border border-solid border-line bg-surface">
+            {filteredRows.map((row, i) => {
+                const [label, value] = row;
+                return (
+                    <div
+                        className={joinClasses(
+                            'grid grid-cols-[minmax(0,6.5rem)_minmax(0,1fr)] items-baseline gap-x-4 gap-y-1 px-4 py-2.5',
+                            // Explicit zero widths: Preflight is disabled, so a
+                            // lone `border-t border-solid` paints all four sides.
+                            i > 0 && 'border-x-0 border-t border-b-0 border-solid border-line'
+                        )}
+                        key={i}
+                    >
+                        <dt className="text-xs font-semibold uppercase leading-5 tracking-wide text-ink-subtle">
+                            {label}
+                        </dt>
+                        <dd className="m-0 min-w-0 break-words text-sm leading-5 text-ink">{value}</dd>
+                    </div>
+                );
+            })}
+        </dl>
     );
 }
 export default function Page({
@@ -541,14 +550,21 @@ export default function Page({
                                         )}
                                     </div>
                                 )}
-                                <h1 className="mt-0 mb-1 leading-10">
+                                <h1 className="mt-0 mb-2 text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
                                     <EditableLabel
                                         readonly={!editMode}
                                         text={model.name}
                                         onChange={(value) => updateModelProperty('name', value)}
                                     />
                                 </h1>
-                                <div>
+                                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
+                                    <span className="rounded border border-solid border-line px-1.5 py-0.5 text-xs font-semibold text-ink">
+                                        {model.scale}x
+                                    </span>
+                                    <span className="rounded border border-solid border-line px-1.5 py-0.5 text-xs font-semibold text-ink">
+                                        {archName}
+                                    </span>
+                                    <span aria-hidden>·</span>
                                     <EditableUsers
                                         readonly={!editMode}
                                         users={authors}
@@ -757,8 +773,10 @@ export default function Page({
                     </div>
                 )}
                 {collections.length > 0 && (
-                    <div>
-                        <h2 className="text-lg font-bold">Collections that include this model</h2>
+                    <div className="mt-10">
+                        <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
+                            Collections that include this model
+                        </h2>
                         <ModelCardGrid
                             collectionData={collectionData}
                             modelData={modelData}
@@ -767,8 +785,8 @@ export default function Page({
                     </div>
                 )}
                 {similar.length > 0 && (
-                    <div>
-                        <h2 className="text-lg font-bold">Similar Models</h2>
+                    <div className="mt-10">
+                        <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">Similar models</h2>
                         {editMode && similarWithScores.length > 0 && (
                             <details>
                                 <summary>Show scores</summary>{' '}

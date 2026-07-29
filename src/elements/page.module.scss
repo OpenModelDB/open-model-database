@@ -1,13 +1,21 @@
 .container {
     background-color: transparent;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .main {
     max-width: var(--max-page-width);
     box-sizing: border-box;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--page-gutter);
+    flex: 1 0 auto;
 }
 
-.wrapper {
-    transition: background-color linear 0.2s;
+// Content column that owns its own vertical rhythm at the top and bottom.
+.padded {
+    padding-top: var(--stack);
+    padding-bottom: var(--stack-loose);
 }

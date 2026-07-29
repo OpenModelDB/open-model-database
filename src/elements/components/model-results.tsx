@@ -22,11 +22,14 @@ export const ModelResults = memo(({ models, modelData, sort, setSort }: ModelRes
 
     return (
         <>
-            <div className={`${style.controls} mb-3`}>
-                <span className="mx-3">
-                    Found <span className="font-medium">{sortedModels.length}</span> model
-                    {sortedModels.length === 1 ? '' : 's'}
-                </span>
+            <div className={`${style.controls} mb-4 gap-2 pb-3`}>
+                <h2
+                    aria-live="polite"
+                    className="m-0 text-sm font-medium text-ink-muted"
+                >
+                    <span className="font-semibold text-ink">{sortedModels.length.toLocaleString('en-US')}</span>{' '}
+                    {sortedModels.length === 1 ? 'model' : 'models'}
+                </h2>
                 <span className="h-1 flex-grow" />
                 <SortSelector
                     setSort={setSort}
@@ -64,7 +67,8 @@ export function SortSelector({ sort, setSort }: { sort: Sort; setSort: (sort: So
             >
                 <div className="relative">
                     <Listbox.Button
-                        className={`${style.button} w-full rounded-lg bg-transparent py-1 pl-9 pr-3 text-base hover:bg-gray-200 ui-open:bg-gray-200 dark:hover:bg-gray-700 dark:ui-open:bg-gray-700`}
+                        aria-label={`Sort by ${SORT_OPTIONS[sort].label}`}
+                        className={`${style.button} w-full rounded-control border border-solid border-line bg-surface py-1.5 pl-9 pr-3 text-sm font-medium hover:border-line-strong ui-open:border-line-strong`}
                     >
                         <span className="block truncate">{SORT_OPTIONS[sort].label}</span>
                         <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -78,7 +82,7 @@ export function SortSelector({ sort, setSort }: { sort: Sort; setSort: (sort: So
                         leaveTo="opacity-0"
                     >
                         <Listbox.Options
-                            className={`${style.options} mt-1 rounded-md border border-solid border-gray-300 bg-white text-base shadow-lg dark:border-gray-700 dark:bg-fade-800 sm:text-sm`}
+                            className={`${style.options} mt-1 rounded-control border border-solid border-line bg-surface py-1 text-sm shadow-pop`}
                         >
                             {typedEntries(SORT_OPTIONS).map(([value, { label, hide }]) => {
                                 if (hide) return null;
@@ -87,9 +91,7 @@ export function SortSelector({ sort, setSort }: { sort: Sort; setSort: (sort: So
                                     <Listbox.Option
                                         className={({ active }) =>
                                             `relative cursor-pointer select-none py-2 px-4 ${
-                                                active
-                                                    ? 'bg-gray-200 text-black dark:bg-accent-600 dark:text-white'
-                                                    : ''
+                                                active ? 'bg-accent-600 text-white dark:bg-accent-500' : ''
                                             }`
                                         }
                                         key={value}

@@ -2,14 +2,20 @@
 
 .tagSelector {
     color: inherit;
-
-    h4 {
-        margin: 0.5rem 0;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
 
     &.advanced {
+        gap: 0.75rem;
+
+        h4 {
+            margin: 0.5rem 0;
+        }
+
         @media only screen and (min-width: 640px) {
             display: grid;
+            gap: 0;
             grid-template-columns: 1fr 1000fr;
 
             h4 {
@@ -24,25 +30,58 @@
     }
 }
 
+// Grouped simple selector: a quiet category label above each row of options.
+.group {
+    display: grid;
+    gap: 0.375rem 1rem;
+    align-items: baseline;
+    grid-template-columns: 1fr;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: 5.5rem 1fr;
+        gap: 0.5rem 1rem;
+    }
+}
+
+.groupTitle {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    line-height: 1.9;
+    text-transform: uppercase;
+    color: var(--font-color-subtle);
+
+    @media only screen and (min-width: 768px) {
+        text-align: right;
+    }
+}
+
+.groupTags {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.375rem;
+}
+
 .tagButton {
-    margin: 0 0.5em 0.5em 0;
     font: inherit;
     cursor: pointer;
+
+    // No `background-color` here: this file is injected after Tailwind's
+    // utilities, so any value set here beats the `bg-*` class each state
+    // supplies. Every state sets its own background instead.
     font-size: 0.875rem;
-    border-radius: 0.5rem;
+    border-radius: var(--radius-control);
     padding: 0;
-    border: none;
+
+    // Width and style only. The `border` shorthand would reset border-color to
+    // currentColor and beat the `border-*` utility each state supplies.
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
     display: inline-flex;
     overflow: hidden;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-
-    &:hover {
-        transform: translateY(-1px);
-    }
-
-    &:active {
-        transform: translateY(0);
-    }
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 
     .icon {
         --extra-size: 0.2em;
@@ -67,7 +106,7 @@
         line-height: 1.4;
         height: 1.4em;
         font-weight: 500;
-        padding: 0.333rem 0.625rem;
+        padding: 0.3rem 0.6rem;
         display: inline-block;
     }
 }
@@ -75,7 +114,8 @@
 .controls {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 0.25rem;
+    gap: 1rem;
+    margin-top: 0.875rem;
 }
 
 .modeButton {
@@ -86,7 +126,6 @@
     padding: 0.25rem 0;
     display: inline-flex;
     align-items: center;
-    margin-right: 1rem;
 
     &:disabled {
         cursor: default;

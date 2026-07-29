@@ -12,8 +12,7 @@
 
 .header {
     @include themed using ($t) {
-        background: linear-gradient(t($t, white, $fade-900), transparent)
-            t($t, color.change(white, $alpha: 0.85), color.change($fade-900, $alpha: 0.9));
+        background-color: t($t, color.change(white, $alpha: 0.82), color.change(#111117, $alpha: 0.82));
     }
 
     transition: background-color 0.25s ease-out, border-color 0.25s ease-out;
@@ -29,82 +28,64 @@
     & > div {
         @include h-stack;
 
+        gap: 0.25rem;
+        height: 100%;
         max-width: var(--max-page-width);
         box-sizing: border-box;
-        padding: 0.5em 1em;
+        padding: 0 var(--page-gutter);
         margin: auto;
     }
 
     .logo {
         flex-shrink: 0;
-        width: 250px;
-        position: relative;
-
-        &::after {
-            content: 'alpha';
-            position: absolute;
-            right: 0;
-            bottom: -0.5rem;
-            font-size: 1rem;
-
-            // transform: rotate(15deg);
-
-            @include themed using ($t) {
-                color: t($t, $accent-600, $accent-500);
-            }
-        }
+        display: flex;
+        align-items: center;
+        border-radius: var(--radius-control);
 
         .logoContainer {
             display: flex;
-            height: 48px;
-            width: 250px;
+            height: 44px;
+            width: 210px;
             align-items: center;
-            align-content: center;
-            justify-content: center;
-            justify-items: center;
+            justify-content: flex-start;
         }
 
         @media only screen and (max-width: 400px) {
-            width: 44px;
-            overflow: hidden;
-
-            &::after {
-                display: none;
+            .logoContainer {
+                width: 44px;
+                overflow: hidden;
             }
         }
     }
 
     .search {
-        // The following looks complicated, but is quite simple. The goal is
-        // first determine the width of the download button, and then subtract
-        // the header buttons on the right:
-        //           100%               the inner width of the header
-        //                - 2rem        remove the 2 1rem gaps in the grid layout of the model page
-        //                        / 3   the page is divided into a grid with 3 columns.
-        // At this point, we have the width of the download button exactly.
-        //                            - 2em * 1.5 * 3          the 3 buttons to the right of the search bar
-        //                                            - 1rem   the right padding of the search bar
-        width: calc((100% - 2rem) / 3 - 2em * 1.5 * 3 - 1rem);
+        width: clamp(12rem, 22vw, 20rem);
         box-sizing: border-box;
     }
+}
+
+// Deliberately not nested inside `.header`: `.header .nav` would outrank the
+// single-class `.hideMobile` and the nav would render alongside the hamburger.
+.nav {
+    @include h-stack;
+
+    margin-left: 0.75rem;
+    gap: 0.25rem;
 }
 
 .docLink {
     cursor: pointer;
     font-family: inherit;
-    font-size: 100%;
-    line-height: inherit;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.2;
     border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform;
+    border-radius: var(--radius-control);
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    transition-property: color, background-color;
     transition-timing-function: ease-out;
     transition-duration: 150ms;
-    white-space: nowrap;
-
-    &:active {
-        transform: scale(0.97);
-    }
 }
 
 .iconLink,
@@ -112,21 +93,17 @@
     background: none;
     border: none;
     padding: 0;
-    margin: 0.5em;
-    font-size: 150%;
+    margin: 0 0.375em;
+    font-size: 137.5%;
     cursor: pointer;
-    transition: color 0.15s ease, transform 0.15s ease;
+    transition: color 0.15s ease;
     width: 1em;
     height: 1em;
     line-height: 1;
+    color: var(--font-color-light);
 
     &:hover {
         color: var(--font-color-hover);
-        transform: scale(1.1);
-    }
-
-    &:active {
-        transform: scale(0.95);
     }
 }
 

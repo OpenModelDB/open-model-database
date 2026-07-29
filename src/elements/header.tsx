@@ -49,28 +49,22 @@ export function Header({ searchBar }: HeaderProps) {
                         </div>
                     </Link>
 
-                    <Link
-                        className={joinClasses(
-                            style.docLink,
-                            'ml-8 font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                            style.hideMobile
-                        )}
-                        href="/docs/faq"
-                    >
-                        How To Upscale
-                    </Link>
-                    {editMode && (
+                    <nav className={joinClasses(style.nav, style.hideMobile)}>
                         <Link
-                            className={joinClasses(
-                                style.docLink,
-                                'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                                style.hideMobile
-                            )}
-                            href="/add-model"
+                            className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                            href="/docs/faq"
                         >
-                            Add Model
+                            How To Upscale
                         </Link>
-                    )}
+                        {editMode && (
+                            <Link
+                                className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                                href="/add-model"
+                            >
+                                Add Model
+                            </Link>
+                        )}
+                    </nav>
 
                     <span className={style.spacer} />
 
@@ -78,7 +72,7 @@ export function Header({ searchBar }: HeaderProps) {
                         <button
                             className={joinClasses(
                                 style.docLink,
-                                'bg-transparent font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                                'bg-transparent text-accent-text hover:bg-surface-hover',
                                 style.hideMobile
                             )}
                             onClick={toggleEditMode}
@@ -144,6 +138,13 @@ export function Header({ searchBar }: HeaderProps) {
     );
 }
 
+const DRAWER_ITEM =
+    'flex cursor-pointer items-center gap-2 rounded-control border border-solid border-line bg-surface-sunken py-2 px-3 text-base font-medium';
+
+function DrawerLabel({ children }: React.PropsWithChildren<unknown>) {
+    return <div className="text-xs font-semibold uppercase tracking-wider text-ink-subtle">{children}</div>;
+}
+
 function HeaderDrawer() {
     const [showDrawer, setShowDrawer] = useState(false);
 
@@ -171,7 +172,7 @@ function HeaderDrawer() {
 
             <div
                 className={joinClasses(
-                    'fixed top-0 left-0 z-40 h-screen -translate-x-full overflow-y-auto bg-fade-200 p-4 shadow-xl transition-transform dark:bg-fade-900',
+                    'fixed top-0 left-0 z-40 h-screen -translate-x-full overflow-y-auto bg-surface p-4 shadow-pop transition-transform',
                     style.showMobile,
                     !showDrawer && 'hidden'
                 )}
@@ -183,7 +184,7 @@ function HeaderDrawer() {
                         <button
                             aria-controls="menu-drawer"
                             aria-label="Close menu"
-                            className="absolute top-2.5 right-2.5 inline-flex cursor-pointer items-center rounded-lg border-0 bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                            className="absolute top-2.5 right-2.5 inline-flex cursor-pointer items-center rounded-control border-0 bg-transparent p-1.5 text-sm text-ink-muted hover:bg-surface-hover hover:text-ink"
                             type="button"
                             onClick={() => setShowDrawer(false)}
                         >
@@ -203,55 +204,51 @@ function HeaderDrawer() {
                             <span className="sr-only">Close menu</span>
                         </button>
 
-                        <div className="flex w-64 flex-col gap-4">
-                            Help
-                            <Link
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="/docs/faq"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+                        <div className="mt-10 flex w-64 flex-col gap-6">
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Help</DrawerLabel>
+                                <Link
+                                    className={DRAWER_ITEM}
+                                    href="/docs/faq"
+                                >
                                     <BsQuestionLg />
                                     How To Upscale
-                                </div>
-                            </Link>
-                            Links
-                            <Link
-                                external
-                                aria-label="GitHub"
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="https://github.com/OpenModelDB/open-model-database"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+                                </Link>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Links</DrawerLabel>
+                                <Link
+                                    external
+                                    className={DRAWER_ITEM}
+                                    href="https://github.com/OpenModelDB/open-model-database"
+                                >
                                     <FaGithub />
                                     GitHub
-                                </div>
-                            </Link>
-                            <Link
-                                external
-                                aria-label="Discord"
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="https://discord.gg/cpAUpDK"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+                                </Link>
+                                <Link
+                                    external
+                                    className={DRAWER_ITEM}
+                                    href="https://discord.gg/cpAUpDK"
+                                >
                                     <FaDiscord />
                                     Discord
-                                </div>
-                            </Link>
-                            Settings
-                            <button
-                                aria-label="Toggle color scheme"
-                                className={joinClasses(
-                                    style.otherThemeButton,
-                                    'cursor-pointer rounded-lg border-0 bg-fade-300 bg-transparent py-2 px-3 text-lg font-bold dark:bg-fade-800'
-                                )}
-                                onClick={toggleColorScheme}
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+                                </Link>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Settings</DrawerLabel>
+                                <button
+                                    aria-label="Toggle color scheme"
+                                    className={joinClasses(style.otherThemeButton, DRAWER_ITEM, 'w-full text-left')}
+                                    type="button"
+                                    onClick={toggleColorScheme}
+                                >
                                     <MdLightMode className={style.light} />
                                     <MdDarkMode className={style.dark} />
                                     Toggle Theme
-                                </div>
-                            </button>
+                                </button>
+                            </div>
                         </div>
                     </>
                 )}

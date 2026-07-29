@@ -32,16 +32,16 @@ function TagButton({ state, name, onClick, noIcon = false, tooltipContent }: Tag
 
     return (
         <button
+            aria-pressed={state === 'required'}
             className={joinClasses(
                 style.tagButton,
                 state === 'any'
-                    ? 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200'
+                    ? 'border-line bg-surface text-ink-muted hover:border-line-strong hover:text-ink'
                     : state === 'required'
-                    ? 'bg-accent-500 text-white dark:bg-accent-600 dark:text-white'
-                    : 'bg-gray-300 text-red-800 dark:bg-gray-900 dark:text-red-400'
+                    ? 'border-accent-600 bg-accent-600 text-white dark:border-accent-500 dark:bg-accent-500'
+                    : 'border-line bg-surface text-red-700 dark:text-red-400'
             )}
             data-tooltip-content={tooltipContent}
-            data-tooltip-delay-show={300}
             data-tooltip-id={tooltipContent ? tooltipId : undefined}
             onClick={onClick}
         >
@@ -88,7 +88,7 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
             )}
             <div className={style.controls}>
                 <button
-                    className={`${style.modeButton} text-neutral-700 hover:text-black dark:text-neutral-300 hover:dark:text-white`}
+                    className={`${style.modeButton} text-ink-muted hover:text-ink`}
                     onClick={() => {
                         setSimple(!simple);
                         if (!simple) {
@@ -103,7 +103,7 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
 
                 {!simple && (
                     <button
-                        className={`${style.modeButton} text-neutral-700 hover:text-black disabled:text-neutral-500 dark:text-neutral-300 hover:dark:text-white disabled:dark:text-neutral-500`}
+                        className={`${style.modeButton} text-ink-muted hover:text-ink disabled:text-ink-subtle`}
                         disabled={selection.size === 0}
                         onClick={() => {
                             onChange(EMPTY_MAP, 'simple');
@@ -116,7 +116,7 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
 
                 {editMode && (
                     <Link
-                        className={`${style.modeButton} text-neutral-700 hover:text-black dark:text-neutral-300 hover:dark:text-white`}
+                        className={`${style.modeButton} text-ink-muted hover:text-ink`}
                         href="/tags"
                     >
                         <AiFillEdit />
@@ -169,60 +169,79 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
 function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
 
-    const tags = useMemo(() => {
+    // Grouped by category so the ~30 options can be scanned, rather than read as
+    // one undifferentiated wall. Selection stays single-select across all groups.
+    const groups = useMemo(() => {
         return categoryOrder
-            .map(([, category]) => category)
-            .filter((category) => category.simple)
-            .flatMap(({ tags }) => {
-                return tags
+            .filter(([, category]) => category.simple)
+            .map(([categoryId, category]) => {
+                const tags = category.tags
                     .map((tagId) => {
                         const tag = tagData.get(tagId);
-                        if (!tag) return undefined;
-                        if (tag.hidden) return undefined;
+                        if (!tag || tag.hidden) return undefined;
                         return [tagId, tag] as const;
                     })
                     .filter(isNonNull);
-            });
+                return { categoryId, name: category.name, tags };
+            })
+            .filter(({ tags }) => tags.length > 0);
     }, [categoryOrder, tagData]);
 
+    const allTags = useMemo(() => groups.flatMap(({ tags }) => tags), [groups]);
+
     const selected: TagId | undefined = useMemo(() => {
-        const required = tags.filter(([tagId]) => selection.get(tagId) === SelectionState.Required);
+        const required = allTags.filter(([tagId]) => selection.get(tagId) === SelectionState.Required);
         if (required.length === 1) return required[0][0];
         return undefined;
-    }, [selection, tags]);
+    }, [selection, allTags]);
+
+    const selectTag = (tagId: TagId) => {
+        if (selected === tagId) return;
+        let s = setState(tagId, 'required', selection);
+        if (selected !== undefined) {
+            s = setState(selected, 'any', s);
+        }
+        onChange(s, 'simple');
+    };
 
     return (
         <div className={style.tagSelector}>
-            <div>
-                <TagButton
-                    noIcon
-                    name="All"
-                    state={selected === undefined ? 'required' : 'any'}
-                    onClick={() => {
-                        if (selected !== undefined) {
-                            onChange(setState(selected, 'any', selection), 'simple');
-                        }
-                    }}
-                />
-                {tags.map(([tagId, tag]) => (
+            <div className={style.group}>
+                <h4 className={style.groupTitle}>Showing</h4>
+                <div className={style.groupTags}>
                     <TagButton
                         noIcon
-                        key={tagId}
-                        name={tag.name}
-                        state={selected === tagId ? 'required' : 'any'}
-                        tooltipContent={tag.description}
+                        name="All models"
+                        state={selected === undefined ? 'required' : 'any'}
                         onClick={() => {
-                            if (selected !== tagId) {
-                                let s = setState(tagId, 'required', selection);
-                                if (selected !== undefined) {
-                                    s = setState(selected, 'any', s);
-                                }
-                                onChange(s, 'simple');
+                            if (selected !== undefined) {
+                                onChange(setState(selected, 'any', selection), 'simple');
                             }
                         }}
                     />
-                ))}
+                </div>
             </div>
+
+            {groups.map(({ categoryId, name, tags }) => (
+                <div
+                    className={style.group}
+                    key={categoryId}
+                >
+                    <h4 className={style.groupTitle}>{name}</h4>
+                    <div className={style.groupTags}>
+                        {tags.map(([tagId, tag]) => (
+                            <TagButton
+                                noIcon
+                                key={tagId}
+                                name={tag.name}
+                                state={selected === tagId ? 'required' : 'any'}
+                                tooltipContent={tag.description}
+                                onClick={() => selectTag(tagId)}
+                            />
+                        ))}
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }

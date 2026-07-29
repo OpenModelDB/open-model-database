@@ -27,6 +27,11 @@ export function TooltipProvider({ children }: React.PropsWithChildren<unknown>) 
                 <Tooltip
                     closeOnEsc
                     className={style.tooltip}
+                    // Set on the tooltip itself rather than per-anchor, so every
+                    // anchor gets the same delay and tooltips stop firing while
+                    // the pointer is just crossing a row of tags.
+                    delayHide={100}
+                    delayShow={500}
                     id={tooltipId}
                     render={({ content }) => {
                         return (

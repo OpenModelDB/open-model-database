@@ -1,0 +1,125 @@
+@import '../styles/theme';
+
+.footer {
+    flex-shrink: 0;
+    margin-top: var(--stack-section);
+    border-top: 1px solid var(--line-color);
+    background-color: var(--surface-sunken);
+}
+
+.inner {
+    max-width: var(--max-page-width);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: var(--stack-loose) var(--page-gutter) var(--stack);
+}
+
+.columns {
+    display: grid;
+    gap: var(--stack-loose) var(--stack);
+    grid-template-columns: 1fr;
+
+    @media only screen and (min-width: 640px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (min-width: 1024px) {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: var(--stack-loose);
+    }
+}
+
+.about {
+    @media only screen and (min-width: 640px) and (max-width: 1023px) {
+        grid-column: 1 / -1;
+    }
+}
+
+.blurb {
+    margin: 0;
+    max-width: 42ch;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--font-color-light);
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--stack-tight);
+}
+
+.socialLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--line-color);
+    border-radius: var(--radius-control);
+    background-color: var(--surface);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.2;
+    transition: border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        color: var(--font-color-hover);
+        border-color: var(--line-strong);
+    }
+}
+
+.columnTitle {
+    margin: 0 0 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--font-color-subtle);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.link {
+    font-size: 0.9375rem;
+    color: var(--font-color-light);
+
+    &:hover {
+        color: var(--font-color-hover);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+}
+
+.legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: var(--stack-loose);
+    padding-top: var(--stack);
+    border-top: 1px solid var(--line-color);
+    font-size: 0.8125rem;
+    color: var(--font-color-subtle);
+}
+
+.legalSpacer {
+    flex: 1 0 auto;
+}
+
+.legalLink {
+    color: var(--font-color-light);
+
+    &:hover {
+        color: var(--font-color-hover);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+}

@@ -60,7 +60,12 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedThumbnai
     const scale = (1 / dpr) * Math.max(1, Math.round(dpr + 0.16));
 
     return (
-        <div className="flex h-full w-full">
+        <div className="relative flex h-full w-full">
+            {/* Marks the seam so the card reads as a before/after pair. */}
+            <div
+                aria-hidden
+                className="absolute top-0 left-1/2 z-10 h-full w-px -translate-x-1/2 bg-white/40 mix-blend-overlay"
+            />
             <div className="relative flex h-full w-1/2 content-center overflow-hidden align-middle">
                 <img
                     alt={model.name}
@@ -102,7 +107,9 @@ const SideBySideImage = ({ model, image }: { model: Model; image: PairedThumbnai
 const getModelCardImageComponent = (model: Model | undefined) => {
     const image = model?.thumbnail ?? model?.images[0];
     if (!model || !image) {
-        return <div className="margin-auto z-0 w-full text-center">No Image</div>;
+        return (
+            <div className="z-0 flex h-full w-full items-center justify-center text-sm text-ink-subtle">No preview</div>
+        );
     }
     switch (image.type) {
         case 'paired': {
@@ -118,7 +125,7 @@ const getModelCardImageComponent = (model: Model | undefined) => {
             return (
                 <img
                     alt={model.name}
-                    className="margin-auto z-0 h-full w-full object-cover"
+                    className="z-0 h-full w-full object-cover"
                     loading="lazy"
                     src={imageSrc}
                 />
@@ -138,37 +145,36 @@ const ModelCardContent = memo(({ id, model }: ModelCardProps) => {
     const { updateModelProperty } = useUpdateModel(webApi, id);
 
     const description = getTextDescription(model);
-    const isPaired = model.images[0]?.type === 'paired' && !editMode;
 
     return (
         <div className={style.inner}>
-            {/* Arch tag on image */}
+            {/* Architecture and scale, over the image */}
             <div className={style.topTags}>
-                <AccentTag>{archData.get(model.architecture)?.name ?? 'Unknown'}</AccentTag>
-                <AccentTag>{model.scale}x</AccentTag>
+                <OverlayTag>{archData.get(model.architecture)?.name ?? 'Unknown'}</OverlayTag>
+                <OverlayTag emphasis>{model.scale}x</OverlayTag>
             </div>
 
             <Link
-                className={joinClasses(style.thumbnail, isPaired && style.paired, 'bg-fade-300 dark:bg-fade-700 ')}
+                className={joinClasses(style.thumbnail, 'bg-surface-sunken')}
                 href={`/models/${id}`}
                 tabIndex={-1}
             >
                 {getModelCardImageComponent(model)}
             </Link>
 
-            <div className={joinClasses(style.details, isPaired && style.paired)}>
+            <div className={style.details}>
                 <Link
-                    className={`${style.name} block text-xl font-bold text-gray-800 dark:text-gray-100`}
+                    className={`${style.name} block text-base font-semibold leading-snug text-ink line-clamp-2`}
                     href={`/models/${id}`}
                 >
                     {model.name}
                 </Link>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
+                <div className="truncate text-sm text-ink-muted">
                     {'by '}
                     {joinList(
                         asArray(model.author).map((userId) => (
                             <Link
-                                className="font-bold text-accent-600 dark:text-accent-400"
+                                className="font-medium text-accent-text hover:underline"
                                 href={`/users/${userId}`}
                                 key={userId}
                             >
@@ -179,10 +185,10 @@ const ModelCardContent = memo(({ id, model }: ModelCardProps) => {
                 </div>
 
                 {/* Description */}
-                <div className="mb-2 mt-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">{description}</div>
+                <div className="mt-1 mb-2 text-sm leading-snug text-ink-muted line-clamp-2">{description}</div>
 
                 {/* Tags */}
-                <div className="flex flex-row flex-wrap gap-1 text-xs">
+                <div className={joinClasses(style.tagRow, 'text-xs')}>
                     <EditableTags
                         readonly={!editMode}
                         tags={model.tags}
@@ -198,39 +204,39 @@ const ModelCardContent = memo(({ id, model }: ModelCardProps) => {
 const CollectionCardContent = memo(({ id, collection, preview }: CollectionCardProps) => {
     const { userData } = useUsers();
 
-    const isPaired = preview?.images[0]?.type === 'paired';
-
     return (
         <div className={style.inner}>
-            {/* Arch tag on image */}
             <div className={style.topTags}>
-                <MdCollections
-                    className="rounded-lg bg-black bg-opacity-40 p-1 text-white"
-                    size="1.5rem"
-                />
+                <OverlayTag>
+                    <MdCollections
+                        aria-hidden
+                        className="mr-1 inline-block align-middle"
+                    />
+                    Collection
+                </OverlayTag>
             </div>
 
             <Link
-                className={joinClasses(style.thumbnail, isPaired && style.paired, 'bg-fade-300 dark:bg-fade-700 ')}
+                className={joinClasses(style.thumbnail, 'bg-surface-sunken')}
                 href={`/collections/${id}`}
                 tabIndex={-1}
             >
                 {getModelCardImageComponent(preview)}
             </Link>
 
-            <div className={joinClasses(style.details, isPaired && style.paired)}>
+            <div className={style.details}>
                 <Link
-                    className={`${style.name} block text-xl font-bold text-gray-800 dark:text-gray-100`}
+                    className={`${style.name} block text-base font-semibold leading-snug text-ink line-clamp-2`}
                     href={`/collections/${id}`}
                 >
                     {collection.name}
                 </Link>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
+                <div className="truncate text-sm text-ink-muted">
                     {'by '}
                     {joinList(
                         asArray(collection.author).map((userId) => (
                             <Link
-                                className="font-bold text-accent-600 dark:text-accent-400"
+                                className="font-medium text-accent-text hover:underline"
                                 href={`/users/${userId}`}
                                 key={userId}
                             >
@@ -241,7 +247,7 @@ const CollectionCardContent = memo(({ id, collection, preview }: CollectionCardP
                 </div>
 
                 {/* Description */}
-                <div className="mb-2 mt-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">
+                <div className="mt-1 mb-2 text-sm leading-snug text-ink-muted line-clamp-2">
                     {collection.description}
                 </div>
             </div>
@@ -252,31 +258,11 @@ const CollectionCardContent = memo(({ id, collection, preview }: CollectionCardP
 const useMakeLazyCard = (lazy: boolean, card: JSX.Element) => {
     const { editMode } = useWebApi();
 
-    const inner = (
-        <div
-            className={joinClasses(
-                style.modelCard,
-                !editMode && style.overflowHidden,
-                'border-gray-300 bg-white shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-fade-900'
-            )}
-        >
-            {card}
-        </div>
-    );
+    const inner = <div className={joinClasses(style.modelCard, !editMode && style.overflowHidden)}>{card}</div>;
 
     if (!lazy) return inner;
 
-    return (
-        <LazyLoadComponent
-            placeholder={
-                <div
-                    className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-fade-900`}
-                />
-            }
-        >
-            {inner}
-        </LazyLoadComponent>
-    );
+    return <LazyLoadComponent placeholder={<div className={style.modelCard} />}>{inner}</LazyLoadComponent>;
 };
 
 export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {
@@ -300,6 +286,21 @@ export const CollectionCard = memo(({ id, collection, preview, lazy = false }: C
     );
 });
 
-function AccentTag({ children }: React.PropsWithChildren<unknown>) {
-    return <div className={`${style.tagBase} bg-accent-600 text-sm text-gray-100`}>{children}</div>;
+/**
+ * A chip that sits directly on top of a thumbnail, so it needs to stay legible
+ * over arbitrary image content. `emphasis` marks the scale, which is the
+ * property people filter on first.
+ */
+function OverlayTag({ children, emphasis }: React.PropsWithChildren<{ emphasis?: boolean }>) {
+    return (
+        <div
+            className={joinClasses(
+                style.tagBase,
+                'backdrop-blur-sm',
+                emphasis ? 'bg-accent-600 text-white' : 'bg-fade-900/70 text-fade-100'
+            )}
+        >
+            {children}
+        </div>
+    );
 }

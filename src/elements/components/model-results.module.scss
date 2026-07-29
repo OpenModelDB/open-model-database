@@ -2,6 +2,11 @@
     display: flex;
     align-items: center;
 
+    // Declared here rather than with Tailwind's `border-b border-solid`: this
+    // project disables Preflight, so `border-solid` without all four widths set
+    // falls back to the UA `medium` width and paints a full box.
+    border-bottom: 1px solid var(--line-color);
+
     @media screen and (max-width: 380px) {
         flex-direction: column;
         align-items: flex-start;
