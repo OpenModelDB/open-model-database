@@ -15,7 +15,7 @@ export function PageContainer({ children, scrollToTop, wrapper, searchBar }: Pag
     return (
         <div className={style.container}>
             <Header searchBar={searchBar} />
-            <main className={joinClasses(style.main, wrapper ? style.padded : 'py-4')}>{children}</main>
+            <main className={joinClasses(style.main, wrapper ? style.padded : style.standard)}>{children}</main>
             <Footer />
             {scrollToTop && <ScrollToTop />}
         </div>

@@ -10,12 +10,27 @@
     box-sizing: border-box;
     width: 100%;
     margin: 0 auto;
-    padding: 0 var(--page-gutter);
+
+    // Longhand rather than the `padding` shorthand. The shorthand also sets
+    // padding-top/bottom to 0, and since this module is injected after
+    // Tailwind's utilities it silently beat the `py-4` the markup relied on —
+    // so every page that isn't `.padded` rendered flush against the fixed
+    // header. Keep vertical rhythm out of this rule entirely.
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
     flex: 1 0 auto;
 }
 
 // Content column that owns its own vertical rhythm at the top and bottom.
 .padded {
+    padding-top: var(--stack);
+    padding-bottom: var(--stack-loose);
+}
+
+// Pages that lay out their own content directly rather than in a column —
+// the model page, docs, palette. Same rhythm as `.padded`; kept separate so
+// the two can diverge without one silently restyling the other.
+.standard {
     padding-top: var(--stack);
     padding-bottom: var(--stack-loose);
 }
