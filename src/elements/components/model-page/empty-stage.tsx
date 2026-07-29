@@ -12,8 +12,9 @@ export function EmptyStage() {
         <div
             className={joinClasses(
                 style.panel,
-                'flex w-full flex-col items-center justify-center gap-2 rounded-card',
-                'border border-solid border-line bg-surface-sunken px-6 py-10 text-center'
+                // No card chrome of its own: this renders inside the stage card,
+                // which already supplies the border, radius and background.
+                'flex w-full flex-col items-center justify-center gap-2 px-6 py-10 text-center'
             )}
         >
             <h2 className="m-0 text-lg font-semibold text-ink">No example images yet</h2>

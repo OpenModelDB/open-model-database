@@ -1,12 +1,8 @@
-.imageWrapper {
-    // Viewport-relative. The previous fixed 350/450/500px steps meant a 13"
-    // laptop got a stage that pushed the page off screen while a large monitor
-    // wasted half of it.
-    height: clamp(320px, 65vh, 700px);
-
+// The stage is one card containing the image area and the thumbnail rail.
+// They used to be separate: the rail sat on bare page background below a
+// bordered image box, which read as a gap rather than as its controls.
+.stage {
     @media screen and (max-width: 768px) {
-        height: clamp(240px, 45vh, 380px);
-
         // Full-bleed on narrow screens. Derived from --page-gutter rather than
         // a hardcoded 1rem, which silently broke if the gutter changed.
         border-radius: 0;
@@ -15,5 +11,16 @@
         width: calc(100% + var(--page-gutter) * 2);
         border-left: 0;
         border-right: 0;
+    }
+}
+
+.imageArea {
+    // Viewport-relative. The previous fixed 350/450/500px steps meant a 13"
+    // laptop got a stage that pushed the page off screen while a large monitor
+    // wasted half of it.
+    height: clamp(320px, 65vh, 700px);
+
+    @media screen and (max-width: 768px) {
+        height: clamp(240px, 45vh, 380px);
     }
 }
