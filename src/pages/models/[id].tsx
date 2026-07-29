@@ -5,8 +5,6 @@ import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback, useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
-import { DownloadButton } from '../../elements/components/download-button';
-import { EditResourceButton } from '../../elements/components/download-button-edit-popover';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { EditableTags, SmallTag } from '../../elements/components/editable-tags';
@@ -15,6 +13,7 @@ import { ImageCarousel } from '../../elements/components/image-carousel';
 import { LicenseAttributes } from '../../elements/components/license-attributes';
 import { Link } from '../../elements/components/link';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
+import { DownloadsBlock } from '../../elements/components/model-page/downloads-block';
 import { SpecCards } from '../../elements/components/model-page/spec-cards';
 import { TrainingDetails } from '../../elements/components/model-page/training-details';
 import { Switch } from '../../elements/components/switch';
@@ -28,7 +27,7 @@ import { useUsers } from '../../lib/hooks/use-users';
 import { useWebApi } from '../../lib/hooks/use-web-api';
 import { KNOWN_LICENSES } from '../../lib/license';
 import { MODEL_PROPS, ModelProp } from '../../lib/model-props';
-import { ArchId, Collection, CollectionId, Model, ModelId, Resource, TagId } from '../../lib/schema';
+import { ArchId, Collection, CollectionId, Model, ModelId, TagId } from '../../lib/schema';
 import { getCachedCollections, getCachedModels } from '../../lib/server/cached';
 import { fileApi } from '../../lib/server/file-data';
 import { getSimilarModels } from '../../lib/similar';
@@ -623,75 +622,13 @@ export default function Page({
                     </div>
                     {/* Right column: Sidebar */}
                     <div className="col-span-1 flex w-full flex-col gap-5">
-                        {/* Download Button */}
-                        <div className="flex w-full flex-col gap-2">
-                            {model.resources.length > 1 && (
-                                <h2 className="my-0 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
-                                    Downloads
-                                </h2>
-                            )}
-                            {model.resources.map((resource, index) => {
-                                return (
-                                    <div
-                                        className="flex w-full flex-row gap-2"
-                                        key={resource.sha256}
-                                    >
-                                        <DownloadButton
-                                            readonly={!editMode}
-                                            resource={resource}
-                                            onChange={(newResource: Resource) => {
-                                                const newResources = model.resources
-                                                    .map((r) => {
-                                                        if (r.sha256 === resource.sha256) {
-                                                            return newResource;
-                                                        }
-                                                        return r;
-                                                    })
-                                                    .filter((r) => r.urls.length > 0);
-                                                updateModelProperty('resources', newResources);
-                                            }}
-                                        />
-                                        {editMode && (
-                                            <>
-                                                <button
-                                                    className="cursor-pointer"
-                                                    onClick={() => {
-                                                        const newResources = model.resources.filter(
-                                                            (r) => r.sha256 !== resource.sha256
-                                                        );
-                                                        updateModelProperty('resources', newResources);
-                                                    }}
-                                                >
-                                                    <BsFillTrashFill />
-                                                </button>
-                                                <EditResourceButton
-                                                    modelId={modelId}
-                                                    resource={resource}
-                                                    onChange={(newResource) => {
-                                                        const newResources = model.resources;
-                                                        newResources[index] = newResource;
-                                                        updateModelProperty('resources', newResources);
-                                                    }}
-                                                >
-                                                    <AiFillEdit />
-                                                </EditResourceButton>
-                                            </>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                            {editMode && (
-                                <EditResourceButton
-                                    modelId={modelId}
-                                    onChange={(newResource) => {
-                                        const newResources = [...model.resources, newResource];
-                                        updateModelProperty('resources', newResources);
-                                    }}
-                                >
-                                    Add Resource
-                                </EditResourceButton>
-                            )}
-                        </div>
+                        <DownloadsBlock
+                            editMode={editMode}
+                            modelId={modelId}
+                            resources={model.resources}
+                            skip={1}
+                            onChange={(newResources) => updateModelProperty('resources', newResources)}
+                        />
 
                         <div className="relative flex flex-col gap-5">
                             <SpecCards
