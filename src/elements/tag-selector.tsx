@@ -206,8 +206,20 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
 
     return (
         <div className={style.tagSelector}>
-            <div className={style.group}>
-                <h4 className={style.groupTitle}>Showing</h4>
+            <div
+                aria-labelledby="tag-group-showing"
+                className={style.group}
+                role="group"
+            >
+                {/* Deliberately not a heading: these label a set of filter controls
+                    rather than a section of the document. As an <h4> under the page's
+                    <h1> they broke the heading outline for screen readers. */}
+                <span
+                    className={style.groupTitle}
+                    id="tag-group-showing"
+                >
+                    Showing
+                </span>
                 <div className={style.groupTags}>
                     <TagButton
                         noIcon
@@ -224,10 +236,17 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
 
             {groups.map(({ categoryId, name, tags }) => (
                 <div
+                    aria-labelledby={`tag-group-${categoryId}`}
                     className={style.group}
                     key={categoryId}
+                    role="group"
                 >
-                    <h4 className={style.groupTitle}>{name}</h4>
+                    <span
+                        className={style.groupTitle}
+                        id={`tag-group-${categoryId}`}
+                    >
+                        {name}
+                    </span>
                     <div className={style.groupTags}>
                         {tags.map(([tagId, tag]) => (
                             <TagButton
