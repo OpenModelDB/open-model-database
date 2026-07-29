@@ -60,7 +60,9 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                     </div>
                 )}
             </div>
-            {(!readonly || images.length > 1) && (
+            {/* Editors always need the strip so they can add and reorder images.
+                Readers only need it when there is something to page between. */}
+            {(!readonly || images.length > 1) && images.length > 0 && (
                 // Centred as one group: the arrows used to be pinned to the far
                 // edges of the page, a long way from the thumbnails they page.
                 // Wraps so the group never outgrows a narrow viewport.
