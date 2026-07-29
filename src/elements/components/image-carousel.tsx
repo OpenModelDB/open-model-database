@@ -25,6 +25,9 @@ type ImageCarouselProps = {
 
 const IMG_THUMB_SIZE = 96;
 
+const CAROUSEL_ARROW =
+    'inline-flex cursor-pointer items-center rounded-control border border-solid border-line bg-surface p-2 text-center text-sm text-ink transition-colors duration-100 ease-in-out hover:border-line-strong hover:bg-surface-hover';
+
 export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCarouselProps) => {
     const [imageIndex, setImageIndex] = useState(0);
     useEffect(() => {
@@ -47,22 +50,26 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
     return (
         <div className="relative w-full">
             <div
-                className={`${style.imageWrapper} flex w-full overflow-hidden rounded-lg bg-fade-100 align-middle dark:bg-fade-800`}
+                className={`${style.imageWrapper} flex w-full overflow-hidden rounded-card border border-solid border-line bg-surface-sunken align-middle`}
             >
                 {selectedImage ? (
                     <ImageCarouselImage image={selectedImage} />
                 ) : (
                     <div className="flex h-full w-full items-center align-middle">
-                        <div className="m-auto">This model does not have preview images.</div>
+                        <div className="m-auto text-sm text-ink-muted">This model does not have preview images.</div>
                     </div>
                 )}
             </div>
             {(!readonly || images.length > 1) && (
-                <div className="space-between flex w-full py-2">
+                // Centred as one group: the arrows used to be pinned to the far
+                // edges of the page, a long way from the thumbnails they page.
+                // Wraps so the group never outgrows a narrow viewport.
+                <div className="flex w-full flex-wrap items-center justify-center gap-2 py-3 sm:gap-3">
                     {images.length >= 2 && (
                         <button
                             aria-label="Previous image"
-                            className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                            className={CAROUSEL_ARROW}
+                            type="button"
                             onClick={() => {
                                 setImageIndex((imageIndex + images.length - 1) % images.length);
                             }}
@@ -70,7 +77,7 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                             <BsCaretLeftFill />
                         </button>
                     )}
-                    <div className="flex grow items-center justify-center justify-items-center gap-2 align-middle">
+                    <div className="flex flex-wrap items-center justify-center justify-items-center gap-2 align-middle">
                         {sliceStartIndex > 0 && (
                             <div>
                                 <FiMoreHorizontal />
@@ -187,13 +194,19 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                     {images.length >= 2 && (
                         <button
                             aria-label="Next image"
-                            className="inline-flex cursor-pointer items-center rounded-lg border-0 bg-fade-200 p-2.5 text-center text-sm text-fade-900 transition duration-100 ease-in-out hover:bg-fade-300 focus:outline-none focus:ring-4 focus:ring-fade-700 dark:bg-fade-700 dark:text-white dark:hover:bg-fade-600 dark:focus:ring-fade-500"
+                            className={CAROUSEL_ARROW}
+                            type="button"
                             onClick={() => {
                                 setImageIndex((imageIndex + 1) % images.length);
                             }}
                         >
                             <BsCaretRightFill />
                         </button>
+                    )}
+                    {images.length >= 2 && (
+                        <span className="ml-1 text-sm tabular-nums text-ink-muted">
+                            {imageIndex + 1} / {images.length}
+                        </span>
                     )}
                 </div>
             )}

@@ -346,30 +346,71 @@ function isTrue<T>(value: T | null | undefined | false | '' | 0): value is T {
  * fixed left column so the values read as the content; previously the labels
  * sat in a filled, right-aligned header column that outweighed them.
  */
-function MetadataTable({ rows }: { rows: (false | null | undefined | readonly [string, ReactNode])[] }) {
-    const filteredRows = rows.filter(isTrue);
+/**
+ * Closes the loop after the download button: the visitor now has a file and no
+ * idea what runs it. Links to the existing how-to rather than restating it.
+ */
+function UsingThisModel({ archName, scale }: { archName: string; scale: number }) {
     return (
-        <dl className="m-0 overflow-hidden rounded-card border border-solid border-line bg-surface">
-            {filteredRows.map((row, i) => {
-                const [label, value] = row;
-                return (
-                    <div
-                        className={joinClasses(
-                            'grid grid-cols-[minmax(0,6.5rem)_minmax(0,1fr)] items-baseline gap-x-4 gap-y-1 px-4 py-2.5',
-                            // Explicit zero widths: Preflight is disabled, so a
-                            // lone `border-t border-solid` paints all four sides.
-                            i > 0 && 'border-x-0 border-t border-b-0 border-solid border-line'
-                        )}
-                        key={i}
-                    >
-                        <dt className="text-xs font-semibold uppercase leading-5 tracking-wide text-ink-subtle">
-                            {label}
-                        </dt>
-                        <dd className="m-0 min-w-0 break-words text-sm leading-5 text-ink">{value}</dd>
-                    </div>
-                );
-            })}
-        </dl>
+        <section className="rounded-card border border-solid border-line bg-surface-sunken p-4">
+            <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
+                Using this model
+            </h2>
+            <p className="m-0 text-sm leading-relaxed text-ink-muted">
+                This is a {scale}x {archName} model. You run it in an upscaling application such as chaiNNer — the model
+                file itself is not an executable.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                <Link
+                    className="font-medium text-accent-text hover:underline"
+                    href="/docs/faq"
+                >
+                    How to upscale →
+                </Link>
+                <Link
+                    className="font-medium text-accent-text hover:underline"
+                    href="/docs/licenses"
+                >
+                    Understanding licenses →
+                </Link>
+            </div>
+        </section>
+    );
+}
+
+type MetadataRow = false | null | undefined | readonly [string, ReactNode];
+
+function MetadataTable({ title, rows }: { title?: string; rows: MetadataRow[] }) {
+    const filteredRows = rows.filter(isTrue);
+    if (filteredRows.length === 0) return null;
+
+    return (
+        <section>
+            {title && (
+                <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">{title}</h2>
+            )}
+            <dl className="m-0 overflow-hidden rounded-card border border-solid border-line bg-surface">
+                {filteredRows.map((row, i) => {
+                    const [label, value] = row;
+                    return (
+                        <div
+                            className={joinClasses(
+                                'grid grid-cols-[minmax(0,6.5rem)_minmax(0,1fr)] items-baseline gap-x-4 gap-y-1 px-4 py-2.5',
+                                // Explicit zero widths: Preflight is disabled, so a
+                                // lone `border-t border-solid` paints all four sides.
+                                i > 0 && 'border-x-0 border-t border-b-0 border-solid border-line'
+                            )}
+                            key={i}
+                        >
+                            <dt className="text-xs font-semibold uppercase leading-5 tracking-wide text-ink-subtle">
+                                {label}
+                            </dt>
+                            <dd className="m-0 min-w-0 break-words text-sm leading-5 text-ink">{value}</dd>
+                        </div>
+                    );
+                })}
+            </dl>
+        </section>
     );
 }
 export default function Page({
@@ -453,6 +494,15 @@ export default function Page({
                 </Head>
             )}
             <PageContainer searchBar>
+                <div className="mb-3">
+                    <Link
+                        className="inline-flex items-center gap-1 text-sm font-medium text-ink-muted hover:text-ink"
+                        href="/"
+                    >
+                        <span aria-hidden>←</span> All models
+                    </Link>
+                </div>
+
                 {/* Full-width preview at top (YouTube-style) */}
                 <div className="mb-6 w-full">
                     <ImageCarousel
@@ -574,27 +624,41 @@ export default function Page({
                                     />
                                 </div>
                             </div>
-                            <div className="mt-2 flex gap-2 text-xs">
-                                {editMode && <div>tags:</div>}
-                                <EditableTags
-                                    readonly={!editMode}
-                                    tags={model.tags}
-                                    onChange={(tags) => updateModelProperty('tags', tags)}
-                                />
+                            <div className="mt-4">
+                                <h2 className="mt-0 mb-2 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
+                                    Good for
+                                </h2>
+                                <div className="flex flex-wrap gap-2 text-xs">
+                                    <EditableTags
+                                        readonly={!editMode}
+                                        tags={model.tags}
+                                        onChange={(tags) => updateModelProperty('tags', tags)}
+                                    />
+                                </div>
                             </div>
-                            <div className="py-4">
+                            <div className="py-5">
                                 <EditableMarkdownContainer
                                     markdown={model.description}
                                     readonly={!editMode}
                                     onChange={(value) => updateModelProperty('description', value)}
                                 />
                             </div>
+
+                            <UsingThisModel
+                                archName={archName}
+                                scale={model.scale}
+                            />
                         </div>
                     </div>
                     {/* Right column: Sidebar */}
-                    <div className="col-span-1 w-full">
+                    <div className="col-span-1 flex w-full flex-col gap-5">
                         {/* Download Button */}
-                        <div className="mb-2 flex w-full flex-col gap-2">
+                        <div className="flex w-full flex-col gap-2">
+                            {model.resources.length > 1 && (
+                                <h2 className="my-0 text-xs font-semibold uppercase tracking-wider text-ink-subtle">
+                                    Downloads
+                                </h2>
+                            )}
                             {model.resources.map((resource, index) => {
                                 return (
                                     <div
@@ -658,7 +722,7 @@ export default function Page({
                             )}
                         </div>
 
-                        <div className="relative">
+                        <div className="relative flex flex-col gap-5">
                             <MetadataTable
                                 rows={[
                                     /* eslint-disable react/jsx-key */
@@ -692,6 +756,14 @@ export default function Page({
                                             updateModelProperty={updateModelProperty}
                                         />,
                                     ],
+                                    /* eslint-enable react/jsx-key */
+                                ]}
+                                title="Model"
+                            />
+
+                            <MetadataTable
+                                rows={[
+                                    /* eslint-disable react/jsx-key */
                                     [
                                         'License',
                                         <LicenseProp
@@ -700,6 +772,14 @@ export default function Page({
                                             updateModelProperty={updateModelProperty}
                                         />,
                                     ],
+                                    /* eslint-enable react/jsx-key */
+                                ]}
+                                title="Rights"
+                            />
+
+                            <MetadataTable
+                                rows={[
+                                    /* eslint-disable react/jsx-key */
                                     ...typedKeys(MODEL_PROPS)
                                         .filter((key) => {
                                             return [
@@ -734,6 +814,7 @@ export default function Page({
                                         }),
                                     /* eslint-enable react/jsx-key */
                                 ]}
+                                title="Training"
                             />
                         </div>
                     </div>

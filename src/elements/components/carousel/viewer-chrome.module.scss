@@ -1,0 +1,115 @@
+// Chrome that sits on top of the image viewers. Everything here overlays
+// arbitrary image content, so each piece carries its own dark scrim rather
+// than relying on the surface underneath it.
+
+.label {
+    position: absolute;
+    top: 0.625rem;
+    z-index: 20;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.375rem;
+    background-color: rgb(17 17 23 / 65%);
+    backdrop-filter: blur(4px);
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+}
+
+.labelBefore {
+    left: 0.625rem;
+}
+
+.labelAfter {
+    right: 0.625rem;
+}
+
+.hint {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.625rem;
+    z-index: 20;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.375rem;
+    background-color: rgb(17 17 23 / 55%);
+    backdrop-filter: blur(4px);
+    color: rgb(255 255 255 / 85%);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    pointer-events: none;
+    user-select: none;
+
+    @media only screen and (max-width: 640px) {
+        display: none;
+    }
+}
+
+.controls {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.625rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.1875rem;
+    border-radius: 0.5rem;
+    background-color: rgb(17 17 23 / 65%);
+    backdrop-filter: blur(4px);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: transparent;
+    color: white;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+        background-color: rgb(255 255 255 / 18%);
+    }
+
+    &:focus-visible {
+        outline: 2px solid white;
+        outline-offset: -2px;
+    }
+}
+
+.resetButton {
+    width: auto;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.readout {
+    min-width: 3.25rem;
+    padding: 0 0.25rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    user-select: none;
+}
+
+.divider {
+    width: 1px;
+    height: 1.125rem;
+    margin: 0 0.125rem;
+    background-color: rgb(255 255 255 / 25%);
+}
