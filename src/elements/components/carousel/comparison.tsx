@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { ReactCompareSlider, ReactCompareSliderHandle, ReactCompareSliderImage } from 'react-compare-slider';
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import { PairedImage } from '../../../lib/schema';
-import { CompareLabels, ViewerHint, ZoomControls } from './viewer-chrome';
+import { CompareLabels, ZoomControls } from './viewer-chrome';
 
 type ImageComparisonProps = {
     image: PairedImage;
@@ -210,7 +210,6 @@ export const ImageComparison = ({ image }: ImageComparisonProps) => {
             />
 
             <CompareLabels />
-            <ViewerHint />
             <ZoomControls
                 scale={transformState.scale}
                 onReset={reset}

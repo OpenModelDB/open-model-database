@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ReactZoomPanPinchRef, TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import { StandaloneImage } from '../../../lib/schema';
-import { ViewerHint, ZoomControls } from './viewer-chrome';
+import { ZoomControls } from './viewer-chrome';
 
 type ImageStandaloneProps = {
     image: StandaloneImage;
@@ -53,7 +53,6 @@ export const ImageStandalone = ({ image }: ImageStandaloneProps) => {
                 </TransformComponent>
             </TransformWrapper>
 
-            <ViewerHint />
             <ZoomControls
                 scale={scale}
                 onReset={reset}

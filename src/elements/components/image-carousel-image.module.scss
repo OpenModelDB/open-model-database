@@ -5,4 +5,11 @@
     right: -1px;
     bottom: -1px;
     text-align: right;
+
+    // Bounded so a long caption cannot run left into the zoom controls, which
+    // are anchored in the opposite corner.
+    max-width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
