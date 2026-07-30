@@ -118,29 +118,21 @@
         display: flex;
         flex-flow: row wrap;
         gap: 0.25rem;
-        margin-top: auto;
 
-        // A fixed two-row plate rather than a max height. With a max, a card
-        // holding one row of tags pinned that row to the card's bottom edge
-        // while its neighbour's first row sat a whole row higher — so the
-        // leftover space opened up as a hole between the description and the
-        // tags. Reserving both rows for every card lines the first row up
-        // across the grid and moves the leftover below the tags, where it
-        // reads as the card's bottom padding.
-        height: calc(var(--tag-line) * 2 + 0.25rem);
+        // Height follows the tags: one row stays one row. Two earlier attempts
+        // are worth not repeating — reserving a fixed two-row plate leaves an
+        // empty row under cards that only have one, and `margin-top: auto`
+        // pins the tags to the card's foot, which turns every difference in
+        // content height into a hole between the description and the tags.
+        // The cap is the ceiling only; `+N` covers whatever it cuts.
+        max-height: calc(var(--tag-line) * 2 + 0.25rem);
         overflow: hidden;
-
-        // Both are needed: `align-content` keeps a single row from stretching
-        // to fill the plate, `align-items` keeps the pills from stretching
-        // inside their row.
-        align-content: flex-start;
-        align-items: flex-start;
 
         @media screen and (max-width: 1023px) {
             --tag-line: 1.75rem;
         }
 
-        // The clamp above keeps tags to a single row, but in edit mode the tag
+        // The clamp above keeps tags to two rows, but in edit mode the tag
         // popover is absolutely positioned *inside* this row — so it was being
         // clipped out of existence and the button looked dead. The card has the
         // same escape hatch one level up; both are needed, since either one
