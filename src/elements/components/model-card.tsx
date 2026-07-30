@@ -272,7 +272,11 @@ const useMakeLazyCard = (lazy: boolean, card: JSX.Element) => {
 
     if (!lazy) return inner;
 
-    return <LazyLoadComponent placeholder={<div className={style.modelCard} />}>{inner}</LazyLoadComponent>;
+    return (
+        <LazyLoadComponent placeholder={<div className={joinClasses(style.modelCard, style.placeholder)} />}>
+            {inner}
+        </LazyLoadComponent>
+    );
 };
 
 export const ModelCard = memo(({ id, model, lazy = false }: ModelCardProps) => {

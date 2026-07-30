@@ -8,9 +8,11 @@
     display: flex;
     flex-direction: column;
 
-    // Two rows of tags rather than one — a quarter of models carry four or more,
-    // and a single row was dropping them with nothing to say so.
-    height: 376px;
+    // No fixed height. The grid stretches every card in a row to the tallest of
+    // that row, which is all the alignment this needs — and it lets a row of
+    // short cards be short, instead of every card in the page reserving room
+    // for a two-line title it does not have.
+    height: 100%;
     box-sizing: border-box;
     border-radius: var(--radius-card);
     border: 1px solid var(--line-color);
@@ -37,6 +39,13 @@
 
     &.overflowHidden {
         overflow: hidden;
+    }
+
+    // Lazy-load stand-in: empty, so without a floor it would collapse and the
+    // whole grid below it would jump up as cards resolve. Roughly a typical
+    // card, so the settle is small either way.
+    &.placeholder {
+        min-height: 340px;
     }
 
     // Ensure popovers can escape the card's bounds when open
@@ -110,8 +119,22 @@
         flex-flow: row wrap;
         gap: 0.25rem;
         margin-top: auto;
-        max-height: calc(var(--tag-line) * 2 + 0.25rem);
+
+        // A fixed two-row plate rather than a max height. With a max, a card
+        // holding one row of tags pinned that row to the card's bottom edge
+        // while its neighbour's first row sat a whole row higher — so the
+        // leftover space opened up as a hole between the description and the
+        // tags. Reserving both rows for every card lines the first row up
+        // across the grid and moves the leftover below the tags, where it
+        // reads as the card's bottom padding.
+        height: calc(var(--tag-line) * 2 + 0.25rem);
         overflow: hidden;
+
+        // Both are needed: `align-content` keeps a single row from stretching
+        // to fill the plate, `align-items` keeps the pills from stretching
+        // inside their row.
+        align-content: flex-start;
+        align-items: flex-start;
 
         @media screen and (max-width: 1023px) {
             --tag-line: 1.75rem;
