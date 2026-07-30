@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
+import { EDIT_BUTTON, EDIT_ICON_BUTTON } from '../elements/components/edit-chrome';
 import { EditableLabel } from '../elements/components/editable-label';
 import { Link } from '../elements/components/link';
 import { HeadCommon } from '../elements/head-common';
@@ -131,8 +132,9 @@ export default function Page() {
                         >
                             <h2 className="mt-0 inline-block">{capitalize(inputType)}</h2>
                             <button
-                                className="mr-2 ml-4"
+                                className={joinClasses('mr-2 ml-4', EDIT_BUTTON)}
                                 disabled={!editMode}
+                                type="button"
                                 onClick={() => add(inputType)}
                             >
                                 Add architecture
@@ -189,7 +191,7 @@ function ArchRender({
 
     return (
         <div
-            className={joinClasses('mb-4', selected && 'bg-white dark:bg-black')}
+            className={joinClasses('mb-4', selected && 'rounded-card bg-surface')}
             id={`arch-${archId}`}
             key={archId}
         >
@@ -245,7 +247,9 @@ function ArchRender({
 
                 {editMode && (
                     <button
+                        className={EDIT_ICON_BUTTON}
                         title="Delete architecture"
+                        type="button"
                         onClick={() => {
                             // remove arch
                             webApi.architectures.delete([archId]).catch((e) => console.error(e));

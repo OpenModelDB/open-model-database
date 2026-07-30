@@ -2,6 +2,16 @@ import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { extractImage } from '../../lib/image-util';
 import { Image, PairedImage, StandaloneImage } from '../../lib/schema';
+import { joinClasses } from '../../lib/util';
+import {
+    EDIT_BUTTON,
+    EDIT_BUTTON_ACTIVE,
+    EDIT_BUTTON_PRIMARY,
+    EDIT_FIELD,
+    EDIT_ICON_BUTTON,
+    EDIT_LABEL,
+    EDIT_PANEL,
+} from './edit-chrome';
 
 export interface EditImageProps {
     image?: Image;
@@ -15,8 +25,13 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
 
     return (
         <div className="flex flex-col">
-            <div className="flex flex-col">
-                <label htmlFor="image-caption">Caption</label>
+            <div className={EDIT_FIELD}>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="image-caption"
+                >
+                    Caption
+                </label>
                 <input
                     id="image-caption"
                     type="text"
@@ -24,9 +39,12 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                     onChange={(e) => setCaption(e.target.value)}
                 />
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="image-lr">
-                    LR <a className="text-red-500">*</a>
+            <div className={EDIT_FIELD}>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="image-lr"
+                >
+                    LR <span className="text-red-500">*</span>
                 </label>
                 <input
                     autoFocus
@@ -52,9 +70,12 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                     }}
                 />
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="image-sr">
-                    SR <a className="text-red-500">*</a>
+            <div className={EDIT_FIELD}>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="image-sr"
+                >
+                    SR <span className="text-red-500">*</span>
                 </label>
                 <input
                     required
@@ -80,7 +101,7 @@ function PairedImageMenu({ image, onChange }: { image?: PairedImage; onChange: (
                 />
             </div>
             <Popover.Button
-                className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
+                className={joinClasses('mt-1', EDIT_BUTTON_PRIMARY)}
                 disabled={!lr || !sr}
                 type="button"
                 onClick={() => {
@@ -119,8 +140,13 @@ function StandaloneImageMenu({
     return (
         <div className="flex flex-col">
             <div className="flex flex-col">
-                <div className="flex flex-col">
-                    <label htmlFor="image-caption">Caption</label>
+                <div className={EDIT_FIELD}>
+                    <label
+                        className={EDIT_LABEL}
+                        htmlFor="image-caption"
+                    >
+                        Caption
+                    </label>
                     <input
                         id="image-caption"
                         type="text"
@@ -128,12 +154,16 @@ function StandaloneImageMenu({
                         onChange={(e) => setCaption(e.target.value)}
                     />
                 </div>
-                <label htmlFor="image-url">
-                    URL <a className="text-red-500">*</a>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="image-url"
+                >
+                    URL <span className="text-red-500">*</span>
                 </label>
                 <input
                     autoFocus
                     required
+                    className="mt-1"
                     id="image-url"
                     type="text"
                     value={url}
@@ -152,7 +182,7 @@ function StandaloneImageMenu({
                 />
             </div>
             <Popover.Button
-                className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
+                className={joinClasses('mt-1', EDIT_BUTTON_PRIMARY)}
                 disabled={!url}
                 type="button"
                 onClick={() => {
@@ -186,7 +216,7 @@ export function EditImageButton({ image, onChange, children }: React.PropsWithCh
                 className="relative inline-block text-left"
             >
                 <Popover.Button
-                    className="block"
+                    className={EDIT_ICON_BUTTON}
                     onClick={(e: React.MouseEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
                     onFocus={(e: React.FocusEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
                 >
@@ -202,25 +232,21 @@ export function EditImageButton({ image, onChange, children }: React.PropsWithCh
                     leaveTo="transform opacity-0 scale-95"
                 >
                     <Popover.Panel
-                        className={`absolute z-50 mt-2 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 p-2 text-sm shadow-lg focus:outline-none dark:bg-black ${
-                            position === 'left' ? 'left-0' : 'right-0'
-                        }`}
+                        className={joinClasses(EDIT_PANEL, 'p-3', position === 'left' ? 'left-0' : 'right-0')}
                     >
-                        <div className="mb-1 flex gap-2">
+                        <div className="mb-3 flex gap-2">
                             <button
-                                className={`${
-                                    mode === 'paired' ? 'bg-gray-400 dark:bg-gray-600' : 'bg-gray-200 dark:bg-gray-800'
-                                } rounded-lg border-0 p-2`}
+                                aria-pressed={mode === 'paired'}
+                                className={mode === 'paired' ? EDIT_BUTTON_ACTIVE : EDIT_BUTTON}
+                                type="button"
                                 onClick={() => setMode('paired')}
                             >
                                 Paired
                             </button>
                             <button
-                                className={`${
-                                    mode === 'standalone'
-                                        ? 'bg-gray-400 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-800'
-                                        : 'bg-gray-200 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600'
-                                } rounded-lg border-0 p-2`}
+                                aria-pressed={mode === 'standalone'}
+                                className={mode === 'standalone' ? EDIT_BUTTON_ACTIVE : EDIT_BUTTON}
+                                type="button"
                                 onClick={() => setMode('standalone')}
                             >
                                 Standalone

@@ -5,6 +5,12 @@ import { ParsedUrlQuery } from 'querystring';
 import React, { useCallback, useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { BsFillTrashFill, BsPlusLg } from 'react-icons/bs';
+import {
+    EDIT_BUTTON,
+    EDIT_BUTTON_DANGER,
+    EDIT_BUTTON_PRIMARY,
+    EDIT_ICON_BUTTON,
+} from '../../elements/components/edit-chrome';
 import { EditableIntegerLabel, EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { EditableTags, SmallTag } from '../../elements/components/editable-tags';
@@ -34,7 +40,15 @@ import { getSimilarModels } from '../../lib/similar';
 import { IS_DEPLOYED } from '../../lib/site-data';
 import { STATIC_ARCH_DATA } from '../../lib/static-data';
 import { getTextDescription } from '../../lib/text-description';
-import { EMPTY_ARRAY, asArray, getColorMode, getPreviewImage, joinListString, typedKeys } from '../../lib/util';
+import {
+    EMPTY_ARRAY,
+    asArray,
+    getColorMode,
+    getPreviewImage,
+    joinClasses,
+    joinListString,
+    typedKeys,
+} from '../../lib/util';
 import { validateModel } from '../../lib/validate-model';
 
 const MAX_SIMILAR_MODELS = 12 * 2;
@@ -74,7 +88,9 @@ const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTa
                     />
                     {editMode && (
                         <button
-                            className="ml-1.5"
+                            aria-label={`Remove ${tag}`}
+                            className={joinClasses('ml-1.5', EDIT_ICON_BUTTON)}
+                            type="button"
                             onClick={() => {
                                 const newTags = [...tags];
                                 newTags.splice(index, 1);
@@ -89,6 +105,9 @@ const renderTags = (tags: readonly string[], editMode: boolean, onChange: (newTa
         })}
         {editMode && (
             <button
+                aria-label="Add tag"
+                className={EDIT_ICON_BUTTON}
+                type="button"
                 onClick={() => {
                     onChange([...tags, '']);
                 }}
@@ -457,8 +476,10 @@ export default function Page({
                         <div className="relative">
                             <div>
                                 {editMode && (
-                                    <div className="flex items-end justify-end gap-2 text-right">
+                                    <div className="mb-4 flex flex-wrap items-center justify-end gap-2 text-right">
                                         <button
+                                            className={EDIT_BUTTON_DANGER}
+                                            type="button"
                                             onClick={() => {
                                                 if (confirm('Are you sure you want to delete this model?')) {
                                                     webApi.models.delete([modelId]).then(
@@ -478,6 +499,8 @@ export default function Page({
                                         {IS_DEPLOYED && (
                                             <>
                                                 <button
+                                                    className={EDIT_BUTTON}
+                                                    type="button"
                                                     onClick={() => {
                                                         navigator.clipboard
                                                             .readText()
@@ -498,6 +521,8 @@ export default function Page({
                                                     Load Model from clipboard
                                                 </button>
                                                 <button
+                                                    className={EDIT_BUTTON}
+                                                    type="button"
                                                     onClick={() => {
                                                         navigator.clipboard
                                                             .writeText(JSON.stringify(model, null, 2))
@@ -507,6 +532,8 @@ export default function Page({
                                                     Copy Model to clipboard
                                                 </button>
                                                 <button
+                                                    className={EDIT_BUTTON_PRIMARY}
+                                                    type="button"
                                                     onClick={() => {
                                                         runModelValidation()
                                                             .then((errors) => {

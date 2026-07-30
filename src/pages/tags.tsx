@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
+import { EDIT_BUTTON } from '../elements/components/edit-chrome';
 import { EditableLabel } from '../elements/components/editable-label';
 import { Link } from '../elements/components/link';
 import { HeadCommon } from '../elements/head-common';
@@ -12,7 +13,7 @@ import { useWebApi } from '../lib/hooks/use-web-api';
 import { withImpliedTags } from '../lib/implied-tags';
 import { Model, ModelId, Tag, TagCategory, TagCategoryId, TagId } from '../lib/schema';
 import { canonicalizeTagId } from '../lib/schema-util';
-import { compareTagId } from '../lib/util';
+import { compareTagId, joinClasses } from '../lib/util';
 
 export default function Page() {
     const { tagData, tagCategoryData, categoryOrder } = useTags();
@@ -84,7 +85,8 @@ export default function Page() {
 
                 <p>
                     <button
-                        className="text-sm"
+                        className={EDIT_BUTTON}
+                        type="button"
                         onClick={() => {
                             addImplications().catch((e) => console.error(e));
                         }}
@@ -96,7 +98,7 @@ export default function Page() {
                     </span>
                 </p>
 
-                <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
+                <div className="my-6 rounded-card border border-solid border-line bg-surface p-4">
                     {categoryOrder.map(([categoryId, category]) => {
                         const isArch = categoryId === 'architecture' || undefined;
                         const isFree = !isArch || undefined;
@@ -128,15 +130,17 @@ export default function Page() {
                                     {editMode && (
                                         <>
                                             <button
-                                                className="ml-1"
+                                                className={joinClasses('ml-1', EDIT_BUTTON)}
                                                 title="Add tag to category (enter tag ID in prompt)"
+                                                type="button"
                                                 onClick={add}
                                             >
                                                 +
                                             </button>
                                             <button
-                                                className="ml-1"
+                                                className={joinClasses('ml-1', EDIT_BUTTON)}
                                                 title="Sort tags in category by name"
+                                                type="button"
                                                 onClick={() => {
                                                     category.tags.sort((a, b) => {
                                                         const aTag = tagData.get(a);
@@ -204,7 +208,7 @@ export default function Page() {
                 </div>
 
                 {noCategory.length > 0 && (
-                    <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
+                    <div className="my-6 rounded-card border border-solid border-line bg-surface p-4">
                         <h2>Uncategorized</h2>
 
                         <div>
@@ -230,7 +234,7 @@ export default function Page() {
                 )}
 
                 {unknown.length > 0 && (
-                    <div className="my-6 rounded-lg bg-fade-100 p-4 dark:bg-fade-800">
+                    <div className="my-6 rounded-card border border-solid border-line bg-surface p-4">
                         <h2>Unknown tags</h2>
 
                         {unknown.map((id) => {

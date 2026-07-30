@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useMemo, useState } from 'react';
+import { EDIT_BUTTON_PRIMARY } from '../elements/components/edit-chrome';
 import { TextLink } from '../elements/components/link';
 import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
@@ -13,6 +14,7 @@ import { ParseResult, parseDiscordMessage } from '../lib/parse-discord-message';
 import { Arch, ArchId, Model, ModelId, Tag, TagId } from '../lib/schema';
 import { canonicalizeModelId } from '../lib/schema-util';
 import { IS_DEPLOYED } from '../lib/site-data';
+import { joinClasses } from '../lib/util';
 import type { ResponseJson } from './api/pth-metadata';
 
 function getCommonPretrained(modelData: ReadonlyMap<ModelId, Model>): ModelId[] {
@@ -543,8 +545,9 @@ function PageContent() {
             </div>
             <p>
                 <button
-                    className={!canAddModel ? 'cursor-not-allowed' : 'cursor-pointer'}
+                    className={joinClasses(EDIT_BUTTON_PRIMARY, !canAddModel && 'cursor-not-allowed')}
                     disabled={!canAddModel}
+                    type="button"
                     onClick={() => {
                         addModel().catch((e) => console.error(e));
                     }}

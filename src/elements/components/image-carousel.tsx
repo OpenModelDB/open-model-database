@@ -14,6 +14,7 @@ import { Image } from '../../lib/schema';
 import { joinClasses } from '../../lib/util';
 import { CarouselChromeProvider } from './carousel/chrome-context';
 import { FullscreenButton } from './carousel/viewer-chrome';
+import { EDIT_ICON_BUTTON } from './edit-chrome';
 import { EditImageButton } from './image-carousel-edit-popover';
 import { ImageCarouselImage } from './image-carousel-image';
 import style from './image-carousel.module.scss';
@@ -170,7 +171,9 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                                                                     <AiFillEdit />
                                                                 </EditImageButton>
                                                                 <button
-                                                                    className="block"
+                                                                    aria-label="Delete image"
+                                                                    className={EDIT_ICON_BUTTON}
+                                                                    type="button"
                                                                     onClick={() => {
                                                                         const newImages = [...images];
                                                                         // Remove image
@@ -209,6 +212,9 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                                                         {!readonly && (
                                                             <div className="flex flex-row items-center">
                                                                 <button
+                                                                    aria-label="Move image left"
+                                                                    className={EDIT_ICON_BUTTON}
+                                                                    type="button"
                                                                     onClick={() => {
                                                                         const newImages = [...images];
                                                                         // Move image to the left
@@ -223,6 +229,9 @@ export const ImageCarousel = ({ images, readonly, indexKey, onChange }: ImageCar
                                                                 </button>
 
                                                                 <button
+                                                                    aria-label="Move image right"
+                                                                    className={EDIT_ICON_BUTTON}
+                                                                    type="button"
                                                                     onClick={() => {
                                                                         const newImages = [...images];
                                                                         // Move image to the right
