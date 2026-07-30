@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { tokenize } from '../../src/lib/search/token';
 
 describe('tokenize', () => {
