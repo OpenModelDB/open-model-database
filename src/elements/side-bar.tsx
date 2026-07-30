@@ -4,7 +4,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
 import { BsDot } from 'react-icons/bs';
 import { IconType } from 'react-icons/lib';
-import { SideBar, SideBarItem } from '../lib/docs/side-bar';
+// `SideBarItem` is a type here but also a component defined below. Under
+// `isolatedModules` the compiler cannot tell which one an unqualified import
+// means, so the type has to say so.
+import { SideBar, type SideBarItem } from '../lib/docs/side-bar';
 import { withoutHash } from '../lib/util';
 import style from './side-bar.module.scss';
 

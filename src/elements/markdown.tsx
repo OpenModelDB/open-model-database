@@ -154,7 +154,13 @@ export function MarkdownContainer({ markdown, className, isIndexPage = false }: 
 function getTextContent(node: ReactNode): string {
     if (!node) return '';
     if (typeof node === 'string') return node;
-    if (typeof node === 'number' || typeof node === 'boolean') return String(node);
+    // `bigint` joined ReactNode in the React 18.3 types. Grouped with the other
+    // primitives rather than special-cased: they all stringify the same way,
+    // and leaving it out made the `'children' in node` narrowing below fail,
+    // since `in` needs an object.
+    if (typeof node === 'number' || typeof node === 'boolean' || typeof node === 'bigint') {
+        return String(node);
+    }
 
     if (Array.isArray(node)) return node.map(getTextContent).join('');
 

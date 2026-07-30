@@ -40,8 +40,14 @@ export function tokenize(query: string): string[] {
     return tokens;
 }
 
-const boundaryRe0 = /^|$|\b|(?=[\s\p{P}\p{Z}_+.])|(?=\p{Lu}\p{Ll})/y;
-const boundaryRe1 = /[\s\p{P}\p{Z}_+.]|\p{L}\P{L}|\P{L}\p{L}|\d\D|\D\d|[A-Z][A-Z][a-z]/y;
+// The `u` flag is load-bearing, not decoration. Without it `\p{...}` is not a
+// Unicode property escape at all — `\p` degrades to a literal `p`, so these
+// classes were matching the characters p, P, {, }, Z and missing every actual
+// punctuation mark outside the ASCII set. Searching for a term containing "p"
+// split it on that letter. The old `es6` tsconfig target hid this, because the
+// checker only reports property escapes without `u` from ES2018 on.
+const boundaryRe0 = /^|$|\b|(?=[\s\p{P}\p{Z}_+.])|(?=\p{Lu}\p{Ll})/uy;
+const boundaryRe1 = /[\s\p{P}\p{Z}_+.]|\p{L}\P{L}|\P{L}\p{L}|\d\D|\D\d|[A-Z][A-Z][a-z]/uy;
 export function isBoundary(text: string, index: number): boolean {
     boundaryRe0.lastIndex = index;
     if (boundaryRe0.test(text)) return true;
