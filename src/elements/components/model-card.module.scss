@@ -7,7 +7,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 352px;
+
+    // Two rows of tags rather than one — a quarter of models carry four or more,
+    // and a single row was dropping them with nothing to say so.
+    height: 376px;
     box-sizing: border-box;
     border-radius: var(--radius-card);
     border: 1px solid var(--line-color);
@@ -99,12 +102,20 @@
     }
 
     .tagRow {
+        // One tag pill: 0.75rem text on a 1rem line box, plus 0.25rem padding
+        // top and bottom. The mobile bump comes from the tag's own rule.
+        --tag-line: 1.5rem;
+
         display: flex;
         flex-flow: row wrap;
         gap: 0.25rem;
         margin-top: auto;
-        max-height: 1.75rem;
+        max-height: calc(var(--tag-line) * 2 + 0.25rem);
         overflow: hidden;
+
+        @media screen and (max-width: 1023px) {
+            --tag-line: 1.75rem;
+        }
 
         // The clamp above keeps tags to a single row, but in edit mode the tag
         // popover is absolutely positioned *inside* this row — so it was being

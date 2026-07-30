@@ -12,6 +12,7 @@ import { joinList } from '../../lib/react-util';
 import { Collection, CollectionId, ImageSize, Model, ModelId, PairedThumbnail } from '../../lib/schema';
 import { getTextDescription } from '../../lib/text-description';
 import { asArray, assertNever, joinClasses } from '../../lib/util';
+import { ClampedTags } from './clamped-tags';
 import { EditableTags } from './editable-tags';
 import { Link } from './link';
 import style from './model-card.module.scss';
@@ -187,14 +188,23 @@ const ModelCardContent = memo(({ id, model }: ModelCardProps) => {
                 {/* Description */}
                 <div className="mt-1 mb-2 text-sm leading-snug text-ink-muted line-clamp-2">{description}</div>
 
-                {/* Tags */}
-                <div className={joinClasses(style.tagRow, 'text-xs')}>
-                    <EditableTags
-                        readonly={!editMode}
+                {/* Tags. Edit mode keeps the full editor — its popover lists
+                    every tag with its selected state, so the clamp below never
+                    puts a tag out of reach. */}
+                {editMode ? (
+                    <div className={joinClasses(style.tagRow, 'text-xs')}>
+                        <EditableTags
+                            readonly={false}
+                            tags={model.tags}
+                            onChange={(tags) => updateModelProperty('tags', tags)}
+                        />
+                    </div>
+                ) : (
+                    <ClampedTags
+                        className={joinClasses(style.tagRow, 'text-xs')}
                         tags={model.tags}
-                        onChange={(tags) => updateModelProperty('tags', tags)}
                     />
-                </div>
+                )}
             </div>
         </div>
     );
