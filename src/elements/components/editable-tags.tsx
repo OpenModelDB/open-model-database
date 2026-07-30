@@ -84,9 +84,12 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
             className="relative inline-block text-left"
         >
             {/* Matches the tag pills it sits among, but in theme tokens rather
-                than the hand-paired greys they still use. */}
+                than the hand-paired greys they still use. No border: the pills
+                have none, and `box-sizing` is content-box here (Preflight is
+                off), so one makes this button 2px taller than its neighbours
+                and pushes the row past the card's two-row cap. */}
             <Popover.Button
-                className={`${style.editButton} border border-solid border-line bg-surface-sunken text-xs text-ink hover:bg-surface-hover`}
+                className={`${style.editButton} bg-surface-sunken text-xs text-ink hover:bg-surface-hover`}
                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
                 onFocus={(e: React.FocusEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
             >

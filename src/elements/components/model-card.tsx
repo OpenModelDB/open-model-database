@@ -192,7 +192,7 @@ const ModelCardContent = memo(({ id, model }: ModelCardProps) => {
                     every tag with its selected state, so the clamp below never
                     puts a tag out of reach. */}
                 {editMode ? (
-                    <div className={joinClasses(style.tagRow, 'text-xs')}>
+                    <div className={joinClasses(style.tagRow, style.tagRowOpen, 'text-xs')}>
                         <EditableTags
                             readonly={false}
                             tags={model.tags}
