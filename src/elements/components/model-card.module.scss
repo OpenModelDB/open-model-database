@@ -75,11 +75,13 @@
         pointer-events: none;
     }
 
-    // Every card gets the same plate height so names, authors and tags land on
-    // the same baseline across a row, whether the thumbnail is paired or not.
+    // The image is what absorbs slack, as it was before the redesign. The grid
+    // stretches every card in a row to the tallest of that row; whatever the
+    // details block does not need goes into the thumbnail rather than sitting
+    // under the tags as dead space. 176px is the floor, not the height.
     .thumbnail {
-        height: 176px;
-        flex: 0 0 176px;
+        flex: 1 1 176px;
+        min-height: 176px;
         width: 100%;
         background-size: cover;
         background-position: center;
@@ -95,7 +97,10 @@
     .details {
         display: flex;
         min-height: 0;
-        flex: 1 1 auto;
+
+        // Takes exactly what its content needs. Growing this is what put the
+        // leftover space inside the card instead of in the image.
+        flex: 0 0 auto;
         flex-direction: column;
         gap: 0.125rem;
         padding: 0.75rem 0.875rem 0.875rem;
