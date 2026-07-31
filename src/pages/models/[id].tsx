@@ -450,15 +450,6 @@ export default function Page({
                 </Head>
             )}
             <PageContainer searchBar>
-                <div className="mb-3">
-                    <Link
-                        className="inline-flex items-center gap-1 text-sm font-medium text-ink-muted hover:text-ink"
-                        href="/"
-                    >
-                        <span aria-hidden>←</span> All models
-                    </Link>
-                </div>
-
                 {/* Full-width preview at top (YouTube-style) */}
                 <div className="mb-6 w-full">
                     <ImageCarousel
