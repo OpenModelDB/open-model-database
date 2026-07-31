@@ -56,9 +56,10 @@ export type TagSelectorStyle = 'simple' | 'advanced';
 export interface TagSelectorProps {
     selection: TagSelection;
     onChange: (selection: TagSelection, style: TagSelectorStyle) => void;
+    context?: 'models' | 'datasets';
 }
 
-export function TagSelector({ selection, onChange }: TagSelectorProps) {
+export function TagSelector({ selection, onChange, context = 'models' }: TagSelectorProps) {
     const [simple, setSimple] = useState(true);
     const { editMode } = useWebApi();
 
@@ -66,22 +67,28 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
 
     useEffect(() => {
         if (simple) {
-            const reduced = reduceToSimple(tagCategoryData.values(), selection);
+            const filteredCategories =
+                context === 'datasets'
+                    ? [...tagCategoryData.entries()].filter(([id]) => id === 'dataset').map(([, c]) => c)
+                    : [...tagCategoryData.entries()].filter(([id]) => id !== 'dataset').map(([, c]) => c);
+            const reduced = reduceToSimple(filteredCategories, selection);
             if (reduced !== selection) {
                 setSimple(false);
             }
         }
-    }, [simple, tagData, tagCategoryData, selection]);
+    }, [simple, tagData, tagCategoryData, selection, context]);
 
     return (
         <div>
             {simple ? (
                 <SimpleTagSelector
+                    context={context}
                     selection={selection}
                     onChange={onChange}
                 />
             ) : (
                 <AdvancedTagSelector
+                    context={context}
                     selection={selection}
                     onChange={onChange}
                 />
@@ -92,7 +99,15 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
                     onClick={() => {
                         setSimple(!simple);
                         if (!simple) {
-                            const reduced = reduceToSimple(tagCategoryData.values(), selection);
+                            const filteredCategories =
+                                context === 'datasets'
+                                    ? [...tagCategoryData.entries()]
+                                          .filter(([id]) => id === 'dataset')
+                                          .map(([, c]) => c)
+                                    : [...tagCategoryData.entries()]
+                                          .filter(([id]) => id !== 'dataset')
+                                          .map(([, c]) => c);
+                            const reduced = reduceToSimple(filteredCategories, selection);
                             if (reduced !== selection) onChange(reduced, 'simple');
                         }
                     }}
@@ -128,13 +143,20 @@ export function TagSelector({ selection, onChange }: TagSelectorProps) {
     );
 }
 
-function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
+function AdvancedTagSelector({ selection, onChange, context = 'models' }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
     const { editMode } = useWebApi();
 
+    const filteredCategoryOrder = useMemo(() => {
+        if (context === 'datasets') {
+            return categoryOrder.filter(([id]) => id === 'dataset');
+        }
+        return categoryOrder.filter(([id]) => id !== 'dataset');
+    }, [categoryOrder, context]);
+
     return (
         <div className={`${style.tagSelector} ${style.advanced}`}>
-            {categoryOrder.map(([categoryId, category]) => {
+            {filteredCategoryOrder.map(([categoryId, category]) => {
                 if (category.tags.length === 0 || (category.editOnly && !editMode))
                     return <React.Fragment key={categoryId} />;
 
@@ -166,11 +188,18 @@ function AdvancedTagSelector({ selection, onChange }: TagSelectorProps) {
     );
 }
 
-function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
+function SimpleTagSelector({ selection, onChange, context = 'models' }: TagSelectorProps) {
     const { tagData, categoryOrder } = useTags();
 
+    const filteredCategoryOrder = useMemo(() => {
+        if (context === 'datasets') {
+            return categoryOrder.filter(([id]) => id === 'dataset');
+        }
+        return categoryOrder.filter(([id]) => id !== 'dataset');
+    }, [categoryOrder, context]);
+
     const tags = useMemo(() => {
-        return categoryOrder
+        return filteredCategoryOrder
             .map(([, category]) => category)
             .filter((category) => category.simple)
             .flatMap(({ tags }) => {
@@ -183,7 +212,7 @@ function SimpleTagSelector({ selection, onChange }: TagSelectorProps) {
                     })
                     .filter(isNonNull);
             });
-    }, [categoryOrder, tagData]);
+    }, [filteredCategoryOrder, tagData]);
 
     const selected: TagId | undefined = useMemo(() => {
         const required = tags.filter(([tagId]) => selection.get(tagId) === SelectionState.Required);

@@ -21,6 +21,12 @@ const KNOWN_LICENSES_: Record<string, LicenseProperties> = {
         conditions: ['include-copyright', 'state-changes'],
         limitations: ['liability', 'trademark-use', 'warranty'],
     },
+    'Academic-Research-Only': {
+        name: 'Academic Research Purpose Only',
+        permissions: ['private-use', 'modifications'],
+        conditions: ['include-copyright'],
+        limitations: ['liability', 'warranty'],
+    },
     'BSD-3-Clause': {
         name: 'BSD 3-Clause "New" or "Revised" License',
         permissions: ['commercial-use', 'distribution', 'modifications', 'private-use'],

@@ -6,6 +6,8 @@ import {
     ArchId,
     Collection,
     CollectionId,
+    Dataset,
+    DatasetId,
     Model,
     ModelId,
     Tag,
@@ -106,13 +108,14 @@ async function createMapCollection<Id, Value>(path: string): Promise<CollectionA
 
 const getDbAPI = async (): Promise<DBApi> => {
     if (IS_DEPLOYED) {
-        const [models, users, tags, tagCategories, architectures, collections] = await Promise.all([
+        const [models, users, tags, tagCategories, architectures, collections, datasets] = await Promise.all([
             createMapCollection<ModelId, Model>('/api/v1/models.json'),
             createMapCollection<UserId, User>('/api/v1/users.json'),
             createMapCollection<TagId, Tag>('/api/v1/tags.json'),
             createMapCollection<TagCategoryId, TagCategory>('/api/v1/tagCategories.json'),
             createMapCollection<ArchId, Arch>('/api/v1/architectures.json'),
             createMapCollection<CollectionId, Collection>('/api/v1/collections.json'),
+            createMapCollection<DatasetId, Dataset>('/api/v1/datasets.json'),
         ]);
 
         return {
@@ -122,6 +125,7 @@ const getDbAPI = async (): Promise<DBApi> => {
             tagCategories,
             architectures,
             collections,
+            datasets,
         };
     }
     return {
@@ -131,6 +135,7 @@ const getDbAPI = async (): Promise<DBApi> => {
         tagCategories: createWebCollection('/api/tag-categories'),
         architectures: createWebCollection('/api/architectures'),
         collections: createWebCollection('/api/collections'),
+        datasets: createWebCollection('/api/datasets'),
     };
 };
 

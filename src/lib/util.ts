@@ -138,7 +138,7 @@ export function compareTagId(a: TagId, b: TagId): number {
     return compareString(getTagCategory(a) ?? '', getTagCategory(b) ?? '') || compareString(a, b);
 }
 export function isDerivedTag(id: TagId): boolean {
-    return id.includes(':');
+    return id.includes(':') && !id.startsWith('dataset:');
 }
 
 export function getColorMode(numberOfChannels: number) {

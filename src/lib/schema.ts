@@ -14,6 +14,7 @@ export type TagId = string & { readonly TagId: never };
 export type TagCategoryId = string & { readonly TagCategoryId: never };
 export type ArchId = string & { readonly ArchId: never };
 export type CollectionId = string & { readonly CollectionId: never };
+export type DatasetId = string & { readonly DatasetId: never };
 export type MarkDownString = string;
 
 export interface Model extends Partial<ExtraModelProperties> {
@@ -141,4 +142,15 @@ export interface Collection {
     description: MarkDownString;
     models: ModelId[];
     author: UserId | UserId[];
+}
+
+export interface Dataset {
+    name: string;
+    author: UserId | UserId[];
+    license: SPDXLicense | null;
+    tags: TagId[];
+    description: MarkDownString;
+    date: string;
+    url: string;
+    images?: Image[];
 }

@@ -1,0 +1,26 @@
+{
+    "name": "DIV2K dataset: DIVerse 2K",
+    "author": [
+        "radu-timofte",
+        "eirikur-agustsson",
+        "shuhang-gu",
+        "jiqing-wu",
+        "andrey-ignatov",
+        "luc-van-gool"
+    ],
+    "license": "Academic-Research-Only",
+    "tags": [
+        "dataset:realistic"
+    ],
+    "description": "The DIV2K dataset is divided into:\n\ntrain data:\nstarting from 800 high definition high resolution images we obtain corresponding low resolution images and provide both high and low resolution images for 2, 3, and 4 downscaling factors\nvalidation data: 100 high definition high resolution images are used for genereting low resolution corresponding images, the low res are provided from the beginning of the challenge and are meant for the participants to get online feedback from the validation server; the high resolution images will be released when the final phase of the challenge starts.\n\ntest data:\n100 diverse images are used to generate low resolution corresponding images; the participants will receive the low resolution images when the final evaluation phase starts and the results will be announced after the challenge is over and the winners are decided.",
+    "date": "2026-06-15",
+    "url": "https://data.vision.ee.ethz.ch/cvl/DIV2K/",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "900",
+            "LR": "https://i.slow.pics/KWca9Mq7.png",
+            "SR": "https://i.slow.pics/7P7FzpFq.png"
+        }
+    ]
+}

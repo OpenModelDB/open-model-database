@@ -292,6 +292,22 @@
         "name": "RGBA",
         "description": "The model upscales images with transparency."
     },
+    "dataset:anime": {
+        "name": "Anime",
+        "description": "Anime dataset"
+    },
+    "dataset:game-textures": {
+        "name": "Game Textures",
+        "description": "Game textures dataset"
+    },
+    "dataset:manga": {
+        "name": "Manga",
+        "description": "Manga dataset"
+    },
+    "dataset:realistic": {
+        "name": "Realistic",
+        "description": "Realistic dataset"
+    },
     "helper:invalid-channels": {
         "name": "Invalid channels",
         "description": "The number of input or output channels of the model is not valid."
