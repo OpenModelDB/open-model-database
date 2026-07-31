@@ -28,9 +28,9 @@ export function SiteNotice() {
                     className="mt-0.5 shrink-0 text-base"
                 />
                 <p className="m-0">
-                    Many preview images on this site are currently broken. Their original hosts have gone away — the
-                    models themselves are unaffected. Work is underway to recover the images and rehost them somewhere
-                    that will last.
+                    A lot of the preview images are broken right now. The sites that were hosting them went down. The
+                    models themselves are fine. We&apos;re working on tracking the images down and rehosting them
+                    somewhere more reliable.
                 </p>
             </div>
         </div>
