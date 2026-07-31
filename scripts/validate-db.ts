@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileApi } from '../src/lib/server/file-data';
+import { validateDataset } from '../src/lib/validate-dataset';
 import { Report, validateModel } from '../src/lib/validate-model';
 
 const getAllFiles = async (dir: string): Promise<string[]> => {
@@ -23,6 +24,7 @@ const getAllFiles = async (dir: string): Promise<string[]> => {
 
 const getReports = async (): Promise<Report[]> => {
     const modelData = await fileApi.models.getAll();
+    const datasetData = await fileApi.datasets.getAll();
     const architectureData = await fileApi.architectures.getAll();
     const tagData = await fileApi.tags.getAll();
     const userData = await fileApi.users.getAll();
@@ -30,6 +32,9 @@ const getReports = async (): Promise<Report[]> => {
     const errors: Report[] = [];
     for (const [modelId, model] of modelData) {
         errors.push(...validateModel(model, modelId, modelData, architectureData, tagData, userData, fileApi));
+    }
+    for (const [datasetId, dataset] of datasetData) {
+        errors.push(...validateDataset(dataset, datasetId, fileApi));
     }
 
     const jsonFiles = (await getAllFiles('data/')).filter((file) => file.endsWith('.json'));

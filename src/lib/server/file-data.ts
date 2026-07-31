@@ -1,5 +1,5 @@
 import { FSWatcher } from 'chokidar';
-import { readFile, readdir, rename, unlink, writeFile } from 'fs/promises';
+import { mkdir, readFile, readdir, rename, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { CollectionApi, DBApi, SynchronizedCollection, notifyOnWrite } from '../data-api';
 import { RWLock } from '../lock';
@@ -8,6 +8,8 @@ import {
     ArchId,
     Collection,
     CollectionId,
+    Dataset,
+    DatasetId,
     Model,
     ModelId,
     Tag,
@@ -22,6 +24,7 @@ import { JsonFile, fileExists } from './fs-util';
 
 export const DATA_DIR = './data/';
 const MODEL_DIR = join(DATA_DIR, 'models');
+const DATASET_DIR = join(DATA_DIR, 'datasets');
 const USERS_JSON = join(DATA_DIR, 'users.json');
 const TAGS_JSON = join(DATA_DIR, 'tags.json');
 const TAG_CATEGORIES_JSON = join(DATA_DIR, 'tag-categories.json');
@@ -219,6 +222,101 @@ const modelApi: CollectionApi<ModelId, Model> = {
     },
 };
 
+function getDatasetDataPath(id: DatasetId): string {
+    return join(DATASET_DIR, `${id}.json`);
+}
+
+async function getAllDatasetIds(): Promise<DatasetId[]> {
+    if (!(await fileExists(DATASET_DIR))) {
+        await mkdir(DATASET_DIR, { recursive: true });
+    }
+    const files = await readdir(DATASET_DIR);
+    const ids = files.filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -'.json'.length) as DatasetId);
+    return ids;
+}
+
+async function getSingleDatasetData(id: DatasetId): Promise<Dataset> {
+    const content = await readFile(getDatasetDataPath(id), 'utf-8');
+    return JSON.parse(content) as Dataset;
+}
+
+function getDatasetData(ids: readonly DatasetId[]): Promise<Dataset[]> {
+    return Promise.all(ids.map(getSingleDatasetData));
+}
+
+const datasetKeyOrder = [
+    'name',
+    'author',
+    'license',
+    'tags',
+    'description',
+    'date',
+    'url',
+    'images',
+] as const satisfies readonly (keyof Dataset)[];
+
+async function writeDatasetData(id: DatasetId, dataset: Readonly<Dataset>): Promise<void> {
+    sortObjectKeys(dataset, datasetKeyOrder);
+    for (const i of dataset.images || []) {
+        sortObjectKeys(i, ['type', 'caption', 'LR', 'SR', 'url', 'thumbnail']);
+    }
+    dataset.tags.sort(compareTagId);
+    const file = getDatasetDataPath(id);
+    await writeFile(file, JSON.stringify(dataset, undefined, 4), 'utf-8');
+}
+
+const datasetApi: CollectionApi<DatasetId, Dataset> = {
+    get: getSingleDatasetData,
+    getIds: getAllDatasetIds,
+    async getAll(): Promise<Map<DatasetId, Dataset>> {
+        const ids = await getAllDatasetIds();
+        const data = await getDatasetData(ids);
+        return new Map(ids.map((id, i) => [id, data[i]]));
+    },
+
+    async update(updates: Iterable<readonly [DatasetId, Dataset]>): Promise<void> {
+        if (!(await fileExists(DATASET_DIR))) {
+            await mkdir(DATASET_DIR, { recursive: true });
+        }
+        await Promise.all(
+            [...new Map(updates)].map(async ([id, value]) => {
+                await writeDatasetData(id, value);
+                console.warn(`Updated dataset data of ${id}`);
+            })
+        );
+    },
+    async delete(ids: Iterable<DatasetId>): Promise<void> {
+        await Promise.all(
+            [...ids].map(async (id) => {
+                const file = getDatasetDataPath(id);
+                if (await fileExists(file)) {
+                    await unlink(file);
+                    console.warn(`Delete dataset data of ${id}`);
+                } else {
+                    console.warn(`Dataset data of ${id} cannot be deleted because it doesn't exist`);
+                }
+            })
+        );
+    },
+    async changeId(id: DatasetId, newId: DatasetId): Promise<void> {
+        if (id === newId) return;
+
+        const datasetIds = await getAllDatasetIds();
+        if (!datasetIds.includes(id)) {
+            throw new Error(`Cannot change dataset id ${id} because it does not exist`);
+        }
+        if (datasetIds.includes(newId)) {
+            throw new Error(`Cannot change dataset id ${id} to ${newId} because ${newId} already exists`);
+        }
+
+        const from = getDatasetDataPath(id);
+        const to = getDatasetDataPath(newId);
+        const temp = `${to}.tmp`;
+        await rename(from, temp);
+        await rename(temp, to);
+    },
+};
+
 function ofJsonFile<Id extends string, Value>(
     file: JsonFile<Record<Id, Value>>,
     {
@@ -378,6 +476,7 @@ export const fileApi: DBApi = {
     tagCategories: wrapCollection(tagCategoryApi),
     architectures: wrapCollection(archApi),
     collections: wrapCollection(collectionApi),
+    datasets: wrapCollection(datasetApi),
 };
 
 export function getFileApiMutationCounter(): Promise<number> {
@@ -389,6 +488,7 @@ export function getFileApiMutationCounterUnsynchronized(): number {
 
 const watcher = new FSWatcher({ persistent: false, ignorePermissionErrors: true, usePolling: true });
 watcher.add(MODEL_DIR);
+watcher.add(DATASET_DIR);
 watcher.on('add', addMutation);
 watcher.on('unlink', addMutation);
 watcher.on('change', addMutation);

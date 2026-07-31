@@ -162,5 +162,17 @@
             "helper:invalid-scale",
             "helper:invalid-channels"
         ]
+    },
+    "dataset": {
+        "name": "Dataset",
+        "description": "Tags specific to datasets",
+        "order": 9,
+        "simple": true,
+        "tags": [
+            "dataset:realistic",
+            "dataset:anime",
+            "dataset:manga",
+            "dataset:game-textures"
+        ]
     }
 }

@@ -1,6 +1,6 @@
 import { Popover, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 import { useTags } from '../../lib/hooks/use-tags';
 import { addImpliedTags, removeImplyingTags } from '../../lib/implied-tags';
@@ -12,13 +12,20 @@ import style from './editable-tags.module.scss';
 export interface SmallTagProps {
     tagId: TagId;
     name: string;
+    context?: 'models' | 'datasets';
 }
-export function SmallTag({ tagId, name }: SmallTagProps) {
+export function SmallTag({ tagId, name, context = 'models' }: SmallTagProps) {
     return (
         <Link
             className={`${style.tag} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
-            href={`/?t=${encodeURIComponent(tagId)}`}
-            title={`Show all models with the ${name} tag`}
+            href={
+                context === 'datasets' ? `/datasets?t=${encodeURIComponent(tagId)}` : `/?t=${encodeURIComponent(tagId)}`
+            }
+            title={
+                context === 'datasets'
+                    ? `Show all datasets with the ${name} tag`
+                    : `Show all models with the ${name} tag`
+            }
         >
             {name}
         </Link>
@@ -29,14 +36,16 @@ export interface EditableTagsProps {
     tags: readonly TagId[];
     onChange?: (value: TagId[]) => void;
     readonly?: boolean;
+    context?: 'models' | 'datasets';
 }
-export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
+export function EditableTags({ tags, onChange, readonly, context = 'models' }: EditableTagsProps) {
     const { tagData } = useTags();
 
     return (
         <div className={style.tags}>
             {!readonly && onChange && (
                 <EditTags
+                    context={context}
                     tags={tags}
                     onChange={onChange}
                 />
@@ -45,6 +54,7 @@ export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
                 const name = tagData.get(tagId)?.name ?? `unknown tag:${tagId}`;
                 return (
                     <SmallTag
+                        context={context}
                         key={tagId}
                         name={name}
                         tagId={tagId}
@@ -55,8 +65,23 @@ export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
     );
 }
 
-function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value: TagId[]) => void }) {
+function EditTags({
+    tags,
+    onChange,
+    context = 'models',
+}: {
+    tags: readonly TagId[];
+    onChange: (value: TagId[]) => void;
+    context?: 'models' | 'datasets';
+}) {
     const { tagData, categoryOrder } = useTags();
+
+    const filteredCategoryOrder = useMemo(() => {
+        if (context === 'datasets') {
+            return categoryOrder.filter(([id]) => id === 'dataset');
+        }
+        return categoryOrder.filter(([id]) => id !== 'dataset');
+    }, [categoryOrder, context]);
 
     const [currentTags, setCurrentTags] = useState(tags);
     useEffect(() => {
@@ -106,7 +131,7 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
             >
                 <Popover.Panel className={joinClasses(EDIT_PANEL, position === 'left' ? 'left-0' : 'right-0')}>
                     <div className={style.editContainer}>
-                        {categoryOrder.map(([categoryId, category]) => {
+                        {filteredCategoryOrder.map(([categoryId, category]) => {
                             const manual = category.tags.filter((tagId) => !isDerivedTag(tagId));
                             if (manual.length === 0) {
                                 return <Fragment key={categoryId} />;

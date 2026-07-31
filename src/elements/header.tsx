@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { BsQuestionLg } from 'react-icons/bs';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
-import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import { MdAdd, MdDarkMode, MdGridView, MdLightMode, MdStorage } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import Logo from '../../public/logo.svg';
 import { toggleColorScheme } from '../lib/color-scheme';
@@ -49,6 +49,12 @@ export function Header({ searchBar }: HeaderProps) {
                         </div>
                     </Link>
 
+                    {/* Datasets arrived on main while this branch was in
+                        flight. Its links keep their destinations but take this
+                        branch's chrome: the `<nav>` landmark, the spacing from
+                        `style.nav` rather than a repeated `ml-8`, and the
+                        semantic tokens instead of hand-paired `accent`/`fade`
+                        light-dark pairs. */}
                     <nav className={joinClasses(style.nav, style.hideMobile)}>
                         <Link
                             className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
@@ -56,13 +62,33 @@ export function Header({ searchBar }: HeaderProps) {
                         >
                             How To Upscale
                         </Link>
+                        <Link
+                            className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                            href="/"
+                        >
+                            Models
+                        </Link>
+                        <Link
+                            className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                            href="/datasets"
+                        >
+                            Datasets
+                        </Link>
                         {editMode && (
-                            <Link
-                                className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
-                                href="/add-model"
-                            >
-                                Add Model
-                            </Link>
+                            <>
+                                <Link
+                                    className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                                    href="/add-model"
+                                >
+                                    Add Model
+                                </Link>
+                                <Link
+                                    className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                                    href="/add-dataset"
+                                >
+                                    Add Dataset
+                                </Link>
+                            </>
                         )}
                     </nav>
 
@@ -147,6 +173,7 @@ function DrawerLabel({ children }: React.PropsWithChildren<unknown>) {
 
 function HeaderDrawer() {
     const [showDrawer, setShowDrawer] = useState(false);
+    const { editMode } = useEditModeToggle();
 
     return (
         <>
@@ -215,6 +242,49 @@ function HeaderDrawer() {
                                     How To Upscale
                                 </Link>
                             </div>
+
+                            {/* Browse and Edit come from main's datasets work.
+                                Its drawer used bare text as section headings and
+                                a repeated `bg-fade-300 dark:bg-fade-800` pill;
+                                these use the same DrawerLabel and DRAWER_ITEM as
+                                the sections around them. */}
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Browse</DrawerLabel>
+                                <Link
+                                    className={DRAWER_ITEM}
+                                    href="/"
+                                >
+                                    <MdGridView />
+                                    Models
+                                </Link>
+                                <Link
+                                    className={DRAWER_ITEM}
+                                    href="/datasets"
+                                >
+                                    <MdStorage />
+                                    Datasets
+                                </Link>
+                            </div>
+
+                            {editMode && (
+                                <div className="flex flex-col gap-2">
+                                    <DrawerLabel>Edit</DrawerLabel>
+                                    <Link
+                                        className={DRAWER_ITEM}
+                                        href="/add-model"
+                                    >
+                                        <MdAdd />
+                                        Add Model
+                                    </Link>
+                                    <Link
+                                        className={DRAWER_ITEM}
+                                        href="/add-dataset"
+                                    >
+                                        <MdAdd />
+                                        Add Dataset
+                                    </Link>
+                                </div>
+                            )}
 
                             <div className="flex flex-col gap-2">
                                 <DrawerLabel>Links</DrawerLabel>
