@@ -163,7 +163,7 @@ function AdvancedTagSelector({ selection, onChange, context = 'models' }: TagSel
                 return (
                     <React.Fragment key={categoryId}>
                         <h4>{category.name}</h4>
-                        <div>
+                        <div className={style.advancedTags}>
                             {category.tags.map((tagId) => {
                                 const tag = tagData.get(tagId);
                                 const state = getState(tagId, selection);

@@ -63,6 +63,16 @@
     gap: 0.375rem;
 }
 
+// The advanced selector's equivalent of `.groupTags`, and deliberately the same
+// gap. Without it the buttons are inline-flex boxes in a plain block, and JSX
+// drops the whitespace between them, so a whole category renders as one
+// unbroken strip of touching pills.
+.advancedTags {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.375rem;
+}
+
 .tagButton {
     font: inherit;
     cursor: pointer;
