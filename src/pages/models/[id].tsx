@@ -51,7 +51,10 @@ import {
 } from '../../lib/util';
 import { validateModel } from '../../lib/validate-model';
 
-const MAX_SIMILAR_MODELS = 12 * 2;
+// One full row. The card grid is `auto-fill minmax(280px, 1fr)`, which lands on
+// four columns at full page width, so four suggestions fill the strip across the
+// bottom without leaving a ragged second row.
+const MAX_SIMILAR_MODELS = 4;
 
 interface Params extends ParsedUrlQuery {
     id: ModelId;
@@ -407,6 +410,8 @@ export default function Page({
         return [...collectionData].filter(([, collection]) => collection.models.includes(modelId)).map(([id]) => id);
     }, [modelId, collectionData]);
 
+    const hasRelated = collections.length > 0 || similar.length > 0;
+
     const router = useRouter();
 
     const runModelValidation = useCallback(async () => {
@@ -646,44 +651,14 @@ export default function Page({
 
                             <RelatedGuides />
                         </div>
-
-                        {/* Related models live in this column so it always has
-                            body: most descriptions are short, and the sidebar is
-                            long, which otherwise left a tall void beside it. */}
-                        {collections.length > 0 && (
-                            <div className="mt-6">
-                                <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
-                                    Collections that include this model
-                                </h2>
-                                <ModelCardGrid
-                                    collectionData={collectionData}
-                                    modelData={modelData}
-                                    models={collections}
-                                />
-                            </div>
-                        )}
-
-                        {similar.length > 0 && (
-                            <div className="mt-6">
-                                <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">Similar models</h2>
-                                {editMode && similarWithScores.length > 0 && (
-                                    <details>
-                                        <summary>Show scores</summary>{' '}
-                                        <pre className="overflow-auto">
-                                            {similarWithScores
-                                                .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
-                                                .join('\n')}
-                                        </pre>
-                                    </details>
-                                )}
-                                <ModelCardGrid
-                                    modelData={modelData}
-                                    models={similar}
-                                />
-                            </div>
-                        )}
                     </div>
-                    {/* Right column: Sidebar */}
+
+                    {/* Sidebar. Deliberately the second grid child rather than
+                        the last: below `lg` the grid collapses to one column and
+                        renders in DOM order, so anything after this would push
+                        downloads and specs below it. The related-model grids
+                        used to live in the column above, which put two full
+                        card grids ahead of the model's own details on a phone. */}
                     <div className="col-span-1 flex w-full flex-col gap-5">
                         <DownloadsBlock
                             editMode={editMode}
@@ -739,6 +714,49 @@ export default function Page({
                             />
                         </div>
                     </div>
+
+                    {/* A full-width strip under both columns rather than more
+                        body for the description column, so the card grids get
+                        the whole page width and read as a footer to the page
+                        instead of a continuation of the article. */}
+                    {hasRelated && (
+                        <div className="col-span-1 flex flex-col gap-6 lg:col-span-3">
+                            {collections.length > 0 && (
+                                <div>
+                                    <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
+                                        Collections that include this model
+                                    </h2>
+                                    <ModelCardGrid
+                                        collectionData={collectionData}
+                                        modelData={modelData}
+                                        models={collections}
+                                    />
+                                </div>
+                            )}
+
+                            {similar.length > 0 && (
+                                <div>
+                                    <h2 className="mt-0 mb-4 text-xl font-bold tracking-tight text-ink">
+                                        Similar models
+                                    </h2>
+                                    {editMode && similarWithScores.length > 0 && (
+                                        <details>
+                                            <summary>Show scores</summary>{' '}
+                                            <pre className="overflow-auto">
+                                                {similarWithScores
+                                                    .map(({ id, score }) => `${score.toFixed(2).padEnd(6)} ${id}`)
+                                                    .join('\n')}
+                                            </pre>
+                                        </details>
+                                    )}
+                                    <ModelCardGrid
+                                        modelData={modelData}
+                                        models={similar}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    )}
                 </div>
                 {editMode && (
                     <div>
