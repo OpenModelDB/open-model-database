@@ -9,6 +9,7 @@ import { useWebApi } from '../../lib/hooks/use-web-api';
 import { joinList } from '../../lib/react-util';
 import { Dataset, DatasetId, ImageSize, PairedImage } from '../../lib/schema';
 import { asArray, assertNever, joinClasses } from '../../lib/util';
+import { ClampedTags } from './clamped-tags';
 import { EditableTags } from './editable-tags';
 import { Link } from './link';
 import style from './model-card.module.scss';
@@ -87,7 +88,9 @@ const SideBySideImage = ({ datasetName, image }: { datasetName: string; image: P
 const getDatasetCardImageComponent = (dataset: Dataset | undefined) => {
     const image = dataset?.images?.[0];
     if (!dataset || !image) {
-        return <div className="margin-auto z-0 w-full py-20 text-center text-gray-500">No Image</div>;
+        return (
+            <div className="z-0 flex h-full w-full items-center justify-center text-sm text-ink-subtle">No preview</div>
+        );
     }
     switch (image.type) {
         case 'paired': {
@@ -119,31 +122,29 @@ const DatasetCardContent = memo(({ id, dataset }: DatasetCardProps) => {
     const { webApi, editMode } = useWebApi();
     const { updateDatasetProperty } = useUpdateDataset(webApi, id);
 
-    const isPaired = dataset.images?.[0]?.type === 'paired' && !editMode;
-
     return (
         <div className={style.inner}>
             <Link
-                className={joinClasses(style.thumbnail, isPaired && style.paired, 'bg-fade-300 dark:bg-fade-700 ')}
+                className={joinClasses(style.thumbnail, 'bg-surface-sunken')}
                 href={`/datasets/${id}`}
                 tabIndex={-1}
             >
                 {getDatasetCardImageComponent(dataset)}
             </Link>
 
-            <div className={joinClasses(style.details, isPaired && style.paired)}>
+            <div className={style.details}>
                 <Link
-                    className={`${style.name} block text-xl font-bold text-gray-800 dark:text-gray-100`}
+                    className={`${style.name} block text-base font-semibold leading-snug text-ink line-clamp-2`}
                     href={`/datasets/${id}`}
                 >
                     {dataset.name}
                 </Link>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
+                <div className="truncate text-sm text-ink-muted">
                     {'by '}
                     {joinList(
                         asArray(dataset.author).map((userId) => (
                             <Link
-                                className="font-bold text-accent-600 dark:text-accent-400"
+                                className="font-medium text-accent-text hover:underline"
                                 href={`/users/${userId}`}
                                 key={userId}
                             >
@@ -154,18 +155,24 @@ const DatasetCardContent = memo(({ id, dataset }: DatasetCardProps) => {
                 </div>
 
                 {/* Description */}
-                <div className="mb-2 mt-1 text-sm text-gray-600 line-clamp-3 dark:text-gray-400">
-                    {dataset.description}
-                </div>
+                <div className="mt-1 mb-2 text-sm leading-snug text-ink-muted line-clamp-2">{dataset.description}</div>
 
-                {/* Tags */}
-                <div className="flex flex-row flex-wrap gap-1 text-xs">
-                    <EditableTags
-                        readonly={!editMode}
+                {/* Tags. Same split as the model card: edit mode keeps the full
+                    editor, read mode clamps to two rows with a `+N` chip. */}
+                {editMode ? (
+                    <div className={joinClasses(style.tagRow, style.tagRowOpen, 'text-xs')}>
+                        <EditableTags
+                            readonly={false}
+                            tags={dataset.tags}
+                            onChange={(tags) => updateDatasetProperty('tags', tags)}
+                        />
+                    </div>
+                ) : (
+                    <ClampedTags
+                        className={joinClasses(style.tagRow, 'text-xs')}
                         tags={dataset.tags}
-                        onChange={(tags) => updateDatasetProperty('tags', tags)}
                     />
-                </div>
+                )}
             </div>
         </div>
     );
@@ -174,14 +181,11 @@ const DatasetCardContent = memo(({ id, dataset }: DatasetCardProps) => {
 export const DatasetCard = memo(({ id, dataset, lazy = false }: DatasetCardProps) => {
     const { editMode } = useWebApi();
 
+    // No border/background/shadow utilities: `.modelCard` carries all three
+    // from the design tokens now, and being a CSS module it wins over them
+    // anyway — they were dead weight fighting the card they sat on.
     const inner = (
-        <div
-            className={joinClasses(
-                style.modelCard,
-                !editMode && style.overflowHidden,
-                'border-gray-300 bg-white shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-fade-900'
-            )}
-        >
+        <div className={joinClasses(style.modelCard, !editMode && style.overflowHidden)}>
             <DatasetCardContent
                 dataset={dataset}
                 id={id}
@@ -192,13 +196,7 @@ export const DatasetCard = memo(({ id, dataset, lazy = false }: DatasetCardProps
     if (!lazy) return inner;
 
     return (
-        <LazyLoadComponent
-            placeholder={
-                <div
-                    className={`${style.modelCard} border-gray-300 bg-white shadow-lg hover:shadow-2xl dark:border-gray-700 dark:bg-fade-900`}
-                />
-            }
-        >
+        <LazyLoadComponent placeholder={<div className={joinClasses(style.modelCard, style.placeholder)} />}>
             {inner}
         </LazyLoadComponent>
     );

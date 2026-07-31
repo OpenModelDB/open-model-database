@@ -60,10 +60,7 @@ export function Footer() {
             <div className={style.inner}>
                 <div className={style.columns}>
                     <div className={style.about}>
-                        <p className={style.blurb}>
-                            A community-driven database of AI upscaling models. Everything here is maintained in the
-                            open — corrections and new models are welcome.
-                        </p>
+                        <p className={style.blurb}>A community-driven database of AI upscaling models.</p>
                         <div className={style.social}>
                             <Link
                                 external

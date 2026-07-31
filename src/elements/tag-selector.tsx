@@ -255,7 +255,7 @@ function SimpleTagSelector({ selection, onChange, context = 'models' }: TagSelec
                 <div className={style.groupTags}>
                     <TagButton
                         noIcon
-                        name="All models"
+                        name={context === 'datasets' ? 'All datasets' : 'All models'}
                         state={selected === undefined ? 'required' : 'any'}
                         onClick={() => {
                             if (selected !== undefined) {
