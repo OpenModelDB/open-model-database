@@ -1,8 +1,17 @@
+import { isFetchableHost } from './fetchable-hosts';
 import { Image, PairedImage, StandaloneImage } from './schema';
 
 export type GetDocument = (url: string) => Promise<Document>;
 
 export async function fetchHtml(url: string): Promise<string> {
+    // `/api/fetch` enforces this too, and has to — it is reachable without going
+    // through this function. Checking here as well means an unsupported host
+    // fails the same way in dev and on the deployed site, rather than getting a
+    // 400 from our own API in one and a cors-anywhere error in the other.
+    if (!isFetchableHost(new URL(url).hostname)) {
+        throw new Error(`Cannot fetch from this host: ${url}`);
+    }
+
     if (location.hostname === 'localhost') {
         // we should have access to our API routes
         const res = await fetch('/api/fetch', {
