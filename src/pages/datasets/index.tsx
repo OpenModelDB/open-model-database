@@ -15,6 +15,7 @@ import { SearchResult } from '../../lib/search/search-index';
 import { tokenize } from '../../lib/search/token';
 import { fileApi } from '../../lib/server/file-data';
 import { TagSelection, getTagCondition } from '../../lib/tag-condition';
+import { EMPTY_MAP } from '../../lib/util';
 
 interface Props {
     datasetData: Record<DatasetId, Dataset>;
@@ -63,20 +64,26 @@ export default function Page({ datasetData: staticDatasetData }: Props) {
                 scrollToTop
                 wrapper
             >
-                <h1 className="mb-4 text-center text-4xl font-extrabold md:mb-6 md:text-5xl lg:text-6xl">
-                    <span className="font-bold text-gray-800 dark:text-gray-100">Training </span>
-                    <span className="bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600 bg-clip-text text-transparent">
-                        Datasets
-                    </span>
-                </h1>
+                {/* Same masthead as the models page: one accent word rather
+                    than a gradient, and theme tokens instead of paired greys. */}
+                <section className="mx-auto max-w-3xl pt-8 pb-2 text-center md:pt-12">
+                    <h1 className="m-0 text-4xl font-extrabold leading-tight tracking-tight text-ink md:text-5xl lg:text-6xl">
+                        Training <span className="text-accent-text">Datasets</span>
+                    </h1>
 
-                <p className="mx-auto mb-8 max-w-screen-md text-center text-gray-600 dark:text-gray-400 md:text-lg">
-                    Explore and search for datasets used to train upscaling and restoration models.
-                </p>
+                    <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-muted md:text-lg">
+                        Explore and search for datasets used to train upscaling and restoration models.
+                    </p>
+                </section>
 
                 {/* Search */}
                 <SearchBar
-                    className="mb-4 w-full"
+                    aria-label="Search datasets"
+                    className="mx-auto mt-7 w-full max-w-3xl"
+                    placeholder={`Search ${datasetData.size.toLocaleString('en-US')} dataset${
+                        datasetData.size === 1 ? '' : 's'
+                    } by name or purpose`}
+                    size="large"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value, 400)}
                     onEnter={(e) => {
@@ -98,7 +105,7 @@ export default function Page({ datasetData: staticDatasetData }: Props) {
                 />
 
                 {/* Tags */}
-                <div className="my-4">
+                <div className="mt-8 mb-10">
                     <TagSelector
                         context="datasets"
                         selection={tagSelection}
@@ -117,9 +124,23 @@ export default function Page({ datasetData: staticDatasetData }: Props) {
                         datasets={selectedDatasets}
                     />
                 ) : (
-                    <div className="mt-10 flex flex-col items-center justify-center p-6">
-                        <div className="text-2xl font-bold text-accent-500 dark:text-gray-100">No datasets found</div>
-                        <div className="text-gray-500 dark:text-gray-400">Try changing your search filters</div>
+                    <div className="flex flex-col items-center justify-center rounded-card border border-solid border-line bg-surface px-6 py-16 text-center">
+                        <p className="m-0 text-lg font-semibold text-ink">No datasets match those filters</p>
+                        <p className="m-0 mt-1 max-w-md text-sm text-ink-muted">
+                            {searchQuery
+                                ? `Nothing matched “${searchQuery}”. Try a broader term, or clear the filters to start over.`
+                                : 'That combination of tags has no datasets. Try removing one, or clear the filters to start over.'}
+                        </p>
+                        <button
+                            className="mt-5 cursor-pointer rounded-control border-0 bg-accent-600 px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 dark:bg-accent-500"
+                            type="button"
+                            onClick={() => {
+                                setSearchQuery('', 0);
+                                setTagSelection(EMPTY_MAP, 0);
+                            }}
+                        >
+                            Clear search and filters
+                        </button>
                     </div>
                 )}
             </PageContainer>

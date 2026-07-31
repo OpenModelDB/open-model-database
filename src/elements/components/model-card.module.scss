@@ -1,36 +1,51 @@
 @use 'sass:color';
 
-@import '../util.module';
-@import '../../styles/theme';
+@use '../util.module' as *;
+@use '../../styles/theme' as *;
 
 .modelCard {
     position: relative;
-    height: 350px;
-    border-radius: 0.5rem;
-    border-width: 1px;
-    border-style: solid;
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+
+    // No fixed height. The grid stretches every card in a row to the tallest of
+    // that row, which is all the alignment this needs — and it lets a row of
+    // short cards be short, instead of every card in the page reserving room
+    // for a two-line title it does not have.
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--line-color);
+    background-color: var(--surface);
+
+    // One elevation language: a hairline border plus one soft shadow, both
+    // moving together on hover. Previously the border and the shadow disagreed.
+    box-shadow: var(--shadow-card);
+    transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
     z-index: 1;
 
-    --inner-radius: calc(0.5rem - 1px);
-
-    @include themed using($t) {
-        box-shadow: t($t, 0 1px 3px rgb(0 0 0 / 5%), 0 1px 3px rgb(0 0 0 / 15%));
-    }
+    --inner-radius: calc(var(--radius-card) - 1px);
 
     &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-3px);
+        border-color: var(--line-strong);
+        box-shadow: var(--shadow-raised);
         z-index: 10;
+    }
 
-        @include themed using($t) {
-            box-shadow: t($t, 0 12px 24px -8px rgb(0 0 0 / 15%), 0 12px 24px -8px rgb(0 0 0 / 40%));
-        }
+    &:focus-within {
+        border-color: var(--accent-text);
     }
 
     &.overflowHidden {
-        --inner-radius: 0;
-
         overflow: hidden;
+    }
+
+    // Lazy-load stand-in: empty, so without a floor it would collapse and the
+    // whole grid below it would jump up as cards resolve. Roughly a typical
+    // card, so the settle is small either way.
+    &.placeholder {
+        min-height: 340px;
     }
 
     // Ensure popovers can escape the card's bounds when open
@@ -45,6 +60,7 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
+        min-height: 0;
     }
 
     .topTags {
@@ -53,14 +69,19 @@
         right: 0;
         margin: 0.5rem;
         display: flex;
-        flex-flow: row wrap;
-        column-gap: 0.5rem;
+        flex-flow: row nowrap;
+        gap: 0.375rem;
         z-index: 1;
         pointer-events: none;
     }
 
+    // The image is what absorbs slack, as it was before the redesign. The grid
+    // stretches every card in a row to the tallest of that row; whatever the
+    // details block does not need goes into the thumbnail rather than sitting
+    // under the tags as dead space. 176px is the floor, not the height.
     .thumbnail {
-        height: 100%;
+        flex: 1 1 176px;
+        min-height: 176px;
         width: 100%;
         background-size: cover;
         background-position: center;
@@ -70,46 +91,78 @@
         position: relative;
         display: flex;
         align-items: center;
-        justify-items: center;
-        vertical-align: middle;
-
-        &.paired {
-            border-radius: var(--inner-radius);
-        }
+        justify-content: center;
     }
 
     .details {
-        padding: 0.75rem;
-        padding-top: 0;
+        display: flex;
+        min-height: 0;
+
+        // Takes exactly what its content needs. Growing this is what put the
+        // leftover space inside the card instead of in the image.
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 0.125rem;
+        padding: 0.75rem 0.875rem 0.875rem;
         overflow: visible;
         position: relative;
         z-index: 10;
-
-        &.paired {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            backdrop-filter: blur(2rem) saturate(2);
-            border-radius: 0 0 var(--inner-radius) var(--inner-radius);
-            overflow: visible;
-
-            @include themed using($t) {
-                background: linear-gradient(transparent, t($t, white, $fade-900))
-                    t($t, color.change(white, $alpha: 0.7), color.change($fade-900, $alpha: 0.8));
-            }
-        }
+        border-top: 1px solid var(--line-color);
 
         a.name {
             word-break: normal;
             overflow-wrap: anywhere;
-            padding-top: 0.5rem;
+        }
+    }
+
+    .tagRow {
+        // One tag pill: 0.75rem text on a 1rem line box, plus 0.25rem padding
+        // top and bottom. The mobile bump comes from the tag's own rule.
+        --tag-line: 1.5rem;
+        --tag-gap: 0.25rem;
+
+        display: flex;
+        flex-flow: row wrap;
+        gap: var(--tag-gap);
+
+        // Height follows the tags: one row stays one row. Two earlier attempts
+        // are worth not repeating — reserving a fixed two-row plate leaves an
+        // empty row under cards that only have one, and `margin-top: auto`
+        // pins the tags to the card's foot, which turns every difference in
+        // content height into a hole between the description and the tags.
+        // The cap is the ceiling only; `+N` covers whatever it cuts.
+        // Two rows plus TWO gaps, which is exactly where a third row would
+        // begin. Sized to the gap rather than to the rows so there is slack for
+        // a pill that renders a pixel or two tall — the previous
+        // `2 rows + 1 gap` was exact, and a single bordered control in the row
+        // was enough to shave the bottom row off. Nothing of a third row can
+        // show through, because a third row starts at this exact height.
+        max-height: calc(var(--tag-line) * 2 + var(--tag-gap) * 2);
+        overflow: hidden;
+
+        @media screen and (max-width: 1023px) {
+            --tag-line: 1.75rem;
+        }
+
+        // Edit mode is not capped. It renders every tag rather than a `+N`
+        // chip, so a tag-heavy model genuinely needs a third row and the cap
+        // would slice it in half. The card has no fixed height, so it just
+        // grows. This also keeps the tag popover — absolutely positioned inside
+        // this row — from being clipped out of existence, which is what made
+        // the edit button look dead.
+        &.tagRowOpen {
+            max-height: none;
+            overflow: visible;
         }
     }
 
     .tagBase {
-        border-radius: 0.5rem;
-        padding: 0.25rem 0.5rem;
-        font-weight: 500;
+        border-radius: 0.375rem;
+        padding: 0.15rem 0.45rem;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 1.4;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
     }
 }

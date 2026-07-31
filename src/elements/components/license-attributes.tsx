@@ -213,7 +213,6 @@ function Item({ title, description, color }: { title: string; description?: stri
             <span className={`${styles.dot} ${ITEM_COLORS[color]}`} />
             <span
                 data-tooltip-content={description}
-                data-tooltip-delay-show={300}
                 data-tooltip-id={tooltipId}
             >
                 {title}

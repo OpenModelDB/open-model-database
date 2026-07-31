@@ -30,9 +30,9 @@ There are many programs that can perform AI upscaling, though not all are able t
   - [GitHub](https://github.com/the-database/AnimeJaNaiConverterGui)
   - Allows for fast video upscaling utilizing TensorRT (On Nvidia cards), DirectML, or NCNN within a clean GUI. Only supports ONNX. Use chaiNNer to convert PyTorch models to ONNX for usage.
 
-- **enhancr** (open-source | paid)
-  - [GitHub](https://github.com/mafiosnik777/enhancr)
-  - Meant for fast video frame upscaling and interpolation, enhancr takes advantage of Nvidia's TensorRT to provide fast processing on video. It supports a variety of models, including many of the custom ESRGAN ones from OpenModelDB.
+- **VapourKit** (open-source | free)
+  - [Website](https://www.vapourkit.app/) | [GitHub](https://github.com/Kim2091/vapourkit)
+  - A VapourSynth frontend focused on video upscaling, with a real-time preview and side-by-side comparison. Runs ONNX models on TensorRT (Nvidia) or DirectML (AMD/Intel/Nvidia), and fetches everything it needs on first launch rather than making you assemble a VapourSynth environment yourself. Handles plain upscales as well as fuller restoration work such as deinterlacing and temporal stability. Windows only.
 
 - **VSGAN-TensorRT-docker** (open-source | free)
   - [GitHub](https://github.com/styler00dollar/VSGAN-tensorrt-docker)
@@ -51,6 +51,10 @@ There are many programs that can perform AI upscaling, though not all are able t
   - ComfyUI is a node-based Stable Diffusion UI, but it can also be used for upscaling. Code for upscaling was borrowed from chaiNNer, so it should support many of the models from OpenModelDB. However, since it is more focused on Stable Diffusion, it probably won't be as easy as other GUIs.
 
 ### Unmaintained Programs
+
+- **enhancr** (open-source | paid)
+  - [GitHub](https://github.com/mafiosnik777/enhancr)
+  - Meant for fast video frame upscaling and interpolation, enhancr takes advantage of Nvidia's TensorRT to provide fast processing on video. It supports a variety of models, including many of the custom ESRGAN ones from OpenModelDB. The last release was 0.9.9 in June 2023 and the last commit was in January 2024, so it is no longer actively maintained — for the same job, VapourKit is the maintained option.
 
 - **Joey's ESRGAN fork** (open-source | free)
   - [GitHub](https://github.com/joeyballentine/ESRGAN/)

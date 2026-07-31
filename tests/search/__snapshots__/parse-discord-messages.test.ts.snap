@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`parse discord messages 1x_Dehalo_v1_Compact 1`] = `
+exports[`parse discord messages > 1x_Dehalo_v1_Compact 1`] = `
 {
   "failed": [
     "**Model Architecture:** Real-ESRGAN Compact",
@@ -18,7 +18,7 @@ https://imgsli.com/MjE3Nzc4",
 }
 `;
 
-exports[`parse discord messages 1x-BroadcastToStudio_SPAN 1`] = `
+exports[`parse discord messages > 1x-BroadcastToStudio_SPAN 1`] = `
 {
   "failed": [],
   "parsed": {
@@ -41,7 +41,7 @@ Sadly this model has some intense artifacts. Thankfully the SPAN re-train reduce
 }
 `;
 
-exports[`parse discord messages 2x_span_anime_pretrain 1`] = `
+exports[`parse discord messages > 2x_span_anime_pretrain 1`] = `
 {
   "failed": [
     "Pretrained: trained on basic degradations",
@@ -60,7 +60,7 @@ exports[`parse discord messages 2x_span_anime_pretrain 1`] = `
 }
 `;
 
-exports[`parse discord messages 2xEvangelion_dat2 1`] = `
+exports[`parse discord messages > 2xEvangelion_dat2 1`] = `
 {
   "failed": [
     "Release Date: 12.02.2024 (dd/mm/yy)",
@@ -88,7 +88,7 @@ exports[`parse discord messages 2xEvangelion_dat2 1`] = `
 }
 `;
 
-exports[`parse discord messages 4x_ditn_w16_pretrain 1`] = `
+exports[`parse discord messages > 4x_ditn_w16_pretrain 1`] = `
 {
   "failed": [],
   "parsed": {
@@ -107,7 +107,7 @@ Note: [Flash Attention](https://github.com/muslll/neosr/blob/master/neosr/archs/
 }
 `;
 
-exports[`parse discord messages 4x_span_pretrain 1`] = `
+exports[`parse discord messages > 4x_span_pretrain 1`] = `
 {
   "failed": [
     "**Pretrained**: official pixel loss only pretrained",
@@ -126,7 +126,7 @@ exports[`parse discord messages 4x_span_pretrain 1`] = `
 }
 `;
 
-exports[`parse discord messages 4x-ClearRealityV1 Soft + Normal 1`] = `
+exports[`parse discord messages > 4x-ClearRealityV1 Soft + Normal 1`] = `
 {
   "failed": [
     "**Iterations:** 300k (over multiple models)",
@@ -158,7 +158,7 @@ Note: In shots with DOF (depth of field) or bokeh, unfortunately there will be a
 }
 `;
 
-exports[`parse discord messages 4xNomos8kHAT-L_bokeh_jpg 1`] = `
+exports[`parse discord messages > 4xNomos8kHAT-L_bokeh_jpg 1`] = `
 {
   "failed": [],
   "parsed": {
@@ -192,7 +192,7 @@ Deblur
 }
 `;
 
-exports[`parse discord messages 4xNomos8kHAT-L_otf 1`] = `
+exports[`parse discord messages > 4xNomos8kHAT-L_otf 1`] = `
 {
   "failed": [
     "Training time: 60 hours on a remote P100",

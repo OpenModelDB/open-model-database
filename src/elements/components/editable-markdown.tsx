@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AiFillEdit } from 'react-icons/ai';
 import { MarkdownContainer } from '../markdown';
+import { EDIT_BUTTON } from './edit-chrome';
 import style from './editable-markdown.module.scss';
 
 export interface EditableMarkdownProps {
@@ -34,7 +35,11 @@ export function EditableMarkdownContainer({
                 className={style.view}
                 onDoubleClick={() => setEdit(true)}
             >
-                <button onClick={() => setEdit(true)}>
+                <button
+                    className={EDIT_BUTTON}
+                    type="button"
+                    onClick={() => setEdit(true)}
+                >
                     <AiFillEdit /> Edit
                 </button>
                 <MarkdownContainer markdown={value || placeholder} />
@@ -54,7 +59,7 @@ export function EditableMarkdownContainer({
     return (
         <textarea
             autoFocus
-            className={`${style.textarea} text-black dark:text-white`}
+            className={style.textarea}
             value={value}
             onBlur={submit}
             onChange={(e) => setValue(e.target.value)}

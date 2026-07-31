@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { Condition, compileCondition } from '../../src/lib/search/logical-condition';
 
 const { variable, and, or, not, stringify } = Condition;

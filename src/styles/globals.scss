@@ -1,5 +1,5 @@
 /* stylelint-disable scss/at-rule-no-unknown */
-@import './theme';
+@use './theme' as *;
 
 // @tailwind base;
 @tailwind components;
@@ -10,17 +10,39 @@
 @mixin theme-colors($t) {
     --accent: #{t($t, $accent-600, $accent-500)};
     --accent-2: #2d2d59;
+    --accent-text: #{t($t, $accent-600, $accent-400)};
 
-    --page-bg: #{t($t, white, $fade-900)};
+    --page-bg: #{t($t, $fade-50, $fade-950)};
 
-    --font-color: #{t($t, black, $fade-100)};
+    // Elevation. Raised surfaces move *toward* the light source in both themes:
+    // lighter than the page in dark mode, whiter than the tinted ground in light mode.
+    --surface: #{t($t, white, $fade-850)};
+    --surface-sunken: #{t($t, $fade-100, $fade-900)};
+    --surface-hover: #{t($t, $fade-100, $fade-800)};
+
+    --font-color: #{t($t, $fade-900, $fade-100)};
     --font-color-hover: #{t($t, $accent-700, $accent-400)};
-    --font-color-light: #{t($t, $fade-700, $fade-400)};
+    --font-color-light: #{t($t, $fade-600, $fade-400)};
     --font-color-light-hover: #{t($t, black, white)};
+    --font-color-subtle: #{t($t, $fade-500, $fade-500)};
 
-    --line-color: #{t($t, $fade-300, $fade-700)};
+    --line-color: #{t($t, $fade-200, #2c2b35)};
+    --line-strong: #{t($t, $fade-300, $fade-700)};
 
-    --link-color: #{t($t, hsl(212deg 100% 45%), hsl(212deg 100% 67%))};
+    --link-color: #{t($t, hsl(212deg 100% 38%), hsl(212deg 100% 72%))};
+
+    // Caution, not danger: these carry known-issue notices, not errors. Amber
+    // rather than red so a site-wide banner does not read as something being
+    // on fire. Dark mode keeps the hue but drops the surface far enough to sit
+    // on the page without glowing.
+    --warning-surface: #{t($t, #fff8e4, #2a2313)};
+    --warning-line: #{t($t, #f0d89c, #4b3e1e)};
+    --warning-ink: #{t($t, #6b4e00, #f0d89c)};
+
+    // One elevation language, used by every raised surface.
+    --shadow-card: #{t($t, 0 1px 2px rgb(23 23 30 / 6%), 0 1px 2px rgb(0 0 0 / 30%))};
+    --shadow-raised: #{t($t, 0 6px 16px -6px rgb(23 23 30 / 14%), 0 6px 16px -6px rgb(0 0 0 / 50%))};
+    --shadow-pop: #{t($t, 0 12px 32px -8px rgb(23 23 30 / 18%), 0 12px 32px -8px rgb(0 0 0 / 60%))};
 
     --logo-text: #{t($t, $fade-900, white)};
     --logo-jelly: #{t($t, white, white)};
@@ -49,6 +71,16 @@
 
 :root {
     --max-page-width: 1400px;
+    --page-gutter: 1rem;
+
+    // One vertical rhythm, used by every page section.
+    --stack-tight: 0.75rem;
+    --stack: 1.5rem;
+    --stack-loose: 2.5rem;
+    --stack-section: 4rem;
+
+    --radius-control: 0.5rem;
+    --radius-card: 0.75rem;
 
     --fonts-heading: var(--font-inter), -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -57,6 +89,10 @@
     --fonts-mono: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace;
 
     overflow-y: scroll;
+
+    @media only screen and (min-width: 768px) {
+        --page-gutter: 1.5rem;
+    }
 }
 
 html,
@@ -98,6 +134,7 @@ h4,
 h5,
 h6 {
     font-family: var(--fonts-heading);
+    text-wrap: balance;
 }
 
 a {
@@ -106,9 +143,87 @@ a {
     transition: color 0.15s ease;
 }
 
+// Tailwind's Preflight is disabled in this project, so form controls still
+// render with the operating system's own chrome: a grey face and an `outset`
+// border that follow `color-scheme` rather than the theme. Read-mode controls
+// all set their own background so nobody noticed, but edit mode is built from
+// bare <button>/<select>/<input>, which is why it looked unthemed.
+// Wrapped in :where() so these carry ZERO specificity. This file is emitted
+// after `@tailwind utilities`, so a plain `button { … }` selector here would
+// beat `bg-accent-600` on every styled button in the app. :where() keeps that
+// from happening — any class still wins.
+// Padding is deliberately NOT reset. Preflight would zero it, but plenty of
+// controls here have no padding class of their own and rely on the UA value;
+// zeroing it collapses them onto their icons.
+:where(button) {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+:where(button:disabled) {
+    cursor: default;
+}
+
+:where(select, input, textarea) {
+    box-sizing: border-box;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-control);
+    background-color: var(--surface);
+    color: var(--font-color);
+    font: inherit;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+:where(select, input, textarea):hover {
+    border-color: var(--accent-text);
+}
+
+:where(input[type='checkbox'], input[type='radio']) {
+    padding: 0;
+    accent-color: var(--accent);
+}
+
+:where(input[type='file']) {
+    padding: 0.25rem;
+}
+
 ::selection {
     background-color: var(--accent);
     color: white;
+}
+
+// Keyboard focus was previously invisible on every control except the search
+// input. One ring, on every focusable thing, in both themes.
+:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+// Controls that paint their own background get the ring on the outside.
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline-offset: 2px;
+    border-radius: var(--radius-control);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 .rendering-pixelated {

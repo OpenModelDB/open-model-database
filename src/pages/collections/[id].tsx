@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useEffect, useMemo, useState } from 'react';
+import { EDIT_BUTTON_DANGER } from '../../elements/components/edit-chrome';
 import { EditableLabel } from '../../elements/components/editable-label';
 import { EditableMarkdownContainer } from '../../elements/components/editable-markdown';
 import { ModelCardGrid } from '../../elements/components/model-card-grid';
@@ -81,7 +82,8 @@ export default function Page({ collectionId, staticCollectionData, staticModelDa
                 {editMode && (
                     <div className="mb-8">
                         <button
-                            className="btn"
+                            className={EDIT_BUTTON_DANGER}
+                            type="button"
                             onClick={() => {
                                 webApi.collections
                                     .delete([collectionId])

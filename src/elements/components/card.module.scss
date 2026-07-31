@@ -1,5 +1,5 @@
-@import '../util.module';
-@import '../../styles/theme';
+@use '../util.module' as *;
+@use '../../styles/theme' as *;
 
 .card {
     @include themed using($t) {

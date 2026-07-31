@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { BsQuestionLg } from 'react-icons/bs';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
-import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import { MdAdd, MdDarkMode, MdGridView, MdLightMode, MdStorage } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import Logo from '../../public/logo.svg';
 import { toggleColorScheme } from '../lib/color-scheme';
@@ -49,60 +49,48 @@ export function Header({ searchBar }: HeaderProps) {
                         </div>
                     </Link>
 
-                    <Link
-                        className={joinClasses(
-                            style.docLink,
-                            'ml-8 font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                            style.hideMobile
+                    {/* Datasets arrived on main while this branch was in
+                        flight. Its links keep their destinations but take this
+                        branch's chrome: the `<nav>` landmark, the spacing from
+                        `style.nav` rather than a repeated `ml-8`, and the
+                        semantic tokens instead of hand-paired `accent`/`fade`
+                        light-dark pairs. */}
+                    <nav className={joinClasses(style.nav, style.hideMobile)}>
+                        <Link
+                            className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                            href="/docs/faq"
+                        >
+                            How To Upscale
+                        </Link>
+                        <Link
+                            className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                            href="/"
+                        >
+                            Models
+                        </Link>
+                        <Link
+                            className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                            href="/datasets"
+                        >
+                            Datasets
+                        </Link>
+                        {editMode && (
+                            <>
+                                <Link
+                                    className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                                    href="/add-model"
+                                >
+                                    Add Model
+                                </Link>
+                                <Link
+                                    className={joinClasses(style.docLink, 'text-accent-text hover:bg-surface-hover')}
+                                    href="/add-dataset"
+                                >
+                                    Add Dataset
+                                </Link>
+                            </>
                         )}
-                        href="/docs/faq"
-                    >
-                        How To Upscale
-                    </Link>
-                    <Link
-                        className={joinClasses(
-                            style.docLink,
-                            'ml-8 font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                            style.hideMobile
-                        )}
-                        href="/"
-                    >
-                        Models
-                    </Link>
-                    <Link
-                        className={joinClasses(
-                            style.docLink,
-                            'ml-8 font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                            style.hideMobile
-                        )}
-                        href="/datasets"
-                    >
-                        Datasets
-                    </Link>
-                    {editMode && (
-                        <>
-                            <Link
-                                className={joinClasses(
-                                    style.docLink,
-                                    'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                                    style.hideMobile
-                                )}
-                                href="/add-model"
-                            >
-                                Add Model
-                            </Link>
-                            <Link
-                                className={joinClasses(
-                                    style.docLink,
-                                    'font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
-                                    style.hideMobile
-                                )}
-                                href="/add-dataset"
-                            >
-                                Add Dataset
-                            </Link>
-                        </>
-                    )}
+                    </nav>
 
                     <span className={style.spacer} />
 
@@ -110,7 +98,7 @@ export function Header({ searchBar }: HeaderProps) {
                         <button
                             className={joinClasses(
                                 style.docLink,
-                                'bg-transparent font-medium tracking-wide text-accent hover:bg-fade-100 dark:text-accent-400 dark:hover:bg-fade-800',
+                                'bg-transparent text-accent-text hover:bg-surface-hover',
                                 style.hideMobile
                             )}
                             onClick={toggleEditMode}
@@ -176,6 +164,13 @@ export function Header({ searchBar }: HeaderProps) {
     );
 }
 
+const DRAWER_ITEM =
+    'flex cursor-pointer items-center gap-2 rounded-control border border-solid border-line bg-surface-sunken py-2 px-3 text-base font-medium';
+
+function DrawerLabel({ children }: React.PropsWithChildren<unknown>) {
+    return <div className="text-xs font-semibold uppercase tracking-wider text-ink-subtle">{children}</div>;
+}
+
 function HeaderDrawer() {
     const [showDrawer, setShowDrawer] = useState(false);
     const { editMode } = useEditModeToggle();
@@ -204,7 +199,7 @@ function HeaderDrawer() {
 
             <div
                 className={joinClasses(
-                    'fixed top-0 left-0 z-40 h-screen -translate-x-full overflow-y-auto bg-fade-200 p-4 shadow-xl transition-transform dark:bg-fade-900',
+                    'fixed top-0 left-0 z-40 h-screen -translate-x-full overflow-y-auto bg-surface p-4 shadow-pop transition-transform',
                     style.showMobile,
                     !showDrawer && 'hidden'
                 )}
@@ -216,7 +211,7 @@ function HeaderDrawer() {
                         <button
                             aria-controls="menu-drawer"
                             aria-label="Close menu"
-                            className="absolute top-2.5 right-2.5 inline-flex cursor-pointer items-center rounded-lg border-0 bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                            className="absolute top-2.5 right-2.5 inline-flex cursor-pointer items-center rounded-control border-0 bg-transparent p-1.5 text-sm text-ink-muted hover:bg-surface-hover hover:text-ink"
                             type="button"
                             onClick={() => setShowDrawer(false)}
                         >
@@ -236,85 +231,94 @@ function HeaderDrawer() {
                             <span className="sr-only">Close menu</span>
                         </button>
 
-                        <div className="flex w-64 flex-col gap-4">
-                            Help
-                            <Link
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="/docs/faq"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+                        <div className="mt-10 flex w-64 flex-col gap-6">
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Help</DrawerLabel>
+                                <Link
+                                    className={DRAWER_ITEM}
+                                    href="/docs/faq"
+                                >
                                     <BsQuestionLg />
                                     How To Upscale
-                                </div>
-                            </Link>
-                            Browse
-                            <Link
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="/"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">Models</div>
-                            </Link>
-                            <Link
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="/datasets"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">Datasets</div>
-                            </Link>
+                                </Link>
+                            </div>
+
+                            {/* Browse and Edit come from main's datasets work.
+                                Its drawer used bare text as section headings and
+                                a repeated `bg-fade-300 dark:bg-fade-800` pill;
+                                these use the same DrawerLabel and DRAWER_ITEM as
+                                the sections around them. */}
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Browse</DrawerLabel>
+                                <Link
+                                    className={DRAWER_ITEM}
+                                    href="/"
+                                >
+                                    <MdGridView />
+                                    Models
+                                </Link>
+                                <Link
+                                    className={DRAWER_ITEM}
+                                    href="/datasets"
+                                >
+                                    <MdStorage />
+                                    Datasets
+                                </Link>
+                            </div>
+
                             {editMode && (
-                                <>
-                                    Edit
+                                <div className="flex flex-col gap-2">
+                                    <DrawerLabel>Edit</DrawerLabel>
                                     <Link
-                                        className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
+                                        className={DRAWER_ITEM}
                                         href="/add-model"
                                     >
-                                        <div className="relative flex items-center gap-2 align-middle">Add Model</div>
+                                        <MdAdd />
+                                        Add Model
                                     </Link>
                                     <Link
-                                        className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
+                                        className={DRAWER_ITEM}
                                         href="/add-dataset"
                                     >
-                                        <div className="relative flex items-center gap-2 align-middle">Add Dataset</div>
+                                        <MdAdd />
+                                        Add Dataset
                                     </Link>
-                                </>
+                                </div>
                             )}
-                            Links
-                            <Link
-                                external
-                                aria-label="GitHub"
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="https://github.com/OpenModelDB/open-model-database"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Links</DrawerLabel>
+                                <Link
+                                    external
+                                    className={DRAWER_ITEM}
+                                    href="https://github.com/OpenModelDB/open-model-database"
+                                >
                                     <FaGithub />
                                     GitHub
-                                </div>
-                            </Link>
-                            <Link
-                                external
-                                aria-label="Discord"
-                                className="rounded-lg bg-fade-300 py-2 px-3 text-lg font-bold dark:bg-fade-800"
-                                href="https://discord.gg/cpAUpDK"
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+                                </Link>
+                                <Link
+                                    external
+                                    className={DRAWER_ITEM}
+                                    href="https://discord.gg/cpAUpDK"
+                                >
                                     <FaDiscord />
                                     Discord
-                                </div>
-                            </Link>
-                            Settings
-                            <button
-                                aria-label="Toggle color scheme"
-                                className={joinClasses(
-                                    style.otherThemeButton,
-                                    'cursor-pointer rounded-lg border-0 bg-fade-300 bg-transparent py-2 px-3 text-lg font-bold dark:bg-fade-800'
-                                )}
-                                onClick={toggleColorScheme}
-                            >
-                                <div className="relative flex items-center gap-2 align-middle">
+                                </Link>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <DrawerLabel>Settings</DrawerLabel>
+                                <button
+                                    aria-label="Toggle color scheme"
+                                    className={joinClasses(style.otherThemeButton, DRAWER_ITEM, 'w-full text-left')}
+                                    type="button"
+                                    onClick={toggleColorScheme}
+                                >
                                     <MdLightMode className={style.light} />
                                     <MdDarkMode className={style.dark} />
                                     Toggle Theme
-                                </div>
-                            </button>
+                                </button>
+                            </div>
                         </div>
                     </>
                 )}
