@@ -1,4 +1,4 @@
-@import '../../elements/util.module';
+@use '../../elements/util.module' as *;
 
 .container {
     display: flex;

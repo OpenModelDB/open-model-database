@@ -1,7 +1,7 @@
 @use 'sass:color';
 
-@import './util.module';
-@import '../styles/theme';
+@use './util.module' as *;
+@use '../styles/theme' as *;
 
 .headerSpacer {
     width: 100%;

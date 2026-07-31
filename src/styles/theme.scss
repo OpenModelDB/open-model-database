@@ -1,13 +1,32 @@
-// re-export colors for easy access
-@import './colors';
+// Re-export colors for easy access. `@forward`, not `@use`: under the module
+// system a `@use`d file's members are invisible to whoever uses *this* file,
+// which is the one thing `@import` gave us for free here.
+@forward './colors';
 
+// Emits its content twice, once per theme, scoped to whichever `data-theme` is
+// on the root.
+// The two branches exist because the mixin is called both at the top level and
+// nested inside a selector. Nested, the theme selector has to be prefixed onto
+// the parent; at the top level there is no parent to prefix and `&` is null.
+// This used to be `#{if(&, '&', '')}` interpolated into one selector, but
+// Sass's `if()` is deprecated now that CSS has an `if()` of its own.
 @mixin themed {
-    :root:not([data-theme='dark']) #{if(&, '&', '')} {
-        @content (light);
-    }
+    @if & {
+        :root:not([data-theme='dark']) & {
+            @content (light);
+        }
 
-    :root[data-theme='dark'] #{if(&, '&', '')} {
-        @content (dark);
+        :root[data-theme='dark'] & {
+            @content (dark);
+        }
+    } @else {
+        :root:not([data-theme='dark']) {
+            @content (light);
+        }
+
+        :root[data-theme='dark'] {
+            @content (dark);
+        }
     }
 }
 

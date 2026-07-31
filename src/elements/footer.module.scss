@@ -1,4 +1,4 @@
-@import '../styles/theme';
+@use '../styles/theme' as *;
 
 .footer {
     flex-shrink: 0;

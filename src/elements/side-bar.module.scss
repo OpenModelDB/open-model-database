@@ -1,4 +1,4 @@
-@import './util.module';
+@use './util.module' as *;
 
 .sideBar {
     color: var(--font-color-light);

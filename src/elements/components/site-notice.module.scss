@@ -1,0 +1,13 @@
+// Same measure and gutter as `.main` in page.module.scss, so the notice text
+// lines up with the page content beneath it rather than running edge to edge.
+// Longhand padding, not the shorthand: this module is injected after Tailwind's
+// utilities, so the shorthand would silently zero the vertical padding the
+// markup sets.
+.inner {
+    max-width: var(--max-page-width);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+}

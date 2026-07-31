@@ -1,5 +1,5 @@
 /* stylelint-disable scss/at-rule-no-unknown */
-@import './theme';
+@use './theme' as *;
 
 // @tailwind base;
 @tailwind components;
@@ -30,6 +30,14 @@
     --line-strong: #{t($t, $fade-300, $fade-700)};
 
     --link-color: #{t($t, hsl(212deg 100% 38%), hsl(212deg 100% 72%))};
+
+    // Caution, not danger: these carry known-issue notices, not errors. Amber
+    // rather than red so a site-wide banner does not read as something being
+    // on fire. Dark mode keeps the hue but drops the surface far enough to sit
+    // on the page without glowing.
+    --warning-surface: #{t($t, #fff8e4, #2a2313)};
+    --warning-line: #{t($t, #f0d89c, #4b3e1e)};
+    --warning-ink: #{t($t, #6b4e00, #f0d89c)};
 
     // One elevation language, used by every raised surface.
     --shadow-card: #{t($t, 0 1px 2px rgb(23 23 30 / 6%), 0 1px 2px rgb(0 0 0 / 30%))};
