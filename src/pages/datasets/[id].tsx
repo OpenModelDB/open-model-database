@@ -124,7 +124,10 @@ function PageContent({ datasetId, staticDatasetData }: Props) {
 
     const dataset = datasetData.get(realDatasetId);
 
-    const { webApi, editMode } = useWebApi(IS_DEPLOYED);
+    // No override argument. `useWebApi`'s parameter means "allow editing even
+    // though we're deployed", so passing `IS_DEPLOYED` — as this did — made
+    // being deployed the one condition that switched edit mode on.
+    const { webApi, editMode } = useWebApi();
     const { updateDatasetProperty } = useUpdateDataset(webApi, realDatasetId);
 
     const authors = useMemo(() => {
@@ -166,15 +169,17 @@ function PageContent({ datasetId, staticDatasetData }: Props) {
 
     if (!dataset) {
         return (
-            <div className="flex flex-col items-center justify-center py-20">
-                <h2 className="text-2xl font-bold">Dataset not found</h2>
-                <Link
-                    className="mt-4 text-accent-600 hover:underline"
-                    href="/datasets"
-                >
-                    Back to datasets
-                </Link>
-            </div>
+            <PageContainer>
+                <div className="flex flex-col items-center justify-center py-20">
+                    <h2 className="text-2xl font-bold">Dataset not found</h2>
+                    <Link
+                        className="mt-4 text-accent-600 hover:underline"
+                        href="/datasets"
+                    >
+                        Back to datasets
+                    </Link>
+                </div>
+            </PageContainer>
         );
     }
 
@@ -383,14 +388,15 @@ function PageContent({ datasetId, staticDatasetData }: Props) {
     );
 }
 
+// `PageContent` renders its own `PageContainer` — including the not-found
+// branch — so this must not wrap it in a second one. The container is the whole
+// page shell: header, site notice and footer. Nesting rendered all three twice.
 export default function Page({ datasetId, staticDatasetData }: Props) {
     return (
-        <PageContainer wrapper>
-            <PageContent
-                datasetId={datasetId}
-                staticDatasetData={staticDatasetData}
-            />
-        </PageContainer>
+        <PageContent
+            datasetId={datasetId}
+            staticDatasetData={staticDatasetData}
+        />
     );
 }
 

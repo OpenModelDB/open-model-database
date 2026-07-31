@@ -5,7 +5,11 @@ export default defineConfig({
     // The app imports SVGs as React components (see the `@svgr/webpack` rule in
     // next.config.js). Without the equivalent here, anything that renders the
     // header or a download button fails on the logo import.
-    plugins: [svgr()],
+    //
+    // `include` is required: the plugin only claims `*.svg?react` by default,
+    // and the app imports plain `*.svg`. Without it the import resolves to the
+    // asset URL and React tries to render the string as a component.
+    plugins: [svgr({ include: '**/*.svg' })],
 
     // tsconfig says `jsx: preserve` because Next does its own transform, and
     // Vite honours that — which leaves raw JSX in the output and every .tsx
