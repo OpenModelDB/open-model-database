@@ -14,8 +14,8 @@ jobs:
     lint:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
               with:
                   node-version: 20
             - run: npm ci
@@ -25,16 +25,16 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
               with:
                   node-version: 20
-            - uses: actions/setup-python@v4
+            - uses: actions/setup-python@v7
               with:
                   python-version: '3.11'
             - name: Cache thumbnails
               id: cache-thumbnails
-              uses: actions/cache@v4
+              uses: actions/cache@v6
               with:
                   path: .thumb-cache/thumbs
                   key: thumbnails
@@ -44,8 +44,8 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
               with:
                   node-version: 20
             - run: npm ci
@@ -54,8 +54,8 @@ jobs:
     validate-db:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
               with:
                   node-version: 20
             - run: npm ci
