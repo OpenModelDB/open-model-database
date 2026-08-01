@@ -1,0 +1,52 @@
+{
+    "name": "Adore",
+    "author": "renarchi",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "anime",
+        "restoration"
+    ],
+    "description": "Purpose: Realtime 1080p anime upscaler\n\nAdore is a improved successor to the Fallin models and has been trained using the same architecture and purpose.",
+    "date": "2026-04-11",
+    "architecture": "real-cugan",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 5678773,
+            "sha256": "532c1b30711c2bb7ea6ddf123fd219df87ca9816fbb8ddaaad5c1f311d5b7c44",
+            "urls": [
+                "https://github.com/renarchi/Re-SISR/releases/tag/Adore"
+            ]
+        }
+    ],
+    "trainingIterations": 136000,
+    "trainingBatchSize": 8,
+    "trainingHRSize": 512,
+    "trainingOTF": false,
+    "datasetSize": 16273,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Haikyuu!",
+            "LR": "https://i.slow.pics/6wwY4qc7.webp",
+            "SR": "https://i.slow.pics/TsFkzGoE.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "Another",
+            "LR": "https://i.slow.pics/LU5KPlwJ.webp",
+            "SR": "https://i.slow.pics/hPglSuIG.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "Snafu",
+            "LR": "https://i.slow.pics/JUuuSj25.webp",
+            "SR": "https://i.slow.pics/kVsyZD8f.webp"
+        }
+    ]
+}

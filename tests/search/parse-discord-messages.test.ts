@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { parseDiscordMessage } from '../../src/lib/parse-discord-message';
 import { fileApi } from '../../src/lib/server/file-data';
 

@@ -27,11 +27,9 @@ export const ImageCarouselImage = ({ image }: ImageCarouselImageProps) => {
         return (
             <div className="relative h-full w-full">
                 <div className="flex h-full w-full">{inner}</div>
-                <span
-                    className={`${styles.caption} pointer-events-none absolute select-none px-3 py-1 text-lg font-medium`}
-                >
-                    {caption}
-                </span>
+                {/* Sizing and padding live in the module so this chip stays in step
+                    with the Before/After labels it sits alongside. */}
+                <span className={`${styles.caption} pointer-events-none absolute select-none`}>{caption}</span>
             </div>
         );
     } else {

@@ -5,6 +5,8 @@ import {
     ArchId,
     Collection,
     CollectionId,
+    Dataset,
+    DatasetId,
     Model,
     ModelId,
     Tag,
@@ -23,6 +25,7 @@ export interface DBApi {
     readonly users: CollectionApi<UserId, User>;
     readonly architectures: CollectionApi<ArchId, Arch>;
     readonly collections: CollectionApi<CollectionId, Collection>;
+    readonly datasets: CollectionApi<DatasetId, Dataset>;
 }
 
 /**

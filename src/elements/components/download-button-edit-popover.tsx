@@ -2,6 +2,8 @@ import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { hashSha256 } from '../../lib/model-files';
 import { ModelId, Resource } from '../../lib/schema';
+import { joinClasses } from '../../lib/util';
+import { EDIT_BUTTON, EDIT_BUTTON_PRIMARY, EDIT_FIELD, EDIT_LABEL, EDIT_PANEL } from './edit-chrome';
 
 export interface EditResourceProps {
     resource?: Resource;
@@ -59,9 +61,12 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
 
     return (
         <div className="flex flex-col">
-            <div className="flex flex-col">
-                <label htmlFor="resource-url">
-                    {urls.length > 1 ? 'URLs' : 'URL'} <a className="text-red-500">*</a>
+            <div className={EDIT_FIELD}>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="resource-url"
+                >
+                    {urls.length > 1 ? 'URLs' : 'URL'} <span className="text-red-500">*</span>
                 </label>
                 {urls.map((url, index) => (
                     <input
@@ -78,9 +83,12 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                     />
                 ))}
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="resource-size">
-                    Size <a className="text-red-500">*</a>
+            <div className={EDIT_FIELD}>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="resource-size"
+                >
+                    Size <span className="text-red-500">*</span>
                 </label>
                 <input
                     id="resource-size"
@@ -89,9 +97,12 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                     onChange={(e) => setSize(Number(e.target.value))}
                 />
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="resource-sha256">
-                    sha256 <a className="text-red-500">*</a>
+            <div className={EDIT_FIELD}>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="resource-sha256"
+                >
+                    sha256 <span className="text-red-500">*</span>
                 </label>
                 <input
                     id="resource-sha256"
@@ -100,9 +111,12 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                     onChange={(e) => setSHA256(e.target.value.toLowerCase())}
                 />
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="resource-type">
-                    File type <a className="text-red-500">*</a>
+            <div className={EDIT_FIELD}>
+                <label
+                    className={EDIT_LABEL}
+                    htmlFor="resource-type"
+                >
+                    File type <span className="text-red-500">*</span>
                 </label>
                 <select
                     id="resource-type"
@@ -119,11 +133,17 @@ function ResourceMenu({ modelId, resource, onChange }: EditResourceProps) {
                     ))}
                 </select>
             </div>
-            <div className="mt-2 flex flex-col">
-                <button onClick={getInfoFromFile}>Get info from file...</button>
+            <div className="flex flex-col">
+                <button
+                    className={EDIT_BUTTON}
+                    type="button"
+                    onClick={getInfoFromFile}
+                >
+                    Get info from file...
+                </button>
             </div>
             <Popover.Button
-                className="mt-2 rounded-lg border-0 bg-gray-200 p-2 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600"
+                className={joinClasses('mt-2', EDIT_BUTTON_PRIMARY)}
                 disabled={!urls.length || !sha256 || !size}
                 type="submit"
                 onClick={() => {
@@ -195,11 +215,7 @@ export function EditResourceButton({
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Popover.Panel
-                    className={`absolute z-50 mt-2 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 p-2 text-sm shadow-lg focus:outline-none dark:bg-black ${
-                        position === 'left' ? 'left-0' : 'right-0'
-                    }`}
-                >
+                <Popover.Panel className={joinClasses(EDIT_PANEL, 'p-3', position === 'left' ? 'left-0' : 'right-0')}>
                     <ResourceMenu
                         modelId={modelId}
                         resource={resource}

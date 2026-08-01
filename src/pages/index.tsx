@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next';
 import React, { useCallback, useMemo, useState } from 'react';
-import { Link } from '../elements/components/link';
 import { ModelResults } from '../elements/components/model-results';
 import { SearchBar } from '../elements/components/searchbar';
 import { HeadCommon } from '../elements/head-common';
@@ -17,6 +16,7 @@ import { SearchResult } from '../lib/search/search-index';
 import { tokenize } from '../lib/search/token';
 import { fileApi } from '../lib/server/file-data';
 import { TagSelection, getTagCondition } from '../lib/tag-condition';
+import { EMPTY_MAP } from '../lib/util';
 
 interface Props {
     modelData: Record<ModelId, Model>;
@@ -110,41 +110,23 @@ export default function Page({ modelData: staticModelData }: Props) {
                     </button>
                 )}
 
-                <div className="rounded-lg bg-yellow-300 px-4 py-2 dark:bg-yellow-900">
-                    <h4 className="m-0">Notice</h4>
-                    <p className="m-0">
-                        OpenModelDB is still in alpha and actively being worked on. Please feel free to{' '}
-                        <Link
-                            external
-                            className="font-medium hover:underline"
-                            href="https://github.com/OpenModelDB/open-model-database/discussions/new?category=general"
-                        >
-                            share your feedback
-                        </Link>{' '}
-                        and{' '}
-                        <Link
-                            external
-                            className="font-medium hover:underline"
-                            href="https://github.com/OpenModelDB/open-model-database/issues"
-                        >
-                            report any bugs
-                        </Link>{' '}
-                        you find.
+                <section className="mx-auto max-w-3xl pt-8 pb-2 text-center md:pt-12">
+                    <h1 className="m-0 text-4xl font-extrabold leading-tight tracking-tight text-ink md:text-5xl lg:text-6xl">
+                        The best place to find <span className="text-accent-text">AI Upscaling</span> models
+                    </h1>
+
+                    <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-muted md:text-lg">
+                        OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better
+                        way to find and compare models than existing sources.
                     </p>
-                </div>
-
-                <h1 className="mb-4 text-center text-2xl font-bold capitalize text-accent-500 dark:text-fade-200 md:mb-6 lg:text-3xl">
-                    The best place to find AI Upscaling models
-                </h1>
-
-                <p className="mx-auto max-w-screen-md text-center text-gray-600 dark:text-gray-400 md:text-lg">
-                    OpenModelDB is a community driven database of AI Upscaling models. We aim to provide a better way to
-                    find and compare models than existing sources.
-                </p>
+                </section>
 
                 {/* Search */}
                 <SearchBar
-                    className="mb-4 w-full"
+                    aria-label="Search models"
+                    className="mx-auto mt-7 w-full max-w-3xl"
+                    placeholder={`Search ${modelData.size.toLocaleString('en-US')} models by name, author, or purpose`}
+                    size="large"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value, 400)}
                     onEnter={(e) => {
@@ -169,7 +151,7 @@ export default function Page({ modelData: staticModelData }: Props) {
                 />
 
                 {/* Tags */}
-                <div className="my-4">
+                <div className="mt-8 mb-10">
                     <TagSelector
                         selection={tagSelection}
                         onChange={(value, style) => {
@@ -189,9 +171,23 @@ export default function Page({ modelData: staticModelData }: Props) {
                         sort={sort}
                     />
                 ) : (
-                    <div className="flex flex-col items-center justify-center p-6">
-                        <div className="text-2xl font-bold text-accent-500 dark:text-gray-100">No models found</div>
-                        <div className="text-gray-500 dark:text-gray-400">Try changing your search filters</div>
+                    <div className="flex flex-col items-center justify-center rounded-card border border-solid border-line bg-surface px-6 py-16 text-center">
+                        <p className="m-0 text-lg font-semibold text-ink">No models match those filters</p>
+                        <p className="m-0 mt-1 max-w-md text-sm text-ink-muted">
+                            {searchQuery
+                                ? `Nothing matched “${searchQuery}”. Try a broader term, or clear the filters to start over.`
+                                : 'That combination of tags has no models. Try removing one, or clear the filters to start over.'}
+                        </p>
+                        <button
+                            className="mt-5 cursor-pointer rounded-control border-0 bg-accent-600 px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 dark:bg-accent-500"
+                            type="button"
+                            onClick={() => {
+                                setSearchQuery('', 0);
+                                setTagSelection(EMPTY_MAP, 0);
+                            }}
+                        >
+                            Clear search and filters
+                        </button>
                     </div>
                 )}
             </PageContainer>

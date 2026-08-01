@@ -1,0 +1,202 @@
+// Chrome that sits on top of the image viewers. Everything here overlays
+// arbitrary image content, so each piece carries its own dark scrim rather
+// than relying on the surface underneath it.
+
+.label {
+    position: absolute;
+    top: 0.625rem;
+    z-index: 20;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.375rem;
+    background-color: rgb(17 17 23 / 65%);
+    backdrop-filter: blur(4px);
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+}
+
+.labelBefore {
+    left: 0.625rem;
+}
+
+.labelAfter {
+    right: 0.625rem;
+}
+
+// Anchored bottom-LEFT: the bottom-right corner belongs to the image caption.
+.bottomBar {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.625rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: calc(100% - 1.25rem);
+}
+
+.hint {
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.375rem;
+    background-color: rgb(17 17 23 / 55%);
+    backdrop-filter: blur(4px);
+    color: rgb(255 255 255 / 85%);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    // Below this the caption and the controls would meet in the middle.
+    @media only screen and (max-width: 900px) {
+        display: none;
+    }
+}
+
+.controls {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.1875rem;
+    border-radius: 0.5rem;
+    background-color: rgb(17 17 23 / 65%);
+    backdrop-filter: blur(4px);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: transparent;
+    color: white;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+        background-color: rgb(255 255 255 / 18%);
+    }
+
+    &:focus-visible {
+        outline: 2px solid white;
+        outline-offset: -2px;
+    }
+}
+
+.resetButton {
+    width: auto;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.readout {
+    min-width: 3.25rem;
+    padding: 0 0.25rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    user-select: none;
+}
+
+.divider {
+    width: 1px;
+    height: 1.125rem;
+    margin: 0 0.125rem;
+    background-color: rgb(255 255 255 / 25%);
+}
+
+// Docked variants: the same controls sitting in the carousel toolbar rather
+// than on top of an image. Nothing is overlaying arbitrary pixels any more, so
+// the dark scrim and forced white come off and the theme tokens take over.
+.bottomBarDocked {
+    position: static;
+    max-width: none;
+}
+
+.controlsDocked {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    backdrop-filter: none;
+}
+
+.buttonDocked {
+    color: var(--font-color-light);
+
+    &:hover {
+        background-color: var(--surface-hover);
+        color: var(--font-color);
+    }
+
+    &:focus-visible {
+        outline-color: var(--accent-text);
+    }
+}
+
+.readoutDocked {
+    color: var(--font-color-light);
+}
+
+.dividerDocked {
+    background-color: var(--line-color);
+}
+
+// Mirrors .button, but themed for the toolbar it lives in rather than for
+// overlaying an image.
+.fullscreenButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: transparent;
+    color: var(--font-color-light);
+    font: inherit;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        background-color: var(--surface-hover);
+        color: var(--font-color);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-text);
+        outline-offset: -2px;
+    }
+}
+
+// In fullscreen the toolbar floats on the image, so this matches .button.
+.fullscreenButtonOverlay {
+    color: white;
+
+    &:hover {
+        background-color: rgb(255 255 255 / 18%);
+        color: white;
+    }
+
+    &:focus-visible {
+        outline-color: white;
+    }
+}

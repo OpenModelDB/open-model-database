@@ -1,0 +1,100 @@
+{
+    "name": "StarSample V2.0 Lite NS",
+    "author": "derpy",
+    "license": "CC-BY-NC-SA-4.0",
+    "tags": [
+        "cartoon",
+        "compression-removal",
+        "general-upscaler",
+        "restoration"
+    ],
+    "description": "This is a model for the restoration of My Little Pony: Friendship is Magic, however it also works decently well on similar art.\n\nV2.0 greatly improves upon V1.0's dataset in every way, taking models from (realistically) only being viable at 1x, to now being far more competent at 2x, more so for the models trained with heavier architectures in this release. \n\nImprovements come as a significantly better understanding of compressions, and partly architecturally/partly dataset improved handling of details and overall understanding of content, leading to less artifacting and \"AI smudging\". The dataset takes from a larger variety of sources, despite being smaller than V1.0 (when tiled V1.0 would be 71,876 pairs), due to being filtered for IQA scores and detail density. It also contains many thousands of image pairs manually created to cover areas where there wasn't sufficient information.\n\nThis release also includes \"NS\", or \"No Scale\" models, which are a better representation of my initial goal with StarSample, and (StarSample V2.0 NS) should provide great 1x restoration results with little apparent artifacting, even where the heavier 2x models can fail due to having to increase resolution.\n\n- 2x StarSample V2.0 HQ — _(HAT-L)_\n- 2x StarSample V2.0 — _(ESRGAN)_\n- 2x StarSample V2.0 Lite — _(SPAN-S)_\n- 1x StarSample V2.0 NS — _(ESRGAN)_\n- 1x StarSample V2.0 Lite NS — _(SPAN-S)_ — **THIS MODEL**\n\n[Github Release](https://github.com/Derpiesaurus/models/releases/tag/v2.0_Lite_NS)",
+    "date": "2026-02-12",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 8888072,
+            "sha256": "5b5ee217b71793742ef11ce14c2114c6acae51ca92a2714a9770963c630046d2",
+            "urls": [
+                "https://github.com/Derpiesaurus/models/releases/download/v2.0_Lite_NS/1x_StarSample_V2.0_Lite_NS.safetensors"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 825471,
+            "sha256": "01e07b4a1f8ab9a27c163dbdc74a42a1f9760085ba3f1282ab1058af606ff321",
+            "urls": [
+                "https://github.com/Derpiesaurus/models/releases/download/v2.0_Lite_NS/1x_StarSample_V2.0_Lite_NS-fp16-opset17.onnx"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 1639156,
+            "sha256": "f91f29c70d46a85ea886d97f2e504867845f25f556d2e544bd2dceae1411db08",
+            "urls": [
+                "https://github.com/Derpiesaurus/models/releases/download/v2.0_Lite_NS/1x_StarSample_V2.0_Lite_NS-fp32-opset17.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 500000,
+    "trainingEpochs": 149,
+    "trainingBatchSize": 16,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "HR = 4K GT uncompressed MLP: FiM episode frames + relevant uncompressed HR pairs to LR datasets /// LR = 1080p MLP: FiM episode frames sourced from YouTube in 3 different bitrates + custom MLP: FiM focal blur dataset + custom MLP: FiM GIF compression dataset in 3 different compression levels + custom MLP: FiM difficult details and other edge cases dataset + custom artificially-degraded MLP: FiM background dataset",
+    "datasetSize": 53560,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "1 — 1x Example",
+            "LR": "https://i.slow.pics/H0fMm2gZ.webp",
+            "SR": "https://i.slow.pics/DITa8LRG.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "2 — 1x Example",
+            "LR": "https://i.slow.pics/k371Z2k1.webp",
+            "SR": "https://i.slow.pics/0iDKrCCI.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "3 — 1x Example",
+            "LR": "https://i.slow.pics/lcv8kGOM.webp",
+            "SR": "https://i.slow.pics/UHeXIqD7.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "4 — 1x Example",
+            "LR": "https://i.slow.pics/JJrg8HrC.webp",
+            "SR": "https://i.slow.pics/JzOAd1oz.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "5 — 1x Example",
+            "LR": "https://i.slow.pics/vsokWnr6.webp",
+            "SR": "https://i.slow.pics/iQqO2VWE.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "6 — 1x Example",
+            "LR": "https://i.slow.pics/8di3VNuS.webp",
+            "SR": "https://i.slow.pics/Y8PTyN5h.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "7 — 1x Example",
+            "LR": "https://i.slow.pics/bkvL11X3.webp",
+            "SR": "https://i.slow.pics/D8DTX1Yn.webp"
+        }
+    ]
+}

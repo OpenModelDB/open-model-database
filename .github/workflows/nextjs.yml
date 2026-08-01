@@ -30,25 +30,25 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v7
               with:
                   fetch-depth: 0
             - name: Setup Node
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v7
               with:
                   node-version: 20
                   cache: 'npm'
-            - uses: actions/setup-python@v4
+            - uses: actions/setup-python@v7
               with:
                   python-version: '3.11'
             - name: Cache thumbnails
               id: cache-thumbnails
-              uses: actions/cache@v4
+              uses: actions/cache@v6
               with:
                   path: .thumb-cache/thumbs
                   key: thumbnails
             - name: Setup Pages
-              uses: actions/configure-pages@v3
+              uses: actions/configure-pages@v6
               with:
                   # Automatically inject basePath in your Next.js configuration file and disable
                   # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
@@ -56,7 +56,7 @@ jobs:
                   # You may remove this line if you want to manage the configuration yourself.
                   static_site_generator: next
             - name: Restore cache
-              uses: actions/cache@v3
+              uses: actions/cache@v6
               with:
                   path: |
                       .next/cache
@@ -70,7 +70,7 @@ jobs:
             - name: Build the website
               run: npm run build
             - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
+              uses: actions/upload-pages-artifact@v5
               with:
                   path: ./out
 
@@ -84,4 +84,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v4
+              uses: actions/deploy-pages@v5

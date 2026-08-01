@@ -1,16 +1,12 @@
 {
-    "name": "MLP StarSample V1.0",
+    "name": "StarSample V1.0",
     "author": "derpy",
     "license": "CC0-1.0",
     "tags": [
         "cartoon",
-        "colorization",
         "compression-removal",
-        "deblur",
-        "denoise",
         "general-upscaler",
-        "restoration",
-        "texture-generation"
+        "restoration"
     ],
     "description": "This is a model for the restoration of My Little Pony: Friendship is Magic, however it also works decently well on all similar art. \n\nIt was trained in 2x on ground truth 3840x2160 HRs and 1920x1080 LRs of varying compression, so it is able to upscale from 1080p to 2160p, where its detail retention is great, however it may create noticeable artifacting if looked at closely, like areas of randomly coloured pixels along edges. In 1x or 1.5x (2x upscaled and then downscaled back down) it performs extremely well, almost perfectly in fact, in correcting colours, removing compression, and crisping up lines - and this is the way the model is intended to be used (hence the acronym of its name being \"SS\", or \"supersampling\").\n\n**[Github Release](https://github.com/Derpiesaurus/models/releases/tag/v1.0)**   \n**Showcase:** https://slow.pics/s/1ixqCSjy",
     "date": "2024-05-22",

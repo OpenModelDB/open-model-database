@@ -1,8 +1,11 @@
-@import '../util.module';
-@import '../../styles/theme';
+@use '../util.module' as *;
+@use '../../styles/theme' as *;
 
 .card {
     @include themed using($t) {
         border: 1px solid t($t, $n-200, $n-800);
+        box-shadow: t($t, 0 1px 2px rgb(0 0 0 / 4%), 0 1px 2px rgb(0 0 0 / 12%));
     }
+
+    transition: box-shadow 0.2s ease-out;
 }

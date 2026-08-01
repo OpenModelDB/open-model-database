@@ -5,6 +5,7 @@ import { MdRemoveCircle } from 'react-icons/md';
 import { useUsers } from '../../lib/hooks/use-users';
 import { joinList } from '../../lib/react-util';
 import { UserId } from '../../lib/schema';
+import { EDIT_ICON_BUTTON } from './edit-chrome';
 import { Link } from './link';
 
 export interface EditableUsersProps {
@@ -65,6 +66,9 @@ export function EditableUsers({ users, onChange, readonly }: EditableUsersProps)
                         </select>
                         {index > 0 && (
                             <button
+                                aria-label="Remove user"
+                                className={EDIT_ICON_BUTTON}
+                                type="button"
                                 onClick={() => {
                                     const newUsers = [...users];
                                     newUsers.splice(index, 1);
@@ -77,7 +81,12 @@ export function EditableUsers({ users, onChange, readonly }: EditableUsersProps)
                     </div>
                 );
             })}
-            <button onClick={() => onChange([...users, randomUser])}>
+            <button
+                aria-label="Add user"
+                className={EDIT_ICON_BUTTON}
+                type="button"
+                onClick={() => onChange([...users, randomUser])}
+            >
                 <BsPersonFillAdd />
             </button>
 

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 import { MdDelete } from 'react-icons/md';
+import { EDIT_BUTTON, EDIT_ICON_BUTTON } from '../elements/components/edit-chrome';
 import { EditableLabel } from '../elements/components/editable-label';
 import { HeadCommon } from '../elements/head-common';
 import { PageContainer } from '../elements/page';
@@ -81,7 +82,9 @@ export default function Page() {
                     )}
 
                     <button
+                        className={EDIT_BUTTON}
                         disabled={!editMode}
+                        type="button"
                         onClick={() => {
                             if (!webApi) return;
                             const name = prompt('User name')?.trim();
@@ -121,7 +124,7 @@ export default function Page() {
                         <div
                             className={joinClasses(
                                 previous && previous.userId[0] !== userId[0] && 'mt-4',
-                                selected && 'bg-white dark:bg-black'
+                                selected && 'rounded-card bg-surface'
                             )}
                             id={`user-${userId}`}
                             key={userId}
@@ -151,8 +154,9 @@ export default function Page() {
                             />
                             {editMode && (
                                 <button
-                                    // className={style.iconButton}
-                                    title="Delete tag"
+                                    className={EDIT_ICON_BUTTON}
+                                    title="Delete user"
+                                    type="button"
                                     onClick={() => deleteUser(userId)}
                                 >
                                     <MdDelete />

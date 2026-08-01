@@ -1,23 +1,31 @@
 import { Popover, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 import { useTags } from '../../lib/hooks/use-tags';
 import { addImpliedTags, removeImplyingTags } from '../../lib/implied-tags';
 import { TagId } from '../../lib/schema';
-import { compareTagId, isDerivedTag } from '../../lib/util';
+import { compareTagId, isDerivedTag, joinClasses } from '../../lib/util';
+import { EDIT_PANEL } from './edit-chrome';
 import style from './editable-tags.module.scss';
 
 export interface SmallTagProps {
     tagId: TagId;
     name: string;
+    context?: 'models' | 'datasets';
 }
-export function SmallTag({ tagId, name }: SmallTagProps) {
+export function SmallTag({ tagId, name, context = 'models' }: SmallTagProps) {
     return (
         <Link
             className={`${style.tag} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
-            href={`/?t=${encodeURIComponent(tagId)}`}
-            title={`Show all models with the ${name} tag`}
+            href={
+                context === 'datasets' ? `/datasets?t=${encodeURIComponent(tagId)}` : `/?t=${encodeURIComponent(tagId)}`
+            }
+            title={
+                context === 'datasets'
+                    ? `Show all datasets with the ${name} tag`
+                    : `Show all models with the ${name} tag`
+            }
         >
             {name}
         </Link>
@@ -28,14 +36,16 @@ export interface EditableTagsProps {
     tags: readonly TagId[];
     onChange?: (value: TagId[]) => void;
     readonly?: boolean;
+    context?: 'models' | 'datasets';
 }
-export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
+export function EditableTags({ tags, onChange, readonly, context = 'models' }: EditableTagsProps) {
     const { tagData } = useTags();
 
     return (
         <div className={style.tags}>
             {!readonly && onChange && (
                 <EditTags
+                    context={context}
                     tags={tags}
                     onChange={onChange}
                 />
@@ -44,6 +54,7 @@ export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
                 const name = tagData.get(tagId)?.name ?? `unknown tag:${tagId}`;
                 return (
                     <SmallTag
+                        context={context}
                         key={tagId}
                         name={name}
                         tagId={tagId}
@@ -54,8 +65,23 @@ export function EditableTags({ tags, onChange, readonly }: EditableTagsProps) {
     );
 }
 
-function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value: TagId[]) => void }) {
+function EditTags({
+    tags,
+    onChange,
+    context = 'models',
+}: {
+    tags: readonly TagId[];
+    onChange: (value: TagId[]) => void;
+    context?: 'models' | 'datasets';
+}) {
     const { tagData, categoryOrder } = useTags();
+
+    const filteredCategoryOrder = useMemo(() => {
+        if (context === 'datasets') {
+            return categoryOrder.filter(([id]) => id === 'dataset');
+        }
+        return categoryOrder.filter(([id]) => id !== 'dataset');
+    }, [categoryOrder, context]);
 
     const [currentTags, setCurrentTags] = useState(tags);
     useEffect(() => {
@@ -82,8 +108,13 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
             as="div"
             className="relative inline-block text-left"
         >
+            {/* Matches the tag pills it sits among, but in theme tokens rather
+                than the hand-paired greys they still use. No border: the pills
+                have none, and `box-sizing` is content-box here (Preflight is
+                off), so one makes this button 2px taller than its neighbours
+                and pushes the row past the card's two-row cap. */}
             <Popover.Button
-                className={`${style.editButton} bg-gray-200 text-xs text-gray-800 dark:bg-gray-700 dark:text-gray-100`}
+                className={`${style.editButton} bg-surface-sunken text-xs text-ink hover:bg-surface-hover`}
                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
                 onFocus={(e: React.FocusEvent<HTMLButtonElement>) => updatePosition(e.currentTarget)}
             >
@@ -98,13 +129,9 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Popover.Panel
-                    className={`absolute z-50 mt-2 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-fade-100 text-sm shadow-lg focus:outline-none dark:bg-black ${
-                        position === 'left' ? 'left-0' : 'right-0'
-                    }`}
-                >
+                <Popover.Panel className={joinClasses(EDIT_PANEL, position === 'left' ? 'left-0' : 'right-0')}>
                     <div className={style.editContainer}>
-                        {categoryOrder.map(([categoryId, category]) => {
+                        {filteredCategoryOrder.map(([categoryId, category]) => {
                             const manual = category.tags.filter((tagId) => !isDerivedTag(tagId));
                             if (manual.length === 0) {
                                 return <Fragment key={categoryId} />;
@@ -120,11 +147,13 @@ function EditTags({ tags, onChange }: { tags: readonly TagId[]; onChange: (value
 
                                             return (
                                                 <button
-                                                    className={`${style.menuItem} text-xs ${
+                                                    className={joinClasses(
+                                                        style.menuItem,
+                                                        'border border-solid text-xs transition-colors duration-100 ease-in-out',
                                                         selected
-                                                            ? 'bg-accent-500 text-white dark:bg-accent-600'
-                                                            : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100'
-                                                    }`}
+                                                            ? 'border-accent-600 bg-accent-600 text-white dark:border-accent-500 dark:bg-accent-500'
+                                                            : 'border-line bg-surface-sunken text-ink hover:bg-surface-hover'
+                                                    )}
                                                     data-selected={selected ? '' : undefined}
                                                     key={tagId}
                                                     onClick={() => {

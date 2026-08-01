@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`tokenize  1`] = `[]`;
+exports[`tokenize >  1`] = `[]`;
 
-exports[`tokenize 1x-AnimeUndeint-Compact 1`] = `
+exports[`tokenize > 1x-AnimeUndeint-Compact 1`] = `
 [
   "1x",
   "anime",
@@ -11,7 +11,7 @@ exports[`tokenize 1x-AnimeUndeint-Compact 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-BCGone-DetailedV2-40-60 1`] = `
+exports[`tokenize > 1x-BCGone-DetailedV2-40-60 1`] = `
 [
   "1x",
   "bc",
@@ -23,7 +23,7 @@ exports[`tokenize 1x-BCGone-DetailedV2-40-60 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-BSChroma 1`] = `
+exports[`tokenize > 1x-BSChroma 1`] = `
 [
   "1x",
   "bs",
@@ -31,7 +31,7 @@ exports[`tokenize 1x-BSChroma 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-BaldrickVHSFixV0-2 1`] = `
+exports[`tokenize > 1x-BaldrickVHSFixV0-2 1`] = `
 [
   "1x",
   "baldrick",
@@ -42,7 +42,7 @@ exports[`tokenize 1x-BaldrickVHSFixV0-2 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-BleedOut-Compact 1`] = `
+exports[`tokenize > 1x-BleedOut-Compact 1`] = `
 [
   "1x",
   "bleed",
@@ -51,7 +51,7 @@ exports[`tokenize 1x-BleedOut-Compact 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-BroadcastToStudioLite 1`] = `
+exports[`tokenize > 1x-BroadcastToStudioLite 1`] = `
 [
   "1x",
   "broadcast",
@@ -61,7 +61,7 @@ exports[`tokenize 1x-BroadcastToStudioLite 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-DEDXT 1`] = `
+exports[`tokenize > 1x-DEDXT 1`] = `
 [
   "1x",
   "de",
@@ -69,7 +69,7 @@ exports[`tokenize 1x-DEDXT 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-GainRESV3-Natural 1`] = `
+exports[`tokenize > 1x-GainRESV3-Natural 1`] = `
 [
   "1x",
   "gain",
@@ -79,7 +79,7 @@ exports[`tokenize 1x-GainRESV3-Natural 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-HurrDeblur-SuperUltraCompact 1`] = `
+exports[`tokenize > 1x-HurrDeblur-SuperUltraCompact 1`] = `
 [
   "1x",
   "hurr",
@@ -90,7 +90,7 @@ exports[`tokenize 1x-HurrDeblur-SuperUltraCompact 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-ITF-SkinDiffDDS-v1 1`] = `
+exports[`tokenize > 1x-ITF-SkinDiffDDS-v1 1`] = `
 [
   "1x",
   "itf",
@@ -101,7 +101,7 @@ exports[`tokenize 1x-ITF-SkinDiffDDS-v1 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-MangaJPEGLQ 1`] = `
+exports[`tokenize > 1x-MangaJPEGLQ 1`] = `
 [
   "1x",
   "manga",
@@ -110,7 +110,7 @@ exports[`tokenize 1x-MangaJPEGLQ 1`] = `
 ]
 `;
 
-exports[`tokenize 1x-SpongeBC1-Lite 1`] = `
+exports[`tokenize > 1x-SpongeBC1-Lite 1`] = `
 [
   "1x",
   "sponge",
@@ -120,7 +120,7 @@ exports[`tokenize 1x-SpongeBC1-Lite 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-ATLA-KORRA 1`] = `
+exports[`tokenize > 2x-ATLA-KORRA 1`] = `
 [
   "2x",
   "atla",
@@ -128,7 +128,7 @@ exports[`tokenize 2x-ATLA-KORRA 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-Bubble-AnimeScale-SwinIR-Small-v1 1`] = `
+exports[`tokenize > 2x-Bubble-AnimeScale-SwinIR-Small-v1 1`] = `
 [
   "2x",
   "bubble",
@@ -141,7 +141,7 @@ exports[`tokenize 2x-Bubble-AnimeScale-SwinIR-Small-v1 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-Byousoku-5-Centimeter 1`] = `
+exports[`tokenize > 2x-Byousoku-5-Centimeter 1`] = `
 [
   "2x",
   "byousoku",
@@ -150,7 +150,7 @@ exports[`tokenize 2x-Byousoku-5-Centimeter 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-GT-evA 1`] = `
+exports[`tokenize > 2x-GT-evA 1`] = `
 [
   "2x",
   "gt",
@@ -158,7 +158,7 @@ exports[`tokenize 2x-GT-evA 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-Loyaldk-LitePonyV2-0 1`] = `
+exports[`tokenize > 2x-Loyaldk-LitePonyV2-0 1`] = `
 [
   "2x",
   "loyaldk",
@@ -169,7 +169,7 @@ exports[`tokenize 2x-Loyaldk-LitePonyV2-0 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-SHARP-ANIME-V2 1`] = `
+exports[`tokenize > 2x-SHARP-ANIME-V2 1`] = `
 [
   "2x",
   "sharp",
@@ -178,7 +178,7 @@ exports[`tokenize 2x-SHARP-ANIME-V2 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-Waifaux-NL3-SuperLite 1`] = `
+exports[`tokenize > 2x-Waifaux-NL3-SuperLite 1`] = `
 [
   "2x",
   "waifaux",
@@ -189,7 +189,7 @@ exports[`tokenize 2x-Waifaux-NL3-SuperLite 1`] = `
 ]
 `;
 
-exports[`tokenize 2x-sudo-RealESRGAN-Dropout 1`] = `
+exports[`tokenize > 2x-sudo-RealESRGAN-Dropout 1`] = `
 [
   "2x",
   "sudo",
@@ -199,7 +199,7 @@ exports[`tokenize 2x-sudo-RealESRGAN-Dropout 1`] = `
 ]
 `;
 
-exports[`tokenize 4x-BooruGan-650k 1`] = `
+exports[`tokenize > 4x-BooruGan-650k 1`] = `
 [
   "4x",
   "booru",
@@ -209,34 +209,34 @@ exports[`tokenize 4x-BooruGan-650k 1`] = `
 ]
 `;
 
-exports[`tokenize FOO_BAR 1`] = `
+exports[`tokenize > FOO_BAR 1`] = `
 [
   "foo",
   "bar",
 ]
 `;
 
-exports[`tokenize Foo Bar 1`] = `
+exports[`tokenize > Foo Bar 1`] = `
 [
   "foo",
   "bar",
 ]
 `;
 
-exports[`tokenize FooBar 1`] = `
+exports[`tokenize > FooBar 1`] = `
 [
   "foo",
   "bar",
 ]
 `;
 
-exports[`tokenize foo 1`] = `
+exports[`tokenize > foo 1`] = `
 [
   "foo",
 ]
 `;
 
-exports[`tokenize fooBar 1`] = `
+exports[`tokenize > fooBar 1`] = `
 [
   "foo",
   "bar",

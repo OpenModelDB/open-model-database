@@ -3,6 +3,17 @@ module.exports = {
     content: ['./src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
+            fontFamily: {
+                sans: [
+                    'var(--font-inter)',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    'Segoe UI',
+                    'Helvetica',
+                    'Arial',
+                    'sans-serif',
+                ],
+            },
             colors: {
                 'fade-50': '#f9f8ff',
                 'fade-100': '#f3f2fd',
@@ -13,7 +24,25 @@ module.exports = {
                 'fade-600': '#55545c',
                 'fade-700': '#403f47',
                 'fade-800': '#28272f',
+                'fade-850': '#1f1e26',
                 'fade-900': '#17171e',
+                'fade-950': '#111117',
+
+                // Semantic tokens. Prefer these over hand-pairing `x dark:y`,
+                // which is where most of the theme drift came from.
+                page: 'var(--page-bg)',
+                surface: 'var(--surface)',
+                'surface-sunken': 'var(--surface-sunken)',
+                'surface-hover': 'var(--surface-hover)',
+                line: 'var(--line-color)',
+                'line-strong': 'var(--line-strong)',
+                ink: 'var(--font-color)',
+                'ink-muted': 'var(--font-color-light)',
+                'ink-subtle': 'var(--font-color-subtle)',
+                'accent-text': 'var(--accent-text)',
+                'warning-surface': 'var(--warning-surface)',
+                'warning-line': 'var(--warning-line)',
+                'warning-ink': 'var(--warning-ink)',
                 accent: '#4d48a9',
                 'accent-50': '#feeaff',
                 'accent-100': '#f8e4ff',
@@ -25,6 +54,15 @@ module.exports = {
                 'accent-700': '#323391',
                 'accent-800': '#031c74',
                 'accent-900': '#000c60',
+            },
+            borderRadius: {
+                control: 'var(--radius-control)',
+                card: 'var(--radius-card)',
+            },
+            boxShadow: {
+                card: 'var(--shadow-card)',
+                raised: 'var(--shadow-raised)',
+                pop: 'var(--shadow-pop)',
             },
         },
         screens: {

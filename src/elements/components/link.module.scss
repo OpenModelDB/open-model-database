@@ -1,13 +1,23 @@
 .textLink {
     color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
 
     &:hover {
-        text-decoration: underline;
+        text-decoration-color: currentcolor;
     }
 
     .externalIcon {
         margin-bottom: -0.125em;
         margin-left: 0.1em;
         margin-right: 0.1em;
+        opacity: 0.7;
+        transition: opacity 0.15s ease;
+    }
+
+    &:hover .externalIcon {
+        opacity: 1;
     }
 }
