@@ -1,4 +1,13 @@
 {
+    "c-90s-sonic-2x": {
+        "name": "90s Sonic 2x",
+        "author": "pokepress",
+        "description": "Model designed for upscaling footage from Adventures of Sonic the Hedgehog and Sonic SatAm (sorry Sonic Underground fans). These shows (produced by separate contractors/production companies) aired from 1993-1994. While they do consist of cel-based animation, some segments use panning to achieve > 24fps, so you'll probably want to use QTGMC to deinterlace if you're looking for maximum quality.",
+        "models": [
+            "2x-90s-Sonic",
+            "2x-90s-Sonic-LG"
+        ]
+    },
     "c-animesharpv2": {
         "name": "AnimeSharpV2",
         "author": "kim2091",

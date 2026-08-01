@@ -1,0 +1,59 @@
+{
+    "name": "90s Sonic 2x (Large)",
+    "author": "pokepress",
+    "license": "MIT",
+    "tags": [
+        "cartoon",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "Model designed for upscaling footage from Adventures of Sonic the Hedgehog and Sonic SatAm (sorry Sonic Underground fans). These shows (produced by separate contractors/production companies) aired from 1993-1994. While they do consist of cel-based animation, some segments use panning to achieve > 24fps, so you'll probably want to use QTGMC to deinterlace if you're looking for maximum quality.",
+    "date": "2026-08-01",
+    "architecture": "realplksr",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "pth",
+            "size": 9443322,
+            "sha256": "0dcd0d05e1f43435cbb380eb0a991c6f19b31f37f84ee1cabc68a48fe8cd3524",
+            "urls": [
+                "https://www.mediafire.com/file/e57pd40qph8nak2/90s_Sonic_2x.pth/file"
+            ]
+        }
+    ],
+    "trainingIterations": 116673,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "dataset": "Stills from AoStH and SatAm",
+    "datasetSize": 42,
+    "images": [
+        {
+            "type": "paired",
+            "caption": "Tails' New Home (AoStH)",
+            "LR": "https://imgdiff.net/api/image.php?id=b01b7787aab4e15d35e10940d2912b12&image=2171",
+            "SR": "https://imgdiff.net/api/image.php?id=b01b7787aab4e15d35e10940d2912b12&image=2172"
+        },
+        {
+            "type": "paired",
+            "caption": "Game Guy (SatAm)",
+            "LR": "https://imgdiff.net/api/image.php?id=ac634bd060bc23f1a5168de2108a85f4&image=2173",
+            "SR": "https://imgdiff.net/api/image.php?id=ac634bd060bc23f1a5168de2108a85f4&image=2174"
+        },
+        {
+            "type": "paired",
+            "caption": "Spaceman Sonic (AoStH)",
+            "LR": "https://imgdiff.net/api/image.php?id=6cc81014bba54c63dc953451daa41ec4&image=2175",
+            "SR": "https://imgdiff.net/api/image.php?id=6cc81014bba54c63dc953451daa41ec4&image=2176"
+        },
+        {
+            "type": "paired",
+            "caption": "Opening Sequence (SatAm)",
+            "LR": "https://imgdiff.net/api/image.php?id=ea7aaa180c8e5d8375f2222ea0f081e7&image=2177",
+            "SR": "https://imgdiff.net/api/image.php?id=ea7aaa180c8e5d8375f2222ea0f081e7&image=2178"
+        }
+    ]
+}
