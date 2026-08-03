@@ -16,9 +16,9 @@
     "resources": [
         {
             "platform": "pytorch",
-            "type": "safetensors",
-            "size": 30757598,
-            "sha256": "b88289e770207e634181b595845e0d240cc397714aefe659bcf9b70478b64373",
+            "type": "pth",
+            "size": 31259352,
+            "sha256": "c3f3041a51347f64b0951e2a9e161aac27c3fd2a7287520821d871dcc075b8e5",
             "urls": [
                 "https://github.com/Kim2091/Kim2091-Models/releases/download/1x-UnResizeOnly_RCAN/1x-UnResizeOnly_RCAN.pth"
             ]
