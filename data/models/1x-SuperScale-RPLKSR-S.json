@@ -19,8 +19,8 @@
         {
             "platform": "pytorch",
             "type": "safetensors",
-            "size": 1195070,
-            "sha256": "f5844dd72922a6579cf73c44de5cf35f0d700bd407982ae8d03bcdf720924425",
+            "size": 9395932,
+            "sha256": "8620aa99ef5421d5d0614c103cffa7c605f77050745247f894eb24d41b5fb0ed",
             "urls": [
                 "https://github.com/Kim2091/Kim2091-Models/releases/download/1x-SuperScale/1x-SuperScale_RPLKSR_S.safetensors"
             ]

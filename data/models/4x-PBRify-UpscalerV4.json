@@ -20,9 +20,9 @@
     "resources": [
         {
             "platform": "pytorch",
-            "type": "safetensors",
-            "size": 139793020,
-            "sha256": "a00fa50116895a9b766aeb012edad0a14d66f3afda65539efc0f6fc28c991ba2",
+            "type": "pth",
+            "size": 140345646,
+            "sha256": "82db39e31e01da6816a9814c0553a8dcdb7bd2d655353e67075c9295068cb789",
             "urls": [
                 "https://github.com/Kim2091/Kim2091-Models/releases/download/4x-PBRify_UpscalerV4/4x-PBRify_UpscalerV4.pth"
             ]

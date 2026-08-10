@@ -15,12 +15,21 @@
     "outputChannels": 3,
     "resources": [
         {
-            "platform": "pytorch",
-            "type": "safetensors",
-            "size": 5657145,
-            "sha256": "526a4bb8a01273b420105458f850435576d7be95c4029add6cc05cad57d2c3b4",
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2852267,
+            "sha256": "17a4c0c6af5a187389f52a9bd026553a8819f148b70dea1a242d1517a352dfec",
             "urls": [
-                "https://mega.nz/file/LwoxXZgS#J5kh2DIkn7NhxbSKOqhyX4gIO39MrVWLCTJGOZd9yzo"
+                "https://github.com/renarchi/Re-SISR/releases/download/Fallin/2x_Fallin_soft_renarchi_fp16.onnx"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 5670257,
+            "sha256": "487792c65406a6851a6bd48d5cbdcee75317fdc3e241f02fe7054936b9914d15",
+            "urls": [
+                "https://github.com/renarchi/Re-SISR/releases/download/Fallin/2x_Fallin_soft_renarchi_fp32.onnx"
             ]
         }
     ],

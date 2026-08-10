@@ -19,8 +19,8 @@
         {
             "platform": "pytorch",
             "type": "safetensors",
-            "size": 1195070,
-            "sha256": "f5844dd72922a6579cf73c44de5cf35f0d700bd407982ae8d03bcdf720924425",
+            "size": 8888072,
+            "sha256": "703e497308ec1ba0efdb720a04d055f4c91422bbd406a91553f77de8f16df489",
             "urls": [
                 "https://github.com/Kim2091/Kim2091-Models/releases/download/1x-SuperScale/1x-SuperScale_SPAN.safetensors"
             ]

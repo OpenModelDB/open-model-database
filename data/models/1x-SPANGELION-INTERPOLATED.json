@@ -22,7 +22,7 @@
             "size": 8944458,
             "sha256": "0c5650f0c5b38aa0e071ecc6929e23a38ef00f45c973d848f679a620fd26a196",
             "urls": [
-                "https://github.com/terrainer/AI-Upscaling-Models/raw/main/1xSPANGELION/1xSPANGELION.pth"
+                "https://github.com/terrainer/AI-Upscaling-Models/raw/main/1xSPANGELION/1xSPANGELION_INTERPOLATED.pth"
             ]
         }
     ],

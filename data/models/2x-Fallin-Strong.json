@@ -15,12 +15,21 @@
     "outputChannels": 3,
     "resources": [
         {
-            "platform": "pytorch",
-            "type": "safetensors",
-            "size": 5657145,
-            "sha256": "b05afbd8e67b93a35959aad5b2fd11af067799ef44be083bc205cff926433f78",
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 2852267,
+            "sha256": "f3d636e298a22fd54ad66571e74f6c91afc6cc7929799d224dc6ebb864c128df",
             "urls": [
-                "https://github.com/renarchi/Re-SISR/releases/tag/Fallin"
+                "https://github.com/renarchi/Re-SISR/releases/download/Fallin/2x_Fallin_strong_renarchi_fp16.onnx"
+            ]
+        },
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 5670257,
+            "sha256": "b19c5eafb1e91c4233cb091b4a062f9eeb1c05d2df9bdedd482b40e8e034eb81",
+            "urls": [
+                "https://github.com/renarchi/Re-SISR/releases/download/Fallin/2x_Fallin_strong_renarchi_fp32.onnx"
             ]
         }
     ],
