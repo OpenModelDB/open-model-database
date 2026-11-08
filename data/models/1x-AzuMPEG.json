@@ -1,0 +1,65 @@
+{
+    "name": "AzuMPEG",
+    "author": "ezogaming",
+    "license": "CC0-1.0",
+    "tags": [
+        "anime",
+        "compression-removal",
+        "deblur",
+        "denoise",
+        "restoration",
+        "video-frame"
+    ],
+    "description": "A relatively simple model that tries to remove (muddied) dot crawl, color bleed, NTSC color encoding (as in color space), and MPEG-4 (DivX) artifacts from 384p sources. Trained for 30 epochs.\nOriginally trained to de-crustify Azumanga Web Daioh at 384p. Specifically trained for the hardsub, not the ultra-low-quality nicovideo rip.\nMovie was chosen for the dataset due to having a similar art style and color range to the web pilot (minus the high contrast from the ntsc source), compared to the more washed-out TV anime.\n\n**Dataset:** Azumanga Daioh Movie (2001) cropped to 4:3, played through composite via a DVD player, chroma blurred, and encoded to MPEG-4 (DIVX) at 512x384, bitrate ~1400kbps\nVHS sources will perform poorly (see examples)\n\nSlowpoke: slow.pics/s/qf7gnU9O",
+    "date": "2024-09-20",
+    "architecture": "span",
+    "size": [
+        "48nf"
+    ],
+    "scale": 1,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "pytorch",
+            "type": "safetensors",
+            "size": 8887788,
+            "sha256": "e83ca07920197b2a9577c62a0c1052287116fc3e0a9cc835d7e9de4acdfd5bde",
+            "urls": [
+                "https://drive.google.com/file/d/1ECmsVeo_mlS01jlpXyy2HHNCEmBKv_IT/view?usp=sharing"
+            ]
+        }
+    ],
+    "trainingIterations": 20000,
+    "trainingBatchSize": 6,
+    "trainingHRSize": 128,
+    "trainingOTF": false,
+    "datasetSize": 3781,
+    "pretrainedModelG": "1x-span-anime-pretrain",
+    "images": [
+        {
+            "type": "paired",
+            "caption": "chiyo_op (web daioh)",
+            "LR": "https://i.slow.pics/bnMu9Qxi.webp",
+            "SR": "https://i.slow.pics/mMLbdPtZ.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "dvd_capture_grab_pigtails (movie)",
+            "LR": "https://i.slow.pics/dCOszi0r.webp",
+            "SR": "https://i.slow.pics/dPHNqBaz.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "coyote (clean vhs example)",
+            "LR": "https://i.slow.pics/JttP3wXh.webp",
+            "SR": "https://i.slow.pics/tOaTBKG2.webp"
+        },
+        {
+            "type": "paired",
+            "caption": "hitoshi (dirty vhs example)",
+            "LR": "https://i.slow.pics/Xr6Ou06B.webp",
+            "SR": "https://i.slow.pics/m8XJVLYh.webp"
+        }
+    ]
+}
