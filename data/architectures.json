@@ -252,5 +252,12 @@
             "pytorch",
             "onnx"
         ]
+    },
+    "websr-unet": {
+        "name": "WebSR UNet",
+        "input": "image",
+        "compatiblePlatforms": [
+            "onnx"
+        ]
     }
 }

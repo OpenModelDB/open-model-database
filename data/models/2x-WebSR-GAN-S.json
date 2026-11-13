@@ -1,0 +1,30 @@
+{
+    "name": "WebSR GAN-S",
+    "author": "sb2702",
+    "license": "MIT",
+    "tags": [
+        "general-upscaler",
+        "photo",
+        "video-frame"
+    ],
+    "description": "Purpose: Fast, general-purpose 2x upscaling of real-world video and images\n\nA small UNet distilled from [RealESR General x4 v3](https://openmodeldb.info/models/4x-realesr-general-x4v3) for fast inference in the browser (WebGPU). It adapts to the content: a tiny gate network looks at a 32x32 thumbnail of the frame and blends 4 weight banks, so one model handles a range of sources. WebSR GAN-S is the faster variant; see also [WebSR GAN-M](https://openmodeldb.info/models/2x-WebSR-GAN-M).\n\nRuns in production in [free.upscaler.video](https://free.upscaler.video), a free in-browser video upscaler used by ~25k people every day, as one of its \"Detail\" models.\n\n**ONNX file:** one image in (`rgb`, RGB float32 in [0, 1], NCHW, any size), one image out (2x). Output is not clamped; clip to [0, 1]. For video, use the separate calibrate + upscale graphs so the look stays consistent across frames: see the [model card](https://huggingface.co/katana-video/websr).\n\nBrowser (WebGPU) version: [WebSR](https://github.com/sb2702/websr) (`websr/gan-s`).",
+    "date": "2026-11-12",
+    "architecture": "websr-unet",
+    "size": null,
+    "scale": 2,
+    "inputChannels": 3,
+    "outputChannels": 3,
+    "resources": [
+        {
+            "platform": "onnx",
+            "type": "onnx",
+            "size": 17432084,
+            "sha256": "448d86c01c38b2563d1cb2cdb291cb277614fd2097187fc3857850b2be51b26b",
+            "urls": [
+                "https://huggingface.co/katana-video/websr/resolve/main/onnx/gan-s_image.onnx"
+            ]
+        }
+    ],
+    "trainingIterations": 294000,
+    "images": []
+}
