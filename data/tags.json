@@ -407,5 +407,9 @@
     "scale:8": {
         "name": "8x",
         "description": ""
+    },
+    "arch:websr-unet": {
+        "name": "WebSR UNet",
+        "description": ""
     }
 }
